@@ -1,60 +1,60 @@
-name,type,docs_url,description,open_source,github_repo,stars,open_source_alternative,commercial_alternative
-LangChain,SDK,https://docs.langchain.com/,Python framework for building LLM applications with chains and agents,yes,https://github.com/langchain-ai/langchain,127162,N/A,Vertex AI
-LangGraph,SDK,https://docs.langchain.com/oss/python/langgraph/overview,Graph-based orchestration framework for stateful AI agents with durable execution,yes,https://github.com/langchain-ai/langgraph,24935,N/A,Vertex AI
-AutoGen,SDK,https://microsoft.github.io/autogen/,Microsoft framework for building multi-agent systems with event-driven architecture,yes,https://github.com/microsoft/autogen,54714,N/A,AWS Bedrock
-CrewAI,SDK,https://docs.crewai.com/,Framework for orchestrating role-playing autonomous AI agents with collaborative intelligence,yes,https://github.com/crewAIInc/crewAI,44446,N/A,AWS Bedrock
-ADK,SDK,https://google.github.io/adk-docs/,Google Agent Development Kit for building multi-agent applications,yes,https://github.com/google/adk-python,17911,N/A,Vertex AI
-semantic-kernel,SDK,https://learn.microsoft.com/en-us/semantic-kernel/,Microsoft SDK for integrating LLMs into C#/Python/Java applications,yes,https://github.com/microsoft/semantic-kernel,27283,N/A,AWS Bedrock
-haystack,SDK,https://docs.haystack.deepset.ai/,Open-source AI framework for production-ready RAG and agentic workflows,yes,https://github.com/deepset-ai/haystack,24257,N/A,Vertex AI
-smolagents,SDK,https://huggingface.co/docs/smolagents/en/index,HuggingFace lightweight library for building code-first agents,yes,https://github.com/huggingface/smolagents,25559,N/A,Vertex AI
-OpenAI,API/SDK,https://developers.openai.com/api/reference/overview,Hosted LLM API with official SDKs for Python/TypeScript/Go/C# plus Agents SDK,no,N/A,N/A,LiteLLM,N/A
-Gemini,API/SDK,https://ai.google.dev/gemini-api/docs,Google hosted LLM API with GenAI SDKs for Python/JS/Go/Java,no,N/A,N/A,LiteLLM,N/A
-Claude,API/SDK,https://platform.claude.com/docs/en/home,Anthropic hosted LLM API with SDKs in Python/TypeScript/Java/Go/Ruby/C#/PHP plus Agent SDK,no,N/A,N/A,LiteLLM,N/A
-LlamaIndex,SDK,https://developers.llamaindex.ai/python/framework/,Data framework for LLM applications with RAG pipelines and document parsing,yes,https://github.com/run-llama/llama_index,47109,N/A,Vertex AI
-pgvector,SDK,https://github.com/pgvector/pgvector,PostgreSQL extension for vector similarity search and embeddings storage,yes,https://github.com/pgvector/pgvector,19914,N/A,Pinecone
-GraphRAG,SDK,https://microsoft.github.io/graphrag/,Microsoft graph-based RAG system combining text extraction and network analysis,yes,https://github.com/microsoft/graphrag,31020,N/A,Neo4j Aura
-Temporal,SDK,https://docs.temporal.io/,Durable execution platform for reliable distributed systems with automatic failure handling,yes,https://github.com/temporalio/temporal,18451,N/A,AWS Step Functions
-Prefect,SDK,https://docs.prefect.io/,Python workflow orchestration framework for scheduling and monitoring data pipelines,yes,https://github.com/PrefectHQ/prefect,21652,N/A,Control-M
-Ray,SDK/Infra,https://docs.ray.io/en/latest/,Distributed AI compute framework for ML training/serving/data processing,yes,https://github.com/ray-project/ray,41428,N/A,Modal
-Max,SDK/Infra,https://docs.modular.com/max/,High-performance inference framework with cross-vendor hardware support,yes,https://github.com/modular/modular,25622,N/A,Groq
-vLLM,SDK,https://docs.vllm.ai/,High-throughput memory-efficient LLM inference and serving engine,yes,https://github.com/vllm-project/vllm,70904,N/A,Groq
-SGLang,SDK,https://docs.sglang.io/,High-performance serving framework for large language and multimodal models,yes,https://github.com/sgl-project/sglang,23652,N/A,Cerebras
-Groq,API/Infra,https://console.groq.com/docs/overview,Hosted API for fast LLM inference on custom LPU hardware,no,N/A,N/A,vLLM,N/A
-Cerebras,API/Infra,https://inference-docs.cerebras.ai/,AI inference API on custom wafer-scale engine hardware,no,N/A,N/A,vLLM,N/A
-KServe,SDK/Infra,https://kserve.github.io/website/,Kubernetes-native model serving platform for ML inference at scale,yes,https://github.com/kserve/kserve,5125,N/A,AWS Bedrock
-Triton Inference Server,SDK/Infra,https://docs.nvidia.com/deeplearning/triton-inference-server/,NVIDIA inference serving software for multi-framework model deployment,yes,https://github.com/triton-inference-server/server,10377,N/A,Groq
-BentoML,SDK/Infra,https://docs.bentoml.com/,Python framework for building model inference APIs and serving systems,yes,https://github.com/bentoml/BentoML,8462,N/A,Inferless
-Modal,API/SDK/Infra,https://modal.com/docs,Serverless GPU compute platform for AI workloads with elastic scaling,no,N/A,N/A,Ray,N/A
-RunPod,API/Infra,https://docs.runpod.io/,GPU cloud platform offering pod instances and serverless GPU endpoints,no,N/A,N/A,Ray,N/A
-Vast.ai,API/Infra,https://docs.vast.ai/,GPU marketplace for affordable on-demand cloud computing,no,N/A,N/A,Ray,N/A
-Inferless,API/Infra,https://docs.inferless.com/,Serverless GPU inference platform for deploying ML models,no,N/A,N/A,BentoML,N/A
-LangSmith,API/SDK/UI,https://docs.langchain.com/langsmith,LLM observability platform for tracing and evaluation with dashboard,no,N/A,N/A,Langfuse,N/A
-Arize Phoenix,SDK/UI,https://arize.com/docs/phoenix,Open-source AI observability for debugging and iterating on LLM applications,yes,https://github.com/Arize-AI/phoenix,8628,N/A,Weights & Biases
-Weights & Biases,API/SDK/UI,https://docs.wandb.ai/,ML developer platform for experiment tracking and model monitoring,no,N/A,N/A,Arize Phoenix,N/A
-LiteLLM,SDK,https://docs.litellm.ai/docs/,Python SDK and proxy for unified access to 100+ LLM APIs,yes,https://github.com/BerriAI/litellm,36571,N/A,ccapi
-Helicone,API/UI,https://docs.helicone.ai/,AI gateway and LLM observability platform with routing,yes,https://github.com/Helicone/helicone,5126,N/A,ccapi
-Portkey,API/SDK,https://portkey.ai/docs/introduction/what-is-portkey,AI gateway for managing 200+ LLMs with observability and guardrails,yes,https://github.com/Portkey-AI/gateway,10675,N/A,ccapi
-ccapi,API,https://ccapi.ai/,Unified AI API gateway for 100+ models with OpenAI-compatible endpoint,no,N/A,N/A,LiteLLM,N/A
-Guardrails AI,SDK,https://guardrailsai.com/docs,Python framework for input/output validation guards on LLM applications,yes,https://github.com/guardrails-ai/guardrails,6435,N/A,Lakera
-NeMo Guardrails,SDK,https://docs.nvidia.com/nemo-guardrails/index.html,NVIDIA toolkit for programmable safety guardrails in conversational AI,yes,https://github.com/NVIDIA/NeMo-Guardrails,5683,N/A,Lakera
-OpenAI Moderation,API,https://developers.openai.com/api/docs/guides/moderation,OpenAI API for classifying harmful text and image content,no,N/A,N/A,Guardrails AI,N/A
-Lakera,API,https://docs.lakera.ai/,AI security platform with real-time threat detection for LLM agents,no,N/A,N/A,NeMo Guardrails,N/A
-Ragas,SDK,https://docs.ragas.io/en/stable/,Open-source framework for evaluating RAG and LLM application quality,yes,https://github.com/explodinggradients/ragas,12679,N/A,LangSmith
-DeepEval,SDK,https://deepeval.com/docs/getting-started,LLM evaluation framework with 50+ research-backed metrics and Pytest integration,yes,https://github.com/confident-ai/deepeval,13756,N/A,LangSmith
-Langfuse,API/SDK/UI,https://langfuse.com/docs,Open-source LLM engineering platform with observability and prompt management,yes,https://github.com/langfuse/langfuse,22154,N/A,LangSmith
-OpenAI Evals,SDK,https://developers.openai.com/api/docs/guides/evals,OpenAI framework for creating and running evaluations on LLM systems,yes,https://github.com/openai/evals,17876,N/A,LangSmith
-Airflow,SDK,https://airflow.apache.org/docs/apache-airflow/stable/,Apache workflow orchestration platform for scheduling and monitoring pipelines,yes,https://github.com/apache/airflow,44357,N/A,Control-M
-n8n,API/SDK/UI,https://docs.n8n.io/,Workflow automation combining visual building with custom code and 400+ integrations,yes,https://github.com/n8n-io/n8n,175811,N/A,Zapier
-Activepieces,API/UI,https://www.activepieces.com/docs/,Open-source no-code business automation with 635+ integrations,yes,https://github.com/activepieces/activepieces,20928,N/A,Zapier
-Node-RED,UI,https://nodered.org/docs/,Flow-based programming tool with browser-based visual editor and 5000+ nodes,yes,https://github.com/node-red/node-red,22816,N/A,Crosser
-DSPy,SDK,https://dspy.ai/,Stanford framework for programming LMs declaratively with automatic prompt optimization,yes,https://github.com/stanfordnlp/dspy,32331,N/A,PromptLayer
-Pydantic AI,SDK,https://ai.pydantic.dev/,Python agent framework for production-grade GenAI apps with type-safe outputs,yes,https://github.com/pydantic/pydantic-ai,15015,N/A,N/A
-Outlines,SDK,https://dottxt-ai.github.io/outlines/,Python library for structured LLM generation via JSON Schema/regex/grammar,yes,https://github.com/dottxt-ai/outlines,13449,N/A,N/A
-Instructor,SDK,https://python.useinstructor.com/,Multi-language library for extracting structured data from LLMs,yes,https://github.com/instructor-ai/instructor,12413,N/A,N/A
-BAML,SDK,https://docs.boundaryml.com/,Domain-specific language for generating structured outputs from LLMs,yes,https://github.com/BoundaryML/baml,7642,N/A,N/A
-Vertex AI,API/SDK/Infra,https://docs.cloud.google.com/vertex-ai/docs,Google Cloud unified platform for building and scaling ML/GenAI models,no,N/A,N/A,Ray,N/A
-AWS Bedrock,API/SDK/Infra,https://docs.aws.amazon.com/bedrock/,AWS managed service for foundation model access from multiple vendors via single API,no,N/A,N/A,LiteLLM,N/A
-Label Studio,UI,https://labelstud.io/guide/,Open-source multi-type data labeling and annotation tool,yes,https://github.com/HumanSignal/label-studio,26488,N/A,Scale AI
-Ollama,SDK/UI,https://github.com/ollama/ollama,Local LLM runner with REST API and CLI for quantized models,yes,https://github.com/ollama/ollama,163135,N/A,LM Studio
-LM Studio,SDK/UI,https://lmstudio.ai/docs/,Desktop app for running local LLMs with Python/TS SDKs and OpenAI-compatible endpoints,no,N/A,N/A,Ollama,N/A
-Hugging Face Transformers,SDK,https://huggingface.co/docs/transformers/en/index,Model-definition framework for state-of-the-art ML models in text/vision/audio/video with inference and training,yes,https://github.com/huggingface/transformers,156821,N/A,AWS Bedrock
+name,group,type,docs_url,description,open_source,github_repo,stars,open_source_alternative,commercial_alternative
+LangChain,Agent Frameworks,SDK,https://docs.langchain.com/,Python framework for building LLM applications with chains and agents,yes,https://github.com/langchain-ai/langchain,127162,N/A,Vertex AI
+LangGraph,Agent Frameworks,SDK,https://docs.langchain.com/oss/python/langgraph/overview,Graph-based orchestration framework for stateful AI agents with durable execution,yes,https://github.com/langchain-ai/langgraph,24935,N/A,Vertex AI
+AutoGen,Agent Frameworks,SDK,https://microsoft.github.io/autogen/,Microsoft framework for building multi-agent systems with event-driven architecture,yes,https://github.com/microsoft/autogen,54714,N/A,AWS Bedrock
+CrewAI,Agent Frameworks,SDK,https://docs.crewai.com/,Framework for orchestrating role-playing autonomous AI agents with collaborative intelligence,yes,https://github.com/crewAIInc/crewAI,44446,N/A,AWS Bedrock
+ADK,Agent Frameworks,SDK,https://google.github.io/adk-docs/,Google Agent Development Kit for building multi-agent applications,yes,https://github.com/google/adk-python,17911,N/A,Vertex AI
+semantic-kernel,Agent Frameworks,SDK,https://learn.microsoft.com/en-us/semantic-kernel/,Microsoft SDK for integrating LLMs into C#/Python/Java applications,yes,https://github.com/microsoft/semantic-kernel,27283,N/A,AWS Bedrock
+haystack,RAG & Knowledge Retrieval,SDK,https://docs.haystack.deepset.ai/,Open-source AI framework for production-ready RAG and agentic workflows,yes,https://github.com/deepset-ai/haystack,24257,N/A,Vertex AI
+smolagents,Agent Frameworks,SDK,https://huggingface.co/docs/smolagents/en/index,HuggingFace lightweight library for building code-first agents,yes,https://github.com/huggingface/smolagents,25559,N/A,Vertex AI
+OpenAI,LLM Providers,API/SDK,https://developers.openai.com/api/reference/overview,Hosted LLM API with official SDKs for Python/TypeScript/Go/C# plus Agents SDK,no,N/A,N/A,LiteLLM,N/A
+Gemini,LLM Providers,API/SDK,https://ai.google.dev/gemini-api/docs,Google hosted LLM API with GenAI SDKs for Python/JS/Go/Java,no,N/A,N/A,LiteLLM,N/A
+Claude,LLM Providers,API/SDK,https://platform.claude.com/docs/en/home,Anthropic hosted LLM API with SDKs in Python/TypeScript/Java/Go/Ruby/C#/PHP plus Agent SDK,no,N/A,N/A,LiteLLM,N/A
+LlamaIndex,RAG & Knowledge Retrieval,SDK,https://developers.llamaindex.ai/python/framework/,Data framework for LLM applications with RAG pipelines and document parsing,yes,https://github.com/run-llama/llama_index,47109,N/A,Vertex AI
+pgvector,RAG & Knowledge Retrieval,SDK,https://github.com/pgvector/pgvector,PostgreSQL extension for vector similarity search and embeddings storage,yes,https://github.com/pgvector/pgvector,19914,N/A,Pinecone
+GraphRAG,RAG & Knowledge Retrieval,SDK,https://microsoft.github.io/graphrag/,Microsoft graph-based RAG system combining text extraction and network analysis,yes,https://github.com/microsoft/graphrag,31020,N/A,Neo4j Aura
+Temporal,Workflow Orchestration & Automation,SDK,https://docs.temporal.io/,Durable execution platform for reliable distributed systems with automatic failure handling,yes,https://github.com/temporalio/temporal,18451,N/A,AWS Step Functions
+Prefect,Workflow Orchestration & Automation,SDK,https://docs.prefect.io/,Python workflow orchestration framework for scheduling and monitoring data pipelines,yes,https://github.com/PrefectHQ/prefect,21652,N/A,Control-M
+Ray,GPU Compute & Cloud Platforms,SDK/Infra,https://docs.ray.io/en/latest/,Distributed AI compute framework for ML training/serving/data processing,yes,https://github.com/ray-project/ray,41428,N/A,Modal
+Max,Inference Serving,SDK/Infra,https://docs.modular.com/max/,High-performance inference framework with cross-vendor hardware support,yes,https://github.com/modular/modular,25622,N/A,Groq
+vLLM,Inference Serving,SDK,https://docs.vllm.ai/,High-throughput memory-efficient LLM inference and serving engine,yes,https://github.com/vllm-project/vllm,70904,N/A,Groq
+SGLang,Inference Serving,SDK,https://docs.sglang.io/,High-performance serving framework for large language and multimodal models,yes,https://github.com/sgl-project/sglang,23652,N/A,Cerebras
+Groq,GPU Compute & Cloud Platforms,API/Infra,https://console.groq.com/docs/overview,Hosted API for fast LLM inference on custom LPU hardware,no,N/A,N/A,vLLM,N/A
+Cerebras,GPU Compute & Cloud Platforms,API/Infra,https://inference-docs.cerebras.ai/,AI inference API on custom wafer-scale engine hardware,no,N/A,N/A,vLLM,N/A
+KServe,Inference Serving,SDK/Infra,https://kserve.github.io/website/,Kubernetes-native model serving platform for ML inference at scale,yes,https://github.com/kserve/kserve,5125,N/A,AWS Bedrock
+Triton Inference Server,Inference Serving,SDK/Infra,https://docs.nvidia.com/deeplearning/triton-inference-server/,NVIDIA inference serving software for multi-framework model deployment,yes,https://github.com/triton-inference-server/server,10377,N/A,Groq
+BentoML,Inference Serving,SDK/Infra,https://docs.bentoml.com/,Python framework for building model inference APIs and serving systems,yes,https://github.com/bentoml/BentoML,8462,N/A,Inferless
+Modal,GPU Compute & Cloud Platforms,API/SDK/Infra,https://modal.com/docs,Serverless GPU compute platform for AI workloads with elastic scaling,no,N/A,N/A,Ray,N/A
+RunPod,GPU Compute & Cloud Platforms,API/Infra,https://docs.runpod.io/,GPU cloud platform offering pod instances and serverless GPU endpoints,no,N/A,N/A,Ray,N/A
+Vast.ai,GPU Compute & Cloud Platforms,API/Infra,https://docs.vast.ai/,GPU marketplace for affordable on-demand cloud computing,no,N/A,N/A,Ray,N/A
+Inferless,GPU Compute & Cloud Platforms,API/Infra,https://docs.inferless.com/,Serverless GPU inference platform for deploying ML models,no,N/A,N/A,BentoML,N/A
+LangSmith,Observability & LLM Ops,API/SDK/UI,https://docs.langchain.com/langsmith,LLM observability platform for tracing and evaluation with dashboard,no,N/A,N/A,Langfuse,N/A
+Arize Phoenix,Observability & LLM Ops,SDK/UI,https://arize.com/docs/phoenix,Open-source AI observability for debugging and iterating on LLM applications,yes,https://github.com/Arize-AI/phoenix,8628,N/A,Weights & Biases
+Weights & Biases,Observability & LLM Ops,API/SDK/UI,https://docs.wandb.ai/,ML developer platform for experiment tracking and model monitoring,no,N/A,N/A,Arize Phoenix,N/A
+LiteLLM,API Gateways & Model Routing,SDK,https://docs.litellm.ai/docs/,Python SDK and proxy for unified access to 100+ LLM APIs,yes,https://github.com/BerriAI/litellm,36571,N/A,ccapi
+Helicone,Observability & LLM Ops,API/UI,https://docs.helicone.ai/,AI gateway and LLM observability platform with routing,yes,https://github.com/Helicone/helicone,5126,N/A,ccapi
+Portkey,API Gateways & Model Routing,API/SDK,https://portkey.ai/docs/introduction/what-is-portkey,AI gateway for managing 200+ LLMs with observability and guardrails,yes,https://github.com/Portkey-AI/gateway,10675,N/A,ccapi
+ccapi,API Gateways & Model Routing,API,https://ccapi.ai/,Unified AI API gateway for 100+ models with OpenAI-compatible endpoint,no,N/A,N/A,LiteLLM,N/A
+Guardrails AI,Guardrails & Safety,SDK,https://guardrailsai.com/docs,Python framework for input/output validation guards on LLM applications,yes,https://github.com/guardrails-ai/guardrails,6435,N/A,Lakera
+NeMo Guardrails,Guardrails & Safety,SDK,https://docs.nvidia.com/nemo-guardrails/index.html,NVIDIA toolkit for programmable safety guardrails in conversational AI,yes,https://github.com/NVIDIA/NeMo-Guardrails,5683,N/A,Lakera
+OpenAI Moderation,Guardrails & Safety,API,https://developers.openai.com/api/docs/guides/moderation,OpenAI API for classifying harmful text and image content,no,N/A,N/A,Guardrails AI,N/A
+Lakera,Guardrails & Safety,API,https://docs.lakera.ai/,AI security platform with real-time threat detection for LLM agents,no,N/A,N/A,NeMo Guardrails,N/A
+Ragas,Evaluation & Testing,SDK,https://docs.ragas.io/en/stable/,Open-source framework for evaluating RAG and LLM application quality,yes,https://github.com/explodinggradients/ragas,12679,N/A,LangSmith
+DeepEval,Evaluation & Testing,SDK,https://deepeval.com/docs/getting-started,LLM evaluation framework with 50+ research-backed metrics and Pytest integration,yes,https://github.com/confident-ai/deepeval,13756,N/A,LangSmith
+Langfuse,Observability & LLM Ops,API/SDK/UI,https://langfuse.com/docs,Open-source LLM engineering platform with observability and prompt management,yes,https://github.com/langfuse/langfuse,22154,N/A,LangSmith
+OpenAI Evals,Evaluation & Testing,SDK,https://developers.openai.com/api/docs/guides/evals,OpenAI framework for creating and running evaluations on LLM systems,yes,https://github.com/openai/evals,17876,N/A,LangSmith
+Airflow,Workflow Orchestration & Automation,SDK,https://airflow.apache.org/docs/apache-airflow/stable/,Apache workflow orchestration platform for scheduling and monitoring pipelines,yes,https://github.com/apache/airflow,44357,N/A,Control-M
+n8n,Workflow Orchestration & Automation,API/SDK/UI,https://docs.n8n.io/,Workflow automation combining visual building with custom code and 400+ integrations,yes,https://github.com/n8n-io/n8n,175811,N/A,Zapier
+Activepieces,Workflow Orchestration & Automation,API/UI,https://www.activepieces.com/docs/,Open-source no-code business automation with 635+ integrations,yes,https://github.com/activepieces/activepieces,20928,N/A,Zapier
+Node-RED,Workflow Orchestration & Automation,UI,https://nodered.org/docs/,Flow-based programming tool with browser-based visual editor and 5000+ nodes,yes,https://github.com/node-red/node-red,22816,N/A,Crosser
+DSPy,Structured Output & Prompt Engineering,SDK,https://dspy.ai/,Stanford framework for programming LMs declaratively with automatic prompt optimization,yes,https://github.com/stanfordnlp/dspy,32331,N/A,PromptLayer
+Pydantic AI,Agent Frameworks,SDK,https://ai.pydantic.dev/,Python agent framework for production-grade GenAI apps with type-safe outputs,yes,https://github.com/pydantic/pydantic-ai,15015,N/A,N/A
+Outlines,Structured Output & Prompt Engineering,SDK,https://dottxt-ai.github.io/outlines/,Python library for structured LLM generation via JSON Schema/regex/grammar,yes,https://github.com/dottxt-ai/outlines,13449,N/A,N/A
+Instructor,Structured Output & Prompt Engineering,SDK,https://python.useinstructor.com/,Multi-language library for extracting structured data from LLMs,yes,https://github.com/instructor-ai/instructor,12413,N/A,N/A
+BAML,Structured Output & Prompt Engineering,SDK,https://docs.boundaryml.com/,Domain-specific language for generating structured outputs from LLMs,yes,https://github.com/BoundaryML/baml,7642,N/A,N/A
+Vertex AI,GPU Compute & Cloud Platforms,API/SDK/Infra,https://docs.cloud.google.com/vertex-ai/docs,Google Cloud unified platform for building and scaling ML/GenAI models,no,N/A,N/A,Ray,N/A
+AWS Bedrock,GPU Compute & Cloud Platforms,API/SDK/Infra,https://docs.aws.amazon.com/bedrock/,AWS managed service for foundation model access from multiple vendors via single API,no,N/A,N/A,LiteLLM,N/A
+Label Studio,Data Labeling,UI,https://labelstud.io/guide/,Open-source multi-type data labeling and annotation tool,yes,https://github.com/HumanSignal/label-studio,26488,N/A,Scale AI
+Ollama,Inference Serving,SDK/UI,https://github.com/ollama/ollama,Local LLM runner with REST API and CLI for quantized models,yes,https://github.com/ollama/ollama,163135,N/A,LM Studio
+LM Studio,Inference Serving,SDK/UI,https://lmstudio.ai/docs/,Desktop app for running local LLMs with Python/TS SDKs and OpenAI-compatible endpoints,no,N/A,N/A,Ollama,N/A
+Hugging Face Transformers,Inference Serving,SDK,https://huggingface.co/docs/transformers/en/index,Model-definition framework for state-of-the-art ML models in text/vision/audio/video with inference and training,yes,https://github.com/huggingface/transformers,156821,N/A,AWS Bedrock
