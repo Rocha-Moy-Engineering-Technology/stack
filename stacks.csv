@@ -1,0 +1,60 @@
+name,type,docs_url,description
+LangChain,SDK,https://docs.langchain.com/,Python framework for building LLM applications with chains and agents
+LangGraph,SDK,https://langgraph.dev/,Graph-based orchestration framework for stateful AI agents with durable execution
+AutoGen,SDK,https://microsoft.github.io/autogen/,Microsoft framework for building multi-agent systems with event-driven architecture
+CrewAI,SDK,https://docs.crewai.com/,Framework for orchestrating role-playing autonomous AI agents with collaborative intelligence
+ADK,SDK,https://google.github.io/adk-docs/,Google Agent Development Kit for building multi-agent applications
+semantic-kernel,SDK,https://learn.microsoft.com/en-us/semantic-kernel/,Microsoft SDK for integrating LLMs into C#/Python/Java applications
+haystack,SDK,https://docs.haystack.deepset.ai/,Open-source AI framework for production-ready RAG and agentic workflows
+smolagents,SDK,https://huggingface.co/docs/smolagents/en/index,HuggingFace lightweight library for building code-first agents
+OpenAI,API/SDK,https://platform.openai.com/docs/api-reference/introduction,Hosted LLM API with official SDKs for Python/TypeScript/Go/C# plus Agents SDK
+Gemini,API/SDK,https://ai.google.dev/gemini-api/docs,Google hosted LLM API with GenAI SDKs for Python/JS/Go/Java
+Claude,API/SDK,https://docs.anthropic.com/en/home,Anthropic hosted LLM API with SDKs in Python/TypeScript/Java/Go/Ruby/C#/PHP plus Agent SDK
+LlamaIndex,SDK,https://docs.llamaindex.ai/,Data framework for LLM applications with RAG pipelines and document parsing
+pgvector,SDK,https://github.com/pgvector/pgvector,PostgreSQL extension for vector similarity search and embeddings storage
+GraphRAG,SDK,https://microsoft.github.io/graphrag/,Microsoft graph-based RAG system combining text extraction and network analysis
+Temporal,SDK,https://docs.temporal.io/,Durable execution platform for reliable distributed systems with automatic failure handling
+Prefect,SDK,https://docs.prefect.io/,Python workflow orchestration framework for scheduling and monitoring data pipelines
+Ray,SDK/Infra,https://docs.ray.io/en/latest/,Distributed AI compute framework for ML training/serving/data processing
+Max,SDK/Infra,https://www.modular.com/max,High-performance inference framework with cross-vendor hardware support
+vLLM,SDK,https://docs.vllm.ai/,High-throughput memory-efficient LLM inference and serving engine
+TGI,SDK,https://huggingface.co/docs/text-generation-inference/index,HuggingFace toolkit for deploying and serving large language models
+SGLang,SDK,https://docs.sglang.io/,High-performance serving framework for large language and multimodal models
+Groq,API/Infra,https://console.groq.com/docs/overview,Hosted API for fast LLM inference on custom LPU hardware
+Cerebras,API/Infra,https://inference-docs.cerebras.ai/,AI inference API on custom wafer-scale engine hardware
+KServe,SDK/Infra,https://kserve.github.io/website/,Kubernetes-native model serving platform for ML inference at scale
+Triton Inference Server,SDK/Infra,https://docs.nvidia.com/deeplearning/triton-inference-server/,NVIDIA inference serving software for multi-framework model deployment
+BentoML,SDK/Infra,https://docs.bentoml.com/,Python framework for building model inference APIs and serving systems
+Modal,API/SDK/Infra,https://modal.com/docs,Serverless GPU compute platform for AI workloads with elastic scaling
+RunPod,API/Infra,https://docs.runpod.io/,GPU cloud platform offering pod instances and serverless GPU endpoints
+Vast.ai,API/Infra,https://docs.vast.ai/,GPU marketplace for affordable on-demand cloud computing
+Inferless,API/Infra,https://docs.inferless.com/,Serverless GPU inference platform for deploying ML models
+LangSmith,API/SDK/UI,https://docs.smith.langchain.com/,LLM observability platform for tracing and evaluation with dashboard
+Arize Phoenix,SDK/UI,https://docs.arize.com/phoenix,Open-source AI observability for debugging and iterating on LLM applications
+Weights & Biases,API/SDK/UI,https://docs.wandb.ai/,ML developer platform for experiment tracking and model monitoring
+LiteLLM,SDK,https://docs.litellm.ai/docs/,Python SDK and proxy for unified access to 100+ LLM APIs
+Helicone,API/UI,https://docs.helicone.ai/,AI gateway and LLM observability platform with routing
+Portkey,API/SDK,https://portkey.ai/docs/introduction/what-is-portkey,AI gateway for managing 200+ LLMs with observability and guardrails
+ccapi,API,https://ccapi.ai/,Unified AI API gateway for 100+ models with OpenAI-compatible endpoint
+Guardrails AI,SDK,https://guardrailsai.com/docs,Python framework for input/output validation guards on LLM applications
+NeMo Guardrails,SDK,https://docs.nvidia.com/nemo-guardrails/index.html,NVIDIA toolkit for programmable safety guardrails in conversational AI
+OpenAI Moderation,API,https://platform.openai.com/docs/guides/moderation,OpenAI API for classifying harmful text and image content
+Lakera,API,https://docs.lakera.ai/,AI security platform with real-time threat detection for LLM agents
+Ragas,SDK,https://docs.ragas.io/en/stable/,Open-source framework for evaluating RAG and LLM application quality
+DeepEval,SDK,https://docs.confident-ai.com/docs/getting-started,LLM evaluation framework with 50+ research-backed metrics and Pytest integration
+Langfuse,API/SDK/UI,https://langfuse.com/docs,Open-source LLM engineering platform with observability and prompt management
+OpenAI Evals,SDK,https://platform.openai.com/docs/guides/evals,OpenAI framework for creating and running evaluations on LLM systems
+Airflow,SDK,https://airflow.apache.org/docs/apache-airflow/stable/,Apache workflow orchestration platform for scheduling and monitoring pipelines
+n8n,API/SDK/UI,https://docs.n8n.io/,Workflow automation combining visual building with custom code and 400+ integrations
+Activepieces,API/UI,https://www.activepieces.com/docs/,Open-source no-code business automation with 635+ integrations
+Node-RED,UI,https://nodered.org/docs/,Flow-based programming tool with browser-based visual editor and 5000+ nodes
+DSPy,SDK,https://dspy.ai/,Stanford framework for programming LMs declaratively with automatic prompt optimization
+Pydantic AI,SDK,https://ai.pydantic.dev/,Python agent framework for production-grade GenAI apps with type-safe outputs
+Outlines,SDK,https://dottxt-ai.github.io/outlines/,Python library for structured LLM generation via JSON Schema/regex/grammar
+Instructor,SDK,https://python.useinstructor.com/,Multi-language library for extracting structured data from LLMs
+BAML,SDK,https://docs.boundaryml.com/,Domain-specific language for generating structured outputs from LLMs
+Vertex AI,API/SDK/Infra,https://cloud.google.com/vertex-ai/docs,Google Cloud unified platform for building and scaling ML/GenAI models
+AWS Bedrock,API/SDK/Infra,https://docs.aws.amazon.com/bedrock/,AWS managed service for foundation model access from multiple vendors via single API
+Label Studio,UI,https://labelstud.io/guide/,Open-source multi-type data labeling and annotation tool
+Ollama,SDK/UI,https://github.com/ollama/ollama,Local LLM runner with REST API and CLI for quantized models
+LM Studio,SDK/UI,https://lmstudio.ai/docs/,Desktop app for running local LLMs with Python/TS SDKs and OpenAI-compatible endpoints
