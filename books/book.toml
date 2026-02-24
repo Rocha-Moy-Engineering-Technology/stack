@@ -1,0 +1,20 @@
+[book]
+title = "AI/ML Stack Documentation"
+authors = ["Head of AI Agent"]
+description = "Comprehensive documentation book covering 63 AI/ML tools across 12 functional groups"
+language = "en"
+src = "src"
+
+[build]
+build-dir = "book"
+
+[output.html]
+default-theme = "light"
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/Rocha-Moy-Engineering-Technology/stack"
+edit-url-template = "https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/{path}"
+
+[output.html.search]
+enable = true
+limit-results = 30
+boost-hierarchy = 2

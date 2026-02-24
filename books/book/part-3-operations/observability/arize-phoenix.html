@@ -1,0 +1,860 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Arize Phoenix - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 63 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-cf9a7bd0.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-c071be6d.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-3-operations/observability/arize-phoenix.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="arize-phoenix"><a class="header" href="#arize-phoenix">Arize Phoenix</a></h1>
+<blockquote>
+<p>Open-source AI observability for debugging and iterating on LLM applications</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Observability &amp; LLM Ops</td></tr>
+<tr><td>Type</td><td>SDK/UI</td></tr>
+<tr><td>Open Source</td><td>Yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/Arize-AI/phoenix">Arize-AI/phoenix</a></td></tr>
+<tr><td>Stars</td><td>8628</td></tr>
+<tr><td>Documentation</td><td><a href="https://arize.com/docs/phoenix">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Arize Phoenix is an open-source AI observability and evaluation platform designed for experimentation, evaluation, and troubleshooting of Large Language Model (LLM) applications. Built on OpenTelemetry standards and powered by OpenInference instrumentation, Phoenix provides a vendor-agnostic and language-agnostic approach to capturing, analyzing, and improving AI application behavior. [1][2]</p>
+<p>The platform is organized around four core workflows: <strong>tracing</strong> captures the full execution path of LLM applications through distributed traces; <strong>evaluation</strong> measures output quality using LLM-based, code-based, and human evaluators; <strong>prompt engineering</strong> enables iterative prompt improvement with version control and playground experimentation; and <strong>datasets and experiments</strong> provide systematic comparison of application versions against consistent inputs and evaluation criteria. [1]</p>
+<p>Phoenix runs as a standalone server with a web UI for visualization and analysis, backed by either SQLite (default) or PostgreSQL for persistent storage. It accepts traces via the OpenTelemetry Protocol (OTLP), making it compatible with any OpenTelemetry-instrumented application. SDKs are available for Python, TypeScript, and Java. [1][2]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<p><strong>Traces</strong> represent the complete execution path of a single request through an LLM application. A trace captures the sequence of operations from initial input to final output, including model calls, document retrieval, tool invocations, and custom logic. Phoenix accepts traces via OTLP over HTTP or gRPC. [1]</p>
+<p><strong>Spans</strong> are the individual units within a trace, each representing a discrete operation. Phoenix defines nine span kinds to categorize operations: LLM (model API calls), EMBEDDING (vector generation), CHAIN (orchestration steps), RETRIEVER (data fetching), RERANKER (document relevance scoring), TOOL (external tool invocations), AGENT (reasoning blocks coordinating tools), GUARDRAIL (safety filtering), and EVALUATOR (output assessment). [3]</p>
+<p><strong>Projects</strong> organize traces by application or environment. Each project collects its own set of traces, evaluations, and annotations, allowing teams to separate development, staging, and production data within a single Phoenix instance. [1]</p>
+<p><strong>Evaluations</strong> are quality assessments attached to traces or spans. Phoenix supports three evaluation methods: LLM-based evaluators that use language models to judge output quality, code-based evaluators that apply deterministic checks (regex, exact match, distance metrics), and human annotations with ground truth labels. [1][4]</p>
+<p><strong>Datasets</strong> are versioned collections of input-output examples extracted from traces or uploaded directly. They serve as fixed benchmarks for running experiments and comparing application changes. [1]</p>
+<p><strong>Experiments</strong> systematically compare application versions by running them against the same dataset with identical evaluators. Each experiment records task outputs and evaluator scores, enabling side-by-side comparison of different prompts, models, or retrieval configurations. [5]</p>
+<p><strong>Prompts</strong> are managed artifacts with version control, supporting Mustache template syntax (<code>{{ variable }}</code>) and f-string formatting. Each prompt version records its template content, model configuration, and associated metadata, enabling teams to track changes and deploy the best-performing version. [6]</p>
+<p><strong>Annotations</strong> are metadata labels attached to spans, including scores, labels, and explanations from human reviewers or automated evaluators. Annotations provide the ground truth data used to measure and improve application quality. [1]</p>
+<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
+<h3 id="python-installation"><a class="header" href="#python-installation">Python Installation</a></h3>
+<p>Install the Phoenix server and OpenTelemetry integration:</p>
+<pre><code class="language-bash">pip install arize-phoenix
+pip install arize-phoenix-otel
+</code></pre>
+<p>For evaluation capabilities, install the evals package:</p>
+<pre><code class="language-bash">pip install arize-phoenix-evals
+</code></pre>
+<p>For client-only usage (connecting to an existing Phoenix server):</p>
+<pre><code class="language-bash">pip install arize-phoenix-client
+</code></pre>
+<h3 id="typescript-installation"><a class="header" href="#typescript-installation">TypeScript Installation</a></h3>
+<pre><code class="language-bash">npm install @arizeai/phoenix-otel @arizeai/openinference-core
+npm install @arizeai/phoenix-client    # Client SDK
+npm install @arizeai/phoenix-evals     # Evaluations
+</code></pre>
+<h3 id="launching-the-phoenix-server"><a class="header" href="#launching-the-phoenix-server">Launching the Phoenix Server</a></h3>
+<p>Start Phoenix locally in a terminal:</p>
+<pre><code class="language-bash">phoenix serve
+</code></pre>
+<p>This launches the server on <code>http://localhost:6006</code> with the gRPC OTLP collector on port 4317. The web UI is immediately accessible for viewing traces and running evaluations. [1]</p>
+<h3 id="docker-deployment"><a class="header" href="#docker-deployment">Docker Deployment</a></h3>
+<pre><code class="language-bash">docker run -p 6006:6006 -p 4317:4317 arizephoenix/phoenix:latest
+</code></pre>
+<p>For production, pin to a specific version:</p>
+<pre><code class="language-bash">docker run -p 6006:6006 -p 4317:4317 arizephoenix/phoenix:version-8.0.0
+</code></pre>
+<h3 id="connecting-and-instrumenting"><a class="header" href="#connecting-and-instrumenting">Connecting and Instrumenting</a></h3>
+<p>Configure the tracer provider to send traces to Phoenix:</p>
+<pre><code class="language-python">from phoenix.otel import register
+
+tracer_provider = register(
+    project_name="my-llm-app",
+    auto_instrument=True,
+)
+tracer = tracer_provider.get_tracer(__name__)
+</code></pre>
+<p>With <code>auto_instrument=True</code>, Phoenix automatically discovers and activates all installed OpenInference instrumentor packages. [3]</p>
+<p>For explicit instrumentation of specific libraries:</p>
+<pre><code class="language-python">from openinference.instrumentation.openai import OpenAIInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register()
+OpenAIInstrumentor().instrument(tracer_provider=tracer_provider)
+</code></pre>
+<h3 id="environment-variables"><a class="header" href="#environment-variables">Environment Variables</a></h3>
+<p>Set the connection endpoint and authentication:</p>
+<pre><code class="language-bash">export PHOENIX_COLLECTOR_ENDPOINT="http://localhost:6006"
+export PHOENIX_API_KEY="your-phoenix-api-key"   # Required for cloud or authenticated instances
+</code></pre>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Phoenix follows a collector-server-UI architecture built on OpenTelemetry:</p>
+<pre><code>Application Code
+    |
+    | (OTLP over HTTP/gRPC)
+    v
+Phoenix Collector (port 4317 gRPC, port 6006 HTTP)
+    |
+    v
+Storage Backend (SQLite or PostgreSQL)
+    |
+    v
+Phoenix Web UI (port 6006)
+    |
+    v
+REST API / Python Client / TypeScript Client
+</code></pre>
+<p><strong>Collector Layer</strong>: Accepts traces via OTLP, the standard OpenTelemetry protocol. Any OpenTelemetry-compatible application can send traces to Phoenix without Phoenix-specific dependencies. The gRPC collector runs on port 4317 and HTTP on port 6006 by default. [1]</p>
+<p><strong>Storage Layer</strong>: Phoenix stores traces, evaluations, datasets, and experiments in a SQL database. SQLite is the default for local development (stored in <code>~/.phoenix/</code>). PostgreSQL is supported for production deployments with higher concurrency and durability requirements. [7]</p>
+<p><strong>Web UI</strong>: A browser-based interface for exploring traces, viewing span details, running evaluations, managing prompts, and comparing experiments. The UI provides filtering, search, and visualization of trace hierarchies with timing and token usage breakdowns. [1]</p>
+<p><strong>Client SDK</strong>: The <code>arize-phoenix-client</code> package provides a REST API client for programmatic access to all Phoenix resources: projects, traces, spans, annotations, datasets, experiments, and prompts. Both synchronous (<code>Client</code>) and asynchronous (<code>AsyncClient</code>) implementations are available. [8]</p>
+<p><strong>OpenInference</strong>: An open-source project maintained alongside Phoenix that defines semantic conventions for AI observability on top of OpenTelemetry. OpenInference provides auto-instrumentor packages for popular frameworks and the span attribute schema that Phoenix uses to parse and display trace data. [1]</p>
+<h3 id="python-packages"><a class="header" href="#python-packages">Python Packages</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Package</th><th>Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td><code>arize-phoenix</code></td><td>Full Phoenix server with UI</td></tr>
+<tr><td><code>arize-phoenix-otel</code></td><td>Lightweight OpenTelemetry wrapper with Phoenix defaults</td></tr>
+<tr><td><code>arize-phoenix-client</code></td><td>REST API client for server interaction</td></tr>
+<tr><td><code>arize-phoenix-evals</code></td><td>Evaluation framework (LLM-based and code-based)</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="typescript-packages"><a class="header" href="#typescript-packages">TypeScript Packages</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Package</th><th>Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td><code>@arizeai/phoenix-otel</code></td><td>OpenTelemetry configuration for Phoenix</td></tr>
+<tr><td><code>@arizeai/phoenix-client</code></td><td>REST API client</td></tr>
+<tr><td><code>@arizeai/phoenix-evals</code></td><td>Evaluation framework</td></tr>
+<tr><td><code>@arizeai/openinference-core</code></td><td>Core instrumentation utilities</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<h3 id="distributed-tracing"><a class="header" href="#distributed-tracing">Distributed Tracing</a></h3>
+<p>Phoenix captures the full execution path of LLM applications through OpenTelemetry-based distributed tracing. Auto-instrumentation packages automatically capture spans for supported frameworks without code changes. The trace view provides visibility into performance bottlenecks, token usage breakdown across LLM calls, runtime exceptions, retrieved documents with relevance scores, LLM parameters and prompt templates, and function call selections. [1]</p>
+<pre><code class="language-python">from phoenix.otel import register
+
+tracer_provider = register(
+    project_name="my-rag-app",
+    auto_instrument=True,
+)
+</code></pre>
+<h3 id="manual-instrumentation"><a class="header" href="#manual-instrumentation">Manual Instrumentation</a></h3>
+<p>For custom logic not covered by auto-instrumentation, Phoenix provides decorators and context managers:</p>
+<pre><code class="language-python">from phoenix.otel import register
+
+tracer_provider = register(project_name="my-app")
+tracer = tracer_provider.get_tracer(__name__)
+
+@tracer.chain
+def my_processing_step(input: str) -&gt; str:
+    return process(input)
+
+@tracer.tool
+def search_database(query: str) -&gt; str:
+    """Search the product database."""
+    return results
+
+@tracer.agent
+def run_agent(input: str) -&gt; str:
+    return agent_response
+</code></pre>
+<p>Context managers provide granular control over individual code blocks:</p>
+<pre><code class="language-python">with tracer.start_as_current_span("custom-step", openinference_span_kind="chain") as span:
+    span.set_input("input data")
+    result = do_work()
+    span.set_output(result)
+</code></pre>
+<p>LLM spans support rich metadata including message history, token counts, and model parameters:</p>
+<pre><code class="language-python">@tracer.llm(
+    process_input=process_input,
+    process_output=process_output,
+)
+def invoke_llm(messages):
+    return client.chat.completions.create(messages=messages)
+</code></pre>
+<h3 id="context-attributes"><a class="header" href="#context-attributes">Context Attributes</a></h3>
+<p>Attach metadata to traces using context managers that propagate to all child spans:</p>
+<pre><code class="language-python">from openinference.instrumentation import using_attributes
+
+with using_attributes(
+    session_id="session-123",
+    user_id="user-456",
+    metadata={"environment": "production"},
+    tags=["v2", "experiment-a"],
+    prompt_template="Summarize: {{ text }}",
+    prompt_template_version="v1.0",
+):
+    result = my_llm_chain(input_text)
+</code></pre>
+<p>Individual context managers are also available for setting specific attributes:</p>
+<pre><code class="language-python">from openinference.instrumentation import using_session, using_user, using_metadata, using_tags
+
+with using_session(session_id="session-123"):
+    with using_user("user-456"):
+        result = my_llm_chain(input_text)
+</code></pre>
+<h3 id="evaluations"><a class="header" href="#evaluations">Evaluations</a></h3>
+<p>Phoenix provides a flexible evaluation framework for measuring output quality. Evaluators can be LLM-based (using language models as judges) or code-based (deterministic checks): [4]</p>
+<pre><code class="language-python">from phoenix.evals import create_classifier
+from phoenix.evals.llm import LLM
+
+llm = LLM(provider="openai", model="gpt-4o")
+
+helpfulness_evaluator = create_classifier(
+    name="helpfulness",
+    prompt_template="Rate the response as helpful or not:\n\nQuery: {input}\nResponse: {output}",
+    llm=llm,
+    choices={"helpful": 1.0, "not_helpful": 0.0},
+)
+
+scores = helpfulness_evaluator.evaluate({
+    "input": "How do I reset my password?",
+    "output": "Go to Settings &gt; Security &gt; Reset Password.",
+})
+</code></pre>
+<p>Run evaluations across DataFrames of traces:</p>
+<pre><code class="language-python">from phoenix.evals.evaluators import async_evaluate_dataframe
+
+results_df = await async_evaluate_dataframe(
+    dataframe=trace_df,
+    evaluators=[helpfulness_evaluator, relevance_evaluator],
+)
+</code></pre>
+<h3 id="datasets-and-experiments"><a class="header" href="#datasets-and-experiments">Datasets and Experiments</a></h3>
+<p>Create datasets from traces or direct uploads, then run experiments to compare application versions: [5]</p>
+<pre><code class="language-python">from phoenix.client import Client
+from phoenix.client.experiments import run_experiment
+
+client = Client()
+
+dataset = client.datasets.get_dataset(dataset="my-test-set")
+
+def task(input):
+    return my_llm_chain(input["question"])
+
+def evaluate_correctness(output, expected):
+    return output.strip().lower() == expected.strip().lower()
+
+experiment = run_experiment(
+    dataset,
+    task=task,
+    evaluators=[evaluate_correctness],
+    experiment_name="v2-prompt-update",
+)
+</code></pre>
+<p>Experiments support both synchronous and asynchronous task functions. The <code>dry_run=True</code> parameter allows testing the setup before full execution. Evaluators can be added or modified after an experiment completes using <code>evaluate_experiment()</code>.</p>
+<h3 id="prompt-management"><a class="header" href="#prompt-management">Prompt Management</a></h3>
+<p>Store, version, and retrieve prompts programmatically: [6]</p>
+<pre><code class="language-python">from phoenix.client import Client
+from phoenix.client.types import PromptVersion
+
+client = Client()
+
+content = """You're an expert educator in {{ topic }}.
+Summarize the following article in bullet points:
+{{ article }}"""
+
+prompt = client.prompts.create(
+    name="article-summarizer",
+    prompt_description="Summarize articles for beginners",
+    version=PromptVersion(
+        [{"role": "user", "content": content}],
+        model_name="gpt-4o-mini",
+    ),
+)
+</code></pre>
+<p>Retrieve prompts by name (latest version), specific version ID, or tag:</p>
+<pre><code class="language-python">prompt = client.prompts.get(name="article-summarizer")
+</code></pre>
+<h3 id="prompt-playground"><a class="header" href="#prompt-playground">Prompt Playground</a></h3>
+<p>The web UI includes an interactive Prompt Playground for iterating on prompts with production data. Features include side-by-side model comparison, parameter adjustment (temperature, max tokens), span replay to test prompts against real inputs captured in traces, and multi-variant testing across model providers. [1]</p>
+<h3 id="trace-suppression"><a class="header" href="#trace-suppression">Trace Suppression</a></h3>
+<p>Conditionally disable tracing for sensitive or high-frequency operations:</p>
+<pre><code class="language-python">from phoenix.otel import suppress_tracing
+
+with suppress_tracing():
+    sensitive_result = call_internal_service()
+</code></pre>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<p><strong>RAG Application Debugging</strong>: Trace the full retrieval-augmented generation pipeline to identify retrieval failures, irrelevant document selection, or hallucinations. Inspect retrieved documents with relevance scores, view embedding distances, and evaluate response quality against ground truth.</p>
+<p><strong>Agent Loop Analysis</strong>: Visualize multi-step agent executions to identify infinite loops, unnecessary tool calls, or suboptimal tool selection patterns. Agent spans capture the reasoning chain including which tools were called, with what parameters, and in what order.</p>
+<p><strong>Production Monitoring</strong>: Deploy Phoenix as a persistent server receiving traces from production applications. Set up automated evaluators to score incoming traces, track quality metrics over time, and set alerts on degradation patterns.</p>
+<p><strong>Model Comparison</strong>: Use the Prompt Playground to compare responses across different models (GPT-4o, Claude, Gemini) with identical inputs. Run experiments against datasets to quantify performance differences with statistical rigor.</p>
+<p><strong>Prompt Iteration</strong>: Capture production traces to build datasets of real-world inputs, then iterate on prompts using the Playground with span replay. Version each prompt change and run experiments to validate improvements before deployment.</p>
+<p><strong>Evaluation Pipeline Development</strong>: Build custom evaluation pipelines combining LLM judges, code-based checks, and human annotations. Use benchmark datasets to calibrate evaluator accuracy before deploying them for automated scoring.</p>
+<p><strong>Cost Optimization</strong>: Break down token usage across LLM calls within traces to identify expensive operations. Compare token consumption across prompt versions or model choices to optimize cost-performance tradeoffs.</p>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="python-client-arize-phoenix-client"><a class="header" href="#python-client-arize-phoenix-client">Python Client (<code>arize-phoenix-client</code>)</a></h3>
+<p><strong>Client Initialization</strong>:</p>
+<pre><code class="language-python">from phoenix.client import Client
+
+client = Client()                                    # Local server (localhost:6006)
+client = Client(endpoint="https://your-phoenix.com") # Remote server
+</code></pre>
+<p><strong>Prompts Resource</strong>:</p>
+<ul>
+<li><code>client.prompts.create(name, version, prompt_description)</code> – Create a new prompt with initial version</li>
+<li><code>client.prompts.get(name, version_id, tag)</code> – Retrieve prompt by name, version, or tag</li>
+</ul>
+<p><strong>Datasets Resource</strong>:</p>
+<ul>
+<li><code>client.datasets.list()</code> – List all datasets</li>
+<li><code>client.datasets.get_dataset(dataset)</code> – Fetch dataset with examples</li>
+<li><code>client.datasets.create_dataset(name, inputs, outputs)</code> – Create dataset from dictionaries, DataFrames, or CSV</li>
+<li><code>client.datasets.to_dataframe(dataset)</code> – Convert dataset to pandas DataFrame</li>
+</ul>
+<p><strong>Spans Resource</strong>:</p>
+<ul>
+<li><code>client.spans.get_spans_dataframe(project_name, filter)</code> – Query spans as DataFrame with filtering</li>
+<li><code>client.spans.get_span_annotations_dataframe(project_name)</code> – Retrieve span annotations</li>
+<li><code>client.spans.log_span_annotations(annotations)</code> – Bulk log annotations</li>
+</ul>
+<p><strong>Projects Resource</strong>:</p>
+<ul>
+<li><code>client.projects.list()</code> – List all projects</li>
+<li><code>client.projects.create(name)</code> – Create a new project</li>
+</ul>
+<p><strong>Experiments</strong>:</p>
+<ul>
+<li><code>run_experiment(dataset, task, evaluators, experiment_name)</code> – Run experiment against dataset</li>
+<li><code>evaluate_experiment(experiment, evaluators)</code> – Add evaluators to completed experiment</li>
+</ul>
+<h3 id="rest-api-endpoints"><a class="header" href="#rest-api-endpoints">REST API Endpoints</a></h3>
+<p>Phoenix exposes a REST API for spans, annotations, datasets, and experiments. The <code>/v1/traces</code> endpoint accepts OTLP trace data via HTTP POST. [8]</p>
+<h3 id="opentelemetry-integration"><a class="header" href="#opentelemetry-integration">OpenTelemetry Integration</a></h3>
+<p>Phoenix accepts standard OTLP traces on:</p>
+<ul>
+<li><strong>HTTP</strong>: <code>http://localhost:6006/v1/traces</code></li>
+<li><strong>gRPC</strong>: <code>localhost:4317</code></li>
+</ul>
+<h2 id="configuration-and-customization"><a class="header" href="#configuration-and-customization">Configuration and Customization</a></h2>
+<h3 id="server-environment-variables"><a class="header" href="#server-environment-variables">Server Environment Variables</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Variable</th><th>Default</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td><code>PHOENIX_PORT</code></td><td>6006</td><td>Web server and HTTP collector port</td></tr>
+<tr><td><code>PHOENIX_GRPC_PORT</code></td><td>4317</td><td>gRPC OTLP collector port</td></tr>
+<tr><td><code>PHOENIX_HOST</code></td><td>0.0.0.0</td><td>Server host binding</td></tr>
+<tr><td><code>PHOENIX_WORKING_DIR</code></td><td>~/.phoenix/</td><td>Data directory for SQLite and exports</td></tr>
+<tr><td><code>PHOENIX_SQL_DATABASE_URL</code></td><td>SQLite</td><td>Database connection string (PostgreSQL or SQLite)</td></tr>
+<tr><td><code>PHOENIX_HOST_ROOT_PATH</code></td><td>(none)</td><td>Root path prefix for reverse proxy deployments</td></tr>
+<tr><td><code>PHOENIX_DEFAULT_RETENTION_POLICY_DAYS</code></td><td>0 (infinite)</td><td>Trace retention period in days</td></tr>
+<tr><td><code>PHOENIX_ENABLE_PROMETHEUS</code></td><td>false</td><td>Enable Prometheus metrics on port 9090</td></tr>
+<tr><td><code>PHOENIX_CSRF_TRUSTED_ORIGINS</code></td><td>(none)</td><td>Comma-separated origins bypassing CSRF protection</td></tr>
+<tr><td><code>PHOENIX_ALLOW_EXTERNAL_RESOURCES</code></td><td>true</td><td>External resource loading (set false for air-gapped)</td></tr>
+<tr><td><code>PHOENIX_TELEMETRY_ENABLED</code></td><td>true</td><td>Anonymous usage analytics (never collects trace data)</td></tr>
+<tr><td><code>PHOENIX_DEFAULT_ADMIN_INITIAL_PASSWORD</code></td><td>admin</td><td>Initial admin password when authentication is enabled</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="postgresql-configuration"><a class="header" href="#postgresql-configuration">PostgreSQL Configuration</a></h3>
+<p>For production deployments, configure PostgreSQL either via connection string or individual variables: [7]</p>
+<pre><code class="language-bash">export PHOENIX_SQL_DATABASE_URL="postgresql://user:pass@localhost:5432/phoenix"
+
+# Or via individual variables:
+export PHOENIX_POSTGRES_HOST="localhost"
+export PHOENIX_POSTGRES_PORT="5432"
+export PHOENIX_POSTGRES_USER="phoenix"
+export PHOENIX_POSTGRES_PASSWORD="secret"
+export PHOENIX_POSTGRES_DB="phoenix"
+export PHOENIX_SQL_DATABASE_SCHEMA="phoenix"  # Optional schema
+</code></pre>
+<h3 id="docker-compose-with-postgresql"><a class="header" href="#docker-compose-with-postgresql">Docker Compose with PostgreSQL</a></h3>
+<pre><code class="language-yaml">version: "3.8"
+services:
+  phoenix:
+    image: arizephoenix/phoenix:version-8.0.0
+    ports:
+      - "6006:6006"
+      - "4317:4317"
+    environment:
+      - PHOENIX_SQL_DATABASE_URL=postgresql://phoenix:secret@db:5432/phoenix
+    depends_on:
+      - db
+  db:
+    image: postgres:16
+    environment:
+      - POSTGRES_USER=phoenix
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=phoenix
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+volumes:
+  pgdata:
+</code></pre>
+<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
+<p>Phoenix supports authentication via OAuth2, Lightweight Directory Access Protocol (LDAP), and local accounts with role-based access controls. When authentication is enabled, all API interactions require an <code>Authorization: Bearer &lt;token&gt;</code> header or the <code>PHOENIX_API_KEY</code> environment variable. [7]</p>
+<h3 id="client-configuration"><a class="header" href="#client-configuration">Client Configuration</a></h3>
+<pre><code class="language-python">import os
+
+os.environ["PHOENIX_COLLECTOR_ENDPOINT"] = "https://your-phoenix-instance.com"
+os.environ["PHOENIX_API_KEY"] = "your-api-key"
+os.environ["PHOENIX_CLIENT_HEADERS"] = "api_key=your-api-key"
+</code></pre>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="with-openai"><a class="header" href="#with-openai">With OpenAI</a></h3>
+<pre><code class="language-python">from openinference.instrumentation.openai import OpenAIInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register(project_name="openai-app")
+OpenAIInstrumentor().instrument(tracer_provider=tracer_provider)
+
+# All OpenAI calls are now automatically traced
+from openai import OpenAI
+client = OpenAI()
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Hello"}],
+)
+</code></pre>
+<h3 id="with-langchain"><a class="header" href="#with-langchain">With LangChain</a></h3>
+<pre><code class="language-python">from openinference.instrumentation.langchain import LangChainInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register(project_name="langchain-app")
+LangChainInstrumentor().instrument(tracer_provider=tracer_provider)
+</code></pre>
+<h3 id="with-llamaindex"><a class="header" href="#with-llamaindex">With LlamaIndex</a></h3>
+<pre><code class="language-python">from openinference.instrumentation.llama_index import LlamaIndexInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register(project_name="llamaindex-app")
+LlamaIndexInstrumentor().instrument(tracer_provider=tracer_provider)
+</code></pre>
+<h3 id="with-haystack"><a class="header" href="#with-haystack">With Haystack</a></h3>
+<pre><code class="language-python">from openinference.instrumentation.haystack import HaystackInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register()
+HaystackInstrumentor().instrument(tracer_provider=tracer_provider)
+</code></pre>
+<h3 id="with-crewai"><a class="header" href="#with-crewai">With CrewAI</a></h3>
+<pre><code class="language-python">from openinference.instrumentation.crewai import CrewAIInstrumentor
+from openinference.instrumentation.openai import OpenAIInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register(project_name="crewai-app", auto_instrument=True)
+</code></pre>
+<h3 id="with-dspy"><a class="header" href="#with-dspy">With DSPy</a></h3>
+<pre><code class="language-python">from openinference.instrumentation.dspy import DSPyInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register(project_name="dspy-app")
+DSPyInstrumentor().instrument(tracer_provider=tracer_provider)
+</code></pre>
+<h3 id="with-evaluation-frameworks-ragas-deepeval-cleanlab"><a class="header" href="#with-evaluation-frameworks-ragas-deepeval-cleanlab">With Evaluation Frameworks (Ragas, Deepeval, Cleanlab)</a></h3>
+<p>Phoenix integrates with third-party evaluation frameworks. Trace evaluations from Ragas, Deepeval, or Cleanlab can be ingested as annotations on Phoenix spans, combining framework-specific metrics with Phoenix’s trace visualization. [1]</p>
+<h3 id="typescript--vercel-ai-sdk"><a class="header" href="#typescript--vercel-ai-sdk">TypeScript / Vercel AI SDK</a></h3>
+<pre><code class="language-typescript">import { NodeTracerProvider } from "@opentelemetry/sdk-trace-node";
+import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-base";
+import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-proto";
+import { resourceFromAttributes } from "@opentelemetry/resources";
+import { ATTR_SERVICE_NAME } from "@opentelemetry/semantic-conventions";
+import { SEMRESATTRS_PROJECT_NAME } from "@arizeai/openinference-semantic-conventions";
+
+const provider = new NodeTracerProvider({
+    resource: resourceFromAttributes({
+        [ATTR_SERVICE_NAME]: "my-app",
+        [SEMRESATTRS_PROJECT_NAME]: "my-app",
+    }),
+    spanProcessors: [
+        new BatchSpanProcessor(
+            new OTLPTraceExporter({
+                url: `${process.env.PHOENIX_COLLECTOR_ENDPOINT}/v1/traces`,
+            })
+        ),
+    ],
+});
+
+provider.register();
+</code></pre>
+<h3 id="with-litellm-proxy"><a class="header" href="#with-litellm-proxy">With LiteLLM Proxy</a></h3>
+<p>Phoenix integrates with LiteLLM as an observability backend. LiteLLM can be configured to send traces to Phoenix, providing visibility across all models routed through the proxy.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="end-to-end-rag-tracing"><a class="header" href="#end-to-end-rag-tracing">End-to-End RAG Tracing</a></h3>
+<pre><code class="language-python">from openinference.instrumentation.openai import OpenAIInstrumentor
+from phoenix.otel import register
+
+tracer_provider = register(
+    project_name="rag-pipeline",
+    endpoint="http://localhost:6006/v1/traces",
+    auto_instrument=True,
+)
+tracer = tracer_provider.get_tracer(__name__)
+
+from openai import OpenAI
+client = OpenAI()
+
+@tracer.chain
+def rag_pipeline(question: str) -&gt; str:
+    documents = retrieve_documents(question)
+    context = "\n".join(doc.text for doc in documents)
+    response = client.chat.completions.create(
+        model="gpt-4o",
+        messages=[
+            {"role": "system", "content": f"Answer using this context:\n{context}"},
+            {"role": "user", "content": question},
+        ],
+    )
+    return response.choices[0].message.content
+
+@tracer.retriever
+def retrieve_documents(query: str):
+    # Vector search implementation
+    return vector_store.similarity_search(query, k=5)
+</code></pre>
+<h3 id="custom-llm-evaluator-with-benchmark-dataset"><a class="header" href="#custom-llm-evaluator-with-benchmark-dataset">Custom LLM Evaluator with Benchmark Dataset</a></h3>
+<pre><code class="language-python">from phoenix.client import Client
+from phoenix.client.experiments import run_experiment
+from phoenix.evals import create_classifier
+from phoenix.evals.llm import LLM
+
+client = Client()
+llm = LLM(provider="openai", model="gpt-4o-mini")
+
+tone_evaluator = create_classifier(
+    name="tone",
+    llm=llm,
+    prompt_template="Is the tone of this response professional?\n\nResponse: {output}",
+    choices={"professional": 1.0, "unprofessional": 0.0},
+)
+
+relevance_evaluator = create_classifier(
+    name="relevance",
+    llm=llm,
+    prompt_template="Is this response relevant to the query?\n\nQuery: {input}\nResponse: {output}",
+    choices={"relevant": 1.0, "irrelevant": 0.0},
+)
+
+dataset = client.datasets.get_dataset(dataset="customer-support-test")
+
+experiment = run_experiment(
+    dataset,
+    task=my_support_agent,
+    evaluators=[tone_evaluator, relevance_evaluator],
+    experiment_name="support-agent-v3",
+)
+</code></pre>
+<h3 id="prompt-versioning-workflow"><a class="header" href="#prompt-versioning-workflow">Prompt Versioning Workflow</a></h3>
+<pre><code class="language-python">from phoenix.client import Client
+from phoenix.client.types import PromptVersion
+
+client = Client()
+
+# Create initial prompt version
+v1_content = "Summarize this article:\n{{ article }}"
+client.prompts.create(
+    name="summarizer",
+    version=PromptVersion(
+        [{"role": "user", "content": v1_content}],
+        model_name="gpt-4o-mini",
+    ),
+)
+
+# Create improved version
+v2_content = """You are an expert technical writer.
+Summarize the following article in 3-5 bullet points for a technical audience:
+{{ article }}"""
+
+client.prompts.create(
+    name="summarizer",
+    version=PromptVersion(
+        [{"role": "user", "content": v2_content}],
+        model_name="gpt-4o",
+    ),
+)
+
+# Retrieve latest version in production
+prompt = client.prompts.get(name="summarizer")
+</code></pre>
+<h3 id="session-aware-tracing"><a class="header" href="#session-aware-tracing">Session-Aware Tracing</a></h3>
+<pre><code class="language-python">from openinference.instrumentation import using_attributes
+from phoenix.otel import register
+
+register(project_name="chatbot", auto_instrument=True)
+
+def handle_message(session_id: str, user_id: str, message: str) -&gt; str:
+    with using_attributes(
+        session_id=session_id,
+        user_id=user_id,
+        metadata={"source": "web-chat"},
+        tags=["production", "v2"],
+    ):
+        return chatbot.respond(message)
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<p><strong>Product Distinction</strong>: Arize offers two separate products – Phoenix (open-source, self-hosted) and Arize AX (commercial cloud platform). These have different APIs, authentication methods, and endpoints. Documentation and SDK imports differ between the two; verify which product you are using before following guides. [1]</p>
+<p><strong>Storage Scalability</strong>: The default SQLite backend is suitable for development and small-scale deployments. Production environments with high trace volumes or concurrent users should use PostgreSQL for better performance and reliability. [7]</p>
+<p><strong>Evaluation Latency</strong>: LLM-based evaluators introduce latency and cost proportional to the number of spans evaluated. For high-throughput applications, consider sampling strategies or asynchronous evaluation pipelines rather than evaluating every trace.</p>
+<p><strong>Auto-Instrumentation Scope</strong>: Auto-instrumentation captures framework-level operations but cannot instrument custom business logic. Applications with significant custom processing between framework calls require manual instrumentation with decorators or context managers to achieve complete trace coverage. [3]</p>
+<p><strong>Local Server Resources</strong>: Running Phoenix locally with <code>phoenix serve</code> stores all data in <code>~/.phoenix/</code> using SQLite. For long-running production use, the working directory can grow substantially; configure <code>PHOENIX_DEFAULT_RETENTION_POLICY_DAYS</code> to manage data lifecycle. [7]</p>
+<p><strong>TypeScript Parity</strong>: While Phoenix provides Python and TypeScript SDKs, the Python ecosystem has broader auto-instrumentation coverage and more mature evaluation tooling. TypeScript support relies on standard OpenTelemetry configuration rather than the streamlined <code>register()</code> API available in Python.</p>
+<p><strong>Cold Start</strong>: The Phoenix server requires initialization time to load the database and start the web UI. In containerized environments, account for this startup delay in health check configurations.</p>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>OpenInference Instrumentation</strong>: Expanded auto-instrumentation support for OpenAI (including Agents SDK), Anthropic, CrewAI, Pydantic AI, Autogen, Mastra, and Vercel AI SDK</li>
+<li><strong>Prompt Management</strong>: Version-controlled prompt storage with Mustache and f-string template support, plus SDK-based retrieval for production deployment</li>
+<li><strong>Experiments Framework</strong>: Systematic comparison of application versions with dataset-driven evaluation and side-by-side result analysis</li>
+<li><strong>Nine Span Kinds</strong>: Expanded from initial span types to include AGENT, GUARDRAIL, and EVALUATOR span categories</li>
+<li><strong>PostgreSQL Support</strong>: Production-grade database backend as alternative to SQLite</li>
+<li><strong>Authentication and RBAC</strong>: OAuth2, LDAP, and local account authentication with role-based access controls</li>
+<li><strong>Prometheus Metrics</strong>: Optional metrics export for integration with existing monitoring infrastructure</li>
+<li><strong>Docker Non-Root Images</strong>: Security-hardened container images (<code>phoenix:latest-nonroot</code>) for production Kubernetes deployments [1][2]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Phoenix Documentation - <a href="https://arize.com/docs/phoenix">https://arize.com/docs/phoenix</a></li>
+<li>[2] Phoenix GitHub Repository - <a href="https://github.com/Arize-AI/phoenix">https://github.com/Arize-AI/phoenix</a></li>
+<li>[3] Manual Instrumentation Guide - <a href="https://arize.com/docs/phoenix/tracing/how-to-tracing/setup-tracing/instrument">https://arize.com/docs/phoenix/tracing/how-to-tracing/setup-tracing/instrument</a></li>
+<li>[4] Building Custom Evaluators - <a href="https://arize.com/docs/phoenix/evaluation/concepts-evals/building-your-own-evals">https://arize.com/docs/phoenix/evaluation/concepts-evals/building-your-own-evals</a></li>
+<li>[5] Running Experiments - <a href="https://arize.com/docs/phoenix/datasets-and-experiments/how-to-experiments/run-experiments">https://arize.com/docs/phoenix/datasets-and-experiments/how-to-experiments/run-experiments</a></li>
+<li>[6] Prompt Management - <a href="https://arize.com/docs/phoenix/prompt-engineering/overview-prompts/prompt-management">https://arize.com/docs/phoenix/prompt-engineering/overview-prompts/prompt-management</a></li>
+<li>[7] Self-Hosting Configuration - <a href="https://arize.com/docs/phoenix/self-hosting/configuration">https://arize.com/docs/phoenix/self-hosting/configuration</a></li>
+<li>[8] Python Client SDK - <a href="https://arize.com/docs/phoenix/sdk-api-reference/python/arize-phoenix-client">https://arize.com/docs/phoenix/sdk-api-reference/python/arize-phoenix-client</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-3-operations/observability/langsmith.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-3-operations/observability/weights-and-biases.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-3-operations/observability/langsmith.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-3-operations/observability/weights-and-biases.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
