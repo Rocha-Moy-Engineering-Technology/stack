@@ -32,7 +32,7 @@ Tracking file for alternative tools referenced in `stacks.csv` that are NOT curr
 
 - Type: string
 - Constraints: required; SHOULD match the `group` of the referencing stack row in `stacks.csv`
-- Example: `Workflow Orchestration & Automation`
+- Example: `Workflow Orchestration`
 
 ## Rules
 

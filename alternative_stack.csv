@@ -1,16 +1,16 @@
 alternative_name,alternative_kind,referenced_by,referenced_group
-Neo4j Aura,commercial,GraphRAG,RAG & Knowledge Retrieval
-AWS Step Functions,commercial,Temporal,Workflow Orchestration & Automation
-Control-M,commercial,Prefect,Workflow Orchestration & Automation
-Control-M,commercial,Airflow,Workflow Orchestration & Automation
-Zapier,commercial,n8n,Workflow Orchestration & Automation
-Zapier,commercial,Activepieces,Workflow Orchestration & Automation
-Crosser,commercial,Node-RED,Workflow Orchestration & Automation
-PromptLayer,commercial,DSPy,Structured Output & Prompt Engineering
-PromptLayer,commercial,Outlines,Structured Output & Prompt Engineering
-PromptLayer,commercial,Instructor,Structured Output & Prompt Engineering
-PromptLayer,commercial,BAML,Structured Output & Prompt Engineering
-Scale AI,commercial,Label Studio,Data Labeling
+Neo4j Aura,commercial,GraphRAG,RAG Frameworks
+AWS Step Functions,commercial,Temporal,Workflow Orchestration
+Control-M,commercial,Prefect,Workflow Orchestration
+Control-M,commercial,Airflow,Workflow Orchestration
+Zapier,commercial,n8n,Workflow Orchestration
+Zapier,commercial,Activepieces,Workflow Orchestration
+Crosser,commercial,Node-RED,Workflow Orchestration
+PromptLayer,commercial,DSPy,Structured Generation
+PromptLayer,commercial,Outlines,Structured Generation
+PromptLayer,commercial,Instructor,Structured Generation
+PromptLayer,commercial,BAML,Structured Generation
+Scale AI,commercial,Label Studio,Labeling
 Vertex AI Agent Builder,commercial,LangChain,Agent Frameworks
 Vertex AI Agent Builder,commercial,LangGraph,Agent Frameworks
 Vertex AI Agent Builder,commercial,ADK,Agent Frameworks
@@ -19,8 +19,8 @@ Vertex AI Agent Builder,commercial,Pydantic AI,Agent Frameworks
 Foundry Agent Service,commercial,AutoGen,Agent Frameworks
 Foundry Agent Service,commercial,Semantic Kernel,Agent Frameworks
 AWS Bedrock Agents,commercial,CrewAI,Agent Frameworks
-Gemini File Search,commercial,Haystack,RAG & Knowledge Retrieval
-Gemini File Search,commercial,LlamaIndex,RAG & Knowledge Retrieval
-Hugging Face Inference API,commercial,Hugging Face Transformers,Model Frameworks & Training
-AWS SageMaker,commercial,KServe,Inference Serving
+Gemini File Search,commercial,Haystack,RAG Frameworks
+Gemini File Search,commercial,LlamaIndex,RAG Frameworks
+Hugging Face Inference API,commercial,Hugging Face Transformers,Fine-tuning
+AWS SageMaker,commercial,KServe,Inference Engines
 

@@ -1,42 +1,46 @@
 # AI/ML Stack Documentation
 
-This book provides comprehensive documentation for 62 AI/ML tools and platforms organized across 12 functional groups. Each chapter covers the tool's core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples -- all sourced from and citing official documentation.
+This book provides comprehensive documentation for 73 AI/ML tools and platforms organized across 16 functional groups. Each chapter covers the tool's core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples -- all sourced from and citing official documentation.
 
 ## Catalog Overview
 
 The AI/ML ecosystem is organized into four parts following the dependency chain from foundational infrastructure to specialized integrations:
 
-### Part I: Foundation Models & Infrastructure
+### Part I: Foundation and Infrastructure
 
 The base layer that everything else builds upon.
 
 - **LLM Providers** (3 tools) -- Hosted large language model APIs: OpenAI, Gemini, Claude
-- **Inference Serving** (9 tools) -- Engines for hosting and serving model inference: Max, vLLM, SGLang, KServe, Triton, BentoML, Ollama, LM Studio, Hugging Face Transformers
-- **GPU Compute & Cloud Platforms** (9 tools) -- Cloud GPU providers and managed AI platforms: Ray, Groq, Cerebras, Modal, RunPod, Vast.ai, Inferless, Vertex AI, AWS Bedrock
+- **Inference Engines** (8 tools) -- Engines for hosting and serving model inference: Max, vLLM, SGLang, KServe, Triton, BentoML, Ollama, LM Studio
+- **GPU Infrastructure** (9 tools) -- Cloud GPU providers and managed AI platforms: Ray, Groq, Cerebras, Modal, RunPod, Vast.ai, Inferless, Vertex AI, AWS Bedrock
+- **Model Gateways** (3 tools) -- Unified API proxies across LLM providers: LiteLLM, Portkey, ccapi
 
 ### Part II: Application Development
 
 The application layer built on top of foundation models.
 
 - **Agent Frameworks** (8 tools) -- Libraries for building autonomous AI agents: LangChain, LangGraph, AutoGen, CrewAI, ADK, Semantic Kernel, smolagents, Pydantic AI
-- **RAG & Knowledge Retrieval** (6 tools) -- Retrieval-Augmented Generation frameworks and vector stores: Haystack, LlamaIndex, pgvector, GraphRAG, Pinecone, Weaviate
-- **Structured Output & Prompt Engineering** (4 tools) -- Tools for constraining LLM outputs: DSPy, Outlines, Instructor, BAML
+- **RAG Frameworks** (3 tools) -- Retrieval-Augmented Generation frameworks: Haystack, LlamaIndex, GraphRAG
+- **Structured Generation** (4 tools) -- Tools for constraining LLM outputs: DSPy, Outlines, Instructor, BAML
+- **Memory Systems** (3 tools) -- Persistent memory and context management: Mem0, Zep, Letta
 
-### Part III: Safety, Quality & Operations
+### Part III: Data and Models
 
-Quality assurance, safety, and operational monitoring.
+Data infrastructure, model training, and storage.
 
-- **Guardrails & Safety** (4 tools) -- Input/output validation and content moderation: Guardrails AI, NeMo Guardrails, OpenAI Moderation, Lakera
-- **Evaluation & Testing** (4 tools) -- Frameworks for evaluating LLM application quality: Ragas, DeepEval, OpenAI Evals, promptfoo
-- **Observability & LLM Ops** (5 tools) -- Tracing, monitoring, and prompt management: LangSmith, Arize Phoenix, Weights & Biases, Helicone, Langfuse
-- **API Gateways & Model Routing** (3 tools) -- Unified API proxies across LLM providers: LiteLLM, Portkey, ccapi
+- **Vector Databases** (5 tools) -- Vector similarity search engines: pgvector, Pinecone, Weaviate, Qdrant, Milvus
+- **Data Pipelines** (2 tools) -- ETL and document ingestion tools: Unstructured, Airbyte
+- **Fine-tuning** (4 tools) -- Parameter-efficient fine-tuning and model training: Hugging Face Transformers, PEFT, Unsloth, Axolotl
+- **Labeling** (1 tool) -- Data annotation and labeling: Label Studio
 
-### Part IV: Integration & Data
+### Part IV: Operations and Quality
 
-Connecting AI into broader systems and data pipelines.
+Quality assurance, safety, monitoring, and workflow management.
 
-- **Workflow Orchestration & Automation** (6 tools) -- Pipeline scheduling and workflow engines: Temporal, Prefect, Airflow, n8n, Activepieces, Node-RED
-- **Data Labeling** (1 tool) -- Data annotation and labeling: Label Studio
+- **Guardrails** (4 tools) -- Input/output validation and content moderation: Guardrails AI, NeMo Guardrails, OpenAI Moderation, Lakera
+- **Evaluation** (4 tools) -- Frameworks for evaluating LLM application quality: Ragas, DeepEval, OpenAI Evals, promptfoo
+- **Observability** (5 tools) -- Tracing, monitoring, and prompt management: LangSmith, Arize Phoenix, Weights & Biases, Helicone, Langfuse
+- **Workflow Orchestration** (6 tools) -- Pipeline scheduling and workflow engines: Temporal, Prefect, Airflow, n8n, Activepieces, Node-RED
 
 ## How to Use This Book
 

@@ -17,8 +17,8 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 ### group
 
 - Type: string (enum)
-- Constraints: MUST be one of the 13 defined group labels (see Group Labels section)
-- Example: `Agent Frameworks`, `Inference Serving`
+- Constraints: MUST be one of the 16 defined group labels (see Group Labels section)
+- Example: `Agent Frameworks`, `Inference Engines`
 
 ### type
 
@@ -72,17 +72,20 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 
 - **LLM Providers** - Hosted large language model APIs (OpenAI, Gemini, Claude)
 - **Agent Frameworks** - Libraries for building autonomous AI agents and multi-agent systems
-- **RAG & Knowledge Retrieval** - Retrieval-Augmented Generation (RAG) frameworks, vector stores, and knowledge graph tools
-- **Structured Output & Prompt Engineering** - Tools for constraining LLM outputs and optimizing prompts
-- **Guardrails & Safety** - Input/output validation, content moderation, and LLM security
-- **Evaluation & Testing** - Frameworks for evaluating and benchmarking LLM application quality
-- **Observability & LLM Ops** - Tracing, monitoring, experiment tracking, and prompt management platforms
-- **API Gateways & Model Routing** - Unified API proxies and routing layers across multiple LLM providers
-- **Inference Serving** - Engines and platforms for hosting and serving model inference
-- **GPU Compute & Cloud Platforms** - Cloud GPU providers, managed AI platforms, and distributed compute
-- **Workflow Orchestration & Automation** - Pipeline scheduling, workflow engines, and no-code automation
-- **Data Labeling** - Tools for annotating and labeling training data
-- **Model Frameworks & Training** - Libraries for defining, training, and running ML models
+- **RAG Frameworks** - Retrieval-Augmented Generation (RAG) frameworks and knowledge graph tools
+- **Structured Generation** - Tools for constraining LLM outputs and structured data extraction
+- **Model Gateways** - Unified API proxies and routing layers across multiple LLM providers
+- **Vector Databases** - Vector similarity search engines and embedding storage systems
+- **Inference Engines** - Engines and platforms for hosting and serving model inference
+- **GPU Infrastructure** - Cloud GPU providers, managed AI platforms, and distributed compute
+- **Workflow Orchestration** - Pipeline scheduling, workflow engines, and no-code automation
+- **Observability** - Tracing, monitoring, experiment tracking, and prompt management platforms
+- **Evaluation** - Frameworks for evaluating and benchmarking LLM application quality
+- **Guardrails** - Input/output validation, content moderation, and LLM security
+- **Data Pipelines** - ETL/ingestion tools for document parsing, chunking, embedding, and data integration
+- **Fine-tuning** - Libraries for parameter-efficient fine-tuning and model training
+- **Memory Systems** - Persistent memory and context management for AI agents and assistants
+- **Labeling** - Tools for annotating and labeling training data
 
 ## Type Classifications
 
