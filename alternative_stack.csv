@@ -11,4 +11,16 @@ PromptLayer,commercial,Outlines,Structured Output & Prompt Engineering
 PromptLayer,commercial,Instructor,Structured Output & Prompt Engineering
 PromptLayer,commercial,BAML,Structured Output & Prompt Engineering
 Scale AI,commercial,Label Studio,Data Labeling
+Vertex AI Agent Builder,commercial,LangChain,Agent Frameworks
+Vertex AI Agent Builder,commercial,LangGraph,Agent Frameworks
+Vertex AI Agent Builder,commercial,ADK,Agent Frameworks
+Vertex AI Agent Builder,commercial,smolagents,Agent Frameworks
+Vertex AI Agent Builder,commercial,Pydantic AI,Agent Frameworks
+Foundry Agent Service,commercial,AutoGen,Agent Frameworks
+Foundry Agent Service,commercial,Semantic Kernel,Agent Frameworks
+AWS Bedrock Agents,commercial,CrewAI,Agent Frameworks
+Gemini File Search,commercial,Haystack,RAG & Knowledge Retrieval
+Gemini File Search,commercial,LlamaIndex,RAG & Knowledge Retrieval
+Hugging Face Inference API,commercial,Hugging Face Transformers,Model Frameworks & Training
+AWS SageMaker,commercial,KServe,Inference Serving
 

@@ -1,0 +1,90 @@
+[Header 1 ("crewai", [], []) [Str "CrewAI"], BlockQuote [Para [Str "Framework for orchestrating role-playing autonomous AI agents with collaborative intelligence, enabling production-ready multi-agent systems with guardrails, memory, knowledge management, and observability."]], Table ("", [], []) (Caption Nothing []) [(AlignDefault, (ColWidth 0.5)), (AlignDefault, (ColWidth 0.5))] (TableHead ("", [], []) [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Field"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Value"]]]]) [(TableBody ("", [], []) (RowHeadColumns 0) [] [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Group"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Agent Frameworks"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Type"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "SDK"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Open Source"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Yes"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "GitHub"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Link ("", [], []) [Str "https://github.com/crewAIInc/crewAI"] ("https://github.com/crewAIInc/crewAI", "")]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Stars"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "44446"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Documentation"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Link ("", [], []) [Str "Official Docs"] ("https://docs.crewai.com/", "")]]]])] (TableFoot ("", [], []) []), Header 2 ("overview", ["unnumbered", "unlisted"], []) [Str "Overview"], Para [Str "CrewAI is a Python framework for building multi-agent AI systems where autonomous agents collaborate through defined roles, goals, and backstories. Each agent operates as a specialized unit capable of using tools, maintaining memory, accessing knowledge bases, and producing structured outputs. Agents are organized into crews that coordinate work through configurable process patterns -- sequential, hierarchical, or hybrid -- enabling complex workflows to be decomposed into discrete, manageable tasks."], Para [Str "The framework provides a declarative approach to agent orchestration: agents and tasks are defined in YAML configuration files, while crew assembly and execution logic use Python decorators. CrewAI also introduces Flows, a higher-level orchestration primitive for building stateful, resumable workflows with event-driven routing between steps."], Header 2 ("core-concepts", ["unnumbered", "unlisted"], []) [Str "Core Concepts"], Para [Strong [Str "Agents"], Str " are autonomous units defined by a role, goal, and backstory. Each agent can be assigned tools, memory capabilities, knowledge bases, and structured output schemas (via Pydantic models). Agents reason about their tasks and decide how to use their available tools to produce results."], Para [Strong [Str "Tasks"], Str " represent discrete units of work with a description, expected output format, and an assigned agent. Tasks define what needs to be accomplished and capture the output for downstream consumption by other tasks or the final crew result."], Para [Strong [Str "Crews"], Str " are collections of agents and tasks that work together toward a common objective. A crew defines the composition of the team, the process pattern for execution, and lifecycle hooks for pre- and post-processing."], Para [Strong [Str "Processes"], Str " govern how tasks are executed within a crew. Sequential processes run tasks in order, passing outputs from one task to the next. Hierarchical processes use a manager agent to delegate tasks dynamically. Hybrid patterns combine both approaches."], Para [Strong [Str "Flows"], Str " provide orchestration above the crew level. Flows use ", Code ("", [], []) "@start", Str ", ", Code ("", [], []) "@listen", Str ", and ", Code ("", [], []) "@router", Str " decorators to define step sequences, manage shared state across steps, support conditional branching, and enable execution persistence for resumable long-running workflows."], Para [Strong [Str "Tools"], Str " are capabilities assigned to agents that extend their ability to interact with external systems. Built-in tools include web search (SerperDevTool), file operations, code execution, and more. Custom tools can be created by implementing the tool interface."], Header 2 ("installation-and-setup", ["unnumbered", "unlisted"], []) [Str "Installation and Setup"], Para [Str "CrewAI uses its own CLI for project scaffolding and execution:"], CodeBlock ("", ["bash"], []) "pip install crewai
+
+crewai create crew latest-ai-development
+cd latest-ai-development
+crewai install
+crewai run
+", Para [Str "The ", Code ("", [], []) "crewai create crew", Str " command generates a project with a standard directory structure:"], CodeBlock ("", [""], []) "latest-ai-development/
+  src/
+    latest_ai_development/
+      config/
+        agents.yaml
+        tasks.yaml
+      crew.py
+      main.py
+  pyproject.toml
+", BulletList [[Plain [Code ("", [], []) "config/agents.yaml", Str " defines agent configurations (role, goal, backstory)"]], [Plain [Code ("", [], []) "config/tasks.yaml", Str " defines task configurations (description, expected output, agent assignment)"]], [Plain [Code ("", [], []) "crew.py", Str " contains the main crew class with decorator-based assembly"]], [Plain [Code ("", [], []) "main.py", Str " serves as the entry point for execution"]]], Header 2 ("architecture", ["unnumbered", "unlisted"], []) [Str "Architecture"], Para [Str "CrewAI follows a layered architecture:"], OrderedList (1, DefaultStyle, DefaultDelim) [[Plain [Strong [Str "Configuration Layer"], Str " -- YAML files declare agents and tasks declaratively, separating orchestration logic from agent definitions"]], [Plain [Strong [Str "Assembly Layer"], Str " -- Python classes use decorators (", Code ("", [], []) "@agent", Str ", ", Code ("", [], []) "@task", Str ", ", Code ("", [], []) "@crew", Str ") to wire agents, tasks, and crews together programmatically"]], [Plain [Strong [Str "Execution Layer"], Str " -- The process engine manages task scheduling, agent invocation, tool usage, memory persistence, and output collection"]], [Plain [Strong [Str "Flow Layer"], Str " -- Higher-level orchestration composes multiple crews and steps into stateful, event-driven workflows with conditional routing"]]], Para [Str "Agents interact with LLMs through a provider-agnostic interface. Tool execution follows a ReAct-style loop where agents reason about which tool to call, observe the result, and decide the next action. Memory systems (short-term, long-term, entity memory) persist across task executions within a crew run."], Header 2 ("key-features-and-functionality", ["unnumbered", "unlisted"], []) [Str "Key Features and Functionality"], BulletList [[Plain [Strong [Str "Role-Based Agent Design"], Str " -- agents are defined with role, goal, and backstory for focused, contextual behavior"]], [Plain [Strong [Str "Declarative Configuration"], Str " -- YAML-based agent and task definitions with Python decorator-based crew assembly"]], [Plain [Strong [Str "Multiple Process Patterns"], Str " -- sequential, hierarchical, and hybrid execution strategies"]], [Plain [Strong [Str "Structured Outputs"], Str " -- Pydantic model integration for type-safe, validated agent outputs"]], [Plain [Strong [Str "Memory Management"], Str " -- short-term, long-term, and entity memory systems for context retention across tasks"]], [Plain [Strong [Str "Knowledge Bases"], Str " -- agents can access domain-specific knowledge sources during reasoning"]], [Plain [Strong [Str "Flow Orchestration"], Str " -- stateful, resumable workflows with event-driven routing and conditional branching"]], [Plain [Strong [Str "Guardrails"], Str " -- built-in validation and safety mechanisms for production deployments"]], [Plain [Strong [Str "Observability"], Str " -- monitoring and tracing capabilities for debugging and performance analysis"]], [Plain [Strong [Str "Lifecycle Hooks"], Str " -- ", Code ("", [], []) "@before_kickoff", Str " and ", Code ("", [], []) "@after_kickoff", Str " decorators for pre- and post-processing logic"]]], Header 2 ("use-cases", ["unnumbered", "unlisted"], []) [Str "Use Cases"], BulletList [[Plain [Strong [Str "Research Automation"], Str " -- multi-agent teams that gather, analyze, and synthesize information from multiple sources"]], [Plain [Strong [Str "Content Generation Pipelines"], Str " -- sequential workflows where research agents feed writing agents that feed editing agents"]], [Plain [Strong [Str "Customer Support Triage"], Str " -- hierarchical crews where a manager agent delegates incoming requests to specialized agents"]], [Plain [Strong [Str "Data Processing Workflows"], Str " -- flows that coordinate extraction, transformation, validation, and loading across multiple agents"]], [Plain [Strong [Str "Code Review and Analysis"], Str " -- agents with specialized roles (security reviewer, performance analyst, style checker) collaborating on code assessment"]]], Header 2 ("api-reference-summary", ["unnumbered", "unlisted"], []) [Str "API Reference Summary"], Para [Strong [Str "Crew Class Decorators:"]], BulletList [[Plain [Code ("", [], []) "@agent", Str " -- registers a method as an agent factory"]], [Plain [Code ("", [], []) "@task", Str " -- registers a method as a task factory"]], [Plain [Code ("", [], []) "@crew", Str " -- registers a method as the crew assembly point"]], [Plain [Code ("", [], []) "@before_kickoff", Str " -- hook executed before crew starts"]], [Plain [Code ("", [], []) "@after_kickoff", Str " -- hook executed after crew completes"]]], Para [Strong [Str "Flow Decorators:"]], BulletList [[Plain [Code ("", [], []) "@start", Str " -- marks the entry point of a flow"]], [Plain [Code ("", [], []) "@listen", Str " -- subscribes a step to events from other steps"]], [Plain [Code ("", [], []) "@router", Str " -- defines conditional branching logic based on step outputs"]]], Para [Strong [Str "Key Classes:"]], BulletList [[Plain [Code ("", [], []) "Agent", Str " -- autonomous unit with role, goal, backstory, tools, and memory"]], [Plain [Code ("", [], []) "Task", Str " -- work unit with description, expected output, and agent assignment"]], [Plain [Code ("", [], []) "Crew", Str " -- collection of agents and tasks with process configuration"]], [Plain [Code ("", [], []) "Flow", Str " -- orchestration container for multi-step, stateful workflows"]], [Plain [Code ("", [], []) "Process", Str " -- enum defining execution pattern (sequential, hierarchical)"]]], Header 2 ("configuration-and-customization", ["unnumbered", "unlisted"], []) [Str "Configuration and Customization"], Para [Str "Agent configuration in ", Code ("", [], []) "agents.yaml", Str ":"], CodeBlock ("", ["yaml"], []) "researcher:
+  role: Senior Data Researcher
+  goal: Uncover cutting-edge developments in AI and data science
+  backstory: >
+    You are a seasoned researcher with a knack for uncovering the latest
+    developments in AI and data science.
+", Para [Str "Task configuration in ", Code ("", [], []) "tasks.yaml", Str ":"], CodeBlock ("", ["yaml"], []) "research_task:
+  description: >
+    Conduct thorough research about {topic}.
+    Identify key trends, breakthrough technologies, and potential impacts.
+  expected_output: >
+    A comprehensive report with main findings, structured as bullet points.
+  agent: researcher
+", Para [Str "Environment variables configure LLM providers and API keys. The ", Code ("", [], []) "crewai", Str " CLI manages project dependencies and execution environments."], Header 2 ("integration-patterns", ["unnumbered", "unlisted"], []) [Str "Integration Patterns"], Para [Strong [Str "Tool Integration"], Str " -- agents are extended with tools that wrap external APIs, databases, file systems, or any callable functionality. Tools follow a standard interface with name, description, and execution method."], Para [Strong [Str "LLM Provider Integration"], Str " -- CrewAI supports multiple LLM backends through a provider-agnostic configuration, allowing agents within the same crew to use different models."], Para [Strong [Str "Enterprise Triggers"], Str " -- CrewAI Enterprise supports integration triggers from Gmail, Slack, Salesforce, Outlook, Microsoft Teams, OneDrive, and HubSpot for event-driven crew activation."], Para [Strong [Str "External Agent Systems"], Str " -- crews can invoke existing CrewAI automations and Amazon Bedrock Agents as part of their workflows."], Header 2 ("examples", ["unnumbered", "unlisted"], []) [Str "Examples"], Para [Str "Minimal crew definition in ", Code ("", [], []) "crew.py", Str ":"], CodeBlock ("", ["python"], []) "from crewai import Agent, Crew, Process, Task
+from crewai.project import CrewBase, agent, crew, task
+from crewai_tools import SerperDevTool
+
+@CrewBase
+class LatestAiDevelopmentCrew:
+    agents_config = \"config/agents.yaml\"
+    tasks_config = \"config/tasks.yaml\"
+
+    @agent
+    def researcher(self) -> Agent:
+        return Agent(
+            config=self.agents_config[\"researcher\"],
+            tools=[SerperDevTool()],
+            verbose=True,
+        )
+
+    @agent
+    def reporting_analyst(self) -> Agent:
+        return Agent(
+            config=self.agents_config[\"reporting_analyst\"],
+            verbose=True,
+        )
+
+    @task
+    def research_task(self) -> Task:
+        return Task(config=self.tasks_config[\"research_task\"])
+
+    @task
+    def reporting_task(self) -> Task:
+        return Task(
+            config=self.tasks_config[\"reporting_task\"],
+            output_file=\"output/report.md\",
+        )
+
+    @crew
+    def crew(self) -> Crew:
+        return Crew(
+            agents=self.agents,
+            tasks=self.tasks,
+            process=Process.sequential,
+            verbose=True,
+        )
+", Para [Str "Flow example with state management:"], CodeBlock ("", ["python"], []) "from crewai.flow.flow import Flow, listen, start
+from pydantic import BaseModel
+
+class ResearchState(BaseModel):
+    topic: str = \"\"
+    findings: str = \"\"
+    report: str = \"\"
+
+class ResearchFlow(Flow[ResearchState]):
+    @start()
+    def gather_research(self):
+        self.state.findings = \"Research findings here\"
+        return self.state.findings
+
+    @listen(gather_research)
+    def write_report(self, findings):
+        self.state.report = f\"Report based on: {findings}\"
+        return self.state.report
+", Header 2 ("limitations-and-considerations", ["unnumbered", "unlisted"], []) [Str "Limitations and Considerations"], BulletList [[Plain [Str "Agent reasoning quality is bounded by the underlying LLM capabilities and prompt engineering"]], [Plain [Str "Hierarchical processes depend on a manager agent that may introduce additional latency and token costs"]], [Plain [Str "Complex multi-agent interactions can be difficult to debug without adequate observability tooling"]], [Plain [Str "Memory systems add overhead and may not be necessary for simple, stateless workflows"]], [Plain [Str "Enterprise features (triggers, RBAC, monitoring) require the hosted CrewAI platform and are not available in the open-source edition"]]], Header 2 ("changelog-highlights", ["unnumbered", "unlisted"], []) [Str "Changelog Highlights"], Para [Str "CrewAI has evolved from a simple multi-agent framework to a production-oriented platform. Key milestones include the introduction of Flows for higher-level orchestration, YAML-based declarative configuration, structured output support via Pydantic, knowledge base integration, and the CrewAI Enterprise platform with managed deployment, monitoring, and enterprise integration triggers."], Header 2 ("citations", ["unnumbered", "unlisted"], []) [Str "Citations"], BulletList [[Plain [Str "[", Str "1", Str "]", Str " ", Link ("", [], []) [Str "CrewAI Documentation"] ("https://docs.crewai.com/", "")]], [Plain [Str "[", Str "2", Str "]", Str " ", Link ("", [], []) [Str "CrewAI Quickstart"] ("https://docs.crewai.com/quickstart", "")]]]]

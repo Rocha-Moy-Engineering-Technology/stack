@@ -33,6 +33,5 @@ number-sections = false
 [output.pandoc.profile.pdf]
 output-file = "stack-book.pdf"
 to = "latex"
-# Requires a PDF engine in PATH (default is usually `pdflatex`).
-# If you prefer a self-contained LaTeX engine, install `tectonic` and set:
-# pdf-engine = "tectonic"
+pdf-engine = "xelatex"
+variables = { monofont = "Menlo" }

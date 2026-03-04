@@ -1,0 +1,120 @@
+[Header 1 ("haystack", [], []) [Str "Haystack"], BlockQuote [Para [Str "Open-source AI orchestration framework by deepset for building production-ready AI agents, multimodal applications, and advanced Retrieval-Augmented Generation (RAG) systems through modular, composable pipelines."]], Table ("", [], []) (Caption Nothing []) [(AlignDefault, (ColWidth 0.17647058823529413)), (AlignDefault, (ColWidth 0.8235294117647058))] (TableHead ("", [], []) [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Field"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Value"]]]]) [(TableBody ("", [], []) (RowHeadColumns 0) [] [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Group"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "RAG & Knowledge Retrieval"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Type"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "SDK"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Open Source"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Yes"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "GitHub"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Link ("", [], []) [Str "deepset-ai/haystack"] ("https://github.com/deepset-ai/haystack", "")]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Stars"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "24,257"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Documentation"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Link ("", [], []) [Str "docs.haystack.deepset.ai"] ("https://docs.haystack.deepset.ai/", "")]]]])] (TableFoot ("", [], []) []), Header 2 ("overview", ["unnumbered", "unlisted"], []) [Str "Overview"], Para [Str "Haystack is an open-source AI orchestration framework developed by deepset, designed for building production-ready AI agents, multimodal applications, and advanced RAG systems. The framework centers on the concept of \"context engineering,\" which refers to the discipline of managing and curating the context that AI systems operate on, including retrieved documents, conversation history, tool outputs, and structured data."], Para [Str "Originally released in 2020, Haystack has evolved from a document search library into a full-featured pipeline orchestration framework. The core abstraction is a directed graph of modular components (Retrievers, Routers, Memory layers, Tools, Evaluators, Generators) that can be tested, swapped, and replaced independently. This modularity allows practitioners to change models, document stores, or processing steps without rewriting application logic."], Para [Str "Haystack supports deployment as REST APIs or Model Context Protocol (MCP) servers through Hayhooks, its companion deployment tool. The framework provides built-in tracing, logging, and evaluation capabilities for production observability."], Para [Str "The ecosystem spans three tiers: the open-source framework (the core library), Enterprise Starter (managed pipelines with support), and Enterprise Platform (full-featured deployment and management infrastructure)."], Header 2 ("core-concepts", ["unnumbered", "unlisted"], []) [Str "Core Concepts"], BulletList [[Plain [Strong [Str "Pipeline"], Str ": A directed acyclic graph of components that defines the flow of data through the system. Pipelines connect components via named inputs and outputs, enabling complex processing workflows with branching, merging, and conditional routing."]], [Plain [Strong [Str "Component"], Str ": The fundamental building block in Haystack. Each component performs a specific task (retrieval, generation, ranking, splitting) and exposes a typed interface with defined inputs and outputs. Components are independently testable and replaceable."]], [Plain [Strong [Str "Retriever"], Str ": A component that fetches relevant documents from a document store based on a query. Haystack provides retrievers for sparse retrieval (BM25), dense retrieval (embedding-based), and hybrid approaches."]], [Plain [Strong [Str "Generator"], Str ": A component that produces text output using a language model. Generators wrap model providers (OpenAI, Anthropic, local models) behind a uniform interface, allowing model swapping without pipeline changes."]], [Plain [Strong [Str "Router"], Str ": A component that directs data flow within a pipeline based on conditions, metadata, or model outputs. Routers enable branching logic such as query classification, fallback strategies, and conditional processing."]], [Plain [Strong [Str "Document Store"], Str ": The storage backend for documents and their metadata. Haystack integrates with multiple backends including Elasticsearch, Weaviate, Pinecone, Qdrant, ChromaDB, and PostgreSQL with pgvector."]], [Plain [Strong [Str "Memory"], Str ": Components that manage conversational context and state across interactions. Memory layers store and retrieve conversation history, enabling multi-turn agent workflows."]], [Plain [Strong [Str "Tool"], Str ": A callable capability that agents can invoke during execution. Tools wrap external functions, APIs, or sub-pipelines, allowing agents to take actions beyond text generation."]], [Plain [Strong [Str "Evaluator"], Str ": A component that scores pipeline outputs against ground truth or quality criteria. Evaluators support metrics such as faithfulness, relevance, and answer correctness for systematic quality assessment."]], [Plain [Strong [Str "Context Engineering"], Str ": The overarching design philosophy in Haystack that treats context management (what information reaches the model, in what form, and when) as a first-class engineering concern rather than an afterthought."]]], Header 2 ("installation-and-setup", ["unnumbered", "unlisted"], []) [Str "Installation and Setup"], Para [Str "Install Haystack using pip:"], CodeBlock ("", ["bash"], []) "pip install -U haystack-ai
+", Para [Str "Install with specific integrations:"], CodeBlock ("", ["bash"], []) "# Elasticsearch document store
+pip install elasticsearch-haystack
+
+# Weaviate document store
+pip install weaviate-haystack
+
+# Chroma document store
+pip install chroma-haystack
+
+# Qdrant document store
+pip install qdrant-haystack
+", Para [Str "Verify the installation:"], CodeBlock ("", ["python"], []) "import haystack
+print(haystack.__version__)
+", Para [Str "Set environment variables for model providers:"], CodeBlock ("", ["bash"], []) "export OPENAI_API_KEY=\"your-api-key\"
+export ANTHROPIC_API_KEY=\"your-api-key\"
+", Header 2 ("architecture", ["unnumbered", "unlisted"], []) [Str "Architecture"], Para [Str "Haystack follows a pipeline-based architecture where components are connected in directed graphs. The architecture separates concerns into distinct layers:"], BulletList [[Plain [Strong [Str "Component Layer"], Str ": Individual processing units with typed inputs and outputs. Each component declares its interface through decorators, enabling compile-time validation of pipeline connections."]], [Plain [Strong [Str "Pipeline Layer"], Str ": The orchestration graph that connects components. Pipelines handle data routing, parallel execution where possible, and error propagation. A pipeline validates connections at construction time, catching type mismatches before runtime."]], [Plain [Strong [Str "Document Store Layer"], Str ": Abstracted storage backends behind a common interface. Document stores handle indexing, retrieval, and filtering operations. Each backend implements the same protocol, making stores interchangeable."]], [Plain [Strong [Str "Deployment Layer"], Str ": Hayhooks provides REST API and MCP server deployment for pipelines. Pipelines are serialized to YAML and served as endpoints without code changes."]]], Para [Str "The data flow within a pipeline follows the component graph. Each component receives named inputs, processes them, and produces named outputs that are routed to downstream components. The pipeline runtime manages execution ordering, handles optional inputs, and supports both synchronous and asynchronous execution."], CodeBlock ("", [""], []) "Query --> Retriever --> Ranker --> PromptBuilder --> Generator --> Answer
+              |                                         ^
+              v                                         |
+        DocumentStore                              LLM Provider
+", Header 2 ("key-features", ["unnumbered", "unlisted"], []) [Str "Key Features"], BulletList [[Plain [Strong [Str "Modular Component Design"], Str ": Components are self-contained units with typed interfaces. Swap any component (model, retriever, document store) without modifying the rest of the pipeline."]], [Plain [Strong [Str "Pipeline Serialization"], Str ": Pipelines can be serialized to YAML and deserialized back, enabling version control, sharing, and deployment without code changes."]], [Plain [Strong [Str "Model Agnosticism"], Str ": Generators and embedders abstract over model providers. Switch between OpenAI, Anthropic, Cohere, local models, or custom endpoints through configuration."]], [Plain [Strong [Str "Hybrid Retrieval"], Str ": Combine sparse (BM25) and dense (embedding) retrieval strategies in a single pipeline with configurable fusion and ranking."]], [Plain [Strong [Str "Agent Workflows"], Str ": Build autonomous agents that use tools, maintain memory, and make decisions through router-based control flow within pipelines."]], [Plain [Strong [Str "Evaluation Framework"], Str ": Built-in evaluators for RAG quality metrics including faithfulness, answer relevance, context relevance, and semantic similarity."]], [Plain [Strong [Str "Observability"], Str ": Native tracing and logging integration. Pipeline execution traces capture component inputs, outputs, and timing for debugging and monitoring."]], [Plain [Strong [Str "Deployment via Hayhooks"], Str ": Deploy pipelines as REST API endpoints or MCP servers with Hayhooks, enabling integration with existing infrastructure without custom server code."]], [Plain [Strong [Str "Breaking Change Policies"], Str ": Clear versioning and deprecation policies to ensure upgrade paths and production stability."]], [Plain [Strong [Str "Multimodal Support"], Str ": Process and generate across text, images, and structured data within the same pipeline framework."]]], Header 2 ("use-cases", ["unnumbered", "unlisted"], []) [Str "Use Cases"], BulletList [[Plain [Strong [Str "Retrieval-Augmented Generation"], Str ": Build RAG pipelines that retrieve relevant documents from knowledge bases and generate grounded answers. Combine document stores, retrievers, rankers, and generators for end-to-end question answering."]], [Plain [Strong [Str "Agent Workflows"], Str ": Create autonomous agents that reason, plan, and execute multi-step tasks using tools, memory, and conditional routing within pipelines."]], [Plain [Strong [Str "Text-to-SQL"], Str ": Convert natural language questions into SQL queries against structured databases, enabling non-technical users to query data through conversation."]], [Plain [Strong [Str "Document Processing"], Str ": Ingest, clean, split, embed, and index documents from various sources (PDF, HTML, Markdown, DOCX) into vector stores for downstream retrieval."]], [Plain [Strong [Str "Multimodal Applications"], Str ": Build applications that process and reason over combinations of text, images, tables, and structured data within unified pipelines."]], [Plain [Strong [Str "Conversational Systems"], Str ": Develop multi-turn conversational interfaces with memory management, context tracking, and dynamic retrieval based on conversation state."]], [Plain [Strong [Str "Evaluation and Testing"], Str ": Systematically evaluate RAG pipeline quality using built-in metrics, enabling continuous improvement of retrieval and generation performance."]]], Header 2 ("api-reference-summary", ["unnumbered", "unlisted"], []) [Str "API Reference Summary"], BulletList [[Plain [Strong [Code ("", [], []) "Pipeline"], Str ": The main orchestration class. Methods include ", Code ("", [], []) "add_component()", Str ", ", Code ("", [], []) "connect()", Str ", ", Code ("", [], []) "run()", Str ", and ", Code ("", [], []) "to_dict()", Str "/", Code ("", [], []) "from_dict()", Str " for serialization."]], [Plain [Strong [Code ("", [], []) "@component"], Str ": Decorator that registers a class as a Haystack component. Components must implement ", Code ("", [], []) "run()", Str " and declare inputs/outputs via ", Code ("", [], []) "@component.input_type", Str " and ", Code ("", [], []) "@component.output_type", Str "."]], [Plain [Strong [Code ("", [], []) "Document"], Str ": The core data class representing a piece of content with fields for ", Code ("", [], []) "content", Str ", ", Code ("", [], []) "meta", Str ", ", Code ("", [], []) "embedding", Str ", ", Code ("", [], []) "score", Str ", and ", Code ("", [], []) "id", Str "."]], [Plain [Strong [Code ("", [], []) "InMemoryDocumentStore"], Str ": A document store implementation that holds documents in memory. Useful for prototyping and testing."]], [Plain [Strong [Code ("", [], []) "DocumentWriter"], Str ": A component that writes documents to a document store. Accepts a ", Code ("", [], []) "document_store", Str " parameter and a ", Code ("", [], []) "policy", Str " for duplicate handling."]], [Plain [Strong [Code ("", [], []) "DocumentSplitter"], Str ": A component that splits documents into smaller chunks by sentence, word count, or passage boundaries."]], [Plain [Strong [Code ("", [], []) "SentenceTransformersDocumentEmbedder"], Str ": Embeds documents using Sentence Transformers models for dense retrieval."]], [Plain [Strong [Code ("", [], []) "SentenceTransformersTextEmbedder"], Str ": Embeds query text using Sentence Transformers models for matching against document embeddings."]], [Plain [Strong [Code ("", [], []) "PromptBuilder"], Str ": A component that renders Jinja2 templates into prompts using pipeline variables and retrieved documents."]], [Plain [Strong [Code ("", [], []) "OpenAIGenerator"], Str ": A generator component that calls OpenAI chat completion APIs. Configurable with model name, parameters, and system prompts."]]], Header 2 ("configuration", ["unnumbered", "unlisted"], []) [Str "Configuration"], Para [Str "Haystack pipelines are configured either programmatically or through YAML serialization:"], CodeBlock ("", ["python"], []) "from haystack import Pipeline
+from haystack.components.retrievers.in_memory import InMemoryBM25Retriever
+from haystack.components.generators import OpenAIGenerator
+from haystack.components.builders import PromptBuilder
+from haystack.document_stores.in_memory import InMemoryDocumentStore
+
+document_store = InMemoryDocumentStore()
+
+pipeline = Pipeline()
+pipeline.add_component(\"retriever\", InMemoryBM25Retriever(document_store=document_store))
+pipeline.add_component(\"prompt_builder\", PromptBuilder(
+    template=\"Context: {{documents}} Question: {{query}}\"
+))
+pipeline.add_component(\"generator\", OpenAIGenerator(model=\"gpt-4o\"))
+
+pipeline.connect(\"retriever.documents\", \"prompt_builder.documents\")
+pipeline.connect(\"prompt_builder.prompt\", \"generator.prompt\")
+", Para [Str "Equivalent YAML configuration:"], CodeBlock ("", ["yaml"], []) "components:
+  retriever:
+    type: haystack.components.retrievers.in_memory.InMemoryBM25Retriever
+    init_parameters:
+      document_store:
+        type: haystack.document_stores.in_memory.InMemoryDocumentStore
+  prompt_builder:
+    type: haystack.components.builders.PromptBuilder
+    init_parameters:
+      template: \"Context: {{documents}} Question: {{query}}\"
+  generator:
+    type: haystack.components.generators.OpenAIGenerator
+    init_parameters:
+      model: gpt-4o
+connections:
+  - sender: retriever.documents
+    receiver: prompt_builder.documents
+  - sender: prompt_builder.prompt
+    receiver: generator.prompt
+", Para [Str "Environment variables for common providers:"], BulletList [[Plain [Code ("", [], []) "OPENAI_API_KEY", Str ": API key for OpenAI models."]], [Plain [Code ("", [], []) "ANTHROPIC_API_KEY", Str ": API key for Anthropic models."]], [Plain [Code ("", [], []) "COHERE_API_KEY", Str ": API key for Cohere models."]], [Plain [Code ("", [], []) "HF_TOKEN", Str ": Hugging Face token for gated models."]]], Header 2 ("integration-patterns", ["unnumbered", "unlisted"], []) [Str "Integration Patterns"], BulletList [[Plain [Strong [Str "Document Store Backends"], Str ": Haystack integrates with Elasticsearch, OpenSearch, Weaviate, Pinecone, Qdrant, ChromaDB, PostgreSQL (pgvector), Milvus, and others through dedicated integration packages."]], [Plain [Strong [Str "Model Providers"], Str ": Generators and embedders support OpenAI, Anthropic, Cohere, Google AI, Amazon Bedrock, Azure OpenAI, Hugging Face Inference API, and local models via Ollama or vLLM."]], [Plain [Strong [Str "Hayhooks Deployment"], Str ": Serialize pipelines to YAML and deploy them as REST API endpoints or MCP servers using Hayhooks, enabling integration with web applications and AI tool ecosystems."]], [Plain [Strong [Str "Custom Components"], Str ": Create custom components by decorating a class with ", Code ("", [], []) "@component", Str " and implementing the ", Code ("", [], []) "run()", Str " method. Custom components integrate seamlessly with built-in components in pipelines."]], [Plain [Strong [Str "Tracing and Monitoring"], Str ": Connect pipeline execution traces to OpenTelemetry-compatible backends (Datadog, Jaeger, Langfuse) for production monitoring."]], [Plain [Strong [Str "LangChain and LlamaIndex"], Str ": While Haystack operates as a standalone framework, documents and embeddings can be shared with other frameworks through common document store backends."]]], Header 2 ("examples", ["unnumbered", "unlisted"], []) [Str "Examples"], Para [Str "Basic RAG pipeline:"], CodeBlock ("", ["python"], []) "from haystack import Pipeline, Document
+from haystack.components.retrievers.in_memory import InMemoryBM25Retriever
+from haystack.components.generators import OpenAIGenerator
+from haystack.components.builders import PromptBuilder
+from haystack.document_stores.in_memory import InMemoryDocumentStore
+
+# Index documents
+document_store = InMemoryDocumentStore()
+documents = [
+    Document(content=\"Haystack is an AI orchestration framework by deepset.\"),
+    Document(content=\"Haystack supports modular pipelines with retrievers and generators.\"),
+    Document(content=\"Hayhooks deploys Haystack pipelines as REST APIs.\"),
+]
+document_store.write_documents(documents)
+
+# Build RAG pipeline
+rag_pipeline = Pipeline()
+rag_pipeline.add_component(
+    \"retriever\", InMemoryBM25Retriever(document_store=document_store)
+)
+rag_pipeline.add_component(
+    \"prompt_builder\",
+    PromptBuilder(
+        template=\"Given these documents: {{documents}} Answer: {{query}}\"
+    ),
+)
+rag_pipeline.add_component(\"generator\", OpenAIGenerator(model=\"gpt-4o\"))
+
+rag_pipeline.connect(\"retriever.documents\", \"prompt_builder.documents\")
+rag_pipeline.connect(\"prompt_builder.prompt\", \"generator.prompt\")
+
+# Run the pipeline
+result = rag_pipeline.run({
+    \"retriever\": {\"query\": \"What is Haystack?\"},
+    \"prompt_builder\": {\"query\": \"What is Haystack?\"},
+})
+print(result[\"generator\"][\"replies\"][0])
+", Para [Str "Document indexing pipeline:"], CodeBlock ("", ["python"], []) "from haystack import Pipeline
+from haystack.components.converters import TextFileToDocument
+from haystack.components.preprocessors import DocumentSplitter
+from haystack.components.embedders import SentenceTransformersDocumentEmbedder
+from haystack.components.writers import DocumentWriter
+from haystack.document_stores.in_memory import InMemoryDocumentStore
+
+document_store = InMemoryDocumentStore()
+
+indexing_pipeline = Pipeline()
+indexing_pipeline.add_component(\"converter\", TextFileToDocument())
+indexing_pipeline.add_component(
+    \"splitter\", DocumentSplitter(split_by=\"sentence\", split_length=3)
+)
+indexing_pipeline.add_component(
+    \"embedder\", SentenceTransformersDocumentEmbedder()
+)
+indexing_pipeline.add_component(
+    \"writer\", DocumentWriter(document_store=document_store)
+)
+
+indexing_pipeline.connect(\"converter.documents\", \"splitter.documents\")
+indexing_pipeline.connect(\"splitter.documents\", \"embedder.documents\")
+indexing_pipeline.connect(\"embedder.documents\", \"writer.documents\")
+
+indexing_pipeline.run({\"converter\": {\"sources\": [\"data/document.txt\"]}})
+", Header 2 ("limitations", ["unnumbered", "unlisted"], []) [Str "Limitations"], BulletList [[Plain [Strong [Str "Python Only"], Str ": Haystack is a Python framework with no official SDKs for other languages. Non-Python applications must interact through REST APIs via Hayhooks."]], [Plain [Strong [Str "Learning Curve for Pipeline Design"], Str ": The pipeline graph model, while powerful, requires understanding component interfaces, connection semantics, and data flow patterns that differ from simpler linear API call chains."]], [Plain [Strong [Str "Integration Package Fragmentation"], Str ": Each document store and model provider requires a separate integration package with its own versioning and release cycle, which can lead to dependency management complexity."]], [Plain [Strong [Str "Memory and State Management"], Str ": While Haystack provides memory components for conversational context, complex stateful workflows with branching agent logic may require careful design to avoid state management issues."]], [Plain [Strong [Str "Ecosystem Maturity Variance"], Str ": Core components are well-tested and stable, but community-contributed integrations may vary in maturity, documentation quality, and maintenance status."]]], Header 2 ("changelog-highlights", ["unnumbered", "unlisted"], []) [Str "Changelog Highlights"], BulletList [[Plain [Strong [Str "Haystack 2.x (2024)"], Str ": Complete rewrite with pipeline-as-graph architecture, typed component interfaces, YAML serialization, and breaking API changes from 1.x."]], [Plain [Strong [Str "Context Engineering Focus"], Str ": Expanded emphasis on managing context for AI systems as a core framework concern, with dedicated memory and tool components."]], [Plain [Strong [Str "MCP Server Support"], Str ": Added deployment as MCP servers via Hayhooks, enabling integration with MCP-compatible AI tools and clients."]], [Plain [Strong [Str "Agent Capabilities"], Str ": Introduced agent-oriented components with tool use, routing, and memory for autonomous multi-step workflows."]], [Plain [Strong [Str "Evaluation Framework"], Str ": Built-in RAG evaluation metrics for systematic quality assessment of retrieval and generation pipelines."]]], Header 2 ("citations", ["unnumbered", "unlisted"], []) [Str "Citations"], BulletList [[Plain [Str "[", Str "1", Str "]", Str " Haystack Documentation. https://docs.haystack.deepset.ai/"]], [Plain [Str "[", Str "2", Str "]", Str " Haystack Overview and Introduction. https://haystack.deepset.ai/overview/intro"]]]]

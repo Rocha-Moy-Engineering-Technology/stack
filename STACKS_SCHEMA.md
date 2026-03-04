@@ -17,7 +17,7 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 ### group
 
 - Type: string (enum)
-- Constraints: MUST be one of the 12 defined group labels (see Group Labels section)
+- Constraints: MUST be one of the 13 defined group labels (see Group Labels section)
 - Example: `Agent Frameworks`, `Inference Serving`
 
 ### type
@@ -82,6 +82,7 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 - **GPU Compute & Cloud Platforms** - Cloud GPU providers, managed AI platforms, and distributed compute
 - **Workflow Orchestration & Automation** - Pipeline scheduling, workflow engines, and no-code automation
 - **Data Labeling** - Tools for annotating and labeling training data
+- **Model Frameworks & Training** - Libraries for defining, training, and running ML models
 
 ## Type Classifications
 

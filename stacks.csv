@@ -1,16 +1,16 @@
 name,group,type,docs_url,description,open_source,github_repo,stars,open_source_alternative,commercial_alternative
-LangChain,Agent Frameworks,SDK,https://docs.langchain.com/,Python framework for building LLM applications with chains and agents,yes,https://github.com/langchain-ai/langchain,127162,N/A,Vertex AI
-LangGraph,Agent Frameworks,SDK,https://docs.langchain.com/oss/python/langgraph/overview,Graph-based orchestration framework for stateful AI agents with durable execution,yes,https://github.com/langchain-ai/langgraph,24935,N/A,Vertex AI
-AutoGen,Agent Frameworks,SDK,https://microsoft.github.io/autogen/,Microsoft framework for building multi-agent systems with event-driven architecture,yes,https://github.com/microsoft/autogen,54714,N/A,AWS Bedrock
-CrewAI,Agent Frameworks,SDK,https://docs.crewai.com/,Framework for orchestrating role-playing autonomous AI agents with collaborative intelligence,yes,https://github.com/crewAIInc/crewAI,44446,N/A,AWS Bedrock
-ADK,Agent Frameworks,SDK,https://google.github.io/adk-docs/,Google Agent Development Kit for building multi-agent applications,yes,https://github.com/google/adk-python,17911,N/A,Vertex AI
-semantic-kernel,Agent Frameworks,SDK,https://learn.microsoft.com/en-us/semantic-kernel/,Microsoft SDK for integrating LLMs into C#/Python/Java applications,yes,https://github.com/microsoft/semantic-kernel,27283,N/A,AWS Bedrock
-haystack,RAG & Knowledge Retrieval,SDK,https://docs.haystack.deepset.ai/,Open-source AI framework for production-ready RAG and agentic workflows,yes,https://github.com/deepset-ai/haystack,24257,N/A,Vertex AI
-smolagents,Agent Frameworks,SDK,https://huggingface.co/docs/smolagents/en/index,HuggingFace lightweight library for building code-first agents,yes,https://github.com/huggingface/smolagents,25559,N/A,Vertex AI
+LangChain,Agent Frameworks,SDK,https://docs.langchain.com/,Python framework for building LLM applications with chains and agents,yes,https://github.com/langchain-ai/langchain,127162,N/A,Vertex AI Agent Builder
+LangGraph,Agent Frameworks,SDK,https://docs.langchain.com/oss/python/langgraph/overview,Graph-based orchestration framework for stateful AI agents with durable execution,yes,https://github.com/langchain-ai/langgraph,24935,N/A,Vertex AI Agent Builder
+AutoGen,Agent Frameworks,SDK,https://microsoft.github.io/autogen/,Microsoft framework for building multi-agent systems with event-driven architecture,yes,https://github.com/microsoft/autogen,54714,N/A,Foundry Agent Service
+CrewAI,Agent Frameworks,SDK,https://docs.crewai.com/,Framework for orchestrating role-playing autonomous AI agents with collaborative intelligence,yes,https://github.com/crewAIInc/crewAI,44446,N/A,AWS Bedrock Agents
+ADK,Agent Frameworks,SDK,https://google.github.io/adk-docs/,Google Agent Development Kit for building multi-agent applications,yes,https://github.com/google/adk-python,17911,N/A,Vertex AI Agent Builder
+Semantic Kernel,Agent Frameworks,SDK,https://learn.microsoft.com/en-us/semantic-kernel/,Microsoft SDK for integrating LLMs into C#/Python/Java applications,yes,https://github.com/microsoft/semantic-kernel,27283,N/A,Foundry Agent Service
+Haystack,RAG & Knowledge Retrieval,SDK,https://docs.haystack.deepset.ai/,Open-source AI framework for production-ready RAG and agentic workflows,yes,https://github.com/deepset-ai/haystack,24257,N/A,Gemini File Search
+smolagents,Agent Frameworks,SDK,https://huggingface.co/docs/smolagents/en/index,HuggingFace lightweight library for building code-first agents,yes,https://github.com/huggingface/smolagents,25559,N/A,Vertex AI Agent Builder
 OpenAI,LLM Providers,API/SDK,https://developers.openai.com/api/reference/overview,Hosted LLM API with official SDKs for Python/TypeScript/Go/C# plus Agents SDK,no,N/A,N/A,Ollama,N/A
 Gemini,LLM Providers,API/SDK,https://ai.google.dev/gemini-api/docs,Google hosted LLM API with GenAI SDKs for Python/JS/Go/Java,no,N/A,N/A,Ollama,N/A
 Claude,LLM Providers,API/SDK,https://platform.claude.com/docs/en/home,Anthropic hosted LLM API with SDKs in Python/TypeScript/Java/Go/Ruby/C#/PHP plus Agent SDK,no,N/A,N/A,Ollama,N/A
-LlamaIndex,RAG & Knowledge Retrieval,SDK,https://developers.llamaindex.ai/python/framework/,Data framework for LLM applications with RAG pipelines and document parsing,yes,https://github.com/run-llama/llama_index,47109,N/A,Vertex AI
+LlamaIndex,RAG & Knowledge Retrieval,SDK,https://developers.llamaindex.ai/python/framework/,Data framework for LLM applications with RAG pipelines and document parsing,yes,https://github.com/run-llama/llama_index,47109,N/A,Gemini File Search
 pgvector,RAG & Knowledge Retrieval,SDK,https://github.com/pgvector/pgvector,PostgreSQL extension for vector similarity search and embeddings storage,yes,https://github.com/pgvector/pgvector,19914,N/A,Pinecone
 GraphRAG,RAG & Knowledge Retrieval,SDK,https://microsoft.github.io/graphrag/,Microsoft graph-based RAG system combining text extraction and network analysis,yes,https://github.com/microsoft/graphrag,31020,N/A,Neo4j Aura
 Temporal,Workflow Orchestration & Automation,SDK,https://docs.temporal.io/,Durable execution platform for reliable distributed systems with automatic failure handling,yes,https://github.com/temporalio/temporal,18451,N/A,AWS Step Functions
@@ -21,7 +21,7 @@ vLLM,Inference Serving,SDK/Infra,https://docs.vllm.ai/,High-throughput memory-ef
 SGLang,Inference Serving,SDK,https://docs.sglang.io/,High-performance serving framework for large language and multimodal models,yes,https://github.com/sgl-project/sglang,23652,N/A,Cerebras
 Groq,GPU Compute & Cloud Platforms,API/Infra,https://console.groq.com/docs/overview,Hosted API for fast LLM inference on custom LPU hardware,no,N/A,N/A,vLLM,N/A
 Cerebras,GPU Compute & Cloud Platforms,API/Infra,https://inference-docs.cerebras.ai/,AI inference API on custom wafer-scale engine hardware,no,N/A,N/A,vLLM,N/A
-KServe,Inference Serving,SDK/Infra,https://kserve.github.io/website/,Kubernetes-native model serving platform for ML inference at scale,yes,https://github.com/kserve/kserve,5125,N/A,AWS Bedrock
+KServe,Inference Serving,SDK/Infra,https://kserve.github.io/website/,Kubernetes-native model serving platform for ML inference at scale,yes,https://github.com/kserve/kserve,5125,N/A,AWS SageMaker
 Triton Inference Server,Inference Serving,SDK/Infra,https://docs.nvidia.com/deeplearning/triton-inference-server/,NVIDIA inference serving software for multi-framework model deployment,yes,https://github.com/triton-inference-server/server,10377,N/A,Groq
 BentoML,Inference Serving,SDK/Infra,https://docs.bentoml.com/,Python framework for building model inference APIs and serving systems,yes,https://github.com/bentoml/BentoML,8462,N/A,Inferless
 Modal,GPU Compute & Cloud Platforms,API/SDK/Infra,https://modal.com/docs,Serverless GPU compute platform for AI workloads with elastic scaling,no,N/A,N/A,Ray,N/A
@@ -48,7 +48,7 @@ n8n,Workflow Orchestration & Automation,API/SDK/UI,https://docs.n8n.io/,Workflow
 Activepieces,Workflow Orchestration & Automation,API/UI,https://www.activepieces.com/docs/,Open-source no-code business automation with 635+ integrations,yes,https://github.com/activepieces/activepieces,20928,N/A,Zapier
 Node-RED,Workflow Orchestration & Automation,UI,https://nodered.org/docs/,Flow-based programming tool with browser-based visual editor and 5000+ nodes,yes,https://github.com/node-red/node-red,22816,N/A,Crosser
 DSPy,Structured Output & Prompt Engineering,SDK,https://dspy.ai/,Stanford framework for programming LMs declaratively with automatic prompt optimization,yes,https://github.com/stanfordnlp/dspy,32331,N/A,PromptLayer
-Pydantic AI,Agent Frameworks,SDK,https://ai.pydantic.dev/,Python agent framework for production-grade GenAI apps with type-safe outputs,yes,https://github.com/pydantic/pydantic-ai,15015,N/A,Vertex AI
+Pydantic AI,Agent Frameworks,SDK,https://ai.pydantic.dev/,Python agent framework for production-grade GenAI apps with type-safe outputs,yes,https://github.com/pydantic/pydantic-ai,15015,N/A,Vertex AI Agent Builder
 Outlines,Structured Output & Prompt Engineering,SDK,https://dottxt-ai.github.io/outlines/,Python library for structured LLM generation via JSON Schema/regex/grammar,yes,https://github.com/dottxt-ai/outlines,13449,N/A,PromptLayer
 Instructor,Structured Output & Prompt Engineering,SDK,https://python.useinstructor.com/,Multi-language library for extracting structured data from LLMs,yes,https://github.com/instructor-ai/instructor,12413,N/A,PromptLayer
 BAML,Structured Output & Prompt Engineering,SDK,https://docs.boundaryml.com/,Domain-specific language for generating structured outputs from LLMs,yes,https://github.com/BoundaryML/baml,7642,N/A,PromptLayer
@@ -57,7 +57,7 @@ AWS Bedrock,GPU Compute & Cloud Platforms,API/SDK/Infra,https://docs.aws.amazon.
 Label Studio,Data Labeling,UI,https://labelstud.io/guide/,Open-source multi-type data labeling and annotation tool,yes,https://github.com/HumanSignal/label-studio,26488,N/A,Scale AI
 Ollama,Inference Serving,Infra/API/UI,https://github.com/ollama/ollama,Local LLM runner with REST API and CLI for quantized models,yes,https://github.com/ollama/ollama,163135,N/A,LM Studio
 LM Studio,Inference Serving,SDK/UI,https://lmstudio.ai/docs/,Desktop app for running local LLMs with Python/TS SDKs and OpenAI-compatible endpoints,no,N/A,N/A,Ollama,N/A
-Hugging Face Transformers,Inference Serving,SDK,https://huggingface.co/docs/transformers/en/index,Model-definition framework for state-of-the-art ML models in text/vision/audio/video with inference and training,yes,https://github.com/huggingface/transformers,156821,N/A,AWS Bedrock
+Hugging Face Transformers,Model Frameworks & Training,SDK,https://huggingface.co/docs/transformers/en/index,Model-definition framework for state-of-the-art ML models in text/vision/audio/video with inference and training,yes,https://github.com/huggingface/transformers,156821,N/A,Hugging Face Inference API
 Pinecone,RAG & Knowledge Retrieval,API/Infra,https://docs.pinecone.io/,Managed vector database for similarity search and AI applications at scale,no,N/A,N/A,pgvector,N/A
 Weaviate,RAG & Knowledge Retrieval,SDK/Infra,https://docs.weaviate.io/weaviate/,Open-source AI vector database with semantic search and structured filtering,yes,https://github.com/weaviate/weaviate,15600,N/A,Pinecone
 promptfoo,Evaluation & Testing,SDK,https://www.promptfoo.dev/docs/intro/,Open-source CLI and library for evaluating and red-teaming LLM applications,yes,https://github.com/promptfoo/promptfoo,10600,N/A,LangSmith

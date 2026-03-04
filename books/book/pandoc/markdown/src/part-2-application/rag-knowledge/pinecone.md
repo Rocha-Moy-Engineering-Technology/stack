@@ -1,0 +1,146 @@
+[Header 1 ("pinecone", [], []) [Str "Pinecone"], BlockQuote [Para [Str "The leading vector database for building accurate and performant AI applications at scale in production. Fully managed infrastructure with integrated embedding, semantic/lexical/hybrid search, metadata filtering, and reranking."]], Table ("", [], []) (Caption Nothing []) [(AlignDefault, ColWidthDefault), (AlignDefault, ColWidthDefault)] (TableHead ("", [], []) [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Field"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Value"]]]]) [(TableBody ("", [], []) (RowHeadColumns 0) [] [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Name"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Pinecone"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Group"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "RAG & Knowledge Retrieval"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Type"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "API/Infra"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Open Source"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "No"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "GitHub"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "N/A"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Stars"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "N/A"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Docs"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "https://docs.pinecone.io/"]]]])] (TableFoot ("", [], []) []), Header 2 ("overview", ["unnumbered", "unlisted"], []) [Str "Overview"], Para [Str "Pinecone is a fully managed vector database purpose-built for AI applications that require fast, accurate similarity search at production scale. Unlike self-hosted vector databases that demand infrastructure expertise, Pinecone abstracts away the operational complexity of indexing, sharding, replication, and scaling, exposing a clean API for storing, querying, and managing high-dimensional vector embeddings."], Para [Str "The platform supports three search paradigms: dense vector search for semantic similarity, sparse vector search for lexical/keyword matching, and hybrid search that combines both approaches. With integrated embedding capabilities, Pinecone can accept raw text and automatically convert it to vectors, eliminating the need for external embedding pipelines."], Para [Str "Pinecone serves as a retrieval backbone for Retrieval-Augmented Generation (RAG) systems, recommendation engines, anomaly detection, and any application where finding semantically similar items in large corpora is critical. Its namespace mechanism provides built-in multitenancy and data partitioning without requiring separate indexes."], Header 2 ("core-concepts", ["unnumbered", "unlisted"], []) [Str "Core Concepts"], Header 3 ("indexes", ["unnumbered", "unlisted"], []) [Str "Indexes"], Para [Str "An index is the primary organizational unit in Pinecone. Each index stores vectors and their associated metadata, and it is configured at creation time with a specific dimensionality and distance metric. Pinecone offers two index types:"], BulletList [[Plain [Strong [Str "Dense indexes"], Str " store floating-point vector embeddings for semantic similarity search. Vectors are compared using cosine similarity, Euclidean distance, or dot product."]], [Plain [Strong [Str "Sparse indexes"], Str " store sparse vector representations for lexical and keyword-based search, analogous to traditional information retrieval techniques like BM25."]]], Header 3 ("vectors", ["unnumbered", "unlisted"], []) [Str "Vectors"], Para [Str "A vector is an array of floating-point numbers representing an embedded piece of data (text, image, audio, etc.). Each vector is identified by a unique ID and can carry arbitrary key-value metadata. Vectors are upserted (inserted or updated) into an index and retrieved through query operations."], Header 3 ("namespaces", ["unnumbered", "unlisted"], []) [Str "Namespaces"], Para [Str "Namespaces partition vectors within a single index. Every query and upsert operation targets a specific namespace (or the default namespace if none is specified). Namespaces enable multitenant architectures where each tenant's data is logically isolated without the overhead of maintaining separate indexes. Queries never cross namespace boundaries."], Header 3 ("metadata", ["unnumbered", "unlisted"], []) [Str "Metadata"], Para [Str "Each vector can carry a metadata dictionary with string, numeric, boolean, or list-of-strings values. Metadata filters can be applied during queries to narrow results beyond vector similarity, enabling filtered semantic search (e.g., \"find similar documents published after 2024 in the 'engineering' category\")."], Header 3 ("integrated-embedding", ["unnumbered", "unlisted"], []) [Str "Integrated Embedding"], Para [Str "Pinecone's integrated embedding feature accepts raw text input and automatically generates vector embeddings using a built-in model. This eliminates the need for a separate embedding service, reducing latency and architectural complexity for text-based use cases."], Header 3 ("reranking", ["unnumbered", "unlisted"], []) [Str "Reranking"], Para [Str "After an initial retrieval pass, Pinecone can rerank results using a cross-encoder or similar model to improve precision. Reranking is particularly useful in RAG pipelines where the top-k retrieved documents must be highly relevant before being passed to a Large Language Model (LLM)."], Header 2 ("installation", ["unnumbered", "unlisted"], []) [Str "Installation"], Header 3 ("python-sdk", ["unnumbered", "unlisted"], []) [Str "Python SDK"], CodeBlock ("", ["bash"], []) "pip install pinecone
+", Header 3 ("nodejs-sdk", ["unnumbered", "unlisted"], []) [Str "Node.js SDK"], CodeBlock ("", ["bash"], []) "npm install @pinecone-database/pinecone
+", Header 3 ("cli", ["unnumbered", "unlisted"], []) [Str "CLI"], Para [Str "Pinecone provides a Command-Line Interface (CLI) for index management, data operations, and account administration:"], CodeBlock ("", ["bash"], []) "pip install pinecone-cli
+pinecone login
+", Header 3 ("authentication", ["unnumbered", "unlisted"], []) [Str "Authentication"], Para [Str "All API access requires an API key, obtained from the Pinecone console. The key is passed via the ", Code ("", [], []) "Api-Key", Str " header in REST calls or through SDK client initialization:"], CodeBlock ("", ["python"], []) "from pinecone import Pinecone
+
+pc = Pinecone(api_key=\"YOUR_API_KEY\")
+", Header 2 ("architecture", ["unnumbered", "unlisted"], []) [Str "Architecture"], Header 3 ("fully-managed-infrastructure", ["unnumbered", "unlisted"], []) [Str "Fully Managed Infrastructure"], Para [Str "Pinecone handles all infrastructure concerns: provisioning, scaling, replication, backups, and failover. Users interact exclusively through APIs and SDKs without managing servers, containers, or storage volumes."], Header 3 ("storage-and-compute-separation", ["unnumbered", "unlisted"], []) [Str "Storage and Compute Separation"], Para [Str "Indexes in Pinecone separate storage from compute. Data is durably persisted independently of query-serving nodes, enabling scaling of read throughput without re-ingesting data."], Header 3 ("pod-based-and-serverless-deployments", ["unnumbered", "unlisted"], []) [Str "Pod-Based and Serverless Deployments"], Para [Str "Pinecone offers two deployment models:"], BulletList [[Plain [Strong [Str "Serverless"], Str " indexes scale automatically based on usage, with no provisioning required. Billing is based on storage and query volume."]], [Plain [Strong [Str "Pod-based"], Str " indexes provide dedicated compute resources with predictable performance characteristics, suited for workloads requiring consistent low-latency guarantees."]]], Header 3 ("namespace-isolation", ["unnumbered", "unlisted"], []) [Str "Namespace Isolation"], Para [Str "Namespaces provide logical isolation within a single index. Each namespace maintains its own vector set, and queries are scoped to a single namespace. This architecture supports multitenancy at the data layer without the cost and complexity of per-tenant indexes."], Header 2 ("key-features", ["unnumbered", "unlisted"], []) [Str "Key Features"], BulletList [[Plain [Strong [Str "Semantic search"], Str ": Query dense indexes with vector embeddings to find semantically similar items regardless of keyword overlap."]], [Plain [Strong [Str "Lexical search"], Str ": Query sparse indexes for keyword-based retrieval, suitable for exact-match and traditional information retrieval workloads."]], [Plain [Strong [Str "Hybrid search"], Str ": Combine dense and sparse search in a single query to balance semantic understanding with keyword precision."]], [Plain [Strong [Str "Integrated embedding"], Str ": Send raw text directly to Pinecone and let the platform handle embedding generation, removing the need for an external embedding service."]], [Plain [Strong [Str "Metadata filtering"], Str ": Apply filters on metadata fields during queries to scope results by category, date range, source, or any custom attribute."]], [Plain [Strong [Str "Reranking"], Str ": Reorder initial retrieval results using a cross-encoder model to improve precision before downstream consumption."]], [Plain [Strong [Str "Upsert and batch import"], Str ": Insert or update vectors individually or in bulk. Batch import supports large-scale data ingestion from cloud storage."]], [Plain [Strong [Str "Namespace organization"], Str ": Partition data within an index for multitenancy, access control, or logical separation of datasets."]], [Plain [Strong [Str "Real-time updates"], Str ": Upserted vectors become queryable with low latency, enabling near-real-time retrieval over changing data."]], [Plain [Strong [Str "Managed scaling"], Str ": Serverless indexes scale automatically; pod-based indexes can be resized without downtime."]]], Header 2 ("use-cases", ["unnumbered", "unlisted"], []) [Str "Use Cases"], Header 3 ("retrieval-augmented-generation", ["unnumbered", "unlisted"], []) [Str "Retrieval-Augmented Generation"], Para [Str "Pinecone serves as the retrieval layer in RAG systems. Documents are chunked, embedded, and stored in an index. At query time, the user's question is embedded and used to retrieve the most relevant chunks, which are then passed as context to an LLM for grounded answer generation. Metadata filtering narrows retrieval to specific document sets, time ranges, or access levels."], Header 3 ("semantic-search", ["unnumbered", "unlisted"], []) [Str "Semantic Search"], Para [Str "Applications that need to find items by meaning rather than exact keywords use Pinecone's dense indexes. Examples include searching knowledge bases, FAQs, support tickets, and product catalogs where user queries are natural-language and rarely match document text verbatim."], Header 3 ("question-answering-over-proprietary-data", ["unnumbered", "unlisted"], []) [Str "Question Answering Over Proprietary Data"], Para [Str "Pinecone's assistant quickstart demonstrates building a Q&A system over proprietary documents. Documents are ingested, and users ask natural-language questions that retrieve relevant passages for LLM-powered answers grounded in the organization's own data."], Header 3 ("recommendation-systems", ["unnumbered", "unlisted"], []) [Str "Recommendation Systems"], Para [Str "By embedding users and items into the same vector space, Pinecone enables real-time similarity-based recommendations. Querying with a user's embedding returns the most similar items, and metadata filters can enforce business rules (e.g., only recommend in-stock products)."], Header 3 ("anomaly-detection", ["unnumbered", "unlisted"], []) [Str "Anomaly Detection"], Para [Str "Vectors representing normal behavior are indexed, and incoming data points are queried against the index. Points with low similarity to any stored vector are flagged as anomalies. This pattern applies to fraud detection, network security, and manufacturing quality control."], Header 2 ("api-reference", ["unnumbered", "unlisted"], []) [Str "API Reference"], Header 3 ("index-management", ["unnumbered", "unlisted"], []) [Str "Index Management"], CodeBlock ("", ["python"], []) "from pinecone import Pinecone, ServerlessSpec
+
+pc = Pinecone(api_key=\"YOUR_API_KEY\")
+
+# Create a serverless index
+pc.create_index(
+    name=\"my-index\",
+    dimension=1536,
+    metric=\"cosine\",
+    spec=ServerlessSpec(cloud=\"aws\", region=\"us-east-1\")
+)
+
+# List indexes
+indexes = pc.list_indexes()
+
+# Describe an index
+description = pc.describe_index(\"my-index\")
+
+# Delete an index
+pc.delete_index(\"my-index\")
+", Header 3 ("vector-operations", ["unnumbered", "unlisted"], []) [Str "Vector Operations"], CodeBlock ("", ["python"], []) "index = pc.Index(\"my-index\")
+
+# Upsert vectors
+index.upsert(
+    vectors=[
+        {
+            \"id\": \"doc-1\",
+            \"values\": [0.1, 0.2, ...],  # 1536-dimensional vector
+            \"metadata\": {\"source\": \"wiki\", \"category\": \"science\"}
+        },
+        {
+            \"id\": \"doc-2\",
+            \"values\": [0.3, 0.4, ...],
+            \"metadata\": {\"source\": \"arxiv\", \"category\": \"engineering\"}
+        }
+    ],
+    namespace=\"tenant-a\"
+)
+
+# Query with metadata filter
+results = index.query(
+    vector=[0.15, 0.25, ...],
+    top_k=10,
+    namespace=\"tenant-a\",
+    filter={\"category\": {\"$eq\": \"science\"}},
+    include_metadata=True
+)
+
+# Fetch vectors by ID
+fetched = index.fetch(ids=[\"doc-1\", \"doc-2\"], namespace=\"tenant-a\")
+
+# Delete vectors
+index.delete(ids=[\"doc-1\"], namespace=\"tenant-a\")
+", Header 3 ("integrated-embedding-1", ["unnumbered", "unlisted"], []) [Str "Integrated Embedding"], CodeBlock ("", ["python"], []) "# Upsert with raw text (integrated embedding)
+index.upsert_records(
+    namespace=\"tenant-a\",
+    records=[
+        {\"_id\": \"doc-1\", \"text\": \"Pinecone is a vector database.\", \"category\": \"tech\"},
+        {\"_id\": \"doc-2\", \"text\": \"Vectors enable semantic search.\", \"category\": \"tech\"}
+    ]
+)
+
+# Query with raw text
+results = index.search(
+    namespace=\"tenant-a\",
+    query={\"inputs\": {\"text\": \"How does semantic search work?\"}, \"top_k\": 5}
+)
+", Header 2 ("configuration", ["unnumbered", "unlisted"], []) [Str "Configuration"], Header 3 ("index-configuration", ["unnumbered", "unlisted"], []) [Str "Index Configuration"], Table ("", [], []) (Caption Nothing []) [(AlignDefault, (ColWidth 0.3333333333333333)), (AlignDefault, (ColWidth 0.3939393939393939)), (AlignDefault, (ColWidth 0.2727272727272727))] (TableHead ("", [], []) [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Parameter"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Description"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Options"]]]]) [(TableBody ("", [], []) (RowHeadColumns 0) [] [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "name"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Unique index identifier"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Alphanumeric string"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "dimension"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Vector dimensionality (must match embedding model output)"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Integer (e.g., 768, 1024, 1536)"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "metric"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Distance metric for similarity"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "cosine", Str ", ", Code ("", [], []) "euclidean", Str ", ", Code ("", [], []) "dotproduct"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "spec"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Deployment specification"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Serverless or pod-based"]]]])] (TableFoot ("", [], []) []), Header 3 ("serverless-spec", ["unnumbered", "unlisted"], []) [Str "Serverless Spec"], Table ("", [], []) (Caption Nothing []) [(AlignDefault, ColWidthDefault), (AlignDefault, ColWidthDefault), (AlignDefault, ColWidthDefault)] (TableHead ("", [], []) [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Parameter"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Description"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Options"]]]]) [(TableBody ("", [], []) (RowHeadColumns 0) [] [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "cloud"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Cloud provider"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "aws", Str ", ", Code ("", [], []) "gcp", Str ", ", Code ("", [], []) "azure"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "region"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Deployment region"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Provider-specific region strings"]]]])] (TableFoot ("", [], []) []), Header 3 ("query-parameters", ["unnumbered", "unlisted"], []) [Str "Query Parameters"], Table ("", [], []) (Caption Nothing []) [(AlignDefault, ColWidthDefault), (AlignDefault, ColWidthDefault), (AlignDefault, ColWidthDefault)] (TableHead ("", [], []) [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Parameter"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Description"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Default"]]]]) [(TableBody ("", [], []) (RowHeadColumns 0) [] [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "top_k"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Number of results to return"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "10"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "namespace"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Target namespace"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "\"\""]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "filter"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Metadata filter expression"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "None"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "include_metadata"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Return metadata with results"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "False"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Code ("", [], []) "include_values"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Return vector values with results"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "False"]]]])] (TableFoot ("", [], []) []), Header 2 ("integration-patterns", ["unnumbered", "unlisted"], []) [Str "Integration Patterns"], Header 3 ("langchain", ["unnumbered", "unlisted"], []) [Str "LangChain"], CodeBlock ("", ["python"], []) "from langchain_pinecone import PineconeVectorStore
+from langchain_openai import OpenAIEmbeddings
+
+vectorstore = PineconeVectorStore(
+    index_name=\"my-index\",
+    embedding=OpenAIEmbeddings(),
+    namespace=\"documents\"
+)
+
+retriever = vectorstore.as_retriever(search_kwargs={\"k\": 5})
+", Header 3 ("llamaindex", ["unnumbered", "unlisted"], []) [Str "LlamaIndex"], CodeBlock ("", ["python"], []) "from llama_index.vector_stores.pinecone import PineconeVectorStore
+
+vector_store = PineconeVectorStore(
+    pinecone_index=index,
+    namespace=\"documents\"
+)
+", Header 3 ("direct-rest-api", ["unnumbered", "unlisted"], []) [Str "Direct REST API"], CodeBlock ("", ["bash"], []) "curl -X POST \"https://my-index-abc1234.svc.us-east-1.pinecone.io/query\" \\
+  -H \"Api-Key: YOUR_API_KEY\" \\
+  -H \"Content-Type: application/json\" \\
+  -d '{
+    \"vector\": [0.1, 0.2, ...],
+    \"topK\": 10,
+    \"namespace\": \"tenant-a\",
+    \"filter\": {\"category\": {\"$eq\": \"science\"}},
+    \"includeMetadata\": true
+  }'
+", Header 2 ("examples", ["unnumbered", "unlisted"], []) [Str "Examples"], Header 3 ("rag-pipeline-with-integrated-embedding", ["unnumbered", "unlisted"], []) [Str "RAG Pipeline with Integrated Embedding"], CodeBlock ("", ["python"], []) "from pinecone import Pinecone
+
+pc = Pinecone(api_key=\"YOUR_API_KEY\")
+index = pc.Index(\"knowledge-base\")
+
+# Ingest documents
+documents = [
+    {\"_id\": \"chunk-1\", \"text\": \"The mitochondria is the powerhouse of the cell.\", \"source\": \"biology-101\"},
+    {\"_id\": \"chunk-2\", \"text\": \"ATP is produced through oxidative phosphorylation.\", \"source\": \"biology-101\"},
+    {\"_id\": \"chunk-3\", \"text\": \"Photosynthesis converts light energy to chemical energy.\", \"source\": \"biology-101\"},
+]
+
+index.upsert_records(namespace=\"biology\", records=documents)
+
+# Query
+results = index.search(
+    namespace=\"biology\",
+    query={\"inputs\": {\"text\": \"How do cells produce energy?\"}, \"top_k\": 3}
+)
+
+# Pass retrieved context to LLM
+context = \"\\n\".join([match[\"text\"] for match in results[\"matches\"]])
+", Header 3 ("multitenant-search", ["unnumbered", "unlisted"], []) [Str "Multitenant Search"], CodeBlock ("", ["python"], []) "# Tenant A ingests their documents
+index.upsert(
+    vectors=[{\"id\": \"a-1\", \"values\": embedding_a1, \"metadata\": {\"doc_type\": \"contract\"}}],
+    namespace=\"tenant-a\"
+)
+
+# Tenant B ingests their documents
+index.upsert(
+    vectors=[{\"id\": \"b-1\", \"values\": embedding_b1, \"metadata\": {\"doc_type\": \"invoice\"}}],
+    namespace=\"tenant-b\"
+)
+
+# Queries are scoped to the tenant's namespace
+results_a = index.query(vector=query_vec, top_k=5, namespace=\"tenant-a\")
+results_b = index.query(vector=query_vec, top_k=5, namespace=\"tenant-b\")
+# Tenant A never sees Tenant B's data and vice versa
+", Header 3 ("hybrid-search", ["unnumbered", "unlisted"], []) [Str "Hybrid Search"], CodeBlock ("", ["python"], []) "# Query combining dense and sparse vectors
+results = index.query(
+    vector=dense_embedding,          # semantic component
+    sparse_vector=sparse_embedding,  # lexical component
+    top_k=10,
+    namespace=\"documents\"
+)
+", Header 2 ("limitations", ["unnumbered", "unlisted"], []) [Str "Limitations"], BulletList [[Plain [Strong [Str "Proprietary and closed-source"], Str ": No self-hosting option. All data is stored on Pinecone's managed infrastructure, which may not meet certain data sovereignty or air-gapped deployment requirements."]], [Plain [Strong [Str "Vendor lock-in"], Str ": The API and data format are Pinecone-specific. Migrating to another vector database requires re-ingesting data and rewriting query logic."]], [Plain [Strong [Str "Cost at scale"], Str ": Pricing is usage-based. Large-scale deployments with high query volumes and substantial storage can become expensive compared to self-hosted alternatives."]], [Plain [Strong [Str "Index immutability"], Str ": Certain index properties (dimension, metric) cannot be changed after creation. Changing these requires creating a new index and re-ingesting all data."]], [Plain [Strong [Str "Metadata filter constraints"], Str ": Metadata values are limited to specific types (string, number, boolean, list of strings). Complex nested objects are not supported as metadata values."]], [Plain [Strong [Str "Namespace limitations"], Str ": Namespaces cannot be listed or enumerated via the API. Applications must track namespaces externally."]], [Plain [Strong [Str "No server-side joins or aggregations"], Str ": Pinecone is a retrieval engine, not a general-purpose database. Complex queries involving joins, aggregations, or transactions are not supported."]]], Header 2 ("changelog", ["unnumbered", "unlisted"], []) [Str "Changelog"], BulletList [[Plain [Strong [Str "Integrated embedding"], Str ": Pinecone added the ability to accept raw text and automatically generate embeddings, simplifying the ingestion pipeline for text-based use cases."]], [Plain [Strong [Str "Serverless indexes"], Str ": Introduction of serverless deployment model with automatic scaling and usage-based billing alongside the original pod-based architecture."]], [Plain [Strong [Str "Sparse indexes"], Str ": Support for sparse vector search enabling lexical/keyword retrieval alongside dense semantic search."]], [Plain [Strong [Str "Reranking"], Str ": Built-in reranking capability to improve precision of retrieval results before downstream LLM consumption."]], [Plain [Strong [Str "Assistant quickstart"], Str ": Addition of a guided quickstart for building Q&A systems over proprietary data."]]], Header 2 ("citations", ["unnumbered", "unlisted"], []) [Str "Citations"], BulletList [[Plain [Str "[", Str "1", Str "]", Str " ", Link ("", [], []) [Str "Pinecone Documentation"] ("https://docs.pinecone.io/", "")]]]]
