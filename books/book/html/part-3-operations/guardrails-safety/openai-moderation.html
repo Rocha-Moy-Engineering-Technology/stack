@@ -1,0 +1,766 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>OpenAI Moderation - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-b1240814.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-c071be6d.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-3-operations/guardrails-safety/openai-moderation.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="openai-moderation"><a class="header" href="#openai-moderation">OpenAI Moderation</a></h1>
+<blockquote>
+<p>OpenAI API for classifying harmful text and image content</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Guardrails &amp; Safety</td></tr>
+<tr><td>Type</td><td>API</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Documentation</td><td><a href="https://developers.openai.com/api/docs/guides/moderation">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>OpenAI Moderation is a free API endpoint that classifies text and image content across 13 harm categories. It is designed to check whether user-generated or model-generated content violates OpenAI’s usage policies, and it can be integrated into any application pipeline as a content safety filter. The endpoint returns per-category boolean flags and confidence scores, enabling both binary filtering and threshold-based custom policies. [1]</p>
+<p>Two models are available: <code>omni-moderation-latest</code> (recommended, multi-modal with text and image support) and <code>text-moderation-latest</code> (legacy, text-only with fewer categorization options). The omni model provides expanded category coverage including <code>illicit</code> and <code>illicit/violent</code> categories that are unavailable in the legacy text-only model. The moderation endpoint is free to use for all OpenAI API customers. [1]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="content-categories"><a class="header" href="#content-categories">Content Categories</a></h3>
+<p>The moderation system classifies content across 13 categories organized into five groups:</p>
+<p><strong>Harassment:</strong></p>
+<ul>
+<li><code>harassment</code> – Language that expresses, incites, or promotes harassing behavior toward any target</li>
+<li><code>harassment/threatening</code> – Harassment content that includes violence or serious harm threats against a target</li>
+</ul>
+<p><strong>Hate Speech:</strong></p>
+<ul>
+<li><code>hate</code> – Content that expresses, incites, or promotes hate based on race, gender, ethnicity, religion, nationality, sexual orientation, disability status, or caste</li>
+<li><code>hate/threatening</code> – Hateful content that includes violence or serious harm threats against a targeted group</li>
+</ul>
+<p><strong>Illicit Activity (omni model only, text-only input):</strong></p>
+<ul>
+<li><code>illicit</code> – Content that provides advice or instructions for carrying out illegal or illicit acts</li>
+<li><code>illicit/violent</code> – Content related to illicit acts that also involve violence or weapons</li>
+</ul>
+<p><strong>Self-Harm:</strong></p>
+<ul>
+<li><code>self-harm</code> – Content that promotes, encourages, or depicts acts of self-harm such as suicide, cutting, or eating disorders</li>
+<li><code>self-harm/intent</code> – Content where the speaker expresses that they are engaging in or intend to engage in acts of self-harm</li>
+<li><code>self-harm/instructions</code> – Content that encourages or gives instructions on how to commit self-harm</li>
+</ul>
+<p><strong>Sexual Content:</strong></p>
+<ul>
+<li><code>sexual</code> – Content meant to describe or promote sexual activity, including arousal-oriented descriptions and depictions of sexual services</li>
+<li><code>sexual/minors</code> – Sexual content involving individuals under 18 years of age (text-only input)</li>
+</ul>
+<p><strong>Violence:</strong></p>
+<ul>
+<li><code>violence</code> – Content that depicts death, violence, or physical injury</li>
+<li><code>violence/graphic</code> – Content that depicts death, violence, or physical injury in graphic detail [1]</li>
+</ul>
+<h3 id="flagging-vs-scoring"><a class="header" href="#flagging-vs-scoring">Flagging vs. Scoring</a></h3>
+<p>Each moderation response provides two complementary signals per category:</p>
+<ul>
+<li><strong><code>flagged</code></strong> – A top-level boolean indicating whether the content violates any policy category. This is a binary determination made by the model.</li>
+<li><strong><code>category_scores</code></strong> – Floating-point confidence scores between 0 and 1 for each category. Higher scores indicate greater confidence that the input violates the given category. These scores are not probabilities and should not be interpreted as such. [1]</li>
+</ul>
+<p>Applications can use the boolean <code>flagged</code> field for simple pass/fail filtering, or use <code>category_scores</code> with custom thresholds for more nuanced content policies tailored to specific use cases.</p>
+<h3 id="multi-modal-input"><a class="header" href="#multi-modal-input">Multi-Modal Input</a></h3>
+<p>The <code>omni-moderation-latest</code> model accepts both text and image inputs. Images can be provided via HTTP URL or base64-encoded data URI. When processing image-only inputs, text-only categories (<code>illicit</code>, <code>illicit/violent</code>, <code>sexual/minors</code>) return zero scores because these categories only apply to textual content. The <code>category_applied_input_types</code> field in the response indicates which input types were evaluated for each category. [1]</p>
+<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
+<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
+<p>The moderation endpoint uses the same API key as all other OpenAI endpoints:</p>
+<pre><code class="language-bash">export OPENAI_API_KEY="your_api_key_here"
+</code></pre>
+<p>Authentication is provided via the HTTP <code>Authorization</code> header with a Bearer token. [1]</p>
+<h3 id="python"><a class="header" href="#python">Python</a></h3>
+<pre><code class="language-bash">pip install openai
+</code></pre>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+moderation = client.moderations.create(
+    model="omni-moderation-latest",
+    input="I want to hurt someone."
+)
+
+output = moderation.results[0]
+print(output.flagged)        # True
+print(output.categories)     # Category booleans
+print(output.category_scores) # Category confidence scores
+</code></pre>
+<p>[1]</p>
+<h3 id="javascript--nodejs"><a class="header" href="#javascript--nodejs">JavaScript / Node.js</a></h3>
+<pre><code class="language-bash">npm install openai
+</code></pre>
+<pre><code class="language-javascript">import OpenAI from "openai";
+
+const client = new OpenAI();
+
+const moderation = await client.moderations.create({
+    model: "omni-moderation-latest",
+    input: "I want to hurt someone."
+});
+
+const output = moderation.results[0];
+console.log(output.flagged);
+console.log(output.categories);
+console.log(output.category_scores);
+</code></pre>
+<p>[1]</p>
+<h3 id="curl"><a class="header" href="#curl">cURL</a></h3>
+<pre><code class="language-bash">curl https://api.openai.com/v1/moderations \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+    "model": "omni-moderation-latest",
+    "input": "I want to hurt someone."
+  }'
+</code></pre>
+<p>[1]</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<h3 id="api-endpoint"><a class="header" href="#api-endpoint">API Endpoint</a></h3>
+<p>The moderation system is exposed as a single REST endpoint:</p>
+<ul>
+<li><strong>Endpoint</strong>: <code>POST https://api.openai.com/v1/moderations</code></li>
+<li><strong>Authentication</strong>: Bearer token via <code>Authorization</code> header</li>
+<li><strong>Content-Type</strong>: <code>application/json</code></li>
+<li><strong>Cost</strong>: Free for all OpenAI API users [1]</li>
+</ul>
+<h3 id="processing-pipeline"><a class="header" href="#processing-pipeline">Processing Pipeline</a></h3>
+<p>The moderation pipeline operates as follows:</p>
+<ol>
+<li><strong>Input ingestion</strong> – Accept text string, image URL, base64-encoded image, or an array combining multiple input types</li>
+<li><strong>Model inference</strong> – Run the selected moderation model (<code>omni-moderation-latest</code> or <code>text-moderation-latest</code>) against all input content</li>
+<li><strong>Category classification</strong> – Evaluate each of the 13 content categories independently, producing boolean flags and confidence scores</li>
+<li><strong>Input type tracking</strong> – Record which input types (text, image) were applied to each category evaluation</li>
+<li><strong>Response assembly</strong> – Return a results array with <code>flagged</code>, <code>categories</code>, <code>category_scores</code>, and <code>category_applied_input_types</code> for each input item [1]</li>
+</ol>
+<h3 id="model-comparison"><a class="header" href="#model-comparison">Model Comparison</a></h3>
+<ul>
+<li><strong><code>omni-moderation-latest</code></strong> – Recommended model. Supports text and image inputs. Covers all 13 categories. Snapshot aliases (e.g., <code>omni-moderation-2024-09-26</code>) are available for pinning a specific model version.</li>
+<li><strong><code>text-moderation-latest</code></strong> – Legacy model. Text-only input. Does not support <code>illicit</code> or <code>illicit/violent</code> categories. Snapshot alias: <code>text-moderation-007</code>. [1]</li>
+</ul>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<h3 id="text-moderation"><a class="header" href="#text-moderation">Text Moderation</a></h3>
+<p>The primary use case is classifying text content. A single string input is evaluated against all applicable categories:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+moderation = client.moderations.create(
+    model="omni-moderation-latest",
+    input="This is a sample text to moderate."
+)
+
+result = moderation.results[0]
+if result.flagged:
+    print("Content flagged for policy violation")
+    for category, flagged in vars(result.categories).items():
+        if flagged:
+            print(f"  Violated: {category}")
+</code></pre>
+<p>[1]</p>
+<h3 id="image-moderation"><a class="header" href="#image-moderation">Image Moderation</a></h3>
+<p>The omni model classifies images provided via URL or base64-encoded data URI:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+moderation = client.moderations.create(
+    model="omni-moderation-latest",
+    input=[
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://example.com/image.jpg"
+            }
+        }
+    ]
+)
+</code></pre>
+<p>[1]</p>
+<h3 id="multi-modal-moderation"><a class="header" href="#multi-modal-moderation">Multi-Modal Moderation</a></h3>
+<p>Text and images can be combined in a single request for simultaneous classification:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+moderation = client.moderations.create(
+    model="omni-moderation-latest",
+    input=[
+        {"type": "text", "text": "Here is an image of violence"},
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://example.com/image.jpg"
+            }
+        }
+    ]
+)
+</code></pre>
+<p>When combining text and image inputs, the model evaluates both modalities together. Text-only categories (<code>illicit</code>, <code>illicit/violent</code>, <code>sexual/minors</code>) still apply only to the text portion and receive zero scores for image-only content. [1]</p>
+<h3 id="base64-image-input"><a class="header" href="#base64-image-input">Base64 Image Input</a></h3>
+<p>Images can be provided as base64-encoded data URIs, avoiding the need for publicly accessible URLs:</p>
+<pre><code class="language-python">import base64
+from openai import OpenAI
+
+client = OpenAI()
+
+with open("image.png", "rb") as f:
+    b64_image = base64.b64encode(f.read()).decode("utf-8")
+
+moderation = client.moderations.create(
+    model="omni-moderation-latest",
+    input=[
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": f"data:image/png;base64,{b64_image}"
+            }
+        }
+    ]
+)
+</code></pre>
+<p>[1]</p>
+<h3 id="category-score-thresholds"><a class="header" href="#category-score-thresholds">Category Score Thresholds</a></h3>
+<p>The <code>category_scores</code> field enables custom content policies with adjustable sensitivity per category:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+THRESHOLDS = {
+    "harassment": 0.7,
+    "violence": 0.8,
+    "sexual": 0.6,
+    "self-harm": 0.5,
+}
+
+moderation = client.moderations.create(
+    model="omni-moderation-latest",
+    input="Content to evaluate"
+)
+
+scores = moderation.results[0].category_scores
+for category, threshold in THRESHOLDS.items():
+    score = getattr(scores, category.replace("-", "_"))
+    if score &gt; threshold:
+        print(f"Category '{category}' exceeds threshold: {score:.4f} &gt; {threshold}")
+</code></pre>
+<p>[1]</p>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<h3 id="user-generated-content-filtering"><a class="header" href="#user-generated-content-filtering">User-Generated Content Filtering</a></h3>
+<p>Pre-screen user submissions (comments, posts, messages) before publishing. Use the boolean <code>flagged</code> field for automatic blocking or route flagged content to human review queues.</p>
+<h3 id="llm-output-safety"><a class="header" href="#llm-output-safety">LLM Output Safety</a></h3>
+<p>Run model-generated responses through the moderation endpoint before delivering them to end users. This provides a secondary safety layer beyond the model’s built-in content policies.</p>
+<h3 id="chat-application-moderation"><a class="header" href="#chat-application-moderation">Chat Application Moderation</a></h3>
+<p>Evaluate both incoming user messages and outgoing assistant responses in real time. Flag conversations that contain policy-violating content for review or automatic termination.</p>
+<h3 id="content-platform-compliance"><a class="header" href="#content-platform-compliance">Content Platform Compliance</a></h3>
+<p>Implement category-specific policies with custom score thresholds. For example, a children’s platform might use lower thresholds for <code>sexual</code> and <code>violence</code> categories while a news platform might tolerate higher <code>violence</code> scores for reporting contexts.</p>
+<h3 id="image-upload-screening"><a class="header" href="#image-upload-screening">Image Upload Screening</a></h3>
+<p>Screen user-uploaded images for violent, sexual, or self-harm content before they are stored or displayed. Combine with text moderation for captioned or annotated images.</p>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="request"><a class="header" href="#request">Request</a></h3>
+<ul>
+<li><strong>Method</strong>: <code>POST</code></li>
+<li><strong>URL</strong>: <code>https://api.openai.com/v1/moderations</code></li>
+<li><strong>Headers</strong>: <code>Authorization: Bearer &lt;API_KEY&gt;</code>, <code>Content-Type: application/json</code></li>
+</ul>
+<h3 id="request-body"><a class="header" href="#request-body">Request Body</a></h3>
+<ul>
+<li><strong><code>model</code></strong> – String. Model to use. Values: <code>omni-moderation-latest</code>, <code>omni-moderation-2024-09-26</code>, <code>text-moderation-latest</code>, <code>text-moderation-007</code>.</li>
+<li><strong><code>input</code></strong> – String or array. For text-only: a plain string. For multi-modal: an array of objects with <code>type</code> field (<code>text</code> or <code>image_url</code>).</li>
+</ul>
+<h3 id="response-object"><a class="header" href="#response-object">Response Object</a></h3>
+<ul>
+<li><strong><code>id</code></strong> – String. Unique identifier for the moderation request.</li>
+<li><strong><code>model</code></strong> – String. Model used for classification.</li>
+<li><strong><code>results</code></strong> – Array of result objects, one per input item.</li>
+</ul>
+<h3 id="result-object"><a class="header" href="#result-object">Result Object</a></h3>
+<ul>
+<li><strong><code>flagged</code></strong> – Boolean. <code>true</code> if the model classifies the content as potentially harmful.</li>
+<li><strong><code>categories</code></strong> – Object. Boolean per category indicating whether the category was violated.</li>
+<li><strong><code>category_scores</code></strong> – Object. Float per category (0 to 1) indicating confidence of violation.</li>
+<li><strong><code>category_applied_input_types</code></strong> – Object. Array of input types (<code>text</code>, <code>image</code>) evaluated for each category. [1]</li>
+</ul>
+<h3 id="example-response"><a class="header" href="#example-response">Example Response</a></h3>
+<pre><code class="language-json">{
+  "id": "modr-abc123",
+  "model": "omni-moderation-latest",
+  "results": [
+    {
+      "flagged": true,
+      "categories": {
+        "harassment": false,
+        "harassment/threatening": false,
+        "hate": false,
+        "hate/threatening": false,
+        "illicit": false,
+        "illicit/violent": false,
+        "self-harm": false,
+        "self-harm/intent": false,
+        "self-harm/instructions": false,
+        "sexual": false,
+        "sexual/minors": false,
+        "violence": true,
+        "violence/graphic": false
+      },
+      "category_scores": {
+        "harassment": 0.0001,
+        "harassment/threatening": 0.0002,
+        "hate": 0.0001,
+        "hate/threatening": 0.0001,
+        "illicit": 0.0000,
+        "illicit/violent": 0.0000,
+        "self-harm": 0.0003,
+        "self-harm/intent": 0.0001,
+        "self-harm/instructions": 0.0000,
+        "sexual": 0.0001,
+        "sexual/minors": 0.0000,
+        "violence": 0.9532,
+        "violence/graphic": 0.0214
+      },
+      "category_applied_input_types": {
+        "harassment": ["text"],
+        "harassment/threatening": ["text"],
+        "hate": ["text"],
+        "hate/threatening": ["text"],
+        "illicit": ["text"],
+        "illicit/violent": ["text"],
+        "self-harm": ["text", "image"],
+        "self-harm/intent": ["text", "image"],
+        "self-harm/instructions": ["text", "image"],
+        "sexual": ["text", "image"],
+        "sexual/minors": ["text"],
+        "violence": ["text", "image"],
+        "violence/graphic": ["text", "image"]
+      }
+    }
+  ]
+}
+</code></pre>
+<p>[1]</p>
+<h2 id="configuration-and-customization"><a class="header" href="#configuration-and-customization">Configuration and Customization</a></h2>
+<h3 id="model-selection"><a class="header" href="#model-selection">Model Selection</a></h3>
+<ul>
+<li><strong><code>omni-moderation-latest</code></strong> – Use for all new integrations. Supports text and images, all 13 categories. Points to the latest omni snapshot.</li>
+<li><strong><code>omni-moderation-2024-09-26</code></strong> – Pin to a specific snapshot for deterministic behavior across model updates.</li>
+<li><strong><code>text-moderation-latest</code></strong> – Legacy text-only model. Fewer categories (no <code>illicit</code>/<code>illicit/violent</code>). Points to latest text snapshot.</li>
+<li><strong><code>text-moderation-007</code></strong> – Pin to a specific legacy text snapshot. [1]</li>
+</ul>
+<h3 id="custom-thresholds"><a class="header" href="#custom-thresholds">Custom Thresholds</a></h3>
+<p>The default <code>flagged</code> boolean uses OpenAI’s internal thresholds. For custom content policies, use <code>category_scores</code> with application-specific thresholds. Different categories can have different thresholds depending on the sensitivity requirements of the platform. OpenAI recommends starting with the default <code>flagged</code> values and adjusting thresholds based on observed false positive and false negative rates. [1]</p>
+<h3 id="score-recalibration"><a class="header" href="#score-recalibration">Score Recalibration</a></h3>
+<p>Category scores may shift when the underlying model is updated (e.g., when <code>omni-moderation-latest</code> points to a new snapshot). Applications that rely on specific score thresholds should:</p>
+<ul>
+<li>Pin to a dated snapshot model (e.g., <code>omni-moderation-2024-09-26</code>) for stable scores</li>
+<li>Re-evaluate thresholds when migrating to a new model snapshot</li>
+<li>Monitor score distributions over time to detect drift [1]</li>
+</ul>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="pre-processing-filter-user-input"><a class="header" href="#pre-processing-filter-user-input">Pre-Processing Filter (User Input)</a></h3>
+<p>Screen user input before it reaches the language model:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+def moderate_input(user_message: str) -&gt; bool:
+    moderation = client.moderations.create(
+        model="omni-moderation-latest",
+        input=user_message
+    )
+    return moderation.results[0].flagged
+
+user_input = "User's message here"
+if moderate_input(user_input):
+    print("Input rejected: content policy violation")
+else:
+    # Proceed with LLM call
+    response = client.responses.create(
+        model="gpt-4o",
+        input=user_input
+    )
+</code></pre>
+<h3 id="post-processing-filter-model-output"><a class="header" href="#post-processing-filter-model-output">Post-Processing Filter (Model Output)</a></h3>
+<p>Screen model-generated responses before delivering to the user:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+response = client.responses.create(
+    model="gpt-4o",
+    input="User's question"
+)
+
+moderation = client.moderations.create(
+    model="omni-moderation-latest",
+    input=response.output_text
+)
+
+if moderation.results[0].flagged:
+    print("Response blocked: content policy violation")
+else:
+    print(response.output_text)
+</code></pre>
+<h3 id="with-agent-frameworks-langchain-langgraph"><a class="header" href="#with-agent-frameworks-langchain-langgraph">With Agent Frameworks (LangChain, LangGraph)</a></h3>
+<p>Integrate as a guardrail step in agent pipelines. Run moderation on tool inputs and outputs, user messages, and final agent responses.</p>
+<h3 id="with-api-gateways-litellm-portkey"><a class="header" href="#with-api-gateways-litellm-portkey">With API Gateways (LiteLLM, Portkey)</a></h3>
+<p>Deploy moderation as a middleware layer in API gateway configurations. Screen all inbound requests and outbound responses through the moderation endpoint before forwarding.</p>
+<h3 id="with-guardrails-frameworks-guardrails-ai-nemo-guardrails"><a class="header" href="#with-guardrails-frameworks-guardrails-ai-nemo-guardrails">With Guardrails Frameworks (Guardrails AI, NeMo Guardrails)</a></h3>
+<p>Use OpenAI Moderation as one validator among many in a multi-layer guardrails pipeline. Combine with custom validators for domain-specific content policies.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="batch-moderation-of-multiple-texts"><a class="header" href="#batch-moderation-of-multiple-texts">Batch Moderation of Multiple Texts</a></h3>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+texts = [
+    "This is a friendly greeting.",
+    "I want to hurt someone.",
+    "The weather is nice today.",
+]
+
+for text in texts:
+    moderation = client.moderations.create(
+        model="omni-moderation-latest",
+        input=text
+    )
+    result = moderation.results[0]
+    status = "FLAGGED" if result.flagged else "OK"
+    print(f"[{status}] {text}")
+</code></pre>
+<p>[1]</p>
+<h3 id="multi-modal-content-review"><a class="header" href="#multi-modal-content-review">Multi-Modal Content Review</a></h3>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+
+moderation = client.moderations.create(
+    model="omni-moderation-latest",
+    input=[
+        {"type": "text", "text": "Check this image for harmful content"},
+        {
+            "type": "image_url",
+            "image_url": {
+                "url": "https://example.com/uploaded-image.jpg"
+            }
+        }
+    ]
+)
+
+result = moderation.results[0]
+print(f"Flagged: {result.flagged}")
+
+# Inspect which input types triggered each category
+for category, input_types in vars(result.category_applied_input_types).items():
+    score = getattr(result.category_scores, category.replace("/", "_"))
+    if score &gt; 0.01:
+        print(f"  {category}: score={score:.4f}, inputs={input_types}")
+</code></pre>
+<p>[1]</p>
+<h3 id="javascript-express-middleware"><a class="header" href="#javascript-express-middleware">JavaScript Express Middleware</a></h3>
+<pre><code class="language-javascript">import OpenAI from "openai";
+
+const openai = new OpenAI();
+
+async function moderationMiddleware(req, res, next) {
+    const { message } = req.body;
+
+    const moderation = await openai.moderations.create({
+        model: "omni-moderation-latest",
+        input: message
+    });
+
+    if (moderation.results[0].flagged) {
+        return res.status(400).json({
+            error: "Content policy violation",
+            categories: moderation.results[0].categories
+        });
+    }
+
+    next();
+}
+</code></pre>
+<p>[1]</p>
+<h3 id="curl-with-multi-modal-input"><a class="header" href="#curl-with-multi-modal-input">cURL with Multi-Modal Input</a></h3>
+<pre><code class="language-bash">curl https://api.openai.com/v1/moderations \
+  -X POST \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -d '{
+    "model": "omni-moderation-latest",
+    "input": [
+      {"type": "text", "text": "Describe this image"},
+      {
+        "type": "image_url",
+        "image_url": {
+          "url": "https://example.com/image.jpg"
+        }
+      }
+    ]
+  }'
+</code></pre>
+<p>[1]</p>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<ul>
+<li><strong>Not a complete safety solution</strong>: The moderation endpoint is one layer of defense; it should be combined with other safety measures (prompt engineering, human review, application-level rules)</li>
+<li><strong>Text-only categories</strong>: <code>illicit</code>, <code>illicit/violent</code>, and <code>sexual/minors</code> only evaluate text input and return zero scores for image-only content [1]</li>
+<li><strong>Score instability across updates</strong>: When <code>omni-moderation-latest</code> points to a new model snapshot, <code>category_scores</code> values may shift, requiring recalibration of custom thresholds [1]</li>
+<li><strong>No fine-tuning or customization</strong>: The moderation categories and models are fixed; there is no way to add custom categories or train on domain-specific content policies</li>
+<li><strong>Latency</strong>: Each moderation call adds latency to the request pipeline; for real-time applications, consider asynchronous or batched moderation strategies</li>
+<li><strong>English-centric</strong>: While the models handle multilingual input, classification accuracy is highest for English content</li>
+<li><strong>No streaming support</strong>: The moderation endpoint processes complete inputs and returns complete results; there is no streaming or incremental classification</li>
+<li><strong>Closed source</strong>: The models and training data are proprietary; classification decisions cannot be inspected or explained beyond the provided scores</li>
+</ul>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong><code>omni-moderation-latest</code></strong>: Current recommended model with multi-modal support (text and images) and all 13 categories</li>
+<li><strong><code>omni-moderation-2024-09-26</code></strong>: First dated snapshot of the omni moderation model</li>
+<li><strong><code>illicit</code> categories</strong>: Added with the omni model, covering illegal activity and violent illegal acts</li>
+<li><strong>Multi-modal input</strong>: Image URL and base64 data URI support introduced with the omni model</li>
+<li><strong><code>category_applied_input_types</code></strong>: Response field added to indicate which input modalities were evaluated per category</li>
+<li><strong><code>text-moderation-latest</code> / <code>text-moderation-007</code></strong>: Legacy text-only models, still available but not recommended for new projects [1]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Moderation Guide - <a href="https://developers.openai.com/api/docs/guides/moderation">https://developers.openai.com/api/docs/guides/moderation</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-3-operations/guardrails-safety/nemo-guardrails.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-3-operations/guardrails-safety/lakera.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-3-operations/guardrails-safety/nemo-guardrails.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-3-operations/guardrails-safety/lakera.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

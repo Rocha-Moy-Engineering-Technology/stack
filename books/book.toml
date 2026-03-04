@@ -18,3 +18,21 @@ edit-url-template = "https://github.com/Rocha-Moy-Engineering-Technology/stack/e
 enable = true
 limit-results = 30
 boost-hierarchy = 2
+
+[output.pandoc]
+# Requires `mdbook-pandoc` + `pandoc` in PATH.
+#
+# Note: Once multiple outputs are configured, mdBook writes HTML to `book/html/`.
+optional = true
+
+[output.pandoc.profile.markdown]
+output-file = "stack-book.md"
+to = "gfm"
+number-sections = false
+
+[output.pandoc.profile.pdf]
+output-file = "stack-book.pdf"
+to = "latex"
+# Requires a PDF engine in PATH (default is usually `pdflatex`).
+# If you prefer a self-contained LaTeX engine, install `tectonic` and set:
+# pdf-engine = "tectonic"
