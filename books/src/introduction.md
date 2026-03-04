@@ -1,6 +1,6 @@
 # AI/ML Stack Documentation
 
-This book provides comprehensive documentation for 63 AI/ML tools and platforms organized across 12 functional groups. Each chapter covers the tool's core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples -- all sourced from and citing official documentation.
+This book provides comprehensive documentation for 62 AI/ML tools and platforms organized across 12 functional groups. Each chapter covers the tool's core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples -- all sourced from and citing official documentation.
 
 ## Catalog Overview
 
