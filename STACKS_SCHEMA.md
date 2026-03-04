@@ -59,13 +59,13 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 ### open_source_alternative
 
 - Type: string or `N/A`
-- Constraints: `N/A` if entry is open source; otherwise MUST reference an existing `name` in stacks.csv (referential integrity); if the alternative does not exist yet, it must be added first; choice must be most popular/influential stack.
+- Constraints: `N/A` if entry is open source; otherwise set to the most popular/influential open-source alternative. If the alternative exists in stacks.csv, use the exact `name` value from stacks.csv; otherwise it may be an external product name. External alternatives SHOULD be recorded in `alternative_stack.csv`.
 - Example: `LiteLLM`, `N/A`
 
 ### commercial_alternative
 
 - Type: string or `N/A`
-- Constraints: `N/A` if entry is not open source; if entry is open source, use the top commercial competitor name; values that exist in stacks.csv maintain referential integrity, values not in stacks.csv are external product names; choice must be most popular/influential stack.
+- Constraints: `N/A` if entry is not open source; if entry is open source, set to the most popular/influential commercial competitor. If the alternative exists in stacks.csv, use the exact `name` value from stacks.csv; otherwise it may be an external product name. External alternatives SHOULD be recorded in `alternative_stack.csv`.
 - Example: `Vertex AI`, `Groq`, `N/A`
 
 ## Group Labels
@@ -91,10 +91,10 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 - **Infra** - Compute and serving platforms
 - Stacks may span multiple type classifications joined by `/` (e.g., `API/SDK`, `SDK/Infra`, `API/SDK/UI`)
 
-## Referential Integrity
+## Alternative Name Matching
 
-- `open_source_alternative` values MUST reference an existing entry in the `name` column of stacks.csv; if the alternative does not exist yet, it must be added first
-- `commercial_alternative` values reference the top commercial competitor; values that exist in stacks.csv maintain referential integrity, values not in stacks.csv are external product names
+- If an alternative value matches an existing stack `name` (case-insensitive), it SHOULD use the exact `name` spelling from stacks.csv
+- If an alternative is not present in stacks.csv, the value may be an external product name (and should be recorded in `alternative_stack.csv`)
 
 ## Maintenance Rules
 

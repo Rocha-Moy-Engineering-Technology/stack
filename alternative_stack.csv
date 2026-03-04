@@ -1,0 +1,14 @@
+alternative_name,alternative_kind,referenced_by,referenced_group
+Neo4j Aura,commercial,GraphRAG,RAG & Knowledge Retrieval
+AWS Step Functions,commercial,Temporal,Workflow Orchestration & Automation
+Control-M,commercial,Prefect,Workflow Orchestration & Automation
+Control-M,commercial,Airflow,Workflow Orchestration & Automation
+Zapier,commercial,n8n,Workflow Orchestration & Automation
+Zapier,commercial,Activepieces,Workflow Orchestration & Automation
+Crosser,commercial,Node-RED,Workflow Orchestration & Automation
+PromptLayer,commercial,DSPy,Structured Output & Prompt Engineering
+PromptLayer,commercial,Outlines,Structured Output & Prompt Engineering
+PromptLayer,commercial,Instructor,Structured Output & Prompt Engineering
+PromptLayer,commercial,BAML,Structured Output & Prompt Engineering
+Scale AI,commercial,Label Studio,Data Labeling
+
