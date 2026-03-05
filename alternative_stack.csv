@@ -1,26 +1,25 @@
-alternative_name,alternative_kind,referenced_by,referenced_group
-Neo4j Aura,commercial,GraphRAG,RAG Frameworks
-AWS Step Functions,commercial,Temporal,Workflow Orchestration
-Control-M,commercial,Prefect,Workflow Orchestration
-Control-M,commercial,Airflow,Workflow Orchestration
-Zapier,commercial,n8n,Workflow Orchestration
-Zapier,commercial,Activepieces,Workflow Orchestration
-Crosser,commercial,Node-RED,Workflow Orchestration
-PromptLayer,commercial,DSPy,Structured Generation
-PromptLayer,commercial,Outlines,Structured Generation
-PromptLayer,commercial,Instructor,Structured Generation
-PromptLayer,commercial,BAML,Structured Generation
-Scale AI,commercial,Label Studio,Labeling
-Vertex AI Agent Builder,commercial,LangChain,Agent Frameworks
-Vertex AI Agent Builder,commercial,LangGraph,Agent Frameworks
-Vertex AI Agent Builder,commercial,ADK,Agent Frameworks
-Vertex AI Agent Builder,commercial,smolagents,Agent Frameworks
-Vertex AI Agent Builder,commercial,Pydantic AI,Agent Frameworks
-Foundry Agent Service,commercial,AutoGen,Agent Frameworks
-Foundry Agent Service,commercial,Semantic Kernel,Agent Frameworks
-AWS Bedrock Agents,commercial,CrewAI,Agent Frameworks
-Gemini File Search,commercial,Haystack,RAG Frameworks
-Gemini File Search,commercial,LlamaIndex,RAG Frameworks
-Hugging Face Inference API,commercial,Hugging Face Transformers,Fine-tuning
-AWS SageMaker,commercial,KServe,Inference Engines
-
+alternative_name,alternative_kind,referenced_by,referenced_group,docs_url
+Neo4j Aura,commercial,GraphRAG,RAG Frameworks,
+AWS Step Functions,commercial,Temporal,Workflow Orchestration,
+Control-M,commercial,Prefect,Workflow Orchestration,
+Control-M,commercial,Airflow,Workflow Orchestration,
+Zapier,commercial,n8n,Workflow Orchestration,
+Zapier,commercial,Activepieces,Workflow Orchestration,
+Crosser,commercial,Node-RED,Workflow Orchestration,
+PromptLayer,commercial,DSPy,Structured Generation,
+PromptLayer,commercial,Outlines,Structured Generation,
+PromptLayer,commercial,Instructor,Structured Generation,
+PromptLayer,commercial,BAML,Structured Generation,
+Scale AI,commercial,Label Studio,Labeling,
+Vertex AI Agent Builder,commercial,LangChain,Agent Frameworks,
+Vertex AI Agent Builder,commercial,LangGraph,Agent Frameworks,
+Vertex AI Agent Builder,commercial,ADK,Agent Frameworks,
+Vertex AI Agent Builder,commercial,smolagents,Agent Frameworks,
+Vertex AI Agent Builder,commercial,Pydantic AI,Agent Frameworks,
+Foundry Agent Service,commercial,AutoGen,Agent Frameworks,
+Foundry Agent Service,commercial,Semantic Kernel,Agent Frameworks,
+AWS Bedrock Agents,commercial,CrewAI,Agent Frameworks,
+Gemini File Search,commercial,Haystack,RAG Frameworks,
+Gemini File Search,commercial,LlamaIndex,RAG Frameworks,
+Hugging Face Inference API,commercial,Hugging Face Transformers,Fine-tuning,
+AWS SageMaker,commercial,KServe,Inference Engines,

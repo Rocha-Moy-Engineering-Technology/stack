@@ -1,2 +1,2 @@
-name,reason
-TGI,Maintenance mode; HuggingFace recommends vLLM/SGLang as replacements
+name,reason,docs_url
+TGI,Maintenance mode; HuggingFace recommends vLLM/SGLang as replacements,https://huggingface.co/docs/text-generation-inference/
