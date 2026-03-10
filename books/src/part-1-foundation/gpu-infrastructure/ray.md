@@ -1,18 +1,20 @@
 # Ray
 
+> Distributed AI compute framework for ML training/serving/data processing
+
 | Field          | Value                                                                |
 |----------------|----------------------------------------------------------------------|
 | **Name**       | Ray                                                                  |
-| **Group**      | GPU Compute & Cloud Platforms                                        |
+| **Group**      | GPU Infrastructure                                                   |
 | **Type**       | SDK/Infra                                                            |
 | **Open Source** | Yes                                                                 |
 | **GitHub**     | [ray-project/ray](https://github.com/ray-project/ray)               |
 | **Stars**      | 41,428                                                               |
-| **Docs**       | [Official Docs](https://docs.ray.io/en/latest/)                     |
+| **Docs**       | [docs.ray.io](https://docs.ray.io/en/latest/)                       |
 
 ## Overview
 
-Ray is an open-source distributed computing framework designed to scale Python applications and machine learning workloads from a single machine to large clusters. It provides both high-level libraries for common ML tasks (training, tuning, serving, data processing, reinforcement learning) and low-level primitives for general-purpose distributed computing. Ray abstracts away the complexity of cluster management, task scheduling, and fault tolerance, allowing developers to parallelize existing Python code with minimal changes. The framework is used extensively in production environments for distributed training, hyperparameter optimization, batch inference, and online model serving.
+Ray is an open-source unified framework for scaling AI and Python applications from a laptop to a cluster. It provides both high-level libraries for common ML tasks (training, tuning, serving, data processing, reinforcement learning) and low-level primitives for general-purpose distributed computing. Ray abstracts away the complexity of cluster management, task scheduling, and fault tolerance, allowing developers to parallelize existing Python code with minimal changes. The framework is used extensively in production environments by organizations such as Ant Group, Uber, and Riot Games for distributed training, hyperparameter optimization, batch inference, Large Language Model (LLM) serving, and online model serving. The current stable release is Ray 2.54.0 (February 2025).
 
 ## Core Concepts
 
@@ -26,9 +28,13 @@ Ray is an open-source distributed computing framework designed to scale Python a
 
 - **Ray Serve** is a model serving framework with FastAPI integration, multi-model composition through deployment graphs, dynamic request batching, autoscaling based on load, and gRPC support. It enables building inference services that combine multiple models and business logic in a single application.
 
-- **Ray RLlib** is a reinforcement learning library with pre-configured algorithms (Proximal Policy Optimization (PPO), Deep Q-Network (DQN), and others), multi-agent training support, and extensible custom RL module definitions.
+- **Ray RLlib** is a reinforcement learning library with pre-configured algorithms (Proximal Policy Optimization (PPO), Soft Actor Critic (SAC), Deep Q-Network (DQN), Asynchronous PPO (APPO), IMPALA, DreamerV3, and others), native Multi-Agent Reinforcement Learning (MARL) support with independent, collaborative, and adversarial training modes, offline RL and behavior cloning integration with Ray Data, and extensible custom RL module definitions via the RLModule API.
 
-## Installation and Setup
+- **Placement Groups** atomically reserve resource groups across multiple nodes using locality strategies: PACK (co-locate on same/nearby nodes) or SPREAD (distribute across distinct nodes). They enable gang-scheduling of actors and tasks that must be provisioned together.
+
+- **Runtime Environments** allow per-task or per-actor dependency isolation by specifying Python packages, local files, environment variables, and working directories that are dynamically deployed to target workers.
+
+## Installation
 
 Ray supports multiple installation profiles depending on the intended workload.
 
@@ -50,7 +56,7 @@ pip install -U "ray[default]"
 pip install -U "ray"
 ```
 
-**Available extras:** `ray[default]`, `ray[data]`, `ray[train]`, `ray[tune]`, `ray[serve]`, `ray[rllib]`.
+**Available extras:** `ray[default]` (core with Dashboard and Cluster Launcher), `ray[data]`, `ray[train]`, `ray[tune]`, `ray[serve]` (includes optional gRPC support), `ray[rllib]`, `ray[all]` (complete installation, not recommended for production). Extras can be combined: `pip install -U "ray[default,train]"`.
 
 **Conda:**
 
@@ -70,11 +76,21 @@ docker run --shm-size=2G -t -i rayproject/ray
 docker run --shm-size=2G -t -i --gpus all rayproject/ray:latest-gpu
 ```
 
+**Arch Linux (AUR):**
+
+```bash
+yay -S python-ray
+```
+
+**Docker image tags:** `latest`, `x.y.z` (specific version), `nightly` (development), with optional Python version suffixes (`py310`, `py311`, `py312`) and platform suffixes (`-cpu`, `-cu12`, `-gpu`).
+
 **Supported Python versions:** 3.10, 3.11, 3.12, 3.13 (beta).
 
-**Supported platforms:** Linux (x86_64, aarch64), macOS (Apple Silicon M1+), Windows (beta).
+**Supported platforms:** Linux (x86_64, aarch64), macOS (Apple Silicon M1+), Windows (beta). Multi-node clusters remain untested on Windows.
 
 The `--shm-size=2G` flag in Docker is required because Ray's object store uses shared memory (`/dev/shm`) for efficient inter-process data transfer.
+
+**Deprecation notice:** Pydantic v1 support is planned for removal in Ray 2.56. Users should upgrade to Pydantic v2.
 
 ## Architecture
 
@@ -88,9 +104,15 @@ Ray clusters consist of a head node and zero or more worker nodes.
 
 - **Dashboard** provides a web-based interface for monitoring cluster health, viewing task and actor states, inspecting logs, and profiling workloads.
 
+- **Autoscaler** runs on the head node (or as a Kubernetes sidecar with KubeRay) and reacts to task and actor resource requests rather than physical utilization metrics, automatically adjusting worker node counts based on workload demands.
+
+- **Ray Jobs** are applications submitted via the Ray Jobs API, CLI, or REST endpoint. Each job runs as a collection of tasks, objects, and actors originating from a single Python driver script.
+
+- **Ray Direct Transport (RDT)** provides direct point-to-point communication between Ray nodes, bypassing the central GCS for improved data transfer efficiency.
+
 The scheduling model is distributed: each Raylet can schedule tasks locally or forward them to other nodes based on resource availability. This avoids a single-point bottleneck for task dispatch.
 
-## Key Features and Functionality
+## Key Features
 
 - **Task parallelism** with `@ray.remote` decorator converts Python functions into distributed tasks that execute asynchronously across the cluster and return futures (ObjectRefs).
 
@@ -98,11 +120,13 @@ The scheduling model is distributed: each Raylet can schedule tasks locally or f
 
 - **Automatic object spilling** moves objects from the in-memory object store to local disk or external storage when memory pressure is detected.
 
-- **Fault tolerance** operates at both the node level (GCS fault tolerance, actor reconstruction) and the application level (task retries, checkpoint-based recovery in Ray Train).
+- **Fault tolerance** operates at both the node level (GCS fault tolerance, actor reconstruction) and the application level (task retries, checkpoint-based recovery in Ray Train). RLlib provides fault tolerance for unstable environments including spot machine support.
 
-- **Autoscaling** dynamically adds or removes cluster nodes based on pending resource demands, supported on Kubernetes via KubeRay and on cloud VMs via the cluster launcher.
+- **Utilization-based autoscaling** (new default in 2.54) dynamically adds or removes cluster nodes based on pending resource demands, supported on Kubernetes via KubeRay and on cloud VMs via the cluster launcher.
 
 - **Resource isolation** through cgroup v2 support enables CPU and memory limits per task or actor.
+
+- **Fractional GPU serving** allows multiple models or tasks to share GPU resources, reducing costs in production serving environments.
 
 - **Token-based authentication** secures multi-tenant cluster access.
 
@@ -110,9 +134,11 @@ The scheduling model is distributed: each Raylet can schedule tasks locally or f
 
 - **Cross-language support** includes a Java API for interoperating with JVM-based systems.
 
-- **Ray Compiled Graph (beta)** optimizes Directed Acyclic Graph (DAG) execution by pre-compiling task graphs for reduced scheduling overhead.
+- **Ray Compiled Graph (beta)** optimizes Directed Acyclic Graph (DAG) execution by pre-compiling task graphs for reduced scheduling overhead, with profiling, communication/computation overlapping, and API-level performance enhancements for GPU-intensive workloads.
 
-- **Observability** through Ray Dashboard for web-based cluster visualization, Ray Distributed Debugger, State API/CLI for cluster queries, Prometheus metrics collection, structured logging, and profiling support.
+- **Queue-based autoscaling** (2.54) for Ray Serve TaskConsumer deployments with Redis and RabbitMQ integration, plus deployment-level autoscaling observability with structured JSON logging.
+
+- **Observability** through Ray Dashboard for web-based cluster visualization, Ray Distributed Debugger, State API/CLI for cluster queries, Prometheus metrics collection, structured logging, profiling support (py-spy), distributed tracing, and a Ray Event Export Infrastructure for streaming system events to external platforms.
 
 ## Use Cases
 
@@ -128,9 +154,11 @@ The scheduling model is distributed: each Raylet can schedule tasks locally or f
 
 - **Reinforcement learning** experiments using RLlib with built-in algorithm implementations and multi-agent environment support.
 
-- **General-purpose distributed computing** for parallelizing CPU-bound or I/O-bound Python workloads that do not involve ML.
+- **LLM serving and generative AI** using Ray Serve with response streaming for chatbot interactions, prompt preprocessing, vector database lookups, and response validation integrated as Python components. Ray Data provides large-scale data ingestion for fine-tuning workflows.
 
-## API Reference Summary
+- **General-purpose distributed computing** for parallelizing CPU-bound or I/O-bound Python workloads that do not involve ML, with distributed implementations of Python's `multiprocessing.Pool` and Scikit-learn's joblib interface.
+
+## API Reference
 
 **Ray Core:**
 
@@ -179,9 +207,11 @@ value = ray.get(future)                 # Blocking retrieval
 ```python
 import ray.data
 
-ds = ray.data.read_parquet("s3://bucket/path")
-ds = ds.map(transform_fn)
-ds = ds.filter(filter_fn)
+ds = ray.data.read_parquet("s3://bucket/path")  # Also: read_csv, read_json, read_text, read_images
+ds = ds.map(transform_fn)                        # Per-row transformation
+ds = ds.map_batches(batch_fn)                    # Batch transformation (NumPy/Pandas)
+ds = ds.filter(filter_fn)                        # Row filtering
+ds.summary()                                     # Quick dataset inspection (new in 2.53)
 ```
 
 **Ray Train:**
@@ -204,9 +234,14 @@ from ray import tune
 
 tuner = tune.Tuner(
     trainable,
-    param_space={"lr": tune.loguniform(1e-4, 1e-1)},
+    param_space={
+        "lr": tune.loguniform(1e-4, 1e-1),    # Continuous log-uniform range
+        "batch_size": tune.choice([16, 32, 64]),# Discrete options
+        "layers": tune.grid_search([1, 2, 4]), # Exhaustive grid
+    },
 )
 results = tuner.fit()
+best = results.get_best_result(metric="loss", mode="min")
 ```
 
 **Ray Serve:**
@@ -223,7 +258,7 @@ app = MyModel.bind()
 serve.run(app)
 ```
 
-## Configuration and Customization
+## Configuration
 
 **Cluster configuration** is managed through YAML files for the cluster launcher or through KubeRay Custom Resource Definitions (CRDs) for Kubernetes deployments.
 
@@ -263,13 +298,21 @@ def isolated_task():
 
 - **ML frameworks** through Ray Train adapters for PyTorch (TorchTrainer), XGBoost (XGBoostTrainer), LightGBM (LightGBMTrainer), TensorFlow (TensorflowTrainer), and JAX.
 
-- **Hyperparameter search** integrations with Optuna, BayesOpt, HyperOpt, and Ax through Ray Tune's search algorithm interface.
+- **Hyperparameter search** integrations with Optuna, BayesOpt, HyperOpt, BOHB, Nevergrad, and Ax through Ray Tune's search algorithm interface, with schedulers including ASHA/HyperBand and Population-Based Training (PBT).
 
 - **FastAPI** integration in Ray Serve allows defining HTTP endpoints with standard FastAPI decorators while leveraging Ray's distributed serving infrastructure.
 
-- **Prometheus** metrics export for cluster and application-level monitoring.
+- **Prometheus and Grafana** metrics export for cluster and application-level monitoring, with integration into the Kubernetes observability ecosystem via KubeRay.
 
-- **Spark** interoperability through the Ray on Spark integration for running Ray workloads within existing Spark infrastructure.
+- **Spark** interoperability through RayDP (Ray on Spark) for running Ray workloads within existing Spark infrastructure.
+
+- **Dask on Ray** allows Dask workflows to execute on Ray clusters via the `RayDaskCallback` interface.
+
+- **Modin (Pandas on Ray)** provides a drop-in Pandas replacement that distributes DataFrame operations across Ray workers.
+
+- **Data sources** including Parquet, Lance, CSV, JSON, images, audio, video, Apache Kafka (native in 2.54), and Apache Iceberg with schema evolution, upsert, and overwrite capabilities.
+
+- **LLM frameworks** including vLLM for large language model serving, Hugging Face Transformers for training and inference, and DeepSpeed for distributed training acceleration.
 
 ## Examples
 
@@ -311,7 +354,7 @@ trainer = TorchTrainer(
 result = trainer.fit()
 ```
 
-**Serving a model with Ray Serve:**
+**Serving a model with Ray Serve and FastAPI:**
 
 ```python
 from ray import serve
@@ -333,7 +376,52 @@ class ModelServer:
 serve.run(ModelServer.bind(), route_prefix="/")
 ```
 
-## Limitations and Considerations
+**Multi-model composition with deployment handles:**
+
+```python
+from ray import serve
+from ray.serve.handle import DeploymentHandle
+
+@serve.deployment
+class Preprocessor:
+    def process(self, data):
+        return normalize(data)
+
+@serve.deployment
+class Classifier:
+    def classify(self, features):
+        return self.model.predict(features)
+
+@serve.deployment
+class Pipeline:
+    def __init__(self, preprocessor: DeploymentHandle, classifier: DeploymentHandle):
+        self._preprocessor = preprocessor
+        self._classifier = classifier
+
+    async def __call__(self, request):
+        features = await self._preprocessor.process.remote(request.data)
+        return await self._classifier.classify.remote(features)
+
+app = Pipeline.bind(Preprocessor.bind(), Classifier.bind())
+serve.run(app)
+```
+
+**Reinforcement learning with RLlib:**
+
+```python
+from ray.rllib.algorithms.ppo import PPOConfig
+
+config = PPOConfig().environment("CartPole-v1").env_runners(num_env_runners=4)
+algo = config.build()
+
+for _ in range(10):
+    result = algo.train()
+    print(f"reward: {result['env_runners']['episode_reward_mean']}")
+
+algo.evaluate()
+```
+
+## Limitations
 
 - **Shared memory requirement:** Ray's object store relies on `/dev/shm` for inter-process communication. Docker containers require `--shm-size` configuration, and systems with small shared memory partitions may encounter object store errors.
 
@@ -349,11 +437,38 @@ serve.run(ModelServer.bind(), route_prefix="/")
 
 - **Cluster startup latency:** Autoscaling new nodes, especially on cloud VMs, introduces minutes-level delays before new capacity is available for task scheduling.
 
-## Changelog Highlights
+## Changelog
 
-Ray follows a regular release cadence. Key recent developments include Ray Compiled Graph for optimized DAG execution (beta), cgroup v2 support for resource isolation, expanded Python 3.13 support (beta), and continued improvements to Ray Data's streaming execution model. The KubeRay operator has matured with stable CRDs for RayCluster, RayJob, and RayService.
+**Ray 2.54.0 (February 2025):**
+
+- Ray Data: new checkpointing support, expanded compute expressions (list operations, fixed-size arrays, trigonometric functions), native Apache Kafka datasource, Apache Iceberg schema evolution with upsert and overwrite capabilities, utilization-based cluster autoscaler enabled by default
+- Ray Serve: queue-based autoscaling for TaskConsumer deployments with Redis/RabbitMQ integration, deployment-level autoscaling observability with structured JSON logging, batching with multiplexing for multi-model serving, O(1) pending-request lookups for replica routing, expanded operational metrics
+- Deprecation: Pydantic v1 support planned for removal in Ray 2.56
+
+**Ray 2.53.0 (December 2024):**
+
+- Bounded Kafka reading for Ray Data
+- `Dataset.summary()` API for quick dataset inspection
+- Improved Iceberg support
+
+**Ongoing developments:** Ray Compiled Graph for optimized DAG execution (beta), cgroup v2 support for resource isolation, expanded Python 3.13 support (beta), continued improvements to Ray Data's streaming execution model, and maturing KubeRay operator with stable CRDs for RayCluster, RayJob, and RayService.
 
 ## Citations
 
 - [1] Ray Documentation - https://docs.ray.io/en/latest/
 - [2] Ray GitHub - https://github.com/ray-project/ray
+- [3] Ray Getting Started - https://docs.ray.io/en/latest/ray-overview/getting-started.html
+- [4] Ray Installation - https://docs.ray.io/en/latest/ray-overview/installation.html
+- [5] Ray Core Key Concepts - https://docs.ray.io/en/latest/ray-core/key-concepts.html
+- [6] Ray Core Walkthrough - https://docs.ray.io/en/latest/ray-core/walkthrough.html
+- [7] Ray Data Overview - https://docs.ray.io/en/latest/data/data.html
+- [8] Ray Train Overview - https://docs.ray.io/en/latest/train/train.html
+- [9] Ray Tune Overview - https://docs.ray.io/en/latest/tune/index.html
+- [10] Ray Serve Overview - https://docs.ray.io/en/latest/serve/index.html
+- [11] Ray RLlib Overview - https://docs.ray.io/en/latest/rllib/index.html
+- [12] Ray Clusters - https://docs.ray.io/en/latest/cluster/getting-started.html
+- [13] Ray Cluster Key Concepts - https://docs.ray.io/en/latest/cluster/key-concepts.html
+- [14] Ray Observability - https://docs.ray.io/en/latest/ray-observability/index.html
+- [15] Ray More Libraries - https://docs.ray.io/en/latest/ray-more-libs/index.html
+- [16] Ray Use Cases - https://docs.ray.io/en/latest/ray-overview/use-cases.html
+- [17] Ray 2.54.0 Release - https://github.com/ray-project/ray/releases

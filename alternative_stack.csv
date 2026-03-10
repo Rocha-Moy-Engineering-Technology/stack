@@ -6,10 +6,10 @@ Control-M,commercial,Airflow,Workflow Orchestration,https://controlm.github.io/
 Zapier,commercial,n8n,Workflow Orchestration,https://docs.zapier.com/
 Zapier,commercial,Activepieces,Workflow Orchestration,https://docs.zapier.com/
 Crosser,commercial,Node-RED,Workflow Orchestration,https://crosser.io/documentation/
-PromptLayer,commercial,DSPy,Structured Generation,https://docs.promptlayer.com/
-PromptLayer,commercial,Outlines,Structured Generation,https://docs.promptlayer.com/
-PromptLayer,commercial,Instructor,Structured Generation,https://docs.promptlayer.com/
-PromptLayer,commercial,BAML,Structured Generation,https://docs.promptlayer.com/
+OpenAI Structured Outputs,commercial,DSPy,Structured Generation,https://developers.openai.com/api/docs/guides/structured-outputs
+OpenAI Structured Outputs,commercial,Outlines,Structured Generation,https://developers.openai.com/api/docs/guides/structured-outputs
+OpenAI Structured Outputs,commercial,Instructor,Structured Generation,https://developers.openai.com/api/docs/guides/structured-outputs
+OpenAI Structured Outputs,commercial,BAML,Structured Generation,https://developers.openai.com/api/docs/guides/structured-outputs
 Scale AI,commercial,Label Studio,Labeling,https://scale.com/docs
 Vertex AI Agent Builder,commercial,LangChain,Agent Frameworks,https://docs.cloud.google.com/agent-builder
 Vertex AI Agent Builder,commercial,LangGraph,Agent Frameworks,https://docs.cloud.google.com/agent-builder
