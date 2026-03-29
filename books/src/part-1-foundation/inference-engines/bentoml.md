@@ -39,36 +39,6 @@ BentoML automatically batches individual inference requests into groups for GPU 
 
 Multiple models can be composed within a single service for complex inference pipelines -- for example, combining an embedding model with a classifier, or chaining preprocessing with generation. [1]
 
-## Installation and Setup
-
-### pip Install
-
-```bash
-pip install bentoml
-```
-
-Requires Python 3.9+. Python 3.11 is recommended. [2]
-
-### Quickstart
-
-```bash
-git clone https://github.com/bentoml/quickstart.git
-cd quickstart
-python3 -m venv quickstart && source quickstart/bin/activate
-pip install bentoml torch transformers
-```
-[2]
-
-### Docker Containerization
-
-Build a Docker image from a Bento:
-
-```bash
-bentoml build
-bentoml containerize <bento-name>:latest
-```
-[1]
-
 ## Architecture
 
 ### System Components

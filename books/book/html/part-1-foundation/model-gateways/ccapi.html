@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -213,42 +213,6 @@
 <li><strong>Pay-Per-Use Billing</strong>: No credit conversion. A $100 deposit equals $100 of usable balance, with real-time cost tracking via the usage dashboard.</li>
 <li><strong>OpenClaw Integration</strong>: CCAPI provides a dedicated integration path for OpenClaw (open-source AI agent framework with 191K+ GitHub stars), enabling agents to route all Large Language Model (LLM) calls through CCAPI by changing environment variables – no code changes required. [4]</li>
 </ul>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>CCAPI is a hosted API service with no local installation required. Integration uses existing OpenAI-compatible Software Development Kits (SDKs).</p>
-<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
-<p>CCAPI uses bearer token authentication. API keys follow the <code>sk-ccapi-...</code> prefix convention and are obtained from the CCAPI dashboard. All requests must include the <code>Authorization: Bearer &lt;key&gt;</code> header.</p>
-<pre><code class="language-bash">export CCAPI_API_KEY="sk-ccapi-your-key-here"
-</code></pre>
-<h3 id="python-openai-sdk"><a class="header" href="#python-openai-sdk">Python (OpenAI SDK)</a></h3>
-<pre><code class="language-bash">pip install openai
-</code></pre>
-<pre><code class="language-python">from openai import OpenAI
-
-client = OpenAI(
-    base_url="https://api.ccapi.ai/v1",
-    api_key="sk-ccapi-..."
-)
-</code></pre>
-<h3 id="nodejs-openai-sdk"><a class="header" href="#nodejs-openai-sdk">Node.js (OpenAI SDK)</a></h3>
-<pre><code class="language-bash">npm install openai
-</code></pre>
-<pre><code class="language-javascript">import OpenAI from "openai";
-
-const client = new OpenAI({
-    baseURL: "https://api.ccapi.ai/v1",
-    apiKey: "sk-ccapi-...",
-});
-</code></pre>
-<h3 id="curl"><a class="header" href="#curl">cURL</a></h3>
-<pre><code class="language-bash">curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
-  -H "Authorization: Bearer $CCAPI_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-sonnet-4-6",
-    "messages": [{"role": "user", "content": "Hello"}]
-  }'
-</code></pre>
-<p>Any Hypertext Transfer Protocol (HTTP) client or SDK that speaks Representational State Transfer (REST) and supports the OpenAI chat completions format works with CCAPI by pointing to the <code>https://api.ccapi.ai/v1</code> base URL. [1] [2]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>CCAPI’s architecture consists of three logical layers:</p>
 <ol>

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -219,79 +219,6 @@
 <p>Structured Outputs guarantees model responses conform to a defined JSON schema, eliminating formatting inconsistencies and retry logic. Available via <code>response_format</code> parameter with JSON schema or through SDK integrations with Pydantic (Python) and Zod (TypeScript). Requires <code>gpt-4o-mini</code> or later models. [5]</p>
 <h3 id="embeddings"><a class="header" href="#embeddings">Embeddings</a></h3>
 <p>Vector embeddings measure text relatedness through vector distance. OpenAI offers <code>text-embedding-3-small</code> (1536 dimensions) and <code>text-embedding-3-large</code> (3072 dimensions), both supporting up to 8,192 input tokens. Both v3 models support the <code>dimensions</code> parameter for dimension reduction without losing concept-representing properties. [7]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
-<p>Create an API key from the <a href="https://platform.openai.com/api-keys">OpenAI dashboard</a> and export it:</p>
-<pre><code class="language-bash">export OPENAI_API_KEY="your_api_key_here"
-</code></pre>
-<p>API keys are provided via HTTP Bearer authentication: <code>Authorization: Bearer OPENAI_API_KEY</code>. For multi-organization setups, pass <code>OpenAI-Organization</code> and <code>OpenAI-Project</code> headers. [1]</p>
-<h3 id="python"><a class="header" href="#python">Python</a></h3>
-<pre><code class="language-bash">pip install openai
-</code></pre>
-<pre><code class="language-python">from openai import OpenAI
-client = OpenAI()
-
-response = client.responses.create(
-    model="gpt-5.2",
-    input="Write a one-sentence bedtime story about a unicorn."
-)
-print(response.output_text)
-</code></pre>
-<p>[12]</p>
-<h3 id="javascriptnodejs"><a class="header" href="#javascriptnodejs">JavaScript/Node.js</a></h3>
-<pre><code class="language-bash">npm install openai
-</code></pre>
-<pre><code class="language-javascript">import OpenAI from "openai";
-const client = new OpenAI();
-
-const response = await client.responses.create({
-    model: "gpt-5.2",
-    input: "Write a one-sentence bedtime story about a unicorn."
-});
-console.log(response.output_text);
-</code></pre>
-<p>[12]</p>
-<h3 id="go"><a class="header" href="#go">Go</a></h3>
-<pre><code class="language-go">import "github.com/openai/openai-go/v3"
-
-client := openai.NewClient(option.WithAPIKey("My API Key"))
-resp, err := client.Responses.New(context.TODO(), openai.ResponseNewParams{
-    Model: "gpt-5.2",
-    Input: responses.ResponseNewParamsInputUnion{
-        OfString: openai.String("Say this is a test"),
-    },
-})
-</code></pre>
-<p>[12]</p>
-<h3 id="java"><a class="header" href="#java">Java</a></h3>
-<pre><code class="language-xml">&lt;dependency&gt;
-  &lt;groupId&gt;com.openai&lt;/groupId&gt;
-  &lt;artifactId&gt;openai-java&lt;/artifactId&gt;
-  &lt;version&gt;4.0.0&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
-<pre><code class="language-java">OpenAIClient client = OpenAIOkHttpClient.fromEnv();
-ResponseCreateParams params = ResponseCreateParams.builder()
-    .input("Say this is a test")
-    .model("gpt-5.2")
-    .build();
-Response response = client.responses().create(params);
-System.out.println(response.outputText());
-</code></pre>
-<p>[12]</p>
-<h3 id="net"><a class="header" href="#net">.NET</a></h3>
-<pre><code class="language-bash">dotnet add package OpenAI
-</code></pre>
-<pre><code class="language-csharp">var client = new OpenAIClient(
-    Environment.GetEnvironmentVariable("OPENAI_API_KEY")
-);
-var response = await client.Responses.CreateAsync(new ResponseCreateRequest {
-    Model = "gpt-5.2",
-    Input = "Say 'this is a test.'"
-});
-Console.WriteLine($"[ASSISTANT]: {response.OutputText()}");
-</code></pre>
-<p>[12]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="api-structure"><a class="header" href="#api-structure">API Structure</a></h3>
 <p>The OpenAI platform exposes these API families:</p>

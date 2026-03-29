@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -212,19 +212,6 @@
 <li><strong>Community Summaries</strong>: Bottom-up summaries generated for each community at every level of the hierarchy. These summaries distill the collective knowledge of all entities and relationships within a community into a coherent narrative that an LLM can consume during query time.</li>
 <li><strong>Knowledge Graph</strong>: The assembled graph structure containing all entities, relationships, and community annotations. This graph is the central artifact that distinguishes GraphRAG from traditional vector-only RAG systems.</li>
 </ul>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install GraphRAG from PyPI:</p>
-<pre><code class="language-bash">pip install graphrag
-</code></pre>
-<p>Initialize a new GraphRAG project:</p>
-<pre><code class="language-bash">graphrag init --root ./my-project
-</code></pre>
-<p>This creates the project directory structure with default configuration files and prompt templates. Place input documents in the <code>input/</code> directory, then run the indexing pipeline:</p>
-<pre><code class="language-bash">graphrag index --root ./my-project
-</code></pre>
-<p>After indexing completes, run queries against the built knowledge graph:</p>
-<pre><code class="language-bash">graphrag query --root ./my-project --method global --query "What are the main themes?"
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>GraphRAG’s architecture is organized around three stages that transform raw text into a queryable knowledge graph.</p>
 <h3 id="stage-1-indexing-pipeline"><a class="header" href="#stage-1-indexing-pipeline">Stage 1: Indexing Pipeline</a></h3>

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -216,74 +216,6 @@
 <p><strong>Dataset / Asset</strong> – A logical representation of data that enables data-aware scheduling. A producer DAG declares which datasets it updates, and consumer DAGs can be triggered when those datasets change rather than relying solely on time-based schedules. In Airflow 3.0, datasets were refactored into “Assets” with support for asset aliases.</p>
 <p><strong>TaskFlow API</strong> – A modern Python-native approach to writing DAGs introduced in Airflow 2.0. The <code>@task</code> decorator simplifies DAG authoring by automatically managing XCom data passing and dependency resolution between tasks.</p>
 <p><strong>Task Group</strong> – A UI-level grouping mechanism that organizes related tasks into collapsible sections in the graph view. Task groups do not affect execution behavior but improve readability of complex DAGs.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h3>
-<ul>
-<li>Python 3.8 or higher</li>
-<li>A supported metadata database (PostgreSQL recommended for production; SQLite for development only)</li>
-<li>Sufficient memory and CPU for the scheduler, webserver, and workers</li>
-</ul>
-<h3 id="pip-installation"><a class="header" href="#pip-installation">pip Installation</a></h3>
-<p>The quickest way to install Airflow locally for development:</p>
-<pre><code class="language-bash"># Set Airflow home directory
-export AIRFLOW_HOME=~/airflow
-
-# Install Airflow with constraint file for reproducible builds
-AIRFLOW_VERSION=2.10.5
-PYTHON_VERSION="$(python3 --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
-CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
-
-pip install "apache-airflow==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
-
-# Initialize the metadata database
-airflow db migrate
-
-# Create an admin user
-airflow users create \
-    --username admin \
-    --firstname Admin \
-    --lastname User \
-    --role Admin \
-    --email admin@example.com
-
-# Start the webserver and scheduler
-airflow webserver --port 8080 &amp;
-airflow scheduler &amp;
-</code></pre>
-<h3 id="docker-compose-installation"><a class="header" href="#docker-compose-installation">Docker Compose Installation</a></h3>
-<p>For a production-like local environment with all components:</p>
-<pre><code class="language-bash"># Download the official docker-compose file
-curl -LfO 'https://airflow.apache.org/docs/apache-airflow/stable/docker-compose.yaml'
-
-# Create required directories
-mkdir -p ./dags ./logs ./plugins ./config
-echo -e "AIRFLOW_UID=$(id -u)" &gt; .env
-
-# Initialize the database and create the first user
-docker compose up airflow-init
-
-# Start all services
-docker compose up -d
-</code></pre>
-<h3 id="kubernetes-helm-chart"><a class="header" href="#kubernetes-helm-chart">Kubernetes Helm Chart</a></h3>
-<p>For production Kubernetes deployments:</p>
-<pre><code class="language-bash"># Add the Airflow Helm repository
-helm repo add apache-airflow https://airflow.apache.org
-helm repo update
-
-# Install Airflow
-helm install airflow apache-airflow/airflow \
-    --namespace airflow \
-    --create-namespace
-</code></pre>
-<h3 id="provider-packages"><a class="header" href="#provider-packages">Provider Packages</a></h3>
-<p>Airflow uses a modular provider system. Install additional providers for external integrations:</p>
-<pre><code class="language-bash"># Install specific providers
-pip install apache-airflow-providers-amazon
-pip install apache-airflow-providers-google
-pip install apache-airflow-providers-postgres
-pip install apache-airflow-providers-docker
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Airflow follows a distributed architecture with several core components that communicate through a shared metadata database and DAG file synchronization.</p>
 <p><strong>Scheduler</strong> – The central orchestration engine. The scheduler triggers workflows based on their defined schedules, submits tasks to the executor, monitors running tasks, and manages retries. The executor runs as a configuration property within the scheduler process.</p>

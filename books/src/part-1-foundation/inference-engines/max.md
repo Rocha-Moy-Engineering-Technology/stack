@@ -35,54 +35,6 @@ MAX exposes an OpenAI-compatible API at `/v1/`, allowing any OpenAI SDK client t
 
 MAX handles deployment across heterogeneous GPU clusters, abstracting away hardware-specific complexities. Supported hardware includes NVIDIA (B200, H200, H100) and AMD (MI355X, MI325X, MI300X) GPUs. [1][2]
 
-## Installation and Setup
-
-### Pixi (Recommended)
-
-```bash
-curl -fsSL https://pixi.sh/install.sh | sh
-pixi init quickstart -c https://conda.modular.com/max-nightly/ -c conda-forge
-cd quickstart
-pixi add modular
-pixi shell
-```
-[2]
-
-### UV
-
-```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh
-uv init quickstart && cd quickstart
-uv venv && source .venv/bin/activate
-uv pip install modular --index https://whl.modular.com/nightly/simple/ --prerelease allow
-```
-[2]
-
-### pip
-
-```bash
-mkdir quickstart && cd quickstart
-python3 -m venv .venv/quickstart
-source .venv/quickstart/bin/activate
-pip install --pre modular --extra-index-url https://whl.modular.com/nightly/simple/
-```
-[2]
-
-### Conda
-
-```bash
-conda create -n quickstart
-conda activate quickstart
-conda install -c conda-forge -c https://conda.modular.com/max-nightly/ modular
-```
-[2]
-
-### System Requirements
-
-- Linux or WSL environment
-- NVIDIA B200/H200/H100 or AMD MI355X/MI325X/MI300X GPU recommended
-- HuggingFace access token for gated models [2]
-
 ## Architecture
 
 ### Platform Components

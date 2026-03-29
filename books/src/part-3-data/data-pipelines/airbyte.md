@@ -59,51 +59,6 @@ Airbyte's Destinations V2 framework provides one-to-one mapping from streams to 
 
 For supported databases (PostgreSQL, MySQL, MSSQL, MongoDB, Oracle DB, SAP HANA, IBM Db2), Airbyte reads database transaction logs to capture all INSERT, UPDATE, and DELETE operations. The initial sync takes a full snapshot; subsequent syncs read from the last log position. CDC metadata columns (`_ab_cdc_lsn`, `_ab_cdc_updated_at`, `_ab_cdc_deleted_at`) track change details [7].
 
-## Installation
-
-### PyAirbyte (Python Library)
-
-```bash
-pip install airbyte
-```
-
-```python
-import airbyte as ab
-
-source = ab.get_source(
-    "source-faker",
-    config={"count": 5_000},
-    install_if_missing=True,
-)
-source.check()
-source.select_all_streams()
-result = source.read()
-```
-
-PyAirbyte enables data extraction directly within Python without running an Airbyte server [9].
-
-### Helm (Kubernetes - Recommended for Production)
-
-```bash
-# Add Helm repository
-helm repo add airbyte https://airbytehq.github.io/helm-charts
-
-# Create namespace
-kubectl create namespace airbyte
-
-# Install with custom values
-helm install airbyte airbyte/airbyte --namespace airbyte --values ./values.yaml
-
-# Access UI
-kubectl -n airbyte port-forward deployment/airbyte-server 8080:8001
-```
-
-Requires a running Kubernetes cluster (Docker Desktop, kind, k3s, or cloud-managed) and the Helm client [10].
-
-### Docker (Local Development)
-
-Airbyte provides Docker Compose configurations for local single-machine development and testing. The platform is designed to be deployed into Kubernetes clusters for production [10].
-
 ## Architecture
 
 Airbyte consists of a platform layer and a connector layer [5]:

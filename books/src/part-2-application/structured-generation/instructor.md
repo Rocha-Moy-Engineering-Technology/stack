@@ -44,35 +44,6 @@ Instructor supports multiple extraction modes depending on provider capabilities
 
 The `from_provider()` function automatically selects the optimal mode for each provider, though modes can be overridden manually.
 
-## Installation
-
-Install the core package:
-
-```bash
-pip install instructor
-```
-
-Alternative package managers:
-
-```bash
-uv add instructor
-poetry add instructor
-```
-
-Core dependencies installed automatically: `openai`, `pydantic`, `typer`, and `docstring-parser`. Python 3.9 or later is required.
-
-Provider-specific client libraries must be installed separately depending on the target LLM backend:
-
-```bash
-pip install openai       # OpenAI
-pip install anthropic    # Anthropic
-pip install google-genai # Google Gemini
-pip install ollama       # Ollama (local models)
-pip install cohere       # Cohere
-pip install mistralai    # Mistral
-pip install litellm      # LiteLLM (multi-provider)
-```
-
 ## Architecture
 
 Instructor sits as a thin middleware layer between the application and the LLM provider client:

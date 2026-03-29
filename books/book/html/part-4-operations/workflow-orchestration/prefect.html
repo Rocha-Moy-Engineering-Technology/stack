@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -239,43 +239,6 @@
 <p><strong>Automations</strong> – Reactive and proactive rules that execute predefined actions when trigger conditions are met. Triggers respond to state changes, metric thresholds, custom events, or the absence of expected events.</p>
 </li>
 </ul>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="install-prefect"><a class="header" href="#install-prefect">Install Prefect</a></h3>
-<pre><code class="language-bash"># Using pip
-pip install prefect
-
-# Using uv
-uv pip install prefect
-
-# With distributed task runner extras
-pip install "prefect[dask]"
-pip install "prefect[ray]"
-</code></pre>
-<h3 id="start-the-prefect-server-self-hosted"><a class="header" href="#start-the-prefect-server-self-hosted">Start the Prefect Server (Self-Hosted)</a></h3>
-<pre><code class="language-bash"># Start the API server and UI
-prefect server start
-
-# Or use Docker
-docker run -p 4200:4200 -d --rm prefecthq/prefect:3-python3.12
-</code></pre>
-<p>The UI is available at <code>http://localhost:4200</code> after starting the server.</p>
-<h3 id="connect-to-prefect-cloud"><a class="header" href="#connect-to-prefect-cloud">Connect to Prefect Cloud</a></h3>
-<pre><code class="language-bash"># Login to Prefect Cloud
-uvx prefect-cloud login
-
-# Or set the API URL and key manually
-prefect config set PREFECT_API_URL="https://api.prefect.cloud/api/accounts/&lt;ACCOUNT_ID&gt;/workspaces/&lt;WORKSPACE_ID&gt;"
-prefect config set PREFECT_API_KEY="&lt;YOUR_API_KEY&gt;"
-</code></pre>
-<h3 id="verify-installation"><a class="header" href="#verify-installation">Verify Installation</a></h3>
-<pre><code class="language-python">from prefect import flow
-
-@flow
-def hello():
-    return "Prefect is working!"
-
-hello()
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Prefect’s architecture separates orchestration metadata from code execution.</p>
 <pre><code>+---------------------------+

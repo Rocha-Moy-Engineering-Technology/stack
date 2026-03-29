@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -209,32 +209,6 @@
 <p><strong>Processes</strong> govern how tasks are executed within a crew. Sequential processes run tasks in order, passing outputs from one task to the next. Hierarchical processes use a manager agent to delegate tasks dynamically. Hybrid patterns combine both approaches.</p>
 <p><strong>Flows</strong> provide orchestration above the crew level. Flows use <code>@start</code>, <code>@listen</code>, and <code>@router</code> decorators to define step sequences, manage shared state across steps, support conditional branching, and enable execution persistence for resumable long-running workflows.</p>
 <p><strong>Tools</strong> are capabilities assigned to agents that extend their ability to interact with external systems. Built-in tools include web search (SerperDevTool), file operations, code execution, and more. Custom tools can be created by implementing the tool interface.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>CrewAI uses its own CLI for project scaffolding and execution:</p>
-<pre><code class="language-bash">pip install crewai
-
-crewai create crew latest-ai-development
-cd latest-ai-development
-crewai install
-crewai run
-</code></pre>
-<p>The <code>crewai create crew</code> command generates a project with a standard directory structure:</p>
-<pre><code>latest-ai-development/
-  src/
-    latest_ai_development/
-      config/
-        agents.yaml
-        tasks.yaml
-      crew.py
-      main.py
-  pyproject.toml
-</code></pre>
-<ul>
-<li><code>config/agents.yaml</code> defines agent configurations (role, goal, backstory)</li>
-<li><code>config/tasks.yaml</code> defines task configurations (description, expected output, agent assignment)</li>
-<li><code>crew.py</code> contains the main crew class with decorator-based assembly</li>
-<li><code>main.py</code> serves as the entry point for execution</li>
-</ul>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>CrewAI follows a layered architecture:</p>
 <ol>

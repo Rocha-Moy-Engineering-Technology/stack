@@ -27,47 +27,6 @@ The platform offers two primary compute paradigms: dedicated GPU instances (Dock
 - **PyWorkers**: Custom Python worker scripts for serverless endpoints that act as HTTP proxy layers between the Vast routing system and a model server. PyWorkers handle request transformation, workload calculation, response streaming, and readiness detection through log pattern matching.
 - **Search Engine**: A hardware search and filtering system allowing users to query available machines by GPU model, VRAM, CPU cores, RAM, disk space, bandwidth, provider reliability score, geographic location, and price.
 
-## Installation
-
-### CLI Installation
-
-The `vastai` CLI is a self-contained Python script providing all functionality of the web console.
-
-```bash
-# Install from PyPI
-pip install vastai
-
-# Or install directly from GitHub
-wget https://raw.githubusercontent.com/vast-ai/vast-python/master/vast.py -O vast
-chmod +x vast
-```
-
-### Authentication
-
-```bash
-# Set API key (generated from https://cloud.vast.ai/cli/)
-vastai set api-key YOUR_API_KEY
-```
-
-The API key is saved in a hidden file in the home directory. Default keys grant full account access; restricted permissions can be configured with `create api-key` and a JSON permission structure.
-
-### Python SDK Installation
-
-```bash
-pip install vastai_sdk
-```
-
-```python
-from vastai_sdk import VastAI
-
-# Initialize with explicit key
-vast_sdk = VastAI(api_key="YOUR_API_KEY")
-
-# Or for serverless endpoints
-from vastai import Serverless
-client = Serverless()  # Uses VAST_API_KEY environment variable
-```
-
 ## Architecture
 
 Vast.ai follows a three-layer marketplace architecture:

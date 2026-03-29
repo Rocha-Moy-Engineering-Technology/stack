@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,40 +211,6 @@
 <p><strong>Checkpointing</strong> provides durable execution by persisting agent state at defined points. If an agent fails or is interrupted, execution resumes from the most recent checkpoint rather than restarting from scratch. This is critical for long-running workflows that interact with external systems.</p>
 <p><strong>Human-in-the-Loop</strong> support allows developers to inspect and modify agent state at any point during execution. Agents can pause, present their current state for human review or correction, and then resume with the modified state. This enables supervised agent deployments where human oversight is required.</p>
 <p><strong>Memory</strong> in LangGraph spans two dimensions: short-term working memory within a single session and persistent long-term memory that carries across sessions. This dual-memory model allows agents to maintain context within a conversation while also recalling information from previous interactions.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install LangGraph using pip or uv:</p>
-<pre><code class="language-bash">pip install -U langgraph
-</code></pre>
-<pre><code class="language-bash">uv add langgraph
-</code></pre>
-<p>A minimal agent graph can be constructed as follows:</p>
-<pre><code class="language-python">from langgraph.graph import StateGraph, START, END
-from typing import TypedDict
-
-class AgentState(TypedDict):
-    messages: list[str]
-    result: str
-
-def process_input(state: AgentState) -&gt; dict:
-    return {"result": f"Processed: {state['messages'][-1]}"}
-
-graph = StateGraph(AgentState)
-graph.add_node("process", process_input)
-graph.add_edge(START, "process")
-graph.add_edge("process", END)
-
-app = graph.compile()
-result = app.invoke({"messages": ["Hello"], "result": ""})
-</code></pre>
-<p>For checkpointing with persistent storage:</p>
-<pre><code class="language-python">from langgraph.checkpoint.memory import MemorySaver
-
-memory = MemorySaver()
-app = graph.compile(checkpointer=memory)
-
-config = {"configurable": {"thread_id": "session-1"}}
-result = app.invoke({"messages": ["Hello"], "result": ""}, config)
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>LangGraph follows a graph-based orchestration architecture with no mandated LLM patterns or tool-calling approaches. The core runtime executes a directed graph where:</p>
 <ol>

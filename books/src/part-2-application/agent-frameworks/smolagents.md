@@ -30,33 +30,6 @@ The library is model-agnostic, modality-agnostic, and tool-agnostic: it works wi
 
 **Hub Integration** allows sharing and loading agents and tools to and from the HuggingFace Hub as Gradio Spaces, enabling community reuse and collaboration.
 
-## Installation and Setup
-
-Install smolagents with default tools (includes web search):
-
-```bash
-pip install 'smolagents[toolkit]'
-```
-
-Install the base package without bundled tools:
-
-```bash
-pip install smolagents
-```
-
-For HuggingFace Inference, set the API token:
-
-```bash
-export HF_TOKEN="hf_..."
-```
-
-For OpenAI or Anthropic models via LiteLLM, set the relevant API keys:
-
-```bash
-export OPENAI_API_KEY="sk-..."
-export ANTHROPIC_API_KEY="sk-ant-..."
-```
-
 ## Architecture
 
 smolagents follows a minimal architecture with three main layers:

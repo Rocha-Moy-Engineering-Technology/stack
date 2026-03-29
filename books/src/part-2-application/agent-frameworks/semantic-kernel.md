@@ -32,60 +32,6 @@ The SDK follows a plugin-based architecture where developers expose existing cod
 
 **Model Context Protocol (MCP) Server.** A recent addition that allows developers to create MCP servers directly from kernel functions, exposing them over Server-Sent Events (SSE) and stdio transports. Prompt templates can also be exposed as MCP prompts, enabling interoperability with the broader MCP ecosystem.
 
-## Installation and Setup
-
-### Python
-
-Install the base package and the desired AI connector:
-
-```bash
-pip install semantic-kernel
-```
-
-Initialize the kernel with an AI service and plugins:
-
-```python
-from semantic_kernel import Kernel
-from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
-
-kernel = Kernel()
-kernel.add_service(
-    AzureChatCompletion(
-        deployment_name=model_id,
-        endpoint=endpoint,
-        api_key=api_key,
-    )
-)
-kernel.add_plugin(TimePlugin(), plugin_name="TimePlugin")
-```
-
-### C#
-
-Add the NuGet packages and build the kernel using the builder pattern:
-
-```csharp
-using Microsoft.SemanticKernel;
-
-var builder = Kernel.CreateBuilder();
-builder.AddAzureOpenAIChatCompletion(modelId, endpoint, apiKey);
-builder.Plugins.AddFromType<TimePlugin>();
-Kernel kernel = builder.Build();
-```
-
-### Java
-
-Add the Maven dependency and configure the kernel following the same structural pattern as the C# and Python implementations. The Java SDK mirrors the core abstractions of the other language versions.
-
-### Environment Configuration
-
-Semantic Kernel reads AI service credentials from environment variables or explicit configuration. For Azure OpenAI, the typical variables are:
-
-- `AZURE_OPENAI_DEPLOYMENT_NAME` -- The model deployment identifier.
-- `AZURE_OPENAI_ENDPOINT` -- The Azure OpenAI resource endpoint URL.
-- `AZURE_OPENAI_API_KEY` -- The API key for authentication.
-
-For OpenAI direct access, use `OPENAI_API_KEY` and `OPENAI_ORG_ID`.
-
 ## Architecture
 
 Semantic Kernel follows a layered pipeline architecture centered on the kernel object:

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -228,29 +228,6 @@
 </ul>
 <h3 id="context-templates"><a class="header" href="#context-templates">Context Templates</a></h3>
 <p>Custom context templates allow developers to control the structure of retrieved context using template variables like <code>%{user_summary}</code>, <code>%{edges limit=10}</code>, and <code>%{entities limit=5}</code>. Templates are created once and referenced by ID when retrieving context [3].</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="python"><a class="header" href="#python">Python</a></h3>
-<pre><code class="language-bash">pip install zep-cloud
-# or with uv
-uv pip install zep-cloud
-</code></pre>
-<h3 id="typescript"><a class="header" href="#typescript">TypeScript</a></h3>
-<pre><code class="language-bash">npm install @getzep/zep-cloud
-# or
-yarn add @getzep/zep-cloud
-# or
-pnpm install @getzep/zep-cloud
-</code></pre>
-<h3 id="go"><a class="header" href="#go">Go</a></h3>
-<pre><code class="language-bash">go get github.com/getzep/zep-go/v3
-</code></pre>
-<h3 id="client-initialization"><a class="header" href="#client-initialization">Client Initialization</a></h3>
-<pre><code class="language-python">import os
-from zep_cloud.client import Zep
-
-client = Zep(api_key=os.environ.get("ZEP_API_KEY"))
-</code></pre>
-<p>API keys are obtained from the Zep dashboard at <a href="https://app.getzep.com/">app.getzep.com</a> [3].</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Zep’s architecture centers on a temporal knowledge graph that ingests data from multiple sources and assembles personalized context for agent consumption:</p>
 <pre><code>┌─────────────────────────────────────────────┐

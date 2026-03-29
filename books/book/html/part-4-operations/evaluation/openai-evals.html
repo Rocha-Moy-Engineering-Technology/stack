@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -210,56 +210,6 @@
 <p><strong>Graders</strong> are the evaluation functions that determine whether a model output meets requirements. OpenAI provides five built-in grader types: string check, text similarity, score model, label model (available via the API for fine-tuning workflows), and Python. Each grader returns a score between 0 and 1.</p>
 <p><strong>Template Syntax</strong> uses double-brace notation to inject dynamic values into prompts and grader configurations. <code>{{item.field_name}}</code> references fields from the test data row, while <code>{{sample.output_text}}</code> references the model-generated response. This templating system connects test data, model prompts, and grading criteria into a unified evaluation pipeline.</p>
 <p><strong>Testing Criteria</strong> is the collection of graders attached to an eval. Multiple criteria can assess different aspects of a single model output, enabling multi-dimensional quality evaluation from a single run.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="open-source-library"><a class="header" href="#open-source-library">Open-Source Library</a></h3>
-<p>The open-source library requires Python 3.9 or higher:</p>
-<pre><code class="language-bash">pip install evals
-</code></pre>
-<p>For development and contribution:</p>
-<pre><code class="language-bash">git clone https://github.com/openai/evals.git
-cd evals
-pip install -e .
-</code></pre>
-<p>The registry uses Git Large File Storage (LFS) for evaluation data:</p>
-<pre><code class="language-bash">git lfs fetch --all
-git lfs pull
-</code></pre>
-<p>Set the OpenAI API key for running evaluations:</p>
-<pre><code class="language-bash">export OPENAI_API_KEY="sk-..."
-</code></pre>
-<h3 id="api-based-evals-python-sdk"><a class="header" href="#api-based-evals-python-sdk">API-Based Evals (Python SDK)</a></h3>
-<p>The API-based evals use the standard OpenAI Python SDK:</p>
-<pre><code class="language-bash">pip install openai
-</code></pre>
-<pre><code class="language-python">from openai import OpenAI
-
-client = OpenAI()
-
-eval_object = client.evals.create(
-    name="ticket-classification",
-    data_source_config={
-        "type": "custom",
-        "item_schema": {
-            "type": "object",
-            "properties": {
-                "ticket_text": {"type": "string"},
-                "correct_label": {"type": "string"},
-            },
-            "required": ["ticket_text", "correct_label"],
-        },
-        "include_sample_schema": True,
-    },
-    testing_criteria=[
-        {
-            "type": "string_check",
-            "name": "classification_accuracy",
-            "input": "{{sample.output_text}}",
-            "reference": "{{item.correct_label}}",
-            "operation": "eq",
-        }
-    ],
-)
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>The OpenAI Evals architecture operates across two execution environments that share a common conceptual model:</p>
 <p><strong>Open-source library</strong> runs evaluations locally. Users define evals through YAML configuration files and JSON data sets, execute them via the command line against OpenAI models, and receive results in the terminal or export them to Weights &amp; Biases for experiment tracking. The library includes a registry of community-contributed benchmarks and supports custom evaluation logic through the Completion Function Protocol.</p>

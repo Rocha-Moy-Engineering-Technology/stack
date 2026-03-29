@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,26 +211,6 @@
 <p>Ollama uses the llama.cpp project (founded by Georgi Gerganov) as its primary inference engine. This C++ library provides efficient CPU and GPU inference for quantized models in GGUF format, enabling LLM execution on consumer hardware without requiring high-end GPUs. [1]</p>
 <h3 id="quantization"><a class="header" href="#quantization">Quantization</a></h3>
 <p>Models in Ollama’s library are pre-quantized to various levels (Q4_0, Q4_K_M, Q5_K_M, Q8_0, FP16) to trade off between model quality and memory/speed requirements. The <code>/api/create</code> endpoint can also quantize models on the fly. [1][2]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="macos"><a class="header" href="#macos">macOS</a></h3>
-<pre><code class="language-bash">curl -fsSL https://ollama.com/install.sh | sh
-</code></pre>
-<p>Or download the DMG installer from ollama.com. [1]</p>
-<h3 id="windows"><a class="header" href="#windows">Windows</a></h3>
-<pre><code class="language-powershell">irm https://ollama.com/install.ps1 | iex
-</code></pre>
-<p>Or download the executable installer from ollama.com. [1]</p>
-<h3 id="linux"><a class="header" href="#linux">Linux</a></h3>
-<pre><code class="language-bash">curl -fsSL https://ollama.com/install.sh | sh
-</code></pre>
-<p>Manual installation instructions available for custom setups. [1]</p>
-<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
-<pre><code class="language-bash">docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-</code></pre>
-<p>For GPU support with NVIDIA:</p>
-<pre><code class="language-bash">docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-</code></pre>
-<p>[1]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="system-architecture"><a class="header" href="#system-architecture">System Architecture</a></h3>
 <ul>

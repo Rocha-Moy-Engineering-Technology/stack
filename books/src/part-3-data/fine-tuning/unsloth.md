@@ -59,34 +59,6 @@ Unsloth's Dynamic 2.0 quantization system intelligently varies quantization type
 
 Unsloth supports fine-tuning Vision-Language Models (VLMs) including Qwen3-VL, Gemma 3, Llama 3.2 Vision, and Qwen2.5 VL. Users can selectively fine-tune vision layers, language layers, attention modules, or MLP modules independently [7].
 
-## Installation
-
-### pip (Recommended)
-
-```bash
-pip install unsloth
-```
-
-### UV
-
-```bash
-uv pip install unsloth
-```
-
-### Docker
-
-```bash
-docker pull unsloth/unsloth
-```
-
-### Update
-
-```bash
-pip install --upgrade unsloth
-```
-
-Platform-specific installation guides are available for Windows, AMD GPUs, Intel GPUs, and Conda environments [8].
-
 ## Architecture
 
 ```

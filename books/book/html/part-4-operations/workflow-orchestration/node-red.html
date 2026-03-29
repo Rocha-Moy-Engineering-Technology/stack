@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -212,49 +212,6 @@
 <p><strong>Configuration Nodes</strong> (config nodes) are specialized nodes that hold reusable configuration shared across multiple regular nodes. For example, an MQTT Broker config node stores connection details that multiple MQTT input and output nodes reference. Config nodes appear in a dedicated sidebar panel rather than in the workspace. [3]</p>
 <p><strong>Subflows</strong> are collections of nodes packaged as a single reusable node. They reduce visual complexity in large flows and enable component reuse across multiple locations. A subflow template defines the internal flow once, and subflow instances appear as single nodes in the workspace. [3]</p>
 <p><strong>Palette</strong> is the left-side panel in the editor listing all available nodes organized by category. Additional nodes can be installed via the command line (<code>npm install</code>) or through the built-in Palette Manager in the editor. [3]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="local-installation-via-npm"><a class="header" href="#local-installation-via-npm">Local Installation via npm</a></h3>
-<p>Node-RED requires a supported version of Node.js. Install globally with npm:</p>
-<pre><code class="language-bash">sudo npm install -g --unsafe-perm node-red
-</code></pre>
-<p>On Windows, omit <code>sudo</code>:</p>
-<pre><code class="language-bash">npm install -g --unsafe-perm node-red
-</code></pre>
-<p>Start Node-RED:</p>
-<pre><code class="language-bash">node-red
-</code></pre>
-<p>The editor is available at <code>http://localhost:1880</code>. To change the default port:</p>
-<pre><code class="language-bash">node-red --port 3000
-</code></pre>
-<p>[4]</p>
-<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
-<p>Run Node-RED in a container with persistent data storage:</p>
-<pre><code class="language-bash">docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
-</code></pre>
-<p>For background operation, replace <code>-it</code> with <code>-d</code>. Configure via environment variables:</p>
-<pre><code class="language-bash">docker run -d -p 1880:1880 \
-  -v node_red_data:/data \
-  -e FLOWS=my_flows.json \
-  -e TZ=America/New_York \
-  -e NODE_RED_ENABLE_SAFE_MODE=true \
-  --name mynodered nodered/node-red
-</code></pre>
-<p>Bind-mount a host directory for data persistence:</p>
-<pre><code class="language-bash">docker run -it -p 1880:1880 -v /home/pi/.node-red:/data --name mynodered nodered/node-red
-</code></pre>
-<p>[6]</p>
-<h3 id="raspberry-pi"><a class="header" href="#raspberry-pi">Raspberry Pi</a></h3>
-<p>Use the all-in-one install script designed for Raspberry Pi:</p>
-<pre><code class="language-bash">bash &lt;(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
-</code></pre>
-<p>This script installs Node.js, npm, and Node-RED with appropriate configurations for the Pi hardware. [4]</p>
-<h3 id="snap"><a class="header" href="#snap">Snap</a></h3>
-<p>On supported Linux distributions:</p>
-<pre><code class="language-bash">sudo snap install node-red
-</code></pre>
-<p>[4]</p>
-<h3 id="cloud-deployments"><a class="header" href="#cloud-deployments">Cloud Deployments</a></h3>
-<p>Node-RED supports deployment on AWS (Elastic Beanstalk or EC2), Microsoft Azure (Virtual Machines), and FlowFuse (multi-tenant managed platform for enterprise environments). [4]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Node-RED’s architecture consists of three main layers:</p>
 <pre><code>Editor (Browser)       Browser-based visual flow editor

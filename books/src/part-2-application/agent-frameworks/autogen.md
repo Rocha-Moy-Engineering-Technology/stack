@@ -27,25 +27,6 @@ The framework represents a significant evolution from its predecessor (AutoGen 0
 
 **Teams** are coordinated groups of agents that collaborate on tasks. A team defines which agents participate, how they communicate, and what termination conditions apply. Teams abstract away the orchestration logic, letting developers focus on individual agent capabilities while the framework handles coordination.
 
-## Installation and Setup
-
-AutoGen provides separate installation paths depending on the layer being used.
-
-For the Studio web-based prototyping interface:
-
-```bash
-pip install -U autogenstudio
-autogenstudio ui --port 8080 --appdir ./myapp
-```
-
-For the AgentChat Python framework with OpenAI model support:
-
-```bash
-pip install -U "autogen-agentchat" "autogen-ext[openai]"
-```
-
-The modular package structure allows installing only the components needed. The `autogen-agentchat` package provides the high-level agent and team abstractions, while `autogen-ext` contains optional extensions for model providers, code executors, and external service integrations.
-
 ## Architecture
 
 AutoGen is organized into four integrated layers, each building on the one below it:

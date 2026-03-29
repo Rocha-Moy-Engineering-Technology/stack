@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,41 +211,6 @@
 <p>MAX exposes an OpenAI-compatible API at <code>/v1/</code>, allowing any OpenAI SDK client to connect by changing the base URL. This minimizes migration friction when moving from cloud APIs to self-hosted inference. [2]</p>
 <h3 id="hardware-abstraction"><a class="header" href="#hardware-abstraction">Hardware Abstraction</a></h3>
 <p>MAX handles deployment across heterogeneous GPU clusters, abstracting away hardware-specific complexities. Supported hardware includes NVIDIA (B200, H200, H100) and AMD (MI355X, MI325X, MI300X) GPUs. [1][2]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="pixi-recommended"><a class="header" href="#pixi-recommended">Pixi (Recommended)</a></h3>
-<pre><code class="language-bash">curl -fsSL https://pixi.sh/install.sh | sh
-pixi init quickstart -c https://conda.modular.com/max-nightly/ -c conda-forge
-cd quickstart
-pixi add modular
-pixi shell
-</code></pre>
-<p>[2]</p>
-<h3 id="uv"><a class="header" href="#uv">UV</a></h3>
-<pre><code class="language-bash">curl -LsSf https://astral.sh/uv/install.sh | sh
-uv init quickstart &amp;&amp; cd quickstart
-uv venv &amp;&amp; source .venv/bin/activate
-uv pip install modular --index https://whl.modular.com/nightly/simple/ --prerelease allow
-</code></pre>
-<p>[2]</p>
-<h3 id="pip"><a class="header" href="#pip">pip</a></h3>
-<pre><code class="language-bash">mkdir quickstart &amp;&amp; cd quickstart
-python3 -m venv .venv/quickstart
-source .venv/quickstart/bin/activate
-pip install --pre modular --extra-index-url https://whl.modular.com/nightly/simple/
-</code></pre>
-<p>[2]</p>
-<h3 id="conda"><a class="header" href="#conda">Conda</a></h3>
-<pre><code class="language-bash">conda create -n quickstart
-conda activate quickstart
-conda install -c conda-forge -c https://conda.modular.com/max-nightly/ modular
-</code></pre>
-<p>[2]</p>
-<h3 id="system-requirements"><a class="header" href="#system-requirements">System Requirements</a></h3>
-<ul>
-<li>Linux or WSL environment</li>
-<li>NVIDIA B200/H200/H100 or AMD MI355X/MI325X/MI300X GPU recommended</li>
-<li>HuggingFace access token for gated models [2]</li>
-</ul>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="platform-components"><a class="header" href="#platform-components">Platform Components</a></h3>
 <ul>

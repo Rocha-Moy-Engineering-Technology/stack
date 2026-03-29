@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -213,58 +213,6 @@
 <p><strong>Scenarios</strong> group a set of variable data with a set of tests, creating a test matrix. For example, three input phrases tested across four languages automatically produce twelve test runs without manually defining each combination.</p>
 <p><strong>Evaluation</strong> is the process of running all prompt-provider-test combinations, collecting outputs, scoring them against assertions, and producing a summary with pass/fail counts, scores, and token usage statistics.</p>
 <p><strong>Red Teaming</strong> is an automated adversarial testing process that generates malicious inputs, runs them through the target application, and analyzes responses for vulnerabilities using plugins that target specific risk categories.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install promptfoo using npm, npx, or Homebrew:</p>
-<pre><code class="language-bash"># Using npx (no installation required)
-npx promptfoo@latest init
-
-# Using npm (global installation)
-npm install -g promptfoo
-promptfoo init
-
-# Using Homebrew
-brew install promptfoo
-promptfoo init
-</code></pre>
-<p>Initialize a project with the getting-started example:</p>
-<pre><code class="language-bash">npx promptfoo@latest init --example getting-started
-</code></pre>
-<p>This creates a directory with a sample <code>promptfooconfig.yaml</code>, prompt files, and a README. A minimal configuration looks like this:</p>
-<pre><code class="language-yaml"># promptfooconfig.yaml
-description: "Translation quality evaluation"
-
-prompts:
-  - "Translate the following text to {{language}}: {{input}}"
-
-providers:
-  - openai:gpt-4o
-  - anthropic:messages:claude-sonnet-4-20250514
-
-tests:
-  - vars:
-      language: French
-      input: "Hello world"
-    assert:
-      - type: contains
-        value: "Bonjour"
-      - type: llm-rubric
-        value: "Is a natural, fluent translation"
-  - vars:
-      language: Spanish
-      input: "Good morning"
-    assert:
-      - type: contains
-        value: "Buenos"
-</code></pre>
-<p>Set the required API keys as environment variables:</p>
-<pre><code class="language-bash">export OPENAI_API_KEY=sk-...
-export ANTHROPIC_API_KEY=sk-ant-...
-</code></pre>
-<p>Run the evaluation and view results:</p>
-<pre><code class="language-bash">promptfoo eval
-promptfoo view
-</code></pre>
-<p>The <code>eval</code> command executes all prompt-provider-test combinations, displays a CLI summary with pass/fail indicators, and caches results for subsequent runs. The <code>view</code> command opens a browser-based interface for interactive exploration of results.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>promptfoo follows a declarative configuration architecture where the evaluation pipeline is defined in YAML and executed by the runtime engine. The architecture consists of five stages:</p>
 <ol>

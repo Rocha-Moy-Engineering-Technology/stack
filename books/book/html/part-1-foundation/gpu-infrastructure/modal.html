@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -213,21 +213,6 @@
 <li><strong>Sandbox</strong>: Secure isolated containers for executing untrusted or agent-generated code with configurable resource limits, timeouts (up to 24 hours), networking, and file access. Sandboxes support named instances, tagging, snapshots, and can be referenced by ID for reuse.</li>
 <li><strong>Notebook</strong>: Cloud-hosted GPU-backed Jupyter environments with serverless pricing, real-time multi-user collaboration, AI-powered code completion (Claude Sonnet 4.6), and support for up to 8 NVIDIA A100s or H100s per kernel.</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>Modal requires Python 3.10 or later (Python 3.9 support was removed in v1.3.0; Python 3.14 is supported). Installation and authentication are handled through the CLI:</p>
-<pre><code class="language-bash">pip install modal
-modal setup  # opens browser for authentication
-</code></pre>
-<p>The <code>modal setup</code> command creates a local token that authenticates all subsequent CLI and SDK operations. No additional configuration files are required.</p>
-<p>Running a Modal app locally for testing:</p>
-<pre><code class="language-bash">modal run my_app.py
-</code></pre>
-<p>Deploying a Modal app as a persistent service:</p>
-<pre><code class="language-bash">modal deploy my_app.py
-</code></pre>
-<p>Development with live reloading:</p>
-<pre><code class="language-bash">modal serve my_app.py  # ephemeral endpoint with hot reload
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Modal operates on a serverless execution model. When a function is invoked, Modal performs the following sequence:</p>
 <ol>

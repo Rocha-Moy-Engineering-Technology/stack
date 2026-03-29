@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,27 +211,6 @@
 <p><strong>Guardrails Hub</strong> is the centralized repository of pre-built validators. Hub validators are installed via the CLI (<code>guardrails hub install</code>) or the in-code <code>install()</code> function. Validators in the Hub cover six primary risk categories: content safety, PII detection, toxic language, jailbreak detection, topic restriction, and output format validation.</p>
 <p><strong>Structured Data Generation</strong> uses Pydantic models to define the expected schema of LLM output. Guards enforce that LLM responses conform to the schema through either function calling (when the model supports it) or prompt optimization. Field-level validators can be attached to individual fields in the Pydantic model for granular control.</p>
 <p><strong>Validation Metadata</strong> provides runtime context to validators that need information unavailable at initialization time. This metadata is passed to <code>guard.validate()</code> or <code>guard()</code> calls, allowing validators like <code>ExtractedSummarySentencesMatch</code> to access dynamic information such as file paths or reference documents for comparison operations.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install the core package:</p>
-<pre><code class="language-bash">pip install guardrails-ai
-</code></pre>
-<p>Run initial configuration:</p>
-<pre><code class="language-bash">guardrails configure
-</code></pre>
-<p>Install validators from the Hub:</p>
-<pre><code class="language-bash">guardrails hub install hub://guardrails/regex_match
-guardrails hub install hub://guardrails/toxic_language
-guardrails hub install hub://guardrails/detect_pii
-guardrails hub install hub://guardrails/competitor_check
-</code></pre>
-<p>Install with optional provider dependencies:</p>
-<pre><code class="language-bash">pip install "guardrails-ai[anthropic]"
-pip install "guardrails-ai[api]"
-pip install "guardrails-ai[huggingface]"
-pip install "guardrails-ai[sql]"
-</code></pre>
-<p>The full set of optional extras includes: <code>anthropic</code>, <code>api</code>, <code>databricks</code>, <code>dev</code>, <code>docs</code>, <code>docs-build</code>, <code>huggingface</code>, <code>llama</code>, <code>manifest</code>, <code>sql</code>, <code>uv</code>, and <code>vectordb</code>.</p>
-<p>Python version requirements: 3.10 or higher, up to 3.14. Python versions below 3.10 are not supported.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Guardrails operates as a middleware layer between application code and LLM providers. The architecture has three primary components:</p>
 <p><strong>Guard Layer.</strong> The Guard object orchestrates the validation pipeline. When invoked, it sends the request to the LLM, receives the response, and passes it through the configured validators. If any validator fails and the on-fail action requires re-asking, the Guard constructs a corrective prompt and sends it back to the LLM. This loop continues up to a configurable <code>num_reasks</code> limit.</p>

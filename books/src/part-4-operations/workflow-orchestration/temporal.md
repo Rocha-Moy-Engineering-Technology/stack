@@ -41,52 +41,6 @@ Temporal provides official Software Development Kits (SDKs) for Go, Java, PHP, P
 
 **Retry Policy** -- Configuration that controls how Activities and Workflows are retried on failure, including initial interval, backoff coefficient, maximum interval, and maximum attempts.
 
-## Installation and Setup
-
-### Command-Line Interface (CLI) Installation
-
-Install the Temporal CLI to run a local development server:
-
-```bash
-# macOS via Homebrew
-brew install temporal
-
-# Start the local development server
-temporal server start-dev
-```
-
-The development server starts on port 7233 by default, with a Web User Interface (UI) accessible at `http://localhost:8233`.
-
-### Python SDK Installation
-
-```bash
-pip install temporalio
-```
-
-### Go SDK Installation
-
-```bash
-go get go.temporal.io/sdk
-```
-
-### TypeScript SDK Installation
-
-```bash
-npm install @temporalio/client @temporalio/worker @temporalio/workflow @temporalio/activity
-```
-
-### Docker Compose (Self-Hosted)
-
-For a production-like local setup, Temporal provides Docker Compose configurations:
-
-```bash
-git clone https://github.com/temporalio/docker-compose.git
-cd docker-compose
-docker compose up
-```
-
-This starts the Temporal Server along with its dependencies (PostgreSQL or Cassandra for persistence, Elasticsearch for visibility).
-
 ## Architecture
 
 The Temporal Server consists of four independently scalable services that communicate through a membership protocol using Ringpop:

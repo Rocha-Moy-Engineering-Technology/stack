@@ -31,38 +31,6 @@ The framework provides a declarative approach to agent orchestration: agents and
 
 **Tools** are capabilities assigned to agents that extend their ability to interact with external systems. Built-in tools include web search (SerperDevTool), file operations, code execution, and more. Custom tools can be created by implementing the tool interface.
 
-## Installation and Setup
-
-CrewAI uses its own CLI for project scaffolding and execution:
-
-```bash
-pip install crewai
-
-crewai create crew latest-ai-development
-cd latest-ai-development
-crewai install
-crewai run
-```
-
-The `crewai create crew` command generates a project with a standard directory structure:
-
-```
-latest-ai-development/
-  src/
-    latest_ai_development/
-      config/
-        agents.yaml
-        tasks.yaml
-      crew.py
-      main.py
-  pyproject.toml
-```
-
-- `config/agents.yaml` defines agent configurations (role, goal, backstory)
-- `config/tasks.yaml` defines task configurations (description, expected output, agent assignment)
-- `crew.py` contains the main crew class with decorator-based assembly
-- `main.py` serves as the entry point for execution
-
 ## Architecture
 
 CrewAI follows a layered architecture:

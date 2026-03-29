@@ -34,63 +34,6 @@ ADK supports multiple programming languages -- Python, TypeScript, Go, and Java 
 
 **Callbacks** allow developers to hook into agent and tool execution at various lifecycle points (before/after agent calls, before/after tool calls, before/after model calls), enabling logging, guardrails, and custom modifications to behavior.
 
-## Installation and Setup
-
-### Python
-
-```bash
-pip install google-adk
-```
-
-### TypeScript
-
-```bash
-npm install @google/adk
-```
-
-### Go
-
-```bash
-go get google.golang.org/adk
-```
-
-### Java
-
-Available via Maven or Gradle. Add the ADK dependency to your build configuration following the official documentation for the latest coordinates.
-
-### Quick Start (Python)
-
-A minimal agent definition consists of creating an agent with a model, name, and instructions:
-
-```python
-from google.adk.agents import Agent
-
-root_agent = Agent(
-    name="greeting_agent",
-    model="gemini-2.0-flash",
-    instruction="You are a helpful assistant. Greet the user warmly.",
-)
-```
-
-To run the agent locally with the built-in web interface:
-
-```bash
-adk web
-```
-
-Or via the command line:
-
-```bash
-adk run <agent_directory>
-```
-
-### Environment Configuration
-
-ADK requires API keys or credentials depending on the model provider:
-
-- **Gemini (Google AI Studio)**: Set the `GOOGLE_API_KEY` environment variable.
-- **Vertex AI**: Set `GOOGLE_CLOUD_PROJECT` and `GOOGLE_CLOUD_LOCATION`, and ensure Application Default Credentials are configured.
-
 ## Architecture
 
 ADK follows a layered, modular architecture designed around composability:

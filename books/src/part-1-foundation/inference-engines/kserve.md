@@ -43,52 +43,6 @@ InferenceGraph enables building complex inference pipelines by composing multipl
 
 ServingRuntimes define reusable model serving configurations including the container image, supported model formats, and resource requirements. KServe provides built-in runtimes and supports custom runtimes. [1]
 
-## Installation and Setup
-
-### Quick Install (Kubernetes Required)
-
-KServe requires a Kubernetes cluster. Quick local installation for development:
-
-```bash
-# Install KServe on a local Kind cluster
-curl -s "https://raw.githubusercontent.com/kserve/kserve/master/hack/quick_install.sh" | bash
-```
-[1]
-
-### Standard Installation with Knative (Default)
-
-Knative-based installation provides serverless capabilities including scale-to-zero and autoscaling:
-
-```bash
-# Install Knative Serving
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.12.0/serving-crds.yaml
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.12.0/serving-core.yaml
-
-# Install KServe
-kubectl apply -f https://github.com/kserve/kserve/releases/download/v0.13.0/kserve.yaml
-kubectl apply -f https://github.com/kserve/kserve/releases/download/v0.13.0/kserve-cluster-resources.yaml
-```
-[1]
-
-### Standalone Installation (Without Knative)
-
-Lightweight installation without Knative dependencies (no canary rollouts or scale-to-zero):
-
-```bash
-kubectl apply -f https://github.com/kserve/kserve/releases/download/v0.13.0/kserve.yaml
-```
-[1]
-
-### ModelMesh Installation
-
-For high-scale, high-density serving workloads:
-
-```bash
-# Install ModelMesh alongside KServe for dense model packing
-kubectl apply -f https://github.com/kserve/modelmesh-serving/releases/download/v0.12.0/modelmesh.yaml
-```
-[1]
-
 ## Architecture
 
 ### System Components

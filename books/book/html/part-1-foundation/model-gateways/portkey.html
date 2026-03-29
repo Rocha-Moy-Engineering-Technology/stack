@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -210,73 +210,6 @@
 <p><strong>Strategy Modes</strong> define how Portkey distributes requests across targets. The four modes are <code>single</code> (one provider), <code>loadbalance</code> (weighted distribution), <code>fallback</code> (sequential failover), and <code>conditional</code> (rule-based routing). [2]</p>
 <p><strong>Guardrails</strong> are real-time validators that check inputs before they reach the LLM and outputs before they reach the user. Guardrails can block requests, log violations, trigger fallbacks, or build evaluation datasets. Over 20 deterministic checks are available alongside LLM-based and third-party guardrail integrations. [4]</p>
 <p><strong>Observability</strong> is an OpenTelemetry-compliant monitoring suite that automatically captures all requests, responses, costs, latencies, and token usage. The suite includes logs, distributed tracing, analytics dashboards with 21+ metrics, custom metadata tagging, and feedback integration. [5]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="python-sdk"><a class="header" href="#python-sdk">Python SDK</a></h3>
-<pre><code class="language-bash">pip install portkey-ai
-</code></pre>
-<pre><code class="language-python">from portkey_ai import Portkey
-
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",
-)
-
-response = portkey.chat.completions.create(
-    model="@openai-prod/gpt-4o",
-    messages=[
-        {"role": "user", "content": "Hello, world!"}
-    ]
-)
-print(response.choices[0].message.content)
-</code></pre>
-<h3 id="nodejs-sdk"><a class="header" href="#nodejs-sdk">Node.js SDK</a></h3>
-<pre><code class="language-bash">npm install portkey-ai
-</code></pre>
-<pre><code class="language-javascript">import Portkey from "portkey-ai";
-
-const portkey = new Portkey({
-    apiKey: "PORTKEY_API_KEY",
-});
-
-const response = await portkey.chat.completions.create({
-    model: "@openai-prod/gpt-4o",
-    messages: [
-        { role: "user", content: "Hello, world!" }
-    ]
-});
-console.log(response.choices[0].message.content);
-</code></pre>
-<h3 id="openai-sdk-compatibility"><a class="header" href="#openai-sdk-compatibility">OpenAI SDK Compatibility</a></h3>
-<p>Route existing OpenAI SDK calls through Portkey by changing the base URL:</p>
-<pre><code class="language-python">from openai import OpenAI
-from portkey_ai import createHeaders
-
-client = OpenAI(
-    api_key="YOUR_OPENAI_API_KEY",
-    base_url="https://api.portkey.ai/v1",
-    default_headers=createHeaders(
-        api_key="YOUR_PORTKEY_API_KEY",
-    )
-)
-
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "Hello!"}]
-)
-</code></pre>
-<h3 id="rest-api"><a class="header" href="#rest-api">REST API</a></h3>
-<pre><code class="language-bash">curl https://api.portkey.ai/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
-  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
-  -d '{
-    "model": "gpt-4o",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'
-</code></pre>
-<h3 id="self-hosted-gateway"><a class="header" href="#self-hosted-gateway">Self-Hosted Gateway</a></h3>
-<p>Run the open-source gateway locally:</p>
-<pre><code class="language-bash">npx @portkey-ai/gateway
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Portkey operates as an edge-deployed proxy between client applications and LLM providers:</p>
 <pre><code>Application (SDK / REST)

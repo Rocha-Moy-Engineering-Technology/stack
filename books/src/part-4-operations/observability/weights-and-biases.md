@@ -41,51 +41,6 @@ The platform is commercial and cloud-hosted, with self-hosted deployment options
 
 **Weave Calls** represent logged executions of Weave Ops. Each call records input arguments, output values, latency, parent-child relationships for nested calls, and any errors that occurred.
 
-## Installation and Setup
-
-Install the W&B Python SDK:
-
-```bash
-pip install wandb
-```
-
-Authenticate with your W&B account:
-
-```bash
-wandb login
-```
-
-This prompts for an API key, which can be found at [wandb.ai/authorize](https://wandb.ai/authorize). Alternatively, set the key as an environment variable:
-
-```bash
-export WANDB_API_KEY="your-api-key"
-```
-
-Verify the installation with a minimal tracking script:
-
-```python
-import wandb
-
-run = wandb.init(project="quickstart")
-run.config.learning_rate = 0.01
-run.log({"loss": 0.5, "accuracy": 0.85})
-run.finish()
-```
-
-For Weave (LLM observability), install the Weave package:
-
-```bash
-pip install weave
-```
-
-Initialize Weave in your application:
-
-```python
-import weave
-
-weave.init("my-llm-project")
-```
-
 ## Architecture
 
 W&B follows a client-server architecture with a thin SDK that streams data to a cloud or self-hosted backend:

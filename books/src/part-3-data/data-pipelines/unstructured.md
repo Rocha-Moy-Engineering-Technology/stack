@@ -58,34 +58,6 @@ The ingestion pipeline follows an 11-step ETL workflow [1]:
 
 Filtering can be applied at three stages (post-index, post-download, post-uncompress) to exclude files by type, name, path, or size before processing [1].
 
-## Installation
-
-### Python Package
-
-```bash
-# Full installation (all file types)
-pip install "unstructured[all-docs]"
-
-# Minimal installation (txt, html, xml, email only)
-pip install unstructured
-
-# Selective file type extras
-pip install "unstructured[pdf,docx]"
-```
-
-Available extras: `csv`, `docx`, `epub`, `image`, `md`, `odt`, `org`, `pdf`, `pptx`, `rst`, `rtf`, `tsv`, `xlsx`, and `all-docs` [6].
-
-### System Dependencies
-
-- **libmagic-dev**: File type detection
-- **poppler-utils** and **tesseract-ocr**: Image and PDF processing; `tesseract-lang` for additional language support
-- **libreoffice**: Microsoft Office document handling (.doc, .ppt)
-- **pandoc** (v2.14.2+): `.epub`, `.odt`, and `.rtf` file support [6]
-
-### Docker
-
-Unstructured provides Docker images for containerized deployment without manual system dependency management.
-
 ## Architecture
 
 ```

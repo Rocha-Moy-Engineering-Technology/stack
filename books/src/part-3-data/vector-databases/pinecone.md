@@ -49,39 +49,6 @@ Pinecone's integrated embedding feature accepts raw text input and automatically
 
 After an initial retrieval pass, Pinecone can rerank results using a cross-encoder or similar model to improve precision. Reranking is particularly useful in RAG pipelines where the top-k retrieved documents must be highly relevant before being passed to a Large Language Model (LLM).
 
-## Installation
-
-### Python SDK
-
-```bash
-pip install pinecone
-```
-
-### Node.js SDK
-
-```bash
-npm install @pinecone-database/pinecone
-```
-
-### CLI
-
-Pinecone provides a Command-Line Interface (CLI) for index management, data operations, and account administration:
-
-```bash
-pip install pinecone-cli
-pinecone login
-```
-
-### Authentication
-
-All API access requires an API key, obtained from the Pinecone console. The key is passed via the `Api-Key` header in REST calls or through SDK client initialization:
-
-```python
-from pinecone import Pinecone
-
-pc = Pinecone(api_key="YOUR_API_KEY")
-```
-
 ## Architecture
 
 ### Fully Managed Infrastructure

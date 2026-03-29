@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,93 +211,6 @@
 <p><strong>Labeling Configuration</strong> is an XML document that defines the annotation interface. It uses a tag-based system where control tags (Labels, Choices, Rating, TextArea) define what annotations can be created, and object tags (Text, Image, Audio, Video) define what data is displayed. The <code>name</code> attribute on control tags and <code>toName</code> attribute linking them to object tags establish the relationship between annotation controls and data objects.</p>
 <p><strong>Data Manager</strong> is the tabular interface for browsing, filtering, sorting, and managing tasks within a project. It supports column customization, bulk actions (assign, delete, retrieve predictions), and saved views (tabs) for organizing workflow queues.</p>
 <p><strong>ML Backend</strong> is an external web service that wraps an ML model and exposes prediction and training endpoints compatible with the Label Studio ML SDK. When connected to a project, it provides pre-annotations, interactive predictions during labeling, and model training triggered by annotation submissions.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="pip-installation"><a class="header" href="#pip-installation">pip Installation</a></h3>
-<p>Label Studio requires Python 3.9 or later. Install and start with pip:</p>
-<pre><code class="language-bash">pip install label-studio
-label-studio start
-</code></pre>
-<p>The server launches on <code>http://localhost:8080</code> by default. On first run, it creates a local SQLite database and prompts for account creation.</p>
-<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
-<p>Run Label Studio as a Docker container with persistent data storage:</p>
-<pre><code class="language-bash">docker run -it -p 8080:8080 \
-  -v $(pwd)/mydata:/label-studio/data \
-  heartexlabs/label-studio:latest
-</code></pre>
-<h3 id="docker-compose-with-postgresql"><a class="header" href="#docker-compose-with-postgresql">Docker Compose with PostgreSQL</a></h3>
-<p>For production deployments, use Docker Compose with PostgreSQL and Redis:</p>
-<pre><code class="language-yaml">version: "3.8"
-services:
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./mydata:/label-studio/data:rw
-
-  app:
-    image: heartexlabs/label-studio:latest
-    expose:
-      - "8080"
-    environment:
-      - DJANGO_DB=default
-      - POSTGRE_NAME=postgres
-      - POSTGRE_USER=postgres
-      - POSTGRE_PASSWORD=postgres
-      - POSTGRE_HOST=db
-      - POSTGRE_PORT=5432
-    volumes:
-      - ./mydata:/label-studio/data:rw
-    depends_on:
-      - db
-      - redis
-
-  db:
-    image: postgres:13
-    environment:
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-
-volumes:
-  postgres_data:
-  redis_data:
-</code></pre>
-<pre><code class="language-bash">docker-compose up -d
-</code></pre>
-<h3 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h3>
-<p>Label Studio can be deployed on Kubernetes using Helm charts with ingress controller configuration. Consult the official Helm chart repository for production-grade manifests with PostgreSQL, Redis, and persistent volume claims.</p>
-<h3 id="homebrew-macos"><a class="header" href="#homebrew-macos">Homebrew (macOS)</a></h3>
-<pre><code class="language-bash">brew install humansignal/tap/label-studio
-label-studio start
-</code></pre>
-<h3 id="system-requirements"><a class="header" href="#system-requirements">System Requirements</a></h3>
-<ul>
-<li>Python 3.9 or later</li>
-<li>RAM: 8 GB minimum, 16 GB recommended</li>
-<li>Disk: 50 GB for production instances</li>
-<li>Database: PostgreSQL 13+ (recommended for production) or SQLite 3.35+ (development only)</li>
-<li>Browser: latest Google Chrome</li>
-</ul>
-<h3 id="initial-setup-workflow"><a class="header" href="#initial-setup-workflow">Initial Setup Workflow</a></h3>
-<ol>
-<li>Start Label Studio and create an account</li>
-<li>Create a new project and provide a name and description</li>
-<li>Configure the labeling interface using a template or custom XML</li>
-<li>Import data (upload files, connect cloud storage, or use the API)</li>
-<li>Distribute tasks to annotators and begin labeling</li>
-<li>Export annotations in the desired format</li>
-</ol>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Label Studio follows a client-server architecture with four principal components:</p>
 <p><strong>Django Application Server</strong> handles HTTP requests, manages the database Object-Relational Mapping (ORM), processes authentication and authorization, and exposes the RESTful API. The server uses Django REST Framework for API endpoints and supports both SQLite (development) and PostgreSQL (production) as database backends.</p>

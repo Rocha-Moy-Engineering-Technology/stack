@@ -34,44 +34,6 @@ The ecosystem spans three tiers: the open-source framework (the core library), E
 - **Evaluator**: A component that scores pipeline outputs against ground truth or quality criteria. Evaluators support metrics such as faithfulness, relevance, and answer correctness for systematic quality assessment.
 - **Context Engineering**: The overarching design philosophy in Haystack that treats context management (what information reaches the model, in what form, and when) as a first-class engineering concern rather than an afterthought.
 
-## Installation and Setup
-
-Install Haystack using pip:
-
-```bash
-pip install -U haystack-ai
-```
-
-Install with specific integrations:
-
-```bash
-# Elasticsearch document store
-pip install elasticsearch-haystack
-
-# Weaviate document store
-pip install weaviate-haystack
-
-# Chroma document store
-pip install chroma-haystack
-
-# Qdrant document store
-pip install qdrant-haystack
-```
-
-Verify the installation:
-
-```python
-import haystack
-print(haystack.__version__)
-```
-
-Set environment variables for model providers:
-
-```bash
-export OPENAI_API_KEY="your-api-key"
-export ANTHROPIC_API_KEY="your-api-key"
-```
-
 ## Architecture
 
 Haystack follows a pipeline-based architecture where components are connected in directed graphs. The architecture separates concerns into distinct layers:

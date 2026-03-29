@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,31 +211,6 @@
 <li><strong>Vertex AI Pipelines</strong>: orchestration service for automating and reproducing ML workflows as directed acyclic graphs</li>
 <li><strong>Grounding</strong>: a mechanism that connects model outputs to external data sources and APIs, reducing hallucinations and improving factual accuracy</li>
 <li><strong>Training Clusters</strong>: dedicated large-scale compute resources for distributed training workloads</li>
-</ul>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Vertex AI is accessed through the Google Cloud Console or the Vertex AI SDK for Python. There is no standalone installation; usage requires a Google Cloud project with billing enabled.</p>
-<h3 id="sdk-installation"><a class="header" href="#sdk-installation">SDK Installation</a></h3>
-<pre><code class="language-bash">pip install google-cloud-aiplatform
-</code></pre>
-<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
-<pre><code class="language-bash">gcloud auth application-default login
-gcloud config set project YOUR_PROJECT_ID
-</code></pre>
-<h3 id="sdk-initialization"><a class="header" href="#sdk-initialization">SDK Initialization</a></h3>
-<pre><code class="language-python">from google.cloud import aiplatform
-
-aiplatform.init(
-    project="your-project-id",
-    location="us-central1",
-    staging_bucket="gs://your-staging-bucket",
-)
-</code></pre>
-<h3 id="prerequisites"><a class="header" href="#prerequisites">Prerequisites</a></h3>
-<ul>
-<li>A Google Cloud account with billing enabled</li>
-<li>The Vertex AI API enabled in the project</li>
-<li>Appropriate IAM roles assigned (e.g., <code>roles/aiplatform.user</code>)</li>
-<li>The Google Cloud CLI (<code>gcloud</code>) installed for authentication</li>
 </ul>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Vertex AI operates as a managed cloud service within the Google Cloud ecosystem. Its architecture spans several layers:</p>

@@ -27,31 +27,6 @@ Bedrock abstracts away the complexity of hosting and serving large language mode
 - **Guardrails**: Configurable safety and compliance controls that filter model inputs and outputs according to organizational policies.
 - **Prompt Caching**: Server-side caching mechanism (1-hour duration for Claude models) that reduces latency and cost for repeated or similar prompts.
 
-## Installation and Setup
-
-Bedrock requires an AWS account with IAM credentials configured for Bedrock access. The primary SDK for Python is `boto3`.
-
-```bash
-pip install boto3
-```
-
-Configure AWS credentials through any standard method (environment variables, AWS CLI configuration, or IAM roles):
-
-```bash
-aws configure
-```
-
-Verify access by listing available foundation models:
-
-```python
-import boto3
-
-client = boto3.client('bedrock', region_name='us-east-1')
-response = client.list_foundation_models()
-for model in response['modelSummaries']:
-    print(model['modelId'], model['modelName'])
-```
-
 ## Architecture
 
 Bedrock operates as a managed API layer between client applications and foundation model infrastructure. The architecture consists of three tiers:

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -214,18 +214,6 @@
 <li><strong>Backend Agnosticism</strong>: Outlines decouples the structured generation logic from the model backend. The same schema definition works across OpenAI, Anthropic, vLLM, Hugging Face Transformers, Ollama, and Gemini without modification.</li>
 <li><strong>Type-Safe Output</strong>: When using Pydantic models or Python type annotations, the generated output is automatically deserialized into the corresponding typed object, providing immediate programmatic access without manual parsing.</li>
 </ul>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install Outlines via pip:</p>
-<pre><code class="language-bash">pip install outlines
-</code></pre>
-<p>For specific backend support, install with extras as needed:</p>
-<pre><code class="language-bash">pip install outlines[openai]
-pip install outlines[anthropic]
-pip install outlines[transformers]
-pip install outlines[vllm]
-pip install outlines[ollama]
-pip install outlines[gemini]
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Outlines is organized around three primary layers:</p>
 <ul>

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -207,16 +207,6 @@
 <p><strong>Multi-Agent Systems</strong> are collaborative architectures where multiple agents work together. AutoGen supports three primary patterns: deterministic workflows with predefined agent interaction sequences, dynamic business processes where agents negotiate and delegate based on runtime conditions, and distributed applications where agents run across separate processes or machines.</p>
 <p><strong>Event-Driven Design</strong> underpins the entire framework. Agents communicate through asynchronous events rather than synchronous function calls, enabling horizontal scalability and loose coupling between components. This architecture allows agents to be deployed independently and communicate through message-passing infrastructure.</p>
 <p><strong>Teams</strong> are coordinated groups of agents that collaborate on tasks. A team defines which agents participate, how they communicate, and what termination conditions apply. Teams abstract away the orchestration logic, letting developers focus on individual agent capabilities while the framework handles coordination.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>AutoGen provides separate installation paths depending on the layer being used.</p>
-<p>For the Studio web-based prototyping interface:</p>
-<pre><code class="language-bash">pip install -U autogenstudio
-autogenstudio ui --port 8080 --appdir ./myapp
-</code></pre>
-<p>For the AgentChat Python framework with OpenAI model support:</p>
-<pre><code class="language-bash">pip install -U "autogen-agentchat" "autogen-ext[openai]"
-</code></pre>
-<p>The modular package structure allows installing only the components needed. The <code>autogen-agentchat</code> package provides the high-level agent and team abstractions, while <code>autogen-ext</code> contains optional extensions for model providers, code executors, and external service integrations.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>AutoGen is organized into four integrated layers, each building on the one below it:</p>
 <p><strong>Studio</strong> is the top layer, providing a web-based interface for prototyping agent workflows without writing code. It allows visual construction and testing of multi-agent systems through a graphical interface served as a local web application.</p>

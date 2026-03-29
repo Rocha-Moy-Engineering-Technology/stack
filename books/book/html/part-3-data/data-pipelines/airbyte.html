@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -231,38 +231,6 @@
 <p>Airbyte’s Destinations V2 framework provides one-to-one mapping from streams to destination tables. Raw data is stored in an <code>airbyte_internal</code> schema, then typed and deduplicated into final tables with system columns: <code>_airbyte_raw_id</code> (unique ID), <code>_airbyte_extracted_at</code> (timestamp), and <code>_airbyte_meta</code> (error/change tracking) [6].</p>
 <h3 id="change-data-capture-cdc"><a class="header" href="#change-data-capture-cdc">Change Data Capture (CDC)</a></h3>
 <p>For supported databases (PostgreSQL, MySQL, MSSQL, MongoDB, Oracle DB, SAP HANA, IBM Db2), Airbyte reads database transaction logs to capture all INSERT, UPDATE, and DELETE operations. The initial sync takes a full snapshot; subsequent syncs read from the last log position. CDC metadata columns (<code>_ab_cdc_lsn</code>, <code>_ab_cdc_updated_at</code>, <code>_ab_cdc_deleted_at</code>) track change details [7].</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="pyairbyte-python-library"><a class="header" href="#pyairbyte-python-library">PyAirbyte (Python Library)</a></h3>
-<pre><code class="language-bash">pip install airbyte
-</code></pre>
-<pre><code class="language-python">import airbyte as ab
-
-source = ab.get_source(
-    "source-faker",
-    config={"count": 5_000},
-    install_if_missing=True,
-)
-source.check()
-source.select_all_streams()
-result = source.read()
-</code></pre>
-<p>PyAirbyte enables data extraction directly within Python without running an Airbyte server [9].</p>
-<h3 id="helm-kubernetes---recommended-for-production"><a class="header" href="#helm-kubernetes---recommended-for-production">Helm (Kubernetes - Recommended for Production)</a></h3>
-<pre><code class="language-bash"># Add Helm repository
-helm repo add airbyte https://airbytehq.github.io/helm-charts
-
-# Create namespace
-kubectl create namespace airbyte
-
-# Install with custom values
-helm install airbyte airbyte/airbyte --namespace airbyte --values ./values.yaml
-
-# Access UI
-kubectl -n airbyte port-forward deployment/airbyte-server 8080:8001
-</code></pre>
-<p>Requires a running Kubernetes cluster (Docker Desktop, kind, k3s, or cloud-managed) and the Helm client [10].</p>
-<h3 id="docker-local-development"><a class="header" href="#docker-local-development">Docker (Local Development)</a></h3>
-<p>Airbyte provides Docker Compose configurations for local single-machine development and testing. The platform is designed to be deployed into Kubernetes clusters for production [10].</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Airbyte consists of a platform layer and a connector layer [5]:</p>
 <pre><code>┌─────────────────────────────────────────────────┐

@@ -31,41 +31,6 @@ The platform supports PyTorch, TensorFlow, ONNX, and custom Python functions wit
 - **Secrets Manager**: Centralized storage for passwords, API keys, and tokens with encryption at rest and in transit, access control, and automatic rotation support [11].
 - **Remote Run**: Execute code on remote GPU servers directly from a local machine using annotations and the `inferless remote-run` command, supporting T4, A10, and A100 GPUs [12].
 
-## Installation
-
-Inferless is a managed cloud platform with no local installation required for the core service. Interaction happens through the web dashboard, the CLI, or the Python client library.
-
-**CLI Installation:**
-
-```bash
-pip install inferless-cli
-```
-
-**CLI Authentication:**
-
-```bash
-# Retrieve CLI keys from https://console.inferless.com/user/settings?current-tab=keys
-inferless login
-# Paste CLI keys when prompted
-```
-
-**Python Client Installation:**
-
-```bash
-pip install --upgrade inferless
-```
-
-**Quick Start Flow:**
-
-1. Sign up for an Inferless account through the web dashboard.
-2. Install the CLI with `pip install inferless-cli`.
-3. Authenticate with `inferless login`.
-4. Scaffold a demo project: `inferless scaffold --demo`.
-5. Initialize the model: `inferless init --name <modelname>`.
-6. Deploy to GPU: `inferless deploy --gpu T4`.
-
-The template repository at [github.com/inferless/template](https://github.com/inferless/template) provides a reference implementation using the GPT Neo model with Pydantic request/response schemas [3].
-
 ## Architecture
 
 Inferless follows a serverless architecture pattern for GPU inference with these primary components:

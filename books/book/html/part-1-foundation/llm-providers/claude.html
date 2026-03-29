@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -229,73 +229,6 @@
 <li><strong>Client tools</strong>: Execute on your systems (custom tools, computer use, text editor, bash)</li>
 <li><strong>Server tools</strong>: Execute on Anthropic’s servers (web search, web fetch, code execution, memory) [4]</li>
 </ul>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="api-key"><a class="header" href="#api-key">API Key</a></h3>
-<p>Get your key from the <a href="https://console.anthropic.com/settings/keys">Claude Console</a>:</p>
-<pre><code class="language-bash">export ANTHROPIC_API_KEY='your-api-key-here'
-</code></pre>
-<p>[1]</p>
-<h3 id="python"><a class="header" href="#python">Python</a></h3>
-<pre><code class="language-bash">pip install anthropic
-</code></pre>
-<pre><code class="language-python">import anthropic
-
-client = anthropic.Anthropic()
-message = client.messages.create(
-    model="claude-opus-4-6",
-    max_tokens=1000,
-    messages=[
-        {"role": "user", "content": "What's the weather like today?"}
-    ],
-)
-print(message.content)
-</code></pre>
-<p>[1]</p>
-<h3 id="typescript"><a class="header" href="#typescript">TypeScript</a></h3>
-<pre><code class="language-bash">npm install @anthropic-ai/sdk
-</code></pre>
-<pre><code class="language-typescript">import Anthropic from "@anthropic-ai/sdk";
-
-const anthropic = new Anthropic();
-const msg = await anthropic.messages.create({
-    model: "claude-opus-4-6",
-    max_tokens: 1000,
-    messages: [
-        { role: "user", content: "What's the weather like today?" }
-    ]
-});
-console.log(msg);
-</code></pre>
-<p>[1]</p>
-<h3 id="java"><a class="header" href="#java">Java</a></h3>
-<pre><code class="language-xml">&lt;dependency&gt;
-  &lt;groupId&gt;com.anthropic&lt;/groupId&gt;
-  &lt;artifactId&gt;anthropic-java&lt;/artifactId&gt;
-  &lt;version&gt;1.0.0&lt;/version&gt;
-&lt;/dependency&gt;
-</code></pre>
-<pre><code class="language-java">AnthropicClient client = AnthropicOkHttpClient.fromEnv();
-MessageCreateParams params = MessageCreateParams.builder()
-    .model("claude-opus-4-6")
-    .maxTokens(1000)
-    .addUserMessage("What's the weather like today?")
-    .build();
-Message message = client.messages().create(params);
-System.out.println(message.content());
-</code></pre>
-<p>[1]</p>
-<h3 id="curl"><a class="header" href="#curl">cURL</a></h3>
-<pre><code class="language-bash">curl https://api.anthropic.com/v1/messages \
-  -H "Content-Type: application/json" \
-  -H "x-api-key: $ANTHROPIC_API_KEY" \
-  -H "anthropic-version: 2023-06-01" \
-  -d '{
-    "model": "claude-opus-4-6",
-    "max_tokens": 1000,
-    "messages": [{"role": "user", "content": "Hello, Claude!"}]
-  }'
-</code></pre>
-<p>[1]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="api-surface"><a class="header" href="#api-surface">API Surface</a></h3>
 <p>Claude’s API is organized into five areas:</p>

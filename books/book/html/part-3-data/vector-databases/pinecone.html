@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -221,24 +221,6 @@
 <p>Pinecone’s integrated embedding feature accepts raw text input and automatically generates vector embeddings using a built-in model. This eliminates the need for a separate embedding service, reducing latency and architectural complexity for text-based use cases.</p>
 <h3 id="reranking"><a class="header" href="#reranking">Reranking</a></h3>
 <p>After an initial retrieval pass, Pinecone can rerank results using a cross-encoder or similar model to improve precision. Reranking is particularly useful in RAG pipelines where the top-k retrieved documents must be highly relevant before being passed to a Large Language Model (LLM).</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="python-sdk"><a class="header" href="#python-sdk">Python SDK</a></h3>
-<pre><code class="language-bash">pip install pinecone
-</code></pre>
-<h3 id="nodejs-sdk"><a class="header" href="#nodejs-sdk">Node.js SDK</a></h3>
-<pre><code class="language-bash">npm install @pinecone-database/pinecone
-</code></pre>
-<h3 id="cli"><a class="header" href="#cli">CLI</a></h3>
-<p>Pinecone provides a Command-Line Interface (CLI) for index management, data operations, and account administration:</p>
-<pre><code class="language-bash">pip install pinecone-cli
-pinecone login
-</code></pre>
-<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
-<p>All API access requires an API key, obtained from the Pinecone console. The key is passed via the <code>Api-Key</code> header in REST calls or through SDK client initialization:</p>
-<pre><code class="language-python">from pinecone import Pinecone
-
-pc = Pinecone(api_key="YOUR_API_KEY")
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="fully-managed-infrastructure"><a class="header" href="#fully-managed-infrastructure">Fully Managed Infrastructure</a></h3>
 <p>Pinecone handles all infrastructure concerns: provisioning, scaling, replication, backups, and failover. Users interact exclusively through APIs and SDKs without managing servers, containers, or storage volumes.</p>

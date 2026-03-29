@@ -57,43 +57,6 @@ Zep ingests multiple data formats [2][3]:
 
 Custom context templates allow developers to control the structure of retrieved context using template variables like `%{user_summary}`, `%{edges limit=10}`, and `%{entities limit=5}`. Templates are created once and referenced by ID when retrieving context [3].
 
-## Installation
-
-### Python
-
-```bash
-pip install zep-cloud
-# or with uv
-uv pip install zep-cloud
-```
-
-### TypeScript
-
-```bash
-npm install @getzep/zep-cloud
-# or
-yarn add @getzep/zep-cloud
-# or
-pnpm install @getzep/zep-cloud
-```
-
-### Go
-
-```bash
-go get github.com/getzep/zep-go/v3
-```
-
-### Client Initialization
-
-```python
-import os
-from zep_cloud.client import Zep
-
-client = Zep(api_key=os.environ.get("ZEP_API_KEY"))
-```
-
-API keys are obtained from the Zep dashboard at [app.getzep.com](https://app.getzep.com/) [3].
-
 ## Architecture
 
 Zep's architecture centers on a temporal knowledge graph that ingests data from multiple sources and assembles personalized context for agent consumption:

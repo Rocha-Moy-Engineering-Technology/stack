@@ -28,42 +28,6 @@ The platform consolidates Google Cloud's ML services into a single environment, 
 - **Grounding**: a mechanism that connects model outputs to external data sources and APIs, reducing hallucinations and improving factual accuracy
 - **Training Clusters**: dedicated large-scale compute resources for distributed training workloads
 
-## Installation and Setup
-
-Vertex AI is accessed through the Google Cloud Console or the Vertex AI SDK for Python. There is no standalone installation; usage requires a Google Cloud project with billing enabled.
-
-### SDK Installation
-
-```bash
-pip install google-cloud-aiplatform
-```
-
-### Authentication
-
-```bash
-gcloud auth application-default login
-gcloud config set project YOUR_PROJECT_ID
-```
-
-### SDK Initialization
-
-```python
-from google.cloud import aiplatform
-
-aiplatform.init(
-    project="your-project-id",
-    location="us-central1",
-    staging_bucket="gs://your-staging-bucket",
-)
-```
-
-### Prerequisites
-
-- A Google Cloud account with billing enabled
-- The Vertex AI API enabled in the project
-- Appropriate IAM roles assigned (e.g., `roles/aiplatform.user`)
-- The Google Cloud CLI (`gcloud`) installed for authentication
-
 ## Architecture
 
 Vertex AI operates as a managed cloud service within the Google Cloud ecosystem. Its architecture spans several layers:

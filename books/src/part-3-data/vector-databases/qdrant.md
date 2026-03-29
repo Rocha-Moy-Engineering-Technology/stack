@@ -54,66 +54,6 @@ Qdrant supports multiple vector types [3]:
 
 Collections organize data into **segments**, each with independent vector storage, payload storage, indexes, and an ID mapper. Segments are either appendable (full CRUD) or non-appendable (read and delete only). Data integrity is maintained through a Write-Ahead Log (WAL) that orders operations sequentially before propagating to segments [8].
 
-## Installation
-
-### Docker (Primary Method)
-
-```bash
-docker pull qdrant/qdrant
-docker run -p 6333:6333 -p 6334:6334 \
-    -v "$(pwd)/qdrant_storage:/qdrant/storage:z" \
-    qdrant/qdrant
-```
-
-Access points: REST API at `http://localhost:6333`, Web UI at `http://localhost:6333/dashboard`, gRPC API at `localhost:6334` [9].
-
-### Kubernetes (Helm)
-
-```bash
-helm repo add qdrant https://qdrant.to/helm
-helm install qdrant qdrant/qdrant
-```
-
-### From Source (Rust)
-
-```bash
-cargo build --release --bin qdrant
-```
-
-### Client SDKs
-
-```bash
-# Python
-pip install qdrant-client[fastembed]
-
-# JavaScript/TypeScript
-npm install @qdrant/js-client-rest
-
-# Rust
-cargo add qdrant-client
-
-# Go
-go get github.com/qdrant/go-client
-
-# .NET
-dotnet add package Qdrant.Client
-```
-
-### Client Initialization
-
-```python
-from qdrant_client import QdrantClient
-
-# Local Docker instance
-client = QdrantClient(url="http://localhost:6333")
-
-# Qdrant Cloud
-client = QdrantClient(
-    url="https://your-cluster.cloud.qdrant.io",
-    api_key="your-api-key",
-)
-```
-
 ## Architecture
 
 Qdrant uses a client-server architecture with distributed clustering capabilities:

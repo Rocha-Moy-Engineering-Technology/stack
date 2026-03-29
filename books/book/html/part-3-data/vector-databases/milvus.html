@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -251,43 +251,6 @@
 <li><strong>Session</strong>: Reads within the same session see their own writes</li>
 <li><strong>Eventually</strong>: No ordering guarantees, maximum throughput</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="milvus-lite-python"><a class="header" href="#milvus-lite-python">Milvus Lite (Python)</a></h3>
-<pre><code class="language-bash">pip install -U pymilvus
-</code></pre>
-<pre><code class="language-python">from pymilvus import MilvusClient
-
-# Local file-based storage
-client = MilvusClient("milvus_demo.db")
-</code></pre>
-<p>Milvus Lite bundles the database engine as a Python library — no external services required. Suited for notebooks, prototyping, and small-scale applications (under 1 million vectors) [2].</p>
-<h3 id="milvus-standalone-docker"><a class="header" href="#milvus-standalone-docker">Milvus Standalone (Docker)</a></h3>
-<pre><code class="language-bash"># Download and run the install script
-curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_up.sh | bash
-
-# Connect
-from pymilvus import MilvusClient
-client = MilvusClient(uri="http://localhost:19530")
-</code></pre>
-<p>Runs Milvus with all components in a single Docker container, using etcd for metadata, MinIO for object storage, and Pulsar for log streaming [2].</p>
-<h3 id="milvus-distributed-kubernetes"><a class="header" href="#milvus-distributed-kubernetes">Milvus Distributed (Kubernetes)</a></h3>
-<p>Deployed via Milvus Operator or Helm chart on Kubernetes for production-scale workloads with horizontal scaling, high availability, and rolling upgrades [1].</p>
-<h3 id="sdk-installation"><a class="header" href="#sdk-installation">SDK Installation</a></h3>
-<pre><code class="language-bash"># Python
-pip install -U "pymilvus[model]"
-
-# Node.js
-npm install @zilliz/milvus2-sdk-node
-
-# Go
-go get github.com/milvus-io/milvus-sdk-go/v2
-
-# Java
-# Maven dependency: io.milvus:milvus-sdk-java
-
-# C#
-dotnet add package Milvus.Client
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Milvus Distributed uses a shared-storage disaggregated architecture with four layers [1]:</p>
 <pre><code>┌─────────────────────────────────────────────────┐

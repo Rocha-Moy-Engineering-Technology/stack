@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -210,21 +210,6 @@
 <p><strong>Tools</strong> are Python functions that the LLM can invoke during a conversation. Tools are registered on agents using the <code>@agent.tool</code> decorator. The function’s docstring automatically becomes the tool description sent to the LLM. Pydantic validates tool arguments before execution; if validation fails, the error is sent back to the LLM for self-correction and retry.</p>
 <p><strong>Dependency Injection</strong> is handled through typed dataclasses passed via <code>RunContext</code>. Dependencies provide a type-safe mechanism for supplying external resources (database connections, API clients, configuration) to tools and dynamic instructions without global state. This pattern improves testability by allowing dependencies to be swapped with test doubles.</p>
 <p><strong>Output Types</strong> constrain LLM responses to Pydantic models. The framework generates JSON schemas from the output type and instructs the LLM to conform to the schema. Responses are validated against the model, and validation errors trigger automatic retries with the error details fed back to the LLM.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="standard-installation"><a class="header" href="#standard-installation">Standard Installation</a></h3>
-<pre><code class="language-bash">pip install pydantic-ai
-</code></pre>
-<p>Or using uv:</p>
-<pre><code class="language-bash">uv add pydantic-ai
-</code></pre>
-<h3 id="slim-installation"><a class="header" href="#slim-installation">Slim Installation</a></h3>
-<p>For minimal dependency footprints, install only the providers needed:</p>
-<pre><code class="language-bash">pip install "pydantic-ai-slim[openai]"
-pip install "pydantic-ai-slim[openai,google,logfire]"
-</code></pre>
-<p>Available optional groups: <code>openai</code>, <code>anthropic</code>, <code>google</code>, <code>groq</code>, <code>mistral</code>, <code>cohere</code>, <code>bedrock</code>, <code>huggingface</code>, <code>vertexai</code>, <code>logfire</code>, <code>evals</code>, <code>cli</code>, <code>mcp</code>, <code>fastmcp</code>, <code>a2a</code>, <code>ui</code>.</p>
-<h3 id="provider-configuration"><a class="header" href="#provider-configuration">Provider Configuration</a></h3>
-<p>Model providers are typically configured through environment variables for API keys (for example, <code>OPENAI_API_KEY</code>, <code>ANTHROPIC_API_KEY</code>, <code>GEMINI_API_KEY</code>) or passed directly when instantiating a model.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Pydantic AI follows a layered architecture:</p>
 <ul>

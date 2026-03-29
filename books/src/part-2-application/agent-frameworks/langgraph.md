@@ -35,52 +35,6 @@ Unlike higher-level agent frameworks that prescribe specific LLM patterns or too
 
 **Memory** in LangGraph spans two dimensions: short-term working memory within a single session and persistent long-term memory that carries across sessions. This dual-memory model allows agents to maintain context within a conversation while also recalling information from previous interactions.
 
-## Installation and Setup
-
-Install LangGraph using pip or uv:
-
-```bash
-pip install -U langgraph
-```
-
-```bash
-uv add langgraph
-```
-
-A minimal agent graph can be constructed as follows:
-
-```python
-from langgraph.graph import StateGraph, START, END
-from typing import TypedDict
-
-class AgentState(TypedDict):
-    messages: list[str]
-    result: str
-
-def process_input(state: AgentState) -> dict:
-    return {"result": f"Processed: {state['messages'][-1]}"}
-
-graph = StateGraph(AgentState)
-graph.add_node("process", process_input)
-graph.add_edge(START, "process")
-graph.add_edge("process", END)
-
-app = graph.compile()
-result = app.invoke({"messages": ["Hello"], "result": ""})
-```
-
-For checkpointing with persistent storage:
-
-```python
-from langgraph.checkpoint.memory import MemorySaver
-
-memory = MemorySaver()
-app = graph.compile(checkpointer=memory)
-
-config = {"configurable": {"thread_id": "session-1"}}
-result = app.invoke({"messages": ["Hello"], "result": ""}, config)
-```
-
 ## Architecture
 
 LangGraph follows a graph-based orchestration architecture with no mandated LLM patterns or tool-calling approaches. The core runtime executes a directed graph where:

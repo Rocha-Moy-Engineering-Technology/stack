@@ -134,35 +134,6 @@ inputs = example.inputs()    # only question
 labels = example.labels()    # only answer
 ```
 
-## Installation
-
-```bash
-pip install -U dspy
-```
-
-For specific provider support:
-
-```bash
-pip install -U dspy[anthropic]    # Anthropic Claude
-pip install -U dspy[google]       # Google Gemini
-pip install -U "dspy[mcp]"        # Model Context Protocol support
-```
-
-Requires Python 3.9 or higher.
-
-### Quick Start
-
-```python
-import dspy
-
-lm = dspy.LM("openai/gpt-4o-mini")
-dspy.configure(lm=lm)
-
-qa = dspy.ChainOfThought("question -> answer")
-result = qa(question="What is the tallest mountain in the world?")
-print(result.answer)
-```
-
 ## Architecture
 
 DSPy follows a Define, Evaluate, Compile, Deploy workflow:

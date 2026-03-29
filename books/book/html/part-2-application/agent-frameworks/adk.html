@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -214,40 +214,6 @@
 <p><strong>Sessions and State</strong> manage conversation context and agent memory. A session tracks the interaction history between a user and an agent, while state provides a key-value store for persisting information across turns. ADK includes support for in-memory, database-backed, and Vertex AI-managed session services.</p>
 <p><strong>Artifacts</strong> provide a mechanism for agents to store and retrieve files or binary data (images, documents, generated outputs) associated with a session.</p>
 <p><strong>Callbacks</strong> allow developers to hook into agent and tool execution at various lifecycle points (before/after agent calls, before/after tool calls, before/after model calls), enabling logging, guardrails, and custom modifications to behavior.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="python"><a class="header" href="#python">Python</a></h3>
-<pre><code class="language-bash">pip install google-adk
-</code></pre>
-<h3 id="typescript"><a class="header" href="#typescript">TypeScript</a></h3>
-<pre><code class="language-bash">npm install @google/adk
-</code></pre>
-<h3 id="go"><a class="header" href="#go">Go</a></h3>
-<pre><code class="language-bash">go get google.golang.org/adk
-</code></pre>
-<h3 id="java"><a class="header" href="#java">Java</a></h3>
-<p>Available via Maven or Gradle. Add the ADK dependency to your build configuration following the official documentation for the latest coordinates.</p>
-<h3 id="quick-start-python"><a class="header" href="#quick-start-python">Quick Start (Python)</a></h3>
-<p>A minimal agent definition consists of creating an agent with a model, name, and instructions:</p>
-<pre><code class="language-python">from google.adk.agents import Agent
-
-root_agent = Agent(
-    name="greeting_agent",
-    model="gemini-2.0-flash",
-    instruction="You are a helpful assistant. Greet the user warmly.",
-)
-</code></pre>
-<p>To run the agent locally with the built-in web interface:</p>
-<pre><code class="language-bash">adk web
-</code></pre>
-<p>Or via the command line:</p>
-<pre><code class="language-bash">adk run &lt;agent_directory&gt;
-</code></pre>
-<h3 id="environment-configuration"><a class="header" href="#environment-configuration">Environment Configuration</a></h3>
-<p>ADK requires API keys or credentials depending on the model provider:</p>
-<ul>
-<li><strong>Gemini (Google AI Studio)</strong>: Set the <code>GOOGLE_API_KEY</code> environment variable.</li>
-<li><strong>Vertex AI</strong>: Set <code>GOOGLE_CLOUD_PROJECT</code> and <code>GOOGLE_CLOUD_LOCATION</code>, and ensure Application Default Credentials are configured.</li>
-</ul>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>ADK follows a layered, modular architecture designed around composability:</p>
 <p><strong>Agent Layer</strong>: The topmost layer where agent definitions live. Agents are organized in a tree structure with a single root agent that can delegate to sub-agents. Each agent has its own model configuration, instructions, tools, and optional sub-agents.</p>

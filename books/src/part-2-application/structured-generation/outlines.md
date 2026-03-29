@@ -30,25 +30,6 @@ Outlines is used in production by organizations including Amazon, Apple, Databri
 - **Backend Agnosticism**: Outlines decouples the structured generation logic from the model backend. The same schema definition works across OpenAI, Anthropic, vLLM, Hugging Face Transformers, Ollama, and Gemini without modification.
 - **Type-Safe Output**: When using Pydantic models or Python type annotations, the generated output is automatically deserialized into the corresponding typed object, providing immediate programmatic access without manual parsing.
 
-## Installation and Setup
-
-Install Outlines via pip:
-
-```bash
-pip install outlines
-```
-
-For specific backend support, install with extras as needed:
-
-```bash
-pip install outlines[openai]
-pip install outlines[anthropic]
-pip install outlines[transformers]
-pip install outlines[vllm]
-pip install outlines[ollama]
-pip install outlines[gemini]
-```
-
 ## Architecture
 
 Outlines is organized around three primary layers:

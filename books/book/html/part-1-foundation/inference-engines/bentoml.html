@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -213,24 +213,6 @@
 <p>BentoML automatically batches individual inference requests into groups for GPU processing, adapting batch sizes and wait times based on current load. This maximizes throughput without manual batching configuration. [1]</p>
 <h3 id="model-composition"><a class="header" href="#model-composition">Model Composition</a></h3>
 <p>Multiple models can be composed within a single service for complex inference pipelines – for example, combining an embedding model with a classifier, or chaining preprocessing with generation. [1]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="pip-install"><a class="header" href="#pip-install">pip Install</a></h3>
-<pre><code class="language-bash">pip install bentoml
-</code></pre>
-<p>Requires Python 3.9+. Python 3.11 is recommended. [2]</p>
-<h3 id="quickstart"><a class="header" href="#quickstart">Quickstart</a></h3>
-<pre><code class="language-bash">git clone https://github.com/bentoml/quickstart.git
-cd quickstart
-python3 -m venv quickstart &amp;&amp; source quickstart/bin/activate
-pip install bentoml torch transformers
-</code></pre>
-<p>[2]</p>
-<h3 id="docker-containerization"><a class="header" href="#docker-containerization">Docker Containerization</a></h3>
-<p>Build a Docker image from a Bento:</p>
-<pre><code class="language-bash">bentoml build
-bentoml containerize &lt;bento-name&gt;:latest
-</code></pre>
-<p>[1]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="system-components"><a class="header" href="#system-components">System Components</a></h3>
 <ul>

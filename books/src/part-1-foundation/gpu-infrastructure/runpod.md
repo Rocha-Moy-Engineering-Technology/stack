@@ -32,42 +32,6 @@ RunPod is a cloud computing platform purpose-built for AI, machine learning (ML)
 - **Community Cloud**: A peer-to-peer model connecting individual compute providers with users through a vetted security system at competitive pricing
 - **GPU Pools**: Grouped GPU types for serverless endpoint deployment (e.g., AMPERE_16, ADA_24, HOPPER_141), enabling workload placement by memory tier
 
-## Installation
-
-RunPod is a managed cloud platform and does not require local installation. Access is provisioned through the RunPod web console, CLI, or API.
-
-1. Create an account at [runpod.io](https://www.runpod.io/)
-2. Add billing credentials and select a compute plan
-3. Generate an API key from the Settings page with appropriate permissions (All, Restricted, or Read Only)
-4. For serverless workloads, create an endpoint and deploy a worker container
-5. For pod-based workloads, launch a pod instance with the desired GPU configuration
-6. Install the RunPod Python SDK for local development and testing:
-
-```bash
-pip install runpod
-```
-
-Verify installation:
-
-```bash
-python3 -c "import runpod; print(runpod.__version__)"
-```
-
-Authenticate by setting the API key as an environment variable:
-
-```bash
-export RUNPOD_API_KEY="your_api_key_here"
-```
-
-### MCP Server Integration
-
-RunPod provides two Model Context Protocol (MCP) servers for AI-assisted development:
-
-- **API MCP Server** (`@runpod/mcp-server`): Manages Pods, endpoints, templates, volumes, and registries via REST API with API key authentication
-- **Docs MCP Server** (`https://docs.runpod.io/mcp`): Provides searchable access to RunPod documentation without authentication
-
-Supported clients include Claude Code, Codex CLI, Cursor, VS Code with Copilot, Claude Desktop, Windsurf, Cline, and Gemini CLI.
-
 ## Architecture
 
 ### Serverless Request Flow

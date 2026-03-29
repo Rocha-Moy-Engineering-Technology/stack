@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -234,27 +234,6 @@
 <li><strong>Index</strong> → 2. <strong>Post-Index Filter</strong> → 3. <strong>Download</strong> → 4. <strong>Post-Download Filter</strong> → 5. <strong>Uncompress</strong> → 6. <strong>Post-Uncompress Filter</strong> → 7. <strong>Partition</strong> → 8. <strong>Chunk</strong> → 9. <strong>Embed</strong> → 10. <strong>Stage</strong> → 11. <strong>Upload</strong></li>
 </ol>
 <p>Filtering can be applied at three stages (post-index, post-download, post-uncompress) to exclude files by type, name, path, or size before processing [1].</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="python-package"><a class="header" href="#python-package">Python Package</a></h3>
-<pre><code class="language-bash"># Full installation (all file types)
-pip install "unstructured[all-docs]"
-
-# Minimal installation (txt, html, xml, email only)
-pip install unstructured
-
-# Selective file type extras
-pip install "unstructured[pdf,docx]"
-</code></pre>
-<p>Available extras: <code>csv</code>, <code>docx</code>, <code>epub</code>, <code>image</code>, <code>md</code>, <code>odt</code>, <code>org</code>, <code>pdf</code>, <code>pptx</code>, <code>rst</code>, <code>rtf</code>, <code>tsv</code>, <code>xlsx</code>, and <code>all-docs</code> [6].</p>
-<h3 id="system-dependencies"><a class="header" href="#system-dependencies">System Dependencies</a></h3>
-<ul>
-<li><strong>libmagic-dev</strong>: File type detection</li>
-<li><strong>poppler-utils</strong> and <strong>tesseract-ocr</strong>: Image and PDF processing; <code>tesseract-lang</code> for additional language support</li>
-<li><strong>libreoffice</strong>: Microsoft Office document handling (.doc, .ppt)</li>
-<li><strong>pandoc</strong> (v2.14.2+): <code>.epub</code>, <code>.odt</code>, and <code>.rtf</code> file support [6]</li>
-</ul>
-<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
-<p>Unstructured provides Docker images for containerized deployment without manual system dependency management.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <pre><code>┌─────────────────────────────────────────────────────┐
 │                  Source Connectors (34)               │

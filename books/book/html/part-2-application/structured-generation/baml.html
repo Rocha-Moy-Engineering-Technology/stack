@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -213,46 +213,6 @@
 <p><strong>Code Generation.</strong> The BAML compiler reads <code>baml_src/</code> definitions and generates a <code>baml_client/</code> directory containing fully typed client code in the target language. Python types map to Pydantic models, TypeScript generates native TypeScript types, and other languages receive idiomatic equivalents. The generated code handles serialization, deserialization, prompt rendering, robust JSON parsing (including repair of broken JSON), and provider communication [8].</p>
 <p><strong>Testing.</strong> The DSL includes native test declarations that define input/output expectations for functions, with <code>@@assert</code> for strict validation and <code>@@check</code> for non-exception-raising validation. Tests can be run from the editor playground or via the CLI with parallel execution support [9].</p>
 <p><strong>Checks and Asserts.</strong> BAML provides two validation mechanisms for LLM output quality. <code>@assert</code> enforces mandatory rules that halt execution on failure, raising <code>BamlValidationError</code> when validation fails. <code>@check</code> validates data without interrupting execution, returning results regardless of pass/fail status. Both use Jinja expressions with <code>this</code> referencing the current field value [10].</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>BAML provides language-specific installation paths alongside a CLI and editor extensions.</p>
-<p><strong>CLI Installation.</strong> The BAML CLI handles project initialization, code generation, testing, and development server operations:</p>
-<pre><code class="language-bash"># Install via npm (also available through other package managers)
-npm install -g @boundaryml/baml
-
-# Initialize a new BAML project
-baml init
-
-# Generate client code from baml_src definitions
-baml generate
-
-# Run BAML tests
-baml-cli test
-
-# Start development server with file watching
-baml dev
-
-# Start a REST API server exposing BAML functions
-baml serve
-
-# Format BAML source files
-baml fmt
-</code></pre>
-<p><strong>Python.</strong></p>
-<pre><code class="language-bash">pip install baml-py
-</code></pre>
-<p><strong>TypeScript/JavaScript.</strong></p>
-<pre><code class="language-bash">npm install @boundaryml/baml
-</code></pre>
-<p><strong>Go.</strong></p>
-<pre><code class="language-bash">go get github.com/boundaryml/baml-go
-</code></pre>
-<p><strong>Ruby.</strong></p>
-<pre><code class="language-bash">gem install baml
-</code></pre>
-<p><strong>Rust.</strong> Native Rust SDK available since version 0.217.0 via Cargo.</p>
-<p><strong>Java and C#</strong> packages are available through their respective package managers.</p>
-<p><strong>REST API.</strong> For languages without a native SDK, <code>baml serve</code> exposes all declared functions as HTTP endpoints with OpenAPI documentation [1][11].</p>
-<p><strong>Editor Extensions.</strong> BAML provides extensions for VSCode, Cursor, JetBrains IDEs, Zed, and Claude Code, offering syntax highlighting, autocompletion, inline diagnostics, live preview of generated prompts, and raw cURL request inspection [1].</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>BAML follows a two-directory architecture that cleanly separates definitions from generated code.</p>
 <p><strong><code>baml_src/</code> (Source Definitions).</strong> This directory contains all BAML DSL files (<code>.baml</code> extension) where types, functions, clients, template strings, and tests are defined. All declarations within the directory are accessible across all files, enabling flexible organization with subdirectories. These files are the single source of truth for LLM interaction contracts. The <code>baml_src</code> directory is not required at deployment time [12].</p>

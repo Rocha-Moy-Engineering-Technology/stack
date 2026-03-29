@@ -31,35 +31,6 @@ The core design philosophy centers on treating LLM interactions as typed functio
 
 **Output Types** constrain LLM responses to Pydantic models. The framework generates JSON schemas from the output type and instructs the LLM to conform to the schema. Responses are validated against the model, and validation errors trigger automatic retries with the error details fed back to the LLM.
 
-## Installation and Setup
-
-### Standard Installation
-
-```bash
-pip install pydantic-ai
-```
-
-Or using uv:
-
-```bash
-uv add pydantic-ai
-```
-
-### Slim Installation
-
-For minimal dependency footprints, install only the providers needed:
-
-```bash
-pip install "pydantic-ai-slim[openai]"
-pip install "pydantic-ai-slim[openai,google,logfire]"
-```
-
-Available optional groups: `openai`, `anthropic`, `google`, `groq`, `mistral`, `cohere`, `bedrock`, `huggingface`, `vertexai`, `logfire`, `evals`, `cli`, `mcp`, `fastmcp`, `a2a`, `ui`.
-
-### Provider Configuration
-
-Model providers are typically configured through environment variables for API keys (for example, `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`) or passed directly when instantiating a model.
-
 ## Architecture
 
 Pydantic AI follows a layered architecture:

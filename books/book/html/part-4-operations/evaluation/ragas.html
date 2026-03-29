@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -212,53 +212,6 @@
 <p><strong>Experiments</strong> are the core workflow pattern. An experiment consists of loading a dataset, querying your application, scoring responses with metrics, and saving results. The <code>@experiment()</code> decorator orchestrates this loop, and results are persisted as CSV files in an <code>evals/experiments/</code> directory for comparison across runs. [5][6]</p>
 <p><strong>Knowledge Graph</strong> is the backbone of Ragas’s synthetic test data generation. Documents are chunked, entities and relationships are extracted, and a graph structure is built. Queries of varying complexity (single-hop, multi-hop, abstract, specific) are then synthesized from this graph. [7]</p>
 <p><strong>llm_factory</strong> is the factory function for configuring which LLM powers the evaluation. It supports direct providers (OpenAI, Anthropic, Google) and 100+ additional providers via LiteLLM, including Azure OpenAI, AWS Bedrock, and Google Vertex AI. [8]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install the core package:</p>
-<pre><code class="language-bash">pip install ragas
-</code></pre>
-<p>For the latest development version:</p>
-<pre><code class="language-bash">pip install git+https://github.com/explodinggradients/ragas.git
-</code></pre>
-<p>For editable development:</p>
-<pre><code class="language-bash">git clone https://github.com/explodinggradients/ragas.git
-pip install -e .
-</code></pre>
-<p>When using LangChain OpenAI integrations, install compatible versions explicitly to prevent dependency conflicts:</p>
-<pre><code class="language-bash">pip install -U "langchain-core&gt;=0.2,&lt;0.3" "langchain-openai&gt;=0.1,&lt;0.2" openai
-</code></pre>
-<p>Configure the LLM provider API key. OpenAI is the default:</p>
-<pre><code class="language-bash">export OPENAI_API_KEY="your-openai-key"
-</code></pre>
-<p>For Anthropic:</p>
-<pre><code class="language-bash">export ANTHROPIC_API_KEY="your-anthropic-key"
-</code></pre>
-<p>For Google Gemini:</p>
-<pre><code class="language-bash">export GOOGLE_API_KEY="your-google-api-key"
-</code></pre>
-<p>Scaffold a new evaluation project using the CLI:</p>
-<pre><code class="language-bash">uvx ragas quickstart rag_eval
-cd rag_eval
-uv sync
-</code></pre>
-<p>This creates a project structure with evaluation scripts, dataset directories, and experiment output folders:</p>
-<pre><code>rag_eval/
-├── README.md
-├── pyproject.toml
-├── rag.py              # Your RAG application
-├── evals.py            # Evaluation workflow
-├── __init__.py
-└── evals/
-    ├── datasets/       # Test data
-    ├── experiments/    # Results
-    └── logs/           # Logs
-</code></pre>
-<p>Run the evaluation:</p>
-<pre><code class="language-bash">uv run python evals.py
-</code></pre>
-<p>Disable anonymous analytics if desired:</p>
-<pre><code class="language-bash">export RAGAS_DO_NOT_TRACK=true
-</code></pre>
-<p>[1][2][6]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Ragas is organized into four architectural layers:</p>
 <pre><code>Evaluation Framework      Schemas, metrics, evaluate/aevaluate execution

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -213,62 +213,6 @@
 <p>Data isolation mechanism that creates dedicated shards per tenant. Tenants have activity states: ACTIVE (accessible in memory), INACTIVE (local storage only), OFFLOADED (moved to cloud storage), OFFLOADING (transition), or ONLOADING (transition). This architecture supports approximately 50,000 or more active shards per node. [1]</p>
 <h3 id="schema"><a class="header" href="#schema">Schema</a></h3>
 <p>A formal blueprint defining collections, properties, cross-references, and vectorizer settings. Weaviate auto-generates schemas from incoming data if not explicitly defined, but explicit schemas are recommended for production use. [1]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="python"><a class="header" href="#python">Python</a></h3>
-<pre><code class="language-bash">pip install -U weaviate-client
-</code></pre>
-<p>Connect to Weaviate Cloud:</p>
-<pre><code class="language-python">import weaviate
-import os
-
-weaviate_url = os.environ["WEAVIATE_URL"]
-weaviate_api_key = os.environ["WEAVIATE_API_KEY"]
-
-with weaviate.connect_to_weaviate_cloud(
-    cluster_url=weaviate_url,
-    auth_credentials=weaviate_api_key,
-) as client:
-    print(client.is_ready())
-</code></pre>
-<p>[1]</p>
-<h3 id="typescriptjavascript"><a class="header" href="#typescriptjavascript">TypeScript/JavaScript</a></h3>
-<pre><code class="language-bash">npm install weaviate-client
-</code></pre>
-<pre><code class="language-typescript">import weaviate, { WeaviateClient, ApiKey } from 'weaviate-client';
-
-const client: WeaviateClient = await weaviate.connectToWeaviateCloud(
-  process.env.WEAVIATE_URL!,
-  { authCredentials: new ApiKey(process.env.WEAVIATE_API_KEY!) }
-);
-</code></pre>
-<p>[1]</p>
-<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
-<p>Deploy locally with Docker Compose for development and testing:</p>
-<pre><code class="language-yaml">version: '3.4'
-services:
-  weaviate:
-    image: cr.weaviate.io/semitechnologies/weaviate:latest
-    ports:
-      - "8080:8080"
-      - "50051:50051"
-    environment:
-      QUERY_DEFAULTS_LIMIT: 25
-      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
-      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
-      ENABLE_MODULES: ''
-      CLUSTER_HOSTNAME: 'node1'
-</code></pre>
-<p>Connect to local instance:</p>
-<pre><code class="language-python">import weaviate
-
-with weaviate.connect_to_local() as client:
-    print(client.is_ready())
-</code></pre>
-<p>[1]</p>
-<h3 id="kubernetes"><a class="header" href="#kubernetes">Kubernetes</a></h3>
-<p>Deploy using Helm charts with <code>values.yaml</code> configuration. Supports scaling from development through production with optional zero-downtime updates and local inference containers. [1]</p>
-<h3 id="embedded-weaviate"><a class="header" href="#embedded-weaviate">Embedded Weaviate</a></h3>
-<p>Launch directly from Python or JavaScript/TypeScript for quick evaluation without a separate server process. Experimental feature primarily intended for prototyping. [1]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="storage-engine"><a class="header" href="#storage-engine">Storage Engine</a></h3>
 <p>Weaviate persists data through the interaction of three storage components within each shard: an inverted index (for keyword filtering and BM25 search), a vector index (for similarity search), and an object store (for the actual data objects). Each collection is divided into shards, and each shard manages its own set of these three components. [1]</p>

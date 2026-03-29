@@ -30,18 +30,6 @@ example = example.with_inputs(\"question\")
 
 inputs = example.inputs()    # only question
 labels = example.labels()    # only answer
-", Header 2 ("installation", ["unnumbered", "unlisted"], []) [Str "Installation"], CodeBlock ("", ["bash"], []) "pip install -U dspy
-", Para [Str "For specific provider support:"], CodeBlock ("", ["bash"], []) "pip install -U dspy[anthropic]    # Anthropic Claude
-pip install -U dspy[google]       # Google Gemini
-pip install -U \"dspy[mcp]\"        # Model Context Protocol support
-", Para [Str "Requires Python 3.9 or higher."], Header 3 ("quick-start", ["unnumbered", "unlisted"], []) [Str "Quick Start"], CodeBlock ("", ["python"], []) "import dspy
-
-lm = dspy.LM(\"openai/gpt-4o-mini\")
-dspy.configure(lm=lm)
-
-qa = dspy.ChainOfThought(\"question -> answer\")
-result = qa(question=\"What is the tallest mountain in the world?\")
-print(result.answer)
 ", Header 2 ("architecture", ["unnumbered", "unlisted"], []) [Str "Architecture"], Para [Str "DSPy follows a Define, Evaluate, Compile, Deploy workflow:"], OrderedList (1, DefaultStyle, DefaultDelim) [[Plain [Strong [Str "Define"], Str " -- Write signatures and compose modules into a program. Identify system inputs and desired outputs. Start simple with a single module, then add complexity incrementally."]], [Plain [Strong [Str "Evaluate"], Str " -- Measure program accuracy on a development dataset (20-200+ examples) using a metric function. Metrics range from simple accuracy to complex DSPy programs that verify multiple output properties."]], [Plain [Strong [Str "Compile"], Str " -- Run an optimizer that searches for better prompts, demonstrations, or weights. The optimizer systematically explores the space of possible prompts and demonstrations, guided by the evaluation metric."]], [Plain [Strong [Str "Deploy"], Str " -- Use the compiled program with the tuned configuration in production via FastAPI or MLflow."]]], CodeBlock ("", [""], []) "Signature --> Module --> Program --> Optimizer --> Compiled Program
     ^                                   ^
   Types                              Metric

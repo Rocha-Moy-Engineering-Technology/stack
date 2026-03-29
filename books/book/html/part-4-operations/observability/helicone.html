@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -217,103 +217,6 @@
 <p><strong>Custom Properties.</strong> Arbitrary key-value metadata attached to requests via <code>Helicone-Property-[Name]</code> headers. Properties enable segmentation by environment, feature, user tier, conversation ID, or any business dimension relevant to cost analysis and debugging.</p>
 <p><strong>Proxy Mode vs. Async Mode.</strong> Helicone supports two integration methods. Proxy mode routes requests through the gateway, providing access to all gateway features (caching, fallbacks, rate limiting). Async mode uses OpenLLMetry to log events without placing Helicone in the critical path, ensuring that Helicone issues cannot cause application outages.</p>
 <p><strong>Prompt Management.</strong> Prompts can be versioned and deployed through the gateway using <code>Helicone-Prompt-Id</code> headers, enabling iteration on prompts without code deployments.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="hosted-service-recommended-for-getting-started"><a class="header" href="#hosted-service-recommended-for-getting-started">Hosted Service (Recommended for Getting Started)</a></h3>
-<p><strong>Step 1: Create an account</strong> at <a href="https://www.helicone.ai">helicone.ai</a> and complete onboarding.</p>
-<p><strong>Step 2: Generate an API key</strong> from the API Keys settings page. Store it as an environment variable:</p>
-<pre><code class="language-bash">export HELICONE_API_KEY="sk-helicone-..."
-</code></pre>
-<p><strong>Step 3: Install the OpenAI SDK</strong> (Helicone uses the standard OpenAI SDK with a modified base URL):</p>
-<pre><code class="language-bash"># Python
-pip install openai
-
-# Node.js
-npm install openai
-</code></pre>
-<p><strong>Step 4: Configure the client</strong> to point at the Helicone gateway:</p>
-<p><strong>Python:</strong></p>
-<pre><code class="language-python">import os
-from openai import OpenAI
-
-client = OpenAI(
-    base_url="https://ai-gateway.helicone.ai",
-    api_key=os.getenv("HELICONE_API_KEY"),
-)
-
-response = client.chat.completions.create(
-    model="gpt-4o-mini",
-    messages=[{"role": "user", "content": "Hello, world!"}],
-)
-print(response.choices[0].message.content)
-</code></pre>
-<p><strong>TypeScript:</strong></p>
-<pre><code class="language-typescript">import OpenAI from "openai";
-
-const client = new OpenAI({
-  baseURL: "https://ai-gateway.helicone.ai",
-  apiKey: process.env.HELICONE_API_KEY,
-});
-
-const response = await client.chat.completions.create({
-  model: "gpt-4o-mini",
-  messages: [{ role: "user", content: "Hello, world!" }],
-});
-console.log(response.choices[0].message.content);
-</code></pre>
-<p><strong>cURL:</strong></p>
-<pre><code class="language-bash">curl https://ai-gateway.helicone.ai/chat/completions \
-  -H "Authorization: Bearer $HELICONE_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "gpt-4o-mini",
-    "messages": [{"role": "user", "content": "Hello, world!"}]
-  }'
-</code></pre>
-<p>Requests appear in the Helicone dashboard within seconds of completion.</p>
-<h3 id="async-integration-openllmetry"><a class="header" href="#async-integration-openllmetry">Async Integration (OpenLLMetry)</a></h3>
-<p>For applications where adding Helicone to the critical path is unacceptable, use the async integration:</p>
-<pre><code class="language-bash"># Python
-pip install helicone-async
-
-# Node.js
-npm install @helicone/async
-</code></pre>
-<p><strong>Python async setup:</strong></p>
-<pre><code class="language-python">from helicone_async import HeliconeAsyncLogger
-from openai import OpenAI
-
-logger = HeliconeAsyncLogger(api_key="sk-helicone-...")
-logger.init()
-
-client = OpenAI(api_key="sk-openai-...")
-
-response = client.chat.completions.create(
-    model="gpt-4o-mini",
-    messages=[{"role": "user", "content": "Hello!"}],
-)
-</code></pre>
-<p><strong>TypeScript async setup:</strong></p>
-<pre><code class="language-typescript">import { HeliconeAsyncLogger } from "@helicone/async";
-import OpenAI from "openai";
-
-const logger = new HeliconeAsyncLogger({
-  apiKey: process.env.HELICONE_API_KEY,
-  providers: {
-    openAI: OpenAI,
-  },
-});
-logger.init();
-
-const openai = new OpenAI();
-</code></pre>
-<h3 id="self-hosted-deployment"><a class="header" href="#self-hosted-deployment">Self-Hosted Deployment</a></h3>
-<p>Clone the repository and use Docker Compose:</p>
-<pre><code class="language-bash">git clone https://github.com/Helicone/helicone.git
-cd helicone/docker
-cp .env.example .env
-./helicone-compose.sh helicone up
-</code></pre>
-<p>Additional self-hosting options include Kubernetes (via Helm charts) and manual installation for customized environments. Enterprise Helm deployments are available through Helicone’s enterprise support.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Helicone’s architecture comprises five core services:</p>
 <pre><code>                    +------------------+

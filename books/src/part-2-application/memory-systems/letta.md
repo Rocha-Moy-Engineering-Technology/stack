@@ -74,56 +74,6 @@ Agent invocations are structured as **runs**, where a single run may contain seq
 
 AgentFile is an open standard file format for serializing stateful agents into a single portable file. It packages model configuration, message history, system prompt, memory blocks, tool rules, environment variables, and tool definitions. Agents can be exported and imported via the SDK, REST API, or the Agent Development Environment (ADE) [8].
 
-## Installation
-
-### Letta API (Hosted)
-
-Set up your API key and install the SDK:
-
-```bash
-export LETTA_API_KEY='your-api-key-here'
-
-# Python
-pip install letta-client
-
-# TypeScript
-npm install @letta-ai/letta-client
-```
-
-API keys are obtained from [app.letta.com/api-keys](https://app.letta.com/api-keys) [9].
-
-### Letta Code (Terminal Agent)
-
-```bash
-npm install -g @letta-ai/letta-code
-```
-
-Requires Node.js 18+ [1].
-
-### Docker (Self-Hosted)
-
-```bash
-docker run \
-  -v ~/.letta/.persist/pgdata:/var/lib/postgresql/data \
-  -p 8283:8283 \
-  -e OPENAI_API_KEY="your_openai_api_key" \
-  letta/letta:latest
-```
-
-The server runs on port 8283 at `http://localhost:8283/v1`. Use `--env-file .env` for multiple provider keys. Linux users should use `--network host` instead of port mapping [7].
-
-For production deployments, enable authentication:
-
-```bash
-docker run \
-  -v ~/.letta/.persist/pgdata:/var/lib/postgresql/data \
-  -p 8283:8283 \
-  --env-file .env \
-  -e SECURE=true \
-  -e LETTA_SERVER_PASSWORD=yourpassword \
-  letta/letta:latest
-```
-
 ## Architecture
 
 Letta's architecture centers on persistent state management for agents:

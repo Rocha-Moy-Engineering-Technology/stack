@@ -40,36 +40,6 @@ Integrated HuggingFace browser for searching, filtering, and downloading models 
 
 Model Context Protocol (MCP) server integration enables LM Studio to connect with external tools and data sources, extending model capabilities. [1]
 
-## Installation and Setup
-
-### macOS
-
-Download from lmstudio.ai. Requires Apple Silicon Mac, macOS 14.0+, 16GB+ RAM recommended. [1]
-
-### Windows
-
-Download from lmstudio.ai. Requires AVX2-capable CPU, 16GB+ RAM, 4GB+ VRAM recommended for GPU acceleration. [1]
-
-### Linux
-
-Download from lmstudio.ai. Requires x64 or ARM64, Ubuntu 20.04+, similar hardware specs as Windows. [1]
-
-### Headless Server (llmster)
-
-For server deployments without GUI:
-
-macOS/Linux:
-```bash
-curl -fsSL https://lmstudio.ai/install-llmster.sh | bash
-```
-
-Windows:
-```powershell
-irm https://lmstudio.ai/install-llmster.ps1 | iex
-```
-
-Systemd configuration available for persistent Linux services. [1]
-
 ## Architecture
 
 ### Application Components

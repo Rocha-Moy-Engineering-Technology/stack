@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -213,32 +213,6 @@
 <li><strong>CePO (Cerebras Planning &amp; Optimization):</strong> A framework built on the open-source OptiLLM library that adds advanced reasoning to Llama models via test-time compute. CePO uses four stages: planning, execution (multiple responses), analysis (inconsistency detection), and best-of-N selection with confidence scoring.</li>
 <li><strong>Model Compression:</strong> Cerebras uses selective weight-only quantization (FP16/FP8) during storage with sensitive layers at full precision. Dequantization happens on the fly, so compute operations run in high precision. Activations and key-value cache remain unquantized. No models are pruned on public endpoints.</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="python-sdk"><a class="header" href="#python-sdk">Python SDK</a></h3>
-<pre><code class="language-bash">pip install --upgrade cerebras_cloud_sdk
-</code></pre>
-<p>Set the API key:</p>
-<pre><code class="language-bash">export CEREBRAS_API_KEY="your_api_key_here"
-</code></pre>
-<h3 id="javascript-sdk"><a class="header" href="#javascript-sdk">JavaScript SDK</a></h3>
-<pre><code class="language-bash">npm install @cerebras/cerebras_cloud_sdk@latest
-</code></pre>
-<h3 id="rest--curl"><a class="header" href="#rest--curl">REST / cURL</a></h3>
-<p>No SDK required. Authenticate with a Bearer token:</p>
-<pre><code class="language-bash">curl -X POST https://api.cerebras.ai/v1/chat/completions \
-  -H "Authorization: Bearer $CEREBRAS_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "gpt-oss-120b",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'
-</code></pre>
-<h3 id="cepo-setup"><a class="header" href="#cepo-setup">CePO Setup</a></h3>
-<p>CePO requires OptiLLM in addition to the Cerebras SDK:</p>
-<pre><code class="language-bash">pip install --upgrade cerebras_cloud_sdk optillm
-export CEREBRAS_API_KEY='your_api_key_here'
-optillm --base-url https://api.cerebras.ai --approach cepo
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Cerebras operates as a managed cloud inference service with three layers:</p>
 <ol>

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -218,31 +218,6 @@
 <li><strong>Community Cloud</strong>: A peer-to-peer model connecting individual compute providers with users through a vetted security system at competitive pricing</li>
 <li><strong>GPU Pools</strong>: Grouped GPU types for serverless endpoint deployment (e.g., AMPERE_16, ADA_24, HOPPER_141), enabling workload placement by memory tier</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>RunPod is a managed cloud platform and does not require local installation. Access is provisioned through the RunPod web console, CLI, or API.</p>
-<ol>
-<li>Create an account at <a href="https://www.runpod.io/">runpod.io</a></li>
-<li>Add billing credentials and select a compute plan</li>
-<li>Generate an API key from the Settings page with appropriate permissions (All, Restricted, or Read Only)</li>
-<li>For serverless workloads, create an endpoint and deploy a worker container</li>
-<li>For pod-based workloads, launch a pod instance with the desired GPU configuration</li>
-<li>Install the RunPod Python SDK for local development and testing:</li>
-</ol>
-<pre><code class="language-bash">pip install runpod
-</code></pre>
-<p>Verify installation:</p>
-<pre><code class="language-bash">python3 -c "import runpod; print(runpod.__version__)"
-</code></pre>
-<p>Authenticate by setting the API key as an environment variable:</p>
-<pre><code class="language-bash">export RUNPOD_API_KEY="your_api_key_here"
-</code></pre>
-<h3 id="mcp-server-integration"><a class="header" href="#mcp-server-integration">MCP Server Integration</a></h3>
-<p>RunPod provides two Model Context Protocol (MCP) servers for AI-assisted development:</p>
-<ul>
-<li><strong>API MCP Server</strong> (<code>@runpod/mcp-server</code>): Manages Pods, endpoints, templates, volumes, and registries via REST API with API key authentication</li>
-<li><strong>Docs MCP Server</strong> (<code>https://docs.runpod.io/mcp</code>): Provides searchable access to RunPod documentation without authentication</li>
-</ul>
-<p>Supported clients include Claude Code, Codex CLI, Cursor, VS Code with Copilot, Claude Desktop, Windsurf, Cline, and Gemini CLI.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="serverless-request-flow"><a class="header" href="#serverless-request-flow">Serverless Request Flow</a></h3>
 <p>RunPod’s serverless architecture follows a request-driven execution model with two distinct endpoint types:</p>

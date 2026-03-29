@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -235,25 +235,6 @@
 <li><strong>GDPO (Group Reward-Decoupled Policy Optimization)</strong>: Extends GRPO for multi-reward training</li>
 <li><strong>SimPO</strong>: Alternative loss function using CPOTrainer</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="pip"><a class="header" href="#pip">pip</a></h3>
-<pre><code class="language-bash">pip3 install --no-build-isolation axolotl[flash-attn,deepspeed]
-</code></pre>
-<h3 id="uv"><a class="header" href="#uv">UV</a></h3>
-<pre><code class="language-bash">uv pip install --no-build-isolation axolotl[flash-attn,deepspeed]
-</code></pre>
-<h3 id="from-source-edge-build"><a class="header" href="#from-source-edge-build">From Source (Edge Build)</a></h3>
-<pre><code class="language-bash">git clone https://github.com/axolotl-ai-cloud/axolotl.git
-cd axolotl
-pip3 install packaging ninja
-pip3 install --no-build-isolation -e '.[flash-attn,deepspeed]'
-</code></pre>
-<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
-<pre><code class="language-bash">docker run --gpus '"all"' \
-  --volume $HOME/.cache/huggingface:/root/.cache/huggingface \
-  axolotlai/axolotl:main-latest
-</code></pre>
-<p>Docker images are available as <code>axolotlai/axolotl:main-latest</code> with all dependencies pre-installed [2].</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <pre><code>┌─────────────────────────────────────────────────────┐
 │                    YAML Config                       │

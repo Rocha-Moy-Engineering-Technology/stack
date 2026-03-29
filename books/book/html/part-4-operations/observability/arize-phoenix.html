@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -212,57 +212,6 @@
 <p><strong>Experiments</strong> systematically compare application versions by running them against the same dataset with identical evaluators. Each experiment records task outputs and evaluator scores, enabling side-by-side comparison of different prompts, models, or retrieval configurations. [5]</p>
 <p><strong>Prompts</strong> are managed artifacts with version control, supporting Mustache template syntax (<code>{{ variable }}</code>) and f-string formatting. Each prompt version records its template content, model configuration, and associated metadata, enabling teams to track changes and deploy the best-performing version. [6]</p>
 <p><strong>Annotations</strong> are metadata labels attached to spans, including scores, labels, and explanations from human reviewers or automated evaluators. Annotations provide the ground truth data used to measure and improve application quality. [1]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="python-installation"><a class="header" href="#python-installation">Python Installation</a></h3>
-<p>Install the Phoenix server and OpenTelemetry integration:</p>
-<pre><code class="language-bash">pip install arize-phoenix
-pip install arize-phoenix-otel
-</code></pre>
-<p>For evaluation capabilities, install the evals package:</p>
-<pre><code class="language-bash">pip install arize-phoenix-evals
-</code></pre>
-<p>For client-only usage (connecting to an existing Phoenix server):</p>
-<pre><code class="language-bash">pip install arize-phoenix-client
-</code></pre>
-<h3 id="typescript-installation"><a class="header" href="#typescript-installation">TypeScript Installation</a></h3>
-<pre><code class="language-bash">npm install @arizeai/phoenix-otel @arizeai/openinference-core
-npm install @arizeai/phoenix-client    # Client SDK
-npm install @arizeai/phoenix-evals     # Evaluations
-</code></pre>
-<h3 id="launching-the-phoenix-server"><a class="header" href="#launching-the-phoenix-server">Launching the Phoenix Server</a></h3>
-<p>Start Phoenix locally in a terminal:</p>
-<pre><code class="language-bash">phoenix serve
-</code></pre>
-<p>This launches the server on <code>http://localhost:6006</code> with the gRPC OTLP collector on port 4317. The web UI is immediately accessible for viewing traces and running evaluations. [1]</p>
-<h3 id="docker-deployment"><a class="header" href="#docker-deployment">Docker Deployment</a></h3>
-<pre><code class="language-bash">docker run -p 6006:6006 -p 4317:4317 arizephoenix/phoenix:latest
-</code></pre>
-<p>For production, pin to a specific version:</p>
-<pre><code class="language-bash">docker run -p 6006:6006 -p 4317:4317 arizephoenix/phoenix:version-8.0.0
-</code></pre>
-<h3 id="connecting-and-instrumenting"><a class="header" href="#connecting-and-instrumenting">Connecting and Instrumenting</a></h3>
-<p>Configure the tracer provider to send traces to Phoenix:</p>
-<pre><code class="language-python">from phoenix.otel import register
-
-tracer_provider = register(
-    project_name="my-llm-app",
-    auto_instrument=True,
-)
-tracer = tracer_provider.get_tracer(__name__)
-</code></pre>
-<p>With <code>auto_instrument=True</code>, Phoenix automatically discovers and activates all installed OpenInference instrumentor packages. [3]</p>
-<p>For explicit instrumentation of specific libraries:</p>
-<pre><code class="language-python">from openinference.instrumentation.openai import OpenAIInstrumentor
-from phoenix.otel import register
-
-tracer_provider = register()
-OpenAIInstrumentor().instrument(tracer_provider=tracer_provider)
-</code></pre>
-<h3 id="environment-variables"><a class="header" href="#environment-variables">Environment Variables</a></h3>
-<p>Set the connection endpoint and authentication:</p>
-<pre><code class="language-bash">export PHOENIX_COLLECTOR_ENDPOINT="http://localhost:6006"
-export PHOENIX_API_KEY="your-phoenix-api-key"   # Required for cloud or authenticated instances
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Phoenix follows a collector-server-UI architecture built on OpenTelemetry:</p>
 <pre><code>Application Code

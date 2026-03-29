@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -220,73 +220,6 @@
 <p>Datasets are collections of input and expected output pairs used for systematic testing. Each dataset item contains an input (any structured object), an optional expected output for comparison, and optional metadata. Datasets can be populated from production traces where application performance was suboptimal, enabling a feedback loop from production to development. [7]</p>
 <h3 id="prompts"><a class="header" href="#prompts">Prompts</a></h3>
 <p>Prompts in Langfuse are versioned, managed artifacts that can be deployed to production via labels without code changes. They come in two types: <strong>text prompts</strong> (single string templates) and <strong>chat prompts</strong> (arrays of message objects with roles). Both support variable interpolation using <code>{{variable}}</code> syntax. [6]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="cloud-setup"><a class="header" href="#cloud-setup">Cloud Setup</a></h3>
-<p>Create a Langfuse account at <a href="https://cloud.langfuse.com">cloud.langfuse.com</a> and generate API credentials from your project settings. Configure the following environment variables:</p>
-<pre><code class="language-bash">export LANGFUSE_SECRET_KEY="sk-lf-..."
-export LANGFUSE_PUBLIC_KEY="pk-lf-..."
-export LANGFUSE_BASE_URL="https://cloud.langfuse.com"      # EU region
-# export LANGFUSE_BASE_URL="https://us.cloud.langfuse.com" # US region
-</code></pre>
-<h3 id="python-sdk"><a class="header" href="#python-sdk">Python SDK</a></h3>
-<pre><code class="language-bash">pip install langfuse
-</code></pre>
-<pre><code class="language-python">from langfuse import observe, get_client
-
-langfuse = get_client()
-
-@observe()
-def my_llm_pipeline(query: str):
-    # Automatically creates a trace with timing, input, and output
-    result = call_my_llm(query)
-    return result
-
-my_llm_pipeline("What is the capital of France?")
-langfuse.flush()  # Required for short-lived applications
-</code></pre>
-<p>[2][4]</p>
-<h3 id="javascripttypescript-sdk"><a class="header" href="#javascripttypescript-sdk">JavaScript/TypeScript SDK</a></h3>
-<pre><code class="language-bash">npm install @langfuse/tracing @langfuse/otel @opentelemetry/sdk-node
-</code></pre>
-<pre><code class="language-typescript">import { NodeSDK } from "@opentelemetry/sdk-node";
-import { LangfuseSpanProcessor } from "@langfuse/otel";
-import { startActiveObservation } from "@langfuse/tracing";
-
-const sdk = new NodeSDK({
-  spanProcessors: [new LangfuseSpanProcessor()],
-});
-sdk.start();
-
-async function processQuery(query: string) {
-  return startActiveObservation("my-pipeline", async (span) =&gt; {
-    span.update({ input: { query } });
-    const result = await callMyLLM(query);
-    span.update({ output: result });
-    return result;
-  });
-}
-
-processQuery("What is the capital of France?")
-  .finally(() =&gt; sdk.shutdown());
-</code></pre>
-<p>[2]</p>
-<h3 id="self-hosted-deployment"><a class="header" href="#self-hosted-deployment">Self-Hosted Deployment</a></h3>
-<p>Langfuse can be self-hosted using Docker Compose for development or Kubernetes with Helm charts for production. The self-hosted deployment uses the identical codebase that powers Langfuse Cloud:</p>
-<pre><code class="language-bash"># Clone the Langfuse repository
-git clone https://github.com/langfuse/langfuse.git
-cd langfuse
-
-# Start with Docker Compose
-docker compose up -d
-</code></pre>
-<p>Required infrastructure components for self-hosting:</p>
-<ul>
-<li><strong>PostgreSQL</strong>: Transactional database for operational data</li>
-<li><strong>ClickHouse</strong>: OLAP database for traces, observations, and scores</li>
-<li><strong>Redis/Valkey</strong>: In-memory cache for queues and caching</li>
-<li><strong>S3/Blob Storage</strong>: Event persistence and multi-modal attachments</li>
-<li><strong>LLM API/Gateway</strong> (optional): For LLM-as-a-judge evaluation features [8]</li>
-</ul>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="system-components"><a class="header" href="#system-components">System Components</a></h3>
 <p>Langfuse consists of two primary application containers backed by a multi-database storage layer:</p>

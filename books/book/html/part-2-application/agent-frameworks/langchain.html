@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -214,25 +214,6 @@
 <p><strong>Vector Stores</strong> manage embeddings for semantic search. Integrations include FAISS, Chroma, Pinecone, Weaviate, and dozens of other backends, each accessible through the same query interface.</p>
 <p><strong>Memory</strong> manages conversation history across turns. Strategies include buffer memory (full history), summary memory (compressed history), and entity memory (tracked facts), each trading off context window usage against information retention.</p>
 <p><strong>Callbacks</strong> provide hooks for logging, monitoring, streaming, and custom side effects at every stage of chain or agent execution.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install the core package and provider-specific integrations:</p>
-<pre><code class="language-bash">pip install langchain
-pip install langchain-openai       # OpenAI models
-pip install langchain-anthropic    # Anthropic models
-pip install langchain-community    # Community integrations
-</code></pre>
-<p>Set the API key for your chosen provider:</p>
-<pre><code class="language-bash">export OPENAI_API_KEY="sk-..."
-# or
-export ANTHROPIC_API_KEY="sk-ant-..."
-</code></pre>
-<p>Verify the installation:</p>
-<pre><code class="language-python">from langchain_openai import ChatOpenAI
-
-llm = ChatOpenAI(model="gpt-4o")
-response = llm.invoke("Hello, world!")
-print(response.content)
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>LangChain is organized into layered packages with increasing specificity:</p>
 <pre><code>langchain-core          Base abstractions (Runnables, ChatModels, Messages)

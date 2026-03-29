@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,62 +211,6 @@
 <p><strong>Configuration</strong> is split between YAML files (<code>config.yml</code>) for model selection and rail activation, Colang files (<code>.co</code>) for flow definitions, and Python files (<code>config.py</code>, <code>actions.py</code>) for custom initialization and action registration.</p>
 <p><strong>LLMRails</strong> is the central Python class that loads configuration, registers actions, and processes messages through the configured rail pipeline. It exposes both synchronous and asynchronous methods for generating responses.</p>
 <p><strong>RailsConfig</strong> is the configuration container that loads and validates Colang content, YAML settings, and custom code. It can be constructed from a directory path or from inline content strings.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>NeMo Guardrails requires Python 3.10, 3.11, 3.12, or 3.13. A C++ compiler is needed for the <code>annoy</code> dependency.</p>
-<p>Install the core package with NVIDIA model support:</p>
-<pre><code class="language-bash">pip install "nemoguardrails[nvidia]"
-</code></pre>
-<p>Available extras for additional functionality:</p>
-<pre><code class="language-bash">pip install "nemoguardrails[nvidia]"       # NVIDIA-hosted model integration
-pip install "nemoguardrails[openai]"       # OpenAI model support
-pip install "nemoguardrails[sdd]"          # Sensitive data detection via Presidio
-pip install "nemoguardrails[eval]"         # Evaluation tools
-pip install "nemoguardrails[tracing]"      # OpenTelemetry support
-pip install "nemoguardrails[jailbreak]"    # YARA-based jailbreak detection
-pip install "nemoguardrails[multilingual]" # Language detection
-pip install "nemoguardrails[gcp]"          # Google Cloud Platform services
-pip install "nemoguardrails[all]"          # All extras
-</code></pre>
-<p>Install from source using Poetry:</p>
-<pre><code class="language-bash">git clone https://github.com/NVIDIA/NeMo-Guardrails.git
-cd NeMo-Guardrails
-poetry install --extras "nvidia"
-</code></pre>
-<p>Set the API key for your chosen provider:</p>
-<pre><code class="language-bash">export NVIDIA_API_KEY="nvapi-..."   # NVIDIA models via build.nvidia.com
-# or
-export OPENAI_API_KEY="sk-..."      # OpenAI models
-</code></pre>
-<p>Verify the installation:</p>
-<pre><code class="language-python">from nemoguardrails import LLMRails, RailsConfig
-
-config = RailsConfig.from_content(
-    colang_content="""
-define user express greeting
-  "hello"
-  "hi"
-
-define flow greeting
-  user express greeting
-  bot express greeting
-    "Hello! How can I help you today?"
-""",
-    yaml_content="""
-models:
-  - type: main
-    engine: openai
-    model: gpt-4
-"""
-)
-
-rails = LLMRails(config)
-response = rails.generate(messages=[{"role": "user", "content": "Hello!"}])
-print(response["content"])
-</code></pre>
-<p>Compiler setup for the <code>annoy</code> dependency on Linux/macOS:</p>
-<pre><code class="language-bash">apt-get install gcc g++ python3-dev
-</code></pre>
-<p>On Windows, install Microsoft C++ Build Tools version 14.0 or higher.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>NeMo Guardrails processes every conversation turn through a pipeline of five rail types, each intercepting data at a specific stage:</p>
 <pre><code>User Input

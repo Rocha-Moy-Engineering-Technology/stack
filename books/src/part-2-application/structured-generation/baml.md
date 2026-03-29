@@ -38,67 +38,6 @@ BAML introduces several foundational abstractions that distinguish it from gener
 
 **Checks and Asserts.** BAML provides two validation mechanisms for LLM output quality. `@assert` enforces mandatory rules that halt execution on failure, raising `BamlValidationError` when validation fails. `@check` validates data without interrupting execution, returning results regardless of pass/fail status. Both use Jinja expressions with `this` referencing the current field value [10].
 
-## Installation
-
-BAML provides language-specific installation paths alongside a CLI and editor extensions.
-
-**CLI Installation.** The BAML CLI handles project initialization, code generation, testing, and development server operations:
-
-```bash
-# Install via npm (also available through other package managers)
-npm install -g @boundaryml/baml
-
-# Initialize a new BAML project
-baml init
-
-# Generate client code from baml_src definitions
-baml generate
-
-# Run BAML tests
-baml-cli test
-
-# Start development server with file watching
-baml dev
-
-# Start a REST API server exposing BAML functions
-baml serve
-
-# Format BAML source files
-baml fmt
-```
-
-**Python.**
-
-```bash
-pip install baml-py
-```
-
-**TypeScript/JavaScript.**
-
-```bash
-npm install @boundaryml/baml
-```
-
-**Go.**
-
-```bash
-go get github.com/boundaryml/baml-go
-```
-
-**Ruby.**
-
-```bash
-gem install baml
-```
-
-**Rust.** Native Rust SDK available since version 0.217.0 via Cargo.
-
-**Java and C#** packages are available through their respective package managers.
-
-**REST API.** For languages without a native SDK, `baml serve` exposes all declared functions as HTTP endpoints with OpenAPI documentation [1][11].
-
-**Editor Extensions.** BAML provides extensions for VSCode, Cursor, JetBrains IDEs, Zed, and Claude Code, offering syntax highlighting, autocompletion, inline diagnostics, live preview of generated prompts, and raw cURL request inspection [1].
-
 ## Architecture
 
 BAML follows a two-directory architecture that cleanly separates definitions from generated code.

@@ -79,23 +79,6 @@ PEFT works with quantized models via multiple backends [7]:
 - **torchao**: PyTorch native int8 quantization
 - **INC**: Intel Neural Compressor for FP8 on HPU devices
 
-## Installation
-
-```bash
-# From PyPI
-pip install peft
-
-# From source (latest features)
-pip install git+https://github.com/huggingface/peft
-
-# Development install
-git clone https://github.com/huggingface/peft
-cd peft
-pip install -e .[test]
-```
-
-PEFT requires Python 3.9+ [8].
-
 ## Architecture
 
 ```

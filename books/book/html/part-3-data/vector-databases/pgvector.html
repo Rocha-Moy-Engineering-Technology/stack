@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -228,61 +228,6 @@
 <li><strong>HNSW (Hierarchical Navigable Small World)</strong>: A graph-based index implementing a multilayer navigable small world structure. Provides better query performance (higher recall at given latency) than IVFFlat but has slower build times and higher memory usage. No training step required – indexes can be created on empty tables. The implementation follows the original HNSW paper algorithms for search, neighbor selection, and element insertion.</li>
 <li><strong>IVFFlat (Inverted File with Flat compression)</strong>: A partition-based index that clusters vectors into lists using k-means, then searches the closest cluster subsets. Faster to build and uses less memory than HNSW but generally provides lower recall. Requires the table to already contain representative data before index creation for effective clustering.</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="from-source-linux-and-mac"><a class="header" href="#from-source-linux-and-mac">From Source (Linux and Mac)</a></h3>
-<p>Requires PostgreSQL 13+ development headers:</p>
-<pre><code class="language-bash">cd /tmp
-git clone --branch v0.8.2 https://github.com/pgvector/pgvector.git
-cd pgvector
-make
-make install  # may need sudo
-</code></pre>
-<h3 id="from-source-windows"><a class="header" href="#from-source-windows">From Source (Windows)</a></h3>
-<p>Requires Visual Studio with C++ support. Run from <code>x64 Native Tools Command Prompt</code> as administrator:</p>
-<pre><code class="language-batch">set "PGROOT=C:\Program Files\PostgreSQL\18"
-cd %TEMP%
-git clone --branch v0.8.2 https://github.com/pgvector/pgvector.git
-cd pgvector
-nmake /F Makefile.win
-nmake /F Makefile.win install
-</code></pre>
-<h3 id="package-managers"><a class="header" href="#package-managers">Package Managers</a></h3>
-<pre><code class="language-bash"># Homebrew (macOS)
-brew install pgvector
-
-# APT (Debian/Ubuntu)
-sudo apt install postgresql-17-pgvector
-
-# Yum (RedHat/CentOS)
-sudo yum install pgvector
-
-# pkg (FreeBSD)
-pkg install pgvector
-
-# APK (Alpine Linux)
-apk add pgvector
-
-# PGXN
-pgxn install vector
-
-# conda-forge
-conda install -c conda-forge pgvector
-</code></pre>
-<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
-<pre><code class="language-dockerfile">FROM pgvector/pgvector:pg17
-</code></pre>
-<p>Or add to an existing PostgreSQL image:</p>
-<pre><code class="language-dockerfile">FROM postgres:17
-RUN apt-get update &amp;&amp; apt-get install -y postgresql-17-pgvector
-</code></pre>
-<h3 id="enabling-the-extension"><a class="header" href="#enabling-the-extension">Enabling the Extension</a></h3>
-<p>After installation, enable pgvector in each database where it is needed:</p>
-<pre><code class="language-sql">CREATE EXTENSION vector;
-</code></pre>
-<h3 id="upgrading"><a class="header" href="#upgrading">Upgrading</a></h3>
-<p>Download and compile the newer version, then run:</p>
-<pre><code class="language-sql">ALTER EXTENSION vector UPDATE;
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>pgvector operates as a native PostgreSQL extension running within the PostgreSQL backend process:</p>
 <ul>

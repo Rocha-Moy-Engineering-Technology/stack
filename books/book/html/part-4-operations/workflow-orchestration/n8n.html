@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -232,94 +232,6 @@
 <p><strong>Items</strong> – The fundamental data unit passed between nodes. Each item is a JSON object optionally accompanied by binary data (files, images). Nodes process items individually or in batches depending on configuration.</p>
 </li>
 </ul>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="npm"><a class="header" href="#npm">npm</a></h3>
-<p>Install n8n globally via npm for local development:</p>
-<pre><code class="language-bash">npm install n8n -g
-n8n start
-</code></pre>
-<p>n8n starts on port 5678 by default. Open <code>http://localhost:5678</code> to access the workflow editor.</p>
-<h3 id="docker-sqlite"><a class="header" href="#docker-sqlite">Docker (SQLite)</a></h3>
-<p>Run n8n with Docker using the default SQLite database:</p>
-<pre><code class="language-bash">docker volume create n8n_data
-
-docker run -it --rm \
-  --name n8n \
-  -p 5678:5678 \
-  -e GENERIC_TIMEZONE="UTC" \
-  -e TZ="UTC" \
-  -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
-  -e N8N_RUNNERS_ENABLED=true \
-  -v n8n_data:/home/node/.n8n \
-  docker.n8n.io/n8nio/n8n
-</code></pre>
-<h3 id="docker-postgresql"><a class="header" href="#docker-postgresql">Docker (PostgreSQL)</a></h3>
-<p>For production workloads, use PostgreSQL as the backing database:</p>
-<pre><code class="language-bash">docker volume create n8n_data
-
-docker run -it --rm \
-  --name n8n \
-  -p 5678:5678 \
-  -e GENERIC_TIMEZONE="UTC" \
-  -e TZ="UTC" \
-  -e N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true \
-  -e N8N_RUNNERS_ENABLED=true \
-  -e DB_TYPE=postgresdb \
-  -e DB_POSTGRESDB_DATABASE=n8n \
-  -e DB_POSTGRESDB_HOST=postgres-host \
-  -e DB_POSTGRESDB_PORT=5432 \
-  -e DB_POSTGRESDB_USER=n8n \
-  -e DB_POSTGRESDB_PASSWORD=secret \
-  -v n8n_data:/home/node/.n8n \
-  docker.n8n.io/n8nio/n8n
-</code></pre>
-<h3 id="docker-compose-production"><a class="header" href="#docker-compose-production">Docker Compose (Production)</a></h3>
-<p>A production-ready Docker Compose configuration with PostgreSQL:</p>
-<pre><code class="language-yaml">version: '3.8'
-
-services:
-  n8n:
-    image: docker.n8n.io/n8nio/n8n
-    restart: always
-    ports:
-      - "5678:5678"
-    environment:
-      - GENERIC_TIMEZONE=UTC
-      - TZ=UTC
-      - N8N_HOST=n8n.example.com
-      - N8N_PORT=5678
-      - N8N_PROTOCOL=https
-      - WEBHOOK_URL=https://n8n.example.com/
-      - N8N_ENFORCE_SETTINGS_FILE_PERMISSIONS=true
-      - N8N_RUNNERS_ENABLED=true
-      - DB_TYPE=postgresdb
-      - DB_POSTGRESDB_HOST=postgres
-      - DB_POSTGRESDB_PORT=5432
-      - DB_POSTGRESDB_DATABASE=n8n
-      - DB_POSTGRESDB_USER=n8n
-      - DB_POSTGRESDB_PASSWORD=${POSTGRES_PASSWORD}
-      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
-    volumes:
-      - n8n_data:/home/node/.n8n
-    depends_on:
-      - postgres
-
-  postgres:
-    image: postgres:15
-    restart: always
-    environment:
-      - POSTGRES_USER=n8n
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
-      - POSTGRES_DB=n8n
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-volumes:
-  n8n_data:
-  postgres_data:
-</code></pre>
-<h3 id="n8n-cloud"><a class="header" href="#n8n-cloud">n8n Cloud</a></h3>
-<p>For managed hosting, sign up at <a href="https://n8n.io">n8n.io</a>. n8n Cloud handles infrastructure, upgrades, and SSL certificates. It provides a dashboard for managing instances, versions, and user access.</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>n8n is built as a Node.js application with a TypeScript codebase. The architecture consists of several key components:</p>
 <ul>

@@ -28,35 +28,6 @@ Modal targets engineers and researchers who need on-demand GPU access for infere
 - **Sandbox**: Secure isolated containers for executing untrusted or agent-generated code with configurable resource limits, timeouts (up to 24 hours), networking, and file access. Sandboxes support named instances, tagging, snapshots, and can be referenced by ID for reuse.
 - **Notebook**: Cloud-hosted GPU-backed Jupyter environments with serverless pricing, real-time multi-user collaboration, AI-powered code completion (Claude Sonnet 4.6), and support for up to 8 NVIDIA A100s or H100s per kernel.
 
-## Installation
-
-Modal requires Python 3.10 or later (Python 3.9 support was removed in v1.3.0; Python 3.14 is supported). Installation and authentication are handled through the CLI:
-
-```bash
-pip install modal
-modal setup  # opens browser for authentication
-```
-
-The `modal setup` command creates a local token that authenticates all subsequent CLI and SDK operations. No additional configuration files are required.
-
-Running a Modal app locally for testing:
-
-```bash
-modal run my_app.py
-```
-
-Deploying a Modal app as a persistent service:
-
-```bash
-modal deploy my_app.py
-```
-
-Development with live reloading:
-
-```bash
-modal serve my_app.py  # ephemeral endpoint with hot reload
-```
-
 ## Architecture
 
 Modal operates on a serverless execution model. When a function is invoked, Modal performs the following sequence:

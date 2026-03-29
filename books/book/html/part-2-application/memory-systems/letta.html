@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -244,39 +244,6 @@
 <p>Agent invocations are structured as <strong>runs</strong>, where a single run may contain sequential <strong>steps</strong> performing multiple LLM inference passes. <strong>Conversations</strong> enable concurrent messaging threads using the same agent with different users [2].</p>
 <h3 id="agentfile-af"><a class="header" href="#agentfile-af">AgentFile (.af)</a></h3>
 <p>AgentFile is an open standard file format for serializing stateful agents into a single portable file. It packages model configuration, message history, system prompt, memory blocks, tool rules, environment variables, and tool definitions. Agents can be exported and imported via the SDK, REST API, or the Agent Development Environment (ADE) [8].</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="letta-api-hosted"><a class="header" href="#letta-api-hosted">Letta API (Hosted)</a></h3>
-<p>Set up your API key and install the SDK:</p>
-<pre><code class="language-bash">export LETTA_API_KEY='your-api-key-here'
-
-# Python
-pip install letta-client
-
-# TypeScript
-npm install @letta-ai/letta-client
-</code></pre>
-<p>API keys are obtained from <a href="https://app.letta.com/api-keys">app.letta.com/api-keys</a> [9].</p>
-<h3 id="letta-code-terminal-agent"><a class="header" href="#letta-code-terminal-agent">Letta Code (Terminal Agent)</a></h3>
-<pre><code class="language-bash">npm install -g @letta-ai/letta-code
-</code></pre>
-<p>Requires Node.js 18+ [1].</p>
-<h3 id="docker-self-hosted"><a class="header" href="#docker-self-hosted">Docker (Self-Hosted)</a></h3>
-<pre><code class="language-bash">docker run \
-  -v ~/.letta/.persist/pgdata:/var/lib/postgresql/data \
-  -p 8283:8283 \
-  -e OPENAI_API_KEY="your_openai_api_key" \
-  letta/letta:latest
-</code></pre>
-<p>The server runs on port 8283 at <code>http://localhost:8283/v1</code>. Use <code>--env-file .env</code> for multiple provider keys. Linux users should use <code>--network host</code> instead of port mapping [7].</p>
-<p>For production deployments, enable authentication:</p>
-<pre><code class="language-bash">docker run \
-  -v ~/.letta/.persist/pgdata:/var/lib/postgresql/data \
-  -p 8283:8283 \
-  --env-file .env \
-  -e SECURE=true \
-  -e LETTA_SERVER_PASSWORD=yourpassword \
-  letta/letta:latest
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Letta’s architecture centers on persistent state management for agents:</p>
 <pre><code>┌──────────────────────────────────────────┐

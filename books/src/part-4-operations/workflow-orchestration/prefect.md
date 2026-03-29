@@ -43,57 +43,6 @@ The project is licensed under Apache 2.0, has over 400 contributors, and maintai
 
 - **Automations** -- Reactive and proactive rules that execute predefined actions when trigger conditions are met. Triggers respond to state changes, metric thresholds, custom events, or the absence of expected events.
 
-## Installation and Setup
-
-### Install Prefect
-
-```bash
-# Using pip
-pip install prefect
-
-# Using uv
-uv pip install prefect
-
-# With distributed task runner extras
-pip install "prefect[dask]"
-pip install "prefect[ray]"
-```
-
-### Start the Prefect Server (Self-Hosted)
-
-```bash
-# Start the API server and UI
-prefect server start
-
-# Or use Docker
-docker run -p 4200:4200 -d --rm prefecthq/prefect:3-python3.12
-```
-
-The UI is available at `http://localhost:4200` after starting the server.
-
-### Connect to Prefect Cloud
-
-```bash
-# Login to Prefect Cloud
-uvx prefect-cloud login
-
-# Or set the API URL and key manually
-prefect config set PREFECT_API_URL="https://api.prefect.cloud/api/accounts/<ACCOUNT_ID>/workspaces/<WORKSPACE_ID>"
-prefect config set PREFECT_API_KEY="<YOUR_API_KEY>"
-```
-
-### Verify Installation
-
-```python
-from prefect import flow
-
-@flow
-def hello():
-    return "Prefect is working!"
-
-hello()
-```
-
 ## Architecture
 
 Prefect's architecture separates orchestration metadata from code execution.

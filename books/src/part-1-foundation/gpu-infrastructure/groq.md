@@ -27,30 +27,6 @@ Groq is an inference platform built on custom Language Processing Unit (LPU) har
 - **Model Context Protocol (MCP)**: Server-side remote tool calling via MCP servers. Groq discovers tools from MCP servers, passes definitions to the model, executes tool calls, and returns results -- all within a single API request. [11]
 - **LoRA Inference**: Enterprise-only support for Low-Rank Adaptation (LoRA) adapters, allowing serving fine-tuned model variants without hosting separate full model copies. Adapters must be trained externally and uploaded to Groq. Currently limited to `llama-3.1-8b-instant` base model. [9]
 
-## Installation
-
-### Python SDK
-
-```bash
-pip install groq
-```
-
-### JavaScript/TypeScript SDK
-
-```bash
-npm install groq-sdk
-```
-
-### Authentication
-
-Groq uses API key authentication via the `GROQ_API_KEY` environment variable:
-
-```bash
-export GROQ_API_KEY="gsk_your_api_key_here"
-```
-
-The API key is obtained from the Groq Console at `https://console.groq.com`. Both SDKs automatically read `GROQ_API_KEY` from the environment when no key is explicitly passed to the client constructor. [1]
-
 ## Architecture
 
 Groq's architecture consists of three layers:

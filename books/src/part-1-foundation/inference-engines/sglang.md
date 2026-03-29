@@ -35,47 +35,6 @@ SGLang separates the prefill phase (processing input tokens) from the decode pha
 
 Like vLLM, SGLang implements continuous batching (dynamically adding/removing requests from batches) combined with paged attention for efficient KV cache memory management. [1]
 
-## Installation and Setup
-
-### pip Install
-
-```bash
-pip install sglang[all]
-```
-
-For specific hardware:
-
-```bash
-# NVIDIA GPU
-pip install sglang[all] --find-links https://flashinfer.ai/whl/cu124/torch2.5/
-
-# AMD GPU
-pip install sglang[all] --find-links https://releases.flashinfer.ai/whl/rocm/
-```
-[1]
-
-### Docker
-
-```bash
-docker run --gpus all \
-  -p 30000:30000 \
-  -v ~/.cache/huggingface:/root/.cache/huggingface \
-  lmsysorg/sglang:latest \
-  python -m sglang.launch_server \
-  --model-path meta-llama/Llama-3.1-8B-Instruct \
-  --host 0.0.0.0 --port 30000
-```
-[1]
-
-### From Source
-
-```bash
-git clone https://github.com/sgl-project/sglang.git
-cd sglang
-pip install -e ".[all]"
-```
-[2]
-
 ## Architecture
 
 ### Runtime Architecture

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -209,20 +209,6 @@
 <p><strong>Tools</strong> are callable objects that agents invoke. smolagents supports native tools, MCP server tools, LangChain tools, and HuggingFace Hub Spaces used directly as tools.</p>
 <p><strong>Models</strong> are the underlying Large Language Models (LLMs) driving agent reasoning. smolagents abstracts the model layer so that switching between providers requires changing a single line of configuration.</p>
 <p><strong>Hub Integration</strong> allows sharing and loading agents and tools to and from the HuggingFace Hub as Gradio Spaces, enabling community reuse and collaboration.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install smolagents with default tools (includes web search):</p>
-<pre><code class="language-bash">pip install 'smolagents[toolkit]'
-</code></pre>
-<p>Install the base package without bundled tools:</p>
-<pre><code class="language-bash">pip install smolagents
-</code></pre>
-<p>For HuggingFace Inference, set the API token:</p>
-<pre><code class="language-bash">export HF_TOKEN="hf_..."
-</code></pre>
-<p>For OpenAI or Anthropic models via LiteLLM, set the relevant API keys:</p>
-<pre><code class="language-bash">export OPENAI_API_KEY="sk-..."
-export ANTHROPIC_API_KEY="sk-ant-..."
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>smolagents follows a minimal architecture with three main layers:</p>
 <p><strong>Agent Layer</strong> contains CodeAgent and ToolCallingAgent. Each agent holds a model reference and a list of tools. On each step, the agent sends the current conversation (system prompt, user query, prior steps) to the model, parses the response, executes actions, and appends observations back into the conversation for the next step.</p>

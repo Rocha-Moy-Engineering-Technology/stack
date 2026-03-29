@@ -35,58 +35,6 @@ Beyond evaluation, DeepEval includes synthetic dataset generation with evolution
 
 **Tracing** uses the `@observe` decorator to instrument LLM application components, creating a hierarchical trace of execution. Traces capture inputs, outputs, and intermediate states at each level, enabling component-level evaluation where individual pipeline stages (retriever, generator, tool caller) are scored independently.
 
-## Installation and Setup
-
-Install DeepEval and optionally authenticate with Confident AI:
-
-```bash
-pip install -U deepeval
-deepeval login  # Optional: connects to Confident AI cloud platform
-```
-
-Set the API key for the LLM judge (OpenAI is the default):
-
-```bash
-export OPENAI_API_KEY="sk-..."
-```
-
-DeepEval automatically loads environment variables from `.env.local` or `.env` files, with existing process environment variables taking precedence.
-
-For alternative LLM judge providers:
-
-```bash
-# Azure OpenAI
-deepeval set-azure-openai \
-    --base-url=<endpoint> \
-    --model=<model_name> \
-    --deployment-name=<deployment_name> \
-    --api-version=<api_version>
-
-# Ollama (local models)
-deepeval set-ollama --model=deepseek-r1:1.5b
-```
-
-Verify the installation with a minimal test:
-
-```python
-from deepeval import assert_test
-from deepeval.metrics import AnswerRelevancyMetric
-from deepeval.test_case import LLMTestCase
-
-test_case = LLMTestCase(
-    input="What is the capital of France?",
-    actual_output="The capital of France is Paris."
-)
-metric = AnswerRelevancyMetric(threshold=0.5)
-assert_test(test_case, [metric])
-```
-
-Run with the DeepEval CLI:
-
-```bash
-deepeval test run test_example.py
-```
-
 ## Architecture
 
 DeepEval is organized around a layered evaluation pipeline:

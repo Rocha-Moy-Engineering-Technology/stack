@@ -41,35 +41,6 @@ LangChain spans three tiers of abstraction. At the highest level, the LangChain 
 
 **Callbacks** provide hooks for logging, monitoring, streaming, and custom side effects at every stage of chain or agent execution.
 
-## Installation and Setup
-
-Install the core package and provider-specific integrations:
-
-```bash
-pip install langchain
-pip install langchain-openai       # OpenAI models
-pip install langchain-anthropic    # Anthropic models
-pip install langchain-community    # Community integrations
-```
-
-Set the API key for your chosen provider:
-
-```bash
-export OPENAI_API_KEY="sk-..."
-# or
-export ANTHROPIC_API_KEY="sk-ant-..."
-```
-
-Verify the installation:
-
-```python
-from langchain_openai import ChatOpenAI
-
-llm = ChatOpenAI(model="gpt-4o")
-response = llm.invoke("Hello, world!")
-print(response.content)
-```
-
 ## Architecture
 
 LangChain is organized into layered packages with increasing specificity:

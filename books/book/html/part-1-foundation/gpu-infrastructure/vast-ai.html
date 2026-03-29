@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -212,33 +212,6 @@
 <li><strong>PyWorkers</strong>: Custom Python worker scripts for serverless endpoints that act as HTTP proxy layers between the Vast routing system and a model server. PyWorkers handle request transformation, workload calculation, response streaming, and readiness detection through log pattern matching.</li>
 <li><strong>Search Engine</strong>: A hardware search and filtering system allowing users to query available machines by GPU model, VRAM, CPU cores, RAM, disk space, bandwidth, provider reliability score, geographic location, and price.</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="cli-installation"><a class="header" href="#cli-installation">CLI Installation</a></h3>
-<p>The <code>vastai</code> CLI is a self-contained Python script providing all functionality of the web console.</p>
-<pre><code class="language-bash"># Install from PyPI
-pip install vastai
-
-# Or install directly from GitHub
-wget https://raw.githubusercontent.com/vast-ai/vast-python/master/vast.py -O vast
-chmod +x vast
-</code></pre>
-<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
-<pre><code class="language-bash"># Set API key (generated from https://cloud.vast.ai/cli/)
-vastai set api-key YOUR_API_KEY
-</code></pre>
-<p>The API key is saved in a hidden file in the home directory. Default keys grant full account access; restricted permissions can be configured with <code>create api-key</code> and a JSON permission structure.</p>
-<h3 id="python-sdk-installation"><a class="header" href="#python-sdk-installation">Python SDK Installation</a></h3>
-<pre><code class="language-bash">pip install vastai_sdk
-</code></pre>
-<pre><code class="language-python">from vastai_sdk import VastAI
-
-# Initialize with explicit key
-vast_sdk = VastAI(api_key="YOUR_API_KEY")
-
-# Or for serverless endpoints
-from vastai import Serverless
-client = Serverless()  # Uses VAST_API_KEY environment variable
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Vast.ai follows a three-layer marketplace architecture:</p>
 <ul>

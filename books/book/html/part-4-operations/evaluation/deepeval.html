@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,41 +211,6 @@
 <p><strong>EvaluationDataset</strong> is a collection of Goldens (single-turn <code>Golden</code> objects or multi-turn <code>ConversationalGolden</code> objects). Datasets manage the lifecycle of evaluation data: loading Goldens, generating actual outputs by running them through the LLM application, converting them to test cases, and executing metrics. Datasets can be persisted locally as JSON or CSV, or pushed to the Confident AI cloud platform.</p>
 <p><strong>Metrics</strong> are scoring functions that evaluate test cases on a 0-to-1 scale. Each metric produces a score, a human-readable reason explaining the score, and a pass/fail status based on a configurable threshold (default 0.5). Most metrics use an “LLM-as-a-judge” approach, where a separate LLM evaluates the quality of the output.</p>
 <p><strong>Tracing</strong> uses the <code>@observe</code> decorator to instrument LLM application components, creating a hierarchical trace of execution. Traces capture inputs, outputs, and intermediate states at each level, enabling component-level evaluation where individual pipeline stages (retriever, generator, tool caller) are scored independently.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install DeepEval and optionally authenticate with Confident AI:</p>
-<pre><code class="language-bash">pip install -U deepeval
-deepeval login  # Optional: connects to Confident AI cloud platform
-</code></pre>
-<p>Set the API key for the LLM judge (OpenAI is the default):</p>
-<pre><code class="language-bash">export OPENAI_API_KEY="sk-..."
-</code></pre>
-<p>DeepEval automatically loads environment variables from <code>.env.local</code> or <code>.env</code> files, with existing process environment variables taking precedence.</p>
-<p>For alternative LLM judge providers:</p>
-<pre><code class="language-bash"># Azure OpenAI
-deepeval set-azure-openai \
-    --base-url=&lt;endpoint&gt; \
-    --model=&lt;model_name&gt; \
-    --deployment-name=&lt;deployment_name&gt; \
-    --api-version=&lt;api_version&gt;
-
-# Ollama (local models)
-deepeval set-ollama --model=deepseek-r1:1.5b
-</code></pre>
-<p>Verify the installation with a minimal test:</p>
-<pre><code class="language-python">from deepeval import assert_test
-from deepeval.metrics import AnswerRelevancyMetric
-from deepeval.test_case import LLMTestCase
-
-test_case = LLMTestCase(
-    input="What is the capital of France?",
-    actual_output="The capital of France is Paris."
-)
-metric = AnswerRelevancyMetric(threshold=0.5)
-assert_test(test_case, [metric])
-</code></pre>
-<p>Run with the DeepEval CLI:</p>
-<pre><code class="language-bash">deepeval test run test_example.py
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>DeepEval is organized around a layered evaluation pipeline:</p>
 <pre><code>Test Cases / Goldens          Atomic units of LLM interaction (input + output)

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -214,32 +214,6 @@
 <p><strong>Query</strong> – A synchronous read-only request to inspect a running Workflow’s internal state. Query handlers must not modify state or perform asynchronous operations.</p>
 <p><strong>Update</strong> – A synchronous request sent to a running Workflow that can modify state and return a result. Updates support validation before execution.</p>
 <p><strong>Retry Policy</strong> – Configuration that controls how Activities and Workflows are retried on failure, including initial interval, backoff coefficient, maximum interval, and maximum attempts.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="command-line-interface-cli-installation"><a class="header" href="#command-line-interface-cli-installation">Command-Line Interface (CLI) Installation</a></h3>
-<p>Install the Temporal CLI to run a local development server:</p>
-<pre><code class="language-bash"># macOS via Homebrew
-brew install temporal
-
-# Start the local development server
-temporal server start-dev
-</code></pre>
-<p>The development server starts on port 7233 by default, with a Web User Interface (UI) accessible at <code>http://localhost:8233</code>.</p>
-<h3 id="python-sdk-installation"><a class="header" href="#python-sdk-installation">Python SDK Installation</a></h3>
-<pre><code class="language-bash">pip install temporalio
-</code></pre>
-<h3 id="go-sdk-installation"><a class="header" href="#go-sdk-installation">Go SDK Installation</a></h3>
-<pre><code class="language-bash">go get go.temporal.io/sdk
-</code></pre>
-<h3 id="typescript-sdk-installation"><a class="header" href="#typescript-sdk-installation">TypeScript SDK Installation</a></h3>
-<pre><code class="language-bash">npm install @temporalio/client @temporalio/worker @temporalio/workflow @temporalio/activity
-</code></pre>
-<h3 id="docker-compose-self-hosted"><a class="header" href="#docker-compose-self-hosted">Docker Compose (Self-Hosted)</a></h3>
-<p>For a production-like local setup, Temporal provides Docker Compose configurations:</p>
-<pre><code class="language-bash">git clone https://github.com/temporalio/docker-compose.git
-cd docker-compose
-docker compose up
-</code></pre>
-<p>This starts the Temporal Server along with its dependencies (PostgreSQL or Cassandra for persistence, Elasticsearch for visibility).</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>The Temporal Server consists of four independently scalable services that communicate through a membership protocol using Ringpop:</p>
 <p><strong>Frontend Service</strong> – The gateway that handles rate limiting, routing, authorization, and API request validation. The Frontend Service is stateless and does not use sharding or partitioning.</p>

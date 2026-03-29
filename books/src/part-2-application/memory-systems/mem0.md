@@ -64,50 +64,6 @@ Memory retrieval follows four stages [7]:
 3. **Filtering and Reranking**: Logical filters (AND/OR, comparison operators) narrow candidates; optional rerankers refine ordering
 4. **Results Delivery**: Formatted memories with metadata, timestamps, and relevance scores are returned
 
-## Installation
-
-### Platform (Hosted)
-
-```bash
-# Python
-pip install mem0ai
-
-# Node.js
-npm install mem0ai
-```
-
-Initialize with your API key from [app.mem0.ai](https://app.mem0.ai):
-
-```python
-from mem0 import MemoryClient
-
-client = MemoryClient(api_key="your-api-key")
-```
-
-### Open Source (Self-Hosted)
-
-```bash
-pip install mem0ai
-```
-
-```python
-from mem0 import Memory
-
-m = Memory()  # Uses defaults: OpenAI gpt-4.1-nano, text-embedding-3-small, local Qdrant
-```
-
-Requires Python 3.10+ and an OpenAI API key (for default configuration). Alternative LLM providers (Ollama, Anthropic, Azure OpenAI) and vector stores are configurable [3].
-
-### Default Open Source Components
-
-| Component | Default |
-|-----------|---------|
-| LLM | OpenAI gpt-4.1-nano |
-| Embeddings | OpenAI text-embedding-3-small (1536 dimensions) |
-| Vector Storage | Local Qdrant at `/tmp/qdrant` |
-| History Persistence | SQLite at `~/.mem0/history.db` |
-| Reranking | Disabled |
-
 ## Architecture
 
 Mem0's architecture consists of a memory processing engine layered over configurable storage backends:

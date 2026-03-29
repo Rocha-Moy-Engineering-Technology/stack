@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -215,35 +215,6 @@
 <p>InferenceGraph enables building complex inference pipelines by composing multiple InferenceServices into directed graphs. This supports model ensembles, A/B testing, multi-armed bandits, and pipeline architectures. [1]</p>
 <h3 id="servingruntime"><a class="header" href="#servingruntime">ServingRuntime</a></h3>
 <p>ServingRuntimes define reusable model serving configurations including the container image, supported model formats, and resource requirements. KServe provides built-in runtimes and supports custom runtimes. [1]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="quick-install-kubernetes-required"><a class="header" href="#quick-install-kubernetes-required">Quick Install (Kubernetes Required)</a></h3>
-<p>KServe requires a Kubernetes cluster. Quick local installation for development:</p>
-<pre><code class="language-bash"># Install KServe on a local Kind cluster
-curl -s "https://raw.githubusercontent.com/kserve/kserve/master/hack/quick_install.sh" | bash
-</code></pre>
-<p>[1]</p>
-<h3 id="standard-installation-with-knative-default"><a class="header" href="#standard-installation-with-knative-default">Standard Installation with Knative (Default)</a></h3>
-<p>Knative-based installation provides serverless capabilities including scale-to-zero and autoscaling:</p>
-<pre><code class="language-bash"># Install Knative Serving
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.12.0/serving-crds.yaml
-kubectl apply -f https://github.com/knative/serving/releases/download/knative-v1.12.0/serving-core.yaml
-
-# Install KServe
-kubectl apply -f https://github.com/kserve/kserve/releases/download/v0.13.0/kserve.yaml
-kubectl apply -f https://github.com/kserve/kserve/releases/download/v0.13.0/kserve-cluster-resources.yaml
-</code></pre>
-<p>[1]</p>
-<h3 id="standalone-installation-without-knative"><a class="header" href="#standalone-installation-without-knative">Standalone Installation (Without Knative)</a></h3>
-<p>Lightweight installation without Knative dependencies (no canary rollouts or scale-to-zero):</p>
-<pre><code class="language-bash">kubectl apply -f https://github.com/kserve/kserve/releases/download/v0.13.0/kserve.yaml
-</code></pre>
-<p>[1]</p>
-<h3 id="modelmesh-installation"><a class="header" href="#modelmesh-installation">ModelMesh Installation</a></h3>
-<p>For high-scale, high-density serving workloads:</p>
-<pre><code class="language-bash"># Install ModelMesh alongside KServe for dense model packing
-kubectl apply -f https://github.com/kserve/modelmesh-serving/releases/download/v0.12.0/modelmesh.yaml
-</code></pre>
-<p>[1]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="system-components"><a class="header" href="#system-components">System Components</a></h3>
 <ul>

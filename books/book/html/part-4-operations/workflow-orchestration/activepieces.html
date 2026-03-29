@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -211,44 +211,6 @@
 <p><strong>Connections</strong> store authentication credentials for external services. When a piece requires access to a third-party API, a connection holds the necessary tokens, API keys, or OAuth2 credentials. Connections are scoped to a project and can be managed through the UI or REST API.</p>
 <p><strong>Projects</strong> provide organizational isolation within an Activepieces instance. Each project contains its own flows, connections, and members. Projects enable multi-tenancy where different teams or customers operate independently within the same platform deployment.</p>
 <p><strong>Flow Runs</strong> represent individual executions of a flow. Each run tracks the trigger event, the execution status of every step, input and output data at each step, duration, and any errors encountered. Flow runs provide the audit trail for automation execution.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Activepieces supports multiple deployment methods ranging from single-container development setups to production-grade Kubernetes clusters.</p>
-<p><strong>Quick start with Docker</strong> (development and testing):</p>
-<pre><code class="language-bash">docker run -d \
-  -p 8080:80 \
-  -v ~/.activepieces:/root/.activepieces \
-  -e AP_REDIS_TYPE=MEMORY \
-  -e AP_DB_TYPE=PGLITE \
-  -e AP_FRONTEND_URL="http://localhost:8080" \
-  activepieces/activepieces:latest
-</code></pre>
-<p>This single-container setup uses PGLite (embedded PostgreSQL) and an in-memory queue. It is limited to one instance per machine and is not suitable for production workloads.</p>
-<p><strong>Docker Compose</strong> (recommended for production):</p>
-<pre><code class="language-bash">git clone https://github.com/activepieces/activepieces.git
-cd activepieces
-sh tools/deploy.sh
-docker compose -p activepieces up -d
-</code></pre>
-<p>The <code>deploy.sh</code> script generates a <code>.env</code> file with required configuration. The Docker Compose setup runs Activepieces with dedicated PostgreSQL and Redis services, enabling horizontal scaling and persistent queuing.</p>
-<p><strong>Upgrading an existing Docker Compose installation</strong>:</p>
-<pre><code class="language-bash"># Automatic
-sh tools/update.sh
-
-# Manual
-git pull &amp;&amp; docker compose pull &amp;&amp; docker compose up -d --remove-orphans
-</code></pre>
-<p><strong>Additional deployment targets</strong>:</p>
-<ul>
-<li><strong>Kubernetes (Helm)</strong> – Enterprise-grade orchestration for large-scale deployments</li>
-<li><strong>AWS (Pulumi)</strong> – Infrastructure-as-code deployment on Amazon Web Services</li>
-<li><strong>GCP</strong> – Google Cloud Platform VM-based installation</li>
-<li><strong>Railway</strong> – One-click cloud deployment template</li>
-<li><strong>Elestio</strong> – Managed hosting with one-click setup</li>
-</ul>
-<p>For webhook triggers to function correctly, the <code>AP_FRONTEND_URL</code> environment variable must resolve to a publicly accessible URL. During local development, tools like ngrok can expose the local instance:</p>
-<pre><code class="language-bash">ngrok http 8080
-# Then set AP_FRONTEND_URL to the ngrok-provided URL
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Activepieces follows a monolithic application architecture packaged as a single Docker image that contains the frontend UI, backend API server, and flow execution engine. The architecture separates concerns across three external dependencies:</p>
 <ol>

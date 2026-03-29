@@ -35,45 +35,6 @@ Ollama uses the llama.cpp project (founded by Georgi Gerganov) as its primary in
 
 Models in Ollama's library are pre-quantized to various levels (Q4_0, Q4_K_M, Q5_K_M, Q8_0, FP16) to trade off between model quality and memory/speed requirements. The `/api/create` endpoint can also quantize models on the fly. [1][2]
 
-## Installation and Setup
-
-### macOS
-
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-```
-
-Or download the DMG installer from ollama.com. [1]
-
-### Windows
-
-```powershell
-irm https://ollama.com/install.ps1 | iex
-```
-
-Or download the executable installer from ollama.com. [1]
-
-### Linux
-
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-```
-
-Manual installation instructions available for custom setups. [1]
-
-### Docker
-
-```bash
-docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-```
-
-For GPU support with NVIDIA:
-
-```bash
-docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
-```
-[1]
-
 ## Architecture
 
 ### System Architecture

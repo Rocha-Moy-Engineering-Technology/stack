@@ -35,60 +35,6 @@ Activepieces differentiates itself from other workflow automation tools through 
 
 **Flow Runs** represent individual executions of a flow. Each run tracks the trigger event, the execution status of every step, input and output data at each step, duration, and any errors encountered. Flow runs provide the audit trail for automation execution.
 
-## Installation and Setup
-
-Activepieces supports multiple deployment methods ranging from single-container development setups to production-grade Kubernetes clusters.
-
-**Quick start with Docker** (development and testing):
-
-```bash
-docker run -d \
-  -p 8080:80 \
-  -v ~/.activepieces:/root/.activepieces \
-  -e AP_REDIS_TYPE=MEMORY \
-  -e AP_DB_TYPE=PGLITE \
-  -e AP_FRONTEND_URL="http://localhost:8080" \
-  activepieces/activepieces:latest
-```
-
-This single-container setup uses PGLite (embedded PostgreSQL) and an in-memory queue. It is limited to one instance per machine and is not suitable for production workloads.
-
-**Docker Compose** (recommended for production):
-
-```bash
-git clone https://github.com/activepieces/activepieces.git
-cd activepieces
-sh tools/deploy.sh
-docker compose -p activepieces up -d
-```
-
-The `deploy.sh` script generates a `.env` file with required configuration. The Docker Compose setup runs Activepieces with dedicated PostgreSQL and Redis services, enabling horizontal scaling and persistent queuing.
-
-**Upgrading an existing Docker Compose installation**:
-
-```bash
-# Automatic
-sh tools/update.sh
-
-# Manual
-git pull && docker compose pull && docker compose up -d --remove-orphans
-```
-
-**Additional deployment targets**:
-
-- **Kubernetes (Helm)** -- Enterprise-grade orchestration for large-scale deployments
-- **AWS (Pulumi)** -- Infrastructure-as-code deployment on Amazon Web Services
-- **GCP** -- Google Cloud Platform VM-based installation
-- **Railway** -- One-click cloud deployment template
-- **Elestio** -- Managed hosting with one-click setup
-
-For webhook triggers to function correctly, the `AP_FRONTEND_URL` environment variable must resolve to a publicly accessible URL. During local development, tools like ngrok can expose the local instance:
-
-```bash
-ngrok http 8080
-# Then set AP_FRONTEND_URL to the ngrok-provided URL
-```
-
 ## Architecture
 
 Activepieces follows a monolithic application architecture packaged as a single Docker image that contains the frontend UI, backend API server, and flow execution engine. The architecture separates concerns across three external dependencies:

@@ -65,39 +65,6 @@ Axolotl wraps the TRL library to support multiple RL methods (beta feature) [7]:
 - **GDPO (Group Reward-Decoupled Policy Optimization)**: Extends GRPO for multi-reward training
 - **SimPO**: Alternative loss function using CPOTrainer
 
-## Installation
-
-### pip
-
-```bash
-pip3 install --no-build-isolation axolotl[flash-attn,deepspeed]
-```
-
-### UV
-
-```bash
-uv pip install --no-build-isolation axolotl[flash-attn,deepspeed]
-```
-
-### From Source (Edge Build)
-
-```bash
-git clone https://github.com/axolotl-ai-cloud/axolotl.git
-cd axolotl
-pip3 install packaging ninja
-pip3 install --no-build-isolation -e '.[flash-attn,deepspeed]'
-```
-
-### Docker
-
-```bash
-docker run --gpus '"all"' \
-  --volume $HOME/.cache/huggingface:/root/.cache/huggingface \
-  axolotlai/axolotl:main-latest
-```
-
-Docker images are available as `axolotlai/axolotl:main-latest` with all dependencies pre-installed [2].
-
 ## Architecture
 
 ```

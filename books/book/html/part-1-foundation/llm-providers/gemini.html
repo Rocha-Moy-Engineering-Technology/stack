@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -219,48 +219,6 @@
 <p>The API natively supports text, images, video, audio, and documents as inputs in a single request. Combine modalities freely in the <code>contents</code> parameter. [3]</p>
 <h3 id="function-calling"><a class="header" href="#function-calling">Function Calling</a></h3>
 <p>Enables models to connect with external tools and APIs. The model determines when to call functions and provides structured parameters; your application executes the actual function. Supports parallel and compositional (chained) function calling. [4]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="api-key"><a class="header" href="#api-key">API Key</a></h3>
-<p>Create a free API key at <a href="https://aistudio.google.com/app/apikey">Google AI Studio</a>. Set it as an environment variable:</p>
-<pre><code class="language-bash">export GEMINI_API_KEY="your_api_key_here"
-</code></pre>
-<p>The client reads from the <code>GEMINI_API_KEY</code> environment variable automatically. [5]</p>
-<h3 id="python-requires-39"><a class="header" href="#python-requires-39">Python (requires 3.9+)</a></h3>
-<pre><code class="language-bash">pip install -q -U google-genai
-</code></pre>
-<pre><code class="language-python">from google import genai
-
-client = genai.Client()
-response = client.models.generate_content(
-    model="gemini-3-flash-preview",
-    contents="Explain how AI works in a few words"
-)
-print(response.text)
-</code></pre>
-<p>[5]</p>
-<h3 id="javascript-requires-nodejs-18"><a class="header" href="#javascript-requires-nodejs-18">JavaScript (requires Node.js 18+)</a></h3>
-<pre><code class="language-bash">npm install @google/genai
-</code></pre>
-<pre><code class="language-javascript">import { GoogleGenAI } from "@google/genai";
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
-
-const response = await ai.models.generateContent({
-    model: "gemini-3-flash-preview",
-    contents: "Explain how AI works"
-});
-console.log(response.text);
-</code></pre>
-<p>[5]</p>
-<h3 id="go"><a class="header" href="#go">Go</a></h3>
-<pre><code class="language-bash">go get google.golang.org/genai
-</code></pre>
-<p>[5]</p>
-<h3 id="java"><a class="header" href="#java">Java</a></h3>
-<p>Add the <code>google-genai</code> dependency to your Maven configuration. [5]</p>
-<h3 id="c"><a class="header" href="#c">C#</a></h3>
-<pre><code class="language-bash">dotnet add package Google.GenAI
-</code></pre>
-<p>[5]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="api-endpoints"><a class="header" href="#api-endpoints">API Endpoints</a></h3>
 <p>The Gemini API provides:</p>

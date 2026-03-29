@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -234,35 +234,6 @@ tokens = tokenizer("Hello, world!", return_tensors="pt")
 <p>The Trainer API provides a comprehensive training loop supporting mixed precision, gradient accumulation, distributed training, evaluation, and logging. It handles the complexity of training modern transformer models. [1]</p>
 <h3 id="generate"><a class="header" href="#generate">Generate</a></h3>
 <p>The <code>generate</code> method provides fast text generation for LLMs and VLMs with support for multiple decoding strategies (greedy, sampling, beam search, contrastive), streaming, and KV cache optimization. [1]</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<h3 id="pip-install"><a class="header" href="#pip-install">pip Install</a></h3>
-<pre><code class="language-bash">pip install transformers
-</code></pre>
-<h3 id="with-framework-backends"><a class="header" href="#with-framework-backends">With Framework Backends</a></h3>
-<pre><code class="language-bash"># PyTorch (most common)
-pip install transformers[torch]
-
-# TensorFlow
-pip install transformers[tf-cpu]   # CPU only
-pip install transformers[tf]       # With GPU support
-
-# JAX/Flax
-pip install transformers[flax]
-</code></pre>
-<h3 id="from-source"><a class="header" href="#from-source">From Source</a></h3>
-<pre><code class="language-bash">pip install git+https://github.com/huggingface/transformers
-</code></pre>
-<h3 id="additional-dependencies"><a class="header" href="#additional-dependencies">Additional Dependencies</a></h3>
-<pre><code class="language-bash"># For tokenizers
-pip install transformers[sentencepiece]
-
-# For audio
-pip install transformers[audio]
-
-# For vision
-pip install transformers[vision]
-</code></pre>
-<p>[1]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <h3 id="design-principles"><a class="header" href="#design-principles">Design Principles</a></h3>
 <ol>

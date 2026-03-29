@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -214,32 +214,6 @@
 <p><strong>Registry</strong> is a curated central repository of artifact versions within an organization. The registry supports model lifecycle management including promotion, tagging, lineage auditing, and automated downstream processes such as model CI/CD.</p>
 <p><strong>Weave Ops</strong> are versioned, tracked functions in the Weave product. Decorated with <code>@weave.op</code>, they automatically capture code, inputs, outputs, timing, and execution metadata for LLM application observability.</p>
 <p><strong>Weave Calls</strong> represent logged executions of Weave Ops. Each call records input arguments, output values, latency, parent-child relationships for nested calls, and any errors that occurred.</p>
-<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
-<p>Install the W&amp;B Python SDK:</p>
-<pre><code class="language-bash">pip install wandb
-</code></pre>
-<p>Authenticate with your W&amp;B account:</p>
-<pre><code class="language-bash">wandb login
-</code></pre>
-<p>This prompts for an API key, which can be found at <a href="https://wandb.ai/authorize">wandb.ai/authorize</a>. Alternatively, set the key as an environment variable:</p>
-<pre><code class="language-bash">export WANDB_API_KEY="your-api-key"
-</code></pre>
-<p>Verify the installation with a minimal tracking script:</p>
-<pre><code class="language-python">import wandb
-
-run = wandb.init(project="quickstart")
-run.config.learning_rate = 0.01
-run.log({"loss": 0.5, "accuracy": 0.85})
-run.finish()
-</code></pre>
-<p>For Weave (LLM observability), install the Weave package:</p>
-<pre><code class="language-bash">pip install weave
-</code></pre>
-<p>Initialize Weave in your application:</p>
-<pre><code class="language-python">import weave
-
-weave.init("my-llm-project")
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>W&amp;B follows a client-server architecture with a thin SDK that streams data to a cloud or self-hosted backend:</p>
 <pre><code>Application Code

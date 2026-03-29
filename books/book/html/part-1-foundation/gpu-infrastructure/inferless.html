@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -216,29 +216,6 @@
 <li><strong>Secrets Manager</strong>: Centralized storage for passwords, API keys, and tokens with encryption at rest and in transit, access control, and automatic rotation support [11].</li>
 <li><strong>Remote Run</strong>: Execute code on remote GPU servers directly from a local machine using annotations and the <code>inferless remote-run</code> command, supporting T4, A10, and A100 GPUs [12].</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>Inferless is a managed cloud platform with no local installation required for the core service. Interaction happens through the web dashboard, the CLI, or the Python client library.</p>
-<p><strong>CLI Installation:</strong></p>
-<pre><code class="language-bash">pip install inferless-cli
-</code></pre>
-<p><strong>CLI Authentication:</strong></p>
-<pre><code class="language-bash"># Retrieve CLI keys from https://console.inferless.com/user/settings?current-tab=keys
-inferless login
-# Paste CLI keys when prompted
-</code></pre>
-<p><strong>Python Client Installation:</strong></p>
-<pre><code class="language-bash">pip install --upgrade inferless
-</code></pre>
-<p><strong>Quick Start Flow:</strong></p>
-<ol>
-<li>Sign up for an Inferless account through the web dashboard.</li>
-<li>Install the CLI with <code>pip install inferless-cli</code>.</li>
-<li>Authenticate with <code>inferless login</code>.</li>
-<li>Scaffold a demo project: <code>inferless scaffold --demo</code>.</li>
-<li>Initialize the model: <code>inferless init --name &lt;modelname&gt;</code>.</li>
-<li>Deploy to GPU: <code>inferless deploy --gpu T4</code>.</li>
-</ol>
-<p>The template repository at <a href="https://github.com/inferless/template">github.com/inferless/template</a> provides a reference implementation using the GPT Neo model with Pydantic request/response schemas [3].</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Inferless follows a serverless architecture pattern for GPU inference with these primary components:</p>
 <pre><code>Model Source              Inferless Platform              Client

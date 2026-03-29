@@ -64,48 +64,6 @@ The Trainer API provides a comprehensive training loop supporting mixed precisio
 
 The `generate` method provides fast text generation for LLMs and VLMs with support for multiple decoding strategies (greedy, sampling, beam search, contrastive), streaming, and KV cache optimization. [1]
 
-## Installation and Setup
-
-### pip Install
-
-```bash
-pip install transformers
-```
-
-### With Framework Backends
-
-```bash
-# PyTorch (most common)
-pip install transformers[torch]
-
-# TensorFlow
-pip install transformers[tf-cpu]   # CPU only
-pip install transformers[tf]       # With GPU support
-
-# JAX/Flax
-pip install transformers[flax]
-```
-
-### From Source
-
-```bash
-pip install git+https://github.com/huggingface/transformers
-```
-
-### Additional Dependencies
-
-```bash
-# For tokenizers
-pip install transformers[sentencepiece]
-
-# For audio
-pip install transformers[audio]
-
-# For vision
-pip install transformers[vision]
-```
-[1]
-
 ## Architecture
 
 ### Design Principles

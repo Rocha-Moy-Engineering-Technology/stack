@@ -35,42 +35,6 @@ The project is licensed under Apache 2.0 and supports Python 3.10 through 3.14. 
 
 **Validation Metadata** provides runtime context to validators that need information unavailable at initialization time. This metadata is passed to `guard.validate()` or `guard()` calls, allowing validators like `ExtractedSummarySentencesMatch` to access dynamic information such as file paths or reference documents for comparison operations.
 
-## Installation and Setup
-
-Install the core package:
-
-```bash
-pip install guardrails-ai
-```
-
-Run initial configuration:
-
-```bash
-guardrails configure
-```
-
-Install validators from the Hub:
-
-```bash
-guardrails hub install hub://guardrails/regex_match
-guardrails hub install hub://guardrails/toxic_language
-guardrails hub install hub://guardrails/detect_pii
-guardrails hub install hub://guardrails/competitor_check
-```
-
-Install with optional provider dependencies:
-
-```bash
-pip install "guardrails-ai[anthropic]"
-pip install "guardrails-ai[api]"
-pip install "guardrails-ai[huggingface]"
-pip install "guardrails-ai[sql]"
-```
-
-The full set of optional extras includes: `anthropic`, `api`, `databricks`, `dev`, `docs`, `docs-build`, `huggingface`, `llama`, `manifest`, `sql`, `uv`, and `vectordb`.
-
-Python version requirements: 3.10 or higher, up to 3.14. Python versions below 3.10 are not supported.
-
 ## Architecture
 
 Guardrails operates as a middleware layer between application code and LLM providers. The architecture has three primary components:

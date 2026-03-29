@@ -27,32 +27,6 @@ The system operates in three primary stages: Indexing, Querying, and Prompt Tuni
 - **Community Summaries**: Bottom-up summaries generated for each community at every level of the hierarchy. These summaries distill the collective knowledge of all entities and relationships within a community into a coherent narrative that an LLM can consume during query time.
 - **Knowledge Graph**: The assembled graph structure containing all entities, relationships, and community annotations. This graph is the central artifact that distinguishes GraphRAG from traditional vector-only RAG systems.
 
-## Installation and Setup
-
-Install GraphRAG from PyPI:
-
-```bash
-pip install graphrag
-```
-
-Initialize a new GraphRAG project:
-
-```bash
-graphrag init --root ./my-project
-```
-
-This creates the project directory structure with default configuration files and prompt templates. Place input documents in the `input/` directory, then run the indexing pipeline:
-
-```bash
-graphrag index --root ./my-project
-```
-
-After indexing completes, run queries against the built knowledge graph:
-
-```bash
-graphrag query --root ./my-project --method global --query "What are the main themes?"
-```
-
 ## Architecture
 
 GraphRAG's architecture is organized around three stages that transform raw text into a queryable knowledge graph.

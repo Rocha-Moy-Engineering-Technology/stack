@@ -50,30 +50,6 @@ Ensembles chain multiple models into a pipeline within Triton, where the output 
 
 BLS enables Python-based orchestration of multiple models within a single request, supporting conditional execution, loops, and complex routing logic beyond what static ensembles provide. [2]
 
-## Installation and Setup
-
-### Docker (Recommended)
-
-```bash
-docker run --gpus=1 --rm --net=host \
-  nvcr.io/nvidia/tritonserver:26.01-py3
-```
-
-Pull from NVIDIA NGC container registry:
-
-```bash
-docker pull nvcr.io/nvidia/tritonserver:26.01-py3
-```
-[1]
-
-### From Source
-
-Build instructions are available in the GitHub repository for custom configurations and backend selection. [2]
-
-### In-Process (C/Java API)
-
-For edge and embedded deployments, Triton provides C and Java APIs for direct in-process integration without the server overhead. [2]
-
 ## Architecture
 
 ### Server Architecture

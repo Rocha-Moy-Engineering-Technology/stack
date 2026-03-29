@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -220,24 +220,6 @@
 <li><strong>RESPONSES_TOOLS</strong> – OpenAI Responses API tools integration.</li>
 </ul>
 <p>The <code>from_provider()</code> function automatically selects the optimal mode for each provider, though modes can be overridden manually.</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>Install the core package:</p>
-<pre><code class="language-bash">pip install instructor
-</code></pre>
-<p>Alternative package managers:</p>
-<pre><code class="language-bash">uv add instructor
-poetry add instructor
-</code></pre>
-<p>Core dependencies installed automatically: <code>openai</code>, <code>pydantic</code>, <code>typer</code>, and <code>docstring-parser</code>. Python 3.9 or later is required.</p>
-<p>Provider-specific client libraries must be installed separately depending on the target LLM backend:</p>
-<pre><code class="language-bash">pip install openai       # OpenAI
-pip install anthropic    # Anthropic
-pip install google-genai # Google Gemini
-pip install ollama       # Ollama (local models)
-pip install cohere       # Cohere
-pip install mistralai    # Mistral
-pip install litellm      # LiteLLM (multi-provider)
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Instructor sits as a thin middleware layer between the application and the LLM provider client:</p>
 <ol>

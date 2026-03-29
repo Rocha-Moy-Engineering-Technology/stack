@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -213,18 +213,6 @@
 <li><strong>Model Context Protocol (MCP)</strong>: Server-side remote tool calling via MCP servers. Groq discovers tools from MCP servers, passes definitions to the model, executes tool calls, and returns results – all within a single API request. [11]</li>
 <li><strong>LoRA Inference</strong>: Enterprise-only support for Low-Rank Adaptation (LoRA) adapters, allowing serving fine-tuned model variants without hosting separate full model copies. Adapters must be trained externally and uploaded to Groq. Currently limited to <code>llama-3.1-8b-instant</code> base model. [9]</li>
 </ul>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="python-sdk"><a class="header" href="#python-sdk">Python SDK</a></h3>
-<pre><code class="language-bash">pip install groq
-</code></pre>
-<h3 id="javascripttypescript-sdk"><a class="header" href="#javascripttypescript-sdk">JavaScript/TypeScript SDK</a></h3>
-<pre><code class="language-bash">npm install groq-sdk
-</code></pre>
-<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
-<p>Groq uses API key authentication via the <code>GROQ_API_KEY</code> environment variable:</p>
-<pre><code class="language-bash">export GROQ_API_KEY="gsk_your_api_key_here"
-</code></pre>
-<p>The API key is obtained from the Groq Console at <code>https://console.groq.com</code>. Both SDKs automatically read <code>GROQ_API_KEY</code> from the environment when no key is explicitly passed to the client constructor. [1]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Groq’s architecture consists of three layers:</p>
 <ol>

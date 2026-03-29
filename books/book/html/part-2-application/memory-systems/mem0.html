@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -242,42 +242,6 @@
 <li><strong>Filtering and Reranking</strong>: Logical filters (AND/OR, comparison operators) narrow candidates; optional rerankers refine ordering</li>
 <li><strong>Results Delivery</strong>: Formatted memories with metadata, timestamps, and relevance scores are returned</li>
 </ol>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="platform-hosted"><a class="header" href="#platform-hosted">Platform (Hosted)</a></h3>
-<pre><code class="language-bash"># Python
-pip install mem0ai
-
-# Node.js
-npm install mem0ai
-</code></pre>
-<p>Initialize with your API key from <a href="https://app.mem0.ai">app.mem0.ai</a>:</p>
-<pre><code class="language-python">from mem0 import MemoryClient
-
-client = MemoryClient(api_key="your-api-key")
-</code></pre>
-<h3 id="open-source-self-hosted"><a class="header" href="#open-source-self-hosted">Open Source (Self-Hosted)</a></h3>
-<pre><code class="language-bash">pip install mem0ai
-</code></pre>
-<pre><code class="language-python">from mem0 import Memory
-
-m = Memory()  # Uses defaults: OpenAI gpt-4.1-nano, text-embedding-3-small, local Qdrant
-</code></pre>
-<p>Requires Python 3.10+ and an OpenAI API key (for default configuration). Alternative LLM providers (Ollama, Anthropic, Azure OpenAI) and vector stores are configurable [3].</p>
-<h3 id="default-open-source-components"><a class="header" href="#default-open-source-components">Default Open Source Components</a></h3>
-<div class="table-wrapper">
-<table>
-<thead>
-<tr><th>Component</th><th>Default</th></tr>
-</thead>
-<tbody>
-<tr><td>LLM</td><td>OpenAI gpt-4.1-nano</td></tr>
-<tr><td>Embeddings</td><td>OpenAI text-embedding-3-small (1536 dimensions)</td></tr>
-<tr><td>Vector Storage</td><td>Local Qdrant at <code>/tmp/qdrant</code></td></tr>
-<tr><td>History Persistence</td><td>SQLite at <code>~/.mem0/history.db</code></td></tr>
-<tr><td>Reranking</td><td>Disabled</td></tr>
-</tbody>
-</table>
-</div>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Mem0’s architecture consists of a memory processing engine layered over configurable storage backends:</p>
 <pre><code>┌───────────────────────────────────────────┐

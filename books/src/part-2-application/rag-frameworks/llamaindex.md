@@ -30,30 +30,6 @@ LlamaIndex offers a "5-line starter" experience where developers can load docume
 - **Workflows**: Event-driven orchestration primitives that allow developers to compose multi-step, branching processes with explicit control flow over how data moves between stages.
 - **Context Augmentation**: The foundational principle of making private or domain-specific data available to LLMs at inference time, bridging the gap between general-purpose models and specialized knowledge.
 
-## Installation and Setup
-
-Install the core LlamaIndex package using pip:
-
-```bash
-pip install llama-index
-```
-
-For specific integrations, install additional packages as needed:
-
-```bash
-# Vector store integrations
-pip install llama-index-vector-stores-chroma
-pip install llama-index-vector-stores-pinecone
-
-# LLM provider integrations
-pip install llama-index-llms-openai
-pip install llama-index-llms-anthropic
-
-# Embedding integrations
-pip install llama-index-embeddings-openai
-pip install llama-index-embeddings-huggingface
-```
-
 ## Architecture
 
 LlamaIndex is organized around a pipeline architecture that moves data through distinct stages:

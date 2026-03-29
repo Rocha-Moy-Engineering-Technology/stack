@@ -35,42 +35,6 @@ vLLM accelerates generation through draft models that predict multiple tokens ah
 
 Prefix caching allows vLLM to reuse KV cache computations from previous requests that share common prefixes (e.g., system prompts). This avoids redundant computation for repeated context, reducing latency and compute cost for applications with shared prompt templates. [1]
 
-## Installation and Setup
-
-### pip Install (Recommended)
-
-```bash
-pip install vllm
-```
-[2]
-
-### Docker
-
-vLLM provides official Docker images for containerized deployments:
-
-```bash
-docker run --runtime nvidia --gpus all \
-  -v ~/.cache/huggingface:/root/.cache/huggingface \
-  -p 8000:8000 \
-  --ipc=host \
-  vllm/vllm-openai:latest \
-  --model meta-llama/Llama-3.1-8B-Instruct
-```
-[1]
-
-### From Source
-
-```bash
-git clone https://github.com/vllm-project/vllm.git
-cd vllm
-pip install -e .
-```
-[2]
-
-### Platform-Specific
-
-Installation guides are available for GPU (NVIDIA CUDA), CPU-only, AMD ROCm, and TPU environments, each with platform-specific dependencies and build instructions. [1]
-
 ## Architecture
 
 ### Engine Architecture

@@ -35,7 +35,7 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+            window.path_to_searchindex_js = "../../searchindex-a87eeeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
         <script src="../../toc-7ec69164.js"></script>
@@ -228,49 +228,6 @@
 <p><strong>Payloads</strong> are arbitrary JSON metadata attached to points. Qdrant supports payload types including keyword (string), integer, float, bool, geo coordinates, datetime, text (full-text indexed), and UUID. Payload indexes extend the HNSW graph, enabling filtering criteria during the semantic search phase in a single-pass traversal rather than separate pre/post-filtering steps [1][4].</p>
 <h3 id="segments"><a class="header" href="#segments">Segments</a></h3>
 <p>Collections organize data into <strong>segments</strong>, each with independent vector storage, payload storage, indexes, and an ID mapper. Segments are either appendable (full CRUD) or non-appendable (read and delete only). Data integrity is maintained through a Write-Ahead Log (WAL) that orders operations sequentially before propagating to segments [8].</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="docker-primary-method"><a class="header" href="#docker-primary-method">Docker (Primary Method)</a></h3>
-<pre><code class="language-bash">docker pull qdrant/qdrant
-docker run -p 6333:6333 -p 6334:6334 \
-    -v "$(pwd)/qdrant_storage:/qdrant/storage:z" \
-    qdrant/qdrant
-</code></pre>
-<p>Access points: REST API at <code>http://localhost:6333</code>, Web UI at <code>http://localhost:6333/dashboard</code>, gRPC API at <code>localhost:6334</code> [9].</p>
-<h3 id="kubernetes-helm"><a class="header" href="#kubernetes-helm">Kubernetes (Helm)</a></h3>
-<pre><code class="language-bash">helm repo add qdrant https://qdrant.to/helm
-helm install qdrant qdrant/qdrant
-</code></pre>
-<h3 id="from-source-rust"><a class="header" href="#from-source-rust">From Source (Rust)</a></h3>
-<pre><code class="language-bash">cargo build --release --bin qdrant
-</code></pre>
-<h3 id="client-sdks"><a class="header" href="#client-sdks">Client SDKs</a></h3>
-<pre><code class="language-bash"># Python
-pip install qdrant-client[fastembed]
-
-# JavaScript/TypeScript
-npm install @qdrant/js-client-rest
-
-# Rust
-cargo add qdrant-client
-
-# Go
-go get github.com/qdrant/go-client
-
-# .NET
-dotnet add package Qdrant.Client
-</code></pre>
-<h3 id="client-initialization"><a class="header" href="#client-initialization">Client Initialization</a></h3>
-<pre><code class="language-python">from qdrant_client import QdrantClient
-
-# Local Docker instance
-client = QdrantClient(url="http://localhost:6333")
-
-# Qdrant Cloud
-client = QdrantClient(
-    url="https://your-cluster.cloud.qdrant.io",
-    api_key="your-api-key",
-)
-</code></pre>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>Qdrant uses a client-server architecture with distributed clustering capabilities:</p>
 <pre><code>┌─────────────────────────────────────────────────┐
