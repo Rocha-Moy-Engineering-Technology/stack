@@ -1,0 +1,965 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Helicone - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-4-operations/observability/helicone.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="helicone"><a class="header" href="#helicone">Helicone</a></h1>
+<blockquote>
+<p>AI gateway and LLM observability platform with routing</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Observability &amp; LLM Ops</td></tr>
+<tr><td>Type</td><td>API/UI</td></tr>
+<tr><td>Open Source</td><td>Yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/Helicone/helicone">https://github.com/Helicone/helicone</a></td></tr>
+<tr><td>Stars</td><td>5126</td></tr>
+<tr><td>Documentation</td><td><a href="https://docs.helicone.ai/">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Helicone is an open-source AI gateway and Large Language Model (LLM) observability platform that provides a unified, OpenAI-compatible API for accessing over 100 models across multiple providers. Backed by Y Combinator (W23) and licensed under Apache 2.0, Helicone sits between your application and LLM providers, acting as both a proxy and an observability layer. Every request that passes through the gateway is automatically logged, enabling cost tracking, latency monitoring, session tracing, and analytics without requiring changes to application logic beyond a base URL swap.</p>
+<p>Helicone distinguishes itself from pure observability platforms by combining gateway functionality (routing, caching, rate limiting, retries, fallbacks) with a full-featured analytics dashboard. It supports a Bring Your Own Keys (BYOK) model where developers supply their own provider API keys, as well as a managed credits system with zero markup on provider pricing. The platform can be used as a hosted service at <code>helicone.ai</code> or self-hosted via Docker Compose, Kubernetes, or manual installation.</p>
+<p><strong>Primary value propositions:</strong></p>
+<ul>
+<li>Single integration point for 100+ models from OpenAI, Anthropic, Google, Groq, Vertex AI, AWS Bedrock, and others</li>
+<li>Automatic logging and observability with sub-second dashboard latency</li>
+<li>Edge-deployed caching on Cloudflare for cost reduction and faster responses</li>
+<li>Production-grade features (fallbacks, retries, rate limiting) controlled entirely through HTTP headers</li>
+<li>SOC 2 and General Data Protection Regulation (GDPR) compliant for enterprise deployments</li>
+</ul>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<p><strong>AI Gateway.</strong> The gateway is a reverse proxy that intercepts LLM API calls, logs them, and forwards them to the target provider. Requests use the standard OpenAI SDK format but point to <code>gateway.helicone.ai</code> (or <code>oai.helicone.ai</code> for OpenAI-specific traffic) instead of the provider endpoint. The target provider is specified through the <code>Helicone-Target-Url</code> header.</p>
+<p><strong>Header-Driven Configuration.</strong> Helicone’s features are activated and configured entirely through HTTP headers on each request. Caching, rate limiting, retries, custom properties, session tracking, and security features are all toggled by including the appropriate <code>Helicone-*</code> headers. This design means no SDK lock-in and no configuration files to manage.</p>
+<p><strong>Sessions and Traces.</strong> Sessions group related requests (LLM calls, tool calls, vector database queries) into a single workflow view. Sessions use three headers: <code>Helicone-Session-Id</code> for the unique session identifier, <code>Helicone-Session-Path</code> for parent-child hierarchy using forward-slash syntax, and <code>Helicone-Session-Name</code> for human-readable categorization.</p>
+<p><strong>Custom Properties.</strong> Arbitrary key-value metadata attached to requests via <code>Helicone-Property-[Name]</code> headers. Properties enable segmentation by environment, feature, user tier, conversation ID, or any business dimension relevant to cost analysis and debugging.</p>
+<p><strong>Proxy Mode vs. Async Mode.</strong> Helicone supports two integration methods. Proxy mode routes requests through the gateway, providing access to all gateway features (caching, fallbacks, rate limiting). Async mode uses OpenLLMetry to log events without placing Helicone in the critical path, ensuring that Helicone issues cannot cause application outages.</p>
+<p><strong>Prompt Management.</strong> Prompts can be versioned and deployed through the gateway using <code>Helicone-Prompt-Id</code> headers, enabling iteration on prompts without code deployments.</p>
+<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
+<h3 id="hosted-service-recommended-for-getting-started"><a class="header" href="#hosted-service-recommended-for-getting-started">Hosted Service (Recommended for Getting Started)</a></h3>
+<p><strong>Step 1: Create an account</strong> at <a href="https://www.helicone.ai">helicone.ai</a> and complete onboarding.</p>
+<p><strong>Step 2: Generate an API key</strong> from the API Keys settings page. Store it as an environment variable:</p>
+<pre><code class="language-bash">export HELICONE_API_KEY="sk-helicone-..."
+</code></pre>
+<p><strong>Step 3: Install the OpenAI SDK</strong> (Helicone uses the standard OpenAI SDK with a modified base URL):</p>
+<pre><code class="language-bash"># Python
+pip install openai
+
+# Node.js
+npm install openai
+</code></pre>
+<p><strong>Step 4: Configure the client</strong> to point at the Helicone gateway:</p>
+<p><strong>Python:</strong></p>
+<pre><code class="language-python">import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://ai-gateway.helicone.ai",
+    api_key=os.getenv("HELICONE_API_KEY"),
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello, world!"}],
+)
+print(response.choices[0].message.content)
+</code></pre>
+<p><strong>TypeScript:</strong></p>
+<pre><code class="language-typescript">import OpenAI from "openai";
+
+const client = new OpenAI({
+  baseURL: "https://ai-gateway.helicone.ai",
+  apiKey: process.env.HELICONE_API_KEY,
+});
+
+const response = await client.chat.completions.create({
+  model: "gpt-4o-mini",
+  messages: [{ role: "user", content: "Hello, world!" }],
+});
+console.log(response.choices[0].message.content);
+</code></pre>
+<p><strong>cURL:</strong></p>
+<pre><code class="language-bash">curl https://ai-gateway.helicone.ai/chat/completions \
+  -H "Authorization: Bearer $HELICONE_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gpt-4o-mini",
+    "messages": [{"role": "user", "content": "Hello, world!"}]
+  }'
+</code></pre>
+<p>Requests appear in the Helicone dashboard within seconds of completion.</p>
+<h3 id="async-integration-openllmetry"><a class="header" href="#async-integration-openllmetry">Async Integration (OpenLLMetry)</a></h3>
+<p>For applications where adding Helicone to the critical path is unacceptable, use the async integration:</p>
+<pre><code class="language-bash"># Python
+pip install helicone-async
+
+# Node.js
+npm install @helicone/async
+</code></pre>
+<p><strong>Python async setup:</strong></p>
+<pre><code class="language-python">from helicone_async import HeliconeAsyncLogger
+from openai import OpenAI
+
+logger = HeliconeAsyncLogger(api_key="sk-helicone-...")
+logger.init()
+
+client = OpenAI(api_key="sk-openai-...")
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+</code></pre>
+<p><strong>TypeScript async setup:</strong></p>
+<pre><code class="language-typescript">import { HeliconeAsyncLogger } from "@helicone/async";
+import OpenAI from "openai";
+
+const logger = new HeliconeAsyncLogger({
+  apiKey: process.env.HELICONE_API_KEY,
+  providers: {
+    openAI: OpenAI,
+  },
+});
+logger.init();
+
+const openai = new OpenAI();
+</code></pre>
+<h3 id="self-hosted-deployment"><a class="header" href="#self-hosted-deployment">Self-Hosted Deployment</a></h3>
+<p>Clone the repository and use Docker Compose:</p>
+<pre><code class="language-bash">git clone https://github.com/Helicone/helicone.git
+cd helicone/docker
+cp .env.example .env
+./helicone-compose.sh helicone up
+</code></pre>
+<p>Additional self-hosting options include Kubernetes (via Helm charts) and manual installation for customized environments. Enterprise Helm deployments are available through Helicone’s enterprise support.</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Helicone’s architecture comprises five core services:</p>
+<pre><code>                    +------------------+
+                    |    Client App    |
+                    +--------+---------+
+                             |
+                    OpenAI-compatible API
+                             |
+                    +--------v---------+
+                    |  Cloudflare Edge |
+                    |    (Workers)     |
+                    |  - Proxy/Logging |
+                    |  - Caching       |
+                    |  - Rate Limiting |
+                    +--------+---------+
+                             |
+               +-------------+-------------+
+               |                           |
+      +--------v---------+       +--------v---------+
+      |   LLM Providers  |       |    Jawn Server   |
+      | OpenAI, Anthropic|       |  (Express/Tsoa)  |
+      | Google, Groq ... |       |  - Log Ingestion |
+      +------------------+       |  - API Queries   |
+                                 +--------+---------+
+                                          |
+                              +-----------+-----------+
+                              |                       |
+                     +--------v-------+     +---------v--------+
+                     |   Supabase     |     |   ClickHouse     |
+                     | - Auth         |     | - Analytics DB   |
+                     | - User Data    |     | - Request Logs   |
+                     +----------------+     | - Minio (Object) |
+                                            +------------------+
+                                                     |
+                                            +--------v---------+
+                                            |   Web Dashboard  |
+                                            |    (Next.js)     |
+                                            +------------------+
+</code></pre>
+<p><strong>Web (Next.js).</strong> The frontend dashboard for viewing request logs, analytics, sessions, prompt management, and configuration.</p>
+<p><strong>Worker (Cloudflare Workers).</strong> The edge proxy layer that intercepts requests, applies gateway features (caching, rate limiting, retries, fallbacks), and forwards to LLM providers. Being deployed on Cloudflare’s edge network provides low-latency processing globally.</p>
+<p><strong>Jawn (Express/Tsoa).</strong> The backend server responsible for log ingestion, REST API endpoints, and async event processing. Handles the write path from Workers and the read path from the dashboard and API consumers.</p>
+<p><strong>Supabase.</strong> Provides database storage for user accounts, organizations, API keys, and authentication. Handles the Identity and Access Management (IAM) layer.</p>
+<p><strong>ClickHouse with Minio.</strong> The analytics database optimized for high-volume log queries. ClickHouse handles request log storage and aggregation, while Minio provides S3-compatible object storage for request/response bodies.</p>
+<p>The technology stack is predominantly TypeScript (91.3%), with additional MDX for documentation, Python, SQL, and shell scripting.</p>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<h3 id="request-logging-and-observability"><a class="header" href="#request-logging-and-observability">Request Logging and Observability</a></h3>
+<p>Every request through the gateway is automatically logged with full metadata: model, tokens (prompt and completion), cost, latency, status code, request body, response body, and headers. Logs appear in the dashboard within seconds and support filtering by any field.</p>
+<h3 id="edge-caching"><a class="header" href="#edge-caching">Edge Caching</a></h3>
+<p>Responses are cached on Cloudflare’s edge network. Enable with a single header:</p>
+<pre><code class="language-python">response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "What is 2+2?"}],
+    extra_headers={
+        "Helicone-Cache-Enabled": "true",
+        "Cache-Control": "max-age=3600",
+    },
+)
+</code></pre>
+<p>Cache configuration options:</p>
+<ul>
+<li><code>Cache-Control</code>: Standard HTTP cache duration (default: 7 days)</li>
+<li><code>Helicone-Cache-Bucket-Max-Size</code>: Number of different responses stored for identical requests (1-20, default: 1); useful for non-deterministic prompts</li>
+<li><code>Helicone-Cache-Seed</code>: Namespace for user- or context-specific caches (e.g., <code>user-123</code>)</li>
+<li><code>Helicone-Cache-Ignore-Keys</code>: Exclude specific JSON fields from cache key generation</li>
+</ul>
+<p>Cache keys are computed by hashing the seed, request URL, request body, relevant headers, and bucket index. Response headers indicate cache status: <code>Helicone-Cache: HIT</code> or <code>Helicone-Cache: MISS</code>.</p>
+<h3 id="rate-limiting"><a class="header" href="#rate-limiting">Rate Limiting</a></h3>
+<p>Control request quotas per user, organization, or custom segment:</p>
+<pre><code class="language-python">response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello"}],
+    extra_headers={
+        "Helicone-RateLimit-Policy": "10;w=1000;u=cents;s=user",
+    },
+)
+</code></pre>
+<p>Policy format: <code>[quota];w=[time_window];u=[unit];s=[segment]</code></p>
+<ul>
+<li><code>quota</code>: Maximum allowed in the window</li>
+<li><code>w</code>: Time window in seconds</li>
+<li><code>u</code>: Unit of measurement (<code>cents</code>, <code>requests</code>, <code>tokens</code>)</li>
+<li><code>s</code>: Segmentation key (<code>user</code>, a custom property name)</li>
+</ul>
+<p>Response headers include <code>Helicone-RateLimit-Limit</code>, <code>Helicone-RateLimit-Remaining</code>, and <code>Helicone-RateLimit-Policy</code>.</p>
+<h3 id="automatic-retries"><a class="header" href="#automatic-retries">Automatic Retries</a></h3>
+<p>Enable exponential backoff retries for failed requests:</p>
+<pre><code class="language-python">response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello"}],
+    extra_headers={
+        "Helicone-Retry-Enabled": "true",
+        "helicone-retry-num": "3",
+        "helicone-retry-factor": "2",
+    },
+)
+</code></pre>
+<h3 id="provider-fallbacks"><a class="header" href="#provider-fallbacks">Provider Fallbacks</a></h3>
+<p>When the primary provider fails, Helicone automatically routes to a fallback model. The <code>Helicone-Fallback-Index</code> response header indicates which fallback was used.</p>
+<h3 id="session-tracking"><a class="header" href="#session-tracking">Session Tracking</a></h3>
+<p>Group related requests into workflow traces:</p>
+<pre><code class="language-typescript">import { randomUUID } from "crypto";
+
+const sessionId = randomUUID();
+
+// First call in session
+const step1 = await client.chat.completions.create(
+  {
+    model: "gpt-4o-mini",
+    messages: [{ role: "user", content: "Research topic X" }],
+  },
+  {
+    headers: {
+      "Helicone-Session-Id": sessionId,
+      "Helicone-Session-Path": "/research",
+      "Helicone-Session-Name": "Research Pipeline",
+    },
+  }
+);
+
+// Child call in session
+const step2 = await client.chat.completions.create(
+  {
+    model: "gpt-4o-mini",
+    messages: [{ role: "user", content: "Summarize findings" }],
+  },
+  {
+    headers: {
+      "Helicone-Session-Id": sessionId,
+      "Helicone-Session-Path": "/research/summarize",
+      "Helicone-Session-Name": "Research Pipeline",
+    },
+  }
+);
+</code></pre>
+<p>Path hierarchy examples:</p>
+<ul>
+<li>Workflow: <code>/task/research/web_search</code></li>
+<li>Conversation: <code>/session/question_1/answer_1</code></li>
+<li>Pipeline: <code>/process/extract/transform/load</code></li>
+</ul>
+<h3 id="user-tracking"><a class="header" href="#user-tracking">User Tracking</a></h3>
+<p>Track per-user costs, usage patterns, and behavior:</p>
+<pre><code class="language-python">response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello"}],
+    extra_headers={
+        "Helicone-User-Id": "user-12345",
+        "Helicone-Property-UserTier": "premium",
+        "Helicone-Property-UserType": "business",
+    },
+)
+</code></pre>
+<p>The platform automatically tracks daily/weekly/monthly active users, session analytics, usage patterns, and user lifecycle stages.</p>
+<h3 id="content-moderation-and-security"><a class="header" href="#content-moderation-and-security">Content Moderation and Security</a></h3>
+<ul>
+<li><code>Helicone-Moderations-Enabled</code>: Activates OpenAI moderation on requests</li>
+<li><code>Helicone-LLM-Security-Enabled</code>: Protects against prompt injection attacks</li>
+</ul>
+<h3 id="prompt-management"><a class="header" href="#prompt-management">Prompt Management</a></h3>
+<p>Version and deploy prompts using <code>Helicone-Prompt-Id</code> headers. Prompts can be iterated on through the dashboard and deployed to production without code changes.</p>
+<h3 id="token-overflow-handling"><a class="header" href="#token-overflow-handling">Token Overflow Handling</a></h3>
+<p>The <code>Helicone-Token-Limit-Exception-Handler</code> header manages context window overflow with strategies: <code>truncate</code>, <code>middle-out</code>, or <code>fallback</code>.</p>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<p><strong>Multi-Provider LLM Applications.</strong> Teams using models from multiple providers (OpenAI for chat, Anthropic for analysis, Google for embeddings) can consolidate all traffic through a single gateway, gaining unified cost tracking and the ability to switch providers by changing a single model parameter.</p>
+<p><strong>Cost Optimization for Development Teams.</strong> Caching identical requests during development and testing avoids repeated charges. Custom properties segmented by environment (<code>staging</code>, <code>production</code>) enable precise cost attribution.</p>
+<p><strong>AI Agent Observability.</strong> Sessions trace multi-step agent workflows end-to-end, revealing where agents spend time, which tool calls are most expensive, and where failures occur in complex chains.</p>
+<p><strong>Per-User Cost Management in SaaS.</strong> User ID tracking combined with rate limiting enables precise unit economics: cost per user, cost per feature, and enforcement of usage quotas by subscription tier.</p>
+<p><strong>High-Availability Production Systems.</strong> Automatic fallbacks ensure continued service when a provider experiences an outage. Retries with exponential backoff handle transient failures without application-level retry logic.</p>
+<p><strong>Compliance and Auditing.</strong> Full request/response logging with data retention policies (up to forever on Enterprise) provides an audit trail for regulated industries. GDPR-compliant EU endpoints are available at <code>eu.api.helicone.ai</code>.</p>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="gateway-endpoint"><a class="header" href="#gateway-endpoint">Gateway Endpoint</a></h3>
+<p>All LLM requests are routed through the gateway:</p>
+<pre><code>POST https://gateway.helicone.ai/{provider-path}
+POST https://ai-gateway.helicone.ai/{openai-path}
+POST https://oai.helicone.ai/{openai-path}
+</code></pre>
+<p>The gateway accepts standard provider request formats. Set <code>Helicone-Target-Url</code> to specify the downstream provider when using <code>gateway.helicone.ai</code>.</p>
+<h3 id="query-api"><a class="header" href="#query-api">Query API</a></h3>
+<p>Retrieve logged requests programmatically:</p>
+<pre><code>POST https://api.helicone.ai/v1/request/query
+</code></pre>
+<p>EU endpoint: <code>https://eu.api.helicone.ai/v1/request/query</code></p>
+<p><strong>Authentication:</strong> Bearer token via <code>Authorization</code> header.</p>
+<p><strong>Request body:</strong></p>
+<pre><code class="language-json">{
+  "filter": {
+    "operator": "and",
+    "left": {
+      "request": {
+        "model": { "contains": "gpt-4" }
+      }
+    },
+    "right": {
+      "request_response_rmt": {
+        "cost": { "gt": 0.01 }
+      }
+    }
+  },
+  "limit": 100,
+  "offset": 0,
+  "sort": { "created_at": "desc" }
+}
+</code></pre>
+<p><strong>Supported filter operators:</strong></p>
+<ul>
+<li>Text: <code>equals</code>, <code>not-equals</code>, <code>contains</code>, <code>not-contains</code>, <code>like</code>, <code>ilike</code></li>
+<li>Numeric: <code>equals</code>, <code>not-equals</code>, <code>gt</code>, <code>gte</code>, <code>lt</code>, <code>lte</code></li>
+<li>Timestamp: <code>equals</code>, <code>gt</code>, <code>gte</code>, <code>lt</code>, <code>lte</code></li>
+<li>Boolean: <code>equals</code></li>
+</ul>
+<p><strong>Filterable fields:</strong> <code>request.user_id</code>, <code>request.model</code>, <code>request.prompt</code>, <code>request.created_at</code>, <code>response.status</code>, <code>response.model</code>, <code>feedback.rating</code>, and <code>request_response_rmt</code> fields (latency, cost, provider, tokens, cache status). Custom property filters must be wrapped in a <code>request_response_rmt</code> object.</p>
+<p><strong>Response fields per request:</strong> <code>request_id</code>, <code>request_created_at</code>, <code>request_body</code>, <code>request_user_id</code>, <code>request_model</code>, <code>response_status</code>, <code>response_body</code>, <code>total_tokens</code>, <code>prompt_tokens</code>, <code>completion_tokens</code>, <code>cost</code>, <code>delay_ms</code>, <code>model</code>, <code>properties</code>.</p>
+<h3 id="user-query-api"><a class="header" href="#user-query-api">User Query API</a></h3>
+<pre><code>POST https://api.helicone.ai/v1/user/query
+</code></pre>
+<p>Returns aggregated user metrics and analytics.</p>
+<h3 id="header-directory-complete-reference"><a class="header" href="#header-directory-complete-reference">Header Directory (Complete Reference)</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Header</th><th>Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td><code>Helicone-Auth</code></td><td>Authentication (required): <code>Bearer &lt;API_KEY&gt;</code></td></tr>
+<tr><td><code>Helicone-Target-URL</code></td><td>Downstream provider URL</td></tr>
+<tr><td><code>Helicone-Request-Id</code></td><td>Custom request UUID</td></tr>
+<tr><td><code>Helicone-User-Id</code></td><td>User tracking identifier</td></tr>
+<tr><td><code>Helicone-Session-Id</code></td><td>Session grouping identifier</td></tr>
+<tr><td><code>Helicone-Session-Path</code></td><td>Session hierarchy path</td></tr>
+<tr><td><code>Helicone-Session-Name</code></td><td>Session display name</td></tr>
+<tr><td><code>Helicone-Model-Override</code></td><td>Override model for cost calculation</td></tr>
+<tr><td><code>Helicone-Prompt-Id</code></td><td>Prompt version tracking</td></tr>
+<tr><td><code>Helicone-Property-[Name]</code></td><td>Custom metadata properties</td></tr>
+<tr><td><code>Helicone-RateLimit-Policy</code></td><td>Rate limiting configuration</td></tr>
+<tr><td><code>Helicone-Cache-Enabled</code></td><td>Toggle edge caching</td></tr>
+<tr><td><code>Helicone-Cache-Seed</code></td><td>Cache namespace</td></tr>
+<tr><td><code>Helicone-Cache-Bucket-Max-Size</code></td><td>Max cached variants (1-20)</td></tr>
+<tr><td><code>Helicone-Cache-Ignore-Keys</code></td><td>Fields to exclude from cache key</td></tr>
+<tr><td><code>Helicone-Retry-Enabled</code></td><td>Toggle automatic retries</td></tr>
+<tr><td><code>helicone-retry-num</code></td><td>Maximum retry attempts</td></tr>
+<tr><td><code>helicone-retry-factor</code></td><td>Exponential backoff factor</td></tr>
+<tr><td><code>Helicone-Omit-Response</code></td><td>Exclude response body from logs</td></tr>
+<tr><td><code>Helicone-Omit-Request</code></td><td>Exclude request body from logs</td></tr>
+<tr><td><code>Helicone-Token-Limit-Exception-Handler</code></td><td>Overflow strategy: <code>truncate</code>, <code>middle-out</code>, <code>fallback</code></td></tr>
+<tr><td><code>Helicone-Moderations-Enabled</code></td><td>Enable OpenAI moderation</td></tr>
+<tr><td><code>Helicone-LLM-Security-Enabled</code></td><td>Enable prompt injection protection</td></tr>
+<tr><td><code>Helicone-Stream-Force-Format</code></td><td>Fix stream formatting for incompatible libraries</td></tr>
+<tr><td><code>Helicone-Posthog-Key</code></td><td>PostHog integration API key</td></tr>
+<tr><td><code>Helicone-Posthog-Host</code></td><td>PostHog integration host</td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="configuration-and-customization"><a class="header" href="#configuration-and-customization">Configuration and Customization</a></h2>
+<h3 id="gateway-mode-configuration"><a class="header" href="#gateway-mode-configuration">Gateway Mode Configuration</a></h3>
+<p>When using the generic gateway endpoint (<code>gateway.helicone.ai</code>), specify the target provider:</p>
+<pre><code class="language-python">client = OpenAI(
+    base_url="https://gateway.helicone.ai/v1",
+    api_key="sk-provider-key",
+    default_headers={
+        "Helicone-Auth": f"Bearer {os.getenv('HELICONE_API_KEY')}",
+        "Helicone-Target-Url": "https://api.openai.com",
+    },
+)
+</code></pre>
+<p>For non-OpenAI providers (e.g., Groq):</p>
+<pre><code class="language-python">client = OpenAI(
+    base_url="https://gateway.helicone.ai/openai/v1",
+    api_key="sk-groq-key",
+    default_headers={
+        "Helicone-Auth": f"Bearer {os.getenv('HELICONE_API_KEY')}",
+        "Helicone-Target-Url": "https://api.groq.com",
+    },
+)
+</code></pre>
+<h3 id="custom-properties-for-environment-segmentation"><a class="header" href="#custom-properties-for-environment-segmentation">Custom Properties for Environment Segmentation</a></h3>
+<pre><code class="language-python">client = OpenAI(
+    base_url="https://ai-gateway.helicone.ai",
+    api_key=os.getenv("HELICONE_API_KEY"),
+    default_headers={
+        "Helicone-Property-Environment": "production",
+        "Helicone-Property-App": "chatbot-v2",
+        "Helicone-Property-Team": "ml-engineering",
+    },
+)
+</code></pre>
+<h3 id="async-logger-configuration"><a class="header" href="#async-logger-configuration">Async Logger Configuration</a></h3>
+<pre><code class="language-python">from helicone_async import HeliconeAsyncLogger
+
+logger = HeliconeAsyncLogger(api_key="sk-helicone-...")
+logger.init()
+
+# Set session-level properties
+logger.set_properties({
+    "Helicone-Session-Id": "session-abc",
+    "Helicone-Session-Path": "/pipeline/step1",
+    "Helicone-Session-Name": "Data Processing",
+    "Helicone-Property-Pipeline": "etl-v3",
+})
+
+# Disable/enable logging dynamically
+logger.disable_logging()  # Pause logging
+logger.enable_logging()   # Resume logging
+</code></pre>
+<h3 id="data-privacy-controls"><a class="header" href="#data-privacy-controls">Data Privacy Controls</a></h3>
+<p>Exclude sensitive content from logs:</p>
+<pre><code class="language-python">response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Process this PII data..."}],
+    extra_headers={
+        "Helicone-Omit-Request": "true",
+        "Helicone-Omit-Response": "true",
+    },
+)
+</code></pre>
+<h3 id="eu-data-residency"><a class="header" href="#eu-data-residency">EU Data Residency</a></h3>
+<p>For GDPR compliance, use EU-specific endpoints:</p>
+<ul>
+<li>API queries: <code>https://eu.api.helicone.ai</code></li>
+<li>Gateway: EU-specific gateway endpoints available</li>
+</ul>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="openai-sdk-direct-gateway"><a class="header" href="#openai-sdk-direct-gateway">OpenAI SDK (Direct Gateway)</a></h3>
+<p>The simplest integration swaps the base URL:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://ai-gateway.helicone.ai",
+    api_key=os.getenv("HELICONE_API_KEY"),
+)
+</code></pre>
+<h3 id="langchain-integration"><a class="header" href="#langchain-integration">LangChain Integration</a></h3>
+<pre><code class="language-python">from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(
+    model="gpt-4o-mini",
+    base_url="https://gateway.helicone.ai/v1",
+    api_key="sk-openai-key",
+    default_headers={
+        "Helicone-Auth": f"Bearer {os.getenv('HELICONE_API_KEY')}",
+        "Helicone-Target-Url": "https://api.openai.com",
+    },
+)
+</code></pre>
+<h3 id="vercel-ai-sdk"><a class="header" href="#vercel-ai-sdk">Vercel AI SDK</a></h3>
+<pre><code class="language-typescript">import { createOpenAI } from "@ai-sdk/openai";
+
+const openai = createOpenAI({
+  baseURL: "https://gateway.helicone.ai/v1",
+  headers: {
+    "Helicone-Auth": `Bearer ${process.env.HELICONE_API_KEY}`,
+    "Helicone-Target-Url": "https://api.openai.com",
+  },
+});
+</code></pre>
+<h3 id="llamaindex-integration"><a class="header" href="#llamaindex-integration">LlamaIndex Integration</a></h3>
+<pre><code class="language-python">from llama_index.llms.openai import OpenAI
+
+llm = OpenAI(
+    model="gpt-4o-mini",
+    api_base="https://gateway.helicone.ai/v1",
+    additional_kwargs={
+        "headers": {
+            "Helicone-Auth": f"Bearer {os.getenv('HELICONE_API_KEY')}",
+            "Helicone-Target-Url": "https://api.openai.com",
+        }
+    },
+)
+</code></pre>
+<h3 id="posthog-analytics-integration"><a class="header" href="#posthog-analytics-integration">PostHog Analytics Integration</a></h3>
+<p>Forward LLM analytics to PostHog for product analytics correlation:</p>
+<pre><code class="language-python">response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello"}],
+    extra_headers={
+        "Helicone-Posthog-Key": os.getenv("POSTHOG_API_KEY"),
+        "Helicone-Posthog-Host": "https://app.posthog.com",
+    },
+)
+</code></pre>
+<h3 id="supported-providers"><a class="header" href="#supported-providers">Supported Providers</a></h3>
+<p><strong>Inference providers:</strong> OpenAI, Azure OpenAI, Anthropic, AWS Bedrock, Google Gemini, Google Vertex AI, Groq, TogetherAI, Anyscale, DeepInfra, Fireworks, Hyperbolic.</p>
+<p><strong>Framework integrations:</strong> LangChain, LlamaIndex, LangGraph, Vercel AI SDK, CrewAI, Semantic Kernel, Open WebUI.</p>
+<p>Unapproved domains can also be proxied through the gateway with a rate limit of 10,000 requests per day.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="example-1-cost-optimized-development-with-caching"><a class="header" href="#example-1-cost-optimized-development-with-caching">Example 1: Cost-Optimized Development with Caching</a></h3>
+<pre><code class="language-python">import os
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://ai-gateway.helicone.ai",
+    api_key=os.getenv("HELICONE_API_KEY"),
+    default_headers={
+        "Helicone-Cache-Enabled": "true",
+        "Cache-Control": "max-age=86400",
+        "Helicone-Property-Environment": "development",
+    },
+)
+
+# First call: cache MISS, billed by provider
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Explain the CAP theorem"}],
+)
+
+# Second identical call: cache HIT, zero cost, instant response
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Explain the CAP theorem"}],
+)
+</code></pre>
+<h3 id="example-2-multi-step-agent-session-with-user-tracking"><a class="header" href="#example-2-multi-step-agent-session-with-user-tracking">Example 2: Multi-Step Agent Session with User Tracking</a></h3>
+<pre><code class="language-typescript">import OpenAI from "openai";
+import { randomUUID } from "crypto";
+
+const client = new OpenAI({
+  baseURL: "https://ai-gateway.helicone.ai",
+  apiKey: process.env.HELICONE_API_KEY,
+});
+
+const sessionId = randomUUID();
+const userId = "user-456";
+
+// Step 1: Plan
+const plan = await client.chat.completions.create(
+  {
+    model: "gpt-4o-mini",
+    messages: [{ role: "user", content: "Plan a trip to Tokyo" }],
+  },
+  {
+    headers: {
+      "Helicone-Session-Id": sessionId,
+      "Helicone-Session-Path": "/trip-planner/plan",
+      "Helicone-Session-Name": "Trip Planning Agent",
+      "Helicone-User-Id": userId,
+      "Helicone-Property-Feature": "trip-planner",
+    },
+  }
+);
+
+// Step 2: Research hotels (child of plan)
+const hotels = await client.chat.completions.create(
+  {
+    model: "gpt-4o-mini",
+    messages: [
+      { role: "user", content: "Find hotels in Shinjuku under $200/night" },
+    ],
+  },
+  {
+    headers: {
+      "Helicone-Session-Id": sessionId,
+      "Helicone-Session-Path": "/trip-planner/plan/hotels",
+      "Helicone-Session-Name": "Trip Planning Agent",
+      "Helicone-User-Id": userId,
+      "Helicone-Property-Feature": "trip-planner",
+    },
+  }
+);
+
+// Step 3: Summarize itinerary
+const summary = await client.chat.completions.create(
+  {
+    model: "gpt-4o-mini",
+    messages: [{ role: "user", content: "Summarize the complete itinerary" }],
+  },
+  {
+    headers: {
+      "Helicone-Session-Id": sessionId,
+      "Helicone-Session-Path": "/trip-planner/summarize",
+      "Helicone-Session-Name": "Trip Planning Agent",
+      "Helicone-User-Id": userId,
+      "Helicone-Property-Feature": "trip-planner",
+    },
+  }
+);
+</code></pre>
+<h3 id="example-3-rate-limited-saas-with-per-user-quotas"><a class="header" href="#example-3-rate-limited-saas-with-per-user-quotas">Example 3: Rate-Limited SaaS with Per-User Quotas</a></h3>
+<pre><code class="language-python">import os
+from openai import OpenAI
+
+def create_client_for_user(user_id: str, tier: str) -&gt; OpenAI:
+    # 100 cents per 3600 seconds for free tier, 1000 for premium
+    quota = "100" if tier == "free" else "1000"
+    return OpenAI(
+        base_url="https://ai-gateway.helicone.ai",
+        api_key=os.getenv("HELICONE_API_KEY"),
+        default_headers={
+            "Helicone-User-Id": user_id,
+            "Helicone-Property-UserTier": tier,
+            "Helicone-RateLimit-Policy": f"{quota};w=3600;u=cents;s=user",
+        },
+    )
+
+client = create_client_for_user("user-789", "free")
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+</code></pre>
+<h3 id="example-4-querying-logged-data-via-rest-api"><a class="header" href="#example-4-querying-logged-data-via-rest-api">Example 4: Querying Logged Data via REST API</a></h3>
+<pre><code class="language-python">import requests
+import os
+
+response = requests.post(
+    "https://api.helicone.ai/v1/request/query",
+    headers={
+        "Authorization": f"Bearer {os.getenv('HELICONE_API_KEY')}",
+        "Content-Type": "application/json",
+    },
+    json={
+        "filter": {
+            "operator": "and",
+            "left": {
+                "request": {
+                    "model": {"contains": "gpt-4"}
+                }
+            },
+            "right": {
+                "request_response_rmt": {
+                    "cost": {"gt": 0.05}
+                }
+            },
+        },
+        "limit": 50,
+        "offset": 0,
+        "sort": {"created_at": "desc"},
+    },
+)
+
+data = response.json()
+for req in data["data"]:
+    print(f"Model: {req['model']}, Cost: ${req['cost']:.4f}, "
+          f"Latency: {req['delay_ms']}ms, Tokens: {req['total_tokens']}")
+</code></pre>
+<h3 id="example-5-async-logging-with-session-properties"><a class="header" href="#example-5-async-logging-with-session-properties">Example 5: Async Logging with Session Properties</a></h3>
+<pre><code class="language-python">from helicone_async import HeliconeAsyncLogger
+from openai import OpenAI
+
+logger = HeliconeAsyncLogger(api_key="sk-helicone-...")
+logger.init()
+
+client = OpenAI(api_key="sk-openai-...")
+
+# Set properties for the next group of calls
+logger.set_properties({
+    "Helicone-Session-Id": "batch-job-001",
+    "Helicone-Session-Path": "/batch/process",
+    "Helicone-Session-Name": "Nightly Batch",
+    "Helicone-Property-Pipeline": "content-generation",
+})
+
+response = client.chat.completions.create(
+    model="gpt-4o-mini",
+    messages=[{"role": "user", "content": "Generate product description"}],
+)
+
+# Temporarily disable logging for internal calls
+logger.disable_logging()
+# ... internal calls not logged ...
+logger.enable_logging()
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<p><strong>Latency Overhead.</strong> Proxy mode adds a small latency overhead since requests route through Cloudflare Workers before reaching the provider. For latency-sensitive applications, the async integration avoids this by logging out of band.</p>
+<p><strong>Free Tier Constraints.</strong> The free (Hobby) tier is limited to 10,000 requests per month, 1 GB storage, 7-day data retention, and 10 logs per minute ingestion. Production workloads will likely require the Pro tier ($79/month) or higher.</p>
+<p><strong>Data Retention.</strong> Retention is tier-dependent: 7 days (Free), 1 month (Pro), 3 months (Team), and unlimited (Enterprise). Historical data beyond the retention window is permanently deleted.</p>
+<p><strong>Rate Limit on Unapproved Domains.</strong> Providers not in Helicone’s approved list can still be proxied, but are subject to a 10,000 requests per day limit.</p>
+<p><strong>Custom Property Query Caveat.</strong> When querying the REST API, custom property filters must be wrapped in a <code>request_response_rmt</code> object. Omitting this wrapper silently returns empty results, which can be a source of debugging confusion.</p>
+<p><strong>Self-Hosting Complexity.</strong> While open-source, the self-hosted deployment requires running five services (Next.js, Cloudflare Workers, Express, Supabase, ClickHouse with Minio). Docker Compose simplifies local development, but production self-hosting demands significant infrastructure expertise.</p>
+<p><strong>Feature Parity Between Modes.</strong> The async (OpenLLMetry) integration does not support gateway features like caching, rate limiting, retries, and fallbacks. These features require proxy mode since they operate at the request routing layer.</p>
+<p><strong>No Native SDK.</strong> Helicone relies on the OpenAI SDK with base URL modification rather than providing a dedicated client SDK. While this reduces vendor lock-in, it means feature configuration is done entirely through HTTP headers rather than typed SDK methods.</p>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>November 2025</strong> – Claude Sonnet 4 and Claude Sonnet 4.5 models on the AI Gateway support 1M context window by default</li>
+<li><strong>August 2025</strong> – Reasoning effort control added to Playground with adjustable reasoning parameters and a “minimal” option for faster responses</li>
+<li><strong>August 2025</strong> – GPT-5 model family pricing support across multiple providers</li>
+<li><strong>August 2025</strong> – Pricing support for GPT-OSS models (Fireworks, Groq, OpenRouter) and Claude Opus 4.1</li>
+<li><strong>July 2025</strong> – Prompt Management V2 launched with composability, version control, and instant deployment through the AI Gateway via prompt IDs</li>
+<li><strong>July 2025</strong> – Automatic timezone detection and country-based request filtering powered by Cloudflare’s edge network</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>Helicone Documentation: <a href="https://docs.helicone.ai/">https://docs.helicone.ai/</a></li>
+<li>Helicone GitHub Repository: <a href="https://github.com/Helicone/helicone">https://github.com/Helicone/helicone</a></li>
+<li>Helicone Changelog: <a href="https://www.helicone.ai/changelog">https://www.helicone.ai/changelog</a></li>
+<li>Helicone Pricing: <a href="https://www.helicone.ai/pricing">https://www.helicone.ai/pricing</a></li>
+<li>Helicone Header Directory: <a href="https://docs.helicone.ai/helicone-headers/header-directory">https://docs.helicone.ai/helicone-headers/header-directory</a></li>
+<li>Helicone Gateway Integration: <a href="https://docs.helicone.ai/getting-started/integration-method/gateway">https://docs.helicone.ai/getting-started/integration-method/gateway</a></li>
+<li>Helicone OpenLLMetry Integration: <a href="https://docs.helicone.ai/getting-started/integration-method/openllmetry">https://docs.helicone.ai/getting-started/integration-method/openllmetry</a></li>
+<li>Helicone REST API Reference: <a href="https://docs.helicone.ai/rest/request/post-v1requestquery">https://docs.helicone.ai/rest/request/post-v1requestquery</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-4-operations/observability/weights-and-biases.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-4-operations/observability/langfuse.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-4-operations/observability/weights-and-biases.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-4-operations/observability/langfuse.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

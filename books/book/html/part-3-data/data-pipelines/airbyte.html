@@ -1,0 +1,550 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Airbyte - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-3-data/data-pipelines/airbyte.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="airbyte"><a class="header" href="#airbyte">Airbyte</a></h1>
+<blockquote>
+<p>Open-source data integration platform with 600+ connectors for ETL and ELT pipelines</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Airbyte</td></tr>
+<tr><td>Group</td><td>Data Pipelines</td></tr>
+<tr><td>Type</td><td>API/SDK/Infra</td></tr>
+<tr><td>Open Source</td><td>yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/airbytehq/airbyte">airbytehq/airbyte</a></td></tr>
+<tr><td>Stars</td><td>20819</td></tr>
+<tr><td>Docs</td><td><a href="https://docs.airbyte.com/">docs.airbyte.com</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Airbyte is an open-source data integration, activation, and agentic data platform that consolidates data from hundreds of sources into data warehouses, lakes, and databases, then distributes that data to operational tools like CRMs and marketing platforms. It provides over 600 pre-built connectors for Extract-Load-Transform (ELT) and Extract-Transform-Load (ETL) pipelines [1].</p>
+<p>The platform is available in multiple deployment models [3]:</p>
+<ul>
+<li><strong>Self-Managed Core</strong>: Free and open-source version for local or self-hosted infrastructure deployment</li>
+<li><strong>Self-Managed Enterprise</strong>: Highly available solution for organizations prioritizing data sovereignty</li>
+<li><strong>Airbyte Cloud (Standard/Plus/Pro)</strong>: Fully managed cloud offering with 30-day free trial</li>
+<li><strong>Enterprise Flex</strong>: Hybrid solution combining managed convenience with separate data planes</li>
+</ul>
+<p>Airbyte can be interacted with through a no-code UI, REST API, Python and Java SDKs, Terraform provider, or PyAirbyte (a standalone Python library for data movement without running a server) [3].</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="sources-destinations-and-connectors"><a class="header" href="#sources-destinations-and-connectors">Sources, Destinations, and Connectors</a></h3>
+<p>A <strong>source</strong> is an API, file, database, or data warehouse from which data is ingested. A <strong>destination</strong> is a data warehouse, lake, database, or analytics tool where data is loaded. A <strong>connector</strong> is the Airbyte component that pulls from sources or pushes to destinations, packaged as Docker images [2].</p>
+<h3 id="connections"><a class="header" href="#connections">Connections</a></h3>
+<p>A <strong>connection</strong> is an automated data pipeline that replicates data from a configured source to a configured destination. Connections define sync schedules (scheduled intervals, CRON expressions, or manual triggering), sync modes, stream selection, namespace configuration, and schema change handling [2][8].</p>
+<h3 id="streams-records-and-fields"><a class="header" href="#streams-records-and-fields">Streams, Records, and Fields</a></h3>
+<p>A <strong>stream</strong> is a group of related records — called tables, files, or blobs depending on the destination. A <strong>record</strong> is a single data entry, and a <strong>field</strong> is an attribute of a record (analogous to a database column) [2].</p>
+<h3 id="sync-modes"><a class="header" href="#sync-modes">Sync Modes</a></h3>
+<p>Sync modes govern how Airbyte reads from sources and writes to destinations. Five combinations are available [4]:</p>
+<ul>
+<li><strong>Full Refresh | Overwrite</strong>: Reads entire source, replaces destination data</li>
+<li><strong>Full Refresh | Append</strong>: Reads entire source, appends to destination</li>
+<li><strong>Full Refresh | Overwrite + Deduped</strong>: Full read with deduplication on primary key</li>
+<li><strong>Incremental | Append</strong>: Reads only new/changed records, appends to destination</li>
+<li><strong>Incremental | Append + Deduped</strong>: Reads changes, appends and deduplicates on primary key</li>
+</ul>
+<p>Incremental modes use either cursor-based extraction or Change Data Capture (CDC) for supported databases [4].</p>
+<h3 id="typing-and-deduping"><a class="header" href="#typing-and-deduping">Typing and Deduping</a></h3>
+<p>Airbyte’s Destinations V2 framework provides one-to-one mapping from streams to destination tables. Raw data is stored in an <code>airbyte_internal</code> schema, then typed and deduplicated into final tables with system columns: <code>_airbyte_raw_id</code> (unique ID), <code>_airbyte_extracted_at</code> (timestamp), and <code>_airbyte_meta</code> (error/change tracking) [6].</p>
+<h3 id="change-data-capture-cdc"><a class="header" href="#change-data-capture-cdc">Change Data Capture (CDC)</a></h3>
+<p>For supported databases (PostgreSQL, MySQL, MSSQL, MongoDB, Oracle DB, SAP HANA, IBM Db2), Airbyte reads database transaction logs to capture all INSERT, UPDATE, and DELETE operations. The initial sync takes a full snapshot; subsequent syncs read from the last log position. CDC metadata columns (<code>_ab_cdc_lsn</code>, <code>_ab_cdc_updated_at</code>, <code>_ab_cdc_deleted_at</code>) track change details [7].</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="pyairbyte-python-library"><a class="header" href="#pyairbyte-python-library">PyAirbyte (Python Library)</a></h3>
+<pre><code class="language-bash">pip install airbyte
+</code></pre>
+<pre><code class="language-python">import airbyte as ab
+
+source = ab.get_source(
+    "source-faker",
+    config={"count": 5_000},
+    install_if_missing=True,
+)
+source.check()
+source.select_all_streams()
+result = source.read()
+</code></pre>
+<p>PyAirbyte enables data extraction directly within Python without running an Airbyte server [9].</p>
+<h3 id="helm-kubernetes---recommended-for-production"><a class="header" href="#helm-kubernetes---recommended-for-production">Helm (Kubernetes - Recommended for Production)</a></h3>
+<pre><code class="language-bash"># Add Helm repository
+helm repo add airbyte https://airbytehq.github.io/helm-charts
+
+# Create namespace
+kubectl create namespace airbyte
+
+# Install with custom values
+helm install airbyte airbyte/airbyte --namespace airbyte --values ./values.yaml
+
+# Access UI
+kubectl -n airbyte port-forward deployment/airbyte-server 8080:8001
+</code></pre>
+<p>Requires a running Kubernetes cluster (Docker Desktop, kind, k3s, or cloud-managed) and the Helm client [10].</p>
+<h3 id="docker-local-development"><a class="header" href="#docker-local-development">Docker (Local Development)</a></h3>
+<p>Airbyte provides Docker Compose configurations for local single-machine development and testing. The platform is designed to be deployed into Kubernetes clusters for production [10].</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Airbyte consists of a platform layer and a connector layer [5]:</p>
+<pre><code>┌─────────────────────────────────────────────────┐
+│                 Platform Layer                   │
+│  ┌──────────┐ ┌──────────┐ ┌──────────────────┐│
+│  │  Config   │ │  Web UI  │ │   Temporal       ││
+│  │  API      │ │          │ │  (Scheduling)    ││
+│  │  Server   │ │          │ │                  ││
+│  └─────┬────┘ └──────────┘ └────────┬─────────┘│
+│        │                            │           │
+│  ┌─────v────┐ ┌──────────┐ ┌───────v──────┐   │
+│  │ Database  │ │   Cron   │ │   Worker     │   │
+│  │ (Config + │ │ (Cleanup │ │ (Task Queue  │   │
+│  │  History) │ │  + Defs) │ │  Consumer)   │   │
+│  └──────────┘ └──────────┘ └───────┬───────┘   │
+│                                     │           │
+│  ┌──────────────┐  ┌───────────────v─────────┐ │
+│  │  Bootloader   │  │  Workload API + Launcher│ │
+│  │ (Migrations)  │  │  (K8s Pod Management)   │ │
+│  └──────────────┘  └─────────────────────────┘ │
+└─────────────────────────────────────────────────┘
+                         │
+                         v
+┌─────────────────────────────────────────────────┐
+│              Connector Layer (Docker)             │
+│  ┌──────────────┐        ┌───────────────────┐  │
+│  │   Source      │ ──→   │   Destination      │  │
+│  │  Connector    │ JSON  │   Connector        │  │
+│  │  (Docker)     │ msgs  │   (Docker)         │  │
+│  └──────────────┘        └───────────────────┘  │
+│                                                  │
+│  Protocol: spec → check → discover → read/write │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<p>The <strong>platform layer</strong> provides horizontal services: UI, configuration API, job scheduling (via Temporal), logging, and worker task queue management. The <strong>connector layer</strong> consists of independent Docker-packaged modules that push/pull data via the Airbyte Protocol — a JSON message serialization standard using STDIN/STDOUT with message types: RECORD, STATE, LOG, SPEC, CATALOG, CONNECTION_STATUS, and TRACE [5][11].</p>
+<p>Connectors implement standard operations: <code>spec()</code> (capabilities), <code>check(config)</code> (validate connectivity), <code>discover(config)</code> (list available streams), and <code>read()</code>/<code>write()</code> for data transfer [11].</p>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>600+ Connectors</strong>: Pre-built sources and destinations for databases, APIs, SaaS platforms, file systems, and warehouses</li>
+<li><strong>Connector Builder</strong>: No-code web-based tool for building custom API source connectors without local development</li>
+<li><strong>Low-Code CDK</strong>: Declarative YAML framework for HTTP API sources with optional custom Python components</li>
+<li><strong>Python CDK</strong>: Full-flexibility connector development with pre-built classes and scaffold generators</li>
+<li><strong>Change Data Capture</strong>: Log-based incremental replication for PostgreSQL, MySQL, MSSQL, MongoDB, Oracle, SAP HANA, and Db2</li>
+<li><strong>Incremental Sync</strong>: Cursor-based or CDC-based change detection with state checkpointing for resumable syncs</li>
+<li><strong>Typing and Deduping</strong>: Automatic type-casting and primary-key deduplication in destination tables</li>
+<li><strong>Schema Propagation</strong>: Automated detection and handling of source schema changes</li>
+<li><strong>Field Selection</strong>: Exclude specific fields from synchronization at the stream level</li>
+<li><strong>Sync Schedules</strong>: Scheduled intervals, CRON expressions, or manual triggering</li>
+<li><strong>PyAirbyte</strong>: Standalone Python library for data extraction without running an Airbyte server</li>
+<li><strong>Terraform Provider</strong>: Infrastructure-as-code management of Airbyte resources</li>
+<li><strong>REST API + SDKs</strong>: Programmatic control via REST API with Python and Java SDKs</li>
+<li><strong>Resumability</strong>: Checkpoint-based progress tracking with automatic retry for failed syncs</li>
+<li><strong>Namespace Configuration</strong>: Control where replicated data is written in the destination schema</li>
+<li><strong>Stream Prefix</strong>: Add naming conventions to destination table identifiers</li>
+<li><strong>Per-Row Error Handling</strong>: <code>_airbyte_meta</code> column tracks typing and size changes per record</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Data Warehouse Loading</strong>: Consolidate data from SaaS applications (Salesforce, HubSpot, Stripe), databases, and APIs into Snowflake, BigQuery, Databricks, or Redshift</li>
+<li><strong>ELT Pipelines</strong>: Extract and load raw data into warehouses for transformation with dbt or SQL</li>
+<li><strong>Database Replication</strong>: Replicate PostgreSQL, MySQL, or MongoDB databases using CDC for near real-time synchronization</li>
+<li><strong>Analytics Data Integration</strong>: Aggregate marketing, sales, and product data for business intelligence dashboards</li>
+<li><strong>Data Lake Ingestion</strong>: Load structured and unstructured data into S3, GCS, or Azure Blob Storage data lakes</li>
+<li><strong>RAG Data Preparation</strong>: Extract and prepare data from various sources for Retrieval-Augmented Generation pipelines using PyAirbyte</li>
+<li><strong>Reverse ETL / Data Activation</strong>: Distribute warehouse data back to operational tools like CRMs and marketing platforms</li>
+<li><strong>Migration</strong>: Move data between databases or from legacy systems to modern cloud infrastructure</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<h3 id="rest-api"><a class="header" href="#rest-api">REST API</a></h3>
+<pre><code class="language-bash"># List sources (Cloud)
+curl --request GET \
+  --url 'https://api.airbyte.com/v1/sources?workspaceIds=&lt;WORKSPACE_ID&gt;' \
+  --header 'authorization: Bearer &lt;TOKEN&gt;'
+
+# Base URLs
+# Cloud: https://api.airbyte.com/v1/
+# Self-managed (local): http://localhost:8000/api/public/v1/
+# Self-managed (web): &lt;YOUR_AIRBYTE_URL&gt;/api/public/v1/
+</code></pre>
+<p>Access tokens are short-lived and require regular renewal. The API supports creating and managing sources, destinations, connections, and triggering syncs [12].</p>
+<h3 id="pyairbyte-api"><a class="header" href="#pyairbyte-api">PyAirbyte API</a></h3>
+<pre><code class="language-python">import airbyte as ab
+
+# Initialize source
+source = ab.get_source(
+    "source-faker",
+    config={"count": 5_000},
+    install_if_missing=True,
+)
+
+# Validate connection
+source.check()
+
+# Select streams
+source.select_all_streams()
+# Or select specific streams: source.select_streams(["users", "products"])
+
+# Read data
+result = source.read()
+
+# Access stream data
+for name, records in result.streams.items():
+    print(f"Stream {name}: {len(list(records))} records")
+</code></pre>
+<h3 id="airbyte-protocol-connector-interface"><a class="header" href="#airbyte-protocol-connector-interface">Airbyte Protocol (Connector Interface)</a></h3>
+<p>Sources implement four operations [11]:</p>
+<ul>
+<li><code>spec()</code> → Returns connector specification with configuration requirements</li>
+<li><code>check(config)</code> → Validates connectivity and credentials</li>
+<li><code>discover(config)</code> → Returns catalog of available streams and schemas</li>
+<li><code>read(config, catalog, state)</code> → Extracts records with state checkpoints</li>
+</ul>
+<p>Destinations implement: <code>spec()</code>, <code>check(config)</code>, and <code>write(config, catalog, messages)</code>.</p>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="connection-configuration"><a class="header" href="#connection-configuration">Connection Configuration</a></h3>
+<p>Connections are configured with [8]:</p>
+<ul>
+<li><strong>Sync Schedule</strong>: Scheduled intervals, CRON expressions, or manual triggering</li>
+<li><strong>Sync Mode</strong>: Per-stream selection of Full Refresh or Incremental reading with Overwrite, Append, or Deduped writing</li>
+<li><strong>Namespace</strong>: Determines where replicated data is written in the destination</li>
+<li><strong>Stream Prefix</strong>: Optional prefix added to destination table names</li>
+<li><strong>Cursor Field</strong>: Defines which field tracks new/updated records for incremental syncs</li>
+<li><strong>Primary Key</strong>: Used for deduplication in Append Deduped and Overwrite Deduped modes</li>
+<li><strong>Field Selection</strong>: Include or exclude specific fields from sync</li>
+<li><strong>Schema Change Handling</strong>: Configure automatic or manual approval of source schema changes</li>
+</ul>
+<h3 id="deployment-configuration-helm"><a class="header" href="#deployment-configuration-helm">Deployment Configuration (Helm)</a></h3>
+<p>Custom <code>values.yaml</code> for Kubernetes deployments supports:</p>
+<ul>
+<li>State and logging storage (S3, GCS)</li>
+<li>Secret management</li>
+<li>External database configuration</li>
+<li>Ingress configuration</li>
+<li>Resource limits and scaling [10]</li>
+</ul>
+<h3 id="connector-configuration"><a class="header" href="#connector-configuration">Connector Configuration</a></h3>
+<p>Each connector requires source-specific configuration (credentials, endpoints, database connection strings) defined through the UI, API, or Terraform provider.</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="dbt-transformation"><a class="header" href="#dbt-transformation">dbt Transformation</a></h3>
+<p>Airbyte integrates with dbt for post-load transformation. The connections UI includes a dedicated dbt Transformation tab for configuring transformations that run after data loads [8].</p>
+<h3 id="terraform-provider"><a class="header" href="#terraform-provider">Terraform Provider</a></h3>
+<p>Manage Airbyte resources as infrastructure-as-code using the official Terraform provider for automated, version-controlled pipeline management [3].</p>
+<h3 id="orchestration-integration"><a class="header" href="#orchestration-integration">Orchestration Integration</a></h3>
+<p>Airbyte syncs can be triggered and monitored through external orchestrators like Apache Airflow, Dagster, or Prefect using the REST API or SDKs.</p>
+<h3 id="pyairbyte-for-aiml"><a class="header" href="#pyairbyte-for-aiml">PyAirbyte for AI/ML</a></h3>
+<p>PyAirbyte enables direct data extraction into Python environments for machine learning pipelines, RAG implementations, and data science workflows without running an Airbyte server [9].</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="basic-pyairbyte-data-extraction"><a class="header" href="#basic-pyairbyte-data-extraction">Basic PyAirbyte Data Extraction</a></h3>
+<pre><code class="language-python">import airbyte as ab
+
+# Extract data from GitHub
+source = ab.get_source(
+    "source-github",
+    config={
+        "credentials": {"personal_access_token": "ghp_..."},
+        "repositories": ["airbytehq/airbyte"],
+    },
+    install_if_missing=True,
+)
+
+source.check()
+source.select_streams(["commits", "pull_requests"])
+result = source.read()
+
+# Process commits
+for record in result["commits"]:
+    print(record["sha"], record["message"])
+</code></pre>
+<h3 id="api-driven-connection-setup"><a class="header" href="#api-driven-connection-setup">API-Driven Connection Setup</a></h3>
+<pre><code class="language-bash"># Create a source
+curl --request POST \
+  --url https://api.airbyte.com/v1/sources \
+  --header 'authorization: Bearer &lt;TOKEN&gt;' \
+  --header 'content-type: application/json' \
+  --data '{
+    "name": "My Postgres Source",
+    "workspaceId": "&lt;WORKSPACE_ID&gt;",
+    "configuration": {
+      "sourceType": "postgres",
+      "host": "db.example.com",
+      "port": 5432,
+      "database": "production",
+      "username": "airbyte_user",
+      "password": "secret"
+    }
+  }'
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>Kubernetes complexity</strong>: Production deployments require Kubernetes clusters with Helm, increasing operational overhead for small teams [10]</li>
+<li><strong>Docker resource usage</strong>: Connectors run as Docker containers, consuming significant resources when running many concurrent syncs</li>
+<li><strong>CDC constraints</strong>: CDC requires primary keys, only captures table data (not views), and does not capture TRUNCATE or ALTER operations [7]</li>
+<li><strong>Schema change sensitivity</strong>: CDC syncs may fail if schema changes are not properly managed; Airbyte recommends manual approval of schema changes for CDC sources [7]</li>
+<li><strong>Connector maturity variance</strong>: While 600+ connectors exist, quality and feature completeness vary between official Airbyte connectors, marketplace connectors, and community-built connectors</li>
+<li><strong>Java CDK unavailable</strong>: The Java CDK is being revamped and currently does not accept contributions; custom destination development options are limited [13]</li>
+<li><strong>Eventual consistency</strong>: Syncs run on scheduled intervals rather than streaming continuously; real-time replication is not supported</li>
+<li><strong>Typing and deduping overhead</strong>: The intermediate raw table approach consumes additional storage and compute in destination warehouses [6]</li>
+<li><strong>Full refresh on new CDC tables</strong>: Adding new tables to a CDC connection requires a full initial snapshot before incremental tracking begins [7]</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<ul>
+<li><strong>Destinations V2</strong>: Typing and deduping framework with one-to-one stream-to-table mapping, per-row error handling, and incremental loading to final tables</li>
+<li><strong>Direct-Load Tables</strong>: Emerging replacement for typing and deduping that eliminates intermediate raw JSON blobs</li>
+<li><strong>Connector Builder</strong>: No-code web-based tool for building custom API source connectors</li>
+<li><strong>Low-Code CDK</strong>: Declarative YAML framework for HTTP API sources</li>
+<li><strong>PyAirbyte</strong>: Standalone Python library for data extraction without server infrastructure</li>
+<li><strong>CDC Support</strong>: Log-based incremental replication for PostgreSQL, MySQL, MSSQL, MongoDB, Oracle, SAP HANA, and Db2</li>
+<li><strong>Airbyte Protocol v0.5.2</strong>: Current protocol version with STATE, RECORD, CATALOG, and TRACE message types</li>
+<li><strong>Terraform Provider</strong>: Infrastructure-as-code management for Airbyte resources</li>
+<li><strong>AI Agents</strong>: Data exploration capabilities for agentic workflows</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Airbyte Documentation Home - https://docs.airbyte.com/</li>
+<li>[2] Core Concepts - https://docs.airbyte.com/using-airbyte/core-concepts/</li>
+<li>[3] Getting Started - https://docs.airbyte.com/using-airbyte/getting-started/</li>
+<li>[4] Sync Modes - https://docs.airbyte.com/using-airbyte/core-concepts/sync-modes/</li>
+<li>[5] Architecture Overview - https://docs.airbyte.com/understanding-airbyte/high-level-view/</li>
+<li>[6] Typing and Deduping - https://docs.airbyte.com/understanding-airbyte/typing-deduping/</li>
+<li>[7] Change Data Capture - https://docs.airbyte.com/understanding-airbyte/cdc/</li>
+<li>[8] Configuring Connections - https://docs.airbyte.com/cloud/managing-airbyte-cloud/configuring-connections/</li>
+<li>[9] PyAirbyte Getting Started - https://docs.airbyte.com/using-airbyte/pyairbyte/getting-started/</li>
+<li>[10] Deploying Airbyte - https://docs.airbyte.com/deploying-airbyte/</li>
+<li>[11] Airbyte Protocol - https://docs.airbyte.com/understanding-airbyte/airbyte-protocol/</li>
+<li>[12] API Documentation - https://docs.airbyte.com/api-documentation/</li>
+<li>[13] Connector Development - https://docs.airbyte.com/connector-development/</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-3-data/data-pipelines/unstructured.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-3-data/fine-tuning/hugging-face-transformers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-3-data/data-pipelines/unstructured.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-3-data/fine-tuning/hugging-face-transformers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

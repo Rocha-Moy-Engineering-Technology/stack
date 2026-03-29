@@ -1,0 +1,639 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Axolotl - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-3-data/fine-tuning/axolotl.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="axolotl"><a class="header" href="#axolotl">Axolotl</a></h1>
+<blockquote>
+<p>Open-source LLM post-training framework with YAML config for LoRA and full fine-tuning</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Axolotl</td></tr>
+<tr><td>Group</td><td>Fine-tuning</td></tr>
+<tr><td>Type</td><td>SDK</td></tr>
+<tr><td>Open Source</td><td>yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/axolotl-ai-cloud/axolotl">axolotl-ai-cloud/axolotl</a></td></tr>
+<tr><td>Stars</td><td>11393</td></tr>
+<tr><td>Docs</td><td><a href="https://docs.axolotl.ai/">docs.axolotl.ai</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Axolotl is an open-source framework for fine-tuning and post-training large language models (LLMs). It provides a YAML-driven configuration system that abstracts the complexity of training pipelines, supporting LoRA, QLoRA, full fine-tuning, and reinforcement learning from human feedback (RLHF) methods. The framework wraps Hugging Face Transformers, PEFT, TRL, and DeepSpeed into a unified interface controlled by a single configuration file [1].</p>
+<p>Key capabilities include multimodal training (Vision-Language Models), multiple model architecture support (Llama, Mistral, Mixtral, Qwen, Gemma, Phi, Falcon, and others), sample packing for training efficiency, and distributed training via Fully Sharded Data Parallel (FSDP) and DeepSpeed [1].</p>
+<p>Axolotl requires an NVIDIA Ampere or newer GPU (or AMD GPU), Python 3.11+, and PyTorch 2.8.0 or higher. macOS M-series is also supported [2].</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="yaml-configuration"><a class="header" href="#yaml-configuration">YAML Configuration</a></h3>
+<p>All training parameters are specified in a single YAML configuration file. This file controls the base model, adapter type, dataset paths and formats, training hyperparameters, optimizer, scheduler, precision settings, and output location. The CLI passes this config file to all commands [3][4].</p>
+<h3 id="training-methods"><a class="header" href="#training-methods">Training Methods</a></h3>
+<p>Axolotl supports several training approaches [3]:</p>
+<ul>
+<li><strong>Full Fine-tuning</strong>: Updates all model parameters</li>
+<li><strong>LoRA (Low-Rank Adaptation)</strong>: Attaches low-rank adapter matrices to target modules, training only the adapter weights</li>
+<li><strong>QLoRA</strong>: Combines 4-bit quantization of the base model with LoRA adapters for reduced memory usage</li>
+<li><strong>llama-adapter</strong>: Lightweight adapter method for Llama models</li>
+</ul>
+<h3 id="dataset-formats"><a class="header" href="#dataset-formats">Dataset Formats</a></h3>
+<p>Axolotl provides built-in support for multiple dataset formats [5][6]:</p>
+<p><strong>Instruction Tuning</strong>: <code>alpaca</code> (instruction/input/output), <code>gpteacher</code>, <code>oasst</code>, <code>reflection</code>, <code>summarizetldr</code>, <code>jeopardy</code>, <code>context_qa</code>, and custom field mappings.</p>
+<p><strong>Conversation/Chat</strong>: The recommended <code>chat_template</code> format uses Jinja2 templates to convert message lists into model-specific prompts. It supports tokenizer defaults, built-in templates (chatml, gemma, llama4, qwen3), and custom templates. Legacy <code>sharegpt</code> and <code>pygmalion</code> formats are also supported but deprecated in favor of chat_template [6].</p>
+<p><strong>Pre-training</strong>: Raw text datasets for continued pre-training of base models.</p>
+<p><strong>Preference Data</strong>: Chosen/rejected pairs for DPO, IPO, KTO, and ORPO training methods [7].</p>
+<h3 id="sample-packing-multipack"><a class="header" href="#sample-packing-multipack">Sample Packing (Multipack)</a></h3>
+<p>Multipack is a technique that packs multiple sequences into a single batch to increase training throughput. With Flash Attention, sequences are concatenated and Flash Attention is notified of sequence boundaries through <code>cu_seqlens</code> parameters, preventing cross-sequence attention while maintaining efficiency. Without Flash Attention, packing uses 4D attention masks with reduced efficiency [8].</p>
+<p>Benefits include reduced padding waste, better GPU utilization, and consistent token counts per training step despite variable input lengths.</p>
+<h3 id="reinforcement-learning-methods"><a class="header" href="#reinforcement-learning-methods">Reinforcement Learning Methods</a></h3>
+<p>Axolotl wraps the TRL library to support multiple RL methods (beta feature) [7]:</p>
+<ul>
+<li><strong>DPO (Direct Preference Optimization)</strong>: 15+ dataset format variants</li>
+<li><strong>IPO (Identity Preference Optimization)</strong>: DPO with a different loss function</li>
+<li><strong>KTO (Kahneman-Tversky Optimization)</strong>: Completion-based formats with boolean labels</li>
+<li><strong>ORPO (Odds Ratio Preference Optimization)</strong>: Configurable via <code>orpo_alpha</code></li>
+<li><strong>GRPO (Group Relative Policy Optimization)</strong>: Uses vLLM for trajectory generation with custom reward functions</li>
+<li><strong>GDPO (Group Reward-Decoupled Policy Optimization)</strong>: Extends GRPO for multi-reward training</li>
+<li><strong>SimPO</strong>: Alternative loss function using CPOTrainer</li>
+</ul>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="pip"><a class="header" href="#pip">pip</a></h3>
+<pre><code class="language-bash">pip3 install --no-build-isolation axolotl[flash-attn,deepspeed]
+</code></pre>
+<h3 id="uv"><a class="header" href="#uv">UV</a></h3>
+<pre><code class="language-bash">uv pip install --no-build-isolation axolotl[flash-attn,deepspeed]
+</code></pre>
+<h3 id="from-source-edge-build"><a class="header" href="#from-source-edge-build">From Source (Edge Build)</a></h3>
+<pre><code class="language-bash">git clone https://github.com/axolotl-ai-cloud/axolotl.git
+cd axolotl
+pip3 install packaging ninja
+pip3 install --no-build-isolation -e '.[flash-attn,deepspeed]'
+</code></pre>
+<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
+<pre><code class="language-bash">docker run --gpus '"all"' \
+  --volume $HOME/.cache/huggingface:/root/.cache/huggingface \
+  axolotlai/axolotl:main-latest
+</code></pre>
+<p>Docker images are available as <code>axolotlai/axolotl:main-latest</code> with all dependencies pre-installed [2].</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<pre><code>┌─────────────────────────────────────────────────────┐
+│                    YAML Config                       │
+│  base_model, adapter, datasets, hyperparameters     │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│                  Axolotl CLI                          │
+│  preprocess │ train │ inference │ merge-lora │ eval  │
+└──────────────────────┬──────────────────────────────┘
+                       │
+          ┌────────────┼────────────┐
+          v            v            v
+┌──────────────┐ ┌──────────┐ ┌──────────────────┐
+│  Dataset     │ │  Model   │ │  Training Loop   │
+│  Pipeline    │ │  Loading │ │                   │
+│              │ │          │ │  ┌─────────────┐  │
+│  Tokenize    │ │  HF Hub  │ │  │ Transformers│  │
+│  Format      │ │  PEFT    │ │  │ Trainer     │  │
+│  Pack        │ │  BnB     │ │  │ + TRL       │  │
+│  Validate    │ │  Quant   │ │  └─────────────┘  │
+└──────────────┘ └──────────┘ └────────┬──────────┘
+                                        │
+                       ┌────────────────┼──────────┐
+                       v                v          v
+                ┌────────────┐  ┌──────────┐ ┌────────┐
+                │   FSDP     │  │DeepSpeed │ │ Single │
+                │  Multi-GPU │  │  ZeRO    │ │  GPU   │
+                └────────────┘  └──────────┘ └────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│                     Output                           │
+│  Checkpoints │ Merged Model │ LoRA Adapters          │
+│  WandB Logs  │ TensorBoard  │ MLflow                 │
+└─────────────────────────────────────────────────────┘
+</code></pre>
+<p>The framework orchestrates a pipeline from YAML configuration through dataset preprocessing, model loading (with optional quantization and adapter attachment), training execution (via Hugging Face Trainer or TRL), and output of trained weights. Distributed training is handled through FSDP or DeepSpeed integration [1][3].</p>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>YAML-Driven Configuration</strong>: Single config file controls all training parameters — model, data, hyperparameters, and infrastructure</li>
+<li><strong>Multiple Training Methods</strong>: Full fine-tuning, LoRA, QLoRA, and llama-adapter with configurable target modules and ranks</li>
+<li><strong>RLHF/Preference Training</strong>: DPO, IPO, KTO, ORPO, GRPO, GDPO, and SimPO via TRL integration</li>
+<li><strong>Sample Packing (Multipack)</strong>: Packs multiple sequences per batch using Flash Attention block diagonal masks for improved throughput</li>
+<li><strong>Flash Attention</strong>: Native integration for memory-efficient attention computation</li>
+<li><strong>FSDP + QLoRA</strong>: Train 70B+ parameter models on consumer GPUs (e.g., two 24GB GPUs) by combining Fully Sharded Data Parallel with quantized LoRA</li>
+<li><strong>DeepSpeed Integration</strong>: ZeRO optimization stages for distributed training with CPU/disk offloading</li>
+<li><strong>Multimodal Training</strong>: Vision-Language Model (VLM) fine-tuning support</li>
+<li><strong>12+ Dataset Formats</strong>: Built-in support for alpaca, chat_template, sharegpt, oasst, gpteacher, reflection, and custom formats</li>
+<li><strong>Chat Template System</strong>: Jinja2-based templates with per-token loss masking, tool use support, and reasoning split (Qwen3)</li>
+<li><strong>Gradient Checkpointing</strong>: Memory optimization trading compute for reduced VRAM usage</li>
+<li><strong>Mixed Precision Training</strong>: BF16 and FP16 with automatic detection</li>
+<li><strong>Hyperparameter Sweeps</strong>: YAML-based sweep configurations for automated tuning</li>
+<li><strong>Cloud Execution</strong>: Modal integration for remote GPU training with <code>--cloud</code> flag</li>
+<li><strong>Experiment Tracking</strong>: Weights &amp; Biases, TensorBoard, and MLflow logging</li>
+<li><strong>torch.compile</strong>: Optional compilation for optimized training performance</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Instruction Tuning</strong>: Fine-tune base models to follow instructions using alpaca, chat, or custom formats</li>
+<li><strong>Chat Model Training</strong>: Build conversational models using multi-turn chat datasets with chat_template formatting</li>
+<li><strong>Preference Alignment</strong>: Align models with human preferences using DPO, ORPO, or KTO on chosen/rejected pairs</li>
+<li><strong>Domain Adaptation</strong>: Continue pre-training on domain-specific corpora then fine-tune for specialized tasks</li>
+<li><strong>LoRA Adapter Training</strong>: Create lightweight task-specific adapters that can be merged or swapped at inference time</li>
+<li><strong>Large Model Training on Consumer Hardware</strong>: Fine-tune 70B+ models using FSDP + QLoRA across multiple consumer GPUs</li>
+<li><strong>Multimodal Fine-tuning</strong>: Train Vision-Language Models on image-text datasets</li>
+<li><strong>Reward Model Training</strong>: Build reward models for RLHF pipelines using preference datasets</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<h3 id="cli-commands"><a class="header" href="#cli-commands">CLI Commands</a></h3>
+<pre><code class="language-bash"># Fetch example configs
+axolotl fetch examples
+
+# Preprocess datasets (tokenization)
+axolotl preprocess config.yml
+
+# Train a model
+axolotl train config.yml
+
+# Train with overrides
+axolotl train config.yml --learning-rate 1e-4 --micro-batch-size 2
+
+# Resume from checkpoint
+axolotl train config.yml --resume-from-checkpoint path/to/checkpoint
+
+# Multi-GPU training
+axolotl train config.yml --launcher torchrun -- --nproc_per_node=4
+
+# Run inference (CLI)
+axolotl inference config.yml --lora-model-dir="./outputs/lora-out"
+
+# Run inference (Gradio UI)
+axolotl inference config.yml --gradio
+
+# Merge LoRA adapters into base model
+axolotl merge-lora config.yml --lora-model-dir="./outputs/lora-out"
+
+# Evaluate model
+axolotl evaluate config.yml
+
+# Run LM evaluation harness
+axolotl lm-eval config.yml
+
+# Hyperparameter sweep
+axolotl train config.yml --sweep path/to/sweep.yaml
+
+# Cloud execution (Modal)
+axolotl train config.yml --cloud cloud_config.yml
+</code></pre>
+<h3 id="debug-preprocessing"><a class="header" href="#debug-preprocessing">Debug Preprocessing</a></h3>
+<pre><code class="language-bash">axolotl preprocess config.yml --debug --debug-num-examples 5
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="model-configuration"><a class="header" href="#model-configuration">Model Configuration</a></h3>
+<pre><code class="language-yaml">base_model: NousResearch/Llama-3.2-1B
+model_type: LlamaForCausalLM
+tokenizer_type: AutoTokenizer
+load_in_8bit: false
+load_in_4bit: true
+</code></pre>
+<h3 id="lora-configuration"><a class="header" href="#lora-configuration">LoRA Configuration</a></h3>
+<pre><code class="language-yaml">adapter: lora
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - v_proj
+  - k_proj
+  - o_proj
+</code></pre>
+<h3 id="dataset-configuration"><a class="header" href="#dataset-configuration">Dataset Configuration</a></h3>
+<pre><code class="language-yaml">datasets:
+  - path: my_dataset.jsonl
+    type: alpaca
+    ds_type: json
+  - path: HuggingFaceH4/ultrachat_200k
+    type: chat_template
+    chat_template: chatml
+    split: train_sft
+
+val_set_size: 0.05
+</code></pre>
+<h3 id="training-hyperparameters"><a class="header" href="#training-hyperparameters">Training Hyperparameters</a></h3>
+<pre><code class="language-yaml">learning_rate: 3e-4
+num_epochs: 3
+micro_batch_size: 2
+gradient_accumulation_steps: 4
+sequence_len: 4096
+optimizer: adamw_torch_fused
+lr_scheduler: cosine
+weight_decay: 0.01
+max_grad_norm: 1.0
+</code></pre>
+<h3 id="performance-options"><a class="header" href="#performance-options">Performance Options</a></h3>
+<pre><code class="language-yaml">bf16: auto
+flash_attention: true
+sample_packing: true
+gradient_checkpointing: true
+pad_to_sequence_len: true
+torch_compile: true
+</code></pre>
+<h3 id="rlhf-configuration"><a class="header" href="#rlhf-configuration">RLHF Configuration</a></h3>
+<pre><code class="language-yaml">rl: dpo
+rl_beta: 0.1
+remove_unused_columns: false
+datasets:
+  - path: Intel/orca_dpo_pairs
+    type: chatml.intel
+    split: train
+</code></pre>
+<h3 id="distributed-training"><a class="header" href="#distributed-training">Distributed Training</a></h3>
+<pre><code class="language-yaml"># FSDP
+fsdp:
+  - full_shard
+  - auto_wrap
+fsdp_config:
+  fsdp_offload_params: true
+
+# Or DeepSpeed
+deepspeed: deepspeed_configs/zero3_bf16.json
+</code></pre>
+<h3 id="logging"><a class="header" href="#logging">Logging</a></h3>
+<pre><code class="language-yaml">use_wandb: true
+wandb_project: my-project
+wandb_entity: my-team
+save_steps: 100
+eval_steps: 100
+logging_steps: 10
+save_total_limit: 3
+</code></pre>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="hugging-face-hub"><a class="header" href="#hugging-face-hub">Hugging Face Hub</a></h3>
+<p>Models are loaded directly from Hugging Face Hub via <code>base_model</code>. Trained models and adapters can be pushed back to the Hub. Datasets are loaded from Hub paths or local files [3].</p>
+<h3 id="peft-parameter-efficient-fine-tuning"><a class="header" href="#peft-parameter-efficient-fine-tuning">PEFT (Parameter-Efficient Fine-Tuning)</a></h3>
+<p>Axolotl uses the PEFT library for LoRA and QLoRA adapter management. Adapters can be merged into the base model via <code>axolotl merge-lora</code> or loaded separately at inference time [3].</p>
+<h3 id="deepspeed"><a class="header" href="#deepspeed">DeepSpeed</a></h3>
+<p>DeepSpeed ZeRO stages are configured via JSON config files passed through the <code>deepspeed</code> YAML key. Supports ZeRO-1, ZeRO-2, and ZeRO-3 with CPU and disk offloading [3].</p>
+<h3 id="weights--biases"><a class="header" href="#weights--biases">Weights &amp; Biases</a></h3>
+<p>Native integration for experiment tracking, hyperparameter logging, and loss visualization via <code>use_wandb: true</code> [3].</p>
+<h3 id="modal-cloud-training"><a class="header" href="#modal-cloud-training">Modal (Cloud Training)</a></h3>
+<p>The <code>--cloud</code> flag enables remote GPU training on Modal with configurable GPU types and persistent storage volumes [4].</p>
+<h3 id="unsloth"><a class="header" href="#unsloth">Unsloth</a></h3>
+<p>Axolotl integrates with Unsloth for optimized LoRA training kernels that reduce memory usage and increase training speed [1].</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="basic-lora-fine-tuning"><a class="header" href="#basic-lora-fine-tuning">Basic LoRA Fine-Tuning</a></h3>
+<pre><code class="language-yaml">base_model: NousResearch/Llama-3.2-1B
+load_in_8bit: true
+adapter: lora
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - v_proj
+
+datasets:
+  - path: mhenrichsen/alpaca_2k_test
+    type: alpaca
+
+sequence_len: 2048
+micro_batch_size: 2
+gradient_accumulation_steps: 4
+num_epochs: 3
+learning_rate: 3e-4
+optimizer: adamw_torch_fused
+lr_scheduler: cosine
+
+bf16: auto
+flash_attention: true
+sample_packing: true
+output_dir: ./outputs/lora-out
+</code></pre>
+<pre><code class="language-bash">axolotl train lora_config.yml
+axolotl merge-lora lora_config.yml
+</code></pre>
+<h3 id="chat-model-with-dpo"><a class="header" href="#chat-model-with-dpo">Chat Model with DPO</a></h3>
+<pre><code class="language-yaml">base_model: NousResearch/Llama-3.2-1B
+adapter: lora
+lora_r: 16
+lora_alpha: 32
+
+rl: dpo
+rl_beta: 0.1
+remove_unused_columns: false
+
+datasets:
+  - path: Intel/orca_dpo_pairs
+    type: chatml.intel
+    split: train
+
+sequence_len: 2048
+micro_batch_size: 1
+num_epochs: 1
+learning_rate: 5e-6
+optimizer: adamw_torch_fused
+
+bf16: auto
+flash_attention: true
+output_dir: ./outputs/dpo-out
+</code></pre>
+<h3 id="fsdp--qlora-for-70b-models"><a class="header" href="#fsdp--qlora-for-70b-models">FSDP + QLoRA for 70B Models</a></h3>
+<pre><code class="language-yaml">base_model: meta-llama/Llama-2-70b-hf
+load_in_4bit: true
+adapter: qlora
+lora_r: 32
+lora_alpha: 64
+
+fsdp:
+  - full_shard
+  - auto_wrap
+fsdp_config:
+  fsdp_offload_params: true
+  fsdp_cpu_ram_efficient_loading: true
+
+datasets:
+  - path: my_dataset.jsonl
+    type: alpaca
+
+sequence_len: 4096
+micro_batch_size: 1
+gradient_accumulation_steps: 8
+num_epochs: 1
+learning_rate: 2e-4
+bf16: auto
+flash_attention: true
+gradient_checkpointing: true
+output_dir: ./outputs/70b-qlora
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>RLHF is beta</strong>: The documentation notes RLHF features are in beta and many features are not fully implemented [7]</li>
+<li><strong>GPU requirements</strong>: Requires NVIDIA Ampere or newer GPUs (or AMD); older NVIDIA architectures are not supported [2]</li>
+<li><strong>Flash Attention dependency</strong>: Maximum sample packing efficiency requires Flash Attention support; without it, packing uses less efficient 4D masks [8]</li>
+<li><strong>Memory demands</strong>: Full fine-tuning of large models requires substantial GPU memory; even QLoRA of 70B models needs multiple 24GB GPUs [9]</li>
+<li><strong>Python version constraint</strong>: Requires Python 3.11+ specifically, which may conflict with environments using older Python versions [2]</li>
+<li><strong>PyTorch minimum version</strong>: Requires PyTorch 2.8.0+, limiting compatibility with older CUDA toolkit installations [2]</li>
+<li><strong>Blackwell GPU constraints</strong>: NVIDIA Blackwell GPUs require PyTorch 2.9.1+ and CUDA 12.8 with specific nightly builds [2]</li>
+<li><strong>Dataset format complexity</strong>: The number of dataset formats and configuration options creates a learning curve for new users</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<ul>
+<li><strong>2026/03</strong>: Qwen3.5 support, Mixture-of-Experts (MoE) expert quantization, SageAttention v2</li>
+<li><strong>2026/02</strong>: ScatterMoE LoRA, SageAttention v1, GDPO (Group Reward-Decoupled Policy Optimization)</li>
+<li><strong>2026/01</strong>: EAFT (Efficient Attention Fine-Tuning), Scalable Softmax</li>
+<li><strong>GRPO</strong>: Group Relative Policy Optimization with vLLM trajectory generation and custom reward functions</li>
+<li><strong>Chat Template System</strong>: Jinja2-based conversation formatting replacing legacy ShareGPT</li>
+<li><strong>Modal Cloud</strong>: Remote GPU training integration</li>
+<li><strong>N-D Parallelism</strong>: Multi-dimensional parallelism support</li>
+<li><strong>Sequence Parallelism</strong>: Distributed sequence processing across GPUs</li>
+<li><strong>Quantization-Aware Training (QAT)</strong>: Training-time quantization via torchao</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Axolotl Documentation Home - https://docs.axolotl.ai/</li>
+<li>[2] Installation Guide - https://docs.axolotl.ai/docs/installation.html</li>
+<li>[3] Config Reference - https://docs.axolotl.ai/docs/config-reference.html</li>
+<li>[4] CLI Reference - https://docs.axolotl.ai/docs/cli.html</li>
+<li>[5] Instruction Tuning Formats - https://docs.axolotl.ai/docs/dataset-formats/inst_tune.html</li>
+<li>[6] Conversation Formats - https://docs.axolotl.ai/docs/dataset-formats/conversation.html</li>
+<li>[7] RLHF Guide - https://docs.axolotl.ai/docs/rlhf.html</li>
+<li>[8] Multipack - https://docs.axolotl.ai/docs/multipack.html</li>
+<li>[9] FSDP + QLoRA - https://docs.axolotl.ai/docs/fsdp_qlora.html</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-3-data/fine-tuning/unsloth.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-3-data/labeling/label-studio.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-3-data/fine-tuning/unsloth.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-3-data/labeling/label-studio.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

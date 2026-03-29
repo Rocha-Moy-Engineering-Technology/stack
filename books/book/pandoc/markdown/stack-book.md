@@ -10,24 +10,26 @@ title: AI/ML Stack Documentation
 - [OpenAI](#book__pandoc__markdown__src__part-1-foundation__llm-providers__openai.md__openai)
 - [Gemini](#book__pandoc__markdown__src__part-1-foundation__llm-providers__gemini.md__gemini)
 - [Claude](#book__pandoc__markdown__src__part-1-foundation__llm-providers__claude.md__claude)
-- [Max](#book__pandoc__markdown__src__part-1-foundation__inference-serving__max.md__max)
-- [vLLM](#book__pandoc__markdown__src__part-1-foundation__inference-serving__vllm.md__vllm)
-- [SGLang](#book__pandoc__markdown__src__part-1-foundation__inference-serving__sglang.md__sglang)
-- [KServe](#book__pandoc__markdown__src__part-1-foundation__inference-serving__kserve.md__kserve)
-- [Triton Inference Server](#book__pandoc__markdown__src__part-1-foundation__inference-serving__triton-inference-server.md__triton-inference-server)
-- [BentoML](#book__pandoc__markdown__src__part-1-foundation__inference-serving__bentoml.md__bentoml)
-- [Ollama](#book__pandoc__markdown__src__part-1-foundation__inference-serving__ollama.md__ollama)
-- [LM Studio](#book__pandoc__markdown__src__part-1-foundation__inference-serving__lm-studio.md__lm-studio)
-- [Hugging Face Transformers](#book__pandoc__markdown__src__part-1-foundation__inference-serving__hugging-face-transformers.md__hugging-face-transformers)
-- [Ray](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__ray.md__ray)
-- [Groq](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__groq.md__groq)
-- [Cerebras](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__cerebras.md__cerebras)
-- [Modal](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__modal.md__modal)
-- [RunPod](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__runpod.md__runpod)
-- [Vast.ai](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__vast-ai.md__vastai)
-- [Inferless](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__inferless.md__inferless)
-- [Vertex AI](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__vertex-ai.md__vertex-ai)
-- [AWS Bedrock](#book__pandoc__markdown__src__part-1-foundation__gpu-compute__aws-bedrock.md__aws-bedrock)
+- [Max](#book__pandoc__markdown__src__part-1-foundation__inference-engines__max.md__max)
+- [vLLM](#book__pandoc__markdown__src__part-1-foundation__inference-engines__vllm.md__vllm)
+- [SGLang](#book__pandoc__markdown__src__part-1-foundation__inference-engines__sglang.md__sglang)
+- [KServe](#book__pandoc__markdown__src__part-1-foundation__inference-engines__kserve.md__kserve)
+- [Triton Inference Server](#book__pandoc__markdown__src__part-1-foundation__inference-engines__triton-inference-server.md__triton-inference-server)
+- [BentoML](#book__pandoc__markdown__src__part-1-foundation__inference-engines__bentoml.md__bentoml)
+- [Ollama](#book__pandoc__markdown__src__part-1-foundation__inference-engines__ollama.md__ollama)
+- [LM Studio](#book__pandoc__markdown__src__part-1-foundation__inference-engines__lm-studio.md__lm-studio)
+- [Ray](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__ray.md__ray)
+- [Groq](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__groq.md__groq)
+- [Cerebras](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__cerebras.md__cerebras)
+- [Modal](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__modal.md__modal)
+- [RunPod](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__runpod.md__runpod)
+- [Vast.ai](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__vast-ai.md__vastai)
+- [Inferless](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__inferless.md__inferless)
+- [Vertex AI](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__vertex-ai.md__vertex-ai)
+- [AWS Bedrock](#book__pandoc__markdown__src__part-1-foundation__gpu-infrastructure__aws-bedrock.md__aws-bedrock)
+- [LiteLLM](#book__pandoc__markdown__src__part-1-foundation__model-gateways__litellm.md__litellm)
+- [Portkey](#book__pandoc__markdown__src__part-1-foundation__model-gateways__portkey.md__portkey)
+- [ccapi](#book__pandoc__markdown__src__part-1-foundation__model-gateways__ccapi.md__ccapi)
 - [LangChain](#book__pandoc__markdown__src__part-2-application__agent-frameworks__langchain.md__langchain)
 - [LangGraph](#book__pandoc__markdown__src__part-2-application__agent-frameworks__langgraph.md__langgraph)
 - [AutoGen](#book__pandoc__markdown__src__part-2-application__agent-frameworks__autogen.md__autogen)
@@ -36,79 +38,91 @@ title: AI/ML Stack Documentation
 - [Semantic Kernel](#book__pandoc__markdown__src__part-2-application__agent-frameworks__semantic-kernel.md__semantic-kernel)
 - [smolagents](#book__pandoc__markdown__src__part-2-application__agent-frameworks__smolagents.md__smolagents)
 - [Pydantic AI](#book__pandoc__markdown__src__part-2-application__agent-frameworks__pydantic-ai.md__pydantic-ai)
-- [Haystack](#book__pandoc__markdown__src__part-2-application__rag-knowledge__haystack.md__haystack)
-- [LlamaIndex](#book__pandoc__markdown__src__part-2-application__rag-knowledge__llamaindex.md__llamaindex)
-- [pgvector](#book__pandoc__markdown__src__part-2-application__rag-knowledge__pgvector.md__pgvector)
-- [GraphRAG](#book__pandoc__markdown__src__part-2-application__rag-knowledge__graphrag.md__graphrag)
-- [Pinecone](#book__pandoc__markdown__src__part-2-application__rag-knowledge__pinecone.md__pinecone)
-- [Weaviate](#book__pandoc__markdown__src__part-2-application__rag-knowledge__weaviate.md__weaviate)
-- [DSPy](#book__pandoc__markdown__src__part-2-application__structured-output__dspy.md__dspy)
-- [Outlines](#book__pandoc__markdown__src__part-2-application__structured-output__outlines.md__outlines)
-- [Instructor](#book__pandoc__markdown__src__part-2-application__structured-output__instructor.md__instructor)
-- [BAML](#book__pandoc__markdown__src__part-2-application__structured-output__baml.md__baml)
-- [Guardrails AI](#book__pandoc__markdown__src__part-3-operations__guardrails-safety__guardrails-ai.md__guardrails-ai)
-- [NeMo Guardrails](#book__pandoc__markdown__src__part-3-operations__guardrails-safety__nemo-guardrails.md__nemo-guardrails)
-- [OpenAI Moderation](#book__pandoc__markdown__src__part-3-operations__guardrails-safety__openai-moderation.md__openai-moderation)
-- [Lakera](#book__pandoc__markdown__src__part-3-operations__guardrails-safety__lakera.md__lakera)
-- [Ragas](#book__pandoc__markdown__src__part-3-operations__evaluation-testing__ragas.md__ragas)
-- [DeepEval](#book__pandoc__markdown__src__part-3-operations__evaluation-testing__deepeval.md__deepeval)
-- [OpenAI Evals](#book__pandoc__markdown__src__part-3-operations__evaluation-testing__openai-evals.md__openai-evals)
-- [promptfoo](#book__pandoc__markdown__src__part-3-operations__evaluation-testing__promptfoo.md__promptfoo)
-- [LangSmith](#book__pandoc__markdown__src__part-3-operations__observability__langsmith.md__langsmith)
-- [Arize Phoenix](#book__pandoc__markdown__src__part-3-operations__observability__arize-phoenix.md__arize-phoenix)
-- [Weights & Biases](#book__pandoc__markdown__src__part-3-operations__observability__weights-and-biases.md__weights--biases)
-- [Helicone](#book__pandoc__markdown__src__part-3-operations__observability__helicone.md__helicone)
-- [Langfuse](#book__pandoc__markdown__src__part-3-operations__observability__langfuse.md__langfuse)
-- [LiteLLM](#book__pandoc__markdown__src__part-3-operations__api-gateways__litellm.md__litellm)
-- [Portkey](#book__pandoc__markdown__src__part-3-operations__api-gateways__portkey.md__portkey)
-- [ccapi](#book__pandoc__markdown__src__part-3-operations__api-gateways__ccapi.md__ccapi)
-- [Temporal](#book__pandoc__markdown__src__part-4-integration__workflow-orchestration__temporal.md__temporal)
-- [Prefect](#book__pandoc__markdown__src__part-4-integration__workflow-orchestration__prefect.md__prefect)
-- [Airflow](#book__pandoc__markdown__src__part-4-integration__workflow-orchestration__airflow.md__airflow)
-- [n8n](#book__pandoc__markdown__src__part-4-integration__workflow-orchestration__n8n.md__n8n)
-- [Activepieces](#book__pandoc__markdown__src__part-4-integration__workflow-orchestration__activepieces.md__activepieces)
-- [Node-RED](#book__pandoc__markdown__src__part-4-integration__workflow-orchestration__node-red.md__node-red)
-- [Label Studio](#book__pandoc__markdown__src__part-4-integration__data-labeling__label-studio.md__label-studio)
+- [Haystack](#book__pandoc__markdown__src__part-2-application__rag-frameworks__haystack.md__haystack)
+- [LlamaIndex](#book__pandoc__markdown__src__part-2-application__rag-frameworks__llamaindex.md__llamaindex)
+- [GraphRAG](#book__pandoc__markdown__src__part-2-application__rag-frameworks__graphrag.md__graphrag)
+- [DSPy](#book__pandoc__markdown__src__part-2-application__structured-generation__dspy.md__dspy)
+- [Outlines](#book__pandoc__markdown__src__part-2-application__structured-generation__outlines.md__outlines)
+- [Instructor](#book__pandoc__markdown__src__part-2-application__structured-generation__instructor.md__instructor)
+- [BAML](#book__pandoc__markdown__src__part-2-application__structured-generation__baml.md__baml)
+- [Mem0](#book__pandoc__markdown__src__part-2-application__memory-systems__mem0.md__mem0)
+- [Zep](#book__pandoc__markdown__src__part-2-application__memory-systems__zep.md__zep)
+- [Letta](#book__pandoc__markdown__src__part-2-application__memory-systems__letta.md__letta)
+- [pgvector](#book__pandoc__markdown__src__part-3-data__vector-databases__pgvector.md__pgvector)
+- [Pinecone](#book__pandoc__markdown__src__part-3-data__vector-databases__pinecone.md__pinecone)
+- [Weaviate](#book__pandoc__markdown__src__part-3-data__vector-databases__weaviate.md__weaviate)
+- [Qdrant](#book__pandoc__markdown__src__part-3-data__vector-databases__qdrant.md__qdrant)
+- [Milvus](#book__pandoc__markdown__src__part-3-data__vector-databases__milvus.md__milvus)
+- [Unstructured](#book__pandoc__markdown__src__part-3-data__data-pipelines__unstructured.md__unstructured)
+- [Airbyte](#book__pandoc__markdown__src__part-3-data__data-pipelines__airbyte.md__airbyte)
+- [Hugging Face Transformers](#book__pandoc__markdown__src__part-3-data__fine-tuning__hugging-face-transformers.md__hugging-face-transformers)
+- [PEFT](#book__pandoc__markdown__src__part-3-data__fine-tuning__peft.md__peft)
+- [Unsloth](#book__pandoc__markdown__src__part-3-data__fine-tuning__unsloth.md__unsloth)
+- [Axolotl](#book__pandoc__markdown__src__part-3-data__fine-tuning__axolotl.md__axolotl)
+- [Label Studio](#book__pandoc__markdown__src__part-3-data__labeling__label-studio.md__label-studio)
+- [Guardrails AI](#book__pandoc__markdown__src__part-4-operations__guardrails__guardrails-ai.md__guardrails-ai)
+- [NeMo Guardrails](#book__pandoc__markdown__src__part-4-operations__guardrails__nemo-guardrails.md__nemo-guardrails)
+- [OpenAI Moderation](#book__pandoc__markdown__src__part-4-operations__guardrails__openai-moderation.md__openai-moderation)
+- [Lakera](#book__pandoc__markdown__src__part-4-operations__guardrails__lakera.md__lakera)
+- [Ragas](#book__pandoc__markdown__src__part-4-operations__evaluation__ragas.md__ragas)
+- [DeepEval](#book__pandoc__markdown__src__part-4-operations__evaluation__deepeval.md__deepeval)
+- [OpenAI Evals](#book__pandoc__markdown__src__part-4-operations__evaluation__openai-evals.md__openai-evals)
+- [promptfoo](#book__pandoc__markdown__src__part-4-operations__evaluation__promptfoo.md__promptfoo)
+- [LangSmith](#book__pandoc__markdown__src__part-4-operations__observability__langsmith.md__langsmith)
+- [Arize Phoenix](#book__pandoc__markdown__src__part-4-operations__observability__arize-phoenix.md__arize-phoenix)
+- [Weights & Biases](#book__pandoc__markdown__src__part-4-operations__observability__weights-and-biases.md__weights--biases)
+- [Helicone](#book__pandoc__markdown__src__part-4-operations__observability__helicone.md__helicone)
+- [Langfuse](#book__pandoc__markdown__src__part-4-operations__observability__langfuse.md__langfuse)
+- [Temporal](#book__pandoc__markdown__src__part-4-operations__workflow-orchestration__temporal.md__temporal)
+- [Prefect](#book__pandoc__markdown__src__part-4-operations__workflow-orchestration__prefect.md__prefect)
+- [Airflow](#book__pandoc__markdown__src__part-4-operations__workflow-orchestration__airflow.md__airflow)
+- [n8n](#book__pandoc__markdown__src__part-4-operations__workflow-orchestration__n8n.md__n8n)
+- [Activepieces](#book__pandoc__markdown__src__part-4-operations__workflow-orchestration__activepieces.md__activepieces)
+- [Node-RED](#book__pandoc__markdown__src__part-4-operations__workflow-orchestration__node-red.md__node-red)
 
 # AI/ML Stack Documentation
 
-This book provides comprehensive documentation for 62 AI/ML tools and platforms organized across 12 functional groups. Each chapter covers the tool's core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples -- all sourced from and citing official documentation.
+This book provides comprehensive documentation for 73 AI/ML tools and platforms organized across 16 functional groups. Each chapter covers the tool's core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples -- all sourced from and citing official documentation.
 
 ## Catalog Overview
 
 The AI/ML ecosystem is organized into four parts following the dependency chain from foundational infrastructure to specialized integrations:
 
-### Part I: Foundation Models & Infrastructure
+### Part I: Foundation and Infrastructure
 
 The base layer that everything else builds upon.
 
 - **LLM Providers** (3 tools) -- Hosted large language model APIs: OpenAI, Gemini, Claude
-- **Inference Serving** (9 tools) -- Engines for hosting and serving model inference: Max, vLLM, SGLang, KServe, Triton, BentoML, Ollama, LM Studio, Hugging Face Transformers
-- **GPU Compute & Cloud Platforms** (9 tools) -- Cloud GPU providers and managed AI platforms: Ray, Groq, Cerebras, Modal, RunPod, Vast.ai, Inferless, Vertex AI, AWS Bedrock
+- **Inference Engines** (8 tools) -- Engines for hosting and serving model inference: Max, vLLM, SGLang, KServe, Triton, BentoML, Ollama, LM Studio
+- **GPU Infrastructure** (9 tools) -- Cloud GPU providers and managed AI platforms: Ray, Groq, Cerebras, Modal, RunPod, Vast.ai, Inferless, Vertex AI, AWS Bedrock
+- **Model Gateways** (3 tools) -- Unified API proxies across LLM providers: LiteLLM, Portkey, ccapi
 
 ### Part II: Application Development
 
 The application layer built on top of foundation models.
 
 - **Agent Frameworks** (8 tools) -- Libraries for building autonomous AI agents: LangChain, LangGraph, AutoGen, CrewAI, ADK, Semantic Kernel, smolagents, Pydantic AI
-- **RAG & Knowledge Retrieval** (6 tools) -- Retrieval-Augmented Generation frameworks and vector stores: Haystack, LlamaIndex, pgvector, GraphRAG, Pinecone, Weaviate
-- **Structured Output & Prompt Engineering** (4 tools) -- Tools for constraining LLM outputs: DSPy, Outlines, Instructor, BAML
+- **RAG Frameworks** (3 tools) -- Retrieval-Augmented Generation frameworks: Haystack, LlamaIndex, GraphRAG
+- **Structured Generation** (4 tools) -- Tools for constraining LLM outputs: DSPy, Outlines, Instructor, BAML
+- **Memory Systems** (3 tools) -- Persistent memory and context management: Mem0, Zep, Letta
 
-### Part III: Safety, Quality & Operations
+### Part III: Data and Models
 
-Quality assurance, safety, and operational monitoring.
+Data infrastructure, model training, and storage.
 
-- **Guardrails & Safety** (4 tools) -- Input/output validation and content moderation: Guardrails AI, NeMo Guardrails, OpenAI Moderation, Lakera
-- **Evaluation & Testing** (4 tools) -- Frameworks for evaluating LLM application quality: Ragas, DeepEval, OpenAI Evals, promptfoo
-- **Observability & LLM Ops** (5 tools) -- Tracing, monitoring, and prompt management: LangSmith, Arize Phoenix, Weights & Biases, Helicone, Langfuse
-- **API Gateways & Model Routing** (3 tools) -- Unified API proxies across LLM providers: LiteLLM, Portkey, ccapi
+- **Vector Databases** (5 tools) -- Vector similarity search engines: pgvector, Pinecone, Weaviate, Qdrant, Milvus
+- **Data Pipelines** (2 tools) -- ETL and document ingestion tools: Unstructured, Airbyte
+- **Fine-tuning** (4 tools) -- Parameter-efficient fine-tuning and model training: Hugging Face Transformers, PEFT, Unsloth, Axolotl
+- **Labeling** (1 tool) -- Data annotation and labeling: Label Studio
 
-### Part IV: Integration & Data
+### Part IV: Operations and Quality
 
-Connecting AI into broader systems and data pipelines.
+Quality assurance, safety, monitoring, and workflow management.
 
-- **Workflow Orchestration & Automation** (6 tools) -- Pipeline scheduling and workflow engines: Temporal, Prefect, Airflow, n8n, Activepieces, Node-RED
-- **Data Labeling** (1 tool) -- Data annotation and labeling: Label Studio
+- **Guardrails** (4 tools) -- Input/output validation and content moderation: Guardrails AI, NeMo Guardrails, OpenAI Moderation, Lakera
+- **Evaluation** (4 tools) -- Frameworks for evaluating LLM application quality: Ragas, DeepEval, OpenAI Evals, promptfoo
+- **Observability** (5 tools) -- Tracing, monitoring, and prompt management: LangSmith, Arize Phoenix, Weights & Biases, Helicone, Langfuse
+- **Workflow Orchestration** (6 tools) -- Pipeline scheduling and workflow engines: Temporal, Prefect, Airflow, n8n, Activepieces, Node-RED
 
 ## How to Use This Book
 
@@ -4050,427 +4064,23 @@ print(response.data[0].embedding[:5])
 
 - \[1\] LM Studio Documentation - <https://lmstudio.ai/docs>
 
-# Hugging Face Transformers
-
-> Model-definition framework for state-of-the-art ML models in text/vision/audio/video with inference and training
-
-| Field | Value |
-|----|----|
-| Group | Inference Serving |
-| Type | SDK |
-| Open Source | Yes |
-| GitHub | <https://github.com/huggingface/transformers> |
-| Stars | 156821 |
-| Documentation | [Official Docs](https://huggingface.co/docs/transformers/en/index) |
-
-## Overview
-
-Hugging Face Transformers is the model-definition framework for state-of-the-art machine learning models spanning text, computer vision, audio, video, and multimodal tasks, for both inference and training. It centralizes model definitions so they are agreed upon across the ecosystem -- if a model definition is supported in Transformers, it is compatible with the majority of training frameworks (Axolotl, Unsloth, DeepSpeed, FSDP, PyTorch-Lightning), inference engines (vLLM, SGLang, TGI), and adjacent modeling libraries (llama.cpp, MLX). \[1\]
-
-With over 1M+ model checkpoints on the Hugging Face Hub, Transformers provides the Pipeline API for easy inference, the Trainer API for training, and the `generate` method for fast text generation with LLMs and VLMs. Every model is implemented from three main classes: configuration, model, and preprocessor. \[1\]
-
-## Core Concepts
-
-### Pipeline
-
-The Pipeline API is the simplest inference interface, supporting many ML tasks with a single function call. Pipelines handle tokenization, model inference, and postprocessing automatically:
-
-``` python
-from transformers import pipeline
-
-classifier = pipeline("sentiment-analysis")
-result = classifier("I love this product!")
-# [{'label': 'POSITIVE', 'score': 0.9998}]
-```
-
-Supported tasks include text generation, text classification, question answering, summarization, translation, image classification, object detection, automatic speech recognition, and more. \[1\]
-
-### AutoModel Classes
-
-AutoModel classes automatically detect and load the correct model architecture based on the model name or path:
-
-- `AutoModelForCausalLM` -- Causal language models (GPT, Llama, Mistral)
-- `AutoModelForSequenceClassification` -- Text classification
-- `AutoModelForTokenClassification` -- Named entity recognition
-- `AutoModelForQuestionAnswering` -- Extractive QA
-- `AutoModelForSeq2SeqLM` -- Encoder-decoder models (T5, BART)
-- `AutoModel` -- Base model without task head \[1\]
-
-### Tokenizer
-
-Tokenizers convert text to model-compatible token IDs and back. AutoTokenizer loads the correct tokenizer for any model:
-
-``` python
-from transformers import AutoTokenizer
-
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
-tokens = tokenizer("Hello, world!", return_tensors="pt")
-```
-
-\[1\]
-
-### Trainer
-
-The Trainer API provides a comprehensive training loop supporting mixed precision, gradient accumulation, distributed training, evaluation, and logging. It handles the complexity of training modern transformer models. \[1\]
-
-### Generate
-
-The `generate` method provides fast text generation for LLMs and VLMs with support for multiple decoding strategies (greedy, sampling, beam search, contrastive), streaming, and KV cache optimization. \[1\]
-
-## Installation and Setup
-
-### pip Install
-
-``` bash
-pip install transformers
-```
-
-### With Framework Backends
-
-``` bash
-# PyTorch (most common)
-pip install transformers[torch]
-
-# TensorFlow
-pip install transformers[tf-cpu]   # CPU only
-pip install transformers[tf]       # With GPU support
-
-# JAX/Flax
-pip install transformers[flax]
-```
-
-### From Source
-
-``` bash
-pip install git+https://github.com/huggingface/transformers
-```
-
-### Additional Dependencies
-
-``` bash
-# For tokenizers
-pip install transformers[sentencepiece]
-
-# For audio
-pip install transformers[audio]
-
-# For vision
-pip install transformers[vision]
-```
-
-\[1\]
-
-## Architecture
-
-### Design Principles
-
-1.  **Three classes per model** -- Configuration (hyperparameters), Model (architecture), and Preprocessor (tokenizer/feature extractor)
-2.  **Pretrained models** -- Every model loads pretrained weights for immediate use
-3.  **Framework agnostic** -- Core model definitions work across PyTorch, TensorFlow, and JAX
-
-### Model Architecture
-
-``` 
-Configuration (config.json)
-    └── Model (model weights)
-        └── Preprocessor (tokenizer/feature extractor)
-```
-
-Each model is self-contained with its configuration, weights, and preprocessing requirements. The Hub stores all three components together. \[1\]
-
-### Hub Integration
-
-Transformers tightly integrates with the Hugging Face Hub for model discovery, downloading, sharing, and versioning. Models are identified by `organization/model-name` and automatically downloaded on first use. \[1\]
-
-### Ecosystem Pivot
-
-Transformers serves as the central model definition that other tools build upon:
-
-- **Training**: Axolotl, Unsloth, DeepSpeed, FSDP reference Transformers model definitions
-- **Inference**: vLLM, SGLang, TGI use Transformers model architectures
-- **Export**: llama.cpp, MLX, ONNX converters read Transformers models \[1\]
-
-## Key Features and Functionality
-
-### Pipeline API
-
-``` python
-from transformers import pipeline
-
-# Text generation
-generator = pipeline("text-generation", model="meta-llama/Llama-3.1-8B-Instruct")
-output = generator("Once upon a time", max_length=50)
-
-# Image classification
-classifier = pipeline("image-classification", model="google/vit-base-patch16-224")
-result = classifier("image.jpg")
-
-# Automatic speech recognition
-transcriber = pipeline("automatic-speech-recognition", model="openai/whisper-large-v3")
-text = transcriber("audio.mp3")
-
-# Document question answering
-qa = pipeline("document-question-answering", model="impira/layoutlm-document-qa")
-answer = qa(image="document.png", question="What is the total?")
-```
-
-\[1\]
-
-### Text Generation with LLMs
-
-``` python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-import torch
-
-model_name = "meta-llama/Llama-3.1-8B-Instruct"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16, device_map="auto")
-
-messages = [
-    {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": "What is machine learning?"},
-]
-inputs = tokenizer.apply_chat_template(messages, return_tensors="pt").to(model.device)
-outputs = model.generate(inputs, max_new_tokens=256)
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-```
-
-\[1\]
-
-### Streaming Generation
-
-``` python
-from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
-
-model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.1-8B-Instruct", device_map="auto")
-tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
-streamer = TextStreamer(tokenizer)
-
-inputs = tokenizer("Explain quantum computing:", return_tensors="pt").to(model.device)
-model.generate(**inputs, streamer=streamer, max_new_tokens=200)
-```
-
-\[1\]
-
-### Training with Trainer
-
-``` python
-from transformers import AutoModelForSequenceClassification, TrainingArguments, Trainer
-
-model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
-
-training_args = TrainingArguments(
-    output_dir="./results",
-    num_train_epochs=3,
-    per_device_train_batch_size=16,
-    evaluation_strategy="epoch",
-    learning_rate=5e-5,
-)
-
-trainer = Trainer(
-    model=model,
-    args=training_args,
-    train_dataset=train_dataset,
-    eval_dataset=eval_dataset,
-)
-trainer.train()
-```
-
-\[1\]
-
-### Quantization
-
-``` python
-from transformers import AutoModelForCausalLM, BitsAndBytesConfig
-
-quantization_config = BitsAndBytesConfig(load_in_4bit=True)
-model = AutoModelForCausalLM.from_pretrained(
-    "meta-llama/Llama-3.1-8B-Instruct",
-    quantization_config=quantization_config,
-    device_map="auto",
-)
-```
-
-\[1\]
-
-## Use Cases
-
-### Text Generation
-
-Use Pipeline or AutoModelForCausalLM for chatbots, content generation, code completion, and summarization with pretrained LLMs. \[1\]
-
-### Computer Vision
-
-Image classification, object detection, image segmentation, and image generation using vision transformer models. \[1\]
-
-### Audio Processing
-
-Speech recognition, audio classification, and text-to-speech using audio transformer models like Whisper. \[1\]
-
-### Fine-Tuning
-
-Adapt pretrained models to domain-specific tasks using the Trainer API with custom datasets. \[1\]
-
-### Feature Extraction
-
-Generate embeddings for semantic search, clustering, and similarity using model hidden states or dedicated embedding models. \[1\]
-
-## API Reference Summary
-
-### Key Classes
-
-- `pipeline(task, model)` -- Create task-specific inference pipeline
-- `AutoModel.from_pretrained(name)` -- Load pretrained model
-- `AutoTokenizer.from_pretrained(name)` -- Load pretrained tokenizer
-- `AutoConfig.from_pretrained(name)` -- Load model configuration
-- `Trainer(model, args, train_dataset)` -- Create training loop
-- `TrainingArguments(...)` -- Configure training parameters
-
-### Generation Methods
-
-- `model.generate(inputs, max_new_tokens, temperature, ...)` -- Generate text
-- `TextStreamer(tokenizer)` -- Stream generated tokens
-- `TextIteratorStreamer(tokenizer)` -- Iterate over generated tokens
-
-### Model Saving/Loading
-
-- `model.save_pretrained(path)` -- Save model locally
-- `model.push_to_hub(repo_id)` -- Upload to HuggingFace Hub
-- `AutoModel.from_pretrained(path_or_hub_id)` -- Load from local or Hub \[1\]
-
-## Configuration and Customization
-
-### Model Configuration
-
-- **`torch_dtype`** -- Precision (float32, float16, bfloat16)
-- **`device_map`** -- Device placement ("auto", "cpu", "cuda:0")
-- **`quantization_config`** -- Quantization settings (BitsAndBytes, GPTQ, AWQ)
-- **`attn_implementation`** -- Attention backend ("flash_attention_2", "sdpa")
-- **`low_cpu_mem_usage`** -- Reduce CPU memory during loading
-
-### Generation Configuration
-
-- **`max_new_tokens`** -- Maximum generated tokens
-- **`temperature`** -- Sampling temperature
-- **`top_p`** / **`top_k`** -- Sampling parameters
-- **`do_sample`** -- Enable sampling (vs greedy)
-- **`num_beams`** -- Beam search width
-- **`repetition_penalty`** -- Penalize repeated tokens
-
-### Training Configuration
-
-- **`num_train_epochs`** -- Number of training epochs
-- **`per_device_train_batch_size`** -- Batch size per GPU
-- **`learning_rate`** -- Optimizer learning rate
-- **`fp16`** / **`bf16`** -- Mixed precision training
-- **`gradient_accumulation_steps`** -- Effective batch size multiplier \[1\]
-
-## Integration Patterns
-
-### With Inference Engines (vLLM, SGLang, TGI)
-
-Transformers model definitions are the foundation for inference engines. Models defined in Transformers automatically work with vLLM, SGLang, and TGI.
-
-### With Training Frameworks (Axolotl, Unsloth, DeepSpeed)
-
-Training frameworks build on Transformers models and Trainer for distributed fine-tuning.
-
-### With Export Tools (ONNX, llama.cpp, MLX)
-
-Convert Transformers models to optimized formats for deployment on specific hardware.
-
-### With Hugging Face Hub
-
-Seamless integration for model discovery, downloading, sharing, and versioning.
-
-### With Datasets Library
-
-Hugging Face Datasets integrates with Trainer for efficient data loading and preprocessing.
-
-### With PEFT (Parameter-Efficient Fine-Tuning)
-
-LoRA, QLoRA, and other PEFT methods integrate with Transformers models for efficient fine-tuning.
-
-## Examples
-
-### Sentiment Analysis Pipeline
-
-``` python
-from transformers import pipeline
-
-classifier = pipeline("sentiment-analysis")
-results = classifier([
-    "I love this movie!",
-    "This was terrible.",
-])
-for result in results:
-    print(f"{result['label']}: {result['score']:.4f}")
-```
-
-\[1\]
-
-### Multi-Turn Chat
-
-``` python
-from transformers import AutoModelForCausalLM, AutoTokenizer
-
-model_name = "meta-llama/Llama-3.1-8B-Instruct"
-tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
-
-messages = [
-    {"role": "user", "content": "What is Python?"},
-    {"role": "assistant", "content": "Python is a high-level programming language."},
-    {"role": "user", "content": "What makes it popular?"},
-]
-inputs = tokenizer.apply_chat_template(messages, return_tensors="pt").to(model.device)
-outputs = model.generate(inputs, max_new_tokens=200)
-print(tokenizer.decode(outputs[0], skip_special_tokens=True))
-```
-
-\[1\]
-
-## Limitations and Considerations
-
-- **Memory requirements** -- Large models require significant GPU memory; quantization or device_map="auto" helps
-- **Inference speed** -- Native Transformers inference is slower than optimized engines (vLLM, TGI); use Transformers for prototyping, optimized engines for production
-- **Model compatibility** -- Not all model architectures are supported; new models may need community contributions
-- **Framework coupling** -- While supporting PyTorch, TensorFlow, and JAX, the majority of models are PyTorch-only
-- **API complexity** -- The library has a large surface area; many ways to accomplish the same task
-- **Breaking changes** -- Major version updates may change APIs; pin versions for production \[1\]
-
-## Changelog Highlights
-
-- **v5.x** -- Current major version with latest model architectures
-- **1M+ models** -- Over one million model checkpoints on HuggingFace Hub
-- **Pipeline API** -- Simplified inference for dozens of tasks
-- **Trainer API** -- Comprehensive training with mixed precision and distributed support
-- **generate()** -- Optimized text generation with streaming and KV cache
-- **Flash Attention 2** -- Hardware-accelerated attention computation
-- **BitsAndBytes** -- 4-bit and 8-bit quantization for memory reduction
-- **Chat templates** -- Standardized chat formatting across models
-- **Vision/Audio/Video** -- Multimodal model support beyond text
-- **Ecosystem pivot** -- Central model definition for training and inference tools \[1\]
-
-## Citations
-
-- \[1\] Hugging Face Transformers Documentation - <https://huggingface.co/docs/transformers/index>
-
 # Ray
+
+> Distributed AI compute framework for ML training/serving/data processing
 
 | Field           | Value                                                 |
 |-----------------|-------------------------------------------------------|
 | **Name**        | Ray                                                   |
-| **Group**       | GPU Compute & Cloud Platforms                         |
+| **Group**       | GPU Infrastructure                                    |
 | **Type**        | SDK/Infra                                             |
 | **Open Source** | Yes                                                   |
 | **GitHub**      | [ray-project/ray](https://github.com/ray-project/ray) |
 | **Stars**       | 41,428                                                |
-| **Docs**        | [Official Docs](https://docs.ray.io/en/latest/)       |
+| **Docs**        | [docs.ray.io](https://docs.ray.io/en/latest/)         |
 
 ## Overview
 
-Ray is an open-source distributed computing framework designed to scale Python applications and machine learning workloads from a single machine to large clusters. It provides both high-level libraries for common ML tasks (training, tuning, serving, data processing, reinforcement learning) and low-level primitives for general-purpose distributed computing. Ray abstracts away the complexity of cluster management, task scheduling, and fault tolerance, allowing developers to parallelize existing Python code with minimal changes. The framework is used extensively in production environments for distributed training, hyperparameter optimization, batch inference, and online model serving.
+Ray is an open-source unified framework for scaling AI and Python applications from a laptop to a cluster. It provides both high-level libraries for common ML tasks (training, tuning, serving, data processing, reinforcement learning) and low-level primitives for general-purpose distributed computing. Ray abstracts away the complexity of cluster management, task scheduling, and fault tolerance, allowing developers to parallelize existing Python code with minimal changes. The framework is used extensively in production environments by organizations such as Ant Group, Uber, and Riot Games for distributed training, hyperparameter optimization, batch inference, Large Language Model (LLM) serving, and online model serving. The current stable release is Ray 2.54.0 (February 2025).
 
 ## Core Concepts
 
@@ -4484,9 +4094,13 @@ Ray is an open-source distributed computing framework designed to scale Python a
 
 - **Ray Serve** is a model serving framework with FastAPI integration, multi-model composition through deployment graphs, dynamic request batching, autoscaling based on load, and gRPC support. It enables building inference services that combine multiple models and business logic in a single application.
 
-- **Ray RLlib** is a reinforcement learning library with pre-configured algorithms (Proximal Policy Optimization (PPO), Deep Q-Network (DQN), and others), multi-agent training support, and extensible custom RL module definitions.
+- **Ray RLlib** is a reinforcement learning library with pre-configured algorithms (Proximal Policy Optimization (PPO), Soft Actor Critic (SAC), Deep Q-Network (DQN), Asynchronous PPO (APPO), IMPALA, DreamerV3, and others), native Multi-Agent Reinforcement Learning (MARL) support with independent, collaborative, and adversarial training modes, offline RL and behavior cloning integration with Ray Data, and extensible custom RL module definitions via the RLModule API.
 
-## Installation and Setup
+- **Placement Groups** atomically reserve resource groups across multiple nodes using locality strategies: PACK (co-locate on same/nearby nodes) or SPREAD (distribute across distinct nodes). They enable gang-scheduling of actors and tasks that must be provisioned together.
+
+- **Runtime Environments** allow per-task or per-actor dependency isolation by specifying Python packages, local files, environment variables, and working directories that are dynamically deployed to target workers.
+
+## Installation
 
 Ray supports multiple installation profiles depending on the intended workload.
 
@@ -4508,7 +4122,7 @@ pip install -U "ray[default]"
 pip install -U "ray"
 ```
 
-**Available extras:** `ray[default]`, `ray[data]`, `ray[train]`, `ray[tune]`, `ray[serve]`, `ray[rllib]`.
+**Available extras:** `ray[default]` (core with Dashboard and Cluster Launcher), `ray[data]`, `ray[train]`, `ray[tune]`, `ray[serve]` (includes optional gRPC support), `ray[rllib]`, `ray[all]` (complete installation, not recommended for production). Extras can be combined: `pip install -U "ray[default,train]"`.
 
 **Conda:**
 
@@ -4528,11 +4142,21 @@ docker run --shm-size=2G -t -i rayproject/ray
 docker run --shm-size=2G -t -i --gpus all rayproject/ray:latest-gpu
 ```
 
+**Arch Linux (AUR):**
+
+``` bash
+yay -S python-ray
+```
+
+**Docker image tags:** `latest`, `x.y.z` (specific version), `nightly` (development), with optional Python version suffixes (`py310`, `py311`, `py312`) and platform suffixes (`-cpu`, `-cu12`, `-gpu`).
+
 **Supported Python versions:** 3.10, 3.11, 3.12, 3.13 (beta).
 
-**Supported platforms:** Linux (x86_64, aarch64), macOS (Apple Silicon M1+), Windows (beta).
+**Supported platforms:** Linux (x86_64, aarch64), macOS (Apple Silicon M1+), Windows (beta). Multi-node clusters remain untested on Windows.
 
 The `--shm-size=2G` flag in Docker is required because Ray's object store uses shared memory (`/dev/shm`) for efficient inter-process data transfer.
+
+**Deprecation notice:** Pydantic v1 support is planned for removal in Ray 2.56. Users should upgrade to Pydantic v2.
 
 ## Architecture
 
@@ -4546,9 +4170,15 @@ Ray clusters consist of a head node and zero or more worker nodes.
 
 - **Dashboard** provides a web-based interface for monitoring cluster health, viewing task and actor states, inspecting logs, and profiling workloads.
 
+- **Autoscaler** runs on the head node (or as a Kubernetes sidecar with KubeRay) and reacts to task and actor resource requests rather than physical utilization metrics, automatically adjusting worker node counts based on workload demands.
+
+- **Ray Jobs** are applications submitted via the Ray Jobs API, CLI, or REST endpoint. Each job runs as a collection of tasks, objects, and actors originating from a single Python driver script.
+
+- **Ray Direct Transport (RDT)** provides direct point-to-point communication between Ray nodes, bypassing the central GCS for improved data transfer efficiency.
+
 The scheduling model is distributed: each Raylet can schedule tasks locally or forward them to other nodes based on resource availability. This avoids a single-point bottleneck for task dispatch.
 
-## Key Features and Functionality
+## Key Features
 
 - **Task parallelism** with `@ray.remote` decorator converts Python functions into distributed tasks that execute asynchronously across the cluster and return futures (ObjectRefs).
 
@@ -4556,11 +4186,13 @@ The scheduling model is distributed: each Raylet can schedule tasks locally or f
 
 - **Automatic object spilling** moves objects from the in-memory object store to local disk or external storage when memory pressure is detected.
 
-- **Fault tolerance** operates at both the node level (GCS fault tolerance, actor reconstruction) and the application level (task retries, checkpoint-based recovery in Ray Train).
+- **Fault tolerance** operates at both the node level (GCS fault tolerance, actor reconstruction) and the application level (task retries, checkpoint-based recovery in Ray Train). RLlib provides fault tolerance for unstable environments including spot machine support.
 
-- **Autoscaling** dynamically adds or removes cluster nodes based on pending resource demands, supported on Kubernetes via KubeRay and on cloud VMs via the cluster launcher.
+- **Utilization-based autoscaling** (new default in 2.54) dynamically adds or removes cluster nodes based on pending resource demands, supported on Kubernetes via KubeRay and on cloud VMs via the cluster launcher.
 
 - **Resource isolation** through cgroup v2 support enables CPU and memory limits per task or actor.
+
+- **Fractional GPU serving** allows multiple models or tasks to share GPU resources, reducing costs in production serving environments.
 
 - **Token-based authentication** secures multi-tenant cluster access.
 
@@ -4568,9 +4200,11 @@ The scheduling model is distributed: each Raylet can schedule tasks locally or f
 
 - **Cross-language support** includes a Java API for interoperating with JVM-based systems.
 
-- **Ray Compiled Graph (beta)** optimizes Directed Acyclic Graph (DAG) execution by pre-compiling task graphs for reduced scheduling overhead.
+- **Ray Compiled Graph (beta)** optimizes Directed Acyclic Graph (DAG) execution by pre-compiling task graphs for reduced scheduling overhead, with profiling, communication/computation overlapping, and API-level performance enhancements for GPU-intensive workloads.
 
-- **Observability** through Ray Dashboard for web-based cluster visualization, Ray Distributed Debugger, State API/CLI for cluster queries, Prometheus metrics collection, structured logging, and profiling support.
+- **Queue-based autoscaling** (2.54) for Ray Serve TaskConsumer deployments with Redis and RabbitMQ integration, plus deployment-level autoscaling observability with structured JSON logging.
+
+- **Observability** through Ray Dashboard for web-based cluster visualization, Ray Distributed Debugger, State API/CLI for cluster queries, Prometheus metrics collection, structured logging, profiling support (py-spy), distributed tracing, and a Ray Event Export Infrastructure for streaming system events to external platforms.
 
 ## Use Cases
 
@@ -4586,9 +4220,11 @@ The scheduling model is distributed: each Raylet can schedule tasks locally or f
 
 - **Reinforcement learning** experiments using RLlib with built-in algorithm implementations and multi-agent environment support.
 
-- **General-purpose distributed computing** for parallelizing CPU-bound or I/O-bound Python workloads that do not involve ML.
+- **LLM serving and generative AI** using Ray Serve with response streaming for chatbot interactions, prompt preprocessing, vector database lookups, and response validation integrated as Python components. Ray Data provides large-scale data ingestion for fine-tuning workflows.
 
-## API Reference Summary
+- **General-purpose distributed computing** for parallelizing CPU-bound or I/O-bound Python workloads that do not involve ML, with distributed implementations of Python's `multiprocessing.Pool` and Scikit-learn's joblib interface.
+
+## API Reference
 
 **Ray Core:**
 
@@ -4637,9 +4273,11 @@ value = ray.get(future)                 # Blocking retrieval
 ``` python
 import ray.data
 
-ds = ray.data.read_parquet("s3://bucket/path")
-ds = ds.map(transform_fn)
-ds = ds.filter(filter_fn)
+ds = ray.data.read_parquet("s3://bucket/path")  # Also: read_csv, read_json, read_text, read_images
+ds = ds.map(transform_fn)                        # Per-row transformation
+ds = ds.map_batches(batch_fn)                    # Batch transformation (NumPy/Pandas)
+ds = ds.filter(filter_fn)                        # Row filtering
+ds.summary()                                     # Quick dataset inspection (new in 2.53)
 ```
 
 **Ray Train:**
@@ -4662,9 +4300,14 @@ from ray import tune
 
 tuner = tune.Tuner(
     trainable,
-    param_space={"lr": tune.loguniform(1e-4, 1e-1)},
+    param_space={
+        "lr": tune.loguniform(1e-4, 1e-1),    # Continuous log-uniform range
+        "batch_size": tune.choice([16, 32, 64]),# Discrete options
+        "layers": tune.grid_search([1, 2, 4]), # Exhaustive grid
+    },
 )
 results = tuner.fit()
+best = results.get_best_result(metric="loss", mode="min")
 ```
 
 **Ray Serve:**
@@ -4681,7 +4324,7 @@ app = MyModel.bind()
 serve.run(app)
 ```
 
-## Configuration and Customization
+## Configuration
 
 **Cluster configuration** is managed through YAML files for the cluster launcher or through KubeRay Custom Resource Definitions (CRDs) for Kubernetes deployments.
 
@@ -4721,13 +4364,21 @@ def isolated_task():
 
 - **ML frameworks** through Ray Train adapters for PyTorch (TorchTrainer), XGBoost (XGBoostTrainer), LightGBM (LightGBMTrainer), TensorFlow (TensorflowTrainer), and JAX.
 
-- **Hyperparameter search** integrations with Optuna, BayesOpt, HyperOpt, and Ax through Ray Tune's search algorithm interface.
+- **Hyperparameter search** integrations with Optuna, BayesOpt, HyperOpt, BOHB, Nevergrad, and Ax through Ray Tune's search algorithm interface, with schedulers including ASHA/HyperBand and Population-Based Training (PBT).
 
 - **FastAPI** integration in Ray Serve allows defining HTTP endpoints with standard FastAPI decorators while leveraging Ray's distributed serving infrastructure.
 
-- **Prometheus** metrics export for cluster and application-level monitoring.
+- **Prometheus and Grafana** metrics export for cluster and application-level monitoring, with integration into the Kubernetes observability ecosystem via KubeRay.
 
-- **Spark** interoperability through the Ray on Spark integration for running Ray workloads within existing Spark infrastructure.
+- **Spark** interoperability through RayDP (Ray on Spark) for running Ray workloads within existing Spark infrastructure.
+
+- **Dask on Ray** allows Dask workflows to execute on Ray clusters via the `RayDaskCallback` interface.
+
+- **Modin (Pandas on Ray)** provides a drop-in Pandas replacement that distributes DataFrame operations across Ray workers.
+
+- **Data sources** including Parquet, Lance, CSV, JSON, images, audio, video, Apache Kafka (native in 2.54), and Apache Iceberg with schema evolution, upsert, and overwrite capabilities.
+
+- **LLM frameworks** including vLLM for large language model serving, Hugging Face Transformers for training and inference, and DeepSpeed for distributed training acceleration.
 
 ## Examples
 
@@ -4769,7 +4420,7 @@ trainer = TorchTrainer(
 result = trainer.fit()
 ```
 
-**Serving a model with Ray Serve:**
+**Serving a model with Ray Serve and FastAPI:**
 
 ``` python
 from ray import serve
@@ -4791,7 +4442,52 @@ class ModelServer:
 serve.run(ModelServer.bind(), route_prefix="/")
 ```
 
-## Limitations and Considerations
+**Multi-model composition with deployment handles:**
+
+``` python
+from ray import serve
+from ray.serve.handle import DeploymentHandle
+
+@serve.deployment
+class Preprocessor:
+    def process(self, data):
+        return normalize(data)
+
+@serve.deployment
+class Classifier:
+    def classify(self, features):
+        return self.model.predict(features)
+
+@serve.deployment
+class Pipeline:
+    def __init__(self, preprocessor: DeploymentHandle, classifier: DeploymentHandle):
+        self._preprocessor = preprocessor
+        self._classifier = classifier
+
+    async def __call__(self, request):
+        features = await self._preprocessor.process.remote(request.data)
+        return await self._classifier.classify.remote(features)
+
+app = Pipeline.bind(Preprocessor.bind(), Classifier.bind())
+serve.run(app)
+```
+
+**Reinforcement learning with RLlib:**
+
+``` python
+from ray.rllib.algorithms.ppo import PPOConfig
+
+config = PPOConfig().environment("CartPole-v1").env_runners(num_env_runners=4)
+algo = config.build()
+
+for _ in range(10):
+    result = algo.train()
+    print(f"reward: {result['env_runners']['episode_reward_mean']}")
+
+algo.evaluate()
+```
+
+## Limitations
 
 - **Shared memory requirement:** Ray's object store relies on `/dev/shm` for inter-process communication. Docker containers require `--shm-size` configuration, and systems with small shared memory partitions may encounter object store errors.
 
@@ -4807,39 +4503,72 @@ serve.run(ModelServer.bind(), route_prefix="/")
 
 - **Cluster startup latency:** Autoscaling new nodes, especially on cloud VMs, introduces minutes-level delays before new capacity is available for task scheduling.
 
-## Changelog Highlights
+## Changelog
 
-Ray follows a regular release cadence. Key recent developments include Ray Compiled Graph for optimized DAG execution (beta), cgroup v2 support for resource isolation, expanded Python 3.13 support (beta), and continued improvements to Ray Data's streaming execution model. The KubeRay operator has matured with stable CRDs for RayCluster, RayJob, and RayService.
+**Ray 2.54.0 (February 2025):**
+
+- Ray Data: new checkpointing support, expanded compute expressions (list operations, fixed-size arrays, trigonometric functions), native Apache Kafka datasource, Apache Iceberg schema evolution with upsert and overwrite capabilities, utilization-based cluster autoscaler enabled by default
+- Ray Serve: queue-based autoscaling for TaskConsumer deployments with Redis/RabbitMQ integration, deployment-level autoscaling observability with structured JSON logging, batching with multiplexing for multi-model serving, O(1) pending-request lookups for replica routing, expanded operational metrics
+- Deprecation: Pydantic v1 support planned for removal in Ray 2.56
+
+**Ray 2.53.0 (December 2024):**
+
+- Bounded Kafka reading for Ray Data
+- `Dataset.summary()` API for quick dataset inspection
+- Improved Iceberg support
+
+**Ongoing developments:** Ray Compiled Graph for optimized DAG execution (beta), cgroup v2 support for resource isolation, expanded Python 3.13 support (beta), continued improvements to Ray Data's streaming execution model, and maturing KubeRay operator with stable CRDs for RayCluster, RayJob, and RayService.
 
 ## Citations
 
 - \[1\] Ray Documentation - https://docs.ray.io/en/latest/
 - \[2\] Ray GitHub - https://github.com/ray-project/ray
+- \[3\] Ray Getting Started - https://docs.ray.io/en/latest/ray-overview/getting-started.html
+- \[4\] Ray Installation - https://docs.ray.io/en/latest/ray-overview/installation.html
+- \[5\] Ray Core Key Concepts - https://docs.ray.io/en/latest/ray-core/key-concepts.html
+- \[6\] Ray Core Walkthrough - https://docs.ray.io/en/latest/ray-core/walkthrough.html
+- \[7\] Ray Data Overview - https://docs.ray.io/en/latest/data/data.html
+- \[8\] Ray Train Overview - https://docs.ray.io/en/latest/train/train.html
+- \[9\] Ray Tune Overview - https://docs.ray.io/en/latest/tune/index.html
+- \[10\] Ray Serve Overview - https://docs.ray.io/en/latest/serve/index.html
+- \[11\] Ray RLlib Overview - https://docs.ray.io/en/latest/rllib/index.html
+- \[12\] Ray Clusters - https://docs.ray.io/en/latest/cluster/getting-started.html
+- \[13\] Ray Cluster Key Concepts - https://docs.ray.io/en/latest/cluster/key-concepts.html
+- \[14\] Ray Observability - https://docs.ray.io/en/latest/ray-observability/index.html
+- \[15\] Ray More Libraries - https://docs.ray.io/en/latest/ray-more-libs/index.html
+- \[16\] Ray Use Cases - https://docs.ray.io/en/latest/ray-overview/use-cases.html
+- \[17\] Ray 2.54.0 Release - https://github.com/ray-project/ray/releases
 
 # Groq
 
-| Field           | Value                                                   |
-|-----------------|---------------------------------------------------------|
-| **Group**       | GPU Compute & Cloud Platforms                           |
-| **Type**        | API/Infra                                               |
-| **Open Source** | No                                                      |
-| **GitHub**      | N/A                                                     |
-| **Stars**       | N/A                                                     |
-| **Docs**        | [Official Docs](https://console.groq.com/docs/overview) |
+> Hosted API for fast LLM inference on custom LPU hardware
+
+| Field | Value |
+|----|----|
+| Name | Groq |
+| Group | GPU Infrastructure |
+| Type | API/Infra |
+| Open Source | No |
+| GitHub | N/A |
+| Stars | N/A |
+| Docs | [console.groq.com/docs](https://console.groq.com/docs/overview) |
 
 ## Overview
 
-Groq is an inference platform built on custom Language Processing Unit (LPU) hardware, designed to deliver fast Large Language Model (LLM) inference through an OpenAI-compatible API. Unlike GPU-based inference providers, Groq uses purpose-built silicon optimized for sequential token generation, which results in significantly lower latency per token. The platform exposes a REST API at `https://api.groq.com/openai/v1` and provides official Software Development Kits (SDKs) for Python and JavaScript/TypeScript. Groq hosts a curated set of open-weight models spanning text generation, speech-to-text, vision, and content moderation. \[1\]
+Groq is an inference platform built on custom Language Processing Unit (LPU) hardware, designed to deliver fast Large Language Model (LLM) inference through an OpenAI-compatible API. Unlike GPU-based inference providers, Groq uses purpose-built Application-Specific Integrated Circuit (ASIC) silicon optimized for sequential token generation, producing deterministic low-latency inference. The platform exposes a REST API at `https://api.groq.com/openai/v1` and provides official Software Development Kits (SDKs) for Python and JavaScript/TypeScript. Groq hosts a curated set of open-weight models spanning text generation, reasoning, speech-to-text, text-to-speech, vision, and content moderation. The platform also offers agentic AI systems (Compound and Compound Mini) with built-in tool orchestration, a Responses API for advanced agentic workflows, and Model Context Protocol (MCP) support for connecting to external tool servers. \[1\]
 
 ## Core Concepts
 
-- **Language Processing Unit (LPU)**: Groq's custom Application-Specific Integrated Circuit (ASIC) hardware architecture, purpose-built for sequential inference workloads rather than the parallel matrix operations GPUs are optimized for. The LPU architecture delivers deterministic, low-latency token generation.
-- **OpenAI-Compatible API**: Groq's API follows the OpenAI chat completions interface, meaning existing code targeting the OpenAI SDK can be redirected to Groq by changing the base URL and API key with minimal modification.
-- **Service Tiers**: Groq offers three processing tiers -- Performance Tier with dedicated compute resources, Flex Processing for cost-optimized workloads, and Batch Processing for asynchronous bulk inference jobs.
-- **Prompt Caching**: Groq caches prompt prefixes so that repeated requests sharing the same system prompt or conversation prefix skip redundant computation, reducing both latency and cost.
-- **LoRA Inference**: Support for Low-Rank Adaptation (LoRA) adapters allows serving fine-tuned model variants without hosting separate full model copies.
+- **Language Processing Unit (LPU)**: Groq's custom ASIC hardware architecture, purpose-built for sequential inference workloads rather than the parallel matrix operations GPUs are optimized for. The LPU architecture delivers deterministic, low-latency token generation. Models reside in LPU memory continuously, eliminating cold-start latency.
+- **OpenAI-Compatible API**: Groq's API follows the OpenAI chat completions interface, meaning existing code targeting the OpenAI SDK can be redirected to Groq by changing the base URL and API key with minimal modification. Known incompatibilities include lack of support for `logprobs`, `logit_bias`, `top_logprobs`, `messages[].name`, and the N parameter (must equal 1). A temperature value of 0 is converted to `1e-8`. \[12\]
+- **Service Tiers**: Groq offers three processing tiers -- Performance Tier with dedicated compute resources and guaranteed availability, Flex Processing for cost-optimized high-throughput workloads with 10x higher rate limits but no availability guarantee, and Batch Processing for asynchronous bulk inference at 50% lower cost with 24-hour to 7-day completion windows. \[6\]\[8\]
+- **Prompt Caching**: Groq automatically caches prompt prefixes from recent requests. When a subsequent request shares the same prefix, cached computation is reused, reducing both latency and cost by 50% for cached token portions. Cached tokens do not count toward rate limits. Caches expire after 2 hours without use. Minimum cacheable prompt length varies by model (128 to 1024 tokens). \[7\]
+- **Groq Compound**: Agentic AI systems (Compound and Compound Mini) with built-in tools including web search, code execution, Wolfram Alpha integration, and parallel browser automation (up to 10 pages simultaneously). These handle tool orchestration autonomously in a single API call. \[14\]
+- **Responses API (Beta)**: An OpenAI-compatible Responses API supporting text and image inputs, function calling, built-in tools, MCP integration, structured outputs, and reasoning. Does not yet support stateful conversations (`previous_response_id` is unavailable). \[10\]
+- **Model Context Protocol (MCP)**: Server-side remote tool calling via MCP servers. Groq discovers tools from MCP servers, passes definitions to the model, executes tool calls, and returns results -- all within a single API request. \[11\]
+- **LoRA Inference**: Enterprise-only support for Low-Rank Adaptation (LoRA) adapters, allowing serving fine-tuned model variants without hosting separate full model copies. Adapters must be trained externally and uploaded to Groq. Currently limited to `llama-3.1-8b-instant` base model. \[9\]
 
-## Installation and Setup
+## Installation
 
 ### Python SDK
 
@@ -4861,71 +4590,108 @@ Groq uses API key authentication via the `GROQ_API_KEY` environment variable:
 export GROQ_API_KEY="gsk_your_api_key_here"
 ```
 
-The API key is obtained from the Groq Console at `https://console.groq.com`. The Python and JavaScript SDKs automatically read `GROQ_API_KEY` from the environment when no key is explicitly passed to the client constructor. \[1\]
+The API key is obtained from the Groq Console at `https://console.groq.com`. Both SDKs automatically read `GROQ_API_KEY` from the environment when no key is explicitly passed to the client constructor. \[1\]
 
 ## Architecture
 
 Groq's architecture consists of three layers:
 
 1.  **Hardware Layer**: Custom LPU chips arranged in GroqRack systems. Each LPU handles inference deterministically, meaning the same input produces identical timing characteristics across runs. This contrasts with GPU inference, where batching and scheduling introduce variable latency.
-2.  **API Gateway Layer**: An OpenAI-compatible REST API that routes requests to model-specific inference endpoints. The gateway handles authentication, rate limiting, prompt caching, and service tier selection.
-3.  **Model Serving Layer**: Pre-loaded open-weight models (Llama, Gemma, Whisper, and others) served directly from LPU memory. Models are not loaded on-demand; they reside in hardware memory continuously, eliminating cold-start latency.
+2.  **API Gateway Layer**: An OpenAI-compatible REST API that routes requests to model-specific inference endpoints. The gateway handles authentication, rate limiting, prompt caching, service tier selection, and MCP tool orchestration.
+3.  **Model Serving Layer**: Pre-loaded open-weight models served directly from LPU memory. Models are not loaded on-demand; they reside in hardware memory continuously, eliminating cold-start latency. Inference speeds range from 200 to 1,000+ tokens per second depending on model size.
 
 ## Key Features
 
-- **Text Generation (Chat Completions)**: Standard chat completions endpoint supporting streaming, asynchronous calls, stop sequences, temperature control, and top-p sampling. \[2\]
-- **Speech-to-Text**: Transcription and translation via Whisper model variants (whisper-large-v3, whisper-large-v3-turbo, distil-whisper-large-v3-en).
-- **Vision**: Optical Character Recognition (OCR) and image recognition capabilities through multimodal model endpoints.
-- **Tool Use**: Function calling support including web search, browser automation, code execution, and Wolfram Alpha integration.
-- **Reasoning**: Dedicated reasoning capabilities for multi-step problem solving.
-- **Structured Outputs**: JSON schema validation on model outputs, ensuring responses conform to a developer-specified schema.
-- **Content Moderation**: Safety classification via dedicated models such as llama-guard-3-8b.
-- **Batch Processing**: Asynchronous batch API for submitting large volumes of requests to be processed without real-time latency requirements.
+- **Text Generation (Chat Completions)**: Standard chat completions endpoint supporting streaming, asynchronous calls, stop sequences, temperature control (0.0 to 2.0, default 0.5), top-p sampling, and max completion tokens. \[2\]
+- **Reasoning**: Dedicated reasoning capabilities via GPT-OSS models (with `include_reasoning` parameter and `low`/`medium`/`high` effort levels) and Qwen3-32B (with `reasoning_format` parameter supporting `parsed`, `raw`, or `hidden` modes). Recommended temperature 0.5-0.7. Cannot use `raw` format with JSON mode or tool use. \[4\]
+- **Speech-to-Text**: Transcription and translation via Whisper model variants. Supports FLAC, MP3, MP4, MPEG, MPGA, M4A, OGG, WAV, and WebM formats. File size limits: 25 MB (free tier), 100 MB (dev tier). Audio is downsampled to 16KHz mono. Response formats include JSON, verbose_json (with timestamps and quality metadata), and plain text. \[5\]
+- **Text-to-Speech**: Audio generation via Orpheus models (`canopylabs/orpheus-v1-english` and `canopylabs/orpheus-arabic-saudi`) with vocal direction controls (e.g., `[cheerful]` tags). Output defaults to WAV format. \[13\]
+- **Vision**: Image analysis through multimodal models (Llama 4 Scout 17B). Supports URL-based images (up to 20 MB) and base64-encoded images (up to 4 MB). Maximum 5 images per request, 33 megapixel resolution ceiling. Includes Optical Character Recognition (OCR) capabilities. \[3\]
+- **Tool Use**: Function calling support with three patterns -- built-in tools (web search, code execution, browser automation, Wolfram Alpha) executed on Groq infrastructure; remote MCP tools via third-party servers; and local tool calling with custom function definitions. Supports parallel tool calls on most models. \[15\]
+- **Structured Outputs**: Two modes -- Strict mode (`strict: true`) with constrained decoding guaranteeing 100% schema adherence (GPT-OSS models only), and Best-effort mode (`strict: false`) available across more models with retry-based validation. Also supports basic JSON Object Mode for models without full structured output support. \[16\]
+- **Content Moderation**: GPT-OSS-Safeguard 20B for bring-your-own-policy trust and safety workflows with reasoning explanations. Llama Prompt Guard 2 (22M and 86M parameter variants) for prompt injection detection. Llama Guard 4 12B for multimodal content moderation using MLCommons Taxonomy. \[17\]
+- **Batch Processing**: Asynchronous batch API supporting chat completions, audio transcription, and audio translation. Up to 50,000 requests per file, 200 MB maximum. 50% cost discount versus synchronous pricing. Completion windows from 24 hours to 7 days. Results retained for 30 days. \[8\]
 
 ## Use Cases
 
-- **Low-Latency Chatbots**: Applications requiring sub-second response times for interactive conversation, where Groq's LPU latency advantage over GPU inference is most pronounced.
-- **Real-Time Speech Processing**: Transcription pipelines using Whisper models for live audio streams or recorded media.
-- **High-Throughput Document Processing**: Batch processing tier for summarization, extraction, or classification across large document corpora.
-- **Tool-Augmented Agents**: Agentic workflows that combine text generation with tool use (web search, code execution) where fast inference reduces end-to-end agent loop time.
-- **Content Moderation Pipelines**: Automated safety screening of user-generated content using llama-guard-3-8b before publishing or further processing.
+- **Low-Latency Chatbots**: Applications requiring sub-second response times for interactive conversation, where Groq's LPU latency advantage over GPU inference is most pronounced. At 300-1,000+ tokens per second, multi-turn conversations feel instantaneous.
+- **Agentic Workflows**: Tool-augmented agents that combine text generation with function calling (web search, code execution, MCP tools). Fast inference reduces end-to-end agent loop time -- a typical multi-tool workflow requiring 3-5 inference calls completes in seconds rather than minutes.
+- **Real-Time Speech Processing**: Transcription pipelines using Whisper models at 189-216x real-time speed factor for live audio streams or recorded media.
+- **High-Throughput Document Processing**: Batch processing tier for summarization, extraction, or classification across large document corpora at 50% reduced cost.
+- **Content Moderation Pipelines**: Automated safety screening with custom policies using GPT-OSS-Safeguard, prompt injection detection via Llama Prompt Guard, or multimodal content analysis with Llama Guard 4.
+- **Structured Data Extraction**: Vision OCR combined with structured outputs for extracting typed data from documents and images with guaranteed schema compliance.
 
-## API Reference Summary
+## API Reference
 
-### Chat Completions
+### Endpoints
 
-**Endpoint**: `POST /openai/v1/chat/completions`
+**Chat Completions**: `POST /openai/v1/chat/completions` -- Creates a model response for a chat conversation. \[2\]
 
-**Parameters**:
+**Responses (Beta)**: `POST /openai/v1/responses` -- Advanced API for agentic workflows with built-in tool support and MCP integration. \[10\]
 
-- `messages`: Array of message objects with `role` (system, user, assistant) and `content` fields.
-- `model`: Model identifier string (e.g., `llama-3.3-70b-versatile`).
+**Transcription**: `POST /openai/v1/audio/transcriptions` -- Transcribes audio into the input language. \[5\]
+
+**Translation**: `POST /openai/v1/audio/translations` -- Translates audio into English. \[5\]
+
+**Speech**: `POST /openai/v1/audio/speech` -- Generates audio from input text. \[13\]
+
+**Models**: `GET /openai/v1/models` -- Lists available models. `GET /openai/v1/models/{model}` -- Retrieves model details.
+
+**Batches**: `POST /openai/v1/batches` -- Creates a batch job. `GET /openai/v1/batches/{batch_id}` -- Retrieves batch status. `POST /openai/v1/batches/{batch_id}/cancel` -- Cancels a batch. \[8\]
+
+**Files**: `POST /openai/v1/files` -- Uploads a file (100 MB max, JSONL). `GET /openai/v1/files` -- Lists files. `GET /openai/v1/files/{file_id}/content` -- Downloads file content.
+
+**Fine-Tuning (Beta)**: `POST /v1/fine_tunings` -- Registers a LoRA adapter. `GET /v1/fine_tunings` -- Lists adapters. Enterprise only. \[9\]
+
+### Chat Completions Parameters
+
+- `messages` (required): Array of message objects with `role` (system, user, assistant, tool) and `content` fields.
+- `model` (required): Model identifier string (e.g., `llama-3.3-70b-versatile`).
 - `temperature`: Sampling temperature, default `0.5`. Range `0.0` to `2.0`.
 - `max_completion_tokens`: Maximum tokens in the generated response.
 - `top_p`: Nucleus sampling threshold.
 - `stop`: String or array of strings where the model stops generating.
 - `stream`: Boolean to enable Server-Sent Events (SSE) streaming of partial responses.
+- `tools`: Array of tool definitions in JSON Schema format for function calling.
+- `response_format`: Structured output specification (`json_schema` or `json_object`).
+- `service_tier`: Processing tier selection (`flex` for high-throughput).
 
 ### Available Models
 
-**Text Generation**:
+**Text Generation (Production)**:
 
-- `llama3-8b-8192` -- 8B parameter Llama 3, 8192 context window
-- `llama3-70b-8192` -- 70B parameter Llama 3, 8192 context window
-- `llama-3.1-8b-instant` -- 8B parameter Llama 3.1, 131072 context window
-- `llama-3.3-70b-versatile` -- 70B parameter Llama 3.3, general purpose
-- `gemma2-9b-it` -- 9B parameter Gemma 2 instruction-tuned, 8192 context window
-- `openai/gpt-oss-20b` -- 20B parameter open-source GPT variant
+- `llama-3.1-8b-instant` -- 8B parameter Llama 3.1, 131,072 context window, 560 tps, \$0.05/\$0.08 per million tokens
+- `llama-3.3-70b-versatile` -- 70B parameter Llama 3.3, 131,072 context window, 280 tps, \$0.59/\$0.79 per million tokens
+- `openai/gpt-oss-20b` -- 20B parameter GPT-OSS, 131,072 context window, 1,000 tps, \$0.075/\$0.30 per million tokens
+- `openai/gpt-oss-120b` -- 120B parameter GPT-OSS, 131,072 context window, 500+ tps
+- `openai/gpt-oss-safeguard-20b` -- 20B parameter safety model, 131,072 context window, ~1,000 tps
+
+**Agentic Systems**:
+
+- `groq/compound` -- Agentic AI with built-in tools, 131,072 context, 8,192 max completion, ~450 tps
+- `groq/compound-mini` -- Lightweight agentic AI, 131,072 context, 8,192 max completion, ~450 tps
 
 **Speech-to-Text**:
 
-- `whisper-large-v3` -- Full Whisper v3
-- `whisper-large-v3-turbo` -- Optimized Whisper v3
-- `distil-whisper-large-v3-en` -- Distilled English-only Whisper v3
+- `whisper-large-v3` -- Full Whisper v3, \$0.111/hour, 10.3% word error rate, 189x real-time, supports translation
+- `whisper-large-v3-turbo` -- Optimized Whisper v3, \$0.04/hour, 12% word error rate, 216x real-time
+
+**Text-to-Speech**:
+
+- `canopylabs/orpheus-v1-english` -- Expressive English TTS with vocal direction controls
+- `canopylabs/orpheus-arabic-saudi` -- Saudi Arabic dialect synthesis
 
 **Safety**:
 
-- `llama-guard-3-8b` -- Content moderation classifier
+- `llama-guard-4-12b` -- Multimodal content moderation, 128K context
+- `meta-llama/llama-prompt-guard-2-86m` -- Prompt injection detection (86M params)
+- `meta-llama/llama-prompt-guard-2-22m` -- Prompt injection detection (22M params)
+
+**Preview Models** (evaluation only, may be discontinued without notice):
+
+- `meta-llama/llama-4-scout-17b-16e-instruct` -- 17B x 16 expert MoE, 750 tps, vision support
+- `moonshotai/kimi-k2-instruct-0905` -- 262,144 context, 200 tps, \$1.00/\$3.00 per million tokens
+- `qwen/qwen3-32b` -- 128K context, 400 tps, reasoning support, \$0.29/\$0.59 per million tokens
 
 ## Configuration
 
@@ -4942,6 +4708,10 @@ client = Groq(
     api_key="gsk_your_api_key_here",
     base_url="https://api.groq.com/openai/v1"
 )
+
+# Async client
+from groq import AsyncGroq
+async_client = AsyncGroq()
 ```
 
 ### Client Configuration (JavaScript/TypeScript)
@@ -4960,7 +4730,23 @@ const client = new Groq({
 
 ### Environment Variables
 
-- `GROQ_API_KEY`: Required. API key for authentication.
+- `GROQ_API_KEY`: Required. API key for authentication obtained from `https://console.groq.com`.
+
+### Rate Limits
+
+Rate limits are enforced at the organization level across six dimensions: requests per minute (RPM), requests per day (RPD), tokens per minute (TPM), tokens per day (TPD), audio seconds per hour (ASH), and audio seconds per day (ASD). The API returns HTTP 429 when any limit is exceeded, with `retry-after` and `x-ratelimit-remaining-*` headers. Cached tokens do not count toward rate limits. \[6\]
+
+**Free tier examples**:
+
+- `llama-3.1-8b-instant`: 30 RPM, 14,400 RPD, 6,000 TPM, 500,000 TPD
+- `llama-3.3-70b-versatile`: 30 RPM, 1,000 RPD, 12,000 TPM, 100,000 TPD
+- `whisper-large-v3`: 20 RPM, 2,000 RPD
+
+Higher limits are available on the Developer plan and for enterprise workloads.
+
+### Inference Metrics
+
+To include detailed performance metrics in API responses, set the header `Groq-Beta: inference-metrics`. Response metadata includes completion time, prompt processing time, queue time, and total request duration. \[10\]
 
 ## Integration Patterns
 
@@ -4982,6 +4768,8 @@ response = client.chat.completions.create(
 )
 ```
 
+Unsupported OpenAI parameters: `logprobs`, `logit_bias`, `top_logprobs`, `messages[].name`, N \> 1, and `vtt`/`srt` text completion formats. \[12\]
+
 ### REST/curl
 
 ``` bash
@@ -4994,6 +4782,31 @@ curl -X POST "https://api.groq.com/openai/v1/chat/completions" \
   }'
 ```
 
+### Flex Processing
+
+Add `"service_tier": "flex"` to the request body for 10x higher rate limits (paid plans only). Requests may fail with HTTP 498 when capacity is unavailable; implement jittered backoff and retries. \[6\]
+
+### Prompt Caching Optimization
+
+Place static content (system prompts, tool definitions, few-shot examples) at the beginning of messages and dynamic content (user queries, session data) at the end to maximize cache hit rate. Monitor cache performance via the `prompt_tokens_details.cached_tokens` field in API responses. \[7\]
+
+### Remote MCP Integration
+
+``` javascript
+const response = await client.responses.create({
+    model: "openai/gpt-oss-120b",
+    input: "What models are trending on Huggingface?",
+    tools: [{
+        type: "mcp",
+        server_label: "Huggingface",
+        server_url: "https://huggingface.co/mcp",
+        require_approval: "never"
+    }]
+});
+```
+
+Multiple MCP servers can be combined in a single request. Only connect to trusted servers, as MCP servers have access to all data in the model's context including messages, system prompts, and conversation history. \[11\]
+
 ## Examples
 
 ### Basic Chat Completion
@@ -5003,7 +4816,10 @@ from groq import Groq
 
 client = Groq()
 chat_completion = client.chat.completions.create(
-    messages=[{"role": "user", "content": "Hello"}],
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Explain the importance of fast language models"}
+    ],
     model="llama-3.3-70b-versatile"
 )
 print(chat_completion.choices[0].message.content)
@@ -5021,6 +4837,9 @@ stream = client.chat.completions.create(
         {"role": "user", "content": "Explain quantum computing in simple terms."}
     ],
     model="llama-3.3-70b-versatile",
+    temperature=0.5,
+    max_completion_tokens=1024,
+    top_p=1,
     stream=True
 )
 for chunk in stream:
@@ -5029,31 +4848,109 @@ for chunk in stream:
         print(content, end="")
 ```
 
-### Structured Output with JSON Schema
+### Async Chat Completion
+
+``` python
+import asyncio
+from groq import AsyncGroq
+
+async def main():
+    client = AsyncGroq()
+    chat_completion = await client.chat.completions.create(
+        messages=[
+            {"role": "user", "content": "Explain the importance of fast language models"}
+        ],
+        model="llama-3.3-70b-versatile"
+    )
+    print(chat_completion.choices[0].message.content)
+
+asyncio.run(main())
+```
+
+### Structured Output with JSON Schema (Strict Mode)
 
 ``` python
 from groq import Groq
 
 client = Groq()
 response = client.chat.completions.create(
-    messages=[{"role": "user", "content": "List three programming languages."}],
-    model="llama-3.3-70b-versatile",
+    messages=[{"role": "user", "content": "List three programming languages with their use cases."}],
+    model="openai/gpt-oss-20b",
     response_format={
         "type": "json_schema",
         "json_schema": {
             "name": "languages",
+            "strict": True,
             "schema": {
                 "type": "object",
                 "properties": {
                     "languages": {
                         "type": "array",
-                        "items": {"type": "string"}
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {"type": "string"},
+                                "use_case": {"type": "string"}
+                            },
+                            "required": ["name", "use_case"],
+                            "additionalProperties": False
+                        }
                     }
                 },
-                "required": ["languages"]
+                "required": ["languages"],
+                "additionalProperties": False
             }
         }
     }
+)
+```
+
+### Tool Use (Function Calling)
+
+``` python
+from groq import Groq
+import json
+
+client = Groq()
+
+tools = [{
+    "type": "function",
+    "function": {
+        "name": "get_weather",
+        "description": "Get current weather for a location",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "location": {"type": "string", "description": "City and state"},
+                "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]}
+            },
+            "required": ["location"]
+        }
+    }
+}]
+
+response = client.chat.completions.create(
+    messages=[{"role": "user", "content": "What's the weather in San Francisco?"}],
+    model="llama-3.3-70b-versatile",
+    tools=tools,
+    tool_choice="auto"
+)
+
+# Handle tool call
+tool_call = response.choices[0].message.tool_calls[0]
+# Execute function, then send result back
+follow_up = client.chat.completions.create(
+    messages=[
+        {"role": "user", "content": "What's the weather in San Francisco?"},
+        response.choices[0].message,
+        {
+            "role": "tool",
+            "tool_call_id": tool_call.id,
+            "content": json.dumps({"temperature": 72, "condition": "sunny"})
+        }
+    ],
+    model="llama-3.3-70b-versatile",
+    tools=tools
 )
 ```
 
@@ -5066,71 +4963,166 @@ client = Groq()
 with open("audio.mp3", "rb") as audio_file:
     transcription = client.audio.transcriptions.create(
         file=audio_file,
-        model="whisper-large-v3-turbo"
+        model="whisper-large-v3-turbo",
+        response_format="verbose_json",
+        timestamp_granularities=["word", "segment"]
     )
 print(transcription.text)
 ```
 
+### Reasoning with GPT-OSS
+
+``` python
+from groq import Groq
+
+client = Groq()
+response = client.chat.completions.create(
+    messages=[{"role": "user", "content": "Solve this step by step: If a train travels 120km in 2 hours, then slows to cover 80km in 2 more hours, what is the average speed for the entire trip?"}],
+    model="openai/gpt-oss-20b",
+    reasoning_effort="high",
+    include_reasoning=True,
+    temperature=0.6
+)
+```
+
+### Batch Processing
+
+``` python
+from groq import Groq
+
+client = Groq()
+
+# Step 1: Upload JSONL file
+with open("batch_requests.jsonl", "rb") as f:
+    file = client.files.create(file=f, purpose="batch")
+
+# Step 2: Create batch
+batch = client.batches.create(
+    input_file_id=file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h"
+)
+
+# Step 3: Poll for completion
+import time
+while batch.status not in ("completed", "failed", "expired"):
+    time.sleep(30)
+    batch = client.batches.retrieve(batch.id)
+
+# Step 4: Download results
+if batch.output_file_id:
+    content = client.files.content(batch.output_file_id)
+```
+
+### JavaScript Streaming
+
+``` javascript
+import Groq from "groq-sdk";
+
+const client = new Groq();
+
+const stream = await client.chat.completions.create({
+    messages: [
+        {role: "system", content: "You are a helpful assistant."},
+        {role: "user", content: "Explain the importance of fast language models"}
+    ],
+    model: "llama-3.3-70b-versatile",
+    temperature: 0.5,
+    max_completion_tokens: 1024,
+    stream: true
+});
+
+for await (const chunk of stream) {
+    process.stdout.write(chunk.choices[0]?.delta?.content || "");
+}
+```
+
 ## Limitations
 
-- **Model Selection**: Groq hosts a curated subset of open-weight models. Custom model uploads or arbitrary model hosting is not supported outside of LoRA adapters.
+- **Model Selection**: Groq hosts a curated subset of open-weight models. Custom model uploads or arbitrary model hosting is not supported outside of enterprise-only LoRA adapters.
 - **Closed-Source Hardware**: The LPU architecture is proprietary. There is no self-hosted or on-premises deployment option; all inference runs on Groq's managed infrastructure.
-- **Rate Limits**: Each service tier has distinct rate limits on requests per minute and tokens per minute. The Performance Tier provides the highest throughput but at higher cost.
-- **Context Window Constraints**: Maximum context windows vary by model, ranging from 8192 tokens (Llama 3 base, Gemma 2) to 131072 tokens (Llama 3.1 instant). These are fixed per model and cannot be extended.
-- **No Fine-Tuning**: Groq does not offer a fine-tuning API. LoRA adapters must be trained externally and uploaded for inference.
-- **Regional Availability**: Infrastructure is concentrated in specific data center regions, which may affect latency for geographically distant clients.
+- **Rate Limits**: Each tier has distinct rate limits. Free tier limits are restrictive (e.g., 30 RPM, 1,000 RPD for 70B models). Higher limits require paid plans. Flex tier provides 10x limits but without availability guarantees.
+- **Context Window Constraints**: Maximum context windows vary by model, with most production models at 131,072 tokens. Context windows are fixed per model and cannot be extended.
+- **No Fine-Tuning Service**: Groq does not offer a fine-tuning API. LoRA adapters must be trained externally, are enterprise-only, and currently support only `llama-3.1-8b-instant` as a base model with ranks limited to 8, 16, 32, or 64.
+- **Responses API Limitations**: The beta Responses API does not yet support stateful conversations (`previous_response_id`), `store`, `truncation`, or `prompt_cache_key`.
+- **Structured Outputs Constraints**: Strict mode (guaranteed schema adherence) is available only on GPT-OSS models. Streaming and tool use are unsupported with structured outputs.
+- **OpenAI SDK Gaps**: Several OpenAI parameters are unsupported: `logprobs`, `logit_bias`, `top_logprobs`, `messages[].name`, N \> 1, and `vtt`/`srt` formats.
+- **Reasoning Restrictions**: Cannot use `raw` reasoning format when JSON mode or tool use are enabled. System prompts should be avoided with reasoning models.
+- **Regional Availability**: Infrastructure is concentrated in specific data center regions. LoRA inference is not available for regional/sovereign endpoints.
 
-## Changelog Highlights
+## Changelog
 
-- Addition of Llama 3.3 70B Versatile model with improved general-purpose capabilities.
-- Introduction of Batch Processing API for asynchronous bulk inference.
-- Prompt caching support to reduce latency and cost for repeated prompt prefixes.
-- LoRA inference support for serving fine-tuned model adapters.
-- Structured output with JSON schema validation.
-- Tool use expansion to include web search, browser automation, code execution, and Wolfram Alpha.
-- Whisper model variants added for speech-to-text (full, turbo, distilled English).
+- **December 2025**: MCP Connectors (Beta) for Google Workspace (Gmail, Calendar, Drive) with OAuth 2.0 authentication. \[14\]
+- **October 2025**: GPT-OSS-Safeguard 20B safety model with bring-your-own-policy content moderation at ~1,000 tps. Prompt caching extended to GPT-OSS 120B. SDK updates: Python v0.33.0, TypeScript v0.34.0. \[14\]
+- **September 2025**: Remote MCP support (Beta) for external tool servers. Groq Compound and Compound Mini reach General Availability with web search, code execution, Wolfram Alpha, and parallel browser automation. Kimi K2 Instruct with 256K context. Prompt caching launched for GPT-OSS 20B and Kimi K2. \[14\]
+- **August 2025**: GPT-OSS 20B (1,000+ tps) and GPT-OSS 120B (500+ tps) launched. Responses API (Beta) introduced. Automatic prompt caching feature launched. \[14\]
+- **July 2025**: Structured Outputs with JSON Schema support. Kimi 2 Instruct (1T parameter MoE). \[14\]
+- **June 2025**: Qwen3-32B with reasoning support and 128K context. SDK reasoning field additions. \[14\]
+- **May 2025**: Llama Prompt Guard 2 (22M/86M) for prompt injection detection. Llama Guard 4 12B multimodal moderation. Compound Beta search settings with domain filtering. \[14\]
+- **April 2025**: Llama 4 Scout and Maverick models with vision support. Compound Beta and Compound Beta Mini agentic systems. Gemma-7b-it and Mixtral-8x7b-32768 deprecated. \[14\]
 
 ## Citations
 
-- \[1\] Groq Documentation - https://console.groq.com/docs/overview
+- \[1\] Groq Documentation Overview - https://console.groq.com/docs/overview
 - \[2\] Groq Text Chat API - https://console.groq.com/docs/text-chat
+- \[3\] Groq Vision - https://console.groq.com/docs/vision
+- \[4\] Groq Reasoning - https://console.groq.com/docs/reasoning
+- \[5\] Groq Speech-to-Text - https://console.groq.com/docs/speech-to-text
+- \[6\] Groq Rate Limits - https://console.groq.com/docs/rate-limits
+- \[7\] Groq Prompt Caching - https://console.groq.com/docs/prompt-caching
+- \[8\] Groq Batch Processing - https://console.groq.com/docs/batch
+- \[9\] Groq LoRA Inference - https://console.groq.com/docs/lora
+- \[10\] Groq Responses API - https://console.groq.com/docs/responses-api
+- \[11\] Groq MCP Support - https://console.groq.com/docs/mcp
+- \[12\] Groq OpenAI Compatibility - https://console.groq.com/docs/openai
+- \[13\] Groq Text-to-Speech - https://console.groq.com/docs/text-to-speech
+- \[14\] Groq Changelog - https://console.groq.com/docs/changelog
+- \[15\] Groq Tool Use - https://console.groq.com/docs/tool-use
+- \[16\] Groq Structured Outputs - https://console.groq.com/docs/structured-outputs
+- \[17\] Groq Content Moderation - https://console.groq.com/docs/content-moderation
+- \[18\] Groq API Reference - https://console.groq.com/docs/api-reference
+- \[19\] Groq Flex Processing - https://console.groq.com/docs/flex-processing
+- \[20\] Groq Error Codes - https://console.groq.com/docs/errors
 
 # Cerebras
 
 > AI inference API on custom wafer-scale engine hardware
 
-| Field         | Value                                                |
-|---------------|------------------------------------------------------|
-| Group         | GPU Compute & Cloud Platforms                        |
-| Type          | API/Infra                                            |
-| Open Source   | No                                                   |
-| GitHub        | N/A                                                  |
-| Stars         | N/A                                                  |
-| Documentation | [Official Docs](https://inference-docs.cerebras.ai/) |
+| Field | Value |
+|----|----|
+| Name | Cerebras |
+| Group | GPU Infrastructure |
+| Type | API/Infra |
+| Open Source | No |
+| GitHub | N/A |
+| Stars | N/A |
+| Docs | [inference-docs.cerebras.ai](https://inference-docs.cerebras.ai/) |
 
 ## Overview
 
-Cerebras is an AI inference platform built on custom wafer-scale engine hardware (CS-3 chips). Rather than relying on traditional GPU clusters, Cerebras uses its proprietary chip architecture to deliver high-throughput, low-latency Large Language Model (LLM) inference. The platform exposes a cloud API that is OpenAI-compatible, allowing developers to switch from OpenAI endpoints with minimal code changes. Cerebras targets use cases where inference speed is critical, serving both general-purpose chat completions and advanced capabilities such as reasoning models, structured outputs, and function calling.
+Cerebras is an AI inference platform built on custom wafer-scale engine (WSE) hardware. Instead of traditional GPU clusters, Cerebras uses its proprietary CS-3 chip architecture where an entire silicon wafer acts as a single processor, eliminating inter-chip communication bottlenecks. The platform exposes a cloud API that is OpenAI-compatible, allowing developers to migrate from OpenAI endpoints with minimal code changes. Cerebras targets use cases where inference speed is critical, with production models achieving up to approximately 3,000 tokens per second for the gpt-oss-120b model and approximately 2,200 tokens per second for llama3.1-8b.
+
+The platform serves both general-purpose chat completions and advanced capabilities including reasoning models with configurable effort, structured JSON outputs, parallel function calling, prompt caching, batch processing, and a planning and optimization framework called CePO (Cerebras Planning & Optimization).
 
 ## Core Concepts
 
-- **Wafer-Scale Engine (WSE):** Cerebras hardware is based on wafer-scale chips (CS-3), where an entire silicon wafer acts as a single processor. This eliminates the inter-chip communication bottleneck found in traditional GPU clusters, enabling faster sequential token generation.
-- **OpenAI-Compatible API:** The chat completions endpoint follows the same request and response schema as the OpenAI API, making migration straightforward for applications already built against that interface.
-- **Service Tiers:** Cerebras offers configurable service tiers (priority, default, auto, flex) that control request scheduling and queue behavior, allowing users to trade off between latency guarantees and cost.
-- **Reasoning Effort:** For supported models (such as gpt-oss-120b), a `reasoning_effort` parameter (low, medium, high) controls how much compute the model allocates to chain-of-thought reasoning before producing a final answer.
-- **Prompt Caching:** Repeated prompt prefixes can be cached server-side, reducing time-to-first-token for workloads that share common system prompts or context across requests.
+- **Wafer-Scale Engine (WSE):** Cerebras hardware is based on CS-3 wafer-scale chips where an entire silicon wafer acts as a single processor. This eliminates multi-chip communication overhead found in traditional GPU clusters, enabling faster sequential token generation.
+- **OpenAI-Compatible API:** The chat completions endpoint follows the same request and response schema as the OpenAI API. Applications using the OpenAI Python or JavaScript SDKs can switch to Cerebras by changing the base URL to `https://api.cerebras.ai/v1` and providing a Cerebras API key.
+- **Service Tiers:** Four configurable tiers (priority, default, auto, flex) control request scheduling and queue behavior. Priority offers lowest latency for dedicated endpoints; default provides standard processing; auto dynamically selects the best available tier; flex offers lowest cost with potential queuing during peak periods.
+- **Reasoning Effort and Format:** For supported models, the `reasoning_effort` parameter (low, medium, high) controls chain-of-thought depth. The `reasoning_format` parameter (parsed, raw, hidden, none) controls how reasoning content appears in responses. Parsed mode separates reasoning into a dedicated field; raw prepends it to content; hidden excludes it from output while still counting tokens.
+- **Prompt Caching:** Automatic server-side caching of prompt prefixes in 128-token blocks. Cached data persists for 5 minutes (guaranteed) up to 1 hour. Exact character-level prefix matching is required. Cached tokens count toward rate limits but incur no additional fees.
+- **CePO (Cerebras Planning & Optimization):** A framework built on the open-source OptiLLM library that adds advanced reasoning to Llama models via test-time compute. CePO uses four stages: planning, execution (multiple responses), analysis (inconsistency detection), and best-of-N selection with confidence scoring.
+- **Model Compression:** Cerebras uses selective weight-only quantization (FP16/FP8) during storage with sensitive layers at full precision. Dequantization happens on the fly, so compute operations run in high precision. Activations and key-value cache remain unquantized. No models are pruned on public endpoints.
 
-## Installation and Setup
+## Installation
 
 ### Python SDK
 
-Install the Python SDK via pip:
-
 ``` bash
-pip install cerebras-cloud-sdk
+pip install --upgrade cerebras_cloud_sdk
 ```
 
-Set the API key as an environment variable:
+Set the API key:
 
 ``` bash
 export CEREBRAS_API_KEY="your_api_key_here"
@@ -5138,15 +5130,13 @@ export CEREBRAS_API_KEY="your_api_key_here"
 
 ### JavaScript SDK
 
-Install the JavaScript SDK via npm:
-
 ``` bash
-npm install @cerebras/cerebras_cloud_sdk
+npm install @cerebras/cerebras_cloud_sdk@latest
 ```
 
-### REST / curl
+### REST / cURL
 
-No SDK installation is required. Authenticate by passing the API key as a Bearer token in the Authorization header.
+No SDK required. Authenticate with a Bearer token:
 
 ``` bash
 curl -X POST https://api.cerebras.ai/v1/chat/completions \
@@ -5158,41 +5148,57 @@ curl -X POST https://api.cerebras.ai/v1/chat/completions \
   }'
 ```
 
+### CePO Setup
+
+CePO requires OptiLLM in addition to the Cerebras SDK:
+
+``` bash
+pip install --upgrade cerebras_cloud_sdk optillm
+export CEREBRAS_API_KEY='your_api_key_here'
+optillm --base-url https://api.cerebras.ai --approach cepo
+```
+
 ## Architecture
 
-Cerebras operates as a managed cloud inference service. The architecture has three layers:
+Cerebras operates as a managed cloud inference service with three layers:
 
-1.  **Client Layer:** Applications interact with the platform through the Python SDK (`cerebras.cloud.sdk`), the JavaScript SDK (`@cerebras/cerebras_cloud_sdk`), or direct REST calls against the `https://api.cerebras.ai/v1/` base URL.
-2.  **API Gateway:** Handles authentication (Bearer token), request validation, service tier routing, and queue management. The gateway exposes an OpenAI-compatible interface so that existing tooling and libraries designed for OpenAI work without modification.
-3.  **Inference Engine:** Requests are dispatched to CS-3 wafer-scale engine hardware for model execution. The hardware architecture eliminates multi-chip communication overhead, producing low-latency token generation. Prompt caching is handled at this layer, reusing previously computed key-value states for shared prompt prefixes.
+1.  **Client Layer:** Applications interact through the Python SDK (`cerebras.cloud.sdk`), the JavaScript SDK (`@cerebras/cerebras_cloud_sdk`), or direct REST calls against `https://api.cerebras.ai/v1/`.
+2.  **API Gateway:** Handles authentication (Bearer token), request validation, service tier routing, queue management, and API version negotiation. The gateway exposes an OpenAI-compatible interface. Rate limiting uses a token bucketing algorithm at the organization level, tracking both requests and tokens across per-minute, per-hour, and per-day windows.
+3.  **Inference Engine:** Requests are dispatched to CS-3 wafer-scale engine hardware for model execution. The hardware architecture eliminates multi-chip communication overhead. Prompt caching is handled at this layer, reusing previously computed key-value states for shared prompt prefixes.
 
-The response includes detailed `time_info` metrics (`queue_time`, `prompt_time`, `completion_time`, `total_time`) that expose the performance characteristics of each layer.
+The response includes `time_info` metrics (`queue_time`, `prompt_time`, `completion_time`, `total_time`) exposing the performance characteristics of each layer.
 
-## Key Features and Functionality
+## Key Features
 
-- **High-Speed Inference:** Wafer-scale hardware delivers fast token generation compared to traditional GPU-based inference platforms, particularly for long-context and high-throughput workloads.
-- **Prompt Caching:** Server-side caching of prompt prefixes reduces redundant computation when multiple requests share common context (such as system prompts or few-shot examples).
-- **Structured Outputs:** The `response_format` parameter supports `json_object` and `json_schema` modes, enforcing that model output conforms to a user-defined JSON schema.
-- **Streaming:** Real-time token streaming via Server-Sent Events (SSE) when the `stream` parameter is set to true, enabling progressive rendering in user interfaces.
-- **Tool Use and Function Calling:** The `tools` parameter accepts function definitions that the model can invoke. Parallel tool calls are supported via `parallel_tool_calls`, allowing the model to request multiple function executions in a single response turn.
-- **Reasoning Models:** The gpt-oss-120b model supports configurable reasoning effort (low, medium, high) through the `reasoning_effort` parameter, controlling the depth of chain-of-thought processing.
-- **Predicted Outputs:** The `prediction` parameter allows clients to supply an expected output, enabling the engine to accelerate generation when the prediction is close to the actual response.
-- **Clear Thinking:** The zai-glm-4.7 model supports a `clear_thinking` parameter for controlling the visibility of internal reasoning steps.
+- **High-Speed Inference:** Wafer-scale hardware delivers fast token generation. Production speeds: gpt-oss-120b at approximately 3,000 tokens/s, llama3.1-8b at approximately 2,200 tokens/s, Qwen 3 235B at approximately 1,400 tokens/s, Z.ai GLM 4.7 at approximately 1,000 tokens/s.
+- **Prompt Caching:** Automatic prefix caching in 128-token blocks with 5-minute to 1-hour retention. Tracked via `cached_tokens` in `usage.prompt_tokens_details`. Supported on gpt-oss-120b, zai-glm-4.7, and qwen-3-235b-a22b-instruct-2507.
+- **Structured Outputs:** The `response_format` parameter supports `text`, `json_object`, and `json_schema` modes with constrained decoding when `strict: true`. JSON schema enforcement ensures model output conforms to user-defined schemas.
+- **Streaming:** Real-time token streaming via Server-Sent Events (SSE). Multi-token streaming delivers batches of 200 events per second. Supported for all models including structured outputs.
+- **Tool Use and Function Calling:** The `tools` parameter accepts function definitions. Parallel tool calls are supported via `parallel_tool_calls` (default: true). The model can request multiple function executions in a single response turn. Constrained decoding ensures valid tool call JSON.
+- **Reasoning Models:** GPT-OSS-120b supports `reasoning_effort` (low/medium/high). Z.ai GLM 4.7 supports `disable_reasoning` (boolean). Both support `reasoning_format` (parsed/raw/hidden/none) controlling reasoning visibility. Logprobs are separated into `reasoning_logprobs` when using parsed format.
+- **Predicted Outputs:** The `prediction` parameter supplies an expected output, enabling the engine to accelerate generation when the prediction is close to the actual response.
+- **Batch API:** Asynchronous processing of up to 50,000 requests per batch with 50% cost savings. Uses a Files API for input/output management.
+- **Metrics API:** Prometheus-compatible monitoring for dedicated endpoints. Tracks request counts, token throughput, latency percentiles (p50/p90/p95/p99), queue time, cache hit rates, and endpoint health. Scrape interval: 60 seconds.
+- **CePO Framework:** Test-time compute framework for Llama models using planning, multi-execution, inconsistency analysis, and best-of-N confidence scoring. Built on OptiLLM.
+- **Completions Endpoint:** Separate `POST /v1/completions` endpoint for single-turn text generation with prompt-based input (strings, token arrays). Supports echo, grammar roots, and raw token return.
 
 ## Use Cases
 
-- **Low-Latency Chat Applications:** The speed of wafer-scale inference makes Cerebras suitable for real-time conversational interfaces where response latency directly affects user experience.
-- **Batch Inference Pipelines:** The flex service tier and prompt caching enable cost-effective processing of large volumes of requests that share common prefixes.
-- **Structured Data Extraction:** JSON schema-enforced outputs are useful for extracting structured information from unstructured text (such as entity extraction, form parsing, or data normalization).
-- **Agentic Tool Use:** Function calling with parallel execution supports agentic workflows where the model orchestrates multiple external tool invocations per turn.
-- **Reasoning-Heavy Tasks:** The configurable reasoning effort on gpt-oss-120b allows tuning the cost-accuracy tradeoff for tasks that benefit from extended chain-of-thought (such as math, coding, and multi-step analysis).
+- **Low-Latency Chat Applications:** Wafer-scale inference speed suits real-time conversational interfaces where response latency directly affects user experience.
+- **Batch Inference Pipelines:** The Batch API and flex service tier enable cost-effective processing (50% savings) of large volumes of requests sharing common prefixes.
+- **Structured Data Extraction:** JSON schema-enforced outputs with constrained decoding are useful for entity extraction, form parsing, and data normalization.
+- **Agentic Tool Use:** Parallel function calling with constrained decoding supports agentic workflows where the model orchestrates multiple external tool invocations per turn.
+- **Reasoning-Heavy Tasks:** Configurable reasoning effort on gpt-oss-120b allows tuning the cost-accuracy tradeoff for math, coding, and multi-step analysis tasks.
+- **Enhanced Reasoning with CePO:** The CePO framework adds planning and optimization capabilities to Llama models for tasks requiring iterative reasoning and self-correction.
+- **Code Generation:** Integrations with coding tools (Aider, Cline, OpenCode, RooCode, VS Code, KiloCode) enable AI pair programming with Cerebras inference speed.
 
-## API Reference Summary
+## API Reference
 
-### Endpoint
+### Endpoints
 
 ``` 
 POST https://api.cerebras.ai/v1/chat/completions
+POST https://api.cerebras.ai/v1/completions
 ```
 
 ### Authentication
@@ -5203,75 +5209,129 @@ Authorization: Bearer <CEREBRAS_API_KEY>
 
 ### Available Models
 
-| Model                          | Notes       |
-|--------------------------------|-------------|
-| llama3.1-8b                    | General use |
-| qwen-3-235b-a22b-instruct-2507 | Preview     |
-| gpt-oss-120b                   | Reasoning   |
-| zai-glm-4.7                    | Preview     |
+**Production Models:**
 
-### Request Parameters
+- `llama3.1-8b` -- 8 billion parameters, approximately 2,200 tokens/s, FP16 precision
+- `gpt-oss-120b` -- 120 billion parameters, approximately 3,000 tokens/s, FP16/FP8 (weight-only quantization)
+
+**Preview Models:**
+
+- `qwen-3-235b-a22b-instruct-2507` -- 235 billion parameters, approximately 1,400 tokens/s, FP16/FP8
+- `zai-glm-4.7` -- 355 billion parameters, approximately 1,000 tokens/s, FP16/FP8
+
+### Chat Completions Request Parameters
 
 **Required:**
 
-- `model` (string): The model identifier.
-- `messages` (array): An array of message objects, each with `role` (system, user, assistant) and `content` (string).
+- `model` (string): Model identifier.
+- `messages` (array): Message objects with `role` (system, user, assistant) and `content`.
 
 **Response Control:**
 
-- `max_completion_tokens` (integer): Maximum number of tokens to generate.
-- `temperature` (float, 0 to 1.5): Sampling temperature.
-- `top_p` (float): Nucleus sampling threshold.
+- `max_completion_tokens` (integer): Maximum tokens to generate.
+- `temperature` (float, 0-1.5): Sampling temperature.
+- `top_p` (float, 0-1): Nucleus sampling threshold.
 - `stream` (boolean): Enable streaming responses.
 - `stop` (string or array): Up to 4 stop sequences.
+- `seed` (integer): Deterministic sampling seed.
+
+**Reasoning:**
+
+- `reasoning_effort` (string: low, medium, high): Chain-of-thought depth (gpt-oss-120b only).
+- `reasoning_format` (string: parsed, raw, hidden, none): Controls reasoning visibility in response.
+- `clear_thinking` (boolean): Include thinking from previous turns (zai-glm-4.7 only).
+- `disable_reasoning` (boolean): Disable reasoning (zai-glm-4.7 only).
+
+**Structured Output:**
+
+- `response_format` (object): One of `text`, `json_object`, or `json_schema` with schema definition.
+
+**Tool Use:**
+
+- `tools` (array): Function definitions for tool calling.
+- `tool_choice` (string or object): Control tool selection (none, auto, required, or specific tool).
+- `parallel_tool_calls` (boolean, default: true): Allow multiple tool calls per response.
 
 **Advanced:**
 
-- `reasoning_effort` (string: low, medium, high): Chain-of-thought depth for gpt-oss-120b.
-- `response_format` (object): One of `text`, `json_object`, or `json_schema` with a schema definition.
-- `tools` (array): Function definitions for tool use.
-- `tool_choice` (string or object): Control which tools the model may call.
-- `parallel_tool_calls` (boolean): Allow multiple tool calls in a single response.
-- `seed` (integer): Deterministic sampling seed.
-- `logprobs` (boolean): Return log probabilities of output tokens.
-- `top_logprobs` (integer): Number of top log probabilities to return per token.
+- `logprobs` (boolean): Return log probabilities.
+- `top_logprobs` (integer, 0-20): Number of top log probabilities per token.
 - `prediction` (object): Predicted output for accelerated generation.
-- `clear_thinking` (boolean): Control reasoning visibility for zai-glm-4.7.
-- `user` (string): End-user identifier for tracking.
+- `user` (string): End-user identifier.
 
 **Service:**
 
 - `service_tier` (string: priority, default, auto, flex): Request scheduling tier.
-- `queue_threshold` (integer): Maximum acceptable queue time before rejection.
+- `queue_threshold` (integer, 50-20000 ms): Maximum acceptable queue time before rejection. Applies to flex and auto tiers.
 
 ### Response Structure
 
-- `choices` (array): Array of completion choices, each containing `message` (with `role` and `content`), `finish_reason`, and optionally `tool_calls`.
-- `usage` (object): Token usage metrics (`prompt_tokens`, `completion_tokens`, `total_tokens`).
-- `time_info` (object): Timing breakdown with `queue_time`, `prompt_time`, `completion_time`, and `total_time`.
+- `id` (string): Unique completion identifier.
+- `choices` (array): Completion choices with `message` (role, content), `finish_reason` (stop, length, content_filter, tool_calls), and optional `tool_calls`.
+- `usage` (object): `prompt_tokens`, `completion_tokens`, `total_tokens`, and `prompt_tokens_details.cached_tokens`.
+- `time_info` (object): `queue_time`, `prompt_time`, `completion_time`, `total_time`.
+- `service_tier_used` (string): Actual tier used when auto was selected.
 
-## Configuration and Customization
+### Unsupported OpenAI Parameters
+
+These parameters return 400 errors: `frequency_penalty`, `logit_bias`, `presence_penalty`.
+
+### Error Codes
+
+- 400 BadRequestError: Malformed request parameters.
+- 401 AuthenticationError: Invalid or missing API credentials.
+- 402 PaymentRequired: Billing issue.
+- 403 PermissionDeniedError: Insufficient access rights.
+- 404 NotFoundError: Resource not found.
+- 422 UnprocessableEntityError: Request cannot be processed.
+- 429 RateLimitError: Rate limit exceeded; back off and retry.
+- 500 InternalServerError: Server-side failure.
+- 503 ServiceUnavailable: Temporarily unavailable.
+
+The SDK automatically retries connection errors, 408, 429, and 5xx responses up to 2 times. Default request timeout is 1 minute.
+
+## Configuration
 
 ### Environment Variables
 
-| Variable           | Description                |
-|--------------------|----------------------------|
-| `CEREBRAS_API_KEY` | API key for authentication |
+- `CEREBRAS_API_KEY` -- API key for authentication (required).
 
 ### Service Tier Selection
 
-- **priority:** Lowest latency, highest cost. Requests are processed immediately.
-- **default:** Standard scheduling with balanced latency and cost.
-- **auto:** Platform selects the optimal tier based on current load.
-- **flex:** Lowest cost, requests may be queued during peak periods. Suitable for batch workloads.
+- **priority:** Highest priority, requests processed first. Dedicated endpoints only (private preview).
+- **default:** Standard priority processing. Applied automatically when no tier is specified.
+- **auto:** Dynamically selects highest available tier. Response includes `service_tier_used` field.
+- **flex:** Lowest priority, requests processed last. Independent higher rate limits. Suitable for batch workloads.
 
-The `queue_threshold` parameter (in seconds) can be combined with any service tier to reject requests that would wait longer than the specified threshold.
+All tiers bill identically during preview. The `queue_threshold` header (50-20000 ms) applies to flex and auto tiers, rejecting requests exceeding the wait threshold.
+
+### Rate Limits
+
+Rate limits apply at the organization level using token bucketing.
+
+**Free Tier:**
+
+- gpt-oss-120b: 64K TPM, 1M TPH/TPD, 30 RPM
+- llama3.1-8b: 60K TPM, 1M TPH/TPD, 30 RPM
+- qwen-3-235b-a22b-instruct-2507: 60K TPM, 1M TPH/TPD, 30 RPM
+- zai-glm-4.7: 60K TPM, 1M TPH/TPD, 10 RPM
+
+**PayGo Tier:**
+
+- gpt-oss-120b: 1M TPM, 1K RPM
+- llama3.1-8b: 2M TPM, 2K RPM
+- qwen-3-235b-a22b-instruct-2507: 250K TPM, 250 RPM
+- zai-glm-4.7: 500K TPM, 500 RPM
+
+Rate limit headers include `x-ratelimit-remaining-tokens-minute` and reset timing information. Exceeding limits returns HTTP 429.
+
+### API Versioning
+
+API Version 2 is available for testing via header (introduced 2026-01-21). It introduces stricter validation for structured outputs, tool calling, reasoning models, and Unicode token handling. Becomes the default on July 21, 2026.
 
 ## Integration Patterns
 
 ### Drop-In Replacement for OpenAI
-
-Because the API is OpenAI-compatible, applications using the OpenAI Python SDK can switch to Cerebras by changing the base URL and API key:
 
 ``` python
 from openai import OpenAI
@@ -5287,9 +5347,24 @@ response = client.chat.completions.create(
 )
 ```
 
-### Framework Compatibility
+For gpt-oss-120b, system messages act at the developer level with stronger influence than in the OpenAI API.
 
-Any framework or library that supports OpenAI-compatible endpoints (such as LangChain, LlamaIndex, or custom orchestrators) can be pointed at the Cerebras API by configuring the base URL.
+### Framework Integrations
+
+Cerebras supports 50+ integrations across categories:
+
+- **Agentic Frameworks:** AG2, Agno, Browser-Use, CrewAI, Stagehand
+- **AI Development Kits:** Vercel AI SDK, AI Suite, Milvus
+- **Coding Tools:** Aider, Cline, OpenCode, RooCode, VS Code, KiloCode
+- **LLM Application Frameworks:** Instructor, LangChain, LangGraph, Pydantic AI, Llama Stack
+- **Observability:** Braintrust, Langfuse, Opik, Weave, Cloudflare AI Gateway, Kong API Gateway
+- **Real-Time Audio:** Cartesia, LiveKit, ElevenLabs
+- **Multi-LLM Management:** LiteLLM, OpenRouter, AWS Marketplace
+- **No-Code Platforms:** Dify, Flowise, FlutterFlow
+- **Chatbot Platforms:** Poe
+- **Containerization:** Docker
+
+Any framework supporting OpenAI-compatible endpoints can be configured to use the Cerebras API by setting the base URL.
 
 ## Examples
 
@@ -5394,7 +5469,7 @@ response = client.chat.completions.create(
 print(response.choices[0].message.tool_calls)
 ```
 
-### Reasoning with Configurable Effort
+### Reasoning with Configurable Effort and Format
 
 ``` python
 from cerebras.cloud.sdk import Cerebras
@@ -5406,57 +5481,109 @@ response = client.chat.completions.create(
     messages=[
         {"role": "user", "content": "Prove that the square root of 2 is irrational."}
     ],
-    reasoning_effort="high"
+    reasoning_effort="high",
+    reasoning_format="parsed"
 )
 
-print(response.choices[0].message.content)
+# Access reasoning separately from content
+print("Reasoning:", response.choices[0].message.reasoning)
+print("Answer:", response.choices[0].message.content)
 ```
 
-## Limitations and Considerations
+### CePO with OptiLLM
+
+``` bash
+# Start OptiLLM proxy with CePO approach
+optillm --base-url https://api.cerebras.ai --approach cepo
+
+# Optional: enable intermediate state logging
+optillm --base-url https://api.cerebras.ai --approach cepo --cepo_print_output true
+```
+
+Then connect to the OptiLLM proxy (default localhost:8000) using standard OpenAI-compatible requests with the `llama3.1-8b` model.
+
+## Limitations
 
 - **Closed Source Hardware and Software:** The wafer-scale engine and inference runtime are proprietary. Users cannot self-host or inspect the inference pipeline.
-- **Model Selection:** The available model catalog is limited compared to general-purpose GPU cloud platforms. Only a small set of models are supported at any given time, and some are in preview status.
-- **No Fine-Tuning:** The platform provides inference only. Users cannot fine-tune or train custom models on Cerebras hardware through the cloud API.
+- **Limited Model Catalog:** Only four models are available at any given time (two production, two preview). The catalog is smaller than general-purpose GPU cloud platforms.
+- **No Fine-Tuning:** The platform provides inference only. Users cannot fine-tune or train custom models through the cloud API.
+- **Preview Model Stability:** Models marked as preview (qwen-3-235b-a22b-instruct-2507, zai-glm-4.7) may be discontinued with short notice and should not be used in production.
+- **Model-Specific Parameters:** Some parameters are model-specific (`reasoning_effort` for gpt-oss-120b only; `clear_thinking` and `disable_reasoning` for zai-glm-4.7 only), requiring conditional logic when supporting multiple models.
+- **Unsupported OpenAI Parameters:** `frequency_penalty`, `logit_bias`, and `presence_penalty` return 400 errors, limiting some sampling strategies available on OpenAI.
+- **System Message Behavior:** For gpt-oss-120b, system messages have stronger influence than in the OpenAI API (developer-level), which may produce different outputs with identical prompts.
+- **Prompt Caching Constraints:** Requires exact character-level prefix matching. Even minor variations (timestamps, dynamic content at the start) prevent cache hits.
 - **Regional Availability:** As a specialized hardware platform, availability may be constrained by data center locations and capacity.
-- **Preview Model Stability:** Models marked as preview (qwen-3-235b-a22b-instruct-2507, zai-glm-4.7) may change behavior or be removed without notice.
-- **Parameter Restrictions:** Some advanced parameters are model-specific (`reasoning_effort` works only with gpt-oss-120b; `clear_thinking` works only with zai-glm-4.7), requiring conditional logic when supporting multiple models.
 
-## Changelog Highlights
+## Changelog
 
-Cerebras does not publish a public changelog for the inference API. Model availability and parameter support should be verified against the current documentation, as the platform is actively evolving.
+- **2026-01-22:** Metrics API launched with Prometheus-compatible monitoring for dedicated endpoints.
+- **2026-01-21:** API Version 2 available for testing. Stricter validation for structured outputs, tool calling, reasoning, and Unicode. Default July 21, 2026.
+- **2026-01-14:** Service Tiers feature launched (priority, default, auto, flex).
+- **2026-01-09:** Constrained decoding moved to GA with expanded model support. Parallel tool calling with constrained decoding added.
+- **2026-01-06:** Z.ai GLM 4.7 preview added.
+- **2025-12-18:** Batch API and Files API launched. Up to 50,000 requests per batch with 50% cost savings.
+- **2025-12-17:** Parallel tool calling enabled for all models.
+- **2025-12-16:** Streaming supported for all models including structured outputs. `reasoning_format` parameter added. Logprobs supported with structured outputs.
+- **2025-12-10:** Prompt caching launched with automatic prefix reuse.
+- **2025-11-24:** Predicted Outputs feature introduced.
+- **2025-10-06:** Multi-token streaming introduced (200 events/s batches).
+- **2025-10-02:** gpt-oss-120b expanded with tool calling `strict: true` and JSON schema response formats.
+- **2025-08-13:** gpt-oss-120b moved to production.
+- **2025-08-05:** gpt-oss-120b added as preview.
+- **2024-10-24:** Speculative decoding implemented. Llama 3.1 70B at 2,100 tokens/s.
+- **2024-10-03:** Performance improvements. Llama 3.1 8B at approximately 2,000 tokens/s. Microsoft AutoGen integration. `max_tokens` renamed to `max_completion_tokens`.
 
 ## Citations
 
 - \[1\] Cerebras Inference Documentation - <https://inference-docs.cerebras.ai/>
-- \[2\] Cerebras API Reference - <https://inference-docs.cerebras.ai/api-reference/chat-completions>
+- \[2\] Cerebras API Reference: Chat Completions - <https://inference-docs.cerebras.ai/api-reference/chat-completions>
+- \[3\] Cerebras Supported Models - <https://inference-docs.cerebras.ai/models/overview>
+- \[4\] Cerebras Reasoning Capabilities - <https://inference-docs.cerebras.ai/capabilities/reasoning>
+- \[5\] CePO: Cerebras Planning & Optimization - <https://inference-docs.cerebras.ai/capabilities/cepo>
+- \[6\] Cerebras Prompt Caching - <https://inference-docs.cerebras.ai/capabilities/prompt-caching>
+- \[7\] Cerebras Service Tiers - <https://inference-docs.cerebras.ai/capabilities/service-tiers>
+- \[8\] Cerebras Rate Limits - <https://inference-docs.cerebras.ai/support/rate-limits>
+- \[9\] Cerebras Change Log - <https://inference-docs.cerebras.ai/support/change-log>
+- \[10\] Cerebras OpenAI Compatibility - <https://inference-docs.cerebras.ai/resources/openai>
+- \[11\] Cerebras Integrations - <https://inference-docs.cerebras.ai/integrations>
+- \[12\] Cerebras Error Codes - <https://inference-docs.cerebras.ai/support/error>
+- \[13\] Cerebras Deprecations - <https://inference-docs.cerebras.ai/support/deprecation>
+- \[14\] Cerebras Metrics API - <https://inference-docs.cerebras.ai/capabilities/metrics>
+- \[15\] Cerebras API Reference: Completions - <https://inference-docs.cerebras.ai/api-reference/completions>
 
 # Modal
 
-| Field           | Value                                   |
-|-----------------|-----------------------------------------|
-| **Group**       | GPU Compute & Cloud Platforms           |
-| **Type**        | API/SDK/Infra                           |
-| **Open Source** | No                                      |
-| **GitHub**      | N/A                                     |
-| **Stars**       | N/A                                     |
-| **Docs**        | [Official Docs](https://modal.com/docs) |
+> Serverless GPU compute platform for AI workloads with elastic scaling
+
+| Field       | Value                                    |
+|-------------|------------------------------------------|
+| Name        | Modal                                    |
+| Group       | GPU Infrastructure                       |
+| Type        | API/SDK/Infra                            |
+| Open Source | No                                       |
+| GitHub      | N/A                                      |
+| Stars       | N/A                                      |
+| Docs        | [modal.com/docs](https://modal.com/docs) |
 
 ## Overview
 
-Modal is a serverless GPU compute platform purpose-built for AI and machine learning workloads. It takes Python code, packages it into a container, and executes it in the cloud with automatic horizontal scaling. The platform follows a code-first approach that eliminates YAML configuration files entirely, offering sub-second cold starts, per-second billing, and multi-cloud infrastructure. Modal targets teams that need on-demand GPU access without managing infrastructure, containers, or orchestration layers.
+Modal is a serverless cloud platform purpose-built for AI and compute-intensive workloads. It takes Python code, packages it into a container, and executes it in the cloud with automatic horizontal scaling. The platform follows a code-first approach that eliminates YAML configuration files entirely, offering sub-second cold starts, per-second billing, and multi-cloud infrastructure. Modal pools capacity across all major clouds, dynamically deciding where to run code based on the best available capacity, optimizing for both high GPU availability and low cost.
+
+Modal targets engineers and researchers who need on-demand GPU access for inference, batch processing, training, fine-tuning, and sandboxed code execution without managing infrastructure, containers, or orchestration layers. All compute jobs are containerized and virtualized using gVisor (Google's sandboxing technology), with encryption in transit (TLS 1.3) and at rest. The platform is SOC 2 Type 2 certified and HIPAA-compliant on Enterprise plans.
 
 ## Core Concepts
 
-- **App**: Top-level container that groups related functions, images, volumes, and other resources into a single deployable unit.
-- **Function**: A Python function decorated with `@app.function()` that runs remotely in the cloud. Functions are the primary unit of execution and can be invoked synchronously, asynchronously, or mapped over inputs in parallel.
-- **Image**: A container image definition that specifies the runtime environment for functions. Images are built incrementally using a builder pattern (e.g., `modal.Image.debian_slim().pip_install("torch")`), and layers are cached for fast rebuilds.
-- **Volume**: Persistent storage that can be mounted into function containers. Volumes survive across function invocations and deployments, making them suitable for storing model weights, datasets, and checkpoints.
-- **Secret**: Environment variable management for sensitive data such as API keys, database credentials, and tokens. Secrets are injected into function containers at runtime without being embedded in code or images.
-- **Sandbox**: Isolated execution environments for running untrusted or experimental code with resource limits and timeouts.
+- **App**: Top-level container that groups one or more Functions for atomic deployment, acting as a shared namespace. Apps can be ephemeral (created via `modal run`, existing only during script execution) or deployed (persisting indefinitely via `modal deploy`). Functions within an App scale independently; if no active inputs exist, no containers run and no compute charges accrue.
+- **Function**: A Python function decorated with `@app.function()` that runs remotely in the cloud. Functions are the primary unit of execution and can be invoked synchronously, asynchronously, or mapped over inputs in parallel. Each Function scales up and down independently from other Functions in the same App.
+- **Image**: A container image definition specifying the runtime environment for functions. Images are built incrementally using a builder pattern with method chaining (e.g., `modal.Image.debian_slim().pip_install("torch")`). Layers are cached for fast rebuilds, and each method call creates a cacheable layer. Images run on Debian Linux with gVisor sandboxing.
+- **Volume**: Persistent distributed filesystem that can be mounted into function containers. Volumes survive across invocations and deployments, suitable for model weights, datasets, and checkpoints. Volumes v2 (beta) offers unlimited file count, improved random access, concurrent writers to distinct files, and HIPAA-compliant data deletion.
+- **Secret**: Secure credential management injecting environment variables into containers at runtime. Secrets support creation via dashboard (with templates for common services), CLI, `.env` files, and programmatic dictionaries. Multiple Secrets can be combined per function.
+- **Sandbox**: Secure isolated containers for executing untrusted or agent-generated code with configurable resource limits, timeouts (up to 24 hours), networking, and file access. Sandboxes support named instances, tagging, snapshots, and can be referenced by ID for reuse.
+- **Notebook**: Cloud-hosted GPU-backed Jupyter environments with serverless pricing, real-time multi-user collaboration, AI-powered code completion (Claude Sonnet 4.6), and support for up to 8 NVIDIA A100s or H100s per kernel.
 
-## Installation and Setup
+## Installation
 
-Modal requires Python 3.9 or later. Installation and authentication are handled through the CLI:
+Modal requires Python 3.10 or later (Python 3.9 support was removed in v1.3.0; Python 3.14 is supported). Installation and authentication are handled through the CLI:
 
 ``` bash
 pip install modal
@@ -5477,43 +5604,68 @@ Deploying a Modal app as a persistent service:
 modal deploy my_app.py
 ```
 
+Development with live reloading:
+
+``` bash
+modal serve my_app.py  # ephemeral endpoint with hot reload
+```
+
 ## Architecture
 
 Modal operates on a serverless execution model. When a function is invoked, Modal performs the following sequence:
 
-1.  **Image resolution**: The platform checks whether the specified container image exists in its cache. If not, it builds the image from the declarative definition.
-2.  **Container scheduling**: A container is scheduled on available infrastructure matching the requested resources (CPU, memory, GPU type).
+1.  **Image resolution**: The platform checks whether the specified container image exists in its cache. If not, it builds the image from the declarative definition using layer-based caching.
+2.  **Container scheduling**: A container is scheduled on available infrastructure matching the requested resources (CPU, memory, GPU type, region). Modal pools capacity across multiple clouds for optimal availability.
 3.  **Code injection**: The decorated function code is serialized and injected into the container at runtime.
-4.  **Execution**: The function runs inside the container with access to mounted volumes, secrets, and network resources.
-5.  **Scaling**: Additional containers are spawned automatically based on incoming request volume, scaling from zero to thousands of concurrent instances.
-6.  **Teardown**: Idle containers are terminated after a configurable timeout, and billing stops immediately.
+4.  **Execution**: The function runs inside the gVisor-sandboxed container with access to mounted volumes, secrets, cloud bucket mounts, and network resources.
+5.  **Scaling**: Additional containers are spawned automatically based on incoming request volume. Scaling is controlled by `max_containers`, `min_containers`, `buffer_containers`, and `scaledown_window` parameters.
+6.  **Teardown**: Idle containers are terminated after a configurable scaledown window (default 60 seconds, configurable from 2 seconds to 20 minutes). Billing stops immediately.
 
-The platform abstracts away container registries, orchestration systems, load balancers, and GPU drivers. Users interact exclusively through Python decorators and the Modal SDK.
+The platform abstracts away container registries, orchestration systems, load balancers, and GPU drivers. Users interact exclusively through Python decorators and the Modal SDK. All inputs and outputs traverse Modal's control plane in `us-east-1`, regardless of the specified execution region.
+
+### Container Lifecycle
+
+Containers are reused across multiple inputs. Lifecycle hooks enable initialization and cleanup:
+
+- **`@modal.enter()`**: One-time initialization when a container starts (loading model weights, importing packages).
+- **`@modal.exit()`**: One-time cleanup on shutdown (closing connections, saving state). Receives a 30-second grace period before forced termination. Also triggered on preemption events.
+- **`@modal.build()`**: Runs during image build time for build-step logic.
 
 ## Key Features
 
-- **Sub-second cold starts**: Containers launch in under one second through aggressive image caching and snapshot-based initialization.
+- **Sub-second cold starts**: Containers boot in approximately one second through aggressive image caching and snapshot-based initialization. Memory Snapshots capture container state after warm-up for even faster subsequent boots.
 - **Per-second billing**: Compute charges are measured per second of actual usage, with no minimum billing increments for idle time.
-- **Web endpoints**: Functions can be exposed as HTTP endpoints using `@app.function()` combined with `@modal.web_endpoint()`, supporting REST APIs and webhook receivers.
-- **Streaming responses**: Server-sent events and streaming HTTP responses are supported natively for real-time inference applications.
-- **Volume mounts**: Persistent volumes can be attached to functions for reading and writing data that persists across invocations.
-- **Cloud bucket integrations**: Direct mounting of S3 and GCS buckets into function containers without manual credential wiring.
-- **Scheduled jobs**: Functions can be triggered on cron schedules using `@modal.Cron("0 * * * *")` or periodic intervals.
-- **Secret management**: Secrets are defined once in the Modal dashboard and referenced by name in code, with automatic injection at runtime.
-- **GPU health monitoring**: The platform monitors GPU health and automatically migrates workloads away from degraded hardware.
-- **Preemption handling**: Functions can register callbacks to handle preemption events gracefully, saving state before container termination.
-- **Multi-node training**: Distributed training across multiple GPU nodes is available in closed beta.
+- **Autoscaling**: Automatic container pool management with configurable `max_containers` (upper limit), `min_containers` (warm floor), `buffer_containers` (burst headroom), and `scaledown_window` (idle timeout). Dynamic updates via `Function.update_autoscaler()` without redeployment.
+- **Web endpoints**: Functions exposed as HTTP endpoints via `@modal.fastapi_endpoint` (FastAPI), `@modal.asgi_app` (ASGI), `@modal.wsgi_app` (WSGI), or `@modal.web_server` (custom). Request bodies up to 4 GiB, unlimited response sizes. WebSocket support via RFC 6455 with 2 MiB message limit.
+- **Streaming responses**: Server-sent events and streaming HTTP responses for real-time inference applications via dedicated streaming endpoint decorators.
+- **Volumes**: Persistent distributed filesystems with up to 2.5 GB/s bandwidth. Automatic background commits every few seconds. Volumes v2 supports unlimited files, concurrent writers, and hard-linking.
+- **Cloud bucket mounts**: Direct mounting of AWS S3, Google Cloud Storage, and Cloudflare R2 buckets into function containers using AWS Mountpoint technology. Supports read-only mode, key prefix filtering, and OIDC-based authentication.
+- **Scheduled jobs**: Functions triggered on cron schedules via `modal.Cron("0 * * * *")` or periodic intervals via `modal.Period(hours=5)`.
+- **Secret management**: Secrets created via dashboard (with templates), CLI, `.env` files, or programmatic dicts. Environment variable injection at runtime with multiple-secret composition.
+- **Sandboxes**: Secure containers for untrusted code with configurable timeouts (up to 24 hours), named instances, tagging, directory snapshots, and reusable sandbox pools.
+- **Notebooks**: GPU-backed Jupyter environments with real-time collaboration, AI code completion, and serverless pricing. Automatic idle shutdown with configurable timeouts.
+- **GPU health monitoring**: Automated monitoring and workload migration away from degraded hardware.
+- **Preemption handling**: All functions are preemptible by default with graceful termination and automatic restart. Exit handlers execute within a grace period. Non-preemptible mode available for CPU-only functions at 3x cost multiplier.
+- **Multi-node clusters (beta)**: Distributed training across up to 64 H100 SXM GPUs with 3,200 Gbps RDMA networking (RoCE protocol), gang scheduling, and rank-based coordination.
+- **Cluster networking (i6pn)**: Private IPv6 networking between containers within the same workspace at 50+ Gbps bandwidth. Workspace-isolated subnets using `fdaa::/16` prefix.
+- **Region selection**: Geographic placement with regions including US, EU, UK, AP, CA, SA, ME, MX, AF with pricing multipliers (1.25x for US/EU/UK/AP, 2.5x for others).
+- **JavaScript/Go SDKs (beta)**: Client SDKs for invoking Modal functions and managing Sandboxes from Node.js and Go applications.
+- **Integrations**: OIDC authentication, Datadog monitoring, OpenTelemetry tracing, Okta/SAML SSO, and Slack notifications.
 
 ## Use Cases
 
-- **Model training**: GPU-accelerated training jobs that scale from a single GPU to multi-GPU configurations without infrastructure changes.
-- **Batch inference**: Processing large datasets through ML models by mapping a function over thousands of inputs in parallel.
-- **Real-time inference APIs**: Deploying model serving endpoints with automatic scaling based on request volume.
-- **Data preprocessing**: Running CPU or GPU-intensive data pipelines on demand without maintaining persistent compute clusters.
-- **Fine-tuning**: Running fine-tuning jobs on large language models with configurable GPU types and memory.
-- **Scheduled ETL**: Periodic data extraction, transformation, and loading jobs triggered by cron schedules.
+- **Real-time inference APIs**: Deploying model serving endpoints with automatic scaling, sub-second cold starts, and OpenAI-compatible API endpoints. Deploy vLLM, SGLang, or custom model servers with GPU acceleration.
+- **Batch inference**: Processing large datasets through ML models by mapping a function over thousands of inputs in parallel. Hard limits of 25,000 total inputs (running + pending) and 1 million pending async spawn jobs.
+- **Model training**: GPU-accelerated training jobs scaling from a single GPU to multi-GPU single-node configurations. Multi-node distributed training available in beta with RDMA networking.
+- **Fine-tuning**: Running fine-tuning jobs on large language models (LoRA, full fine-tuning) with configurable GPU types and memory. Examples include Flux diffusion model and LLM fine-tuning.
+- **Code sandboxing**: Executing AI-generated code, coding agents, and untrusted user code in isolated Sandboxes with resource limits, networking controls, and filesystem snapshots.
+- **Data preprocessing**: Running CPU or GPU-intensive data pipelines on demand, including parallel processing of Parquet files on S3 and dataset ingestion workflows.
+- **Scheduled ETL**: Periodic data extraction, transformation, and loading jobs triggered by cron schedules or interval-based periods.
+- **Interactive notebooks**: GPU-backed collaborative Jupyter environments for prototyping, research, and document processing with OCR.
+- **Media generation**: Image generation (Flux, Stable Diffusion), video generation (Wan2.1), music generation (ACE-Step), and speech transcription (Whisper, Kyutai STT).
+- **Scientific computing**: Protein folding (Boltz-2, Chai-1, ESM3), molecular structure prediction, and other compute-intensive scientific workflows.
 
-## API Reference Summary
+## API Reference
 
 **App definition**:
 
@@ -5523,7 +5675,7 @@ import modal
 app = modal.App("my-app")
 ```
 
-**Function decorator**:
+**Function decorator with GPU**:
 
 ``` python
 @app.function(gpu="A100", timeout=3600, memory=32768)
@@ -5531,18 +5683,39 @@ def my_function(input_data):
     return process(input_data)
 ```
 
-**Image builder**:
+**Image builder** (recommended `uv_pip_install` for faster resolution):
 
 ``` python
 image = (
     modal.Image.debian_slim(python_version="3.11")
-    .pip_install("torch", "transformers")
+    .uv_pip_install(["torch", "transformers"])
     .apt_install("ffmpeg")
+    .env({"CUDA_VISIBLE_DEVICES": "0"})
 )
 
 @app.function(image=image, gpu="H100")
 def inference(prompt):
     pass
+```
+
+**Class-based functions with lifecycle hooks**:
+
+``` python
+@app.cls(image=image, gpu="L40S")
+class ModelServer:
+    @modal.enter()
+    def load_model(self):
+        from transformers import pipeline
+        self.pipe = pipeline("text-generation", model="meta-llama/Llama-2-7b-hf", device="cuda")
+
+    @modal.fastapi_endpoint(method="POST")
+    def generate(self, request: dict):
+        result = self.pipe(request["prompt"], max_new_tokens=256)
+        return {"output": result[0]["generated_text"]}
+
+    @modal.exit()
+    def cleanup(self):
+        del self.pipe
 ```
 
 **Volume**:
@@ -5555,15 +5728,6 @@ def write_data():
     with open("/data/output.txt", "w") as f:
         f.write("result")
     volume.commit()
-```
-
-**Web endpoint**:
-
-``` python
-@app.function()
-@modal.web_endpoint(method="POST")
-def predict(request: dict):
-    return {"result": run_model(request["input"])}
 ```
 
 **Parallel map**:
@@ -5596,41 +5760,86 @@ def periodic_job():
     pass
 ```
 
+**Sandbox**:
+
+``` python
+sb = modal.Sandbox.create(
+    app=app,
+    image=image,
+    timeout=3600,
+    tags={"project": "agent"}
+)
+process = sb.exec("python", "script.py")
+print(process.stdout.read())
+sb.detach()
+```
+
+**Autoscaler configuration**:
+
+``` python
+@app.function(
+    gpu="H100",
+    min_containers=2,
+    max_containers=100,
+    buffer_containers=5,
+    scaledown_window=120,
+)
+def inference(prompt):
+    pass
+```
+
+**Cloud bucket mount**:
+
+``` python
+bucket = modal.CloudBucketMount(
+    bucket_name="my-bucket",
+    secret=modal.Secret.from_name("aws-creds"),
+    key_prefix="data/",
+    read_only=True,
+)
+
+@app.function(volumes={"/s3": bucket})
+def process_data():
+    pass
+```
+
 ## Configuration
 
-**GPU selection**: GPUs are requested through the `gpu` parameter on the function decorator. Available GPU types and their memory:
+### GPU Selection
 
-| GPU   | Memory   | Notes                                  |
-|-------|----------|----------------------------------------|
-| T4    | 16 GB    | Budget inference                       |
-| L4    | 24 GB    | General purpose inference              |
-| A10   | 24 GB    | Balanced training/inference            |
-| A100  | 40/80 GB | May auto-upgrade to 80 GB              |
-| L40S  | 48 GB    | Recommended for inference (cost/perf)  |
-| H100  | 80 GB    | High-end training, may upgrade to H200 |
-| H100! | 80 GB    | Reserved H100 (no upgrade)             |
-| H200  | 141 GB   | Large model training                   |
-| B200  | 192 GB   | Next-gen training                      |
-| B200+ | 192 GB   | Opt-in for B300 access                 |
-| B300  | 288 GB   | Latest generation                      |
+GPUs are requested through the `gpu` parameter on the function decorator. Available GPU types:
 
-**Multi-GPU**: Request multiple GPUs by appending a count to the GPU type string:
+- **T4** (16 GB) -- Budget inference, up to 8 per container
+- **L4** (24 GB) -- General purpose inference, up to 8 per container
+- **A10** (24 GB) -- Balanced training/inference, up to 4 per container (96 GB max)
+- **L40S** (48 GB) -- Recommended for inference (best cost/performance trade-off), up to 8 per container
+- **A100** (40 GB) -- May auto-upgrade to 80 GB at no extra cost, up to 8 per container
+- **A100-40GB** (40 GB) -- Specifically 40 GB variant
+- **A100-80GB** (80 GB) -- Specifically 80 GB variant
+- **RTX-PRO-6000** -- Professional GPU
+- **H100** (80 GB SXM) -- High-end training, may auto-upgrade to H200 at no extra cost, up to 8 per container
+- **H100!** (80 GB SXM) -- Reserved H100 (no auto-upgrade to H200)
+- **H200** (141 GB HBM3e, 4.8 TB/s bandwidth) -- Large model training, up to 8 per container
+- **B200** (192 GB) -- NVIDIA Blackwell architecture, up to 8 per container
+- **B200+** (192 GB) -- Opt-in B200 or B300 (billed as B200, B300 requires CUDA 13.0+)
+
+### Multi-GPU
+
+Request multiple GPUs by appending a count: `gpu="H100:8"` for 8x H100 (up to 1,536 GB total). Most GPU types support up to 8 GPUs per container; A10 supports up to 4. Requesting more than 2 GPUs typically increases wait times.
+
+### GPU Fallbacks
+
+Specify a prioritized list of GPU types for availability flexibility:
 
 ``` python
-@app.function(gpu="H100:8")  # 8x H100, up to 1,536 GB total
-def distributed_training():
+@app.function(gpu=["H100", "A100-40GB:2"])
+def run_on_80gb():
     pass
 ```
 
-**GPU fallbacks**: Specify multiple GPU types as a prioritized list for availability:
+### Resource Limits
 
-``` python
-@app.function(gpu=modal.gpu.Any(["H100", "A100-80GB"]))
-def flexible_training():
-    pass
-```
-
-**Resource limits**: CPU, memory, and timeout are configured per function:
+CPU, memory, and timeout are configured per function:
 
 ``` python
 @app.function(cpu=4, memory=65536, timeout=7200, gpu="A100")
@@ -5638,17 +5847,53 @@ def heavy_job():
     pass
 ```
 
+### Region Selection
+
+Specify execution region with pricing multipliers:
+
+``` python
+@app.function(gpu="H100", region="us-east")  # 1.25x multiplier
+def us_inference():
+    pass
+```
+
+Available regions: `us`, `eu`, `uk`, `ap`, `ca`, `sa`, `me`, `mx`, `af`, plus sub-regions (e.g., `us-east`, `eu-west`). Broader regions improve availability and cold start times. US/EU/UK/AP incur 1.25x; CA/SA/ME/MX/AF incur 2.5x multiplier.
+
+### Non-Preemptible Mode
+
+CPU-only functions can opt out of preemption at 3x cost:
+
+``` python
+@app.function(cpu=4, nonpreemptible=True)  # GPU not supported
+def critical_job():
+    pass
+```
+
 ## Integration Patterns
 
-**SDKs**: Modal provides client SDKs in three languages for invoking deployed functions:
+### Client SDKs
 
-- **Python** (primary): Full SDK for defining and invoking functions, building images, and managing resources.
-- **JavaScript/TypeScript**: Client SDK for invoking Modal functions from Node.js applications.
-- **Go**: Client SDK for invoking Modal functions from Go services.
+Modal provides client SDKs in three languages:
 
-**Webhook integration**: Web endpoints can serve as webhook receivers for external services, processing incoming HTTP requests with GPU-backed functions.
+- **Python** (primary): Full SDK for defining and invoking functions, building images, and managing all resources.
+- **JavaScript/TypeScript** (beta): Client SDK via npm for invoking Modal functions, running Sandboxes, and interacting with Modal resources from Node.js applications.
+- **Go** (beta): Client SDK via `go get` for invoking Modal functions and managing Sandboxes from Go services.
 
-**Pipeline chaining**: Functions can call other Modal functions directly, enabling multi-step pipelines where each stage runs on different hardware:
+### Observability Integrations
+
+- **Datadog**: Direct integration for monitoring Modal workloads.
+- **OpenTelemetry**: Connect to any OTel-compatible provider for distributed tracing.
+- **GPU Metrics**: Built-in GPU utilization, memory, and power draw monitoring via dashboard and `nvidia-smi`.
+
+### Authentication and SSO
+
+- **OIDC**: Authenticate with external services (AWS, GCP) using Modal-issued identity tokens, eliminating manual credential management.
+- **Okta SSO / Custom SAML SSO**: Enterprise single sign-on integration.
+- **Proxy Auth Tokens**: Authenticate web endpoint requests with `Modal-Key` and `Modal-Secret` headers.
+
+### Pipeline Chaining
+
+Functions call other Modal functions directly, enabling multi-step pipelines where each stage runs on different hardware:
 
 ``` python
 @app.function(gpu="A100")
@@ -5665,49 +5910,40 @@ def pipeline(text):
     store_results.remote(embeddings)
 ```
 
-**Cloud storage**: Volumes and cloud bucket mounts provide persistent storage across function invocations, enabling workflows that accumulate state over time.
+### CI/CD Integration
+
+Continuous deployment via GitHub Actions or any CI system using `modal deploy`. Modal's `modal token new` command generates service user tokens for automated deployments without browser authentication.
 
 ## Examples
 
-**Basic GPU function**:
+**OpenAI-compatible LLM serving with vLLM**:
 
 ``` python
 import modal
 
-app = modal.App("gpu-example")
+app = modal.App("vllm-inference")
 
-@app.function(gpu="A100")
-def train_model():
-    import torch
-    device = torch.device("cuda")
-    tensor = torch.randn(1000, 1000, device=device)
-    result = torch.matmul(tensor, tensor.T)
-    return result.shape
-```
+image = (
+    modal.Image.debian_slim(python_version="3.11")
+    .pip_install("vllm")
+)
 
-**Model serving endpoint**:
-
-``` python
-import modal
-
-app = modal.App("inference-api")
-
-image = modal.Image.debian_slim().pip_install("transformers", "torch")
-
-@app.cls(image=image, gpu="L40S")
-class ModelServer:
+@app.cls(image=image, gpu="B200:2")
+class LLMServer:
     @modal.enter()
-    def load_model(self):
-        from transformers import pipeline
-        self.pipe = pipeline("text-generation", model="meta-llama/Llama-2-7b-hf", device="cuda")
+    def start_engine(self):
+        from vllm import LLM
+        self.llm = LLM(model="meta-llama/Llama-3.1-8B-Instruct")
 
-    @modal.web_endpoint(method="POST")
+    @modal.fastapi_endpoint(method="POST")
     def generate(self, request: dict):
-        result = self.pipe(request["prompt"], max_new_tokens=256)
-        return {"output": result[0]["generated_text"]}
+        from vllm import SamplingParams
+        params = SamplingParams(max_tokens=256)
+        outputs = self.llm.generate([request["prompt"]], params)
+        return {"text": outputs[0].outputs[0].text}
 ```
 
-**Batch processing with parallel map**:
+**Batch processing with parallel map and volumes**:
 
 ``` python
 import modal
@@ -5728,114 +5964,313 @@ def main():
     list(process_image.map(image_paths))
 ```
 
+**Sandbox for code execution agents**:
+
+``` python
+import modal
+
+app = modal.App("code-agent")
+image = modal.Image.debian_slim().pip_install("numpy", "pandas")
+
+@app.function()
+def execute_user_code(code: str):
+    sb = modal.Sandbox.create(
+        app=app,
+        image=image,
+        timeout=60,
+    )
+    process = sb.exec("python", "-c", code)
+    stdout = process.stdout.read()
+    stderr = process.stderr.read()
+    sb.terminate()
+    return {"stdout": stdout, "stderr": stderr}
+```
+
+**Multi-node distributed training (beta)**:
+
+``` python
+import modal
+
+app = modal.App("distributed-training")
+
+@app.function(gpu="H100:8")
+@modal.clustered(n_containers=4, rdma=True)  # 32 GPUs total
+def train_large_model():
+    import subprocess, sys
+    subprocess.run(
+        ["torchrun", "--nproc_per_node=8", "train.py"],
+        stdout=sys.stdout, stderr=sys.stderr, check=True,
+    )
+```
+
 ## Limitations
 
 - **Closed source**: The platform is proprietary with no self-hosted deployment option. All workloads run on Modal-managed infrastructure.
 - **Vendor lock-in**: The decorator-based API is Modal-specific. Migrating to another platform requires rewriting the infrastructure layer.
-- **Multi-node training**: Distributed training across multiple nodes is in closed beta and not generally available.
-- **Execution time limits**: Functions have maximum timeout constraints that may not suit extremely long-running workloads.
-- **Cold start variability**: While sub-second cold starts are typical, complex images with large dependencies may take longer on first invocation.
-- **Regional availability**: Infrastructure availability varies by region, which can affect GPU type availability and latency.
-- **No raw VM access**: Users cannot SSH into containers or access the underlying virtual machines directly.
+- **Multi-node training**: Distributed training across multiple nodes is in private beta with access requiring approval.
+- **Execution time limits**: Functions have maximum timeout constraints. Sandboxes support up to 24 hours.
+- **Cold start variability**: While containers boot in approximately one second, complex images with large dependencies or model loading in `@modal.enter()` may extend initialization time.
+- **Regional constraints**: All inputs and outputs traverse the control plane in `us-east-1` regardless of execution region. Cluster networking (i6pn) operates within single regions only.
+- **No raw VM access**: Users cannot SSH into containers or access underlying virtual machines directly.
+- **Scaling limits**: Hard limits of 2,000 pending inputs, 25,000 total inputs per function, 1,000 concurrent inputs per `.map()` call, and 200 web endpoint operations/second.
+- **Cloud bucket mount restrictions**: No append-mode file operations, arbitrary offset writes, file renaming, or parent directory auto-creation on mounted buckets.
+- **GPU preemption**: Non-preemptible mode is not available for GPU functions; only CPU-only functions can opt out of preemption.
+- **Python-first**: Defining Modal Functions remains exclusive to Python. JavaScript/TypeScript and Go SDKs (beta) support invocation and Sandbox management only.
 
-## Changelog Highlights
+## Changelog
 
-Modal is a continuously deployed platform without traditional versioned releases. The Python SDK receives frequent updates through PyPI. Notable platform capabilities include the addition of B200 and B300 GPU support, the introduction of cloud bucket mounts, and the ongoing closed beta for multi-node training.
+Modal is a continuously deployed platform. The Python SDK receives frequent updates through PyPI. Recent highlights:
+
+- **v1.3.5** (March 2026): `modal changelog` CLI, `Secret.update()` method, running input statistics.
+- **v1.3.4** (February 2026): Directory Snapshots for Sandboxes, `Sandbox.detach()`, 8x stdin throughput improvement.
+- **v1.3.3** (February 2026): Billing report API (GA), Queue/Dict `from_id()` methods, async usage warnings.
+- **v1.3.2** (January 2026): Dashboard URL methods, `modal dashboard` CLI, Sandbox log support.
+- **v1.3.1** (January 2026): Python 3.14t support, custom Sandbox domains, `Literal` type CLI annotations.
+- **v1.3.0** (December 2025): Python 3.14 support, Python 3.9 removed, exception handling migration, `single_use_containers` parameter.
+- Notable platform additions in 2025-2026: B200/B300 GPU support, RTX-PRO-6000, Volumes v2, cloud bucket mounts, Modal Notebooks, multi-node training beta, RDMA networking, and JavaScript/Go SDKs.
 
 ## Citations
 
-- \[1\] [Modal Documentation](https://modal.com/docs/guide)
-- \[2\] [Modal GPU Guide](https://modal.com/docs/guide/gpu)
+- \[1\] [Modal Documentation - Introduction](https://modal.com/docs/guide)
+- \[2\] [Modal GPU Acceleration Guide](https://modal.com/docs/guide/gpu)
+- \[3\] [Modal Images Guide](https://modal.com/docs/guide/images)
+- \[4\] [Modal Scaling Out Guide](https://modal.com/docs/guide/scale)
+- \[5\] [Modal Volumes Guide](https://modal.com/docs/guide/volumes)
+- \[6\] [Modal Sandboxes Guide](https://modal.com/docs/guide/sandboxes)
+- \[7\] [Modal Web Endpoints Guide](https://modal.com/docs/guide/webhooks)
+- \[8\] [Modal Cold Start Performance](https://modal.com/docs/guide/cold-start)
+- \[9\] [Modal Secrets Guide](https://modal.com/docs/guide/secrets)
+- \[10\] [Modal Cloud Bucket Mounts](https://modal.com/docs/guide/cloud-bucket-mounts)
+- \[11\] [Modal Scheduling and Cron](https://modal.com/docs/guide/cron)
+- \[12\] [Modal Apps and Functions](https://modal.com/docs/guide/apps)
+- \[13\] [Modal Container Lifecycle Hooks](https://modal.com/docs/guide/lifecycle-functions)
+- \[14\] [Modal Region Selection](https://modal.com/docs/guide/region-selection)
+- \[15\] [Modal Notebooks Guide](https://modal.com/docs/guide/notebooks)
+- \[16\] [Modal Security and Privacy](https://modal.com/docs/guide/security)
+- \[17\] [Modal Multi-Node Clusters](https://modal.com/docs/guide/multi-node-training)
+- \[18\] [Modal Preemption Guide](https://modal.com/docs/guide/preemption)
+- \[19\] [Modal Cluster Networking](https://modal.com/docs/guide/private-networking)
+- \[20\] [Modal JavaScript/Go SDKs](https://modal.com/docs/guide/sdk-javascript-go)
+- \[21\] [Modal Changelog](https://modal.com/docs/reference/changelog)
 
 # RunPod
 
 > GPU cloud platform offering pod instances and serverless GPU endpoints
 
-| Field         | Value                                    |
-|---------------|------------------------------------------|
-| Group         | GPU Compute & Cloud Platforms            |
-| Type          | API/Infra                                |
-| Open Source   | No                                       |
-| GitHub        | N/A                                      |
-| Stars         | N/A                                      |
-| Documentation | [Official Docs](https://docs.runpod.io/) |
+| Field       | Value                                     |
+|-------------|-------------------------------------------|
+| Name        | RunPod                                    |
+| Group       | GPU Infrastructure                        |
+| Type        | API/Infra                                 |
+| Open Source | No                                        |
+| GitHub      | N/A                                       |
+| Stars       | N/A                                       |
+| Docs        | [docs.runpod.io](https://docs.runpod.io/) |
 
 ## Overview
 
-RunPod is a cloud computing platform purpose-built for AI, machine learning (ML), and general compute workloads. It provides scalable GPU and CPU resources for training, fine-tuning, and inference, with pricing models that range from pay-per-second serverless execution to dedicated per-minute pod instances. The platform emphasizes rapid deployment through preconfigured workers, container-based workflows, and managed multi-node clusters for distributed training.
+RunPod is a cloud computing platform purpose-built for AI, machine learning (ML), and general compute workloads. Founded in October 2022, it provides scalable GPU and CPU resources for training, fine-tuning, and inference across 31+ global regions. The platform offers four primary products: Pods (dedicated GPU/CPU instances billed per minute), Serverless (autoscaling workers billed per second), Instant Clusters (managed multi-node GPU clusters with high-speed networking), and Public Endpoints (pre-deployed AI model APIs). RunPod emphasizes rapid deployment through preconfigured workers, container-based workflows, and managed clustering for distributed training. The platform holds SOC 2 Type II compliance and advertises 99.9% uptime with zero-egress-fee S3-compatible persistent storage.
 
 ## Core Concepts
 
-- **Serverless Endpoints**: Access points that handle request routing and queuing, scaling worker instances automatically with zero idle costs and pay-per-second billing
-- **Workers**: Container instances that execute compute tasks, managed by the platform with automatic scaling and lifecycle control
-- **Handler Functions**: User-defined processing logic that receives input events and returns results, forming the core unit of serverless execution
-- **Pods**: Dedicated GPU or CPU instances running containerized workloads, billed by the minute, suitable for long-running or interactive sessions
+- **Serverless Endpoints**: Request-routing access points that manage queuing and autoscaling of worker instances with pay-per-second billing and zero idle costs
+- **Workers**: Container instances executing compute tasks, available as Flex Workers (scale-to-zero on-demand) or Active Workers (always-on with up to 30% discount)
+- **Handler Functions**: User-defined processing logic receiving input events and returning results, forming the core unit of serverless execution for queue-based endpoints
+- **Pods**: Dedicated GPU or CPU instances running containerized workloads billed by the minute, available as On-Demand, Savings Plan (3 or 6 month commitment), or Spot instances
 - **Public Endpoints**: Pre-deployed API access points to AI models covering image, video, audio, and text generation without requiring custom deployment
-- **Instant Clusters**: Managed multi-node clusters with high-speed networking up to 3200 Gbps, supporting Slurm High-Performance Computing (HPC) scheduling and distributed PyTorch training
-- **FlashBoot**: A cold start optimization mechanism that reduces worker startup latency through cached container images and model weights
+- **Instant Clusters**: Managed multi-node clusters with 1600-3200 Gbps inter-node networking, supporting Slurm High-Performance Computing (HPC) scheduling and distributed PyTorch training across 2-8 nodes
+- **FlashBoot**: Cold start optimization reducing worker startup latency through cached container images and model weights, achieving sub-200ms cold starts
+- **Network Volumes**: Persistent portable storage independent of compute resources, attachable to multiple Pods or Serverless endpoints simultaneously, surviving Pod deletion
+- **Container Disk**: Temporary storage existing only while a Pod or worker is running, housing the operating system and ephemeral data
+- **Volume Disk**: Pod-specific persistent storage mounted at `/workspace` by default, persisting between stops but erased on Pod deletion
+- **Secure Cloud**: Pods deployed in T3/T4 data centers with enterprise-grade reliability and security for production workloads
+- **Community Cloud**: A peer-to-peer model connecting individual compute providers with users through a vetted security system at competitive pricing
+- **GPU Pools**: Grouped GPU types for serverless endpoint deployment (e.g., AMPERE_16, ADA_24, HOPPER_141), enabling workload placement by memory tier
 
-## Installation and Setup
+## Installation
 
 RunPod is a managed cloud platform and does not require local installation. Access is provisioned through the RunPod web console, CLI, or API.
 
 1.  Create an account at [runpod.io](https://www.runpod.io/)
 2.  Add billing credentials and select a compute plan
-3.  For serverless workloads, create an endpoint and deploy a worker container
-4.  For pod-based workloads, launch a pod instance with the desired GPU configuration
-5.  Optionally install the RunPod Python SDK for local development and testing:
+3.  Generate an API key from the Settings page with appropriate permissions (All, Restricted, or Read Only)
+4.  For serverless workloads, create an endpoint and deploy a worker container
+5.  For pod-based workloads, launch a pod instance with the desired GPU configuration
+6.  Install the RunPod Python SDK for local development and testing:
 
 ``` bash
 pip install runpod
 ```
 
+Verify installation:
+
+``` bash
+python3 -c "import runpod; print(runpod.__version__)"
+```
+
+Authenticate by setting the API key as an environment variable:
+
+``` bash
+export RUNPOD_API_KEY="your_api_key_here"
+```
+
+### MCP Server Integration
+
+RunPod provides two Model Context Protocol (MCP) servers for AI-assisted development:
+
+- **API MCP Server** (`@runpod/mcp-server`): Manages Pods, endpoints, templates, volumes, and registries via REST API with API key authentication
+- **Docs MCP Server** (`https://docs.runpod.io/mcp`): Provides searchable access to RunPod documentation without authentication
+
+Supported clients include Claude Code, Codex CLI, Cursor, VS Code with Copilot, Claude Desktop, Windsurf, Cline, and Gemini CLI.
+
 ## Architecture
 
-RunPod's serverless architecture follows a request-driven execution model:
+### Serverless Request Flow
 
-1.  **Request Arrival**: An HTTP request reaches the serverless endpoint
-2.  **Worker Startup**: If no active workers are available, a cold start initializes a new container instance
-3.  **Queuing**: Requests are queued when all active workers are occupied
+RunPod's serverless architecture follows a request-driven execution model with two distinct endpoint types:
+
+**Queue-Based Endpoints** process requests through managed queues with guaranteed execution and automatic retries:
+
+1.  **Request Arrival**: An HTTP request reaches the serverless endpoint via `/run` (async) or `/runsync` (sync)
+2.  **Worker Dispatch**: If no active workers are available, a cold start initializes a new container instance
+3.  **Queuing**: Requests queue when all active workers are occupied
 4.  **Handler Execution**: The handler function processes the input payload from the event object
-5.  **Result Return**: The computed result is returned to the caller
+5.  **Result Return**: The computed result is returned (immediately for `/runsync`, via polling `/status` for `/run`)
 6.  **Worker Persistence**: The worker remains active for a configurable idle period to serve subsequent requests
-7.  **Auto-Shutdown**: After the idle timeout expires, the worker shuts down to eliminate costs
+7.  **Auto-Shutdown**: After the idle timeout expires, Flex Workers shut down to eliminate costs
 
-Endpoint types serve different routing strategies:
+**Load Balancing Endpoints** route requests directly to worker HTTP servers without queuing, suited for real-time applications. They support custom HTTP frameworks like FastAPI or Flask, allowing developers to define their own API routes and streaming behavior.
 
-- **Queue-Based Endpoints**: Sequential processing via `/run` (asynchronous) and `/runsync` (synchronous) routes, suited for batch and throughput-oriented workloads
-- **Load Balancing Endpoints**: Direct routing to workers for real-time applications, compatible with FastAPI and Flask web frameworks
+### Pod Architecture
 
-## Key Features and Functionality
+Each Pod is a containerized computing environment with:
 
-- **Pay-Per-Second Billing**: Serverless compute charges accumulate only during active execution, with no cost for idle time
-- **Automatic Scaling**: Worker instances scale up and down based on request volume without manual intervention
-- **Cold Start Mitigation**: Multiple strategies reduce startup latency including cached models, FlashBoot prewarming, and configurable minimum active workers
+- Ubuntu Linux-based container with a unique Pod ID
+- Hardware allocation (vCPU, system RAM, one or more GPUs)
+- Network proxy enabling web access to exposed ports via `https://[pod-id]-[port].proxy.runpod.net`
+- Three-tier storage (Container Disk, Volume Disk, Network Volume)
+- Connection methods: SSH, Web Proxy, JupyterLab, VSCode/Cursor IDE integration
+
+### Instant Cluster Architecture
+
+Clusters provision multiple GPU nodes within the same data center:
+
+- One node designated as primary (handles external traffic on `eth0`)
+- Inter-node communication via dedicated interfaces `ens1`-`ens8` at 1600-3200 Gbps
+- Pre-configured environment variables including NODE_RANK for distributed communication
+- Native support for NCCL (NVIDIA Collective Communications Library) configuration
+
+## Key Features
+
+- **Pay-Per-Second Billing**: Serverless compute charges accumulate only during active execution with no idle costs; partial seconds round up to the next full second
+- **Automatic Scaling**: Worker instances scale from zero to 1000+ workers in seconds based on request volume without manual intervention
+- **Cold Start Mitigation**: Multiple strategies reduce startup latency including FlashBoot (sub-200ms), cached models, and configurable minimum Active Workers
 - **Container-Based Deployment**: All workloads run in Docker containers, enabling reproducible environments across development and production
-- **Managed Clustering**: Instant Clusters provide multi-node GPU environments with high-bandwidth interconnects for distributed training at scale
-- **Rapid Deployment**: Fork existing workers from GitHub repositories, deploy vLLM workers for Large Language Model (LLM) serving, or use RunPod Hub preconfigured endpoints
-- **Public Endpoints**: Instant API access to popular AI models without deploying custom infrastructure
+- **Managed Multi-Node Clustering**: Instant Clusters provide 2-8 node GPU environments with 1600-3200 Gbps interconnects for distributed training at scale
+- **30+ GPU SKUs**: Extensive hardware selection from RTX 3070 through B300, including AMD MI300X (192GB), NVIDIA H200 (141GB), and B200 (180GB)
+- **S3-Compatible Storage**: Persistent network volumes with zero egress fees, accessible via standard S3 API
+- **Streaming Support**: Incremental output delivery via `/stream` endpoint with up to 1 MB per chunk for real-time applications
+- **Webhook Notifications**: Automatic POST notifications upon job completion with retry logic, eliminating the need for polling
+- **Execution Policies**: Configurable timeouts (5 seconds to 7 days), TTL controls, and low-priority job scheduling
+- **Public Endpoints**: Instant API access to popular AI models (Flux, Whisper, Qwen, WAN 2.5, Kling, SORA 2) without deploying custom infrastructure
+- **Fine-Tuning**: Integrated fine-tuning powered by Axolotl with support for LoRA adapters, multiple dataset formats (chat_template, completion, input_output, alpaca, sharegpt), and direct deployment to Hugging Face Hub
+- **API Key Permissions**: Granular access control with All, Restricted (per-endpoint), and Read Only permission levels
+- **SOC 2 Type II Compliance**: Enterprise-grade security with HIPAA and GDPR compliance
 
 ## Use Cases
 
-- **Model Inference**: Deploy trained models as serverless endpoints for on-demand prediction serving with automatic scaling
-- **Model Training**: Use dedicated pods or instant clusters with multi-GPU configurations for training runs
-- **Fine-Tuning**: Run parameter-efficient fine-tuning jobs on serverless infrastructure with pay-per-second billing
-- **LLM Serving**: Deploy large language models using vLLM workers for high-throughput text generation
-- **Batch Processing**: Queue large volumes of inference requests through queue-based endpoints for asynchronous processing
-- **Distributed Training**: Leverage instant clusters with Slurm scheduling and distributed PyTorch for multi-node training across high-bandwidth GPU interconnects
-- **Prototyping**: Use public endpoints for rapid experimentation with image, video, audio, and text generation models
+- **Model Inference**: Deploy trained models as serverless endpoints for on-demand prediction serving with automatic scaling from zero to thousands of workers
+- **Model Training**: Use dedicated Pods or Instant Clusters with multi-GPU configurations (up to 64 GPUs across 8 nodes) for training runs
+- **Fine-Tuning**: Run parameter-efficient fine-tuning jobs using Axolotl with LoRA adapters on serverless infrastructure or dedicated Pods
+- **LLM Serving**: Deploy large language models using vLLM workers for high-throughput text generation with OpenAI-compatible API endpoints
+- **Batch Processing**: Queue large volumes of inference requests through queue-based endpoints with configurable TTL and execution policies for asynchronous processing
+- **Distributed Training**: Leverage Instant Clusters with Slurm scheduling and distributed PyTorch across high-bandwidth GPU interconnects (up to 3200 Gbps)
+- **Image and Video Generation**: Access Flux, Kling, Seedance, SORA 2, and other models via Public Endpoints for text-to-image and text-to-video generation
+- **Audio Processing**: Use Whisper V3 and MiniMax Speech public endpoints for transcription and text-to-speech workloads
+- **Prototyping**: Use Public Endpoints for rapid experimentation across image, video, audio, and text generation models with pay-per-use pricing
 
-## API Reference Summary
+## API Reference
 
-### Serverless Endpoints
+### Authentication
 
-- `POST /run` - Submit an asynchronous job to the queue, returns a job ID for polling
-- `POST /runsync` - Submit a synchronous job that blocks until completion and returns the result directly
-- `GET /status/{job_id}` - Retrieve the status and result of a previously submitted asynchronous job
+All API requests require Bearer token authentication:
+
+``` 
+Authorization: Bearer RUNPOD_API_KEY
+Content-Type: application/json
+```
+
+### Serverless Endpoint Operations
+
+Base URL: `https://api.runpod.ai/v2/{ENDPOINT_ID}`
+
+| Operation | Method | Path | Description |
+|----|----|----|----|
+| Run Sync | POST | `/runsync` | Submit synchronous job, wait for result (max 20 MB payload, 90s default timeout) |
+| Run Async | POST | `/run` | Submit async job, returns job ID (max 10 MB payload) |
+| Status | GET | `/status/{job_id}` | Retrieve job status and result |
+| Stream | GET | `/stream/{job_id}` | Receive incremental output chunks (max 1 MB per chunk) |
+| Cancel | POST | `/cancel/{job_id}` | Stop in-progress or queued job |
+| Retry | POST | `/retry/{job_id}` | Requeue failed or timed-out job |
+| Purge Queue | POST | `/purge-queue` | Clear all pending jobs |
+| Health | GET | `/health` | Monitor endpoint worker and queue statistics |
+
+### Request Schema
+
+``` json
+{
+  "input": {
+    "prompt": "Your input here"
+  },
+  "webhook": "https://optional-callback-url.com",
+  "policy": {
+    "executionTimeout": 600000,
+    "lowPriority": false,
+    "ttl": 86400000
+  },
+  "s3Config": {
+    "accessId": "KEY",
+    "accessSecret": "SECRET",
+    "bucketName": "NAME",
+    "endpointUrl": "URL"
+  }
+}
+```
+
+### Response Schema
+
+``` json
+{
+  "id": "sync-79164ff4-d212-44bc-9fe3-389e199a5c15",
+  "status": "COMPLETED",
+  "output": {},
+  "delayTime": 824,
+  "executionTime": 3391
+}
+```
+
+Status values: `IN_QUEUE`, `IN_PROGRESS`, `COMPLETED`, `FAILED`, `CANCELLED`, `TIMED_OUT`.
+
+### Rate Limits (per 10-second window)
+
+| Operation      | Requests | Concurrent |
+|----------------|----------|------------|
+| `/runsync`     | 2000     | 400        |
+| `/run`         | 1000     | 200        |
+| `/status`      | 2000     | 400        |
+| `/stream`      | 2000     | 400        |
+| `/cancel`      | 100      | 20         |
+| `/purge-queue` | 2        | N/A        |
+
+Rate limits scale dynamically with endpoint worker count, using the higher value between base limits and worker-calculated limits.
+
+### Result Retention
+
+- `/runsync`: 1 minute (extendable to 5 minutes via `?wait` parameter)
+- `/run`: 30 minutes post-completion
+- Public Endpoint output URLs: expire after 7 days
 
 ### Handler Function Interface
-
-The handler function is the entry point for serverless worker logic. It receives an event dictionary containing the input payload and returns the processed result:
 
 ``` python
 import runpod
@@ -5848,20 +6283,70 @@ def handler(event):
 runpod.serverless.start({"handler": handler})
 ```
 
-## Configuration and Customization
+### Public Endpoint Models
 
-- **Active Workers**: Set a minimum number of always-running workers to eliminate cold starts for latency-sensitive workloads
-- **Max Workers**: Define the upper bound on concurrent worker instances to control cost
-- **Idle Timeout**: Configure how long a worker remains active after completing its last request before auto-shutdown
-- **GPU Selection**: Choose GPU type and quantity per worker or pod, with options varying by availability and region
-- **Container Image**: Specify the Docker image and registry for worker deployment
-- **Environment Variables**: Pass configuration values to workers through the endpoint or pod settings
+Base URL: `https://api.runpod.ai/v2/{model-id}`
+
+| Category | Examples                           | Pricing                   |
+|----------|------------------------------------|---------------------------|
+| Image    | Flux Dev, Flux Schnell, Qwen Image | \$0.0024-\$0.02/megapixel |
+| Video    | WAN 2.5, Kling, Seedance, SORA 2   | \$0.50/5 seconds          |
+| Audio    | Whisper V3, MiniMax Speech         | \$0.05/1000 characters    |
+| Text     | Qwen3 32B, IBM Granite             | \$10.00/1M tokens         |
+
+Failed generations incur no charges.
+
+## Configuration
+
+### Serverless Endpoint Settings
+
+- **Active Workers**: Minimum number of always-running workers to eliminate cold starts (up to 30% discount over Flex Workers)
+- **Max Workers**: Upper bound on concurrent worker instances (default limit: 5; scales with balance up to 60+ at \$900)
+- **Idle Timeout**: Duration a worker remains active after completing its last request before auto-shutdown
+- **GPU Selection**: Choose GPU type and quantity per worker from available GPU pools (AMPERE_16 through HOPPER_141)
+- **Container Image**: Docker image and registry for worker deployment (Docker Hub, GitHub Container Registry, Amazon ECR)
+- **Environment Variables**: Configuration values passed to workers through endpoint settings
+- **Execution Timeout**: Active runtime limit per job (5 seconds to 7 days, default 10 minutes)
+- **TTL**: Total job lifespan including queue and execution (10 seconds to 7 days, default 24 hours)
+- **Extra Workers**: Additional workers provisioned during traffic spikes when Docker images are cached locally (default: 2)
+
+### Pod Configuration
+
+- **GPU Type and Quantity**: Select from 30+ GPU SKUs including B200, H200, H100, A100, RTX 4090, MI300X
+- **Cloud Type**: Secure Cloud (T3/T4 data centers) or Community Cloud (peer-to-peer at lower cost)
+- **Pricing Model**: On-Demand (pay-as-you-go), Savings Plans (3/6 month commitment), or Spot (lowest cost, 5-second termination warning)
+- **Storage**: Container Disk (temporary), Volume Disk (persistent at `/workspace`), Network Volume (portable, multi-Pod)
+- **Custom Start Commands**: Initialization scripts executed on Pod startup
+- **Exposed Ports**: HTTP and TCP ports accessible via the RunPod network proxy
+- **Pod Templates**: Pre-configured setups bundling Docker images with hardware specs, network settings, and environment variables
+
+### Instant Cluster Configuration
+
+- **Node Count**: 2-8 nodes (16-64 GPUs) for standard configurations; larger deployments available through sales
+- **GPU Type**: B200 (3200 Gbps), H200 (3200 Gbps), H100 (3200 Gbps), A100 (1600 Gbps)
+- **NCCL Settings**: Network interface configuration for NVIDIA Collective Communications Library
+- **Framework**: PyTorch distributed, TensorFlow, Slurm HPC, or Axolotl fine-tuning
+
+### vLLM Worker Configuration
+
+- `MAX_MODEL_LEN`: Maximum context length (e.g., 8192)
+- `DTYPE`: Model weight precision (float16, bfloat16, float32)
+- `GPU_MEMORY_UTILIZATION`: VRAM usage control (e.g., 0.95)
+- `CUSTOM_CHAT_TEMPLATE`: Custom chat formatting templates
+- `OPENAI_SERVED_MODEL_NAME_OVERRIDE`: Model name override for OpenAI-compatible endpoints
+
+### Fine-Tuning Configuration (Axolotl)
+
+Configuration lives in `/workspace/fine-tuning/config.yaml`:
+
+- **Model Settings**: Base model selection, bf16 precision auto-detection, 8-bit weight loading
+- **LoRA Adapter Settings**: Rank (r: 8), alpha scaling, target module specification
+- **Dataset Configuration**: Path, type specification (chat_template, completion, input_output, alpaca, sharegpt)
+- **Training Mechanics**: Micro-batch size, gradient accumulation, learning rate, sequence length
 
 ## Integration Patterns
 
-### Direct API Integration
-
-Call RunPod serverless endpoints from any HTTP client:
+### Direct API Integration (Python)
 
 ``` python
 import requests
@@ -5874,13 +6359,60 @@ response = requests.post(
 result = response.json()
 ```
 
+### Asynchronous Job with Polling
+
+``` python
+import requests
+import time
+
+endpoint_url = "https://api.runpod.ai/v2/{endpoint_id}"
+headers = {"Authorization": "Bearer {api_key}"}
+
+job = requests.post(
+    f"{endpoint_url}/run",
+    headers=headers,
+    json={"input": {"prompt": "Generate an image"}}
+).json()
+
+while True:
+    status = requests.get(
+        f"{endpoint_url}/status/{job['id']}",
+        headers=headers
+    ).json()
+    if status["status"] in ["COMPLETED", "FAILED"]:
+        break
+    time.sleep(2)
+
+print(status["output"])
+```
+
+### Webhook-Based Integration
+
+``` json
+{
+  "input": {"prompt": "Process this"},
+  "webhook": "https://your-server.com/runpod-callback"
+}
+```
+
+RunPod delivers POST notifications upon completion with automatic retry logic, eliminating polling overhead.
+
 ### vLLM Worker Deployment
 
-Deploy a vLLM-based LLM serving worker by forking the RunPod vLLM worker template from GitHub and configuring the model path and serving parameters.
+Deploy a vLLM-based LLM serving worker through RunPod Hub:
+
+1.  Select a Hugging Face model (e.g., `meta-llama/Llama-3.2-3B-Instruct`)
+2.  Deploy via RunPod Hub with the latest vLLM worker version
+3.  Configure `MAX_MODEL_LEN` and other environment variables
+4.  The endpoint supports both RunPod native API and OpenAI-compatible requests
+
+### Vercel AI SDK Integration
+
+The `@runpod/ai-sdk-provider` package provides type-safe integration for JavaScript/TypeScript projects with built-in streaming support for use with the Vercel AI SDK.
 
 ### Public Endpoint Consumption
 
-Access pre-deployed models through public endpoint APIs for image generation, text generation, audio processing, and video generation without custom deployment.
+Access pre-deployed models through public endpoint APIs across image generation (Flux), video generation (WAN 2.5, Kling, Seedance), audio processing (Whisper V3), and text generation (Qwen3 32B) without custom deployment.
 
 ## Examples
 
@@ -5897,174 +6429,409 @@ def handler(event):
 runpod.serverless.start({"handler": handler})
 ```
 
-### Asynchronous Job Submission
+### Handler with Processing Delay
 
 ``` python
-import requests
+import runpod
 import time
 
-endpoint_url = "https://api.runpod.ai/v2/{endpoint_id}"
-headers = {"Authorization": "Bearer {api_key}"}
+def handler(event):
+    input_data = event["input"]
+    prompt = input_data.get("prompt")
+    seconds = input_data.get("seconds", 0)
+    time.sleep(seconds)
+    return prompt
 
-# Submit async job
-job = requests.post(
-    f"{endpoint_url}/run",
-    headers=headers,
-    json={"input": {"prompt": "Generate an image"}}
-).json()
+if __name__ == "__main__":
+    runpod.serverless.start({"handler": handler})
+```
 
-# Poll for result
-while True:
-    status = requests.get(
-        f"{endpoint_url}/status/{job['id']}",
-        headers=headers
-    ).json()
-    if status["status"] in ["COMPLETED", "FAILED"]:
-        break
-    time.sleep(2)
+### Local Testing
 
-print(status["output"])
+Create `test_input.json`:
+
+``` json
+{"input": {"prompt": "Hey there!"}}
+```
+
+Run locally:
+
+``` bash
+python handler.py
+```
+
+### Docker Packaging
+
+``` dockerfile
+FROM python:3.10-slim
+WORKDIR /
+RUN pip install --no-cache-dir runpod
+COPY handler.py /
+CMD ["python3", "-u", "handler.py"]
+```
+
+Build and push:
+
+``` bash
+docker build --platform linux/amd64 --tag username/serverless-worker .
+docker push username/serverless-worker:latest
 ```
 
 ### Development Workflow
 
-The recommended development lifecycle for serverless workers:
-
-1.  Write the handler function with processing logic
+1.  Write handler function with processing logic
 2.  Test locally using the RunPod SDK test utilities
 3.  Package the handler into a Docker container
-4.  Push the container image to a registry (Docker Hub, GitHub Container Registry)
+4.  Push the container image to a registry (Docker Hub, GitHub Container Registry, Amazon ECR)
 5.  Deploy the image as a serverless endpoint through the RunPod console or API
-6.  Monitor endpoint metrics and logs
+6.  Monitor endpoint metrics, logs, and health via `/health`
 7.  Iterate on the handler and redeploy
 
-## Limitations and Considerations
+### Fine-Tuning Workflow
 
-- **Cold Start Latency**: Initial requests to idle endpoints incur startup delay as containers and models load; mitigated but not eliminated by FlashBoot and minimum active workers
-- **Closed Source**: The platform itself is proprietary; users cannot self-host or inspect the orchestration layer
-- **GPU Availability**: Specific GPU types may have limited availability depending on demand and region
-- **Vendor Lock-In**: Serverless handler functions use the RunPod SDK interface, requiring adaptation to migrate to other platforms
-- **Networking Constraints**: Inter-pod and cross-cluster networking is managed by the platform with limited user control over topology
+1.  Navigate to the Fine-Tuning section in the RunPod dashboard
+2.  Specify Hugging Face model and dataset IDs
+3.  Provide Hugging Face token for gated models
+4.  Select GPU instance and deploy Pod
+5.  Connect via JupyterLab, Web Terminal, or SSH
+6.  Configure `/workspace/fine-tuning/config.yaml` with model, LoRA, and training parameters
+7.  Run training: `axolotl train config.yaml`
+8.  Test inference with vLLM and LoRA module loading
+9.  Upload fine-tuned model to Hugging Face Hub
 
-## Changelog Highlights
+## Limitations
 
-RunPod evolves as a managed platform with continuous updates. Notable capabilities include the introduction of Instant Clusters for distributed training, FlashBoot for cold start optimization, Public Endpoints for zero-deployment model access, and vLLM worker templates for streamlined LLM serving. Consult the official documentation for the latest platform changes.
+- **Cold Start Latency**: Initial requests to idle endpoints incur startup delay as containers and models load; FlashBoot achieves sub-200ms but is not instantaneous for all configurations
+- **Closed Source Platform**: The orchestration and infrastructure layer is proprietary; users cannot self-host or inspect the control plane
+- **GPU Availability**: Specific GPU types may have limited availability depending on demand and region; default account limits start at 5 workers
+- **Vendor Lock-In**: Serverless handler functions use the RunPod SDK interface (`runpod.serverless.start`), requiring adaptation to migrate to other platforms
+- **Networking Constraints**: UDP connections are unavailable (TCP/HTTP only); inter-pod and cross-cluster networking is managed by the platform with limited user control over topology
+- **No Docker Compose**: RunPod manages Docker internally; Docker Compose is not supported within Pods
+- **No Windows**: Only Linux-based containers are supported; Mac builds require `--platform linux/amd64`
+- **Payload Size Limits**: `/runsync` accepts up to 20 MB; `/run` accepts up to 10 MB; streaming chunks are limited to 1 MB
+- **Result Expiration**: `/runsync` results expire after 1 minute (5 with `?wait`); `/run` results expire after 30 minutes; Public Endpoint output URLs expire after 7 days
+- **Default Spend Cap**: \$80/hour across all resources; worker limits scale with account balance (5 workers at base, up to 60+ at \$900 balance)
+
+## Changelog
+
+RunPod evolves as a managed platform with continuous updates. Notable capabilities as of early 2026 include:
+
+- **B200 and B300 GPUs**: Latest NVIDIA Blackwell architecture GPUs with 180GB and 288GB VRAM respectively
+- **AMD MI300X Support**: 192GB AMD Instinct GPU availability
+- **Instant Clusters**: Multi-node distributed training with up to 3200 Gbps inter-node networking
+- **FlashBoot**: Sub-200ms cold start optimization for serverless workers
+- **Public Endpoints**: Zero-deployment model access for image, video, audio, and text generation including SORA 2, Kling, and Seedance
+- **vLLM Worker Templates**: Streamlined LLM serving with OpenAI-compatible API endpoints
+- **MCP Server Integration**: Model Context Protocol servers for AI-assisted development across Claude Code, Cursor, and other IDEs
+- **Fine-Tuning via Axolotl**: Integrated fine-tuning with LoRA adapter support and multiple dataset formats
+- **SOC 2 Type II, HIPAA, and GDPR Compliance**: Enterprise-grade security certifications
+- **Vercel AI SDK Provider**: Type-safe JavaScript/TypeScript integration with streaming support
+
+Consult the [official documentation](https://docs.runpod.io/) for the latest platform changes.
 
 ## Citations
 
 - \[1\] RunPod Documentation - https://docs.runpod.io/
-- \[2\] RunPod Serverless - https://docs.runpod.io/serverless/overview
+- \[2\] RunPod Serverless Overview - https://docs.runpod.io/serverless/overview
+- \[3\] RunPod Pods Overview - https://docs.runpod.io/pods/overview
+- \[4\] RunPod Platform Concepts - https://docs.runpod.io/get-started/concepts
+- \[5\] RunPod Instant Clusters - https://docs.runpod.io/instant-clusters
+- \[6\] RunPod Serverless Quickstart - https://docs.runpod.io/serverless/quickstart
+- \[7\] RunPod vLLM Deployment - https://docs.runpod.io/serverless/vllm/get-started
+- \[8\] RunPod Serverless Pricing - https://docs.runpod.io/serverless/pricing
+- \[9\] RunPod Pods Pricing - https://docs.runpod.io/pods/pricing
+- \[10\] RunPod Public Endpoints - https://docs.runpod.io/public-endpoints/overview
+- \[11\] RunPod API Keys - https://docs.runpod.io/get-started/api-keys
+- \[12\] RunPod Fine-Tuning - https://docs.runpod.io/fine-tune
+- \[13\] RunPod MCP Servers - https://docs.runpod.io/get-started/mcp-servers
+- \[14\] RunPod GPU Types - https://docs.runpod.io/references/gpu-types
+- \[15\] RunPod Endpoint Operations - https://docs.runpod.io/serverless/endpoints/operations
+- \[16\] RunPod Send Requests - https://docs.runpod.io/serverless/endpoints/send-requests
+- \[17\] RunPod Python SDK - https://docs.runpod.io/sdks/python/overview
+- \[18\] RunPod Public Endpoint Requests - https://docs.runpod.io/public-endpoints/requests
+- \[19\] RunPod Pod Selection Guide - https://docs.runpod.io/pods/choose-a-pod
+- \[20\] RunPod Homepage - https://www.runpod.io/
 
 # Vast.ai
 
-| Field           | Value                                  |
-|-----------------|----------------------------------------|
-| **Group**       | GPU Compute & Cloud Platforms          |
-| **Type**        | API/Infra                              |
-| **Open Source** | No                                     |
-| **GitHub**      | N/A                                    |
-| **Stars**       | N/A                                    |
-| **Docs**        | [Official Docs](https://docs.vast.ai/) |
+> GPU marketplace for affordable on-demand cloud computing
+
+| Field       | Value                                 |
+|-------------|---------------------------------------|
+| Name        | Vast.ai                               |
+| Group       | GPU Infrastructure                    |
+| Type        | API/Infra                             |
+| Open Source | No                                    |
+| GitHub      | N/A                                   |
+| Stars       | N/A                                   |
+| Docs        | [docs.vast.ai](https://docs.vast.ai/) |
 
 ## Overview
 
-Vast.ai is a decentralized GPU marketplace that connects compute providers -- ranging from hobbyists to Tier-4 datacenters -- with users who need GPU resources for AI and machine learning workloads. The platform operates on a peer-to-peer model where providers maintain full pricing autonomy through dynamic pricing, and GPU instances can be launched in seconds. The stated mission is to democratize AI compute: "compute powering AI is supplied by the people and for the people."
+Vast.ai is a decentralized GPU marketplace that connects compute providers -- ranging from hobbyists with spare GPUs to Tier-4 datacenters -- with users who need GPU resources for AI and machine learning workloads. The platform operates on a peer-to-peer marketplace model where providers list their hardware, set their own prices, and retain full pricing autonomy through dynamic, supply-and-demand-driven pricing. GPU instances can be launched in seconds through the web console, Command Line Interface (CLI), Python Software Development Kit (SDK), or REST API.
+
+The platform offers two primary compute paradigms: dedicated GPU instances (Docker containers or Virtual Machines (VMs) with exclusive GPU access) and a serverless inference platform that auto-scales workers behind a managed endpoint. Vast.ai's stated mission is to democratize AI compute: "compute powering AI is supplied by the people and for the people."
 
 ## Core Concepts
 
-- **GPU Marketplace**: A peer-to-peer compute network where providers list their hardware and set their own prices. Users browse available machines, compare specs and reliability ratings, and rent GPU time at market-driven rates.
-- **Instances**: GPU instances with customizable specifications including GPU type, RAM, CPU cores, and bandwidth. Vast.ai offers both on-demand instances (pay as you go, no commitment) and reserved instances (longer-term commitments with up to 50% savings over on-demand pricing).
-- **Templates**: Prebuilt environments that enable one-click deployment of common AI/ML frameworks and tools. Users can also create and share custom templates tailored to their specific workflows.
-- **Search Engine**: A hardware search and filtering system that allows users to query available machines by GPU model, VRAM, CPU cores, RAM, disk space, bandwidth, provider reliability score, and price.
+- **GPU Marketplace**: A peer-to-peer compute network where providers list their hardware and set their own prices. Users browse available machines, compare specs and reliability ratings, and rent GPU time at market-driven rates. Prices fluctuate based on real-time supply and demand, creating competitive rates without static price quotes.
+- **Instances**: Containerized environments providing exclusive, never-shared GPU access for training, inference, and development. Each instance includes proportional CPU, RAM, and storage, runs a user-chosen Docker image, and bills by the second for actual usage. Instances come in three types: On-demand (guaranteed, fixed pricing), Reserved (up to 50% discount with commitment), and Interruptible (lowest cost, may be paused by higher-priority rentals).
+- **Serverless Endpoints**: A managed inference platform that auto-scales GPU workers behind a single API endpoint. Users deploy a model (e.g., via vLLM), configure scaling parameters, and the platform handles worker provisioning, load balancing, and autoscaling based on benchmark-driven throughput metrics. Serverless supports mixed hardware -- a single endpoint can leverage diverse GPU types from consumer-grade to enterprise-class.
+- **Templates**: Configuration wrappers around Docker images that simplify instance deployment. Templates encapsulate the Docker image, environment variables, startup scripts, port configuration, and deployment settings. Vast.ai provides prebuilt templates (e.g., PyTorch, vLLM) built on base images that include CUDA, Node.js, and integrated Caddy proxy with TLS encryption and authentication.
+- **PyWorkers**: Custom Python worker scripts for serverless endpoints that act as HTTP proxy layers between the Vast routing system and a model server. PyWorkers handle request transformation, workload calculation, response streaming, and readiness detection through log pattern matching.
+- **Search Engine**: A hardware search and filtering system allowing users to query available machines by GPU model, VRAM, CPU cores, RAM, disk space, bandwidth, provider reliability score, geographic location, and price.
 
-## Installation and Setup
+## Installation
 
-Vast.ai provides a command-line interface (CLI) tool called `vastai` for programmatic interaction with the marketplace.
+### CLI Installation
+
+The `vastai` CLI is a self-contained Python script providing all functionality of the web console.
 
 ``` bash
+# Install from PyPI
 pip install vastai
+
+# Or install directly from GitHub
+wget https://raw.githubusercontent.com/vast-ai/vast-python/master/vast.py -O vast
+chmod +x vast
+```
+
+### Authentication
+
+``` bash
+# Set API key (generated from https://cloud.vast.ai/cli/)
 vastai set api-key YOUR_API_KEY
 ```
 
-After installation, verify the setup by listing available offers:
+The API key is saved in a hidden file in the home directory. Default keys grant full account access; restricted permissions can be configured with `create api-key` and a JSON permission structure.
+
+### Python SDK Installation
 
 ``` bash
-vastai search offers
+pip install vastai_sdk
 ```
 
-API keys are generated from the Vast.ai web console and used for both CLI and REST API authentication.
+``` python
+from vastai_sdk import VastAI
+
+# Initialize with explicit key
+vast_sdk = VastAI(api_key="YOUR_API_KEY")
+
+# Or for serverless endpoints
+from vastai import Serverless
+client = Serverless()  # Uses VAST_API_KEY environment variable
+```
 
 ## Architecture
 
-Vast.ai follows a marketplace architecture with three main layers:
+Vast.ai follows a three-layer marketplace architecture:
 
-- **Provider Layer**: Individual GPU owners and datacenter operators register their machines on the platform, configure pricing, and make hardware available to the network.
-- **Marketplace Layer**: The central platform handles instance discovery, search and filtering, transaction management, and reliability tracking. Dynamic pricing is determined by providers, not the platform.
-- **Consumer Layer**: Users interact with the marketplace through the web console, CLI, or REST API to find, launch, and manage GPU instances.
+- **Provider Layer**: GPU owners and datacenter operators register their machines, configure pricing and contract terms, and make hardware available to the network. Providers retain full control over pricing and availability.
+- **Marketplace Layer**: The central platform handles instance discovery, search and filtering, transaction management, reliability tracking, and billing. Dynamic pricing is determined by providers, not the platform -- Vast.ai adds no markup on top of host-set prices.
+- **Consumer Layer**: Users interact with the marketplace through four interfaces: the web console at cloud.vast.ai, the `vastai` CLI, the Python SDK (`vastai_sdk`), or the REST API.
 
-Access to running instances is provided through multiple methods: SSH, Jupyter notebooks, and web portals.
+### Instance Execution Environment
+
+Instances are Linux Docker containers where templates control Docker creation parameters. The platform automatically configures resource constraints:
+
+- **GPU**: Exclusive, never-shared access per instance. Stopped instances release GPU reservations.
+- **CPU and RAM**: Scale proportionally to GPU fraction on the host. CPU can burst above baseline when spare cycles exist, but RAM overages risk Out of Memory (OOM) termination during contention.
+- **Disk**: Static allocation set at creation time; cannot be modified after launch.
+- **Networking**: Instances lack unique public IPs. Each open internal port maps to a random external port on shared infrastructure, with a 64-port-per-instance limit. Docker `EXPOSE` commands automatically generate port mappings; custom ports use `-p` flag syntax. Identity port mappings (matching external and internal) require ports above 70000.
+
+Three launch modes are supported: Entrypoint (runs the Docker image's default entrypoint), SSH (injects SSH setup scripts), and Jupyter (injects Jupyter notebook setup). SSH and Jupyter modes replace the original Docker entrypoint, so users should copy their entrypoint command into the onstart script.
+
+### Virtual Machine Instances
+
+For workloads requiring init managers (systemd), nested containerization, Docker-in-Docker, or kernel module loading, Vast.ai offers VM instances. Pre-configured Ubuntu 22.04 Server and Ubuntu Desktop images are available. VMs have slower creation and boot times, higher disk overhead, and more limited machine availability compared to Docker instances.
+
+### Serverless Architecture
+
+The serverless platform provisions GPU workers behind a managed endpoint with autoscaling:
+
+- **Endpoint**: A named API entry point that routes requests to available workers.
+- **Workergroup**: A collection of GPU workers sharing the same template, model, and scaling configuration. Parameters include `gpu_ram`, `search_params`, `template_hash`, and `launch_args`.
+- **Autoscaler**: Benchmark-driven scaling that identifies optimal price-performance GPUs. Workers transition between states: Stopped (model loaded, ready to activate on-demand as cold workers), Loading (starting up and loading model into GPU memory), and Ready (active and handling requests).
+- **Cold Multiplier**: A scaling factor that determines total capacity (cold plus warm workers) based on predicted load.
+- **Workers**: Individual GPU instances running the model server and PyWorker. The system tracks throughput per worker via benchmarks to estimate workload capacity.
 
 ## Key Features
 
-- **Instance Search with Hardware Filtering**: Query available GPUs by model, VRAM, price, reliability, and other hardware specifications to find the best match for a given workload.
-- **Dynamic Marketplace Pricing**: Providers set and adjust their own prices, creating a competitive market that typically offers lower rates than traditional cloud providers.
-- **Reserved Instances**: Commit to longer-term rentals for up to 50% savings compared to on-demand pricing.
-- **Data Transfer Tools**: Built-in utilities for uploading datasets to and downloading results from instances.
-- **Instance Management**: Start, stop, restart, and monitor instances through the CLI, API, or web console.
-- **Multiple Access Methods**: Connect to instances via SSH, Jupyter notebooks, or web-based portals depending on the workflow.
-- **Template System**: Use prebuilt or custom templates for rapid environment setup and reproducible deployments.
+- **Per-Second Billing**: Charged by the second for actual GPU usage, with no hourly minimums. Storage charges continue while instances exist, even when stopped.
+- **Three Instance Types**: On-demand (guaranteed, highest priority), Reserved (up to 50% discount with pre-payment commitment), and Interruptible (lowest cost, may be paused, often 50% or more cheaper than on-demand).
+- **Serverless Inference**: Deploy models behind auto-scaling endpoints with benchmark-driven GPU selection, mixed hardware support, and OpenAI-compatible API endpoints via vLLM templates.
+- **Custom PyWorkers**: Build custom worker scripts with configurable request parsing, workload calculation, response streaming, and log-based readiness detection. Deploy via Git repository with `PYWORKER_REPO` environment variable.
+- **Template System**: Prebuilt and custom templates built on Vast.ai base images (`vastai/base-image`, `vastai/pytorch`) with CUDA, integrated Caddy proxy, automatic TLS, and authentication. Templates support onstart scripts, environment variables, and port configuration.
+- **Cloud Sync**: Transfer data between instances and cloud storage providers (Amazon S3, Google Drive, Dropbox, Backblaze) via GUI or `vastai cloud copy` CLI command, even when instances are stopped.
+- **Instance Portal**: Web interface for instances using Vast.ai base images, providing authenticated access to services and tunnel creation without direct port exposure.
+- **Team Management**: Create teams, invite members, assign roles with granular permissions, and transfer credits between personal accounts and teams.
+- **Multiple Access Methods**: Connect to instances via SSH, Jupyter notebooks, web portals, or custom entrypoints.
 
 ## Use Cases
 
-- **Model Training**: Rent high-end GPUs (A100, H100) for training large models at marketplace rates that are often significantly below major cloud providers.
-- **Inference at Scale**: Deploy inference endpoints on cost-effective GPU instances with the ability to scale horizontally across multiple providers.
-- **Experimentation and Prototyping**: Quickly spin up GPU instances for short-lived experiments without long-term commitments or upfront costs.
-- **Batch Processing**: Run large batch jobs across multiple instances using on-demand pricing, paying only for the compute time consumed.
-- **Fine-Tuning**: Use mid-range GPU instances to fine-tune pretrained models on custom datasets at competitive rates.
+- **Model Training**: Rent high-end GPUs (A100, H100) for training large models at marketplace rates significantly below major cloud providers. Use Reserved instances for multi-day training runs to save up to 50%.
+- **Inference at Scale**: Deploy serverless endpoints with auto-scaling workers for production inference. The platform handles GPU provisioning, load balancing, and scaling based on real-time demand.
+- **Batch Processing**: Run large batch jobs across multiple Interruptible instances at the lowest cost. Interruptible workloads handle pauses gracefully and resume automatically when priority is restored.
+- **Experimentation and Prototyping**: Quickly spin up On-demand GPU instances for short-lived experiments without long-term commitments. Per-second billing ensures minimal cost for brief sessions.
+- **Fine-Tuning**: Use mid-range GPU instances with sufficient VRAM to fine-tune pretrained models on custom datasets. Templates with PyTorch and CUDA pre-installed reduce setup time.
+- **Multi-Container Workloads**: Use VM instances for scenarios requiring Docker-in-Docker, Kubernetes, or systemd support that standard Docker containers cannot provide.
 
-## API Reference Summary
+## API Reference
 
-Vast.ai exposes a REST API at the `/api/v0/` endpoint. Authentication uses Bearer tokens.
+### REST API
 
-### Instance SSH Attachment
+The REST API is intended for advanced users; the CLI and Python SDK are recommended for most workflows. Authentication uses Bearer tokens with API keys generated from the web console.
 
-``` 
-POST /api/v0/instances/{id}/ssh/
-Authorization: Bearer <API_KEY>
-```
-
-Attaches an SSH key to a running instance for remote access.
-
-### CLI Equivalents
+### CLI Commands
 
 ``` bash
-# Attach SSH key to an instance
-vastai attach ssh <instance_id> <ssh_key>
+# Search for available GPU offers
+vastai search offers [filter-parameters] -o [sort-options]
+# Example: vastai search offers 'reliability > 0.99 num_gpus>=4'
+
+# Create an instance from an offer
+vastai create instance [OFFER_ID] --image [IMAGE] --disk [GB] --ssh --direct
+
+# List running instances
+vastai show instances
+
+# Start / stop / destroy instances
+vastai start instance [ID]
+vastai stop instance [ID]
+vastai destroy instance [ID]
+
+# Data transfer between instances or cloud storage
+vastai copy [instance_id:]path [instance_id:]path
+vastai cloud copy [args]
+
+# SSH into an instance
+vastai ssh-url [ID]
+
+# Show underlying API call for any command
+vastai [command] --explain
+```
+
+### Python SDK
+
+``` python
+from vastai_sdk import VastAI
+vast_sdk = VastAI(api_key="YOUR_API_KEY")
 
 # Search for available offers
-vastai search offers
+offers = vast_sdk.search_offers(query="gpu_name=RTX_5090 rented=False rentable=True")
 
-# Create an instance
-vastai create instance <offer_id> --image <template>
+# Launch an instance
+vast_sdk.launch_instance(num_gpus="1", gpu_name="RTX_3090", image="pytorch/pytorch")
 
-# Stop an instance
-vastai stop instance <instance_id>
+# Instance lifecycle
+vast_sdk.start_instance(id=12345)
+vast_sdk.stop_instance(id=12345)
+vast_sdk.reboot_instance(id=12345)
+vast_sdk.destroy_instance(id=12345)
 
-# Destroy an instance
-vastai destroy instance <instance_id>
+# View instance details and logs
+vast_sdk.show_instances()
+vast_sdk.logs(id=12345)
+
+# File operations
+vast_sdk.copy(src="path", dst="path", identity="file")
+vast_sdk.cloud_copy()
+
+# SSH key management
+vast_sdk.create_ssh_key()
+vast_sdk.show_ssh_keys()
+vast_sdk.delete_ssh_key(id=1)
+```
+
+### Serverless SDK
+
+``` python
+import asyncio
+from vastai import Serverless
+
+async def main():
+    client = Serverless()  # Uses VAST_API_KEY env var
+    endpoint = await client.get_endpoint(name="vLLM-Qwen3-8B")
+
+    payload = {
+        "model": "Qwen/Qwen3-8B",
+        "prompt": "Explain quantum computing in simple terms",
+        "max_tokens": 100,
+        "temperature": 0.7,
+    }
+
+    result = await endpoint.request("/v1/completions", payload, cost=100)
+    print(result["response"]["choices"][0]["text"])
+    await client.close()
+
+asyncio.run(main())
 ```
 
 ## Configuration
 
-Instance configuration is specified at launch time through the CLI or API:
+### Instance Configuration
 
-- **GPU Type**: Select specific GPU models (e.g., RTX 3090, A100, H100).
+Instance parameters are specified at launch time through the CLI, SDK, or web console:
+
+- **GPU Type**: Specific GPU model (e.g., RTX 3090, RTX 4090, A100, H100).
 - **GPU Count**: Number of GPUs per instance.
 - **RAM**: Minimum system RAM requirement.
 - **CPU Cores**: Minimum CPU core count.
-- **Disk Space**: Storage allocation for the instance.
+- **Disk Space**: Storage allocation (static, cannot be modified after creation).
 - **Bandwidth**: Minimum network bandwidth.
-- **Template/Image**: The Docker image or template to use for the instance environment.
+- **Template/Image**: Docker image or template hash for the instance environment.
+- **Launch Mode**: Entrypoint, SSH, or Jupyter.
+
+### Environment Variables
+
+Instances support custom environment variables via `-e` syntax. Predefined variables injected by the platform include: `CONTAINER_API_KEY`, `CONTAINER_ID`, `GPU_COUNT`, `PUBLIC_IPADDR`, `SSH_PUBLIC_KEY`, and port mapping variables (`VAST_TCP_PORT_X`, `VAST_UDP_PORT_X`). UI control variables include `OPEN_BUTTON_PORT`, `JUPYTER_PORT`, `JUPYTER_TOKEN`, and `DATA_DIRECTORY`.
+
+### Serverless Endpoint Configuration
+
+Endpoint-level parameters set during creation:
+
+- **Endpoint Name**: Descriptive identifier for the endpoint.
+- **Cold Multiplier**: Scales total capacity based on predicted load (e.g., 3x).
+- **Minimum Workers**: Pre-loaded instances for instant scaling.
+- **Maximum Workers**: Upper bound on GPU instances.
+- **Minimum Load**: Baseline tokens-per-second instantaneous capacity.
+- **Minimum Cold Load**: Baseline tokens-per-second total capacity.
+- **Target Utilization**: Resource usage target (e.g., 0.9 for 90%).
+
+Workergroup parameters include `gpu_ram` (VRAM in GB, default 24), `search_params` (hardware filtering criteria), `template_hash` or `template_id` (pre-configured deployment template), and `launch_args` (additional instance creation parameters).
+
+### PyWorker Configuration
+
+Custom PyWorker configuration in `worker.py`:
+
+``` python
+from vastai import Worker, WorkerConfig, HandlerConfig, LogActionConfig, BenchmarkConfig
+
+worker_config = WorkerConfig(
+    model_server_url="http://127.0.0.1",
+    model_server_port=18000,
+    model_log_file="/var/log/portal/vllm.log",
+    handlers=[
+        HandlerConfig(
+            route="/v1/completions",
+            allow_parallel_requests=True,
+            max_queue_time=60.0,
+            workload_calculator=lambda p: float(p.get("max_tokens", 0)),
+            benchmark_config=BenchmarkConfig(
+                generator=completions_benchmark_generator,
+                runs=8,
+                concurrency=10,
+            ),
+        ),
+    ],
+    log_action_config=LogActionConfig(
+        on_load=["Application startup complete."],
+        on_error=["RuntimeError: Engine", "Traceback (most recent call last):"],
+    ),
+)
+
+Worker(worker_config).run()
+```
 
 ## Integration Patterns
 
@@ -6072,9 +6839,9 @@ Instance configuration is specified at launch time through the CLI or API:
 
 ``` bash
 #!/bin/bash
-# Find cheapest A100 instance and launch with a PyTorch template
+# Find cheapest A100 offer and launch with PyTorch template
 OFFER_ID=$(vastai search offers --gpu-name A100 --order dph | head -1 | awk '{print $1}')
-vastai create instance $OFFER_ID --image pytorch/pytorch:latest
+vastai create instance $OFFER_ID --image pytorch/pytorch:latest --disk 64 --ssh --direct
 ```
 
 ### REST API Integration
@@ -6084,243 +6851,615 @@ import requests
 
 API_KEY = "your_api_key"
 BASE_URL = "https://console.vast.ai/api/v0"
-
 headers = {"Authorization": f"Bearer {API_KEY}"}
 
-# Search for offers
+# Search for available offers
 response = requests.get(f"{BASE_URL}/bundles/", headers=headers)
 offers = response.json()
+```
+
+### Serverless Deployment via Git Repository
+
+Deploy custom PyWorkers by creating a Git repository with `worker.py` and `requirements.txt`, then setting the `PYWORKER_REPO` environment variable in the serverless configuration. The platform clones the repository, installs dependencies, starts the model server, and runs the PyWorker.
+
+### Cloud Storage Sync
+
+``` bash
+# Copy data from S3 to a stopped instance
+vastai cloud copy s3://bucket/data instance_id:/workspace/data
+
+# Copy between instances (same datacenter avoids bandwidth charges)
+vastai copy 12345:/output/ 67890:/input/
 ```
 
 ### SSH Automation
 
 ``` bash
-# Attach key and connect
-vastai attach ssh <instance_id> ~/.ssh/id_rsa.pub
-ssh -p <port> root@<host>
+# Get SSH connection details
+vastai ssh-url INSTANCE_ID
+
+# SCP for smaller transfers (under 1 GB recommended)
+scp -P PORT local_file.tar.gz root@IPADDR:/workspace/
 ```
 
 ## Examples
 
-### Launch a Training Instance
+### Deploy a Serverless vLLM Endpoint
+
+1.  Navigate to the Serverless Dashboard at cloud.vast.ai/serverless.
+2.  Click "Get Started" and configure the endpoint with a name, cold multiplier of 3, minimum 5 workers, and maximum 16 workers.
+3.  Select the "vLLM (Serverless)" template pre-configured with Qwen/Qwen3-8B.
+4.  Click "Create" and wait 3-5 minutes for workers to initialize (download model, load into GPU memory, complete health checks).
+5.  Monitor worker states: Stopped (cold, ready to activate), Loading (starting), Ready (serving requests).
+
+### Launch a Training Instance via CLI
 
 ``` bash
-# Search for A100 instances under $1/hr
-vastai search offers --gpu-name A100 --dph 1.0 --order dph
+# Search for A100 instances under $1/hr with high reliability
+vastai search offers --gpu-name A100 --dph 1.0 --order dph 'reliability > 0.95'
 
-# Create instance from an offer
-vastai create instance 12345 --image pytorch/pytorch:2.0-cuda11.8-cudnn8-devel
+# Create instance with 64 GB disk
+vastai create instance 12345 --image pytorch/pytorch:2.0-cuda11.8-cudnn8-devel --disk 64 --ssh
 
 # Monitor instance status
 vastai show instances
+
+# Stop instance (preserves data, stops GPU charges)
+vastai stop instance 12345
+
+# Destroy instance (stops all charges including storage)
+vastai destroy instance 12345
 ```
 
-### Reserved Instance Workflow
+### Reserved Instance for Long-Term Training
 
 ``` bash
-# Search for reservable offers
+# Search for reservable H100 offers
 vastai search offers --gpu-name H100 --reservable
 
-# Create a reserved instance for cost savings
+# Create and convert to reserved for up to 50% savings
 vastai create instance 67890 --image nvidia/cuda:12.0-devel --reserve
+```
+
+### Custom PyWorker for Image Generation
+
+``` python
+from vastai import Worker, WorkerConfig, HandlerConfig, LogActionConfig, BenchmarkConfig
+
+worker_config = WorkerConfig(
+    model_server_url="http://127.0.0.1",
+    model_server_port=8188,
+    model_log_file="/var/log/portal/comfyui.log",
+    handlers=[
+        HandlerConfig(
+            route="/api/generate",
+            allow_parallel_requests=False,
+            max_queue_time=120.0,
+            workload_calculator=lambda p: 1.0,
+        ),
+    ],
+    log_action_config=LogActionConfig(
+        on_load=["ComfyUI startup complete"],
+        on_error=["RuntimeError"],
+    ),
+)
+
+Worker(worker_config).run()
 ```
 
 ## Limitations
 
-- **Provider Variability**: Hardware reliability and network quality vary across providers. Reliability scores help mitigate this, but interruptions can occur on lower-rated machines.
-- **No Guaranteed Uptime SLA**: Unlike traditional cloud providers, Vast.ai does not offer enterprise-grade Service Level Agreements (SLAs) on most instances.
-- **Data Locality**: Data must be transferred to and from instances, which can introduce latency for large datasets.
-- **Security Considerations**: Instances run on third-party hardware. Sensitive workloads may require additional encryption and security measures.
-- **Closed Source Platform**: The marketplace platform itself is proprietary and not open source.
-- **Spot-Like Behavior**: On-demand instances on shared hardware may be preempted if a higher-priority reservation is placed by the provider.
+- **Provider Variability**: Hardware reliability and network quality vary across providers. Reliability scores help mitigate risk, but interruptions can occur on lower-rated machines.
+- **No Guaranteed Uptime SLA**: Unlike traditional cloud providers, Vast.ai does not offer enterprise-grade Service Level Agreements (SLAs) on most instances. Interruptible instances may be paused at any time by higher-priority rentals.
+- **Data Locality**: Data must be transferred to and from instances. SCP over proxy SSH is recommended only for transfers under 1 GB; direct SSH connections or cloud sync are preferred for larger datasets.
+- **Static Disk Allocation**: Disk space is set at instance creation and cannot be modified afterward.
+- **Networking Constraints**: Instances share public IPs with port-based routing, limited to 64 ports per instance. No dedicated public IP assignment is available.
+- **VM Limitations**: VM instances have slower boot times, higher disk overhead, limited machine availability, restricted preconfigured templates, and no SSH key modification on running instances. VM copy operations only support complete VM-to-VM transfers.
+- **Closed Source Platform**: The marketplace platform is proprietary. The CLI and SDK are open source, but the core infrastructure is not.
+- **Pre-Payment Required**: Credits must be purchased before launching instances. When balance reaches zero, instances are stopped automatically. Without a saved payment method, instances and stored data are destroyed.
+- **Security Model**: Instances run on third-party hardware. Sensitive workloads require additional encryption and security measures beyond the platform's default Caddy proxy with TLS.
 
-## Changelog Highlights
+## Changelog
 
-Vast.ai continuously updates its marketplace and tooling. Consult the official documentation and announcements for the latest platform changes, new GPU availability, and CLI/API updates.
+Vast.ai continuously updates its marketplace and tooling. Key platform capabilities as of the documentation crawl include serverless inference with benchmark-driven autoscaling, virtual machine instance support, the PyWorker custom worker framework, the Python SDK with async serverless client, cloud sync with S3 and Google Drive, team management with role-based access, and the Instance Portal web interface. Consult the official documentation and community Discord for the latest platform changes.
 
 ## Citations
 
-- \[1\] Vast.ai Documentation - <https://docs.vast.ai/>
+- \[1\] Welcome to Vast.ai - <https://docs.vast.ai/documentation/get-started>
+- \[2\] Instances Overview - <https://docs.vast.ai/documentation/instances/overview>
+- \[3\] Pricing - <https://docs.vast.ai/documentation/instances/pricing>
+- \[4\] Instance Types - <https://docs.vast.ai/documentation/instances/choosing/instance-types>
+- \[5\] Docker Execution Environment - <https://docs.vast.ai/documentation/instances/docker-environment>
+- \[6\] Virtual Machines - <https://docs.vast.ai/documentation/instances/virtual-machines>
+- \[7\] Data Movement - <https://docs.vast.ai/documentation/instances/storage/data-movement>
+- \[8\] Templates Introduction - <https://docs.vast.ai/documentation/templates/introduction>
+- \[9\] Serverless Overview - <https://docs.vast.ai/documentation/serverless>
+- \[10\] Serverless Quickstart - <https://docs.vast.ai/documentation/serverless/quickstart>
+- \[11\] Creating Custom PyWorkers - <https://docs.vast.ai/documentation/serverless/creating-new-pyworkers>
+- \[12\] Workergroup Parameters - <https://docs.vast.ai/documentation/serverless/workergroup-parameters>
+- \[13\] CLI Getting Started - <https://docs.vast.ai/cli/get-started>
+- \[14\] Python SDK Quickstart - <https://docs.vast.ai/sdk/python/quickstart>
+- \[15\] API Reference - <https://docs.vast.ai/api-reference/introduction>
+- \[16\] Billing - <https://docs.vast.ai/documentation/reference/billing>
+- \[17\] Keys - <https://docs.vast.ai/documentation/reference/keys>
 
 # Inferless
 
-| Field           | Value                                        |
-|-----------------|----------------------------------------------|
-| **Group**       | GPU Compute & Cloud Platforms                |
-| **Type**        | API/Infra                                    |
-| **Open Source** | No                                           |
-| **GitHub**      | N/A                                          |
-| **Stars**       | N/A                                          |
-| **Docs**        | [Official Docs](https://docs.inferless.com/) |
+> Serverless GPU inference platform for deploying ML models
+
+| Field       | Value                                             |
+|-------------|---------------------------------------------------|
+| Name        | Inferless                                         |
+| Group       | GPU Infrastructure                                |
+| Type        | API/Infra                                         |
+| Open Source | No                                                |
+| GitHub      | N/A                                               |
+| Stars       | N/A                                               |
+| Docs        | [docs.inferless.com](https://docs.inferless.com/) |
 
 ## Overview
 
-Inferless is a serverless GPU inference platform designed for deploying machine learning models in the cloud. It positions itself as the go-to platform for effortlessly deploying ML models by removing hardware management complexities while offering automatic scaling. The platform abstracts away infrastructure concerns and provides a pay-per-inference billing model, allowing teams to focus on model development rather than operational overhead \[1\].
+Inferless is a serverless GPU inference platform that deploys custom machine learning models with minimal cold start latency. The platform abstracts away infrastructure management, GPU provisioning, and container orchestration so teams can focus on model development. Inferless supports importing models from HuggingFace, GitHub, GitLab, AWS S3, Google Cloud Storage (GCS), DockerHub, Dockerfiles, and direct file uploads. The billing model charges per second of actual compute usage rather than reserved capacity, with fractional GPU support so multiple models and workloads can share GPUs with automatic rebalancing and node draining \[1\]\[2\].
+
+The platform supports PyTorch, TensorFlow, ONNX, and custom Python functions without framework restrictions. It provides a web dashboard, a Command-Line Interface (CLI), a Python client library, and REST API endpoints for managing deployments. Built-in Prometheus metrics and Grafana dashboards track GPU utilization and system performance. Auto-scaling handles traffic from zero to thousands of GPUs based on requests per second \[1\]\[3\].
 
 ## Core Concepts
 
-- **Serverless GPU Inference**: Models run on GPU-backed infrastructure without users managing servers, containers, or orchestration layers directly. Resources are provisioned on demand and released when idle.
-- **Model Import**: Inferless supports importing models from multiple sources including HuggingFace, AWS S3, Google Cloud Buckets, and GitHub repositories. This flexibility allows teams to bring models from their existing workflows without reformatting or re-hosting.
-- **Autoscaling**: The platform automatically scales endpoints from zero instances up to handle load spikes, and scales back down when demand decreases. This eliminates the need for manual capacity planning.
-- **Private Endpoints**: Deployed models are served behind private endpoints, providing isolation and controlled access for production workloads.
-- **Cookbooks**: Pre-built deployment recipes for common ML models that reduce the configuration effort required to go from model artifact to live endpoint.
+- **Serverless GPU Inference**: Models run on GPU-backed infrastructure without users managing servers, containers, or orchestration layers. Resources are provisioned on demand and released when idle, following a pay-per-second billing model \[2\].
+- **Model Import**: Inferless supports seven integration methods for importing models: HuggingFace, GitHub/GitLab custom code, file upload, AWS S3, Google Cloud Buckets, DockerHub, and Dockerfile-based deployments \[4\].
+- **Autoscaling**: The platform automatically scales endpoints from zero instances up to a configured maximum based on requests per second. Min scale defines workers kept continuously running; max scale sets the maximum concurrent workers allowed \[5\].
+- **Shared and Dedicated GPU Instances**: Shared instances allow fractional GPU access (partial GPU memory and vCPUs) at lower cost, while dedicated instances provide full GPU resources with higher memory and compute allocations \[6\].
+- **NFS Volumes**: NFS-like writable volumes enable simultaneous connections across multiple replicas for storing model parameters, archiving datasets centrally, and establishing shared caches \[7\].
+- **Custom Runtimes**: YAML-based configuration specifies CUDA version, Python packages, system packages, and shell commands for building custom container environments without complex application server code \[8\].
+- **Dynamic Batching**: Inference requests are combined server-side into batches to improve throughput. Configurable via `BATCH_SIZE` and `BATCH_WINDOW` parameters in the input schema \[9\].
+- **Streaming Output**: Server-Sent Events (SSE) enable one-way server-to-client communication for real-time data streaming during inference, with automatic reconnection after connection loss \[10\].
+- **Secrets Manager**: Centralized storage for passwords, API keys, and tokens with encryption at rest and in transit, access control, and automatic rotation support \[11\].
+- **Remote Run**: Execute code on remote GPU servers directly from a local machine using annotations and the `inferless remote-run` command, supporting T4, A10, and A100 GPUs \[12\].
 
-## Installation and Setup
+## Installation
 
-Inferless is a managed cloud platform with no local installation required for the core service. Interaction happens through the web dashboard or the Command-Line Interface (CLI) tool.
+Inferless is a managed cloud platform with no local installation required for the core service. Interaction happens through the web dashboard, the CLI, or the Python client library.
 
-**CLI Setup:**
+**CLI Installation:**
 
 ``` bash
-# Install the Inferless CLI (refer to official docs for current install method)
-pip install inferless
+pip install inferless-cli
+```
+
+**CLI Authentication:**
+
+``` bash
+# Retrieve CLI keys from https://console.inferless.com/user/settings?current-tab=keys
+inferless login
+# Paste CLI keys when prompted
+```
+
+**Python Client Installation:**
+
+``` bash
+pip install --upgrade inferless
 ```
 
 **Quick Start Flow:**
 
 1.  Sign up for an Inferless account through the web dashboard.
-2.  Install the CLI for programmatic access.
-3.  Import a model from a supported source (HuggingFace, S3, Google Cloud Storage (GCS), or GitHub).
-4.  Configure the runtime parameters (GPU type, scaling bounds).
-5.  Deploy the endpoint.
+2.  Install the CLI with `pip install inferless-cli`.
+3.  Authenticate with `inferless login`.
+4.  Scaffold a demo project: `inferless scaffold --demo`.
+5.  Initialize the model: `inferless init --name <modelname>`.
+6.  Deploy to GPU: `inferless deploy --gpu T4`.
 
-Inferless provides a 5-minute quick start guide and a 10-minute video tutorial for setting up private ML endpoints \[1\].
+The template repository at [github.com/inferless/template](https://github.com/inferless/template) provides a reference implementation using the GPT Neo model with Pydantic request/response schemas \[3\].
 
 ## Architecture
 
-Inferless follows a serverless architecture pattern for GPU inference:
+Inferless follows a serverless architecture pattern for GPU inference with these primary components:
 
 ``` 
 Model Source              Inferless Platform              Client
-(HuggingFace,       -->  [ Import & Build Layer ]
- S3, GCS, GitHub)        [ Runtime Configuration ]
-                         [ GPU Scheduling Engine  ]
-                         [ Autoscaler (0..N)      ]  -->  API Endpoint
-                         [ Monitoring & Logging   ]
+(HuggingFace,       -->  [ Import & Build Layer    ]
+ S3, GCS, GitHub,        [ Custom Runtime Builder   ]
+ DockerHub,              [ GPU Scheduling Engine    ]
+ Dockerfile,             [ Autoscaler (0..N GPUs)   ]  -->  REST API / SSE
+ File Upload)            [ Dynamic Batcher          ]
+                         [ NFS Volume Storage       ]
+                         [ Secrets Manager          ]
+                         [ Prometheus + Grafana     ]
 ```
 
-- **Import Layer**: Fetches model artifacts from the configured source and prepares them for deployment.
-- **Runtime Configuration**: Defines GPU type, scaling parameters, and environment settings for the deployed model.
-- **GPU Scheduling Engine**: Allocates GPU resources to inference requests and manages the underlying compute pool.
-- **Autoscaler**: Monitors request traffic and scales instances between zero and the configured maximum, enabling cost-efficient operation during low-traffic periods.
-- **Monitoring Layer**: Provides observability into endpoint performance, latency, and resource utilization through the web dashboard.
+- **Import and Build Layer**: Fetches model artifacts from the configured source, builds the container with specified runtime dependencies, and prepares the model for deployment. Build progress is tracked with streaming logs via WebSockets \[13\].
+- **Custom Runtime Builder**: Constructs container images from YAML configuration specifying CUDA version (12.4.1, 12.1.1, or 11.8.0), system packages, Python packages, and shell commands. Supports runtime versioning with in-place updates \[8\]\[13\].
+- **GPU Scheduling Engine**: Allocates GPU resources (T4, A10, A100) to inference requests. Supports both shared instances (fractional GPU) and dedicated instances (full GPU) \[6\].
+- **Autoscaler**: Monitors request traffic and scales instances between zero and the configured maximum. Integrates warm pools to minimize cold start delays during scaling events \[5\]\[13\].
+- **Dynamic Batcher**: Combines concurrent inference requests into batches based on configurable batch size and time window, improving throughput for stateless models \[9\].
+- **NFS Volume Storage**: Persistent shared storage accessible across multiple replicas at `/var/nfs-share/<volume-name>`. Temporary storage available at `/tmp` (deleted when model stops) \[7\]\[14\].
+- **Monitoring Layer**: Built-in Prometheus metrics and Grafana dashboards for GPU utilization, latency tracking, and system performance observability \[1\].
 
-## Key Features and Functionality
+## Key Features
 
-- **Serverless Pay-Per-Inference**: Billing is based on actual inference calls rather than reserved compute time, reducing costs for variable workloads.
-- **Scale-to-Zero**: Endpoints can scale down to zero instances when idle, eliminating costs during periods of no traffic.
-- **Multi-Source Model Import**: Supports HuggingFace, AWS S3, Google Cloud Storage, and GitHub as model sources.
-- **CLI and Web Dashboard**: Both command-line and browser-based interfaces for managing deployments.
-- **Pre-Built Cookbooks**: Recipe-based deployment guides for common ML model types that streamline the configuration process.
-- **Hardware Abstraction**: Users select GPU types without managing the underlying infrastructure, drivers, or orchestration.
+- **Per-Second Billing**: Charges based on total seconds models are running in a healthy state, rounded up to the nearest second. Billing components include model weight loading time, inference duration, and eviction timeout (5 seconds to 60 minutes of warm status) \[6\].
+- **Scale-to-Zero**: Endpoints scale down to zero instances when idle, eliminating costs during periods of no traffic. Scale-down timing is configurable to balance cost savings against cold start latency \[15\].
+- **Seven Integration Sources**: HuggingFace, GitHub/GitLab, file upload, AWS S3, Google Cloud Buckets, DockerHub, and Dockerfile imports \[4\].
+- **Container Concurrency**: Configure 1 to 100 simultaneous requests per container, with sequential processing or batch processing modes \[16\].
+- **Automatic Builds**: Webhook-driven automatic rebuilds when model sources update, supporting GitHub branch triggers and HuggingFace repo update webhooks \[17\].
+- **Version Management**: Complete build history tracking with automatic version deployment. Models remain on their current version unless explicitly updated \[18\].
+- **AWS SNS Alerts**: Integration for notifications on non-200 HTTP responses and high inference latency (exceeding 20 seconds) \[19\].
+- **AWS PrivateLink**: Private endpoint connectivity for secure, non-public-internet traffic between AWS infrastructure and Inferless deployments \[20\].
+- **Cold Start Optimization**: Custom-built orchestration engine, advanced router, and proprietary storage infrastructure minimize cold start latency, with initialization times as low as 3 seconds \[2\].
+- **Remote Run**: Execute code on remote GPU servers from local machines using `inferless remote-run app.py -c config.yaml`, with automatic file transfer (up to 10MB) excluding `.git`, `*.pyc`, and `__pycache__` \[12\].
+- **Cookbooks**: Pre-built deployment recipes for common use cases including PDF Q&A systems, voice chatbots, logo generators, ComfyUI API deployments, debugger agents, and MCP-based Google Maps agents \[20\].
 
 ## Use Cases
 
-- **ML Model Serving**: Deploying trained models as API endpoints for real-time inference in production applications.
-- **Prototype-to-Production**: Quickly moving models from experimentation (e.g., HuggingFace) to live endpoints without building custom serving infrastructure.
-- **Variable-Traffic Workloads**: Applications with unpredictable or bursty inference demand that benefit from scale-to-zero and autoscaling.
-- **Cost-Sensitive Deployments**: Teams that want to avoid paying for idle GPU resources during off-peak hours.
-- **Multi-Model Management**: Organizations deploying multiple models that need a centralized platform for endpoint management and monitoring.
+- **ML Model Serving**: Deploying trained models from HuggingFace, custom repositories, or cloud storage as production API endpoints with sub-second cold starts and automatic scaling \[2\].
+- **Large Language Model (LLM) Inference**: Hosting open-weight LLMs (Llama, Qwen, DeepSeek, Mistral, Gemma, Phi, Mixtral) with streaming SSE output and dynamic batching for throughput optimization \[10\]\[20\].
+- **Variable-Traffic Workloads**: Applications with unpredictable or bursty inference demand that benefit from scale-to-zero and request-based autoscaling without idle GPU costs \[5\].
+- **CI/CD Model Deployment**: Automatic rebuilds triggered by GitHub pushes or HuggingFace webhooks, enabling continuous deployment pipelines without manual infrastructure management \[17\].
+- **Multi-Model Management**: Organizations deploying multiple models that need centralized endpoint management, shared NFS volumes for model weights, and unified monitoring dashboards \[7\].
+- **Audio and Video Processing**: Transient workloads using `/tmp` storage for intermediate files during audio/video inference pipelines, with NFS volumes for persistent output storage \[14\].
+- **AI Agent Infrastructure**: Serverless backend for AI agents requiring on-demand GPU compute, demonstrated in cookbooks for debugger agents and MCP-based tool agents \[20\].
 
-## API Reference Summary
+## API Reference
 
-Inferless exposes REST API endpoints for deployed models. The primary interaction pattern is:
+**REST API Endpoint Pattern:**
 
-``` 
-POST https://<your-endpoint>.inferless.com/v1/predict
-Content-Type: application/json
+After deploying a model, Inferless provides a unique API endpoint accessible via the dashboard's API tab. Authentication uses Workspace API keys managed through workspace settings.
 
-{
-  "input": {
-    // Model-specific input payload
-  }
-}
+``` bash
+curl -X POST "https://<your-endpoint-url>/v1/predict" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <workspace-api-key>" \
+  -d '{
+    "input": {
+      "prompt": "Explain serverless inference in one sentence."
+    }
+  }'
+```
+
+**Python Client (Synchronous):**
+
+``` python
+import inferless
+
+result = inferless.call(
+    url="https://<your-endpoint-url>",
+    workspace_key="<workspace-api-key>",
+    data={"prompt": "Hello, world!"}
+)
+```
+
+**Python Client (Asynchronous):**
+
+``` python
+import inferless
+
+def on_complete(error, response):
+    if error:
+        print(f"Error: {error}")
+    else:
+        print(f"Result: {response}")
+
+inferless.call_async(
+    url="https://<your-endpoint-url>",
+    workspace_key="<workspace-api-key>",
+    data={"prompt": "Hello, world!"},
+    callback=on_complete
+)
 ```
 
 **CLI Commands:**
 
 ``` bash
-# Deploy a model
-inferless deploy --model <model-config>
+# Scaffold a demo project
+inferless scaffold --demo
 
-# List deployed endpoints
-inferless list
+# Initialize a model
+inferless init --name <modelname>
 
-# Get endpoint status
-inferless status <endpoint-id>
+# Deploy with GPU selection
+inferless deploy --gpu T4
 
-# Scale configuration
-inferless scale <endpoint-id> --min 0 --max 5
+# Deploy with region and runtime
+inferless deploy --gpu t4 --region <region> --runtime <runtime_name>
+
+# Deploy with volume mount
+inferless deploy --gpu t4 --volume <volume_name> --volume-mount-path <path>
+
+# Remote run on GPU
+inferless remote-run app.py -c config.yaml
+
+# Volume management
+inferless volume create --name <volume_name>
+inferless volume cp --source <local_path> --destination <remote_path>
+inferless volume ls
+inferless volume rm
+inferless volume list
+inferless volume select --id <volume_id>
+
+# Runtime management
+inferless runtime list
+inferless runtime upload
+inferless runtime patch
+inferless runtime version-list
 ```
 
-Refer to the official documentation for the complete API reference and CLI command catalog \[1\].
+**Input Schema Definition (`input_schema.py`):**
 
-## Configuration and Customization
+``` python
+INPUT_SCHEMA = {
+    "prompt": {
+        "datatype": "STRING",
+        "required": True,
+        "shape": [1],
+        "example": ["There is a fine house in the forest"]
+    },
+    "num_steps": {
+        "datatype": "INT8",
+        "required": False,
+        "shape": [1],
+        "example": [50]
+    },
+}
+```
 
-Deployment configuration typically includes:
+Supported datatypes: STRING, BOOL, INT8, INT16, INT32, INT64, FP16, FP32, FP64, UINT8, UINT16, UINT32, UINT64, BYTES, BF16. Shape `[1]` returns a single variable; arrays greater than 1 return arrays; `-1` indicates variable length \[21\].
 
-- **GPU Type**: Selection of GPU hardware tier for the endpoint.
-- **Scaling Parameters**: Minimum and maximum instance counts, scale-to-zero behavior.
-- **Model Source**: Repository URL or storage path for the model artifacts.
-- **Runtime Environment**: Python version, dependencies, and custom setup scripts.
-- **Timeout Settings**: Request timeout and idle timeout before scale-down.
+**Output Format:**
 
-Configuration can be managed through the web dashboard or via CLI flags and configuration files.
+Outputs are returned as dictionaries from the `infer()` function without explicit schema configuration:
+
+``` python
+# Simple output
+return {"label_1": 0.398, "label_2": 0.563}
+
+# Array output
+return {"generated_images_base64": [img_str1, img_str2]}
+
+# Dynamic keys (JSON stringified)
+return {"result": json.dumps({"label_x": 0.4554})}
+```
+
+## Configuration
+
+**Runtime Configuration (`inferless_runtime_config.yaml`):**
+
+``` yaml
+cuda_version: "12.4.1"  # Options: "12.4.1", "12.1.1", "11.8.0" (default: 12.1.1)
+system_packages:
+  - libssl-dev
+  - opencv
+  - ffmpeg
+python_packages:
+  - transformers==4.41.1
+  - torch==2.1.2
+  - numpy
+  - pandas
+run_commands:
+  - ln -sf /usr/lib/x86_64-linux-gnu/libcuda.so /usr/lib/libcuda.so
+```
+
+**Model App Structure (`app.py`):**
+
+``` python
+class InferlessPythonModel:
+    def initialize(self):
+        """Load model weights and initialize pipeline (runs once on cold start)."""
+        from transformers import pipeline
+        self.generator = pipeline("text-generation", model="EleutherAI/gpt-neo-125M", device=0)
+
+    def infer(self, inputs):
+        """Run inference on input data (runs per request)."""
+        prompt = inputs["prompt"]
+        result = self.generator(prompt, max_length=100)
+        return {"generated_txt": result[0]["generated_text"]}
+
+    def finalize(self):
+        """Cleanup resources (runs on shutdown)."""
+        pass
+```
+
+**Dynamic Batching Configuration:**
+
+``` python
+# In input_schema.py
+BATCH_SIZE = 4
+BATCH_WINDOW = 5000  # milliseconds
+
+INPUT_SCHEMA = {
+    "prompt": {
+        "datatype": "STRING",
+        "required": True,
+        "shape": [1],
+        "example": ["Hello"]
+    },
+}
+```
+
+With batching enabled, the `infer()` method receives a list of dictionaries and must return a list of dictionaries \[9\].
+
+**Streaming SSE Configuration:**
+
+``` python
+# In input_schema.py
+IS_STREAMING_OUTPUT = True
+
+INPUT_SCHEMA = {
+    "prompt": {
+        "datatype": "STRING",
+        "required": True,
+        "shape": [1],
+        "example": ["Hello"]
+    },
+}
+```
+
+The `infer()` method receives a `stream_output_handler` parameter. Call `send_streamed_output()` for partial outputs and `finalise_streamed_output()` to close the stream. SSE inputs are limited to INT, STRING, and BOOLEAN datatypes with shape `[1]` \[10\].
+
+**Model Settings (Dashboard):**
+
+- **Scale Down Timeout**: Controls how quickly idle containers terminate (balance cost vs. cold start latency) \[15\].
+- **Inference Timeout**: Maximum execution duration in seconds for inference requests \[15\].
+- **Container Concurrency**: 1 to 100 simultaneous requests per container \[16\].
+- **GPU Type**: T4, A10, or A100 in shared or dedicated configurations \[6\].
+- **Min/Max Replicas**: Scaling boundaries for autoscaler \[5\].
 
 ## Integration Patterns
 
-- **HuggingFace**: Direct import of models from HuggingFace model hub by specifying the model identifier.
-- **AWS S3**: Import model artifacts stored in S3 buckets using AWS credentials.
-- **Google Cloud Storage**: Import from GCS buckets for teams using the Google Cloud ecosystem.
-- **GitHub**: Deploy models directly from GitHub repositories, enabling Continuous Integration/Continuous Deployment (CI/CD) driven deployment workflows.
-- **Application Integration**: Deployed endpoints are standard REST APIs, making them compatible with any HTTP client in any programming language.
+- **HuggingFace**: Direct model import via model identifier with optional webhook-based automatic rebuilds on model updates. Supports Transformer, ONNX, and custom model types \[4\]\[17\].
+- **GitHub/GitLab**: Deploy custom code from repositories with branch-specific automatic builds on push. Requires `app.py`, `input_schema.py`, and `inferless_runtime_config.yaml` \[3\]\[17\].
+- **AWS S3**: Import model artifacts from S3 buckets using AWS credentials configured through the secrets manager \[4\].
+- **Google Cloud Storage**: Import from GCS buckets for teams using the Google Cloud ecosystem \[4\].
+- **DockerHub**: Deploy pre-built Docker containers directly from DockerHub registries \[4\].
+- **Dockerfile**: Build and deploy from Dockerfiles for full container customization \[4\].
+- **AWS SNS**: Alert integration for model health monitoring with notifications on HTTP errors and latency spikes \[19\].
+- **AWS PrivateLink**: Private endpoint connectivity for secure traffic between AWS infrastructure and Inferless \[20\].
+- **Python Client**: Synchronous and asynchronous API calls from Python applications using the `inferless` package with Workspace API key authentication \[22\].
+- **REST API**: Standard HTTP endpoints compatible with any programming language or HTTP client for direct inference calls \[23\].
+- **Prometheus and Grafana**: Built-in metrics export for GPU utilization and performance monitoring integration \[1\].
 
 ## Examples
 
-**Deploying a HuggingFace Model:**
+**Deploying from HuggingFace via Dashboard:**
+
+1.  Select "HuggingFace" from the workspace dashboard.
+2.  Enter model name, type (Transformer), task (Text generation), and HuggingFace model identifier.
+3.  Customize `app.py` and `input_schema.py` as needed.
+4.  Select GPU type (T4/A10/A100), set min and max replicas.
+5.  Configure runtime dependencies, volumes, and secrets.
+6.  Review and submit. Monitor build progress (typically 5-10 minutes) \[5\].
+
+**Deploying from CLI:**
 
 ``` bash
-# Import and deploy a model from HuggingFace
-inferless deploy --source huggingface --model-id "meta-llama/Llama-2-7b" --gpu A100
+# Create a new project from template
+inferless scaffold --demo
+
+# Initialize with model name
+inferless init --name my-llm-model
+
+# Deploy on A10 GPU
+inferless deploy --gpu A10
+
+# Attach a volume for model weights
+inferless volume create --name model-weights
+inferless volume cp --source ./weights --destination /model-weights
+inferless deploy --gpu A10 --volume model-weights --volume-mount-path /var/nfs-share/model-weights
 ```
 
-**Calling a Deployed Endpoint:**
+**Calling a Deployed Endpoint (Python):**
 
 ``` python
-import requests
+import inferless
 
-url = "https://your-endpoint.inferless.com/v1/predict"
-payload = {
-    "input": {
-        "prompt": "Explain serverless inference in one sentence."
-    }
-}
-response = requests.post(url, json=payload)
-print(response.json())
+# Synchronous call
+result = inferless.call(
+    url="https://your-endpoint.inferless.com",
+    workspace_key="your-workspace-api-key",
+    data={"prompt": "Explain serverless inference in one sentence."}
+)
+print(result)
 ```
 
-**Configuring Autoscaling:**
+**Streaming SSE Example (`app.py`):**
+
+``` python
+class InferlessPythonModel:
+    def initialize(self):
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        self.tokenizer = AutoTokenizer.from_pretrained("model-name")
+        self.model = AutoModelForCausalLM.from_pretrained("model-name", device_map="cuda")
+
+    def infer(self, inputs, stream_output_handler):
+        prompt = inputs["prompt"]
+        # Generate tokens iteratively
+        for token in self.generate_stream(prompt):
+            stream_output_handler.send_streamed_output({"token": token})
+        stream_output_handler.finalise_streamed_output()
+
+    def finalize(self):
+        pass
+```
+
+Reference streaming template: [github.com/inferless/inferless_template_streaming](https://github.com/inferless/inferless_template_streaming) \[10\].
+
+**Remote Run Example:**
+
+``` python
+import inferless
+
+@inferless.method(gpu="T4")
+def generate(prompt):
+    from transformers import pipeline
+    generator = pipeline("text-generation", model="gpt2", device=0)
+    return generator(prompt, max_length=100)
+```
 
 ``` bash
-# Set endpoint to scale between 0 and 3 instances
-inferless scale my-endpoint --min 0 --max 3
+inferless remote-run app.py -c config.yaml
 ```
 
-## Limitations and Considerations
+## Limitations
 
-- **Closed Source**: The platform is proprietary with no self-hosted option; all inference runs on Inferless-managed infrastructure.
-- **Vendor Lock-In**: Deployment configurations and workflows are specific to the Inferless platform.
-- **Cold Start Latency**: Scale-to-zero introduces cold start delays when the first request arrives after a period of inactivity.
-- **GPU Availability**: Specific GPU types may have limited availability depending on demand and region.
-- **Customization Boundaries**: The serverless model abstracts infrastructure details, which limits low-level tuning of the serving environment compared to self-managed deployments.
+- **Closed Source**: The platform is proprietary with no self-hosted option; all inference runs on Inferless-managed infrastructure \[1\].
+- **Vendor Lock-In**: Deployment configurations (`app.py`, `input_schema.py`, `inferless_runtime_config.yaml`) are specific to the Inferless platform and not portable to other serving solutions.
+- **Cold Start Latency**: Scale-to-zero introduces cold start delays when the first request arrives after a period of inactivity, though the platform optimizes for initialization times as low as 3 seconds \[2\].
+- **GPU Selection**: Limited to T4, A10, and A100 GPUs. No H100 or other GPU types are listed in the current pricing \[6\].
+- **Python Version**: Remote run supports only Python 3.10; other versions may face compatibility issues \[12\].
+- **SSE Datatype Restrictions**: Streaming output inputs are limited to INT, STRING, and BOOLEAN datatypes with shape `[1]`. Multiple inputs require JSON serialization as strings \[10\].
+- **File Transfer Limit**: Remote run file transfer is capped at 10MB per working directory \[12\].
+- **Secret Scope**: Secrets are user-level and can only be updated by the person who performed the model import \[11\].
+- **Root Filesystem**: The platform restricts root file system access. Persistent storage requires NFS volumes; temporary storage at `/tmp` is deleted when the model stops \[14\].
 
-## Changelog Highlights
+## Changelog
 
-Refer to the official Inferless documentation and blog for the latest platform updates, new GPU tier availability, and feature releases \[1\].
+Notable platform updates through the changelog (2023-2025):
+
+- **June 2025**: Runtime version switching for deployed models, streaming build logs via WebSockets, improved autoscaler with warm pool integration for faster cold start recovery \[13\].
+- **May 2025**: Continued platform performance improvements and dashboard enhancements \[20\].
+- **April 2025**: CLI and dashboard updates \[20\].
+- **March 2025**: Feature releases and optimizations \[20\].
+- **February 2025**: Platform stability improvements \[20\].
+- **January 2025**: New year platform updates \[20\].
+- **December 2024**: End-of-year feature releases \[20\].
+- **November 2024**: Two update cycles with infrastructure improvements \[20\].
+- **October 2024**: Platform enhancements \[20\].
+- **September 2024**: Infrastructure updates \[20\].
+- **July 2024**: Mid-year feature releases \[20\].
+- **June 2024**: Two update cycles \[20\].
+- **May 2024**: Platform improvements \[20\].
+- **April 2024**: Two update cycles \[20\].
+- **March 2024**: Two update cycles \[20\].
+- **February 2024**: Two update cycles \[20\].
+- **January 2024**: Three update cycles \[20\].
+- **December 2023**: Three update cycles marking the initial public changelog \[20\].
+
+Refer to the [Inferless Changelog](https://docs.inferless.com/changelog/overview) for complete details on each release.
 
 ## Citations
 
-- \[1\] Inferless Documentation - https://docs.inferless.com/
+- \[1\] What is Inferless - https://docs.inferless.com/introduction/what-is-inferless
+- \[2\] Serverless GPUs for AI/ML Inference - https://www.inferless.com/serverless-gpu
+- \[3\] Quickstart Guide - https://docs.inferless.com/introduction/quickstart
+- \[4\] Integrations - https://docs.inferless.com/introduction/integrations
+- \[5\] Deploy ML Models - https://docs.inferless.com/getting-started/deploy-ml
+- \[6\] Pricing - https://www.inferless.com/pricing
+- \[7\] Working with NFS Volumes - https://docs.inferless.com/concepts/working-with-nfs-volumes
+- \[8\] Building Custom Images - https://docs.inferless.com/concepts/building-custom-images
+- \[9\] Dynamic Batching - https://docs.inferless.com/concepts/dynamic-batching
+- \[10\] Streaming with SSE - https://docs.inferless.com/concepts/streaming-with-sse
+- \[11\] Managing Secrets - https://docs.inferless.com/concepts/managing-secrets-on-inferless
+- \[12\] Remote Run - https://docs.inferless.com/concepts/remote-run
+- \[13\] Changelog June 2025 - https://docs.inferless.com/changelog/June-2025/30th-June
+- \[14\] Working with Files - https://docs.inferless.com/concepts/working-with-files
+- \[15\] Model Settings - https://docs.inferless.com/api-reference/model-endpoint/configuring-the-model-settings
+- \[16\] Processing Concurrent Requests - https://docs.inferless.com/concepts/processing-concurrent-requests
+- \[17\] Automatic Builds - https://docs.inferless.com/concepts/setting-up-automatic-builds
+- \[18\] Version Management - https://docs.inferless.com/api-reference/version-management
+- \[19\] AWS SNS Alerts - https://docs.inferless.com/integrations/aws-sns/aws-sns
+- \[20\] Inferless Documentation - https://docs.inferless.com/
+- \[21\] Input/Output Schema - https://docs.inferless.com/concepts/configuring-the-input-output-schema
+- \[22\] Python Client - https://docs.inferless.com/api-reference/model-endpoint/inferless-python-client
+- \[23\] Model Endpoint - https://docs.inferless.com/api-reference/model-endpoint/model-endpoint
 
 # Vertex AI
 
@@ -6937,6 +8076,1753 @@ print(response['output']['message']['content'][0]['text'])
 
 - \[1\] AWS Bedrock Documentation - https://docs.aws.amazon.com/bedrock/
 - \[2\] AWS Bedrock User Guide - https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html
+
+# LiteLLM
+
+> Python SDK and proxy for unified access to 100+ LLM APIs
+
+| Field         | Value                                                 |
+|---------------|-------------------------------------------------------|
+| Group         | API Gateways & Model Routing                          |
+| Type          | SDK                                                   |
+| Open Source   | Yes                                                   |
+| GitHub        | [BerriAI/litellm](https://github.com/BerriAI/litellm) |
+| Stars         | 36571                                                 |
+| Documentation | [Official Docs](https://docs.litellm.ai/docs/)        |
+
+## Overview
+
+LiteLLM is an open source Python SDK and proxy server that provides a unified interface for calling 100+ large language models using the OpenAI input/output format. It translates inputs to provider-specific endpoints and normalizes responses into a consistent format, allowing developers to switch between providers without rewriting application code. The project is maintained by BerriAI and supports providers including OpenAI, Anthropic, xAI, Google Vertex AI, Azure OpenAI, NVIDIA NIM, HuggingFace, Ollama, OpenRouter, Novita AI, and Vercel AI Gateway. \[1\]
+
+LiteLLM ships as two components. The **Python SDK** embeds directly into applications and provides completion calls, retry/fallback logic, observability callbacks, and cost tracking. The **Proxy Server** (also called the LLM Gateway) runs as a standalone service that exposes an OpenAI-compatible API with authentication, multi-tenant cost tracking, virtual keys, rate limiting, load balancing, and an admin dashboard. Both components share the same underlying translation layer and provider support. \[1\]
+
+## Core Concepts
+
+**Unified Completion Interface**: The `completion()` function accepts an OpenAI-style model identifier and messages array, translating the request to the target provider's native format. Responses are normalized to match OpenAI's chat completion structure regardless of the underlying provider. \[1\]
+
+**Provider Prefixes**: Models are specified using a `provider/model-name` format (e.g., `openai/gpt-4o`, `anthropic/claude-opus-4-6`, `azure/gpt-4o-eu`). The prefix tells LiteLLM which translation layer to apply for the request and response. \[1\]\[4\]
+
+**Router**: The Router manages load balancing across multiple deployments of the same model. Deployments sharing the same `model_name` form a model group, and the Router selects among them using configurable strategies. The Router also handles cooldowns, retries, and fallbacks when deployments fail. \[3\]
+
+**Virtual Keys**: The Proxy Server issues virtual API keys that abstract over underlying provider credentials. Each virtual key can have its own spend budget, rate limits, and model access restrictions. Users and teams interact with virtual keys rather than raw provider API keys. \[5\]
+
+**Exception Mapping**: Provider-specific errors are mapped to OpenAI exception types (`AuthenticationError`, `RateLimitError`, `APIError`, `Timeout`, `NotFoundError`, `ServiceUnavailableError`, `ContentPolicyViolationError`). All exceptions include `status_code`, `message`, and `llm_provider` attributes for debugging. \[6\]
+
+**Observability Callbacks**: Three callback types (input, success, failure) send telemetry to external platforms. Callbacks are configured declaratively by setting `litellm.success_callback` and `litellm.failure_callback` to lists of integration names. \[7\]
+
+## Installation and Setup
+
+### SDK Installation
+
+``` bash
+pip install litellm
+```
+
+Set the API key for your target provider:
+
+``` bash
+export OPENAI_API_KEY="sk-..."
+# or
+export ANTHROPIC_API_KEY="sk-ant-..."
+```
+
+Verify the installation:
+
+``` python
+from litellm import completion
+
+response = completion(
+    model="openai/gpt-4o",
+    messages=[{"role": "user", "content": "Hello, world!"}]
+)
+print(response.choices[0].message.content)
+```
+
+\[1\]
+
+### Proxy Server Installation
+
+``` bash
+pip install 'litellm[proxy]'
+```
+
+Start the proxy with a single model:
+
+``` bash
+litellm --model huggingface/bigcode/starcoder
+```
+
+The proxy runs on `http://0.0.0.0:4000` by default. Clients connect using any OpenAI-compatible SDK:
+
+``` python
+from openai import OpenAI
+
+client = OpenAI(base_url="http://0.0.0.0:4000", api_key="sk-1234")
+response = client.chat.completions.create(
+    model="huggingface/bigcode/starcoder",
+    messages=[{"role": "user", "content": "Write a Python function"}]
+)
+```
+
+\[2\]
+
+### Docker Deployment
+
+``` bash
+docker run -p 4000:4000 \
+  -v /path/to/config.yaml:/app/config.yaml \
+  ghcr.io/berriai/litellm:main-latest \
+  --config /app/config.yaml
+```
+
+\[2\]
+
+## Architecture
+
+LiteLLM is organized into three layers:
+
+``` 
+SDK Layer              completion(), embedding(), image_generation()
+    |                  Provider translation, response normalization
+    |
+Router Layer           Load balancing, retries, fallbacks, cooldowns
+    |                  Model groups, deployment health tracking
+    |
+Proxy Layer            HTTP server, virtual keys, spend tracking
+                       Admin dashboard, rate limiting, auth
+```
+
+**SDK Layer**: The core translation engine. Each provider has a handler that converts OpenAI-format requests into provider-native API calls and normalizes responses back to OpenAI format. The SDK is stateless and can be embedded directly into Python applications. \[1\]
+
+**Router Layer**: Sits on top of the SDK and manages multiple deployments. It tracks deployment health, enforces rate limits (Requests Per Minute (RPM) and Tokens Per Minute (TPM)), and applies routing strategies to distribute traffic. The Router operates in-process for SDK usage or as part of the Proxy Server. \[3\]
+
+**Proxy Layer**: A standalone HTTP server built on the Router. It adds authentication (master key and virtual keys), a PostgreSQL-backed spend tracking database, team and user management, and an admin dashboard. Clients interact with it using standard OpenAI SDKs pointed at the proxy's base URL. \[2\]\[5\]
+
+## Key Features and Functionality
+
+**Unified Completion Calls**: Call any supported provider through a single function with consistent input/output format:
+
+``` python
+from litellm import completion
+
+# OpenAI
+response = completion(model="openai/gpt-4o", messages=[{"role": "user", "content": "Hi"}])
+
+# Anthropic
+response = completion(model="anthropic/claude-opus-4-6", messages=[{"role": "user", "content": "Hi"}])
+
+# Azure OpenAI
+response = completion(model="azure/gpt-4o-eu", messages=[{"role": "user", "content": "Hi"}])
+```
+
+\[1\]
+
+**Streaming**: All providers support streaming via `stream=True`. Streamed responses return chunks in OpenAI's Server-Sent Events (SSE) format with token-level deltas and usage metadata:
+
+``` python
+response = completion(
+    model="openai/gpt-4o",
+    messages=[{"role": "user", "content": "Write a story"}],
+    stream=True,
+)
+for chunk in response:
+    print(chunk.choices[0].delta.content or "", end="")
+```
+
+\[1\]
+
+**Retry and Fallback Logic**: Configure automatic retries with exponential backoff and model fallbacks:
+
+``` python
+from litellm import completion
+
+response = completion(
+    model="openai/gpt-4o",
+    messages=[{"role": "user", "content": "Hello"}],
+    num_retries=3,
+    fallbacks=["anthropic/claude-sonnet-4-6", "azure/gpt-4o"],
+)
+```
+
+\[1\]
+
+**Cost Tracking**: LiteLLM calculates costs per request using built-in model pricing data. Custom per-token pricing can be specified per deployment:
+
+``` python
+response = completion(
+    model="openai/gpt-4o",
+    messages=[{"role": "user", "content": "Hello"}],
+    input_cost_per_token=0.00001,
+    output_cost_per_token=0.00003,
+)
+```
+
+\[1\]\[4\]
+
+**Load Balancing**: The Router distributes traffic across multiple deployments of the same model using configurable strategies: simple-shuffle (default), usage-based, latency-based, least-busy, and cost-based routing. \[3\]
+
+**Virtual Keys and Spend Caps**: The Proxy Server issues virtual API keys with per-key budgets, rate limits (RPM, TPM), and concurrent request limits. Spend is tracked automatically per key, user, and team:
+
+``` bash
+curl -X POST http://0.0.0.0:4000/key/generate \
+  -H "Authorization: Bearer sk-master-key" \
+  -H "Content-Type: application/json" \
+  -d '{"max_budget": 100, "tpm_limit": 10000, "rpm_limit": 100}'
+```
+
+\[5\]
+
+**Observability Integration**: Send telemetry to external platforms through declarative callbacks:
+
+``` python
+import litellm
+
+litellm.success_callback = ["langfuse", "helicone", "lunary"]
+litellm.failure_callback = ["sentry", "langfuse"]
+```
+
+Supported integrations include Langfuse, Helicone, Lunary, LangSmith, MLflow, Traceloop, Arize, PromptLayer, PostHog, Sentry, and Slack. \[7\]
+
+**Exception Mapping**: Provider errors are mapped to OpenAI exception types for consistent error handling:
+
+``` python
+import litellm
+import openai
+
+try:
+    response = litellm.completion(model="anthropic/claude-opus-4-6", messages=[...])
+except openai.AuthenticationError as e:
+    print(f"Auth failed on {e.llm_provider}: {e.message}")
+except openai.RateLimitError as e:
+    should_retry = litellm._should_retry(e.status_code)
+```
+
+\[6\]
+
+## Use Cases
+
+**Multi-Provider Abstraction**: Applications that need to call multiple LLM providers without maintaining separate client libraries for each. A single `completion()` call works across OpenAI, Anthropic, Azure, Vertex AI, and dozens of other providers.
+
+**Production LLM Gateway**: Organizations deploying the Proxy Server as a centralized gateway for all LLM traffic. Teams authenticate with virtual keys, budgets enforce cost controls, and the admin dashboard provides visibility into usage patterns.
+
+**Failover and Reliability**: Systems that need automatic failover when a primary provider experiences outages. The Router's cooldown and fallback mechanisms route traffic to healthy deployments without application-level changes.
+
+**Cost Optimization**: Teams routing traffic to the cheapest available deployment using cost-based routing, or using model aliasing to redirect expensive model requests to more affordable alternatives without changing client code.
+
+**Multi-Tenant Platforms**: SaaS applications that issue virtual keys to customers, each with independent spend caps and rate limits. The Proxy Server tracks per-tenant costs and enforces budgets automatically.
+
+**Development and Testing**: Developers using the SDK to test prompts across multiple providers during development, comparing response quality and latency before committing to a production provider.
+
+## API Reference Summary
+
+### SDK Functions
+
+- `completion(model, messages, **kwargs)` -- Chat completion across all providers
+- `embedding(model, input, **kwargs)` -- Text embedding generation
+- `image_generation(model, prompt, **kwargs)` -- Image generation
+- `text_completion(model, prompt, **kwargs)` -- Legacy text completion
+- `completion_cost(response)` -- Calculate cost from a completion response
+
+### Proxy Endpoints
+
+- `POST /chat/completions` -- OpenAI-compatible chat completion
+- `POST /completions` -- Legacy text completion
+- `POST /embeddings` -- Embedding generation
+- `POST /images/generations` -- Image generation
+- `POST /audio/transcriptions` -- Audio transcription
+- `POST /audio/speech` -- Text-to-speech
+- `POST /batches` -- Batch processing
+- `GET /models` -- List available models
+- `POST /key/generate` -- Create virtual key
+- `POST /key/info` -- Get key spend and metadata
+- `POST /key/block` -- Disable a virtual key
+- `POST /key/unblock` -- Re-enable a virtual key
+- `POST /user/info` -- Get user-level spend
+- `POST /team/info` -- Get team-level spend
+- `GET /utils/transform_request` -- Inspect request transformation
+
+### Completion Parameters
+
+- `model` -- Provider-prefixed model ID (e.g., `openai/gpt-4o`)
+- `messages` -- Conversation messages array (system, user, assistant, tool roles)
+- `temperature` -- Sampling temperature
+- `max_tokens` / `max_completion_tokens` -- Output token limit
+- `top_p` -- Nucleus sampling threshold
+- `stream` -- Enable streaming responses
+- `tools` -- Tool/function definitions array
+- `tool_choice` -- Tool selection control
+- `response_format` -- JSON mode or structured output schema
+- `stop` -- Stop sequences
+- `seed` -- Deterministic output seed
+- `num_retries` -- Automatic retry count
+- `fallbacks` -- Fallback model list
+- `api_base` -- Custom provider endpoint
+- `api_key` -- Provider API key override
+- `metadata` -- Custom metadata for logging
+- `input_cost_per_token` -- Custom input pricing
+- `output_cost_per_token` -- Custom output pricing \[1\]\[4\]
+
+## Configuration and Customization
+
+### Proxy Configuration (YAML)
+
+The Proxy Server is configured through a YAML file with four main sections:
+
+``` yaml
+model_list:
+  - model_name: gpt-4o                    # User-facing alias
+    litellm_params:
+      model: openai/gpt-4o               # Actual provider model
+      api_key: os.environ/OPENAI_API_KEY  # Environment variable reference
+      rpm: 1000                           # Requests per minute limit
+      tpm: 100000                         # Tokens per minute limit
+
+  - model_name: gpt-4o                    # Second deployment (load balanced)
+    litellm_params:
+      model: azure/gpt-4o-eu
+      api_base: https://my-azure.openai.azure.com
+      api_key: os.environ/AZURE_API_KEY
+
+router_settings:
+  routing_strategy: simple-shuffle        # Load balancing strategy
+  num_retries: 3                          # Retry attempts
+  retry_after: 1                          # Minimum wait between retries (seconds)
+
+litellm_settings:
+  drop_params: true                       # Drop unsupported params silently
+  set_verbose: false                      # Disable verbose logging
+
+general_settings:
+  master_key: sk-master-key               # Admin authentication key
+  database_url: os.environ/DATABASE_URL   # PostgreSQL for spend tracking
+  database_connection_pool_limit: 15      # Connections per worker
+```
+
+Launch with: `litellm --config /path/to/config.yaml` \[8\]
+
+### Environment Variable Loading
+
+Configuration values prefixed with `os.environ/` are resolved from environment variables at startup, keeping secrets out of configuration files. \[8\]
+
+### Credential Lists
+
+Define credentials once and reference them across multiple models:
+
+``` yaml
+credential_list:
+  - credential_name: azure-prod
+    api_key: os.environ/AZURE_PROD_KEY
+    api_base: https://prod.openai.azure.com
+
+model_list:
+  - model_name: gpt-4o
+    litellm_params:
+      model: azure/gpt-4o
+      litellm_credential_name: azure-prod
+```
+
+\[8\]
+
+### Wildcard Models
+
+Route any model through default credentials using wildcards:
+
+``` yaml
+model_list:
+  - model_name: "*"
+    litellm_params:
+      model: "*"
+```
+
+\[8\]
+
+### Router Strategies
+
+- `simple-shuffle` -- Default. Random selection weighted by RPM/TPM limits. Lowest latency overhead
+- `usage-based-routing-v2` -- Routes to deployments with lowest TPM usage (requires Redis)
+- `latency-based-routing` -- Selects deployment with lowest observed response time
+- `least-busy` -- Routes to deployment with fewest active requests
+- `cost-based-routing` -- Selects cheapest available deployment \[3\]
+
+### Cooldown Configuration
+
+Deployments experiencing failures are automatically cooled down:
+
+``` yaml
+router_settings:
+  allowed_fails: 3              # Failures before cooldown triggers
+  cooldown_time: 5              # Cooldown duration in seconds
+```
+
+\[3\]
+
+## Integration Patterns
+
+### With OpenAI SDK
+
+Point any OpenAI SDK client at the Proxy Server:
+
+``` python
+from openai import OpenAI
+
+client = OpenAI(base_url="http://0.0.0.0:4000", api_key="sk-virtual-key")
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+```
+
+\[2\]
+
+### With LangChain
+
+``` python
+from langchain_openai import ChatOpenAI
+
+llm = ChatOpenAI(
+    model="gpt-4o",
+    openai_api_base="http://0.0.0.0:4000",
+    openai_api_key="sk-virtual-key",
+)
+```
+
+\[2\]
+
+### With Observability Platforms
+
+SDK-level callbacks send telemetry without proxy overhead:
+
+``` python
+import litellm
+import os
+
+os.environ["LANGFUSE_PUBLIC_KEY"] = "pk-..."
+os.environ["LANGFUSE_SECRET_KEY"] = "sk-..."
+
+litellm.success_callback = ["langfuse"]
+litellm.failure_callback = ["langfuse"]
+
+# All subsequent completion calls are automatically traced
+response = litellm.completion(model="openai/gpt-4o", messages=[...])
+```
+
+\[7\]
+
+### With Agent Frameworks
+
+LiteLLM can serve as the LLM backend for agent frameworks by running the Proxy Server and pointing the framework's OpenAI client at the proxy URL. This centralizes provider credentials, adds cost tracking, and enables model routing without modifying the framework's code.
+
+### With Docker and Kubernetes
+
+Deploy the Proxy Server as a container with configuration mounted as a volume. Helm charts and Terraform modules are available for Kubernetes deployments. The proxy handles 1,500+ requests per second under load testing. \[2\]
+
+## Examples
+
+### Multi-Provider Completion
+
+``` python
+from litellm import completion
+
+# Same interface for every provider
+providers = [
+    "openai/gpt-4o",
+    "anthropic/claude-sonnet-4-6",
+    "azure/gpt-4o-eu",
+    "ollama/llama3",
+]
+
+for model in providers:
+    response = completion(
+        model=model,
+        messages=[{"role": "user", "content": "What is 2+2?"}]
+    )
+    print(f"{model}: {response.choices[0].message.content}")
+```
+
+### Router with Fallbacks
+
+``` python
+from litellm import Router
+
+router = Router(
+    model_list=[
+        {
+            "model_name": "gpt-4o",
+            "litellm_params": {"model": "openai/gpt-4o", "api_key": "sk-..."},
+            "rpm": 500,
+        },
+        {
+            "model_name": "gpt-4o",
+            "litellm_params": {"model": "azure/gpt-4o-eu", "api_key": "az-..."},
+            "rpm": 1000,
+        },
+    ],
+    routing_strategy="simple-shuffle",
+    num_retries=3,
+)
+
+response = router.completion(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+```
+
+\[3\]
+
+### Proxy with Virtual Keys and Budgets
+
+``` yaml
+# config.yaml
+model_list:
+  - model_name: gpt-4o
+    litellm_params:
+      model: openai/gpt-4o
+      api_key: os.environ/OPENAI_API_KEY
+
+general_settings:
+  master_key: sk-master-key
+  database_url: os.environ/DATABASE_URL
+```
+
+``` bash
+# Start proxy
+litellm --config config.yaml
+
+# Generate a virtual key with $50 budget and rate limits
+curl -X POST http://0.0.0.0:4000/key/generate \
+  -H "Authorization: Bearer sk-master-key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "max_budget": 50,
+    "rpm_limit": 100,
+    "tpm_limit": 50000,
+    "budget_duration": "30d"
+  }'
+
+# Client uses the virtual key
+curl -X POST http://0.0.0.0:4000/chat/completions \
+  -H "Authorization: Bearer sk-generated-virtual-key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "gpt-4o",
+    "messages": [{"role": "user", "content": "Hello"}]
+  }'
+```
+
+\[2\]\[5\]
+
+### Streaming with Cost Tracking
+
+``` python
+import litellm
+
+litellm.success_callback = ["langfuse"]
+
+response = litellm.completion(
+    model="anthropic/claude-sonnet-4-6",
+    messages=[{"role": "user", "content": "Explain quantum computing"}],
+    stream=True,
+)
+
+for chunk in response:
+    content = chunk.choices[0].delta.content
+    if content:
+        print(content, end="")
+
+# Cost is automatically calculated and sent to Langfuse
+```
+
+\[1\]\[7\]
+
+## Limitations and Considerations
+
+- **Python-only SDK**: The SDK is Python-only. Non-Python applications must use the Proxy Server and connect via HTTP with an OpenAI-compatible client library
+- **Provider parameter coverage**: Not all provider-specific parameters are supported through the unified interface. The `drop_params` setting silently drops unsupported parameters rather than raising errors
+- **PostgreSQL requirement for spend tracking**: Virtual key management and spend tracking require a PostgreSQL database connection on the Proxy Server
+- **Redis for advanced routing**: Usage-based and latency-based routing strategies require a Redis instance for cross-process metric sharing
+- **Model pricing accuracy**: Built-in cost calculations depend on LiteLLM's pricing data, which may lag behind provider pricing changes. Custom per-token pricing can override defaults
+- **Exception mapping coverage**: Not all providers support the full set of mapped exception types. OpenAI and Anthropic have comprehensive mapping; smaller providers may have limited coverage \[6\]
+- **Streaming error propagation**: Errors during streaming propagate as exceptions during chunk iteration, which requires error handling within the streaming loop
+- **Proxy latency overhead**: The Proxy Server adds network hop latency compared to direct SDK calls. For latency-sensitive applications, the SDK with in-process Router may be preferable
+
+## Changelog Highlights
+
+- **100+ provider support**: Expanded from initial providers to support over 100 LLM APIs through the OpenAI format
+- **Proxy Server (LLM Gateway)**: Standalone HTTP server with authentication, virtual keys, and admin dashboard
+- **Router load balancing**: Multiple routing strategies (simple-shuffle, usage-based, latency-based, least-busy, cost-based)
+- **Virtual key management**: Per-key budgets, rate limits, and team-based spend tracking with PostgreSQL backend
+- **Observability callbacks**: Integration with Langfuse, Helicone, Lunary, LangSmith, MLflow, Arize, and others
+- **Credential lists**: Centralized credential management with reference-based model configuration
+- **Custom routing strategies**: Extensible routing through `CustomRoutingStrategyBase` for deployment selection logic
+- **Enterprise features**: Automatic key rotation, audit logging, and granular access controls
+- **Performance**: 1,500+ requests per second throughput under load testing
+
+## Citations
+
+- \[1\] LiteLLM Documentation - <https://docs.litellm.ai/docs/>
+- \[2\] Proxy Quick Start - <https://docs.litellm.ai/docs/proxy/quick_start>
+- \[3\] Router Documentation - <https://docs.litellm.ai/docs/routing>
+- \[4\] Completion Input Parameters - <https://docs.litellm.ai/docs/completion/input>
+- \[5\] Virtual Keys - <https://docs.litellm.ai/docs/proxy/virtual_keys>
+- \[6\] Exception Mapping - <https://docs.litellm.ai/docs/exception_mapping>
+- \[7\] Observability Callbacks - <https://docs.litellm.ai/docs/observability/callbacks>
+- \[8\] Proxy Configuration - <https://docs.litellm.ai/docs/proxy/configs>
+
+# Portkey
+
+> AI gateway for managing 200+ LLMs with observability and guardrails
+
+| Field | Value |
+|----|----|
+| Group | API Gateways & Model Routing |
+| Type | API/SDK |
+| Open Source | Yes |
+| GitHub | [Portkey-AI/gateway](https://github.com/Portkey-AI/gateway) |
+| Stars | 10675 |
+| Documentation | [Official Docs](https://portkey.ai/docs/introduction/what-is-portkey) |
+
+## Overview
+
+Portkey is a unified AI gateway that provides a single interface for routing requests to 250+ Large Language Model (LLM) providers. It operates as a proxy layer between applications and LLM APIs, adding observability, guardrails, caching, fallback routing, and load balancing without requiring changes to the underlying model calls. The gateway runs on globally distributed edge workers, adding approximately 20-40ms of latency compared to direct API calls. \[1\]
+
+The platform processes over 25 million requests daily with 99.99% uptime and handles millions of requests per minute at scale. Integration takes approximately 2 minutes through native SDKs (Python, Node.js), a REST API, or drop-in compatibility with the OpenAI SDK by changing the base URL. Portkey holds ISO 27001, SOC 2, GDPR, and HIPAA certifications, with AES-256 encryption for data in transit and at rest. \[1\]
+
+Portkey ships as both an open-source gateway (free, self-hosted) and a managed cloud service. The managed service includes a free tier of 10,000 requests per month, with paid plans for higher volumes. Enterprise customers can deploy Portkey in a private cloud configuration. \[1\]
+
+## Core Concepts
+
+**Gateway Configs** are JSON objects that define how Portkey processes requests. A config specifies the routing strategy, target providers, caching behavior, retry logic, guardrails, and request timeouts. Configs are the central orchestration mechanism for all gateway features and can be stored server-side (referenced by ID) or passed inline with each request. \[2\]
+
+**Model Catalog** (formerly Virtual Keys) provides a centralized system for managing provider credentials. Instead of embedding API keys in application code, credentials are stored securely in Portkey and referenced using the `@provider-slug/model-name` syntax. The Model Catalog supports organization-level credential sharing across workspaces, fine-grained budgets, rate limits, and model allow-lists. \[3\]
+
+**Targets** are the downstream LLM providers or model endpoints that receive routed requests. Each target in a config specifies a provider, credentials, optional model overrides, and weight (for load balancing). Targets can be nested to create complex routing trees with multiple fallback layers. \[2\]
+
+**Strategy Modes** define how Portkey distributes requests across targets. The four modes are `single` (one provider), `loadbalance` (weighted distribution), `fallback` (sequential failover), and `conditional` (rule-based routing). \[2\]
+
+**Guardrails** are real-time validators that check inputs before they reach the LLM and outputs before they reach the user. Guardrails can block requests, log violations, trigger fallbacks, or build evaluation datasets. Over 20 deterministic checks are available alongside LLM-based and third-party guardrail integrations. \[4\]
+
+**Observability** is an OpenTelemetry-compliant monitoring suite that automatically captures all requests, responses, costs, latencies, and token usage. The suite includes logs, distributed tracing, analytics dashboards with 21+ metrics, custom metadata tagging, and feedback integration. \[5\]
+
+## Installation and Setup
+
+### Python SDK
+
+``` bash
+pip install portkey-ai
+```
+
+``` python
+from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+)
+
+response = portkey.chat.completions.create(
+    model="@openai-prod/gpt-4o",
+    messages=[
+        {"role": "user", "content": "Hello, world!"}
+    ]
+)
+print(response.choices[0].message.content)
+```
+
+### Node.js SDK
+
+``` bash
+npm install portkey-ai
+```
+
+``` javascript
+import Portkey from "portkey-ai";
+
+const portkey = new Portkey({
+    apiKey: "PORTKEY_API_KEY",
+});
+
+const response = await portkey.chat.completions.create({
+    model: "@openai-prod/gpt-4o",
+    messages: [
+        { role: "user", content: "Hello, world!" }
+    ]
+});
+console.log(response.choices[0].message.content);
+```
+
+### OpenAI SDK Compatibility
+
+Route existing OpenAI SDK calls through Portkey by changing the base URL:
+
+``` python
+from openai import OpenAI
+from portkey_ai import createHeaders
+
+client = OpenAI(
+    api_key="YOUR_OPENAI_API_KEY",
+    base_url="https://api.portkey.ai/v1",
+    default_headers=createHeaders(
+        api_key="YOUR_PORTKEY_API_KEY",
+    )
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+```
+
+### REST API
+
+``` bash
+curl https://api.portkey.ai/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer $OPENAI_API_KEY" \
+  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
+  -d '{
+    "model": "gpt-4o",
+    "messages": [{"role": "user", "content": "Hello!"}]
+  }'
+```
+
+### Self-Hosted Gateway
+
+Run the open-source gateway locally:
+
+``` bash
+npx @portkey-ai/gateway
+```
+
+## Architecture
+
+Portkey operates as an edge-deployed proxy between client applications and LLM providers:
+
+``` 
+Application (SDK / REST)
+    |
+    v
+Portkey Gateway (Edge Workers)
+    |--- Guardrails (input validation)
+    |--- Routing (fallback / loadbalance / conditional)
+    |--- Caching (simple / semantic)
+    |--- Retry Logic
+    |--- Observability (logs, traces, metrics)
+    |
+    v
+LLM Providers (OpenAI, Anthropic, Azure, Bedrock, 250+ others)
+```
+
+**Edge Infrastructure**: The gateway runs on globally distributed edge workers, minimizing latency by processing requests close to their origin. The edge layer handles routing decisions, cache lookups, guardrail evaluation, and retry logic before forwarding to the target provider. \[1\]
+
+**Config-Driven Orchestration**: All gateway behavior is defined through JSON config objects. Configs can be stored server-side and referenced by ID (`pc-xxx`) or passed inline. Server-side configs enable runtime changes without code deployments. \[2\]
+
+**OpenAI-Compatible Interface**: Portkey exposes an API surface compatible with the OpenAI Chat Completions format (`/v1/chat/completions`). Applications using the OpenAI SDK can switch to Portkey by changing the base URL and adding Portkey headers, with no changes to the request body. \[1\]
+
+**Credential Isolation**: Provider API keys are stored in Portkey's vault (Model Catalog) and never exposed in application code. Requests reference credentials through the `@provider-slug` syntax, and Portkey injects the actual key at the edge layer before forwarding to the provider. \[3\]
+
+## Key Features and Functionality
+
+### Fallback Routing
+
+Automatically switch to backup providers when the primary fails:
+
+``` json
+{
+    "strategy": {
+        "mode": "fallback"
+    },
+    "targets": [
+        {
+            "virtual_key": "openai-key",
+            "override_params": {"model": "gpt-4o"}
+        },
+        {
+            "virtual_key": "anthropic-key",
+            "override_params": {"model": "claude-sonnet-4-6"}
+        }
+    ]
+}
+```
+
+Fallbacks can be triggered by specific HTTP status codes using `on_status_codes` at the target level. \[2\]
+
+### Load Balancing
+
+Distribute requests across providers or API keys using weighted targets:
+
+``` json
+{
+    "strategy": {
+        "mode": "loadbalance"
+    },
+    "targets": [
+        {
+            "virtual_key": "openai-key-1",
+            "weight": 0.7,
+            "override_params": {"model": "gpt-4o"}
+        },
+        {
+            "virtual_key": "anthropic-key",
+            "weight": 0.3,
+            "override_params": {"model": "claude-sonnet-4-6"}
+        }
+    ]
+}
+```
+
+Weights control traffic distribution probability and are normalized automatically. \[2\]
+
+### Conditional Routing
+
+Route requests based on custom criteria using query conditions:
+
+``` json
+{
+    "strategy": {
+        "mode": "conditional",
+        "conditions": [
+            {
+                "query": {"metadata.tier": "premium"},
+                "then": "target-gpt4"
+            }
+        ],
+        "default": "target-gpt4o-mini"
+    },
+    "targets": [...]
+}
+```
+
+### Caching
+
+Reduce latency and costs with simple (exact match) or semantic (similarity-based) caching:
+
+``` json
+{
+    "cache": {
+        "mode": "semantic",
+        "max_age": 3600
+    }
+}
+```
+
+- **Simple cache**: Exact match on request body; fastest lookup
+- **Semantic cache**: Similarity-based matching; returns cached responses for semantically equivalent prompts \[2\]
+
+### Automatic Retries
+
+Retry failed requests with configurable attempts and status code filters:
+
+``` json
+{
+    "retry": {
+        "attempts": 3,
+        "on_status_codes": [429, 500, 502, 503, 504],
+        "use_retry_after_headers": true
+    }
+}
+```
+
+The `use_retry_after_headers` option respects provider-sent `Retry-After` headers for rate-limited requests. \[2\]
+
+### Circuit Breaker
+
+Prevent cascading failures by temporarily disabling unhealthy targets:
+
+``` json
+{
+    "cb_config": {
+        "failure_threshold": 5,
+        "cooldown_interval": 60000,
+        "failure_status_codes": [500, 502, 503]
+    }
+}
+```
+
+When a target exceeds the `failure_threshold`, the circuit opens and requests are routed to other targets for the duration of the `cooldown_interval` (minimum 30 seconds). \[2\]
+
+### Guardrails
+
+Validate inputs and outputs with deterministic, LLM-based, or third-party checks:
+
+``` json
+{
+    "input_guardrails": ["guardrail-id-xxx"],
+    "output_guardrails": ["guardrail-id-yyy"]
+}
+```
+
+Guardrail actions include synchronous blocking (status 446 on failure), asynchronous logging (non-blocking), sequential or parallel execution, and feedback collection for evaluation datasets. Built-in checks cover regex matching, JSON schema validation, code detection (SQL, Python, TypeScript), prompt injection scanning, and gibberish detection. Third-party integrations with Aporia, SydeLabs, and Pillar Security are available. \[4\]
+
+### Observability
+
+All requests are automatically logged with cost, latency, token usage, and provider metadata. Features include:
+
+- **Logs**: Full request and response capture for all multimodal interactions
+- **Traces**: Distributed tracing across the lifecycle of each request
+- **Analytics**: 21+ metrics on dashboards for trend analysis
+- **Custom Metadata**: Tag requests with arbitrary key-value pairs for grouping and filtering
+- **Feedback**: Attach feedback values and weights to close observability loops
+- **Budget Limits**: Configure cost limits per provider API key \[5\]
+
+### Model Context Protocol (MCP)
+
+Connect external tools and data sources to LLM requests through MCP support, enabling agents to access databases, file systems, and APIs through a standardized protocol. \[6\]
+
+## Use Cases
+
+**Multi-Provider Resilience**: Route production traffic through Portkey with fallback configs to ensure continuity when a single provider experiences downtime. An application can fall back from OpenAI to Anthropic to Azure OpenAI without any code changes.
+
+**Cost Optimization**: Use load balancing to distribute traffic across cheaper model tiers for routine queries while routing complex queries to frontier models via conditional routing. Semantic caching further reduces costs by serving cached responses for repeated or similar prompts.
+
+**Compliance and Security**: Store all provider credentials in the Model Catalog, enforce guardrails on inputs and outputs to prevent prompt injection and data leakage, and enable audit logging through the observability suite. The HIPAA, SOC 2, and GDPR certifications support regulated industry deployments.
+
+**A/B Testing and Canary Deployments**: Use weighted load balancing to gradually shift traffic from an existing model to a new model, monitoring performance and cost metrics through the analytics dashboard before full rollout.
+
+**Agent Observability**: Trace multi-step agent workflows across multiple LLM calls, tool invocations, and retrieval steps. Custom metadata tags enable grouping traces by user session, agent type, or business workflow.
+
+**Rate Limit Management**: Distribute requests across multiple API keys for the same provider using load balancing, effectively multiplying rate limits without application-level key rotation logic.
+
+## API Reference Summary
+
+### Endpoints
+
+Portkey mirrors the OpenAI-compatible API surface:
+
+- `POST /v1/chat/completions` -- Chat completions (text generation)
+- `POST /v1/completions` -- Legacy completions
+- `POST /v1/embeddings` -- Vector embeddings
+- `POST /v1/images/generations` -- Image generation
+- `POST /v1/audio/speech` -- Text-to-speech
+- `POST /v1/audio/transcriptions` -- Speech-to-text
+
+### Request Headers
+
+- `x-portkey-api-key` -- Portkey API key (required)
+- `x-portkey-config` -- Gateway config ID or inline JSON
+- `x-portkey-virtual-key` -- Legacy virtual key reference
+- `x-portkey-metadata` -- Custom metadata as JSON string
+- `x-portkey-trace-id` -- Custom trace identifier
+- `x-portkey-cache-namespace` -- Cache namespace for isolation
+- `Authorization` -- Provider API key (when not using Model Catalog)
+
+### Response Additions
+
+Portkey responses include standard OpenAI-format fields plus:
+
+- `hook_results` -- Guardrail check results (when synchronous guardrails are configured)
+- Status 246: Guardrails failed but request continues
+- Status 446: Guardrails failed and request is denied
+
+## Configuration and Customization
+
+### Complete Config Structure
+
+``` json
+{
+    "strategy": {
+        "mode": "fallback | loadbalance | conditional | single",
+        "conditions": [],
+        "default": "target-id",
+        "on_status_codes": [429, 500]
+    },
+    "targets": [
+        {
+            "provider": "openai",
+            "api_key": "sk-...",
+            "virtual_key": "key-id",
+            "custom_host": "http://private-llm/v1",
+            "weight": 0.7,
+            "override_params": {"model": "gpt-4o", "temperature": 0.5},
+            "forward_headers": ["Authorization"],
+            "on_status_codes": [500, 502]
+        }
+    ],
+    "cache": {
+        "mode": "simple | semantic",
+        "max_age": 3600
+    },
+    "retry": {
+        "attempts": 3,
+        "on_status_codes": [429, 500, 502, 503, 504],
+        "use_retry_after_headers": true
+    },
+    "cb_config": {
+        "failure_threshold": 5,
+        "cooldown_interval": 60000,
+        "failure_status_codes": [500, 502, 503]
+    },
+    "request_timeout": 30000,
+    "input_guardrails": ["guardrail-id"],
+    "output_guardrails": ["guardrail-id"],
+    "strict_open_ai_compliance": true,
+    "forward_headers": ["X-Custom-Header"]
+}
+```
+
+### Cloud Provider Parameters
+
+Configs support direct cloud provider authentication:
+
+- **Azure OpenAI**: `azure_region`, `azure_deployment_name`, `azure_api_version`, `azure_endpoint_name`
+- **AWS Bedrock**: `aws_access_key_id`, `aws_secret_access_key`, `aws_region`, `aws_session_token`
+- **Google Vertex AI**: `vertex_project_id`, `vertex_region`, `vertex_service_account_json`
+
+### Config Application Methods
+
+Configs can be applied through multiple channels:
+
+- Portkey SDK `config` parameter (inline object or stored config ID)
+- OpenAI SDK via `x-portkey-config` header
+- REST API via `x-portkey-config` header
+- Default config attached to a Portkey API key in the dashboard
+
+## Integration Patterns
+
+### With OpenAI SDK (Python)
+
+``` python
+from openai import OpenAI
+from portkey_ai import createHeaders
+
+client = OpenAI(
+    api_key="dummy",
+    base_url="https://api.portkey.ai/v1",
+    default_headers=createHeaders(
+        api_key="YOUR_PORTKEY_API_KEY",
+        virtual_key="YOUR_OPENAI_VIRTUAL_KEY"
+    )
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+```
+
+### With LangChain
+
+``` python
+from langchain_openai import ChatOpenAI
+from portkey_ai import createHeaders
+
+llm = ChatOpenAI(
+    api_key="dummy",
+    base_url="https://api.portkey.ai/v1",
+    default_headers=createHeaders(
+        api_key="YOUR_PORTKEY_API_KEY",
+        virtual_key="YOUR_OPENAI_VIRTUAL_KEY"
+    ),
+    model="gpt-4o"
+)
+
+response = llm.invoke("What is the meaning of life?")
+```
+
+### With Observability Tracing (Logfire)
+
+``` python
+import logfire
+import os
+from portkey_ai import createHeaders
+from openai import OpenAI
+
+os.environ["OTEL_EXPORTER_OTLP_ENDPOINT"] = "https://api.portkey.ai/v1/logs/otel"
+os.environ["OTEL_EXPORTER_OTLP_HEADERS"] = "x-portkey-api-key=YOUR_PORTKEY_API_KEY"
+
+logfire.configure(service_name="my-llm-app", send_to_logfire=False)
+
+client = OpenAI(
+    api_key="YOUR_OPENAI_API_KEY",
+    base_url="https://api.portkey.ai/v1",
+    default_headers=createHeaders(
+        api_key="YOUR_PORTKEY_API_KEY",
+    )
+)
+
+logfire.instrument_openai(client)
+```
+
+### With Private or Self-Hosted Models
+
+``` json
+{
+    "strategy": {
+        "mode": "fallback"
+    },
+    "targets": [
+        {
+            "provider": "openai",
+            "custom_host": "http://my-private-llm:8080/v1",
+            "forward_headers": ["Authorization"]
+        },
+        {
+            "virtual_key": "openai-fallback-key"
+        }
+    ]
+}
+```
+
+## Examples
+
+### Production-Ready Config with Fallback, Caching, and Retries
+
+``` python
+from portkey_ai import Portkey
+
+config = {
+    "strategy": {
+        "mode": "fallback"
+    },
+    "targets": [
+        {
+            "virtual_key": "openai-prod",
+            "override_params": {"model": "gpt-4o"},
+            "weight": 1.0
+        },
+        {
+            "virtual_key": "anthropic-prod",
+            "override_params": {"model": "claude-sonnet-4-6"}
+        }
+    ],
+    "cache": {
+        "mode": "semantic",
+        "max_age": 3600
+    },
+    "retry": {
+        "attempts": 3,
+        "on_status_codes": [429, 500, 502, 503, 504]
+    },
+    "request_timeout": 30000
+}
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    config=config
+)
+
+response = portkey.chat.completions.create(
+    messages=[{"role": "user", "content": "Summarize this document."}]
+)
+```
+
+### Weighted Load Balancing Across Providers
+
+``` python
+from portkey_ai import Portkey
+
+config = {
+    "strategy": {
+        "mode": "loadbalance"
+    },
+    "targets": [
+        {
+            "virtual_key": "openai-key-1",
+            "weight": 0.5,
+            "override_params": {"model": "gpt-4o"}
+        },
+        {
+            "virtual_key": "openai-key-2",
+            "weight": 0.3,
+            "override_params": {"model": "gpt-4o"}
+        },
+        {
+            "virtual_key": "anthropic-key",
+            "weight": 0.2,
+            "override_params": {"model": "claude-sonnet-4-6"}
+        }
+    ]
+}
+
+portkey = Portkey(api_key="PORTKEY_API_KEY", config=config)
+
+response = portkey.chat.completions.create(
+    messages=[{"role": "user", "content": "Hello!"}]
+)
+```
+
+### Embedding Request with Guardrails
+
+``` python
+from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+    config="pc-xxx"  # Config with embedding guardrails
+)
+
+response = portkey.embeddings.create(
+    input="Your text string goes here",
+    model="text-embedding-3-small"
+)
+```
+
+### Custom Metadata for Observability
+
+``` python
+from portkey_ai import Portkey
+
+portkey = Portkey(
+    api_key="PORTKEY_API_KEY",
+)
+
+response = portkey.with_options(
+    metadata={"user_id": "user-123", "session": "abc", "environment": "production"}
+).chat.completions.create(
+    model="@openai-prod/gpt-4o",
+    messages=[{"role": "user", "content": "Help me debug this error."}]
+)
+```
+
+## Limitations and Considerations
+
+**Added Latency**: The edge proxy adds 20-40ms of latency to every request compared to direct provider API calls. For latency-critical applications where every millisecond matters, this overhead should be evaluated against the benefits of routing and observability.
+
+**Vendor Lock-In on Managed Features**: While the open-source gateway handles routing, caching, and retries, advanced features like the analytics dashboard, guardrails management UI, Model Catalog, and budget controls require the managed Portkey service.
+
+**Semantic Cache Accuracy**: Semantic caching relies on similarity matching, which may return cached responses for prompts that are similar but not semantically equivalent. Applications requiring deterministic responses should use simple (exact-match) caching or disable caching entirely.
+
+**Guardrail Latency**: Synchronous guardrails add processing time to each request. Applications with tight latency requirements should consider running guardrails asynchronously (logging only) or limiting the number of active checks per request.
+
+**Provider Feature Parity**: Not all provider-specific features are exposed through Portkey's unified interface. Advanced or recently released provider capabilities may require direct API access until Portkey adds support.
+
+**Virtual Key Deprecation**: Virtual Keys have been migrated to the Model Catalog system. Existing implementations using Virtual Keys continue to work but should migrate to the `@provider-slug/model-name` syntax for new projects.
+
+**Free Tier Limits**: The managed service free tier is limited to 10,000 requests per month, which is sufficient for development but requires a paid plan for production workloads.
+
+## Changelog Highlights
+
+- **Model Catalog**: Replaced Virtual Keys with organization-level credential management, fine-grained budgets, rate limits, and model allow-lists
+- **Guardrails on the Gateway**: Real-time input/output validation with 20+ deterministic checks, LLM-based detection, and third-party integrations (Aporia, SydeLabs, Pillar Security)
+- **Conditional Routing**: Query-based routing rules for directing traffic based on custom criteria
+- **Circuit Breaker**: Per-strategy failure handling with configurable thresholds and cooldown intervals
+- **MCP Support**: Model Context Protocol integration for connecting external tools and data sources
+- **gRPC Transport (Beta)**: Reduced-latency transport option alongside REST
+- **Semantic Caching**: Similarity-based cache matching for semantically equivalent prompts
+- **250+ Provider Support**: Expanded from initial provider set to over 250 supported LLM providers and models
+
+## Citations
+
+- \[1\] What is Portkey - <https://portkey.ai/docs/introduction/what-is-portkey>
+- \[2\] Gateway Configs - <https://portkey.ai/docs/product/ai-gateway/configs>
+- \[3\] Virtual Keys / Model Catalog - <https://portkey.ai/docs/product/ai-gateway/virtual-keys>
+- \[4\] Guardrails - <https://portkey.ai/docs/product/guardrails>
+- \[5\] Observability - <https://portkey.ai/docs/product/observability>
+- \[6\] AI Gateway Overview - <https://portkey.ai/docs/product/ai-gateway>
+- \[7\] Config Object Schema - <https://portkey.ai/docs/api-reference/inference-api/config-object>
+- \[8\] Supported LLM Providers - <https://portkey.ai/docs/integrations/llms>
+- \[9\] GitHub Repository - <https://github.com/Portkey-AI/gateway>
+
+# ccapi
+
+> Unified AI API gateway for 100+ models with OpenAI-compatible endpoint
+
+| Field       | Value                         |
+|-------------|-------------------------------|
+| Name        | ccapi                         |
+| Group       | Model Gateways                |
+| Type        | API                           |
+| Open Source | No                            |
+| GitHub      | N/A                           |
+| Stars       | N/A                           |
+| Docs        | [ccapi.ai](https://ccapi.ai/) |
+
+## Overview
+
+CCAPI is a multimodal AI API gateway that aggregates multiple providers under a single OpenAI-compatible endpoint. The platform routes requests to over 100 models across eight or more providers spanning five modalities: text, image, audio, music, and video. CCAPI's core value proposition is migration simplicity -- existing code targeting the OpenAI API can be redirected to CCAPI by changing only the base URL to `https://api.ccapi.ai/v1` and supplying a CCAPI API key. Smart routing automatically switches between providers on failure with approximately 120 milliseconds of failover latency, maintaining a reported 99.9% success rate. The service operates on a tiered subscription model with pay-per-use billing denominated in United States Dollars (USD), offering a free tier with a \$0.50 signup bonus, paid Standard and Pro plans, and custom enterprise agreements. As of March 2026, the pricing catalog covers 48 model families across text (30), image (8), audio (2), and video (8). \[1\]
+
+## Core Concepts
+
+- **Unified Endpoint**: A single OpenAI-compatible REST API base URL (`https://api.ccapi.ai/v1`) that fronts all supported providers and modalities. Developers interact with one API surface regardless of whether the underlying model is served by OpenAI, Anthropic, Google, DeepSeek, or another provider.
+- **Smart Routing**: An automatic failover mechanism that detects provider downtime or errors and reroutes requests to alternative providers. The failover occurs in approximately 120 milliseconds, which is transparent to the caller. Multiple retry layers sustain the 99.9% success rate target. Multi-channel failover routes requests across multiple upstream channels per provider for higher availability. \[1\]
+- **Multimodal Support**: CCAPI supports five modalities through dedicated endpoints -- text (chat completions), image generation, audio (text-to-speech), music generation (via Suno), and video generation -- all accessible under the same base URL and authentication scheme. \[2\]
+- **Provider-Prefixed Model Identifiers**: Models are referenced using a `provider/model` format (for example, `anthropic/claude-sonnet-4-6` or `bytedance/seedance-2`), which disambiguates models across providers and allows explicit routing to a specific backend.
+- **Custom Providers**: Users can configure additional OpenAI-compatible providers with their own API keys and endpoints, extending CCAPI beyond its built-in provider catalog.
+- **Subscription Tiers**: Four plans -- Free, Standard (\$15.83/month billed annually), Pro (\$49.17/month billed annually), and Custom (negotiated) -- each unlocking progressively deeper model discounts (up to 40%, 50%, 60%, and negotiated respectively), higher rate limits, and additional operational features. \[3\]
+- **Pay-Per-Use Billing**: No credit conversion. A \$100 deposit equals \$100 of usable balance, with real-time cost tracking via the usage dashboard.
+- **OpenClaw Integration**: CCAPI provides a dedicated integration path for OpenClaw (open-source AI agent framework with 191K+ GitHub stars), enabling agents to route all Large Language Model (LLM) calls through CCAPI by changing environment variables -- no code changes required. \[4\]
+
+## Installation and Setup
+
+CCAPI is a hosted API service with no local installation required. Integration uses existing OpenAI-compatible Software Development Kits (SDKs).
+
+### Authentication
+
+CCAPI uses bearer token authentication. API keys follow the `sk-ccapi-...` prefix convention and are obtained from the CCAPI dashboard. All requests must include the `Authorization: Bearer <key>` header.
+
+``` bash
+export CCAPI_API_KEY="sk-ccapi-your-key-here"
+```
+
+### Python (OpenAI SDK)
+
+``` bash
+pip install openai
+```
+
+``` python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+```
+
+### Node.js (OpenAI SDK)
+
+``` bash
+npm install openai
+```
+
+``` javascript
+import OpenAI from "openai";
+
+const client = new OpenAI({
+    baseURL: "https://api.ccapi.ai/v1",
+    apiKey: "sk-ccapi-...",
+});
+```
+
+### cURL
+
+``` bash
+curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
+  -H "Authorization: Bearer $CCAPI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-4-6",
+    "messages": [{"role": "user", "content": "Hello"}]
+  }'
+```
+
+Any Hypertext Transfer Protocol (HTTP) client or SDK that speaks Representational State Transfer (REST) and supports the OpenAI chat completions format works with CCAPI by pointing to the `https://api.ccapi.ai/v1` base URL. \[1\] \[2\]
+
+## Architecture
+
+CCAPI's architecture consists of three logical layers:
+
+1.  **API Gateway Layer**: An OpenAI-compatible REST API that accepts requests at `https://api.ccapi.ai/v1`. The gateway handles authentication (bearer tokens), request validation, rate management based on subscription tier, and response formatting. All modality endpoints (chat completions, image generation, audio, music, video generation) share the same gateway infrastructure and authentication scheme.
+2.  **Smart Routing Layer**: A routing and failover engine that sits between the gateway and upstream providers. When a request targets a specific provider-model pair, the routing layer forwards it to that provider. If the provider returns an error or is unreachable, the routing layer automatically retries with an alternative provider capable of serving an equivalent model, with failover latency of approximately 120 milliseconds. Multi-channel failover distributes requests across multiple upstream channels per provider for higher availability.
+3.  **Provider Integration Layer**: Connections to upstream AI providers (OpenAI, Anthropic, Google, DeepSeek, ByteDance, Kuaishou, Zhipu AI, MiniMax, Moonshot, Qwen, Suno, xAI/Grok, Midjourney) plus user-configured custom providers. Each integration translates between the unified CCAPI request format and the provider's native API, handling authentication, request mapping, and response normalization.
+
+The system is monitored 24/7 with real-time tracking of latency, success rates, and provider health across all modalities.
+
+## Key Features and Functionality
+
+- **Chat Completions**: Standard text generation via `/v1/chat/completions` supporting streaming (Server-Sent Events (SSE)), function/tool calling, JavaScript Object Notation (JSON) response mode, temperature and top-p sampling, stop sequences, and maximum token limits. \[2\]
+- **Extended Thinking**: A `thinking` parameter (`{"type": "enabled"}`) activates step-by-step reasoning mode on supported models, returning intermediate reasoning content alongside the final response. \[2\]
+- **Vision and Image Input**: Multimodal models accept image inputs within the messages array for Optical Character Recognition (OCR), image analysis, and visual question answering.
+- **Image Generation**: Endpoint at `/v1/images/generations` for generating images from text prompts. Supported providers include Midjourney, Google Gemini Image, and ByteDance Seedream. \[2\]
+- **Audio (Text-to-Speech)**: Endpoint at `/v1/audio/speech` for converting text to audio using available speech synthesis models.
+- **Music Generation**: Integration with Suno for AI music generation, including the Chirp model family, with operation-based pricing. \[2\] \[3\]
+- **Video Generation**: Endpoint at `/v1/video/generations` for generating video content. Supported models include Seedance 2.0 (ByteDance), Kling 3.0 Standard/Omni/Action Control (Kuaishou), Veo 3.1 Stream (Google), Sora 2/Sora 2 Pro/Sora 2 Lite (OpenAI), Midjourney Video, and Grok Video (xAI). Sora 2 supports flexible 4-second, 8-second, and 12-second runtimes. Kling 3.0 supports 4K resolution at 60 frames per second (fps) with multi-shot capability. Seedance 2.0 supports 2K resolution at 24 fps with audio sync. \[2\] \[5\]
+- **Prompt Caching**: Repeated prompt prefixes (such as system prompts reused across conversations) receive reduced pricing, lowering cost for high-volume applications with shared context. \[3\]
+- **Function/Tool Calling**: Tool definitions can be passed via the `tools` parameter with `tool_choice` controlling invocation behavior (`none`, `auto`, `required`).
+- **File-to-URL API**: Upload files and receive temporary Uniform Resource Locators (URLs) for multimodal AI models, with per-tier upload quotas, download limits, and 24-hour automatic file expiry. Available on Standard tier and above. \[5\]
+- **Webhook Notifications**: Asynchronous event notifications for completed operations, available on Standard tier and above. \[3\]
+- **Usage Dashboard**: Real-time monitoring of costs, latency metrics, success rates, and per-request breakdowns. Tracks spending per model and per provider. \[1\]
+- **Custom Provider Configuration**: Users can add any OpenAI-compatible provider with their own API keys, extending the gateway beyond the built-in provider catalog.
+- **Team Collaboration**: Standard tier includes 3 team seats, Pro includes 8, and Custom tier offers unlimited seats. \[3\]
+
+## Use Cases
+
+- **Provider Migration**: Teams switching from one LLM provider to another can reroute by changing only the model identifier, with no SDK or integration code changes required. The OpenAI-compatible interface means the calling code remains identical.
+- **High-Availability AI Applications**: Production systems that cannot tolerate provider outages benefit from smart routing, which automatically fails over to alternative providers within 120 milliseconds.
+- **Multimodal Pipelines**: Applications that need text, image, audio, music, and video generation from a single integration point rather than maintaining separate SDKs and authentication for each provider.
+- **Cost Optimization**: Tiered subscription discounts (up to 60% off on the Pro plan for Anthropic Claude models) combined with pay-per-use pricing enable significant savings. For example, DeepSeek V3 at \$0.27 per million input tokens can reduce costs by 97% compared to Claude Opus for equivalent workloads. \[3\] \[4\]
+- **AI Agent Cost Reduction**: OpenClaw users report monthly LLM costs of \$623 to \$3,600 with direct provider APIs. Routing through CCAPI to budget models (DeepSeek, GLM-5, MiniMax M2.5) can reduce costs to under \$20 per month at 50 million tokens per day. \[4\]
+- **Video Generation Access**: Teams needing access to video generation models (Seedance 2.0, Kling 3.0, Veo 3.1, Sora 2, Midjourney, Grok Video) through a familiar OpenAI-compatible interface without managing direct integrations with each provider. \[5\]
+- **Prototyping and Evaluation**: Rapidly testing different models from different providers against the same prompts by changing only the model parameter, enabling quick comparison without provider-specific setup.
+
+## API Reference Summary
+
+### Chat Completions
+
+**Endpoint**: `POST /v1/chat/completions`
+
+**Parameters**:
+
+- `model` (required): Model identifier in `provider/model` format (e.g., `anthropic/claude-sonnet-4-6`).
+- `messages` (required): Array of message objects with `role` (`system`, `user`, `assistant`, `tool`) and `content` fields.
+- `stream`: Boolean to enable SSE streaming of partial responses.
+- `temperature`: Sampling temperature, range `0.0` to `2.0`, default `1.0`.
+- `top_p`: Nucleus sampling threshold, range `0.0` to `1.0`, default `1.0`.
+- `max_tokens`: Maximum tokens in the generated response.
+- `stop`: String or array of stop sequences.
+- `tools`: Array of function/tool definitions for tool calling.
+- `tool_choice`: Control tool invocation (`none`, `auto`, `required`).
+- `response_format`: `{"type": "json_object"}` to enforce JSON output.
+- `thinking`: `{"type": "enabled"}` for extended reasoning mode.
+
+**Response**: Chat completion object containing generated content, token usage statistics, and optional tool calls or reasoning content.
+
+**Error Codes**:
+
+- `400`: Bad request (malformed parameters).
+- `402`: Insufficient account balance.
+- `500`: Server error.
+
+### Image Generation
+
+**Endpoint**: `POST /v1/images/generations`
+
+Supported providers: Midjourney, Google Gemini Image, ByteDance Seedream. \[2\]
+
+### Audio (Text-to-Speech)
+
+**Endpoint**: `POST /v1/audio/speech`
+
+### Music Generation
+
+**Provider**: Suno (Chirp model family). Operation-based pricing with core music generation and advanced operations. \[2\] \[3\]
+
+### Video Generation
+
+**Endpoint**: `POST /v1/video/generations`
+
+Supported models include Seedance 2.0, Kling 3.0 (Standard/Omni/Action Control), Veo 3.1 Stream, Sora 2 (Classic/Flexible/Lite/Pro/Pro HD), Midjourney Video, and Grok Video. Video billing varies by model: per-second (Seedance, Veo 3.1 Stream, Sora 2 Flexible), per-video (Kling, Sora 2 Classic), or packaged by resolution and duration (Grok Video). \[2\] \[5\]
+
+### Available Models (Selected)
+
+**Text Generation**:
+
+- `openai/gpt-5.2` -- OpenAI GPT-5.2
+- `openai/gpt-5.4` -- OpenAI GPT-5.4 (threshold pricing for different input context sizes)
+- `anthropic/claude-opus-4-6` -- Anthropic Claude Opus 4.6, 200K context (Pro: \$2.00/\$10.00 per 1M tokens)
+- `anthropic/claude-sonnet-4-6` -- Anthropic Claude Sonnet 4.6, 200K context (Pro: \$1.20/\$6.00 per 1M tokens)
+- `anthropic/claude-haiku-4-5` -- Anthropic Claude Haiku 4.5, 200K context (Pro: \$0.40/\$2.00 per 1M tokens)
+- `google/gemini-2.5-pro` -- Google Gemini 2.5 Pro (Pro: \$1.25/\$7.50 per 1M tokens)
+- `google/gemini-3` -- Google Gemini 3
+- `openai/gpt-4o` -- OpenAI GPT-4o (Pro: \$1.25/\$5.00 per 1M tokens)
+- `deepseek/deepseek-v4` -- DeepSeek V4 (\$0.27/\$1.10 per 1M tokens)
+- `deepseek/deepseek-v3.2` -- DeepSeek V3.2
+- `zhipu/glm-5` -- Zhipu AI GLM-5 (\$0.40/\$1.80 per 1M tokens)
+- `minimax/minimax-m2-5` -- MiniMax M2.5 (\$0.21/\$0.84 per 1M tokens)
+- `moonshot/kimi-k2.5` -- Moonshot Kimi K2.5 (\$0.55/\$2.19 per 1M tokens)
+- `qwen/qwen3.5-plus` -- Qwen 3.5 Plus (with prompt caching)
+
+**Video Generation**:
+
+- `bytedance/seedance-2` -- ByteDance Seedance 2.0 (2K, 4-15s, 24 fps, audio sync, \$0.34/second)
+- `kuaishou/kling-3.0` -- Kuaishou Kling 3.0 (4K, 3-15s, 60 fps, multi-shot, \$0.39/video)
+- `google/veo-3.1` -- Google Veo 3.1 Stream (runtime-based billing, Pro from \$0.09/second)
+- `openai/sora-2` -- OpenAI Sora 2 (flexible 4/8/12s runtimes, Pro from \$0.06/second or per-video)
+- `midjourney/video` -- Midjourney Video
+- `grok/video` -- Grok Video (packaged by 480p/720p and 6/10/15s durations)
+
+**Image Generation**:
+
+- Midjourney, Google Gemini Image, ByteDance Seedream
+
+**Audio/Music**:
+
+- Suno (Chirp family, operation-based pricing, Pro: \$0.07/call)
+- Producer (audio generation)
+
+CCAPI advertises up to 60% savings compared to direct provider pricing on the Pro tier, with Anthropic Claude models receiving the deepest discounts. \[1\] \[3\]
+
+## Configuration and Customization
+
+### Base URL Configuration
+
+The single required configuration change for any OpenAI SDK-based application:
+
+``` python
+# Python
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+```
+
+``` javascript
+// Node.js
+const client = new OpenAI({
+    baseURL: "https://api.ccapi.ai/v1",
+    apiKey: "sk-ccapi-...",
+});
+```
+
+### Subscription Tiers
+
+| Feature | Free | Standard | Pro | Custom |
+|----|----|----|----|----|
+| Price | \$0 | \$15.83/mo (annual) | \$49.17/mo (annual) | Negotiated |
+| API Discount | Up to 40% | Up to 50% | Up to 60% | Negotiated |
+| Models | Standard | All + Premium | All + Premium + Beta | All + Priority Access |
+| Rate Limit (RPM) | 30 | 600 | 3,000 | Custom |
+| Concurrency | 2 | 10 | 30 | Unlimited |
+| Team Seats | -- | 3 | 8 | Unlimited |
+| File-to-URL API | -- | Yes | Yes | Yes |
+| Webhooks | -- | Yes | Yes | Yes |
+| Log Retention | 24 hours | 7 days | 30 days | 365 days |
+| Support | Community | Email | Priority Email | Dedicated Manager |
+| SLA | -- | -- | -- | 99.9%+ |
+| Private Deployment | -- | -- | -- | Available |
+
+All plans include a \$0.50 signup bonus and direct USD billing. Annual billing saves two months (Standard: \$190/year, Pro: \$590/year). \[3\]
+
+### Model Selection
+
+Models are selected via the `model` parameter using provider-prefixed identifiers:
+
+``` python
+# Route to Anthropic Claude
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-4-6",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+
+# Route to DeepSeek for cost efficiency
+response = client.chat.completions.create(
+    model="deepseek/deepseek-v4",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+```
+
+### Custom Providers
+
+Users can configure additional OpenAI-compatible providers through the CCAPI dashboard, supplying their own API keys and endpoint URLs. This allows routing through CCAPI's unified interface to providers not in the built-in catalog.
+
+### Usage Dashboard
+
+The dashboard provides real-time visibility into:
+
+- Per-request cost breakdown
+- Latency metrics per model and provider
+- Success rate monitoring
+- API key management
+- Account balance tracking
+
+## Integration Patterns
+
+### Drop-In OpenAI Replacement
+
+The most common integration pattern requires changing only two values in existing OpenAI SDK code:
+
+``` python
+from openai import OpenAI
+
+# Before (direct OpenAI)
+# client = OpenAI(api_key="sk-openai-...")
+
+# After (via CCAPI)
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+
+# All existing code works unchanged
+response = client.chat.completions.create(
+    model="openai/gpt-5.2",
+    messages=[{"role": "user", "content": "Explain quantum computing."}]
+)
+```
+
+### Multi-Provider Switching
+
+A single client instance can target different providers by changing only the model parameter:
+
+``` python
+models = [
+    "openai/gpt-5.2",
+    "anthropic/claude-sonnet-4-6",
+    "deepseek/deepseek-v4",
+    "zhipu/glm-5",
+    "minimax/minimax-m2-5",
+]
+for model in models:
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": "Summarize this document."}]
+    )
+```
+
+### OpenClaw Agent Integration
+
+Connect OpenClaw to CCAPI by setting environment variables in the `.env` file:
+
+``` bash
+# CCAPI Gateway Configuration
+OPENCLAW_API_KEY=sk-your-ccapi-api-key
+OPENCLAW_MODEL=deepseek/deepseek-chat
+OPENCLAW_BASE_URL=https://api.ccapi.ai/api/v1
+
+# Optional: fallback model
+OPENCLAW_FALLBACK_MODEL=openai/gpt-4o-mini
+```
+
+No code changes are required. OpenClaw treats CCAPI as a standard OpenAI endpoint. \[4\]
+
+### Framework Integration
+
+Any framework built on the OpenAI SDK (LangChain, LlamaIndex, CrewAI, and others) can route through CCAPI by configuring the base URL at the client level. No framework-specific adapters are needed.
+
+### REST/HTTP Client Integration
+
+Any language or framework with HTTP client capabilities can call CCAPI directly:
+
+``` bash
+curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
+  -H "Authorization: Bearer sk-ccapi-..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-4-6",
+    "messages": [{"role": "user", "content": "Hello"}],
+    "stream": false
+  }'
+```
+
+## Examples
+
+### Basic Chat Completion (Python)
+
+``` python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-4-6",
+    messages=[{"role": "user", "content": "What is machine learning?"}]
+)
+print(response.choices[0].message.content)
+```
+
+### Streaming Response (Node.js)
+
+``` javascript
+import OpenAI from "openai";
+
+const client = new OpenAI({
+    baseURL: "https://api.ccapi.ai/v1",
+    apiKey: "sk-ccapi-...",
+});
+
+const stream = await client.chat.completions.create({
+    model: "anthropic/claude-sonnet-4-6",
+    messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: "Explain recursion step by step." },
+    ],
+    stream: true,
+});
+
+for await (const chunk of stream) {
+    const content = chunk.choices[0]?.delta?.content;
+    if (content) process.stdout.write(content);
+}
+```
+
+### Tool Calling (Python)
+
+``` python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+
+tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_weather",
+            "description": "Get current weather for a location",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {"type": "string", "description": "City name"}
+                },
+                "required": ["location"]
+            }
+        }
+    }
+]
+
+response = client.chat.completions.create(
+    model="openai/gpt-5.2",
+    messages=[{"role": "user", "content": "What is the weather in Tokyo?"}],
+    tools=tools,
+    tool_choice="auto"
+)
+```
+
+### Extended Thinking (cURL)
+
+``` bash
+curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
+  -H "Authorization: Bearer sk-ccapi-..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-4-6",
+    "messages": [{"role": "user", "content": "Solve this step by step: 23 * 47 + 19"}],
+    "thinking": {"type": "enabled"}
+  }'
+```
+
+### Video Generation (cURL)
+
+``` bash
+curl -X POST "https://api.ccapi.ai/v1/video/generations" \
+  -H "Authorization: Bearer sk-ccapi-..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "bytedance/seedance-2",
+    "prompt": "A serene mountain lake at sunrise with mist rolling over the water"
+  }'
+```
+
+### JSON Mode Response (Python)
+
+``` python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+
+response = client.chat.completions.create(
+    model="deepseek/deepseek-v4",
+    messages=[{"role": "user", "content": "List three programming languages with their use cases."}],
+    response_format={"type": "json_object"}
+)
+```
+
+## Limitations and Considerations
+
+- **Closed-Source Service**: CCAPI is a proprietary hosted service with no self-hosted or on-premises deployment option (except at the Custom tier with private deployment). All requests transit through CCAPI's infrastructure, which introduces a dependency on their availability and data handling practices.
+- **Provider-Dependent Features**: Feature support (tool calling, vision, extended thinking, structured output) varies by upstream model and provider. Not all features are available across all models.
+- **No Model Fine-Tuning**: CCAPI is an inference routing layer, not a model training or fine-tuning platform. Fine-tuned models must be hosted by the upstream provider and accessed through CCAPI if that provider is supported.
+- **Latency Overhead**: Routing through an intermediary gateway adds network hops compared to calling a provider directly. While CCAPI reports sub-2-second latency, the additional hop may be noticeable for latency-sensitive applications where every millisecond matters.
+- **Rate Limits**: Rate limits are tier-dependent (30 Requests Per Minute (RPM) on Free, 600 on Standard, 3,000 on Pro). Throughput may be further constrained by the underlying provider's rate limits. \[3\]
+- **Model Availability Lag**: New models released by providers may not be immediately available through CCAPI. There is an inherent delay between a provider launching a model and CCAPI integrating it, though the changelog shows rapid integration cadence.
+- **Limited Documentation Depth**: The API documentation (hosted on docs.ccapi.ai) primarily covers endpoint specifications per provider. Detailed guides for image, audio, music, and video endpoints are less extensive compared to the chat completions documentation. \[2\]
+- **Vendor Lock-In Risk**: While CCAPI uses an OpenAI-compatible interface (reducing switching cost), reliance on provider-prefixed model identifiers (`anthropic/claude-sonnet-4-6`) creates a CCAPI-specific naming convention that requires mapping if migrating to another gateway.
+- **Data Privacy**: All requests and responses pass through CCAPI's servers. Organizations with strict data residency or privacy requirements should evaluate CCAPI's data handling policies before routing sensitive workloads through the gateway.
+- **Free Tier Constraints**: The free tier has significant limitations: 30 RPM, 2 concurrent requests, 24-hour log retention, community-only support, and access limited to standard models. \[3\]
+
+## Changelog Highlights
+
+- **v1.8.0** (March 9, 2026): Sora 2 flexible 4/8/12-second runtimes, Sora 2 Pro short-form resolution options, Grok Video packaged pricing by resolution and duration. \[5\]
+- **v1.7.0** (March 8, 2026): Kling 3.0 Standard/Omni/Action Control documentation, expanded Kling video request options, GPT-5.4 with threshold pricing for input context sizes. \[5\]
+- **v1.6.0** (March 5, 2026): Up to 50% off OpenAI and Google Gemini models, up to 60% off Anthropic Claude models with tiered discounts, multi-channel failover for OpenAI and Gemini text models, Sora 2 Lite and Sora 2 Pro HD, model ID resolution fixes. \[5\]
+- **v1.5.0** (February 22, 2026): File-to-URL API for multimodal file uploads with per-tier quotas and 24-hour automatic expiry. \[5\]
+- **v1.4.0** (February 20, 2026): Subscription plans (Free, Standard, Pro, Custom tiers), billing dashboard and usage tracking. \[5\]
+- **v1.3.0** (February 19, 2026): Google Veo 3.1 video generation, GPT-5.2 Codex, Qwen3.5-Plus with prompt caching, GLM-4.7, Kimi K2.5. \[5\]
+- **v1.2.0** (February 17, 2026): OpenAI Sora 2 video generation, redesigned models mega dropdown, mobile responsiveness improvements, auto-refund for failed video generation jobs. \[5\]
+
+## Citations
+
+- \[1\] CCAPI Official Website - https://ccapi.ai/
+- \[2\] CCAPI API Documentation - https://docs.ccapi.ai/
+- \[3\] CCAPI Pricing - https://ccapi.ai/pricing
+- \[4\] CCAPI OpenClaw Integration - https://ccapi.ai/openclaw
+- \[5\] CCAPI Changelog - https://ccapi.ai/changelog
 
 # LangChain
 
@@ -9720,454 +12606,6 @@ LlamaIndex is under active development with frequent releases. The project trans
 
 - \[1\] [LlamaIndex Documentation](https://developers.llamaindex.ai/python/framework/)
 
-# pgvector
-
-> PostgreSQL extension for vector similarity search, enabling storage and retrieval of embeddings alongside relational data with full ACID compliance.
-
-| Field         | Value                                                 |
-|---------------|-------------------------------------------------------|
-| Group         | RAG & Knowledge Retrieval                             |
-| Type          | SDK                                                   |
-| Open Source   | Yes                                                   |
-| GitHub        | <https://github.com/pgvector/pgvector>                |
-| Stars         | 19914                                                 |
-| Documentation | [Official Docs](https://github.com/pgvector/pgvector) |
-
-## Overview
-
-pgvector is a PostgreSQL extension that adds vector similarity search capabilities directly into PostgreSQL. Rather than requiring a separate vector database, pgvector allows developers to store embedding vectors alongside relational data in the same database, leveraging PostgreSQL's mature ecosystem of ACID transactions, JOINs, indexing, and query planning. This eliminates the operational overhead of synchronizing data between a relational database and a dedicated vector store, making it a practical choice for applications that need both structured queries and semantic search.
-
-## Core Concepts
-
-### Vector Data Types
-
-pgvector introduces several data types for storing different representations of vectors:
-
-- **vector(n)**: Dense floating-point vectors supporting up to 2,000 dimensions. This is the primary type used for storing embeddings from models such as OpenAI, Cohere, or sentence-transformers.
-- **halfvec(n)**: Half-precision floating-point vectors supporting up to 4,000 dimensions. Uses 16-bit floats to reduce storage while maintaining reasonable accuracy for many retrieval tasks.
-- **bit(n)**: Binary vectors supporting up to 64,000 dimensions. Suitable for binary quantization schemes where each dimension is represented as a single bit.
-- **sparsevec(n)**: Sparse vectors supporting up to 1,000 non-zero elements. Efficient for high-dimensional vectors where most values are zero, such as TF-IDF or BM25 representations.
-
-### Distance Functions
-
-pgvector provides six distance operators for computing similarity between vectors:
-
-- **`<->` (L2 distance)**: Euclidean distance. Lower values indicate greater similarity. Best general-purpose metric when vectors are not normalized.
-- **`<#>` (negative inner product)**: Returns the negative dot product. Lower values indicate greater similarity. Useful when vectors encode magnitude as meaningful signal.
-- **`<=>` (cosine distance)**: Measures the angle between vectors, ignoring magnitude. Lower values indicate greater similarity. Preferred when vectors are normalized or when magnitude should not influence results.
-- **`<+>` (L1 distance)**: Manhattan distance. Sum of absolute differences across dimensions. Lower values indicate greater similarity.
-- **`<~>` (Hamming distance)**: Counts the number of positions where corresponding bits differ. Operates on `bit` type vectors.
-- **`<%>` (Jaccard distance)**: Measures dissimilarity between bit sets. Operates on `bit` type vectors.
-
-### Indexing Strategies
-
-pgvector supports two approximate nearest neighbor (ANN) index types:
-
-- **HNSW (Hierarchical Navigable Small World)**: A graph-based index that provides better recall at the cost of higher memory usage and slower build times. Default parameters are `m=16` (max connections per node) and `ef_construction=64` (size of the dynamic candidate list during construction). At query time, `hnsw.ef_search=40` controls the search breadth. Increasing `ef_search` improves recall but increases latency.
-- **IVFFlat (Inverted File with Flat compression)**: A partition-based index that clusters vectors into lists. Faster to build and uses less memory than HNSW but generally provides lower recall. The `lists` parameter controls the number of clusters, and `ivfflat.probes` controls how many clusters are searched at query time.
-
-Without an index, pgvector performs exact nearest neighbor search by scanning all rows, which guarantees perfect recall but does not scale beyond small datasets.
-
-## Installation and Setup
-
-### From Source
-
-``` bash
-git clone --branch v0.8.0 https://github.com/pgvector/pgvector.git
-cd pgvector
-make
-make install
-```
-
-This requires PostgreSQL development headers (`postgresql-server-dev-*` on Debian/Ubuntu or the equivalent for your platform).
-
-### Package Managers
-
-``` bash
-# Homebrew (macOS)
-brew install pgvector
-
-# APT (Debian/Ubuntu)
-sudo apt install postgresql-17-pgvector
-
-# PGXN
-pgxn install vector
-```
-
-### Docker
-
-``` dockerfile
-FROM pgvector/pgvector:pg17
-```
-
-Or add pgvector to an existing PostgreSQL image:
-
-``` dockerfile
-FROM postgres:17
-RUN apt-get update && apt-get install -y postgresql-17-pgvector
-```
-
-### Enabling the Extension
-
-After installation, enable pgvector in your database:
-
-``` sql
-CREATE EXTENSION vector;
-```
-
-## Architecture
-
-pgvector operates as a native PostgreSQL extension, meaning it runs within the PostgreSQL process and integrates directly with the query planner, executor, and storage engine. Key architectural characteristics include:
-
-- **In-process execution**: Vector operations run inside the PostgreSQL backend process, avoiding network round-trips to external services.
-- **WAL integration**: All vector data and index changes are written to the Write-Ahead Log (WAL), ensuring crash recovery and replication work identically to standard PostgreSQL tables.
-- **Planner integration**: The PostgreSQL query planner can combine vector index scans with other index scans, filters, and joins in a single query plan.
-- **Shared buffer usage**: Vector data and indexes use PostgreSQL's shared buffer pool, benefiting from the same caching and memory management as regular tables.
-
-## Key Features and Functionality
-
-- **Colocation of vectors and relational data**: Store embeddings in the same table as metadata, foreign keys, and other columns. No external synchronization required.
-- **ACID transactions**: Vector inserts, updates, and deletes participate in PostgreSQL transactions, ensuring consistency even during concurrent writes.
-- **JOIN support**: Combine vector similarity search with relational joins, enabling queries such as "find the most similar documents written by a specific author."
-- **Multiple distance metrics**: Six built-in distance operators covering Euclidean, cosine, inner product, Manhattan, Hamming, and Jaccard distances.
-- **Two ANN index types**: HNSW for higher recall and IVFFlat for faster builds with lower memory consumption.
-- **Iterative scans (v0.8.0+)**: `strict_order` and `relaxed_order` scan modes allow the query planner to interleave index scans with filter evaluation, improving performance when combining vector search with `WHERE` clauses.
-- **Half-precision and sparse vector support**: Reduce storage with `halfvec` or efficiently store sparse representations with `sparsevec`.
-
-## Use Cases
-
-- **Retrieval-Augmented Generation (RAG)**: Store document chunk embeddings and retrieve the most relevant chunks for a given query embedding before passing them to a large language model (LLM).
-- **Semantic search**: Find documents, products, or records by meaning rather than keyword matching.
-- **Recommendation systems**: Compute similarity between user and item embeddings stored alongside transactional data.
-- **Duplicate detection**: Identify near-duplicate records by finding vectors within a small distance threshold.
-- **Hybrid search**: Combine full-text search (`tsvector`) with vector similarity search in a single PostgreSQL query.
-- **Image retrieval**: Store image embeddings and find visually similar images using cosine or L2 distance.
-
-## API Reference Summary
-
-### Table Definition
-
-``` sql
-CREATE TABLE documents (
-    id BIGSERIAL PRIMARY KEY,
-    content TEXT NOT NULL,
-    embedding vector(1536)
-);
-```
-
-### Insert Vectors
-
-``` sql
-INSERT INTO documents (content, embedding)
-VALUES ('Sample text', '[0.1, 0.2, 0.3, ...]');
-```
-
-### Nearest Neighbor Queries
-
-``` sql
--- L2 distance (Euclidean)
-SELECT id, content, embedding <-> '[0.1, 0.2, 0.3]' AS distance
-FROM documents
-ORDER BY embedding <-> '[0.1, 0.2, 0.3]'
-LIMIT 5;
-
--- Cosine distance
-SELECT id, content, 1 - (embedding <=> '[0.1, 0.2, 0.3]') AS similarity
-FROM documents
-ORDER BY embedding <=> '[0.1, 0.2, 0.3]'
-LIMIT 5;
-
--- Inner product (returns negative, so lower is more similar)
-SELECT id, content, embedding <#> '[0.1, 0.2, 0.3]' AS neg_inner_product
-FROM documents
-ORDER BY embedding <#> '[0.1, 0.2, 0.3]'
-LIMIT 5;
-```
-
-### Create Indexes
-
-``` sql
--- HNSW index with cosine distance
-CREATE INDEX ON documents
-USING hnsw (embedding vector_cosine_ops)
-WITH (m = 16, ef_construction = 64);
-
--- IVFFlat index with L2 distance
-CREATE INDEX ON documents
-USING ivfflat (embedding vector_l2_ops)
-WITH (lists = 100);
-```
-
-### Index Operator Classes
-
-| Distance      | Operator | HNSW Operator Class | IVFFlat Operator Class |
-|---------------|----------|---------------------|------------------------|
-| L2            | `<->`    | `vector_l2_ops`     | `vector_l2_ops`        |
-| Inner product | `<#>`    | `vector_ip_ops`     | `vector_ip_ops`        |
-| Cosine        | `<=>`    | `vector_cosine_ops` | `vector_cosine_ops`    |
-| L1            | `<+>`    | `vector_l1_ops`     | `vector_l1_ops`        |
-
-### Filtering with Vector Search
-
-``` sql
-SELECT id, content
-FROM documents
-WHERE category = 'technical'
-ORDER BY embedding <=> '[0.1, 0.2, 0.3]'
-LIMIT 10;
-```
-
-### Iterative Scans (v0.8.0+)
-
-``` sql
--- Strict ordering: guarantees results are in exact distance order
-SET hnsw.iterative_scan = strict_order;
-
-SELECT id, content
-FROM documents
-WHERE category = 'technical'
-ORDER BY embedding <=> '[0.1, 0.2, 0.3]'
-LIMIT 10;
-
--- Relaxed ordering: faster but may return slightly out-of-order results
-SET hnsw.iterative_scan = relaxed_order;
-```
-
-### Aggregate Functions
-
-``` sql
--- Average of vectors
-SELECT AVG(embedding) FROM documents;
-
--- Sum of vectors
-SELECT SUM(embedding) FROM documents;
-```
-
-## Configuration and Customization
-
-### Index Build Performance
-
-``` sql
--- Increase work memory for faster index builds
-SET maintenance_work_mem = '2GB';
-
--- Parallelize index construction
-SET max_parallel_maintenance_workers = 7;
-```
-
-### HNSW Parameters
-
-| Parameter | Default | Description |
-|----|----|----|
-| `m` | 16 | Maximum number of connections per node in the graph |
-| `ef_construction` | 64 | Size of the dynamic candidate list during index build |
-| `hnsw.ef_search` | 40 | Size of the dynamic candidate list during query |
-| `hnsw.iterative_scan` | off | Enable iterative scan (`strict_order` or `relaxed_order`) |
-
-### IVFFlat Parameters
-
-| Parameter | Default | Description |
-|----|----|----|
-| `lists` | \- | Number of inverted lists (clusters). Typical starting point: `sqrt(N)` |
-| `ivfflat.probes` | 1 | Number of lists to search at query time |
-
-### General Recommendations
-
-- For HNSW, increase `hnsw.ef_search` to improve recall at the cost of higher latency.
-- For IVFFlat, increase `ivfflat.probes` to improve recall. A common starting point for `lists` is the square root of the total number of rows.
-- Set `maintenance_work_mem` to at least 1 GB when building indexes on large tables.
-- Use `max_parallel_maintenance_workers` to speed up index creation on multi-core systems.
-
-## Integration Patterns
-
-### Python with psycopg
-
-``` python
-import psycopg
-
-conn = psycopg.connect("dbname=mydb")
-conn.execute("CREATE EXTENSION IF NOT EXISTS vector")
-
-conn.execute("""
-    CREATE TABLE IF NOT EXISTS documents (
-        id BIGSERIAL PRIMARY KEY,
-        content TEXT,
-        embedding vector(1536)
-    )
-""")
-
-# Insert
-embedding = [0.1, 0.2, 0.3]  # truncated for brevity
-conn.execute(
-    "INSERT INTO documents (content, embedding) VALUES (%s, %s)",
-    ("sample text", str(embedding))
-)
-
-# Query nearest neighbors
-query_embedding = [0.1, 0.2, 0.3]
-results = conn.execute(
-    "SELECT id, content FROM documents ORDER BY embedding <=> %s LIMIT 5",
-    (str(query_embedding),)
-).fetchall()
-```
-
-### Python with pgvector-python
-
-``` python
-from pgvector.psycopg import register_vector
-import psycopg
-import numpy as np
-
-conn = psycopg.connect("dbname=mydb")
-register_vector(conn)
-
-embedding = np.array([0.1, 0.2, 0.3])
-conn.execute(
-    "INSERT INTO documents (content, embedding) VALUES (%s, %s)",
-    ("sample text", embedding)
-)
-```
-
-### LangChain Integration
-
-``` python
-from langchain_community.vectorstores import PGVector
-
-connection_string = "postgresql://user:password@localhost:5432/mydb"
-
-vectorstore = PGVector.from_documents(
-    documents=docs,
-    embedding=embeddings_model,
-    connection_string=connection_string,
-    collection_name="my_collection",
-)
-
-results = vectorstore.similarity_search("query text", k=5)
-```
-
-### SQLAlchemy with pgvector
-
-``` python
-from pgvector.sqlalchemy import Vector
-from sqlalchemy import Column, Integer, Text, create_engine
-from sqlalchemy.orm import declarative_base, Session
-
-Base = declarative_base()
-
-class Document(Base):
-    __tablename__ = "documents"
-    id = Column(Integer, primary_key=True)
-    content = Column(Text)
-    embedding = Column(Vector(1536))
-
-engine = create_engine("postgresql://user:password@localhost/mydb")
-Base.metadata.create_all(engine)
-
-with Session(engine) as session:
-    session.add(Document(content="text", embedding=[0.1, 0.2, 0.3]))
-    session.commit()
-```
-
-## Examples
-
-### Basic RAG Pipeline
-
-``` sql
--- Create table for document chunks
-CREATE TABLE chunks (
-    id BIGSERIAL PRIMARY KEY,
-    document_id INTEGER REFERENCES documents(id),
-    chunk_text TEXT NOT NULL,
-    embedding vector(1536),
-    created_at TIMESTAMPTZ DEFAULT NOW()
-);
-
--- Create HNSW index for cosine similarity
-CREATE INDEX chunks_embedding_idx ON chunks
-USING hnsw (embedding vector_cosine_ops);
-
--- Retrieve top 5 chunks for a query embedding
-SELECT chunk_text, 1 - (embedding <=> :query_embedding) AS similarity
-FROM chunks
-WHERE document_id IN (SELECT id FROM documents WHERE project_id = :project_id)
-ORDER BY embedding <=> :query_embedding
-LIMIT 5;
-```
-
-### Hybrid Search with Full-Text and Vector
-
-``` sql
--- Table with both tsvector and vector columns
-CREATE TABLE articles (
-    id BIGSERIAL PRIMARY KEY,
-    title TEXT,
-    body TEXT,
-    tsv TSVECTOR GENERATED ALWAYS AS (to_tsvector('english', title || ' ' || body)) STORED,
-    embedding vector(1536)
-);
-
-CREATE INDEX articles_tsv_idx ON articles USING gin(tsv);
-CREATE INDEX articles_embedding_idx ON articles USING hnsw (embedding vector_cosine_ops);
-
--- Combine keyword and semantic search using Reciprocal Rank Fusion (RRF)
-WITH keyword_results AS (
-    SELECT id, ts_rank(tsv, plainto_tsquery('english', :query)) AS keyword_rank
-    FROM articles
-    WHERE tsv @@ plainto_tsquery('english', :query)
-    ORDER BY keyword_rank DESC
-    LIMIT 20
-),
-vector_results AS (
-    SELECT id, embedding <=> :query_embedding AS vector_distance
-    FROM articles
-    ORDER BY embedding <=> :query_embedding
-    LIMIT 20
-),
-combined AS (
-    SELECT COALESCE(k.id, v.id) AS id,
-           COALESCE(1.0 / (60 + ROW_NUMBER() OVER (ORDER BY k.keyword_rank DESC NULLS LAST)), 0) +
-           COALESCE(1.0 / (60 + ROW_NUMBER() OVER (ORDER BY v.vector_distance ASC NULLS LAST)), 0) AS rrf_score
-    FROM keyword_results k
-    FULL OUTER JOIN vector_results v ON k.id = v.id
-)
-SELECT a.id, a.title, c.rrf_score
-FROM combined c
-JOIN articles a ON a.id = c.id
-ORDER BY c.rrf_score DESC
-LIMIT 10;
-```
-
-### Distance Threshold Query
-
-``` sql
--- Find all vectors within a cosine distance threshold
-SELECT id, content, embedding <=> :query_embedding AS distance
-FROM documents
-WHERE embedding <=> :query_embedding < 0.3
-ORDER BY embedding <=> :query_embedding;
-```
-
-## Limitations and Considerations
-
-- **vector(n) dimension limit**: Dense vectors are limited to 2,000 dimensions. Models producing higher-dimensional embeddings require dimensionality reduction or use of `halfvec` (up to 4,000 dimensions).
-- **Approximate recall**: HNSW and IVFFlat indexes provide approximate results. Recall depends on index parameters and may not reach 100% without exact (sequential) scan.
-- **Index build time**: HNSW index construction can be slow on large datasets (millions of vectors). IVFFlat builds faster but requires the table to already contain data for effective clustering.
-- **Memory consumption**: HNSW indexes reside in memory and can be substantial for large datasets. Sizing depends on the number of vectors, dimensionality, and the `m` parameter.
-- **No built-in sharding**: pgvector relies on PostgreSQL's native partitioning and external sharding solutions (such as Citus) for horizontal scaling. It does not provide built-in distributed vector search.
-- **IVFFlat requires pre-populated data**: Building an IVFFlat index on an empty or very small table produces poor clusters. The table should contain a representative sample of data before index creation.
-- **Single-node scaling**: Performance is bounded by single-node PostgreSQL limits. For datasets exceeding hundreds of millions of vectors, purpose-built vector databases may offer better throughput.
-
-## Changelog Highlights
-
-- **v0.8.0**: Added iterative scan modes (`strict_order`, `relaxed_order`) for improved filtered vector search. Added `sparsevec` type.
-- **v0.7.0**: Added `halfvec` type for half-precision vectors. Added L1 distance operator (`<+>`).
-- **v0.6.0**: Added HNSW index support. Previously only IVFFlat was available.
-- **v0.5.0**: Added parallel index builds. Added `bit` type with Hamming and Jaccard distance operators.
-
-## Citations
-
-- \[1\] pgvector GitHub repository: https://github.com/pgvector/pgvector
-
 # GraphRAG
 
 > Microsoft Research's structured approach to Retrieval-Augmented Generation (RAG) that creates knowledge graphs from input corpora to enhance Large Language Model (LLM) reasoning over complex, interconnected information.
@@ -10402,6 +12840,4122 @@ GraphRAG is under active development by Microsoft Research. The project follows 
 ## Citations
 
 \[1\] Microsoft GraphRAG Documentation. https://microsoft.github.io/graphrag/
+
+# DSPy
+
+> Stanford framework for programming LMs declaratively with automatic prompt optimization
+
+| Field       | Value                                                   |
+|-------------|---------------------------------------------------------|
+| Name        | DSPy                                                    |
+| Group       | Structured Generation                                   |
+| Type        | SDK                                                     |
+| Open Source | Yes                                                     |
+| GitHub      | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) |
+| Stars       | 32,331                                                  |
+| Docs        | [dspy.ai](https://dspy.ai/)                             |
+| License     | MIT                                                     |
+
+## Overview
+
+DSPy replaces hand-written prompts and brittle string manipulation with a programming model for language models. Rather than crafting prompt templates, developers define typed signatures that specify input and output fields, compose them into modules, and let optimizers automatically tune the prompts and weights for a given metric. The framework treats LM calls as declarative operations, compiling high-level AI programs into efficient prompts or fine-tuning configurations. DSPy supports numerous LM providers through LiteLLM integration and delivers measurable accuracy improvements through its optimization pipeline.
+
+The core philosophy is "programming, not prompting." DSPy separates concerns that conventional prompting couples together: signature definitions (what), adapter formatting (how it is serialized), module logic (inference strategy), and optimization (automatic tuning). This separation enables language model swapping without logic changes, module substitution (for example, replacing ChainOfThought with ProgramOfThought), prompt optimization without architecture modification, and fine-tuning capabilities across programs.
+
+## Core Concepts
+
+### Signatures
+
+Signatures are typed declarations of input and output fields for a language model call. They replace free-form prompt strings with structured contracts. DSPy supports two forms of signatures.
+
+**Inline signatures** use string notation with optional type specifications:
+
+``` python
+"question -> answer"                                    # basic string types
+"sentence -> sentiment: bool"                           # typed output
+"context: list[str], question: str -> answer: str"      # multiple typed fields
+"question, choices: list[str] -> reasoning: str, selection: int"
+```
+
+**Class-based signatures** use Python class definitions with docstrings and field descriptors for complex tasks:
+
+``` python
+import dspy
+
+class Assess(dspy.Signature):
+    """Assess the quality of a tweet along the specified dimension."""
+    assessed_text: str = dspy.InputField()
+    assessment_question: str = dspy.InputField()
+    assessment_answer: float = dspy.OutputField()
+```
+
+Signatures define what the LM should do without prescribing how. The framework handles prompt formatting, parsing, and retry logic. Field names carry semantic meaning and are used by adapters to construct prompts. Supported types include basic Python types (str, int, bool, float), typing module constructs (list, dict, Optional, Union, Literal), custom Pydantic BaseModel classes, and special DSPy types (dspy.Image, dspy.History).
+
+InputField and OutputField accept a `desc` parameter that provides additional context to the language model about what the field represents.
+
+### Modules
+
+Modules are composable building blocks that wrap signatures with specific inference strategies. Each module abstracts a prompting technique while maintaining generalizability across any signature. Modules contain learnable parameters (instructions, demonstrations) and can be composed into larger programs. The design draws inspiration from PyTorch's neural network architecture.
+
+Built-in modules:
+
+- **Predict** -- Direct signature invocation. The foundational module that handles basic prediction, managing instruction storage, demonstrations, and language model weight updates.
+- **ChainOfThought** -- Instructs the LM to think step-by-step before committing to the signature's response. Injects a reasoning field before output fields, improving output quality on complex tasks.
+- **ReAct** -- Reasoning and Acting agent module. Interleaves reasoning with tool use actions in an iterative loop, automatically selecting and calling tools until the task is complete. Accepts a `max_iters` parameter (default 20).
+- **CodeAct** -- Generates and executes Python code snippets within a sandboxed interpreter, combining code generation with tool execution. Inherits from both ReAct and ProgramOfThought.
+- **ProgramOfThought** -- Directs the LM to generate executable code where execution results determine the final response.
+- **MultiChainComparison** -- Compares multiple ChainOfThought outputs to produce refined predictions.
+- **BestOfN** -- Generates N candidates and selects the best one according to a metric.
+- **Refine** -- Iteratively improves an output by reflecting on it and revising.
+- **Parallel** -- Runs multiple modules concurrently.
+- **RLM** -- Recursive language model for handling contexts too large for standard prompts.
+- **majority** -- A voting function returning the most popular response from multiple predictions.
+
+Custom modules inherit from `dspy.Module` and compose other modules in their `forward` method:
+
+``` python
+class MultiHopSearch(dspy.Module):
+    def __init__(self, num_docs=10, num_hops=4):
+        self.generate_query = dspy.ChainOfThought("claim, notes -> query")
+        self.append_notes = dspy.ChainOfThought("claim, notes, context -> new_notes")
+
+    def forward(self, claim: str) -> list[str]:
+        notes = "No notes yet."
+        for hop in range(self.num_hops):
+            query = self.generate_query(claim=claim, notes=notes).query
+            context = search(query, k=self.num_docs)
+            notes = self.append_notes(claim=claim, notes=notes, context=context).new_notes
+        return notes
+```
+
+### Adapters
+
+Adapters serve as the connection layer between dspy.Predict and language models. They translate DSPy signatures into system messages, format input data, parse LM responses into dspy.Prediction instances, manage conversation history, and convert DSPy types (Tools, Images) into prompt messages.
+
+Built-in adapters:
+
+- **ChatAdapter** (default) -- Uses `[[ ## field_name ## ]]` markers to delineate fields. Universally compatible across all language models. Includes fallback protection that automatically retries with JSONAdapter if parsing fails. More verbose in output tokens.
+- **JSONAdapter** -- Outputs structured as pure JSON objects leveraging native model capabilities via the `response_format` parameter. Lower latency and minimal boilerplate, but incompatible with models lacking native structured output support.
+
+Configure adapters globally or per-context:
+
+``` python
+dspy.configure(lm=dspy.LM("openai/gpt-4o-mini"), adapter=dspy.ChatAdapter())
+
+with dspy.context(adapter=dspy.JSONAdapter()):
+    result = program(question="...")
+```
+
+### Optimizers
+
+Optimizers automatically improve program performance against a defined metric by tuning prompts, few-shot examples, or model weights. DSPy recommends allocating 20% of data for training and 80% for validation with prompt-based optimizers, as they tend to overfit on small training sets.
+
+Available optimizers:
+
+- **BootstrapFewShot** -- Generates few-shot demonstrations by running the program on training examples and keeping successful traces.
+- **BootstrapRS** (alias for BootstrapFewShotWithRandomSearch) -- Random search over bootstrapped few-shot demonstrations with multiple candidate programs.
+- **BootstrapFinetune** -- Uses bootstrapped demonstrations to fine-tune model weights rather than optimize prompts.
+- **MIPROv2** -- Multi-prompt Instruction Proposal Optimizer. Jointly optimizes instructions and few-shot examples using Bayesian Optimization across three stages: bootstrap demonstrations, propose instruction candidates, then search for optimal combinations. Supports `auto` modes: light, medium, heavy.
+- **COPRO** -- Coordinate-based prompt optimization.
+- **GEPA** -- Genetic-Pareto reflective optimizer that adaptively evolves textual components of arbitrary systems. Maintains a Pareto frontier of candidates, uses LLM-driven reflection on execution traces to propose targeted improvements, and accepts both scalar scores and textual feedback. Supports integration with Weights & Biases and MLflow.
+- **SIMBA** -- Optimization strategy for complex programs.
+- **BetterTogether** -- Joint optimization of prompts and weights together.
+- **InferRules** -- Infers optimization rules from successful traces.
+- **LabeledFewShot** -- Uses labeled examples directly as demonstrations.
+- **KNN/KNNFewShot** -- k-nearest neighbor selection of demonstrations at inference time.
+- **Ensemble** -- Combines multiple optimized programs.
+
+### Examples and Datasets
+
+The `dspy.Example` class is a flexible data container for training and evaluation data. It supports dictionary-like access, input/output field separation, and serialization:
+
+``` python
+example = dspy.Example(question="What is DSPy?", answer="A framework for LM programming")
+example = example.with_inputs("question")
+
+inputs = example.inputs()    # only question
+labels = example.labels()    # only answer
+```
+
+## Installation
+
+``` bash
+pip install -U dspy
+```
+
+For specific provider support:
+
+``` bash
+pip install -U dspy[anthropic]    # Anthropic Claude
+pip install -U dspy[google]       # Google Gemini
+pip install -U "dspy[mcp]"        # Model Context Protocol support
+```
+
+Requires Python 3.9 or higher.
+
+### Quick Start
+
+``` python
+import dspy
+
+lm = dspy.LM("openai/gpt-4o-mini")
+dspy.configure(lm=lm)
+
+qa = dspy.ChainOfThought("question -> answer")
+result = qa(question="What is the tallest mountain in the world?")
+print(result.answer)
+```
+
+## Architecture
+
+DSPy follows a Define, Evaluate, Compile, Deploy workflow:
+
+1.  **Define** -- Write signatures and compose modules into a program. Identify system inputs and desired outputs. Start simple with a single module, then add complexity incrementally.
+2.  **Evaluate** -- Measure program accuracy on a development dataset (20-200+ examples) using a metric function. Metrics range from simple accuracy to complex DSPy programs that verify multiple output properties.
+3.  **Compile** -- Run an optimizer that searches for better prompts, demonstrations, or weights. The optimizer systematically explores the space of possible prompts and demonstrations, guided by the evaluation metric.
+4.  **Deploy** -- Use the compiled program with the tuned configuration in production via FastAPI or MLflow.
+
+``` 
+Signature --> Module --> Program --> Optimizer --> Compiled Program
+    ^                                   ^
+  Types                              Metric
+  Fields                             Dataset
+```
+
+The compilation step differentiates DSPy from standard prompt engineering. Instead of manually iterating on prompt text, the optimizer systematically explores the search space guided by the evaluation metric.
+
+## Key Features
+
+- **Declarative LM programming** -- Define what the model should compute via typed signatures rather than how via prompt strings.
+- **Automatic prompt optimization** -- Optimizers tune prompts and few-shot examples to maximize a user-defined metric. MIPROv2 jointly optimizes instructions and demonstrations using Bayesian Optimization. GEPA uses genetic evolution with LLM-driven reflection.
+- **Composable modules** -- Chain, nest, and reuse modules like standard software components using Python control flow.
+- **Provider agnostic** -- Supports numerous LM providers through LiteLLM integration: OpenAI, Anthropic, Google Gemini, Vertex AI, Databricks, SGLang, Ollama, Azure, AWS SageMaker, Together AI, Anyscale, and more.
+- **Typed input/output** -- Signatures enforce structured contracts with support for str, int, bool, float, list, dict, Literal, Pydantic models, dspy.Image, and dspy.History.
+- **Assertion and constraint system** -- `dspy.Assert` raises a hard failure when a constraint is not met. `dspy.Suggest` provides a soft signal the optimizer can use during compilation to improve outputs.
+- **Automatic few-shot bootstrapping** -- Generates high-quality demonstrations from training data without manual curation.
+- **Tool integration** -- ReAct and CodeAct modules support external tool use. Native function calling via adapters. MCP (Model Context Protocol) integration for standardized tool discovery via `dspy.Tool.from_mcp_tool()`.
+- **Async and streaming** -- Native `acall()` async execution on most modules. `dspy.streamify()` for real-time token streaming and intermediate status updates. `dspy.asyncify()` for running sync programs in thread pools.
+- **Thread-safe configuration** -- `dspy.configure()` and `dspy.context()` are thread-safe. Track usage statistics with `dspy.configure(track_usage=True)`.
+- **Caching** -- LM calls are cached by default. Bypass with `cache=False` or `rollout_id` parameter.
+- **Reproducible optimization** -- Compilation produces deterministic, serializable configurations. Save/load programs as JSON or pickle.
+- **Responses API** -- Support for models with enhanced reasoning via `model_type="responses"`.
+
+## Use Cases
+
+- **Multi-hop question answering** -- Compose retrieval and reasoning modules to answer questions requiring multiple evidence steps. Reported improvements from 24% to 51% on HotPotQA with ReAct optimization.
+- **Classification pipelines** -- Build typed classifiers with automatic few-shot optimization. Reported improvements from 66% to 87% accuracy.
+- **Agentic workflows** -- Use ReAct modules for tool-augmented reasoning with automatic tool selection and error recovery. CodeAct for code-generation-based agents.
+- **Information extraction** -- Define output signatures with structured fields for entity and relation extraction. Supports Literal type constraints for categorical outputs.
+- **RAG systems** -- Combine retrieval modules with generation modules, optimizing the full pipeline end-to-end including retrieval quality.
+- **Data labeling and assessment** -- Use typed output fields (including floats and enums) for structured scoring tasks.
+- **Customer service agents** -- Build tool-using agents with MCP integration for database access, booking systems, and ticket management.
+- **Image and audio processing** -- Multi-modal support via dspy.Image and dspy.Audio types in signatures.
+- **Privacy-conscious delegation** -- PAPILLON pattern for delegating tasks while preserving privacy constraints.
+
+## API Reference
+
+### Language Model Configuration
+
+``` python
+import dspy
+
+# Configure default LM with parameters
+lm = dspy.LM("openai/gpt-4o-mini", temperature=0.7, max_tokens=3000, cache=True)
+dspy.configure(lm=lm)
+
+# Anthropic
+lm = dspy.LM("anthropic/claude-sonnet-4-20250514")
+
+# Google Gemini
+lm = dspy.LM("gemini/gemini-2.0-flash", api_key="GEMINI_API_KEY")
+
+# Local via Ollama
+lm = dspy.LM("ollama_chat/llama3.2", api_base="http://localhost:11434")
+
+# Responses API for enhanced reasoning
+lm = dspy.LM("openai/gpt-5-mini", model_type="responses", temperature=1.0)
+
+# Direct LM calls
+lm("Say this is a test!", temperature=0.7)
+lm(messages=[{"role": "user", "content": "Say this is a test!"}])
+
+# Access history and metadata
+len(lm.history)
+lm.history[-1]  # prompt, messages, kwargs, response, outputs, usage, cost, timestamp
+```
+
+### Signatures
+
+``` python
+# Inline notation
+"question -> answer"
+"context, question -> answer"
+"question -> answer: float"
+"sentence -> sentiment: bool"
+
+# Class-based with field descriptors
+class Summarize(dspy.Signature):
+    """Summarize the document in one sentence."""
+    document: str = dspy.InputField(desc="The document to summarize")
+    summary: str = dspy.OutputField(desc="A one-sentence summary")
+
+# With Literal type constraints
+class ClassifyEmotion(dspy.Signature):
+    text: str = dspy.InputField()
+    emotion: Literal["joy", "sadness", "anger", "fear"] = dspy.OutputField()
+
+# With Pydantic models
+class ExtractedEntity(BaseModel):
+    name: str
+    entity_type: str
+
+class ExtractEntities(dspy.Signature):
+    text: str = dspy.InputField()
+    entities: list[ExtractedEntity] = dspy.OutputField()
+```
+
+### Modules
+
+``` python
+# Basic prediction
+predict = dspy.Predict(Summarize)
+result = predict(document="...")
+
+# Chain of thought
+cot = dspy.ChainOfThought("question -> answer")
+result = cot(question="What is the capital of France?")
+print(result.reasoning)  # intermediate reasoning
+print(result.answer)     # final answer
+
+# ReAct with tools
+def get_weather(city: str) -> str:
+    """Get weather for a city."""
+    return f"Sunny in {city}"
+
+react = dspy.ReAct("question -> answer", tools=[get_weather], max_iters=5)
+result = react(question="What is the weather in Tokyo?")
+
+# CodeAct with sandboxed execution
+act = dspy.CodeAct("n -> factorial_result", tools=[factorial], max_iters=5)
+result = act(n=5)
+
+# Custom module
+class RAGModule(dspy.Module):
+    def __init__(self, num_passages=3):
+        self.retrieve = dspy.Retrieve(k=num_passages)
+        self.generate = dspy.ChainOfThought("context, question -> answer")
+
+    def forward(self, question):
+        context = self.retrieve(question).passages
+        return self.generate(context=context, question=question)
+```
+
+### Evaluation
+
+``` python
+def answer_exact_match(example, prediction, trace=None):
+    return example.answer.lower() == prediction.answer.lower()
+
+evaluate = dspy.Evaluate(
+    devset=dev_examples,
+    metric=answer_exact_match,
+    num_threads=4,
+    display_progress=True
+)
+score = evaluate(program)
+```
+
+Built-in metrics: `answer_exact_match`, `answer_passage_match`, `SemanticF1`, `CompleteAndGrounded`.
+
+### Optimization
+
+``` python
+# MIPROv2 for instruction and demonstration optimization
+optimizer = dspy.MIPROv2(
+    metric=answer_exact_match,
+    auto="medium",              # light, medium, or heavy
+    max_bootstrapped_demos=4,
+    max_labeled_demos=4,
+    verbose=True
+)
+compiled_program = optimizer.compile(
+    program,
+    trainset=train_examples,
+    valset=val_examples
+)
+
+# BootstrapRS for few-shot demonstration search
+optimizer = dspy.BootstrapRS(
+    metric=answer_exact_match,
+    max_bootstrapped_demos=4,
+    num_candidate_programs=10
+)
+compiled_program = optimizer.compile(program, trainset=train_examples)
+
+# GEPA for reflective prompt evolution
+optimizer = dspy.teleprompt.GEPA(
+    metric=metric_with_feedback,
+    reflection_lm=dspy.LM("openai/gpt-4o"),
+    auto="medium",
+    log_dir="./gepa_logs"
+)
+compiled_program = optimizer.compile(program, trainset=train_examples, valset=val_examples)
+```
+
+### Tools and MCP
+
+``` python
+# Define tools
+def search_wikipedia(query: str) -> str:
+    """Search Wikipedia for information."""
+    return result
+
+tool = dspy.Tool(search_wikipedia)
+print(tool.name)    # function name
+print(tool.desc)    # docstring
+print(tool.args)    # parameter schema
+
+# Manual tool handling with ToolCalls
+class ToolSignature(dspy.Signature):
+    question: str = dspy.InputField()
+    tools: list[dspy.Tool] = dspy.InputField()
+    outputs: dspy.ToolCalls = dspy.OutputField()
+
+# Native function calling via adapter
+chat_adapter = dspy.ChatAdapter(use_native_function_calling=True)
+dspy.configure(adapter=chat_adapter)
+
+# MCP integration
+from mcp import ClientSession, StdioServerParameters
+dspy_tools = [dspy.Tool.from_mcp_tool(session, tool) for tool in mcp_tools]
+react = dspy.ReAct(signature, tools=dspy_tools)
+result = await react.acall(user_request="...")
+```
+
+### Saving and Loading
+
+``` python
+# State-only saving (JSON, recommended)
+compiled_program.save("optimized_program.json", save_program=False)
+program = RAGModule()
+program.load("optimized_program.json")
+
+# Whole program saving (dspy >= 2.6.0)
+compiled_program.save("./dspy_program/", save_program=True)
+loaded = dspy.load("./dspy_program/")
+
+# With custom module serialization
+program.save("./path/", save_program=True, modules_to_serialize=[custom_module])
+```
+
+## Configuration
+
+### Global Settings
+
+``` python
+dspy.configure(
+    lm=dspy.LM("openai/gpt-4o-mini"),
+    rm=dspy.ColBERTv2(url="http://localhost:8893"),  # retrieval model
+    adapter=dspy.ChatAdapter(),
+    trace=[],
+    track_usage=True
+)
+```
+
+### Per-Call Overrides
+
+``` python
+with dspy.context(lm=dspy.LM("anthropic/claude-sonnet-4-20250514")):
+    result = program(question="...")
+
+# Module-level configuration
+predict = dspy.Predict("question -> answer", temperature=1.0)
+predict(question="...", config={"rollout_id": 5, "temperature": 0.5})
+```
+
+### Assertions and Constraints
+
+``` python
+class FactCheckedAnswer(dspy.Module):
+    def __init__(self):
+        self.generate = dspy.ChainOfThought("question -> answer")
+
+    def forward(self, question):
+        result = self.generate(question=question)
+        dspy.Assert(
+            len(result.answer) > 10,
+            "Answer must be substantive (more than 10 characters)"
+        )
+        dspy.Suggest(
+            "citation" in result.answer.lower(),
+            "Answer should include citations"
+        )
+        return result
+```
+
+### Caching
+
+LM calls are cached by default. Control caching behavior:
+
+``` python
+lm = dspy.LM("openai/gpt-4o-mini", cache=False)           # disable entirely
+predict(question="...", config={"rollout_id": 5})           # bypass specific cache entry
+dspy.configure_cache(enable=False)                          # global disable
+```
+
+## Integration Patterns
+
+### With Retrieval Systems
+
+``` python
+import dspy
+
+colbert = dspy.ColBERTv2(url="http://localhost:8893")
+dspy.configure(rm=colbert)
+
+class SearchAndAnswer(dspy.Module):
+    def __init__(self):
+        self.retrieve = dspy.Retrieve(k=5)
+        self.answer = dspy.ChainOfThought("context, question -> answer")
+
+    def forward(self, question):
+        passages = self.retrieve(question).passages
+        return self.answer(context=passages, question=question)
+```
+
+### With Custom Tools via ReAct
+
+``` python
+def search_wikipedia(query: str) -> str:
+    """Search Wikipedia for information."""
+    return result
+
+def calculate(expression: str) -> float:
+    """Evaluate a math expression."""
+    return eval(expression)
+
+react = dspy.ReAct(
+    "question -> answer",
+    tools=[search_wikipedia, calculate],
+    max_iters=10
+)
+result = react(question="What is the population of France times 2?")
+```
+
+### Pipeline Composition
+
+``` python
+class MultiStepPipeline(dspy.Module):
+    def __init__(self):
+        self.extract = dspy.Predict("document -> entities: list[str]")
+        self.classify = dspy.ChainOfThought("entity, context -> category")
+        self.summarize = dspy.Predict("entities, categories -> summary")
+
+    def forward(self, document):
+        entities = self.extract(document=document).entities
+        categories = [
+            self.classify(entity=e, context=document).category
+            for e in entities
+        ]
+        return self.summarize(entities=entities, categories=categories)
+```
+
+### FastAPI Deployment
+
+``` python
+from fastapi import FastAPI
+import dspy
+
+app = FastAPI()
+program = dspy.ChainOfThought("question -> answer")
+program.load("optimized.json")
+
+async_program = dspy.asyncify(program)
+
+@app.post("/predict")
+async def predict(question: str):
+    result = await async_program(question=question)
+    return {"answer": result.answer}
+```
+
+### Streaming
+
+``` python
+import dspy
+
+predict = dspy.Predict("question -> answer")
+stream_predict = dspy.streamify(
+    predict,
+    stream_listeners=[dspy.streaming.StreamListener(signature_field_name="answer")]
+)
+
+# Async streaming
+async for chunk in stream_predict(question="Why?"):
+    print(chunk)
+
+# Synchronous streaming
+stream_predict = dspy.streamify(predict, stream_listeners=[...], async_streaming=False)
+for chunk in stream_predict(question="Why?"):
+    print(chunk)
+```
+
+### MLflow Deployment
+
+``` python
+import mlflow
+import dspy
+
+class MyProgram(dspy.Module):
+    def forward(self, question):
+        cot = dspy.ChainOfThought("question -> answer")
+        return cot(question=question)
+
+with mlflow.start_run():
+    mlflow.dspy.log_model(MyProgram(), "model", task="llm/v1/chat")
+# Serve: mlflow models serve -m runs:/{run_id}/model -p 6000
+```
+
+## Examples
+
+### Optimized Classification
+
+``` python
+import dspy
+
+class ClassifyIntent(dspy.Signature):
+    """Classify the user message into an intent category."""
+    message: str = dspy.InputField()
+    intent: str = dspy.OutputField(
+        desc="One of: greeting, question, complaint, feedback"
+    )
+
+classifier = dspy.Predict(ClassifyIntent)
+
+def intent_match(example, prediction, trace=None):
+    return example.intent == prediction.intent
+
+optimizer = dspy.MIPROv2(metric=intent_match, auto="light")
+optimized = optimizer.compile(classifier, trainset=train_data)
+
+result = optimized(message="I'm having trouble with my order")
+print(result.intent)
+```
+
+### Multi-Hop RAG with Optimization
+
+``` python
+import dspy
+
+class MultiHopRAG(dspy.Module):
+    def __init__(self, passages_per_hop=3, num_hops=2):
+        self.retrieve = [dspy.Retrieve(k=passages_per_hop) for _ in range(num_hops)]
+        self.generate_query = dspy.ChainOfThought("context, question -> search_query")
+        self.generate_answer = dspy.ChainOfThought("context, question -> answer")
+
+    def forward(self, question):
+        context = []
+        for hop in range(len(self.retrieve)):
+            if hop == 0:
+                passages = self.retrieve[hop](question).passages
+            else:
+                query = self.generate_query(
+                    context=context, question=question
+                ).search_query
+                passages = self.retrieve[hop](query).passages
+            context = deduplicate(context + passages)
+        return self.generate_answer(context=context, question=question)
+
+optimizer = dspy.MIPROv2(metric=answer_f1, auto="medium")
+compiled_rag = optimizer.compile(MultiHopRAG(), trainset=train_examples)
+```
+
+### ReAct Agent with MCP Tools
+
+``` python
+import dspy
+from mcp import ClientSession, StdioServerParameters
+from mcp.client.stdio import stdio_client
+
+class AirlineAgent(dspy.Signature):
+    """You are an airline customer service agent with access to tools."""
+    user_request: str = dspy.InputField()
+    process_result: str = dspy.OutputField(
+        desc="Summary with confirmation numbers or relevant info"
+    )
+
+async def build_agent():
+    server_params = StdioServerParameters(command="python", args=["mcp_server.py"])
+    async with stdio_client(server_params) as (read, write):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+            tools = await session.list_tools()
+            dspy_tools = [dspy.Tool.from_mcp_tool(session, t) for t in tools.tools]
+
+            dspy.configure(lm=dspy.LM("openai/gpt-4o-mini"))
+            react = dspy.ReAct(AirlineAgent, tools=dspy_tools)
+            result = await react.acall(user_request="Book a flight from SFO to JFK")
+            return result
+```
+
+### Structured Assessment
+
+``` python
+import dspy
+
+class TweetAssessment(dspy.Signature):
+    """Assess tweet quality on a numeric scale."""
+    tweet: str = dspy.InputField()
+    dimension: str = dspy.InputField(desc="The quality dimension to assess")
+    score: float = dspy.OutputField(desc="Quality score from 0.0 to 1.0")
+
+assessor = dspy.ChainOfThought(TweetAssessment)
+result = assessor(
+    tweet="DSPy lets you program LMs declaratively!",
+    dimension="informativeness"
+)
+print(f"Score: {result.score}")
+```
+
+## Limitations
+
+- **Optimization cost** -- Compiling programs requires LM calls over the training set, incurring API costs and wall-clock time. MIPROv2 with auto="medium" runs many trials of Bayesian Optimization.
+- **Dataset requirement** -- Optimizers need labeled examples to tune against. Cold-start scenarios with no evaluation data cannot leverage compilation. Recommended minimum of 20-200 input examples for evaluation.
+- **Debugging complexity** -- Compiled programs with optimized prompts and demonstrations can be harder to inspect and debug than hand-written prompts. Use `dspy.inspect_history()` and MLflow tracing for observability.
+- **Provider-specific behavior** -- While DSPy abstracts across providers, underlying model differences can cause optimized programs to transfer poorly between LMs. Native function calling support varies by provider.
+- **Learning curve** -- The programming model (signatures, modules, optimizers, adapters) introduces concepts that differ from conventional prompt engineering workflows.
+- **Non-determinism** -- LM outputs are inherently stochastic. Optimization results may vary across runs depending on training data sampling and random seeds.
+- **CodeAct limitations** -- Only accepts pure functions (not callable objects). Tools cannot depend on external packages. All function dependencies must be explicitly passed.
+- **Backward compatibility** -- Saving and loading programs across different DSPy versions is not yet supported. Use identical versions until 3.0.0 introduces guaranteed major-version compatibility.
+- **Async complexity** -- While DSPy supports native async, mixing sync and async tools requires explicit context management (`allow_tool_async_sync_conversion`). Async involves more complex error handling and debugging.
+
+## Changelog
+
+- DSPy 2.0 introduced the current signature and module system, replacing the earlier template-based approach
+- DSPy 2.6.0 added whole-program saving with `save_program=True` and streaming support via `dspy.streamify()`
+- Adapter system added for structured output mapping across providers (ChatAdapter as default, JSONAdapter for native structured output)
+- MIPROv2 optimizer added for joint instruction and demonstration optimization using Bayesian Optimization
+- GEPA optimizer introduced for reflective prompt evolution using genetic-Pareto strategies (Agrawal et al., 2025)
+- BetterTogether optimizer added for joint prompt and weight tuning
+- CodeAct module added combining code generation with sandboxed execution
+- BestOfN and Refine modules added for output quality improvement
+- MCP (Model Context Protocol) integration added via `dspy.Tool.from_mcp_tool()` for standardized tool discovery
+- Native function calling support added to ChatAdapter and JSONAdapter
+- Responses API support added for models with enhanced reasoning capabilities
+- MLflow integration for production deployment, tracing, and experiment tracking
+- FastAPI deployment guide with async support and streaming endpoints
+- Assertion and suggestion system introduced for runtime constraint enforcement
+
+## Citations
+
+- \[1\] [DSPy Documentation - Home](https://dspy.ai/)
+- \[2\] [DSPy Programming Overview](https://dspy.ai/learn/programming/overview/)
+- \[3\] [DSPy Language Models](https://dspy.ai/learn/programming/language_models/)
+- \[4\] [DSPy Signatures](https://dspy.ai/learn/programming/signatures/)
+- \[5\] [DSPy Modules](https://dspy.ai/learn/programming/modules/)
+- \[6\] [DSPy Adapters](https://dspy.ai/learn/programming/adapters/)
+- \[7\] [DSPy Tools](https://dspy.ai/learn/programming/tools/)
+- \[8\] [DSPy Evaluation Overview](https://dspy.ai/learn/evaluation/overview/)
+- \[9\] [DSPy Optimization Overview](https://dspy.ai/learn/optimization/overview/)
+- \[10\] [DSPy API Reference](https://dspy.ai/api/)
+- \[11\] [DSPy Tutorials](https://dspy.ai/tutorials/)
+- \[12\] [DSPy ReAct API](https://dspy.ai/api/modules/ReAct/)
+- \[13\] [DSPy CodeAct API](https://dspy.ai/api/modules/CodeAct/)
+- \[14\] [DSPy MIPROv2 API](https://dspy.ai/api/optimizers/MIPROv2/)
+- \[15\] [DSPy GEPA Overview](https://dspy.ai/api/optimizers/GEPA/overview/)
+- \[16\] [DSPy Production](https://dspy.ai/production/)
+- \[17\] [DSPy Saving and Loading](https://dspy.ai/tutorials/saving/)
+- \[18\] [DSPy Streaming](https://dspy.ai/tutorials/streaming/)
+- \[19\] [DSPy Deployment](https://dspy.ai/tutorials/deployment/)
+- \[20\] [DSPy MCP Integration](https://dspy.ai/tutorials/mcp/)
+- \[21\] [DSPy Async](https://dspy.ai/tutorials/async/)
+- \[22\] [DSPy Example API](https://dspy.ai/api/primitives/Example/)
+
+# Outlines
+
+> Python library for structured Large Language Model (LLM) generation via JSON Schema, regex, and context-free grammars. Guarantees structured outputs during the generation process itself rather than through post-hoc parsing.
+
+| Field | Value |
+|----|----|
+| Name | Outlines |
+| Group | Structured Output & Prompt Engineering |
+| Type | SDK |
+| Open Source | Yes |
+| GitHub | [dottxt-ai/outlines](https://github.com/dottxt-ai/outlines) |
+| Stars | 13,449 |
+| Docs | [dottxt-ai.github.io/outlines](https://dottxt-ai.github.io/outlines/) |
+| License | Apache 2.0 |
+| Language | Python |
+
+## Overview
+
+Outlines is a Python library developed by dottxt-ai that enables structured text generation from LLMs. Unlike approaches that generate free-form text and then attempt to parse it into a desired format, Outlines constrains the generation process at the token level using Finite-State Machines (FSMs) and specialized backends. This means every token produced by the model is guaranteed to conform to the specified structure, eliminating parsing failures, broken JSON, and malformed outputs entirely.
+
+The library supports a range of structured output formats including JSON Schema, regular expressions, Context-Free Grammars (CFGs), native Python types, Pydantic models, and multiple-choice selection. It integrates with major LLM providers and inference engines, making it a versatile tool for any workflow that requires reliable, machine-readable output from language models.
+
+Outlines is used in production by organizations including Amazon, Apple, Databricks, and Meta.
+
+## Core Concepts
+
+- **Generation-Time Constraints**: Outlines applies structural constraints during the token generation process rather than after it. Each token is validated against the target schema before being emitted, ensuring 100% conformance without retry loops or post-processing.
+- **Finite-State Machine (FSM) Guided Decoding**: The library compiles output schemas (JSON Schema, regex patterns, grammars) into FSMs that mask invalid tokens at each generation step. Only tokens that maintain a valid path through the FSM are considered by the model's sampling procedure.
+- **Schema Compilation**: Schemas are compiled into their FSM representations once per session. Subsequent generation calls reuse the compiled representation, amortizing the compilation cost across multiple invocations.
+- **Backend Agnosticism**: Outlines decouples the structured generation logic from the model backend. The same schema definition works across OpenAI, Anthropic, vLLM, Hugging Face Transformers, Ollama, and Gemini without modification.
+- **Type-Safe Output**: When using Pydantic models or Python type annotations, the generated output is automatically deserialized into the corresponding typed object, providing immediate programmatic access without manual parsing.
+
+## Installation and Setup
+
+Install Outlines via pip:
+
+``` bash
+pip install outlines
+```
+
+For specific backend support, install with extras as needed:
+
+``` bash
+pip install outlines[openai]
+pip install outlines[anthropic]
+pip install outlines[transformers]
+pip install outlines[vllm]
+pip install outlines[ollama]
+pip install outlines[gemini]
+```
+
+## Architecture
+
+Outlines is organized around three primary layers:
+
+- **Schema Layer**: Accepts user-defined output specifications in the form of JSON Schema objects, regex patterns, CFGs, Pydantic models, Python type annotations, or enumerated choices. This layer validates and normalizes the schema definition.
+- **Compilation Layer**: Transforms the normalized schema into an FSM or equivalent constraint representation. Compilation happens once per unique schema within a session. The compiled artifact encodes all valid token sequences that satisfy the schema.
+- **Generation Layer**: Interfaces with the LLM backend to perform constrained decoding. At each generation step, the FSM state determines which tokens are valid continuations. Invalid tokens are masked (assigned zero probability) before sampling, ensuring the output always conforms to the schema.
+
+The separation of these layers allows Outlines to support multiple backends through a common interface while keeping the constraint logic centralized and reusable.
+
+## Key Features and Functionality
+
+- **JSON Schema Generation**: Define output structure using JSON Schema and receive guaranteed-valid JSON from any supported model. Supports nested objects, arrays, enums, optional fields, and all standard JSON Schema constructs.
+- **Regex-Constrained Generation**: Specify output format using regular expressions. Useful for dates, phone numbers, identifiers, and other pattern-based formats.
+- **Context-Free Grammar (CFG) Support**: Define output structure using formal grammars for complex, recursive structures that go beyond what regex can express.
+- **Pydantic Model Integration**: Pass a Pydantic model class directly and receive a fully instantiated, validated model object as output.
+- **Python Type Support**: Use native Python types (str, int, float, bool, lists, dicts) as output specifications for simple structured outputs.
+- **Multiple-Choice Selection**: Constrain the model to select from a predefined set of options, useful for classification and decision-making tasks.
+- **One-Time Compilation**: Schemas are compiled into FSMs once per session, making repeated generation calls with the same schema efficient.
+- **Multi-Provider Support**: Works with OpenAI, Anthropic, vLLM, Hugging Face Transformers, Ollama, and Gemini through a unified interface.
+
+## Use Cases
+
+- **Classification**: Constrain model output to a fixed set of labels for text classification, sentiment analysis, or intent detection tasks.
+- **Named Entity Recognition (NER)**: Extract structured entity data from unstructured text with guaranteed output format conformance.
+- **Knowledge Graph Construction**: Generate structured triples (subject, predicate, object) from text for knowledge graph population.
+- **Question Answering with Citations**: Produce answers that include structured citation references pointing back to source material.
+- **PDF and Document Processing**: Extract structured data from unstructured document content with reliable output formatting.
+- **ReAct Agents**: Generate structured action-observation-thought sequences for agent-based reasoning frameworks.
+- **Data Extraction Pipelines**: Convert unstructured text into structured records for database ingestion or downstream processing.
+- **Form Generation**: Produce structured form data from natural language descriptions.
+
+## API Reference Summary
+
+### Model Initialization
+
+``` python
+import outlines
+
+# OpenAI backend
+model = outlines.models.openai("gpt-4o")
+
+# Transformers backend
+model = outlines.models.transformers("mistralai/Mistral-7B-v0.1")
+
+# vLLM backend
+model = outlines.models.vllm("mistralai/Mistral-7B-v0.1")
+
+# Ollama backend
+model = outlines.models.ollama("llama3")
+```
+
+### JSON Schema Generation
+
+``` python
+from pydantic import BaseModel
+import outlines
+
+class Customer(BaseModel):
+    name: str
+    age: int
+    email: str
+
+model = outlines.models.openai("gpt-4o")
+generator = outlines.generate.json(model, Customer)
+
+result = generator("Alice needs help with her account.")
+# result is a Customer instance with guaranteed valid fields
+```
+
+### Regex-Constrained Generation
+
+``` python
+import outlines
+
+model = outlines.models.openai("gpt-4o")
+date_pattern = r"\d{4}-\d{2}-\d{2}"
+generator = outlines.generate.regex(model, date_pattern)
+
+result = generator("What is today's date?")
+# result matches the YYYY-MM-DD pattern
+```
+
+### Multiple-Choice Selection
+
+``` python
+import outlines
+
+model = outlines.models.openai("gpt-4o")
+generator = outlines.generate.choice(model, ["positive", "negative", "neutral"])
+
+result = generator("Classify the sentiment: 'I love this product!'")
+# result is one of "positive", "negative", or "neutral"
+```
+
+### Grammar-Based Generation
+
+``` python
+import outlines
+
+model = outlines.models.transformers("mistralai/Mistral-7B-v0.1")
+grammar = r"""
+    start: expression
+    expression: term (("+"|"-") term)*
+    term: NUMBER
+    NUMBER: /[0-9]+/
+"""
+generator = outlines.generate.cfg(model, grammar)
+
+result = generator("Generate a simple arithmetic expression.")
+```
+
+### Text Generation (Unconstrained)
+
+``` python
+import outlines
+
+model = outlines.models.openai("gpt-4o")
+generator = outlines.generate.text(model)
+
+result = generator("Tell me a story.")
+```
+
+## Configuration and Customization
+
+- **Schema Compilation Caching**: Compiled FSMs are cached for the duration of the session. No explicit configuration is required; reusing the same generator object across calls leverages the cached compilation.
+- **Sampling Parameters**: Generation calls accept standard sampling parameters (temperature, top_p, max_tokens) through the underlying model backend configuration.
+- **Backend Selection**: The backend is determined by the model initialization call. Each backend may support additional configuration options specific to the provider (API keys, base URLs, device placement).
+
+## Integration Patterns
+
+### With Pydantic for Validated Outputs
+
+``` python
+from pydantic import BaseModel, Field
+import outlines
+
+class Invoice(BaseModel):
+    vendor: str
+    amount: float = Field(ge=0)
+    currency: str
+    date: str
+
+model = outlines.models.openai("gpt-4o")
+generator = outlines.generate.json(model, Invoice)
+
+invoice = generator("Extract invoice data: Acme Corp charged $150.00 USD on 2025-03-15")
+# invoice.vendor == "Acme Corp", invoice.amount == 150.0, etc.
+```
+
+### With vLLM for High-Throughput Inference
+
+``` python
+import outlines
+from pydantic import BaseModel
+
+class Entity(BaseModel):
+    name: str
+    entity_type: str
+    confidence: float
+
+model = outlines.models.vllm("mistralai/Mistral-7B-v0.1")
+generator = outlines.generate.json(model, Entity)
+
+results = [generator(text) for text in batch_of_texts]
+```
+
+### With ReAct Agent Patterns
+
+``` python
+from pydantic import BaseModel
+from typing import Literal
+import outlines
+
+class AgentStep(BaseModel):
+    thought: str
+    action: Literal["search", "calculate", "respond"]
+    action_input: str
+
+model = outlines.models.openai("gpt-4o")
+generator = outlines.generate.json(model, AgentStep)
+
+step = generator("The user asked about the weather in Paris. Think step by step.")
+# step.action is guaranteed to be one of the valid actions
+```
+
+## Examples
+
+### Named Entity Recognition
+
+``` python
+from pydantic import BaseModel
+import outlines
+
+class ExtractedEntities(BaseModel):
+    persons: list[str]
+    organizations: list[str]
+    locations: list[str]
+
+model = outlines.models.openai("gpt-4o")
+generator = outlines.generate.json(model, ExtractedEntities)
+
+text = "Tim Cook announced that Apple will open a new office in Austin, Texas."
+entities = generator(f"Extract named entities from: {text}")
+# entities.persons == ["Tim Cook"]
+# entities.organizations == ["Apple"]
+# entities.locations == ["Austin", "Texas"]
+```
+
+### Text Classification with Confidence
+
+``` python
+from pydantic import BaseModel
+from typing import Literal
+import outlines
+
+class Classification(BaseModel):
+    label: Literal["spam", "not_spam"]
+    confidence: float
+    reasoning: str
+
+model = outlines.models.openai("gpt-4o")
+generator = outlines.generate.json(model, Classification)
+
+result = generator("Classify this email: 'Congratulations! You won a free iPhone!'")
+# result.label is guaranteed to be "spam" or "not_spam"
+```
+
+### Structured Q&A with Citations
+
+``` python
+from pydantic import BaseModel
+import outlines
+
+class Citation(BaseModel):
+    text: str
+    source: str
+    page: int
+
+class Answer(BaseModel):
+    answer: str
+    citations: list[Citation]
+
+model = outlines.models.openai("gpt-4o")
+generator = outlines.generate.json(model, Answer)
+
+context = "According to Smith (2024, p.12), transformers revolutionized NLP..."
+result = generator(f"Answer with citations based on: {context}\nQuestion: What revolutionized NLP?")
+# result.citations contains structured Citation objects
+```
+
+## Limitations and Considerations
+
+- **Compilation Overhead**: The initial compilation of a schema into an FSM adds latency to the first generation call. Complex schemas with deeply nested structures or large enumerations increase this overhead.
+- **Grammar Support Variability**: CFG support may vary across backends. Not all providers support grammar-based constrained generation natively.
+- **Structural vs. Semantic Guarantees**: The constrained decoding operates at the token level, which means the model may produce semantically incorrect but structurally valid output. The structure is guaranteed; the semantic quality depends on the underlying model.
+- **Backend Feature Parity**: Not all backends support every generation mode. Some constrained generation features may be available only with local model backends (Transformers, vLLM) and not with API-based providers.
+- **Local Model Requirements**: When using Transformers or vLLM backends, adequate GPU memory and compute resources are required to run the models locally.
+
+## Changelog Highlights
+
+Outlines is under active development. The project maintains releases on PyPI and GitHub. Refer to the [GitHub releases page](https://github.com/dottxt-ai/outlines/releases) for version history and detailed changelogs.
+
+## Citations
+
+- \[1\] [Outlines Documentation](https://dottxt-ai.github.io/outlines/latest/)
+
+# Instructor
+
+> Multi-language library for extracting structured data from LLMs
+
+| Field | Value |
+|----|----|
+| Name | Instructor |
+| Group | Structured Generation |
+| Type | SDK |
+| Open Source | Yes |
+| GitHub | [instructor-ai/instructor](https://github.com/instructor-ai/instructor) |
+| Stars | 12,413 |
+| Docs | [python.useinstructor.com](https://python.useinstructor.com/) |
+
+## Overview
+
+Instructor is a Python library for extracting structured, validated data from Large Language Models (LLMs). With over 3 million monthly downloads, 12,500+ GitHub stars, and 100+ contributors, it is one of the most widely adopted tools for structured output extraction. Built on top of Pydantic, Instructor lets developers define response schemas as Python models and have the LLM fill them in directly. When the LLM output fails validation, Instructor automatically retries the request with the validation error context, enabling self-correcting extraction pipelines. The library supports 23+ LLM providers through a unified interface, offers streaming for partial results, and provides full type inference with IDE autocompletion. Instructor is available in Python, TypeScript, Go, Ruby, Elixir, and Rust, though the Python implementation is the most mature and widely used. The project is licensed under the MIT License and authored by Jason Liu.
+
+Instructor positions itself as a focused tool for structured extraction rather than a full agent framework. As the documentation notes: "Instructor for extraction, PydanticAI for agents." When a project requires quality gates, shareable runs, or built-in observability, the Pydantic team recommends PydanticAI as the complementary agent runtime that works alongside Instructor models.
+
+## Core Concepts
+
+### Structured Outputs via Pydantic Models
+
+The fundamental idea behind Instructor is that a Pydantic model defines the expected shape of the LLM response. The `response_model` parameter serves three purposes: defining the schema and prompts for the language model, validating API responses, and returning Pydantic model instances. Docstrings, types, and field annotations are used to generate the prompt automatically. The library injects the model schema into the LLM request (via function calling, tool use, or JSON mode depending on the provider), parses the raw output, and validates it against the model. The developer receives a fully typed Python object rather than a string.
+
+### Automatic Retries (Reasks)
+
+When the LLM returns output that fails Pydantic validation, Instructor does not simply raise an error. Instead, it feeds the validation error message back to the LLM as context and retries the request. This "reask" loop continues up to a configurable maximum number of retries (`max_retries`), giving the model the opportunity to self-correct. The system defends against two error types: Pydantic validation failures and JSON decoding errors. This is especially useful for enforcing constraints that are difficult to express purely in a prompt (value ranges, string formats, cross-field dependencies). Instructor also integrates with the Tenacity library for more advanced retry strategies including exponential backoff, error-specific retries, and result-based retries.
+
+### Client Patching
+
+Instructor works by wrapping (patching) existing LLM client libraries. Rather than replacing the client, it augments it with structured output capabilities. The patching process intercepts calls to completion methods like `create()`, transforms Pydantic models into provider-specific formats, checks outputs against the defined model, and handles retries when validation fails. Developers keep their existing authentication, configuration, and error handling while gaining schema-driven extraction on top. The patched client gains three new parameters: `response_model` (defines expected output structure), `max_retries` (retry attempts on validation failure), and `context` (additional validation context and Jinja template variables).
+
+### Extraction Modes
+
+Instructor supports multiple extraction modes depending on provider capabilities:
+
+- **TOOLS** -- Uses the provider's function/tool calling API. The default and recommended mode for OpenAI, Anthropic, Google, and Ollama.
+- **JSON_SCHEMA** -- Native schema support when providers offer it. Strict schema enforcement.
+- **MD_JSON** -- Extracts JSON from markdown code blocks in the response. Useful for providers without tool calling support.
+- **PARALLEL_TOOLS** -- Multiple tool calls in a single response for batch extraction.
+- **RESPONSES_TOOLS** -- OpenAI Responses API tools integration.
+
+The `from_provider()` function automatically selects the optimal mode for each provider, though modes can be overridden manually.
+
+## Installation
+
+Install the core package:
+
+``` bash
+pip install instructor
+```
+
+Alternative package managers:
+
+``` bash
+uv add instructor
+poetry add instructor
+```
+
+Core dependencies installed automatically: `openai`, `pydantic`, `typer`, and `docstring-parser`. Python 3.9 or later is required.
+
+Provider-specific client libraries must be installed separately depending on the target LLM backend:
+
+``` bash
+pip install openai       # OpenAI
+pip install anthropic    # Anthropic
+pip install google-genai # Google Gemini
+pip install ollama       # Ollama (local models)
+pip install cohere       # Cohere
+pip install mistralai    # Mistral
+pip install litellm      # LiteLLM (multi-provider)
+```
+
+## Architecture
+
+Instructor sits as a thin middleware layer between the application and the LLM provider client:
+
+1.  **Application Layer** -- Defines Pydantic response models and sends messages through the Instructor-patched client.
+2.  **Instructor Layer** -- Injects the Pydantic model schema into the LLM request, parses the response, runs Pydantic validation, and handles retries on failure.
+3.  **Provider Client Layer** -- The underlying LLM SDK (OpenAI, Anthropic, Google, and others) handles authentication, transport, and raw API communication.
+
+The main execution pipeline flows through several stages: caching and templating, retry mechanisms powered by Tenacity, provider communication, and response dispatching. The dispatcher routes responses through mode-specific handlers (streaming, partial, standard) before parsing into Pydantic models. If validation fails, a reask handler prepares error feedback for retry attempts.
+
+### Retry Flow
+
+``` 
+Application -> Instructor -> LLM Provider
+                  |
+                  v
+          Parse response
+                  |
+           Validate with Pydantic
+                  |
+         [Pass] -> Return typed object
+         [Fail] -> Append validation error to messages -> Retry LLM call
+```
+
+When retry attempts are exhausted, Instructor raises `InstructorRetryException` containing the full attempt history, final completion data, and reproduction parameters.
+
+### Instrumentation Points
+
+The framework provides hooks at critical points in the pipeline:
+
+- `completion:kwargs` -- Before provider invocation
+- `completion:response` -- After receiving response
+- `completion:error` -- Error before retries
+- `parse:error` -- On validation failures
+- `completion:last_attempt` -- Before retry exhaustion
+
+## Key Features
+
+- **Type Safety and IDE Autocompletion** -- Response models are standard Pydantic classes, giving full type inference, autocomplete, and static analysis support in editors and type checkers.
+- **Automatic Retries with Validation Context** -- Failed validations trigger retries where the error message is included in the next prompt, allowing the LLM to self-correct. Integrates with Tenacity for exponential backoff, error-specific retries, and result-based retries.
+- **Multi-Provider Support** -- A single `from_provider()` interface supports OpenAI, Anthropic, Google, Ollama, DeepSeek, and 23+ other providers without changing application code.
+- **Streaming** -- `create_partial()` streams partial results as the LLM generates tokens, enabling progressive UI updates. `create_iterable()` streams a sequence of complete objects. Both support async iteration.
+- **Custom Pydantic Validators** -- Standard Pydantic field validators and model validators work seamlessly, enabling complex validation logic (regex patterns, cross-field checks, business rules).
+- **LLM-Based Validation** -- The `llm_validator` function uses the LLM itself to validate outputs against semantic criteria, generating human-readable error messages for reasking.
+- **Async/Await** -- Full async support for non-blocking LLM calls in asynchronous applications via `async_client=True`.
+- **Jinja Templating** -- Prompt templates can use Jinja syntax for dynamic prompt construction with variables, loops, and conditionals. Templates are rendered in a sandboxed environment for security.
+- **Hooks System** -- Lifecycle hooks allow injecting custom logic at various stages of the request/response cycle for logging, metrics, monitoring, or transformation.
+- **Multimodal Extraction** -- Unified, provider-agnostic interface for extracting structured data from images, PDFs, and audio files with automatic format handling.
+- **CLI Tools** -- Built-in command-line utilities for API usage monitoring (`instructor usage`), fine-tuning management (`instructor finetune`), and documentation access (`instructor docs`).
+- **Dynamic Model Creation** -- Pydantic's `create_model()` enables runtime model generation when schemas are determined by database queries, user configurations, or other dynamic sources.
+
+## Use Cases
+
+- **Data Extraction** -- Pulling structured records (names, dates, amounts, entities) from unstructured text such as emails, documents, or web pages.
+- **Classification** -- Categorizing text into predefined enums or labels with guaranteed valid output values.
+- **Content Generation with Constraints** -- Generating content that must conform to a specific schema (product descriptions with required fields, quiz questions with exactly four options).
+- **Multi-Step Pipelines** -- Chaining structured outputs where the validated result of one step feeds into the next, with type safety preserved throughout.
+- **Search and Retrieval Augmented Generation (RAG)** -- Extracting structured queries or filters from natural language to drive database lookups or search APIs.
+- **Streaming User Interfaces** -- Progressively rendering structured data in a UI as the LLM generates it, using partial streaming.
+- **Document Processing** -- Extracting structured data from PDFs, images, and audio files using multimodal capabilities.
+- **Content Moderation** -- Using `llm_validator` to check outputs against semantic criteria and reject objectionable content.
+
+## API Reference
+
+### Client Creation
+
+``` python
+import instructor
+
+# Universal provider interface (recommended)
+client = instructor.from_provider("openai/gpt-4o")
+
+# Async client
+async_client = instructor.from_provider("openai/gpt-4o", async_client=True)
+
+# Provider-specific patching
+import openai
+client = instructor.from_openai(openai.OpenAI())
+
+import anthropic
+client = instructor.from_anthropic(anthropic.Anthropic())
+
+# With mode override
+client = instructor.from_provider("openai/gpt-4o", mode=instructor.Mode.JSON)
+
+# With caching
+client = instructor.from_provider("openai/gpt-4o", cache=True)
+```
+
+The `from_provider()` function accepts a model string in the format `"provider/model"` and automatically handles provider-specific configurations. Additional provider-specific constructors include `from_openai()`, `from_anthropic()`, `from_google()`, `from_litellm()`, `from_ollama()`, and others.
+
+### Core Methods
+
+- **`client.create(response_model, messages, max_retries=3, validation_context=None, context=None, strict=None, hooks=None)`** -- Sends a completion request and returns a validated instance of `response_model`. Retries automatically on validation failure up to `max_retries`.
+- **`client.create_with_completion(response_model, messages)`** -- Returns a tuple of `(response_model_instance, raw_completion)`, giving access to both the validated object and the raw provider response (token usage, finish reason, metadata).
+- **`client.create_partial(response_model, messages)`** -- Returns an iterator that yields progressively more complete instances of `response_model` as tokens stream in. All fields become `Optional` during streaming. Validators are not applied until the final iteration.
+- **`client.create_iterable(response_model, messages)`** -- Returns an iterator of complete `response_model` instances, useful when the LLM produces a list of structured objects.
+
+### Hooks API
+
+``` python
+# Register hooks
+client.on("completion:kwargs", handler_function)
+client.on("completion:response", lambda response: print(response))
+client.on("completion:error", lambda error: log_error(error))
+client.on("parse:error", lambda error: track_validation_failure(error))
+client.on("completion:last_attempt", lambda: alert_exhaustion())
+
+# Remove hooks
+client.off("completion:kwargs", handler_function)
+client.clear("completion:kwargs")  # Clear all handlers for event
+client.clear()                      # Clear all hooks
+
+# Per-call hooks
+result = client.create(
+    response_model=User,
+    messages=[...],
+    hooks={"completion:kwargs": lambda **kw: print(kw)},
+)
+```
+
+### Response Model Definition
+
+``` python
+from pydantic import BaseModel, Field, field_validator
+from typing import Optional
+from enum import Enum
+
+class Priority(str, Enum):
+    LOW = "low"
+    MEDIUM = "medium"
+    HIGH = "high"
+    CRITICAL = "critical"
+
+class Person(BaseModel):
+    """Extract person information from text."""
+    name: str = Field(description="Full legal name")
+    age: int = Field(ge=0, le=150, description="Age in years")
+    occupation: Optional[str] = Field(None, description="Current job title")
+
+    @field_validator("name")
+    @classmethod
+    def name_must_not_be_empty(cls, v: str) -> str:
+        if not v.strip():
+            raise ValueError("Name must not be empty")
+        return v.strip()
+```
+
+### Multimodal Input
+
+``` python
+from instructor.multimodal import Image, Audio, PDF
+
+# Image extraction
+result = client.create(
+    response_model=ImageDescription,
+    messages=[{
+        "role": "user",
+        "content": ["Describe this image.", Image.from_url("https://example.com/photo.jpg")],
+    }],
+)
+
+# PDF extraction
+result = client.create(
+    response_model=InvoiceData,
+    messages=[{
+        "role": "user",
+        "content": ["Extract invoice data.", PDF.from_path("invoice.pdf")],
+    }],
+)
+```
+
+Image, Audio, and PDF classes support `from_url()`, `from_path()`, `from_base64()`, `from_gs_url()` (Google Cloud Storage), and `autodetect()` methods.
+
+## Configuration
+
+### Retry Configuration
+
+``` python
+# Built-in retry configuration
+person = client.create(
+    response_model=Person,
+    messages=[{"role": "user", "content": "Extract: John is 28 years old."}],
+    max_retries=3,
+)
+
+# Tenacity integration for advanced retry strategies
+from tenacity import retry, stop_after_attempt, wait_exponential
+
+@retry(stop=stop_after_attempt(3), wait=wait_exponential(multiplier=1, min=4, max=10))
+def extract_with_backoff(text: str) -> Person:
+    return client.create(
+        response_model=Person,
+        messages=[{"role": "user", "content": text}],
+    )
+```
+
+Recommended retry settings by error type: rate limits (5 attempts, 1-120s delay), validation errors (2-3 attempts, 1-10s delay), network errors (4 attempts, 2-30s delay).
+
+### Provider Selection
+
+The `from_provider()` method accepts a string in the format `"provider/model"`:
+
+``` python
+client = instructor.from_provider("openai/gpt-4o")
+client = instructor.from_provider("anthropic/claude-sonnet-4-20250514")
+client = instructor.from_provider("google/gemini-2.0-flash")
+client = instructor.from_provider("ollama/llama3")
+client = instructor.from_provider("deepseek/deepseek-chat")
+```
+
+### Mode Configuration
+
+Override the default extraction mode when needed:
+
+``` python
+import instructor
+
+# Force JSON mode
+client = instructor.from_provider("openai/gpt-4o", mode=instructor.Mode.JSON)
+
+# Use strict JSON schema
+client = instructor.from_provider("openai/gpt-4o", mode=instructor.Mode.JSON_SCHEMA)
+
+# Markdown JSON for broader compatibility
+client = instructor.from_provider("databricks/model", mode=instructor.Mode.MD_JSON)
+
+# Parallel tool calls
+client = instructor.from_provider("openai/gpt-4o", mode=instructor.Mode.PARALLEL_TOOLS)
+```
+
+### Jinja Templating
+
+``` python
+response = client.create(
+    messages=[{
+        "role": "user",
+        "content": "Extract the information from the following text: {{ data }}",
+    }],
+    response_model=User,
+    context={"data": "John Doe is thirty years old"},
+)
+```
+
+Context variables are also accessible within Pydantic field validators through `ValidationInfo`, enabling dynamic validation rules based on input context.
+
+## Integration Patterns
+
+### Basic Extraction
+
+``` python
+import instructor
+from pydantic import BaseModel
+
+client = instructor.from_provider("openai/gpt-4o")
+
+class Person(BaseModel):
+    name: str
+    age: int
+
+person = client.create(
+    response_model=Person,
+    messages=[{"role": "user", "content": "Extract: Jason is 25 years old."}],
+)
+# person.name == "Jason", person.age == 25
+```
+
+### Streaming Partial Results
+
+``` python
+for partial_person in client.create_partial(
+    response_model=Person,
+    messages=[{"role": "user", "content": "Extract: Jason is 25 years old."}],
+):
+    print(partial_person)
+    # Yields progressively: Person(name=None, age=None) -> Person(name="Ja", age=None) -> ...
+```
+
+### Iterable Extraction
+
+``` python
+users = client.create_iterable(
+    response_model=Person,
+    messages=[
+        {"role": "user", "content": "Extract all people: Jason is 25. Sarah is 30."}
+    ],
+)
+for user in users:
+    print(user)
+    # Person(name="Jason", age=25)
+    # Person(name="Sarah", age=30)
+```
+
+### Async Usage
+
+``` python
+import asyncio
+import instructor
+
+async_client = instructor.from_provider("openai/gpt-4o", async_client=True)
+
+async def extract():
+    person = await async_client.create(
+        response_model=Person,
+        messages=[{"role": "user", "content": "Extract: Jason is 25 years old."}],
+    )
+    return person
+
+result = asyncio.run(extract())
+```
+
+### LLM-Based Validation
+
+``` python
+from pydantic import BaseModel, BeforeValidator
+from typing_extensions import Annotated
+from instructor import llm_validator
+
+client = instructor.from_provider("openai/gpt-4o-mini")
+
+class QuestionAnswer(BaseModel):
+    question: str
+    answer: Annotated[
+        str,
+        BeforeValidator(llm_validator("don't say objectionable things", client=client)),
+    ]
+```
+
+When the answer contains objectionable content, the LLM-based validator generates a human-readable error message that is fed back for reasking.
+
+### Context-Based Validation
+
+``` python
+from pydantic import BaseModel, field_validator, ValidationInfo
+
+class CityExtraction(BaseModel):
+    city: str
+
+    @field_validator("city")
+    @classmethod
+    def validate_city(cls, v: str, info: ValidationInfo) -> str:
+        allowed = info.context.get("allowed_cities", [])
+        if allowed and v not in allowed:
+            raise ValueError(f"City must be one of {allowed}")
+        return v
+
+result = client.create(
+    response_model=CityExtraction,
+    messages=[{"role": "user", "content": "Extract the city: I live in Paris."}],
+    validation_context={"allowed_cities": ["Paris", "London", "Tokyo"]},
+)
+```
+
+### With Completion Metadata
+
+``` python
+person, completion = client.create_with_completion(
+    response_model=Person,
+    messages=[{"role": "user", "content": "Extract: Jason is 25 years old."}],
+)
+print(person.name)                    # "Jason"
+print(completion.usage.total_tokens)  # Access token usage from raw completion
+```
+
+## Examples
+
+### Classification with Enums
+
+``` python
+from enum import Enum
+from pydantic import BaseModel
+
+class Sentiment(str, Enum):
+    POSITIVE = "positive"
+    NEGATIVE = "negative"
+    NEUTRAL = "neutral"
+
+class SentimentResult(BaseModel):
+    sentiment: Sentiment
+    confidence: float
+
+result = client.create(
+    response_model=SentimentResult,
+    messages=[{"role": "user", "content": "Classify: I love this product!"}],
+)
+# result.sentiment == Sentiment.POSITIVE
+```
+
+### Nested Models
+
+``` python
+from pydantic import BaseModel
+from typing import List
+
+class Address(BaseModel):
+    street: str
+    city: str
+    country: str
+
+class Company(BaseModel):
+    name: str
+    address: Address
+    employee_count: int
+    departments: List[str]
+
+company = client.create(
+    response_model=Company,
+    messages=[{
+        "role": "user",
+        "content": "Extract: Acme Corp at 123 Main St, Springfield, USA with 500 employees in Engineering, Sales, and Marketing.",
+    }],
+)
+```
+
+### Hooks for Logging
+
+``` python
+import instructor
+from pydantic import BaseModel
+
+client = instructor.from_provider("openai/gpt-4o-mini")
+
+client.on("completion:kwargs", lambda **kw: print("Called with:", kw))
+client.on("completion:error", lambda e: print(f"Error: {e}"))
+client.on("completion:response", lambda r: print(f"Tokens: {r.usage.total_tokens}"))
+
+class UserInfo(BaseModel):
+    name: str
+    age: int
+
+user_info = client.create(
+    response_model=UserInfo,
+    messages=[{"role": "user", "content": "Extract: John is 20 years old"}],
+)
+```
+
+### Failed Attempt Tracking
+
+``` python
+from instructor.exceptions import InstructorRetryException
+
+try:
+    result = client.create(
+        response_model=StrictModel,
+        messages=[{"role": "user", "content": "Extract data..."}],
+        max_retries=3,
+    )
+except InstructorRetryException as e:
+    for attempt in e.failed_attempts:
+        print(f"Attempt {attempt.attempt_number}: {attempt.exception}")
+```
+
+## Limitations
+
+- **Provider-Dependent Behavior** -- Extraction quality and reliability vary across LLM providers and models. Smaller models may require more retries or produce lower-quality structured output.
+- **Retry Cost** -- Each validation-triggered retry is a full LLM API call, adding latency and token cost. Complex validators on weaker models can lead to retry loops that exhaust the maximum retry count.
+- **Schema Complexity Ceiling** -- Deeply nested or very large Pydantic models may exceed the context window or confuse the LLM, leading to incomplete or incorrect extraction.
+- **No Guaranteed Correctness** -- Validation ensures structural correctness (types, formats, constraints) but cannot verify factual accuracy of the extracted content. The LLM may hallucinate values that pass validation.
+- **Streaming Validator Limitation** -- Partial streaming (`create_partial`) does not support Pydantic validators during intermediate iterations due to the streaming nature of the response. Validators are only applied on the final complete object.
+- **Literal Type Streaming** -- Models using `Literal` values in partial streaming must inherit from `PartialLiteralMixin` to avoid parsing errors with incomplete values.
+- **Mode Variability** -- Different extraction modes may perform differently for the same use case. The documentation recommends testing with actual data and models to find the optimal mode.
+
+## Changelog
+
+Instructor follows semantic versioning. The current version is v1.14.5. The library has evolved from OpenAI-only function calling support to a multi-provider, multi-language platform. Key milestones include the introduction of `from_provider()` for unified provider access, streaming support via `create_partial()` and `create_iterable()`, expansion to 23+ LLM providers, multimodal extraction capabilities for images, PDFs, and audio, the hooks system for lifecycle instrumentation, Jinja templating for dynamic prompts, and the addition of TypeScript, Go, Ruby, Elixir, and Rust implementations. The project maintains an active release cadence with frequent updates.
+
+## Citations
+
+- \[1\] [Instructor Documentation - Home](https://python.useinstructor.com/)
+- \[2\] [Instructor - Patching Concepts](https://python.useinstructor.com/concepts/patching/)
+- \[3\] [Instructor - Retry Mechanism](https://python.useinstructor.com/concepts/retrying/)
+- \[4\] [Instructor - Hooks System](https://python.useinstructor.com/concepts/hooks/)
+- \[5\] [Instructor - Partial Streaming](https://python.useinstructor.com/concepts/partial/)
+- \[6\] [Instructor - Iterable Streaming](https://python.useinstructor.com/concepts/lists/)
+- \[7\] [Instructor - Integrations](https://python.useinstructor.com/integrations/)
+- \[8\] [Instructor - Validation and Reasking](https://python.useinstructor.com/concepts/reask_validation/)
+- \[9\] [Instructor - Jinja Templating](https://python.useinstructor.com/concepts/templating/)
+- \[10\] [Instructor - Mode Comparison](https://python.useinstructor.com/modes-comparison/)
+- \[11\] [Instructor - API Reference](https://python.useinstructor.com/api/)
+- \[12\] [Instructor - Architecture](https://python.useinstructor.com/architecture/)
+- \[13\] [Instructor - CLI Reference](https://python.useinstructor.com/cli/)
+- \[14\] [Instructor - Installation](https://python.useinstructor.com/installation/)
+- \[15\] [Instructor - Pydantic Models](https://python.useinstructor.com/concepts/models/)
+- \[16\] [Instructor - Multimodal Capabilities](https://python.useinstructor.com/concepts/multimodal/)
+- \[17\] [Instructor GitHub Repository](https://github.com/instructor-ai/instructor)
+
+# BAML
+
+> Domain-specific language for generating structured outputs from Large Language Models (LLMs), providing type-safe definitions, generated client libraries, and production-ready extraction pipelines across multiple programming languages.
+
+| Field       | Value                                                 |
+|-------------|-------------------------------------------------------|
+| Name        | BAML (Basically a Made-up Language)                   |
+| Group       | Structured Generation                                 |
+| Type        | SDK                                                   |
+| Open Source | Yes (Apache 2.0)                                      |
+| GitHub      | [BoundaryML/baml](https://github.com/BoundaryML/baml) |
+| Stars       | 7,642                                                 |
+| Docs        | [docs.boundaryml.com](https://docs.boundaryml.com/)   |
+
+## Overview
+
+BAML is a domain-specific language (DSL) created by BoundaryML for defining, generating, and validating structured outputs from LLMs. The framework transforms prompt engineering into schema engineering by providing a declarative approach to specifying data types, LLM functions, prompt templates, and client configurations in dedicated source files (`baml_src/`), then generating fully typed client libraries (`baml_client/`) for use in application code. This architecture separates LLM interaction concerns from business logic, enabling type-safe extraction, classification, and generation workflows that move cleanly from prototyping to production deployment. BAML supports Python, TypeScript, Go, Ruby, Rust, Java, C#, Elixir, and a REST API interface. The framework is built entirely in Rust and operates fully offline with no telemetry \[1\]\[2\].
+
+BAML's design philosophy positions it as an evolution beyond string-based prompt management, analogous to how JSX modernized web development beyond HTML-in-strings. The framework emphasizes the expressiveness of English combined with the structure of code, allowing developers to view and run prompts directly within their editor without requiring a runtime environment or language-specific setup \[1\].
+
+A key technical differentiator is BAML's Schema-Aligned Parsing (SAP) algorithm, which applies Postel's Law to LLM outputs: accepting imperfect responses and transforming them to match declared schemas using custom edit distance algorithms. Benchmarks show SAP achieving 92-93% accuracy across models, outperforming provider-native function calling approaches at 87.5%. Additionally, BAML's schema format uses approximately 80% fewer tokens than JSON Schema, reducing cost without sacrificing clarity \[3\].
+
+## Core Concepts
+
+BAML introduces several foundational abstractions that distinguish it from general-purpose LLM client libraries.
+
+**Type Definitions.** The DSL provides `class` and `enum` keywords for defining the shape of structured data that LLMs should produce. These type definitions serve as the contract between the LLM prompt and the application code, enabling compile-time and runtime validation of outputs. Classes support field-level annotations such as `@description` for guiding LLM output, `@alias` for renaming fields in prompts, `@skip` for excluding fields, and `@@dynamic` for enabling runtime schema modification \[4\]\[5\].
+
+**Functions.** BAML functions declare the input and output types for an LLM call, binding a prompt template to a specific extraction or generation task. Functions are the primary unit of LLM interaction and are compiled into typed methods in the generated client. Each function specifies a client (LLM provider) and a prompt template \[1\].
+
+**Template Strings.** Prompt engineering is handled through Jinja-based template strings that compose prompt fragments. Template strings support variable interpolation (`{{ variable }}`), conditional logic, loops, filters, and reuse across multiple functions. The special `{{ ctx.output_format }}` macro injects the output schema instructions into prompts, guiding the LLM to produce correctly structured responses \[6\].
+
+**LLM Clients.** Provider-specific configuration (model name, API keys, parameters) is declared as client definitions within the DSL. BAML supports over 25 LLM providers including OpenAI, Anthropic, Google AI, Vertex AI, AWS Bedrock, Azure OpenAI, OpenRouter, Groq, Cerebras, HuggingFace, LiteLLM, Ollama, vLLM, and all OpenAI API-compatible endpoints. Shorthand syntax (`client "openai/gpt-4o"`) enables quick provider selection \[7\].
+
+**Code Generation.** The BAML compiler reads `baml_src/` definitions and generates a `baml_client/` directory containing fully typed client code in the target language. Python types map to Pydantic models, TypeScript generates native TypeScript types, and other languages receive idiomatic equivalents. The generated code handles serialization, deserialization, prompt rendering, robust JSON parsing (including repair of broken JSON), and provider communication \[8\].
+
+**Testing.** The DSL includes native test declarations that define input/output expectations for functions, with `@@assert` for strict validation and `@@check` for non-exception-raising validation. Tests can be run from the editor playground or via the CLI with parallel execution support \[9\].
+
+**Checks and Asserts.** BAML provides two validation mechanisms for LLM output quality. `@assert` enforces mandatory rules that halt execution on failure, raising `BamlValidationError` when validation fails. `@check` validates data without interrupting execution, returning results regardless of pass/fail status. Both use Jinja expressions with `this` referencing the current field value \[10\].
+
+## Installation
+
+BAML provides language-specific installation paths alongside a CLI and editor extensions.
+
+**CLI Installation.** The BAML CLI handles project initialization, code generation, testing, and development server operations:
+
+``` bash
+# Install via npm (also available through other package managers)
+npm install -g @boundaryml/baml
+
+# Initialize a new BAML project
+baml init
+
+# Generate client code from baml_src definitions
+baml generate
+
+# Run BAML tests
+baml-cli test
+
+# Start development server with file watching
+baml dev
+
+# Start a REST API server exposing BAML functions
+baml serve
+
+# Format BAML source files
+baml fmt
+```
+
+**Python.**
+
+``` bash
+pip install baml-py
+```
+
+**TypeScript/JavaScript.**
+
+``` bash
+npm install @boundaryml/baml
+```
+
+**Go.**
+
+``` bash
+go get github.com/boundaryml/baml-go
+```
+
+**Ruby.**
+
+``` bash
+gem install baml
+```
+
+**Rust.** Native Rust SDK available since version 0.217.0 via Cargo.
+
+**Java and C#** packages are available through their respective package managers.
+
+**REST API.** For languages without a native SDK, `baml serve` exposes all declared functions as HTTP endpoints with OpenAPI documentation \[1\]\[11\].
+
+**Editor Extensions.** BAML provides extensions for VSCode, Cursor, JetBrains IDEs, Zed, and Claude Code, offering syntax highlighting, autocompletion, inline diagnostics, live preview of generated prompts, and raw cURL request inspection \[1\].
+
+## Architecture
+
+BAML follows a two-directory architecture that cleanly separates definitions from generated code.
+
+**`baml_src/` (Source Definitions).** This directory contains all BAML DSL files (`.baml` extension) where types, functions, clients, template strings, and tests are defined. All declarations within the directory are accessible across all files, enabling flexible organization with subdirectories. These files are the single source of truth for LLM interaction contracts. The `baml_src` directory is not required at deployment time \[12\].
+
+**`baml_client/` (Generated Client Library).** Running `baml generate` compiles the source definitions into a fully typed client library in the target programming language. The generated code includes typed function signatures matching the BAML function definitions, serialization and deserialization logic for all declared types, prompt rendering from template strings with variable binding, provider-specific API communication through declared LLM clients, robust JSON parsing with automatic repair of malformed outputs, and streaming support with partial type generation. The generated client is not intended for manual editing; it is regenerated whenever source definitions change \[8\].
+
+**Generator Configuration.** A generator block in BAML files configures code generation, specifying the target language via `output_type`, the output directory, client mode (sync or async), and the runtime version matching the installed BAML package \[8\].
+
+**Compilation Pipeline.** The BAML compiler, built in Rust, parses `.baml` files, validates type consistency and function signatures, resolves template string references, and emits language-specific client code. This compile step catches type mismatches, missing fields, and invalid references before runtime \[1\].
+
+**High-Level and Modular APIs.** The generated client provides both a high-level API where everything from prompt rendering to response parsing is handled automatically, and a low-level modular API exposing `b.request` (HTTP request generation), `b.parse` (response parsing), and streaming equivalents for custom integration patterns such as OpenAI Batch API workflows \[13\].
+
+## Key Features
+
+**Streaming with Partial Types.** BAML supports streaming responses from LLMs with partial structured output parsing. As tokens arrive, the generated client provides incrementally populated typed objects where class fields become nullable by default. Semantic streaming attributes provide fine-grained control: `@stream.done` ensures fields stream only when complete, `@stream.not_null` ensures containing objects stream only when the annotated field has a value, and `@stream.with_state` wraps fields in `StreamState` metadata tracking completion status (`incomplete` or `complete`). Number fields are only streamed when the LLM completes them, never as intermediate values. All languages support `get_final_response()` to retrieve the fully validated type after streaming \[14\].
+
+**Multi-Modal Input.** Functions can accept images, audio files, PDFs, and video as inputs alongside text. Each media type supports creation from URLs or base64-encoded data. The `media_url_handler` configuration controls URL resolution with options including `send_url`, `send_base64`, and `send_base64_unless_google_url` for provider-optimized handling. PDF inputs currently require base64 encoding and are supported by providers including Gemini and Vertex AI \[15\].
+
+**Concurrent Execution.** Multiple LLM calls can be executed concurrently through language-native patterns: `asyncio.gather()` in Python, `Promise.all()` in TypeScript, goroutines with `sync.WaitGroup` in Go, and thread spawning in Rust. BAML supports advanced parallel patterns including fastest-wins racing (launching multiple provider requests and cancelling slower operations), timeout management, and batch processing with cancellation across remaining batches \[16\].
+
+**Error Handling.** BAML provides a structured exception hierarchy rooted in `BamlError`. `BamlInvalidArgumentError` covers argument validation failures. `BamlClientError` and `BamlClientHttpError` handle provider communication failures with status code tracking. `BamlClientFinishReasonError` captures LLM finish reason violations. `BamlValidationError` fires when responses cannot be parsed into declared schemas, providing `raw_output`, `prompt`, and `detailed_message` for debugging. `BamlAbortError` signals cancelled operations. For persistent parsing issues, an LLM Fixup pattern is recommended where a dedicated function asks the LLM to repair malformed data \[17\].
+
+**Dynamic Types (TypeBuilder).** The `TypeBuilder` runtime API enables programmatic type construction for scenarios where output schemas change at runtime. Types marked with `@@dynamic` can have enum values or class properties added dynamically. TypeBuilder supports primitives, literals, collections, unions, and entirely new types not defined in BAML source. The `add_baml()` method allows writing native BAML code for type modifications, and JSON Schema conversion is supported \[18\].
+
+**Collector (Token Tracking).** The Collector feature enables inspection of BAML function call internals including raw HTTP requests, responses, usage metrics (input tokens, output tokens, cached input tokens), and timing information (`start_time_utc_ms`, `duration_ms`, `time_to_first_token_ms` for streaming). Multiple collectors can be attached to single calls, and reusable collectors accumulate logs across multiple function calls. Custom metadata tagging is supported via the `tags` property \[19\].
+
+**LLM Client Registry.** The `ClientRegistry` enables runtime modification of LLM client configurations without redeploying code. Developers can register new providers via `add_llm_client`, set primary clients via `set_primary()`, and implement fallback chains and round-robin load balancing through composition providers \[20\].
+
+**Prompt Caching.** BAML supports provider prompt caching strategies through message role metadata. The `allowed_role_metadata` client configuration safeguards against forwarding incompatible metadata when switching providers. Cache control is applied per-message using role annotations like `{{ _.role("user", cache_control={"type": "ephemeral"}) }}` \[21\].
+
+**Prompt Optimization.** BAML integrates the GEPA (Genetic Pareto) algorithm from DSPy for automatic prompt refinement. The system optimizes across multiple objectives including accuracy, token usage, and latency. Developers can control scope with flags for trials, evaluations, target functions, and test cases. The optimization pipeline includes customizable BAML functions for improvement proposals, variant merging, and failure analysis \[22\].
+
+**Prompt Transparency.** BAML's design philosophy ensures prompts are never hidden from the developer. The VSCode playground provides full prompt preview with test cases and raw cURL display of actual API requests made to LLM providers \[6\].
+
+## Use Cases
+
+**Classification.** Defining enum types for categories and functions that map input text to those categories, producing type-safe classification results with structured confidence or reasoning fields \[23\].
+
+**PII Extraction.** Declaring class types for personally identifiable information fields such as names, emails, addresses, and phone numbers, then defining functions that extract all PII instances from unstructured text into typed objects \[23\].
+
+**Action Item Extraction.** Parsing meeting transcripts, emails, or documents into structured action item objects with assignees, deadlines, priorities, and descriptions \[23\].
+
+**Retrieval-Augmented Generation (RAG).** Structuring RAG pipeline outputs so that retrieved context and generated answers are returned as typed objects with source attribution fields \[23\].
+
+**Chain-of-Thought Reasoning.** Defining output types that include both a reasoning trace and a final answer, enforcing that the LLM provides its reasoning process in a structured format alongside the conclusion \[23\].
+
+**AI Agents.** Building agent workflows as while loops that call Chat BAML Functions with state. BAML enables describing tool calls and engineering context within the DSL, with the generated client handling structured tool call parsing and execution \[2\]\[24\].
+
+**Tools and Function Calling.** Defining tool schemas as BAML types and using SAP to enable function calling on any model, not just those with native function calling support \[23\].
+
+**Symbol Tuning.** Optimizing enum and class field names in prompts by substituting shorter symbol representations, reducing token usage while maintaining semantic clarity \[23\].
+
+## API Reference
+
+The BAML DSL provides the following primary constructs.
+
+**Type Declarations.**
+
+``` 
+class Resume {
+  name string
+  email string
+  skills string[]
+  experience Experience[]
+}
+
+enum Sentiment {
+  POSITIVE
+  NEGATIVE
+  NEUTRAL
+}
+```
+
+**Function Declarations.**
+
+``` 
+function ExtractResume(resume_text: string) -> Resume {
+  client "openai/gpt-4o"
+  prompt #"
+    Extract resume information from the following text:
+    {{ resume_text }}
+
+    {{ ctx.output_format }}
+  "#
+}
+```
+
+**Named Client Declarations.**
+
+``` 
+client<llm> GPT4 {
+  provider openai
+  options {
+    model "gpt-4o"
+    temperature 0.0
+    base_url "https://custom-endpoint.com/v1"
+    headers {
+      "custom-header" "value"
+    }
+  }
+}
+```
+
+**Template Strings.**
+
+``` 
+template_string ExtractionPreamble() #"
+  You are an expert data extraction assistant.
+  Always return valid structured data matching the requested format.
+"#
+```
+
+**Test Declarations.**
+
+``` 
+test ExtractBasicResume {
+  functions [ExtractResume]
+  args {
+    resume_text "John Doe, john@example.com, Python, 5 years at Acme Corp"
+  }
+  @@assert( {{ this.name == "John Doe" }} )
+}
+```
+
+**Field Annotations.**
+
+``` 
+class User {
+  name string @description("The user's full name")
+  age int @alias("user_age")
+  internal_id string @skip
+  email string @check(valid_email, {{ "@ " in this }})
+  @@dynamic
+}
+```
+
+**Retry and Fallback Strategies.**
+
+``` 
+retry_policy MyRetry {
+  max_retries 3
+  strategy {
+    type exponential_backoff
+  }
+}
+
+client<llm> MyFallback {
+  provider fallback
+  options {
+    strategy [GPT4, Claude, Gemini]
+  }
+}
+
+client<llm> MyRoundRobin {
+  provider round-robin
+  options {
+    strategy [GPT4, Claude]
+  }
+}
+```
+
+**CLI Commands.**
+
+- `baml init` -- Initialize a new BAML project with starter files
+- `baml generate` -- Compile `baml_src/` and produce `baml_client/`
+- `baml-cli test` -- Run declared test cases against LLM providers
+- `baml-cli test --parallel 5` -- Run tests concurrently
+- `baml-cli test -i "FunctionName::"` -- Filter tests by function
+- `baml-cli generate --no-tests` -- Exclude test blocks from production builds
+- `baml serve` -- Start a REST API server exposing BAML functions as HTTP endpoints
+- `baml dev` -- Start development mode with file watching and auto-regeneration
+- `baml fmt` -- Format BAML source files
+
+## Configuration
+
+**LLM Provider Configuration.** Each provider is configured through a client declaration specifying the provider name, model, and provider-specific options (temperature, max tokens, API base URL, timeout, headers). API keys are sourced from environment variables. Shorthand syntax allows inline provider/model selection without a separate client block \[7\].
+
+**Multi-Provider Setup.** Multiple clients can be declared for different providers or model variants. Functions can reference specific clients, use fallback chains for automatic failover, or round-robin strategies for load balancing. The Client Registry enables runtime provider switching without code changes \[20\].
+
+**Project Configuration.** A generator block in BAML source identifies the target language for code generation, output directory paths, client mode (sync/async), and runtime version. The `baml_src` directory must be named exactly `baml_src` for tooling compatibility but can be positioned anywhere in the project \[8\]\[12\].
+
+**Environment Variables.** Provider API keys and environment-specific settings are configured through environment variables (e.g., `OPENAI_API_KEY`, `ANTHROPIC_API_KEY`), keeping secrets out of version-controlled BAML source files \[1\].
+
+**Media URL Handling.** The `media_url_handler` configuration controls how media URLs are resolved for different providers, with options for sending URLs directly, converting to base64, or conditional handling for Google-compatible URLs \[15\].
+
+## Integration Patterns
+
+**Direct Client Usage.** The generated `baml_client` is imported directly into application code and called as typed functions. Input parameters and return values are fully typed according to the BAML definitions \[1\].
+
+``` python
+from baml_client import b
+from baml_client.types import Resume
+
+result = b.ExtractResume("John Doe, john@example.com, Python developer")
+# result is a fully typed Resume object
+print(result.name)   # "John Doe"
+print(result.skills) # ["Python"]
+```
+
+**REST API Deployment.** Running `baml serve` exposes all declared functions as HTTP endpoints with OpenAPI documentation, enabling language-agnostic integration and microservice deployment patterns \[11\].
+
+**React/Next.js Integration.** BAML provides auto-generated React hooks for streaming structured data into frontend applications, with typed input/output/data types for type-safe UI components \[5\].
+
+**Modular API Integration.** The low-level API exposes `b.request` for HTTP request generation and `b.parse` for response parsing, enabling custom HTTP client usage, request interception, custom authentication flows, and batch API patterns \[13\].
+
+**Observability with Boundary Cloud.** BoundaryML offers Boundary Cloud as an observability platform for monitoring BAML function calls, tracking latency, inspecting prompts and responses, and analyzing extraction accuracy across production traffic \[1\].
+
+## Examples
+
+**Basic Classification (Python).**
+
+Given a BAML function `ClassifySentiment(text: string) -> Sentiment`, the generated Python client is used as follows:
+
+``` python
+from baml_client import b
+
+result = b.ClassifySentiment("This product is excellent and exceeded my expectations")
+# result is a typed Sentiment enum value: Sentiment.POSITIVE
+```
+
+**Structured Extraction with Streaming (TypeScript).**
+
+``` typescript
+import { b } from './baml_client';
+
+const stream = b.stream.ExtractResume({ raw_text: documentText });
+
+for await (const partial of stream) {
+  // partial is an incrementally populated Resume object
+  console.log(partial.name, partial.skills);
+}
+
+const final = await stream.getFinalResponse();
+// final is a fully validated Resume object
+```
+
+**Multi-Modal Input.**
+
+BAML functions can accept image inputs for tasks like document extraction:
+
+``` 
+function ExtractInvoice(invoice_image: image) -> Invoice {
+  client "anthropic/claude-sonnet-4-20250514"
+  prompt #"
+    Extract all invoice fields from this image:
+    {{ invoice_image }}
+
+    {{ ctx.output_format }}
+  "#
+}
+```
+
+**Dynamic Types at Runtime (Python).**
+
+``` python
+from baml_client import b
+from baml_client.type_builder import TypeBuilder
+
+tb = TypeBuilder()
+tb.Category.add_value("SPORTS")
+tb.Category.add_value("TECHNOLOGY")
+tb.Category.add_value("POLITICS")
+
+result = b.ClassifyArticle("SpaceX launches new rocket",
+    baml_options={"tb": tb})
+```
+
+**Collector for Token Tracking (Python).**
+
+``` python
+from baml_client import b
+from baml_client.collector import Collector
+
+collector = Collector(name="my-tracker")
+result = b.ExtractResume("...", baml_options={"collector": collector})
+print(collector.last.usage)  # input_tokens, output_tokens, cached_input_tokens
+print(collector.last.timing) # start_time_utc_ms, duration_ms
+```
+
+**Concurrent Calls with Cancellation (TypeScript).**
+
+``` typescript
+import { b } from './baml_client';
+
+const controller = new AbortController();
+
+const results = await Promise.all([
+  b.ClassifyMessage("message1", { signal: controller.signal }),
+  b.ClassifyMessage("message2", { signal: controller.signal }),
+  b.ClassifyMessage("message3", { signal: controller.signal }),
+]);
+```
+
+## Limitations
+
+- Generated client code must be regenerated whenever BAML source definitions change, adding a build step to the development workflow
+- The DSL introduces a learning curve separate from general-purpose programming languages
+- Provider-specific features (native function calling, tool use, structured output modes) are abstracted, which may limit access to provider-specific optimizations in edge cases
+- Runtime type validation depends on LLM output quality; malformed responses that do not match the declared schema produce parse errors that must be handled by the application
+- Boundary Cloud observability is a separate hosted service, not included in the open-source distribution
+- PDF inputs must be provided as base64 data; URL-based PDF inputs are not currently supported
+- Ruby does not currently support async/concurrent calls
+- Prompt optimization is limited to descriptions and aliases; template string and compound workflow optimization are not yet supported
+- OpenAPI does not currently support dynamic types (TypeBuilder)
+
+## Changelog
+
+BAML is under active development with frequent releases. Notable recent versions include:
+
+- **0.219.0** (2026-02-12): PDF handling fixes in `baml-cli serve`, cancel/notify support, enhanced `build_request` across CFFI, Go, and Rust
+- **0.218.0** (2026-01-22): `BamlError` base class with improved error hierarchy, Go serde decoding fixes for dynamic types, NDJSON streaming format handling in React
+- **0.217.0** (2026-01-10): Native Rust SDK, `@description` wiring to Pydantic models, media type matching via file extension heuristics
+- **0.216.0** (2025-12-31): `client` option in `BamlCallOptions`, AWS Bedrock IRSA region handling fixes
+- **0.215.0** (2025-12-18): Prompt optimization visualizer, prompt search, TypeScript x86 Alpine and ARM64 Linux support, parser performance improvements
+- **0.214.0** (2025-11-24): Static control flow visualizer, `toon` Jinja filter for token-efficient serialization
+- **0.212.0** (2025-10-27): Configurable timeouts, `media_url_resolver`, block-level `@@description`, type narrowing for instanceof checks
+
+The full project changelog and release notes are maintained on the GitHub repository at [github.com/BoundaryML/baml/releases](https://github.com/BoundaryML/baml/releases) \[25\].
+
+## Citations
+
+- \[1\] BAML Documentation - Welcome. BoundaryML. Available at: <https://docs.boundaryml.com/home>
+- \[2\] GitHub - BoundaryML/baml. Available at: <https://github.com/BoundaryML/baml>
+- \[3\] Why BAML? BoundaryML. Available at: <https://docs.boundaryml.com/guide/introduction/why-baml>
+- \[4\] BAML Reference. BoundaryML. Available at: <https://docs.boundaryml.com/ref>
+- \[5\] BAML Reference - React/Next.js Integration. BoundaryML. Available at: <https://docs.boundaryml.com/ref>
+- \[6\] Prompting with BAML. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-basics/prompting-with-baml>
+- \[7\] Switching LLMs. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-basics/switching-llms>
+- \[8\] What's baml_client. BoundaryML. Available at: <https://docs.boundaryml.com/guide/introduction/baml_client>
+- \[9\] Testing Functions. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-basics/testing-functions>
+- \[10\] Checks and Asserts. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-advanced/checks-and-asserts>
+- \[11\] BAML CLI Reference. BoundaryML. Available at: <https://docs.boundaryml.com/ref>
+- \[12\] What's the baml_src folder. BoundaryML. Available at: <https://docs.boundaryml.com/guide/introduction/baml_src>
+- \[13\] Modular API. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-advanced/modular-api>
+- \[14\] Streaming. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-basics/streaming>
+- \[15\] Multi-Modal (Images / Audio). BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-basics/multi-modal>
+- \[16\] Concurrent Calls. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-basics/concurrent-calls>
+- \[17\] Error Handling. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-basics/error-handling>
+- \[18\] Dynamic Types. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-advanced/dynamic-types>
+- \[19\] Collector (Track Tokens). BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-advanced/collector-track-tokens>
+- \[20\] LLM Client Registry. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-advanced/llm-client-registry>
+- \[21\] Prompt Caching / Message Role Metadata. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-advanced/prompt-caching-message-role-metadata>
+- \[22\] Prompt Optimization. BoundaryML. Available at: <https://docs.boundaryml.com/guide/baml-advanced/prompt-optimization>
+- \[23\] BAML Examples. BoundaryML. Available at: <https://docs.boundaryml.com/examples>
+- \[24\] AI Agents Need a New Syntax. BoundaryML Blog. Available at: <https://boundaryml.com/blog/ai-agents-need-new-syntax>
+- \[25\] BAML Changelog. BoundaryML. Available at: <https://github.com/BoundaryML/baml/releases>
+
+# Mem0
+
+> Universal memory layer for AI agents with persistent personalized memory capabilities
+
+| Field       | Value                                             |
+|-------------|---------------------------------------------------|
+| Name        | Mem0                                              |
+| Group       | Memory Systems                                    |
+| Type        | API/SDK                                           |
+| Open Source | yes                                               |
+| GitHub      | [mem0ai/mem0](https://github.com/mem0ai/mem0)     |
+| Stars       | 48695                                             |
+| Docs        | [docs.mem0.ai](https://docs.mem0.ai/introduction) |
+
+## Overview
+
+Mem0 is a universal, self-improving memory layer for Large Language Model (LLM) applications. It provides persistent memory infrastructure that enables AI agents to retain and learn from interactions over time, moving beyond stateless request-response patterns. The platform automatically extracts key facts from conversations, resolves conflicts with existing memories, and stores them for semantic retrieval \[1\].
+
+Mem0 is available in three deployment models \[1\]:
+
+- **Mem0 Platform**: Fully managed service with production-scale infrastructure, SOC 2 Type II compliance, and built-in graph services, vector stores, and rerankers
+- **Mem0 Open Source**: Self-hosted option providing full control over data, deployment, and customization with no vendor lock-in
+- **OpenMemory**: Workspace-focused product for teams collaborating across agents and projects
+
+The platform integrates with 20+ AI frameworks including LangChain, CrewAI, Vercel AI SDK, AutoGen, LlamaIndex, and LangGraph \[8\].
+
+## Core Concepts
+
+### Memory Types
+
+Mem0 organizes memory into four hierarchical layers \[5\]:
+
+- **Conversation Memory**: In-flight messages within a single turn, including tool outputs and intermediate calculations. Expires after the current turn completes
+- **Session Memory**: Short-lived facts lasting minutes to hours, ideal for multi-step workflows like onboarding or debugging. Scoped by `session_id`
+- **User Memory**: Long-lived knowledge tied to a person, account, or workspace. Persists weeks to indefinitely across sessions. Scoped by `user_id`
+- **Organizational Memory**: Shared context globally configured for multiple agents or teams, containing FAQs, product catalogs, and policies
+
+The system captures details at the conversation layer and **promotes** relevant information upward based on identifiers. During retrieval, the pipeline ranks results from user memories first, followed by session notes, then raw history \[5\].
+
+### Memory Processing Pipeline
+
+When memories are added, Mem0 follows a three-stage pipeline \[6\]:
+
+1.  **Information Extraction**: An LLM identifies key facts, decisions, and preferences from the conversation
+2.  **Conflict Resolution**: The system checks existing memories for duplicates or contradictions, ensuring the latest truth wins
+3.  **Storage**: Memories are stored in vector storage (plus optional graph storage) for retrieval
+
+### Graph Memory
+
+Graph Memory augments the standard vector search by automatically establishing connections between entities in stored data. When enabled, the system extracts entities (people, locations, jobs) and determines their relationships \[4\]:
+
+- Vector search returns top semantic matches with optional reranking
+- Graph relations are returned alongside vector results to provide additional context
+- Entity relationships include source, target, relationship type, and confidence scores
+
+Graph memory is enabled per-call with `enable_graph=True` or globally at the project level \[4\].
+
+### Search Pipeline
+
+Memory retrieval follows four stages \[7\]:
+
+1.  **Query Processing**: Natural-language questions are cleaned and enriched for embedding search
+2.  **Vector Search**: Embeddings locate closest memories via cosine similarity
+3.  **Filtering and Reranking**: Logical filters (AND/OR, comparison operators) narrow candidates; optional rerankers refine ordering
+4.  **Results Delivery**: Formatted memories with metadata, timestamps, and relevance scores are returned
+
+## Installation
+
+### Platform (Hosted)
+
+``` bash
+# Python
+pip install mem0ai
+
+# Node.js
+npm install mem0ai
+```
+
+Initialize with your API key from [app.mem0.ai](https://app.mem0.ai):
+
+``` python
+from mem0 import MemoryClient
+
+client = MemoryClient(api_key="your-api-key")
+```
+
+### Open Source (Self-Hosted)
+
+``` bash
+pip install mem0ai
+```
+
+``` python
+from mem0 import Memory
+
+m = Memory()  # Uses defaults: OpenAI gpt-4.1-nano, text-embedding-3-small, local Qdrant
+```
+
+Requires Python 3.10+ and an OpenAI API key (for default configuration). Alternative LLM providers (Ollama, Anthropic, Azure OpenAI) and vector stores are configurable \[3\].
+
+### Default Open Source Components
+
+| Component           | Default                                         |
+|---------------------|-------------------------------------------------|
+| LLM                 | OpenAI gpt-4.1-nano                             |
+| Embeddings          | OpenAI text-embedding-3-small (1536 dimensions) |
+| Vector Storage      | Local Qdrant at `/tmp/qdrant`                   |
+| History Persistence | SQLite at `~/.mem0/history.db`                  |
+| Reranking           | Disabled                                        |
+
+## Architecture
+
+Mem0's architecture consists of a memory processing engine layered over configurable storage backends:
+
+``` 
+┌───────────────────────────────────────────┐
+│             Application Layer             │
+│   (Python SDK / JS SDK / REST API)        │
+├───────────────────────────────────────────┤
+│           Memory Processing Engine        │
+│  ┌─────────┐ ┌───────────┐ ┌──────────┐  │
+│  │ Extract  │ │ Conflict  │ │  Store   │  │
+│  │  Facts   │→│ Resolve   │→│  Memory  │  │
+│  └─────────┘ └───────────┘ └──────────┘  │
+├───────────────────────────────────────────┤
+│            Storage Backends               │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐  │
+│  │  Vector  │ │  Graph   │ │ History  │  │
+│  │  Store   │ │  Store   │ │   DB     │  │
+│  │ (Qdrant) │ │ (Neo4j)  │ │(SQLite)  │  │
+│  └──────────┘ └──────────┘ └──────────┘  │
+├───────────────────────────────────────────┤
+│           LLM + Embedder + Reranker       │
+└───────────────────────────────────────────┘
+```
+
+The Platform version manages all infrastructure components (vector stores, graph services, rerankers) as a hosted service. The Open Source version requires users to configure and run each component \[2\]\[3\].
+
+## Key Features
+
+- **Automatic Memory Extraction**: LLM-powered extraction of key facts, preferences, and decisions from conversations with conflict resolution against existing memories
+- **Semantic Search**: Natural language queries with cosine similarity matching, optional reranking, and configurable similarity thresholds
+- **Graph Memory**: Relationship-aware recall that extracts entities and their connections, returning graph relations alongside vector search results
+- **Four Memory Layers**: Conversation, session, user, and organizational memory with automatic promotion and hierarchical retrieval
+- **Metadata Filtering**: JSON-based logical filters (AND/OR, comparison operators) for date ranges, categories, and custom metadata
+- **Multi-Framework Integration**: Native support for LangChain, CrewAI, Vercel AI SDK, AutoGen, LlamaIndex, LangGraph, and 15+ other frameworks
+- **MCP Support**: Model Context Protocol (MCP) server for universal AI client connectivity
+- **Async-by-Default**: Asynchronous client support since v1.0.0 for high-throughput applications
+- **Reranking**: Configurable reranker support (Cohere, Zero Entropy) for improved retrieval precision
+- **Multimodal Support**: Memory operations supporting multiple content modalities
+- **Custom Categories**: User-defined categorization for organizing and filtering memories
+- **Webhook Integrations**: Event-driven notifications for memory operations
+- **Enterprise Controls**: SOC 2 Type II compliance, GDPR adherence, audit logs, and workspace governance (Platform)
+
+## Use Cases
+
+- **Personal AI Assistants**: Building agents that remember user preferences, dietary restrictions, travel plans, and conversation history across sessions
+- **Customer Support**: Agents accumulating institutional knowledge and tracking customer histories to avoid repetitive questions
+- **Multi-Agent Coordination**: Shared organizational memory enabling teams of agents to access consistent context
+- **Onboarding Workflows**: Session memory tracking multi-step processes with bounded timeframes
+- **Recommendation Systems**: Storing and retrieving user preferences for personalized suggestions (movies, restaurants, products)
+- **Voice Agents**: Integration with LiveKit, ElevenLabs, and Pipecat for conversational AI with persistent memory
+- **RAG Enhancement**: Augmenting Retrieval-Augmented Generation (RAG) pipelines with persistent user context
+
+## API Reference
+
+### Add Memory
+
+``` python
+from mem0 import MemoryClient
+
+client = MemoryClient(api_key="your-api-key")
+
+messages = [
+    {"role": "user", "content": "I'm planning a trip to Tokyo next month."},
+    {"role": "assistant", "content": "Great! I'll remember that for future suggestions."}
+]
+
+# Platform
+result = client.add(messages=messages, user_id="alice")
+
+# With metadata and graph
+result = client.add(
+    messages=messages,
+    user_id="alice",
+    metadata={"category": "travel"},
+    enable_graph=True,
+)
+```
+
+### Search Memory
+
+``` python
+# Basic search
+results = client.search("What do you know about me?", filters={"user_id": "alice"})
+
+# With advanced filters (Platform)
+results = client.search(
+    "hotel preferences",
+    filters={
+        "AND": [
+            {"user_id": "alice"},
+            {"categories": {"contains": "travel"}},
+        ]
+    },
+)
+
+# Open Source
+from mem0 import Memory
+m = Memory()
+results = m.search("hotel preferences", user_id="alice")
+```
+
+### Update Memory
+
+``` python
+client.update(memory_id="mem-id-123", data="Updated preference: boutique hotels in Shibuya")
+```
+
+### Delete Memory
+
+``` python
+# Delete specific memory
+client.delete(memory_id="mem-id-123")
+
+# Delete all memories for a user
+client.delete_all(filters={"user_id": "alice"})
+```
+
+### Get All Memories
+
+``` python
+# Platform
+memories = client.get_all(filters={"AND": [{"user_id": "alice"}]})
+
+# Open Source
+memories = m.get_all(user_id="alice")
+```
+
+### REST API
+
+``` bash
+# Add memory
+curl -X POST https://api.mem0.ai/v1/memories/add \
+  -H "Authorization: Token your-api-key" \
+  -H "Content-Type: application/json" \
+  -d '{"messages": [{"role": "user", "content": "I love sushi"}], "user_id": "alice"}'
+
+# Search memory
+curl -X POST https://api.mem0.ai/v1/memories/search \
+  -H "Authorization: Token your-api-key" \
+  -H "Content-Type: application/json" \
+  -d '{"query": "food preferences", "filters": {"user_id": "alice"}}'
+```
+
+## Configuration
+
+### Open Source Configuration
+
+Mem0 OSS uses a dictionary-based configuration system with four configurable components: vector stores, LLMs, embedders, and rerankers \[9\]:
+
+``` python
+from mem0 import Memory
+
+config = {
+    "llm": {
+        "provider": "openai",
+        "config": {
+            "model": "gpt-4.1-mini",
+            "temperature": 0.2,
+        }
+    },
+    "embedder": {
+        "provider": "ollama",
+        "config": {
+            "model": "nomic-embed-text",
+        }
+    },
+    "vector_store": {
+        "provider": "qdrant",
+        "config": {
+            "collection_name": "my_memories",
+            "host": "localhost",
+            "port": 6333,
+        }
+    },
+}
+
+m = Memory.from_config(config)
+# Or from file: m = Memory.from_config_file("config.yaml")
+```
+
+### Supported Providers
+
+| Component    | Providers                                             |
+|--------------|-------------------------------------------------------|
+| LLM          | OpenAI, Azure OpenAI, Anthropic, Ollama, local models |
+| Embedder     | OpenAI, Vertex AI, Ollama, Cohere                     |
+| Vector Store | Qdrant, PostgreSQL (pgvector), managed alternatives   |
+| Graph Store  | Neo4j, Memgraph                                       |
+| Reranker     | Cohere, Zero Entropy                                  |
+
+### Configuration Best Practices
+
+- Keep extraction temperatures at 0.2 or below for deterministic memory processing
+- Limit reranker `top_k` to 10-20 results
+- Name vector collections explicitly in production for tenant isolation
+- Store API credentials in environment variables \[9\]
+
+### Platform Configuration
+
+The Platform manages infrastructure automatically. Configuration is done at the project level:
+
+``` python
+# Enable graph memory for all operations
+client.project.update(enable_graph=True)
+```
+
+## Integration Patterns
+
+### LangChain Integration
+
+``` python
+from langchain.memory import Mem0Memory
+
+memory = Mem0Memory(api_key="your-key", user_id="alice")
+# Use as LangChain memory backend
+```
+
+### CrewAI Integration
+
+Mem0 serves as a shared memory backend for CrewAI agent crews, enabling persistent context across collaborative agent interactions \[8\].
+
+### MCP Integration
+
+Mem0 provides an MCP server for universal AI client connectivity, enabling any MCP-compatible client to manage memory autonomously \[2\].
+
+### Vercel AI SDK
+
+Integration with the Vercel AI SDK enables memory-powered applications in Next.js and other JavaScript frameworks \[8\].
+
+## Examples
+
+### Personalized Assistant with Memory
+
+``` python
+from mem0 import MemoryClient
+
+client = MemoryClient(api_key="your-api-key")
+
+# Store user preferences from conversation
+messages = [
+    {"role": "user", "content": "I'm vegetarian and allergic to nuts."},
+    {"role": "assistant", "content": "I've noted your dietary preferences."},
+    {"role": "user", "content": "I prefer boutique hotels over large chains."},
+    {"role": "assistant", "content": "Got it! Boutique hotels for your travels."},
+]
+client.add(messages=messages, user_id="alice")
+
+# Later, retrieve relevant context
+results = client.search("restaurant suggestions", filters={"user_id": "alice"})
+# Returns: memories about vegetarian preference and nut allergy
+```
+
+### Graph-Enhanced Memory
+
+``` python
+messages = [
+    {"role": "user", "content": "My name is Joseph. I'm from Seattle and work as a software engineer."},
+]
+client.add(messages, user_id="joseph", enable_graph=True)
+
+# Search returns both vector matches and entity relationships
+results = client.search("what is my name?", user_id="joseph", enable_graph=True)
+# Results include relations: joseph -> lives_in -> Seattle, joseph -> works_as -> software_engineer
+```
+
+### Multi-Session Context
+
+``` python
+# Session 1: Trip planning
+client.add(
+    [{"role": "user", "content": "I want to visit Tokyo in March."}],
+    user_id="alex",
+    session_id="trip-planning-2025",
+)
+
+# Session 2: Different context, same user memory
+results = client.search(
+    "Any travel plans?",
+    user_id="alex",
+)
+# Returns Tokyo trip memory from previous session
+```
+
+## Limitations
+
+- **OpenAI dependency**: Default open source configuration requires an OpenAI API key; alternative providers require explicit configuration \[3\]
+- **Async processing for graph**: Adding memories with graph enabled is asynchronous; memories may not be immediately available for retrieval \[4\]
+- **Inference mode mixing**: Using both `infer=True` and `infer=False` for identical content creates duplicate memories \[6\]
+- **Date filtering**: Date range filters are available only on the Platform, not in the open source version \[7\]
+- **Security consideration**: The retrieval-by-design architecture means stored content is accessible by any query scoped to the same identifiers; avoid storing unencrypted secrets or personally identifiable information \[5\]
+- **Graph memory overhead**: Graph processing introduces additional latency, though generally acceptable for most use cases \[4\]
+- **Reranking disabled by default**: Must be explicitly configured for improved retrieval precision \[3\]
+
+## Changelog
+
+- **v1.0.0**: Major release shipping rerankers, async-by-default behavior, Azure OpenAI support, and breaking API changes \[2\]
+- **Pre-v1.0**: Initial releases establishing core memory operations, vector search, and Python/JavaScript SDK support
+- **Graph Memory**: Added relationship-aware recall with Neo4j and Memgraph support
+- **OpenMemory**: Introduced workspace-based memory for multi-agent team collaboration
+- **MCP Support**: Added Model Context Protocol server for universal AI client integration
+- **Multimodal**: Added support for multimodal memory content
+
+## Citations
+
+- \[1\] Welcome to Mem0 - https://docs.mem0.ai/introduction
+- \[2\] Platform Overview - https://docs.mem0.ai/platform/overview
+- \[3\] Open Source Overview - https://docs.mem0.ai/open-source/overview
+- \[4\] Graph Memory - https://docs.mem0.ai/platform/features/graph-memory
+- \[5\] Memory Types - https://docs.mem0.ai/core-concepts/memory-types
+- \[6\] Add Memory - https://docs.mem0.ai/core-concepts/memory-operations/add
+- \[7\] Search Memory - https://docs.mem0.ai/core-concepts/memory-operations/search
+- \[8\] Integrations - https://docs.mem0.ai/integrations
+- \[9\] Configuration - https://docs.mem0.ai/open-source/configuration
+
+# Zep
+
+> Context engineering platform with temporal knowledge graphs and agent memory for personalization
+
+| Field       | Value                                       |
+|-------------|---------------------------------------------|
+| Name        | Zep                                         |
+| Group       | Memory Systems                              |
+| Type        | API/SDK                                     |
+| Open Source | no                                          |
+| GitHub      | N/A                                         |
+| Stars       | N/A                                         |
+| Docs        | [help.getzep.com](https://help.getzep.com/) |
+
+## Overview
+
+Zep is a context engineering platform that systematically assembles personalized context — user preferences, traits, and business data — for reliable agent applications. It combines agent memory, Graph Retrieval-Augmented Generation (RAG), and context assembly capabilities to deliver comprehensive personalized context that reduces hallucinations and improves accuracy \[1\].
+
+The platform's distinguishing feature is its **temporal knowledge graph**, where nodes represent entities and edges represent facts and relationships that update dynamically. Facts carry temporal validity markers, tracking when information became valid and when it was invalidated by newer data \[2\].
+
+Zep provides SDKs for Python, TypeScript, and Go, and integrates with agent frameworks including LangGraph, AutoGen, and CrewAI. The platform includes enterprise features such as HIPAA compliance, role-based access control (RBAC), and audit logging \[1\].
+
+Zep's underlying graph technology is built on **Graphiti**, an open-source temporal knowledge graph framework (23,000+ GitHub stars) maintained by the Zep team \[1\].
+
+## Core Concepts
+
+### Temporal Knowledge Graphs
+
+Zep's knowledge graph is its unified knowledge store. Nodes represent entities (people, places, concepts) and edges represent facts and relationships between them. A key temporal feature is **fact invalidation**: when new information supersedes prior knowledge, the system records when the old fact became invalid on that fact's edge, preserving the full temporal history \[2\].
+
+### Graph Types
+
+Zep supports two graph structures \[2\]:
+
+- **Graph**: An arbitrary knowledge graph for storing current knowledge about objects or systems
+- **User Graph**: A specialized graph for preserving personalized context specific to individual application users. All messages added to any thread of that user are ingested into the user's graph by default
+
+### Users and Threads
+
+**Users** represent individual application users, each with their own knowledge graph. Users should be created with at minimum a first name, ideally including last name and email for accurate entity identification in the graph \[3\].
+
+**Threads** represent conversation threads belonging to a user. Messages added to any thread are automatically ingested into that user's knowledge graph. Threads are identified by unique IDs and associated with a user ID \[3\].
+
+### Context Blocks
+
+A **Context Block** is an optimized string containing a user summary and facts from the knowledge graph most relevant to the current thread. It includes dates when facts became valid and invalid. Context blocks are retrieved via `thread.get_user_context()` and combine semantic search, full-text search, and breadth-first search for comprehensive retrieval \[2\]\[3\].
+
+### Data Types
+
+Zep ingests multiple data formats \[2\]\[3\]:
+
+- **Messages**: Chat history with user/assistant roles and timestamps
+- **JSON**: Structured business data (transactions, events, user interactions)
+- **Text**: Unstructured documents, emails, and support tickets
+
+### Context Templates
+
+Custom context templates allow developers to control the structure of retrieved context using template variables like `%{user_summary}`, `%{edges limit=10}`, and `%{entities limit=5}`. Templates are created once and referenced by ID when retrieving context \[3\].
+
+## Installation
+
+### Python
+
+``` bash
+pip install zep-cloud
+# or with uv
+uv pip install zep-cloud
+```
+
+### TypeScript
+
+``` bash
+npm install @getzep/zep-cloud
+# or
+yarn add @getzep/zep-cloud
+# or
+pnpm install @getzep/zep-cloud
+```
+
+### Go
+
+``` bash
+go get github.com/getzep/zep-go/v3
+```
+
+### Client Initialization
+
+``` python
+import os
+from zep_cloud.client import Zep
+
+client = Zep(api_key=os.environ.get("ZEP_API_KEY"))
+```
+
+API keys are obtained from the Zep dashboard at [app.getzep.com](https://app.getzep.com/) \[3\].
+
+## Architecture
+
+Zep's architecture centers on a temporal knowledge graph that ingests data from multiple sources and assembles personalized context for agent consumption:
+
+``` 
+┌─────────────────────────────────────────────┐
+│              Data Sources                    │
+│  ┌──────────┐ ┌──────────┐ ┌─────────────┐  │
+│  │  Chat    │ │ Business │ │  Documents  │  │
+│  │ Messages │ │   Data   │ │  & Emails   │  │
+│  │          │ │  (JSON)  │ │   (Text)    │  │
+│  └────┬─────┘ └────┬─────┘ └──────┬──────┘  │
+└───────┼─────────────┼──────────────┼─────────┘
+        │             │              │
+        v             v              v
+┌─────────────────────────────────────────────┐
+│         Temporal Knowledge Graph             │
+│  ┌─────────────────────────────────────┐     │
+│  │  Nodes (entities) ←→ Edges (facts)  │     │
+│  │  + temporal validity markers         │     │
+│  │  + fact invalidation tracking        │     │
+│  └─────────────────────────────────────┘     │
+│  ┌─────────┐  ┌────────────┐                 │
+│  │  User   │  │  General   │                 │
+│  │ Graphs  │  │  Graphs    │                 │
+│  └─────────┘  └────────────┘                 │
+└────────────────────┬────────────────────────┘
+                     │
+                     v
+┌─────────────────────────────────────────────┐
+│          Context Assembly Engine             │
+│  Semantic + Full-text + BFS Search           │
+│  User Summaries + Relevant Facts             │
+│  Temporal Validity Markers                   │
+│  Custom Context Templates                    │
+└────────────────────┬────────────────────────┘
+                     │
+                     v
+┌─────────────────────────────────────────────┐
+│         Context Block (< 200ms)              │
+│  → System Prompt or Tool Message             │
+└─────────────────────────────────────────────┘
+```
+
+The platform retrieves context in sub-200ms latency, optimizing for **high recall over precision** — preferring inclusion of more results even if some are less relevant \[3\].
+
+## Key Features
+
+- **Temporal Knowledge Graphs**: Dynamic graph with nodes (entities) and edges (facts) that track temporal validity, including when facts become valid and invalid
+- **Automatic Fact Extraction**: Ingested messages and data are automatically processed to extract entities, relationships, and facts into the knowledge graph
+- **Fact Invalidation**: When new information supersedes prior knowledge, the old fact's invalidation time is preserved on the graph edge
+- **Context Assembly**: Optimized context blocks combining user summaries and relevant facts with temporal validity markers, retrieved in sub-200ms
+- **Custom Context Templates**: Configurable templates for controlling context structure using variables like `%{user_summary}`, `%{edges}`, `%{entities}`
+- **Multi-Language SDKs**: Native SDKs for Python, TypeScript, and Go with consistent APIs
+- **User Graphs**: Per-user knowledge graphs that automatically ingest all thread messages for personalization
+- **Business Data Ingestion**: Support for JSON, text, and message data types representing transactions, events, documents, and emails
+- **Batch Ingestion**: Bulk data loading for backfilling existing users and conversations
+- **Graph RAG**: Graph-based retrieval augmented generation combining semantic search, full-text search, and breadth-first graph search
+- **Agentic Tools**: Tool definitions enabling agents to directly query user knowledge graphs
+- **Custom Entity and Edge Types**: Pydantic-like class definitions for specialized graph structures
+- **HIPAA Compliance**: Enterprise-grade healthcare data compliance
+- **RBAC and Audit Logging**: Role-based access control with comprehensive audit trails
+- **Playground**: Web-based environment for testing graph queries and context retrieval
+
+## Use Cases
+
+- **Personalized AI Assistants**: Building agents that remember user preferences, traits, and history across conversations with temporal awareness
+- **Customer Support**: Agents with access to customer interaction history, support tickets, and product knowledge via the knowledge graph
+- **Healthcare Applications**: HIPAA-compliant memory for medical AI assistants tracking patient interactions and preferences
+- **E-Commerce Personalization**: Ingesting purchase history, browsing behavior, and preferences as structured JSON data for recommendation agents
+- **Music and Content Recommendation**: Tracking user listening/viewing behavior and extracting preference patterns through entity relationships
+- **Multi-Agent Systems**: Shared knowledge graphs enabling context continuity across different specialized agents
+- **Enterprise Knowledge Management**: Organizational graphs storing company-wide policies, procedures, and institutional knowledge
+
+## API Reference
+
+### User Management
+
+``` python
+# Create user
+user = client.user.add(
+    user_id="internal_id",
+    email="jane@example.com",
+    first_name="Jane",
+    last_name="Smith",
+)
+
+# Get user
+user = client.user.get(user_id="internal_id")
+```
+
+### Thread Operations
+
+``` python
+import uuid
+from zep_cloud.types import Message
+from datetime import datetime, timezone
+
+# Create thread
+thread_id = uuid.uuid4().hex
+client.thread.create(thread_id=thread_id, user_id=user_id)
+
+# Add messages (include name and RFC3339 timestamp)
+messages = [
+    Message(
+        created_at=datetime.now(timezone.utc).isoformat(),
+        name="Jane Smith",
+        role="user",
+        content="Who was Octavia Butler?",
+    )
+]
+response = client.thread.add_messages(thread_id, messages=messages)
+
+# Add assistant response
+assistant_messages = [
+    Message(
+        created_at=datetime.now(timezone.utc).isoformat(),
+        name="AI Assistant",
+        role="assistant",
+        content="Octavia Butler was an influential American science fiction writer...",
+    )
+]
+client.thread.add_messages(thread_id, messages=assistant_messages)
+```
+
+### Context Retrieval
+
+``` python
+# Default context block
+user_context = client.thread.get_user_context(thread_id=thread_id)
+context_block = user_context.context
+
+# Custom template context
+user_context = client.thread.get_user_context(
+    thread_id=thread_id,
+    template_id="customer-support",
+)
+```
+
+### Graph Data Ingestion
+
+``` python
+import json
+
+# Add structured business data
+event_data = {
+    "user_id": "user123",
+    "user_name": "Jane Smith",
+    "event_type": "song_played",
+    "song_title": "Bohemian Rhapsody",
+    "artist": "Queen",
+    "duration_seconds": 354,
+}
+
+client.graph.add(
+    user_id="user123",
+    type="json",
+    data=json.dumps(event_data),
+)
+```
+
+### Graph Search
+
+``` python
+# Search the knowledge graph
+results = client.graph.search(
+    user_id="user123",
+    query="music preferences",
+)
+```
+
+### Context Templates
+
+``` python
+# Create a custom template
+client.context.create_context_template(
+    template_id="customer-support",
+    template="""# CUSTOMER PROFILE
+%{user_summary}
+
+# RECENT INTERACTIONS
+%{edges limit=10}
+
+# KEY ENTITIES
+%{entities limit=5}""",
+)
+```
+
+## Configuration
+
+### API Key Setup
+
+``` bash
+# Environment variable
+export ZEP_API_KEY=your_api_key_here
+
+# Or in .env file
+ZEP_API_KEY=your_api_key_here
+```
+
+### Context Window Integration
+
+Two recommended approaches for inserting Zep context into LLM calls \[3\]:
+
+1.  **System Prompt Injection**: Append the context block directly to the system prompt, refreshing dynamically on each turn
+2.  **Context Message Approach**: Insert the context block as a tool message after user messages, which enables prompt caching for improved efficiency
+
+### Timestamp Format
+
+All messages should use RFC3339 timestamp format for accurate temporal understanding in the knowledge graph \[3\].
+
+### User Names in Messages
+
+Including user names in messages is critical for accurate graph construction — the system uses names to identify and link entities in the knowledge graph \[3\].
+
+### Backfilling Existing Data
+
+For existing users and conversations, loop through data calling `user.add` and `thread.add_messages`, or use batch processing methods for large-scale ingestion \[3\].
+
+## Integration Patterns
+
+### LangGraph Integration
+
+Zep integrates with LangGraph for building complex agent workflows with persistent memory and knowledge graph access \[1\].
+
+### AutoGen Integration
+
+Multi-agent AutoGen systems can leverage Zep for shared context and persistent memory across agent interactions \[1\].
+
+### CrewAI Integration
+
+CrewAI agent crews can use Zep as a memory backend for maintaining context across collaborative agent tasks \[1\].
+
+### MCP Server
+
+Zep provides a Model Context Protocol (MCP) server and `llms.txt` file for connecting AI coding assistants directly to Zep's documentation and capabilities \[1\].
+
+### Agentic Tools
+
+Zep provides tool definitions that enable agents to directly query user knowledge graphs during conversations, allowing agents to retrieve context autonomously \[2\].
+
+## Examples
+
+### Basic Conversation with Memory
+
+``` python
+import os
+import uuid
+from zep_cloud.client import Zep
+from zep_cloud.types import Message
+from datetime import datetime, timezone
+
+client = Zep(api_key=os.environ["ZEP_API_KEY"])
+
+# Create user
+user = client.user.add(
+    user_id="jane_123",
+    first_name="Jane",
+    last_name="Smith",
+    email="jane@example.com",
+)
+
+# Create thread
+thread_id = uuid.uuid4().hex
+client.thread.create(thread_id=thread_id, user_id="jane_123")
+
+# Add conversation messages
+messages = [
+    Message(
+        created_at=datetime.now(timezone.utc).isoformat(),
+        name="Jane Smith",
+        role="user",
+        content="I'm vegetarian and I love Italian food.",
+    )
+]
+client.thread.add_messages(thread_id, messages=messages)
+
+# Retrieve personalized context for future interactions
+user_context = client.thread.get_user_context(thread_id=thread_id)
+print(user_context.context)
+# Output includes: user summary, dietary preferences, temporal validity dates
+```
+
+### Business Data Ingestion
+
+``` python
+import json
+
+# Ingest purchase history
+purchase = {
+    "user_id": "jane_123",
+    "user_name": "Jane Smith",
+    "event_type": "purchase",
+    "item": "Margherita Pizza Cookbook",
+    "category": "books",
+    "amount": 24.99,
+}
+
+client.graph.add(
+    user_id="jane_123",
+    type="json",
+    data=json.dumps(purchase),
+)
+
+# The knowledge graph now links Jane to Italian cooking interests
+# Future context blocks will include this preference
+```
+
+### Custom Context Template
+
+``` python
+# Define a support-focused template
+client.context.create_context_template(
+    template_id="support-agent",
+    template="""# USER PROFILE
+%{user_summary}
+
+# RELEVANT HISTORY
+%{edges limit=15}
+
+# KEY TOPICS
+%{entities limit=8}""",
+)
+
+# Retrieve context using the template
+ctx = client.thread.get_user_context(
+    thread_id=thread_id,
+    template_id="support-agent",
+)
+
+# Use in LLM system prompt
+system_prompt = f"You are a support agent.\n\n{ctx.context}"
+```
+
+## Limitations
+
+- **Closed source**: Zep is a managed service without a self-hosted open-source option (though Graphiti, the underlying graph framework, is open source)
+- **API-dependent**: All operations require API connectivity to Zep's cloud infrastructure
+- **High recall bias**: The platform optimizes for high recall over precision, which may return less relevant results alongside relevant ones \[3\]
+- **Timestamp requirements**: RFC3339 format timestamps are required for accurate temporal tracking; missing or incorrect timestamps degrade temporal understanding \[3\]
+- **Name dependency**: User names in messages are critical for accurate graph construction; anonymous messages may result in incomplete entity linking \[3\]
+- **Asynchronous graph processing**: Data ingestion into the knowledge graph is asynchronous; recently added data may not be immediately available in context blocks
+- **No offline/local deployment**: Unlike competitors, Zep does not offer a fully self-hosted deployment option
+
+## Changelog
+
+- **v3**: Current major version featuring temporal knowledge graphs, context assembly engine, custom context templates, and Graph RAG
+- **Graphiti**: Open-source temporal knowledge graph framework extracted from Zep's core technology (23,000+ GitHub stars, 2,300+ forks)
+- **MCP Server**: Added Model Context Protocol server for AI coding assistant integration
+- **Mem0 Migration**: Published migration guide for users transitioning from Mem0 to Zep
+- **Multi-language SDKs**: Python, TypeScript, and Go SDKs with consistent API surfaces
+
+## Citations
+
+- \[1\] Welcome to Zep - https://help.getzep.com/overview
+- \[2\] Key Concepts - https://help.getzep.com/concepts
+- \[3\] Quick Start Guide - https://help.getzep.com/quick-start-guide
+
+# Letta
+
+> Platform for building stateful agents with persistent memory that learn and self-improve over time
+
+| Field       | Value                                               |
+|-------------|-----------------------------------------------------|
+| Name        | Letta                                               |
+| Group       | Memory Systems                                      |
+| Type        | API/SDK                                             |
+| Open Source | yes                                                 |
+| GitHub      | [letta-ai/letta](https://github.com/letta-ai/letta) |
+| Stars       | 21392                                               |
+| Docs        | [docs.letta.com](https://docs.letta.com/)           |
+
+## Overview
+
+Letta is a platform for building **stateful agents** that remember, learn, and improve over time. Unlike traditional Large Language Model (LLM) applications that treat each interaction as isolated, Letta agents maintain persistent knowledge across all interactions, forming living memories about themselves, the world they operate in, and the users they interact with.
+
+The platform provides a complete infrastructure for managing agent state, including structured memory blocks, archival storage with semantic search, tool execution, multi-agent coordination through shared memory, and background memory processing via sleep-time agents. Letta is available as a hosted API service, a self-hosted Docker server, and as Letta Code — a memory-first coding agent for the terminal \[1\].
+
+Letta originated from the MemGPT research project, which pioneered the concept of using operating system-inspired memory management techniques (virtual memory, paging) to enable LLMs to manage their own context windows effectively.
+
+## Core Concepts
+
+### Stateful Agents
+
+A stateful agent in Letta manages growing knowledge while maintaining consistent behavior and incorporating new experiences. The system stores all state — memories, user messages, reasoning traces, and tool calls — in a database, ensuring information survives context window limitations. Critical memories are injected into the LLM's active context, while the agent can self-modify its memories through dedicated memory tools \[2\].
+
+### Memory Blocks
+
+Memory blocks are structured sections of the agent's context window that persist across all interactions. They are prepended to prompts in XML-like formatting, making them immediately visible to the LLM without requiring retrieval. Each block has four components \[3\]:
+
+- **Label**: Unique identifier (e.g., `persona`, `human`, `organization`)
+- **Description**: Explains the block's purpose — the primary signal agents use to decide how to read and write to a block
+- **Value**: The actual content stored in the block
+- **Limit**: Character size restriction
+
+Agents autonomously organize information within blocks based on their labels and descriptions. Blocks can be configured as read-only to prevent agent modification while maintaining visibility. The recommended maximum size is under 50,000 characters per block \[5\].
+
+### Archival Memory
+
+Archival memory is a semantically searchable database where agents store facts, knowledge, and information for long-term retrieval. Unlike memory blocks (which are always in-context), archival memory entries exist outside the context window and require active querying through tools \[4\]:
+
+- `archival_memory_insert`: Store new information with optional tags for categorization
+- `archival_memory_search`: Query memories semantically (e.g., searching "artificial memories" returns results about "implanted memories")
+
+Archival memory is agent-immutable by design — agents cannot easily modify or delete entries, though developers retain full control via SDK. It scales to practically unlimited capacity and supports tag-based organization \[4\].
+
+### Context Hierarchy
+
+Letta provides four tiers of context abstractions, with placement strategy based on data scale \[5\]:
+
+- **Memory Blocks**: In-context, editable, for critical information under ~50k characters. Tools: `memory_rethink`, `memory_replace`, `memory_insert`
+- **Files**: Partially in-context (openable/closable), read-only, up to 5MB per file. Tools: `open`, `close`, `semantic_search`, `grep`
+- **Archival Memory**: Out-of-context, read-write, 300-token passages. Tools: `archival_memory_insert`, `archival_memory_search`
+- **External RAG**: Out-of-context, unlimited scale, accessed via custom tools or Model Context Protocol (MCP)
+
+### Shared Memory
+
+Shared memory blocks enable multiple agents to access and modify the same memory simultaneously. When one agent updates a shared block, all connected agents see the change immediately, enabling real-time coordination without explicit agent-to-agent messaging \[6\].
+
+Concurrency safety varies by operation:
+
+- `memory_insert` (appending): concurrent-safe
+- `memory_replace` (targeted edits): mostly safe
+- `memory_rethink` (complete rewrites): unsafe (last-writer-wins)
+
+Best practice is to designate one agent as the "owner" for major edits, with other agents using append-only operations.
+
+### Runs, Steps, and Conversations
+
+Agent invocations are structured as **runs**, where a single run may contain sequential **steps** performing multiple LLM inference passes. **Conversations** enable concurrent messaging threads using the same agent with different users \[2\].
+
+### AgentFile (.af)
+
+AgentFile is an open standard file format for serializing stateful agents into a single portable file. It packages model configuration, message history, system prompt, memory blocks, tool rules, environment variables, and tool definitions. Agents can be exported and imported via the SDK, REST API, or the Agent Development Environment (ADE) \[8\].
+
+## Installation
+
+### Letta API (Hosted)
+
+Set up your API key and install the SDK:
+
+``` bash
+export LETTA_API_KEY='your-api-key-here'
+
+# Python
+pip install letta-client
+
+# TypeScript
+npm install @letta-ai/letta-client
+```
+
+API keys are obtained from [app.letta.com/api-keys](https://app.letta.com/api-keys) \[9\].
+
+### Letta Code (Terminal Agent)
+
+``` bash
+npm install -g @letta-ai/letta-code
+```
+
+Requires Node.js 18+ \[1\].
+
+### Docker (Self-Hosted)
+
+``` bash
+docker run \
+  -v ~/.letta/.persist/pgdata:/var/lib/postgresql/data \
+  -p 8283:8283 \
+  -e OPENAI_API_KEY="your_openai_api_key" \
+  letta/letta:latest
+```
+
+The server runs on port 8283 at `http://localhost:8283/v1`. Use `--env-file .env` for multiple provider keys. Linux users should use `--network host` instead of port mapping \[7\].
+
+For production deployments, enable authentication:
+
+``` bash
+docker run \
+  -v ~/.letta/.persist/pgdata:/var/lib/postgresql/data \
+  -p 8283:8283 \
+  --env-file .env \
+  -e SECURE=true \
+  -e LETTA_SERVER_PASSWORD=yourpassword \
+  letta/letta:latest
+```
+
+## Architecture
+
+Letta's architecture centers on persistent state management for agents:
+
+``` 
+┌──────────────────────────────────────────┐
+│              Letta Platform              │
+│                                          │
+│  ┌─────────────────────────────────┐     │
+│  │           Agent                 │     │
+│  │  ┌───────────┐ ┌────────────┐  │     │
+│  │  │  System   │ │  Memory    │  │     │
+│  │  │  Prompt   │ │  Blocks    │  │     │
+│  │  └───────────┘ └────────────┘  │     │
+│  │  ┌───────────┐ ┌────────────┐  │     │
+│  │  │ Messages  │ │   Tools    │  │     │
+│  │  └───────────┘ └────────────┘  │     │
+│  └─────────────────────────────────┘     │
+│                                          │
+│  ┌──────────┐ ┌──────────┐ ┌─────────┐  │
+│  │ Archival │ │  Files   │ │ External│  │
+│  │ Memory   │ │          │ │   RAG   │  │
+│  │ (Vector) │ │ (Search) │ │  (MCP)  │  │
+│  └──────────┘ └──────────┘ └─────────┘  │
+│                                          │
+│  ┌──────────────────────────────────┐    │
+│  │     PostgreSQL + pgvector        │    │
+│  └──────────────────────────────────┘    │
+└──────────────────────────────────────────┘
+```
+
+All agent state is stored in PostgreSQL with the pgvector extension for semantic search. The system manages the context window by placing memory blocks directly in-context and providing tools for agents to access out-of-context data stores. This approach allows agents to effectively manage unbounded knowledge using a finite context window \[2\]\[7\].
+
+### Sleep-Time Agents
+
+Sleep-time agents are an experimental multi-agent architecture where background agents asynchronously process and consolidate memories. When enabled, the system creates a primary (interactive) agent and a sleep-time agent that shares memory blocks. The sleep-time agent triggers every N steps (default: 5) to reflect on conversation history and derive important insights, writing "learned context" back to shared memory blocks \[10\].
+
+## Key Features
+
+- **Persistent Memory**: All agent state (memories, messages, reasoning, tool calls) stored in a database and survives across sessions
+- **Self-Modifying Memory**: Agents autonomously read, write, and reorganize their own memory blocks using built-in memory tools
+- **Shared Memory Blocks**: Multiple agents access and modify the same memory in real-time for coordination without explicit messaging
+- **Archival Memory**: Semantically searchable long-term storage with tag-based organization and unlimited capacity
+- **Context Hierarchy**: Four-tier system (blocks, files, archival, external RAG) for managing data at different scales
+- **Sleep-Time Compute**: Background agents asynchronously consolidate and refine memories between interactions
+- **Multi-Provider Models**: Support for OpenAI, Anthropic, Google AI, Azure, AWS Bedrock, OpenRouter, and Ollama with hot-swappable models
+- **Tool Ecosystem**: Built-in tools (web search, code interpreter, fetch), custom server tools, MCP tools, and client-side tools
+- **AgentFile (.af)**: Open standard format for serializing and sharing complete stateful agents
+- **Agent Development Environment (ADE)**: Web-based interface for building, testing, and managing agents
+- **Bring Your Own Keys (BYOK)**: Direct billing through your own API provider accounts
+- **Role-Based Access Control (RBAC)**: Granular permissions for production deployments
+
+## Use Cases
+
+- **Personal AI Assistants**: Agents that build deep user profiles over thousands of interactions, remembering preferences, relationships, and conversation history
+- **Customer Support**: Agents that accumulate institutional knowledge, track customer histories, and improve responses based on past resolutions
+- **Coding Agents**: Letta Code provides a memory-first coding agent that remembers your codebase, patterns, and preferences across sessions
+- **Multi-Agent Coordination**: Supervisor/worker patterns where supervisors write tasks to shared memory and workers read and update status
+- **Research Assistants**: Agents maintaining academic literature repositories with semantic cross-referencing in archival memory
+- **Social Media Agents**: Agents tracking tens of thousands of user interactions with persistent memory
+
+## API Reference
+
+### Client Initialization
+
+``` python
+from letta_client import Letta
+
+# Hosted API
+client = Letta(api_key="your-api-key")
+
+# Self-hosted Docker
+client = Letta(base_url="http://localhost:8283")
+```
+
+### Agent Operations
+
+``` python
+# Create agent with memory blocks
+agent = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[
+        {"label": "human", "value": "Name: Alice"},
+        {"label": "persona", "value": "You are a helpful assistant."},
+    ],
+)
+
+# Send message
+response = client.agents.messages.create(
+    agent_id=agent.id,
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+
+# Process response
+for message in response.messages:
+    if hasattr(message, "content"):
+        print(message.content)
+```
+
+### Memory Block Management
+
+``` python
+# Create standalone block
+block = client.blocks.create(
+    label="organization",
+    description="Shared company information",
+    value="Company policies...",
+)
+
+# Attach to agent
+client.agents.blocks.attach(agent_id=agent.id, block_id=block.id)
+
+# Retrieve by label
+block = client.agents.blocks.retrieve(agent_id=agent.id, block_label="persona")
+
+# Update block value
+client.blocks.update(block_id=block.id, value="Updated content")
+```
+
+### Archival Memory
+
+``` python
+# Insert passage
+client.agents.passages.create(
+    agent_id=agent.id,
+    text="Important fact to remember",
+)
+
+# Search semantically
+results = client.agents.passages.list(
+    agent_id=agent.id,
+    query_text="related concept",
+)
+```
+
+### Tool Creation
+
+``` python
+def roll_dice() -> str:
+    """Simulate 20-sided die roll (d20).
+
+    Returns random integer between 1-20.
+
+    Returns:
+        str: Die roll outcome.
+    """
+    import random
+    return f"You rolled a {random.randint(1, 20)}"
+
+tool = client.tools.create_from_function(func=roll_dice)
+
+# Attach tool to agent
+agent = client.agents.create(
+    model="openai/gpt-4.1",
+    tools=[tool.name],
+    memory_blocks=[{"label": "persona", "value": "You love games."}],
+)
+```
+
+### Export/Import Agents
+
+``` python
+# Export
+schema = client.agents.export_file(agent_id=agent.id)
+
+# Import
+imported = client.agents.import_file(file=open("agent.af", "rb"))
+```
+
+## Configuration
+
+### Model Selection
+
+Models are specified using the `provider/model-name` format:
+
+``` python
+agent = client.agents.create(
+    model="anthropic/claude-sonnet-4-5-20250929",
+    memory_blocks=[...],
+)
+```
+
+Supported providers: `openai/`, `anthropic/`, `google_ai/`, `azure/`, `bedrock/`, `openrouter/`, `ollama/` \[11\].
+
+### Docker Environment Variables
+
+| Variable | Purpose |
+|----|----|
+| `OPENAI_API_KEY` | OpenAI model access |
+| `ANTHROPIC_API_KEY` | Anthropic model access |
+| `GOOGLE_AI_API_KEY` | Google AI model access |
+| `OLLAMA_BASE_URL` | Local Ollama endpoint |
+| `LETTA_PG_URI` | Custom PostgreSQL connection (requires pgvector) |
+| `E2B_API_KEY` | Sandbox for custom tool execution |
+| `EXA_API_KEY` | Web search and webpage fetch enhancement |
+| `SECURE` / `LETTA_SERVER_PASSWORD` | Authentication for production |
+
+### Embedding Models
+
+When using Docker, embedding models must be specified explicitly:
+
+``` python
+agent = client.agents.create(
+    model="openai/gpt-4o-mini",
+    embedding="openai/text-embedding-3-small",
+)
+```
+
+The hosted API handles embedding configuration automatically \[7\].
+
+### Sleep-Time Configuration
+
+``` python
+# Enable sleep-time on agent creation
+agent = client.agents.create(
+    model="anthropic/claude-sonnet-4-5-20250929",
+    memory_blocks=[...],
+    enable_sleeptime=True,
+)
+
+# Adjust frequency (triggers every N steps)
+from letta_client import SleeptimeManagerUpdate
+group = client.groups.update(
+    group_id=group_id,
+    manager_config=SleeptimeManagerUpdate(sleeptime_agent_frequency=5),
+)
+```
+
+Recommended frequency: 5-10 steps. Lower values increase token usage with diminishing returns \[10\].
+
+## Integration Patterns
+
+### Multi-Agent via Shared Blocks
+
+``` python
+# Create shared block
+shared = client.blocks.create(
+    label="task_board",
+    description="Shared task tracking between agents",
+    value="",
+)
+
+# Create supervisor with write access
+supervisor = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[{"label": "persona", "value": "You are a supervisor."}],
+    block_ids=[shared.id],
+)
+
+# Create worker with same shared block
+worker = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[{"label": "persona", "value": "You are a worker."}],
+    block_ids=[shared.id],
+)
+```
+
+### MCP Tool Integration
+
+Letta agents can connect to MCP servers for external tool access. MCP tools function as schema-only definitions on the Letta side, with execution delegated to the MCP server \[12\].
+
+### Server Tools with Injected Client
+
+Custom server tools automatically receive environment variables (`LETTA_AGENT_ID`, `LETTA_PROJECT_ID`, `LETTA_API_KEY`) and a pre-initialized `client` object, enabling tools to access the Letta API for dynamic memory management and sub-agent creation \[13\].
+
+``` python
+def get_my_memory() -> dict:
+    """Retrieve current agent's memory blocks."""
+    import os
+    agent_id = os.environ.get('LETTA_AGENT_ID')
+    agent = client.agents.retrieve(agent_id=agent_id)
+    return {block.label: block.value for block in agent.memory.blocks}
+```
+
+## Examples
+
+### Basic Chat Agent with Persistent Memory
+
+``` python
+from letta_client import Letta
+
+client = Letta(api_key="your-key")
+
+agent = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[
+        {"label": "human", "value": "The user hasn't introduced themselves yet."},
+        {"label": "persona", "value": "You are a friendly assistant who remembers everything."},
+    ],
+)
+
+# First conversation
+response = client.agents.messages.create(
+    agent_id=agent.id,
+    messages=[{"role": "user", "content": "Hi! I'm Alice, I work at Acme Corp."}],
+)
+
+# Later conversation — agent remembers Alice
+response = client.agents.messages.create(
+    agent_id=agent.id,
+    messages=[{"role": "user", "content": "What do you remember about me?"}],
+)
+```
+
+### Agent with Archival Knowledge Base
+
+``` python
+agent = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[
+        {"label": "persona", "value": "You are a research assistant."},
+    ],
+    tools=["archival_memory_insert", "archival_memory_search"],
+)
+
+# Seed archival memory with documents
+for doc in documents:
+    client.agents.passages.create(agent_id=agent.id, text=doc)
+
+# Agent can now search its knowledge base during conversations
+response = client.agents.messages.create(
+    agent_id=agent.id,
+    messages=[{"role": "user", "content": "What do we know about quantum computing?"}],
+)
+```
+
+### Sleep-Time Agent for Background Learning
+
+``` python
+agent = client.agents.create(
+    model="anthropic/claude-sonnet-4-5-20250929",
+    embedding="openai/text-embedding-3-small",
+    memory_blocks=[
+        {"label": "human", "value": ""},
+        {"label": "persona", "value": "You are a helpful assistant."},
+    ],
+    enable_sleeptime=True,
+)
+
+# As conversations happen, the sleep-time agent
+# asynchronously processes and consolidates memories
+# into refined memory blocks
+```
+
+## Limitations
+
+- **Sleep-time agents are experimental**: The feature may be unstable and is subject to change \[10\]
+- **Docker embedding requirement**: Self-hosted deployments must explicitly specify embedding models, unlike the hosted API \[7\]
+- **Context window constraints**: Memory blocks consume context window space; very large blocks (\>50k characters) may degrade performance \[5\]
+- **Shared memory concurrency**: `memory_rethink` operations on shared blocks are unsafe under concurrent access (last-writer-wins) \[6\]
+- **AgentFile secrets**: Exported `.af` files null out secrets for security; re-configuration is needed after import \[8\]
+- **Tool sandboxing**: Docker deployments require E2B API key for custom tool sandboxing; TypeScript server tools also require E2B on Docker \[13\]
+- **HTTPS requirement**: The ADE requires HTTPS connections except for localhost access \[7\]
+- **Code interpreter statefulness**: Each code execution runs in a fresh environment without state retention between calls \[14\]
+
+## Changelog
+
+Letta evolved from the **MemGPT** research project (2023), which introduced OS-inspired virtual memory management for LLMs. The project rebranded to Letta and expanded into a full platform offering:
+
+- **MemGPT era**: Research prototype demonstrating self-editing memory and context management for LLMs
+- **Letta Platform**: Production-ready hosted API with managed infrastructure
+- **Letta Code**: Memory-first coding agent for terminal use (Node.js based)
+- **Letta Code SDK**: TypeScript SDK for building apps on top of stateful computer use agents
+- **AgentFile (.af)**: Open standard for portable agent serialization
+- **Sleep-time compute**: Experimental background memory consolidation (research paper: arxiv.org/abs/2504.13171)
+
+## Citations
+
+- \[1\] Letta Platform Landing Page - https://docs.letta.com/
+- \[2\] Stateful Agents - https://docs.letta.com/guides/core-concepts/stateful-agents/
+- \[3\] Memory Blocks - https://docs.letta.com/guides/core-concepts/memory/memory-blocks/
+- \[4\] Archival Memory - https://docs.letta.com/guides/core-concepts/memory/archival-memory/
+- \[5\] Context Hierarchy - https://docs.letta.com/guides/core-concepts/memory/context-hierarchy/
+- \[6\] Shared Memory - https://docs.letta.com/guides/core-concepts/memory/shared-memory/
+- \[7\] Docker Server Setup - https://docs.letta.com/guides/docker/
+- \[8\] AgentFile (.af) - https://docs.letta.com/guides/core-concepts/agent-file/
+- \[9\] Quickstart (API) - https://docs.letta.com/guides/build-with-letta/quickstart/
+- \[10\] Sleep-Time Agents - https://docs.letta.com/guides/agents/architectures/sleeptime/
+- \[11\] Models - https://docs.letta.com/guides/build-with-letta/models/
+- \[12\] MCP Tools - https://docs.letta.com/guides/core-concepts/tools/mcp-tools/
+- \[13\] Server Tools - https://docs.letta.com/guides/core-concepts/tools/server-tools/
+- \[14\] Built-in Tools - https://docs.letta.com/guides/core-concepts/tools/builtin-tools/
+
+# pgvector
+
+> PostgreSQL extension for vector similarity search and embeddings storage
+
+| Field | Value |
+|----|----|
+| Name | pgvector |
+| Group | Vector Databases |
+| Type | SDK |
+| Open Source | Yes |
+| GitHub | [pgvector/pgvector](https://github.com/pgvector/pgvector) |
+| Stars | 20,187 |
+| Docs | [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector) |
+
+## Overview
+
+pgvector is an open-source PostgreSQL extension that adds vector similarity search capabilities directly into PostgreSQL. It supports exact and approximate nearest neighbor search with single-precision, half-precision, binary, and sparse vector types. Rather than requiring a separate vector database, pgvector stores embedding vectors alongside relational data in the same database, leveraging PostgreSQL's ACID transactions, JOINs, indexing, query planning, Write-Ahead Log (WAL) replication, and point-in-time recovery. Written in C, it runs as a native in-process extension inside the PostgreSQL backend, avoiding network round-trips to external services. The extension requires PostgreSQL 13 or later and is available through Docker, Homebrew, APT, Yum, pkg, APK, conda-forge, PGXN, Postgres.app, and many managed cloud providers including Amazon RDS, Azure Database for PostgreSQL, Google Cloud SQL, Heroku Postgres, and Supabase.
+
+## Core Concepts
+
+### Vector Data Types
+
+pgvector introduces four data types for different vector representations:
+
+- **vector(n)**: Dense single-precision (32-bit float) vectors supporting up to 2,000 dimensions for indexed columns and up to 16,000 dimensions for unindexed storage. This is the primary type for embeddings from models such as OpenAI, Cohere, or sentence-transformers.
+- **halfvec(n)**: Half-precision (16-bit float) vectors supporting up to 4,000 dimensions. Reduces storage by half while maintaining reasonable accuracy for most retrieval tasks.
+- **bit(n)**: Binary vectors supporting up to 64,000 dimensions. Each dimension is a single bit, suitable for binary quantization schemes.
+- **sparsevec(n)**: Sparse vectors supporting up to 1,000 non-zero elements. Efficient for high-dimensional vectors where most values are zero, such as TF-IDF or BM25 representations. Format: `'{0:0.1,10:0.2}'::sparsevec`.
+
+All vectors in a column must have matching dimensions; mixed-dimension columns are not supported.
+
+### Distance Functions
+
+pgvector provides six distance operators, all returning lower values for greater similarity:
+
+- **`<->` (L2 distance)**: Euclidean distance. Best general-purpose metric when vectors are not normalized.
+- **`<#>` (negative inner product)**: Returns the negative dot product. Multiply by -1 to get actual inner product. Useful when vector magnitude carries meaningful signal.
+- **`<=>` (cosine distance)**: Measures the angle between vectors, ignoring magnitude. Subtract from 1 to get cosine similarity. Preferred when vectors are normalized or magnitude should not influence results.
+- **`<+>` (L1 distance)**: Manhattan distance. Sum of absolute differences across dimensions.
+- **`<~>` (Hamming distance)**: Counts positions where corresponding bits differ. Operates on `bit` type only.
+- **`<%>` (Jaccard distance)**: Measures dissimilarity between bit sets. Operates on `bit` type only.
+
+### Indexing Strategies
+
+Without an index, pgvector performs exact nearest neighbor search by scanning all rows, guaranteeing perfect recall but not scaling beyond small datasets. Two approximate nearest neighbor (ANN) index types trade recall for speed:
+
+- **HNSW (Hierarchical Navigable Small World)**: A graph-based index implementing a multilayer navigable small world structure. Provides better query performance (higher recall at given latency) than IVFFlat but has slower build times and higher memory usage. No training step required -- indexes can be created on empty tables. The implementation follows the original HNSW paper algorithms for search, neighbor selection, and element insertion.
+- **IVFFlat (Inverted File with Flat compression)**: A partition-based index that clusters vectors into lists using k-means, then searches the closest cluster subsets. Faster to build and uses less memory than HNSW but generally provides lower recall. Requires the table to already contain representative data before index creation for effective clustering.
+
+## Installation
+
+### From Source (Linux and Mac)
+
+Requires PostgreSQL 13+ development headers:
+
+``` bash
+cd /tmp
+git clone --branch v0.8.2 https://github.com/pgvector/pgvector.git
+cd pgvector
+make
+make install  # may need sudo
+```
+
+### From Source (Windows)
+
+Requires Visual Studio with C++ support. Run from `x64 Native Tools Command Prompt` as administrator:
+
+``` batch
+set "PGROOT=C:\Program Files\PostgreSQL\18"
+cd %TEMP%
+git clone --branch v0.8.2 https://github.com/pgvector/pgvector.git
+cd pgvector
+nmake /F Makefile.win
+nmake /F Makefile.win install
+```
+
+### Package Managers
+
+``` bash
+# Homebrew (macOS)
+brew install pgvector
+
+# APT (Debian/Ubuntu)
+sudo apt install postgresql-17-pgvector
+
+# Yum (RedHat/CentOS)
+sudo yum install pgvector
+
+# pkg (FreeBSD)
+pkg install pgvector
+
+# APK (Alpine Linux)
+apk add pgvector
+
+# PGXN
+pgxn install vector
+
+# conda-forge
+conda install -c conda-forge pgvector
+```
+
+### Docker
+
+``` dockerfile
+FROM pgvector/pgvector:pg17
+```
+
+Or add to an existing PostgreSQL image:
+
+``` dockerfile
+FROM postgres:17
+RUN apt-get update && apt-get install -y postgresql-17-pgvector
+```
+
+### Enabling the Extension
+
+After installation, enable pgvector in each database where it is needed:
+
+``` sql
+CREATE EXTENSION vector;
+```
+
+### Upgrading
+
+Download and compile the newer version, then run:
+
+``` sql
+ALTER EXTENSION vector UPDATE;
+```
+
+## Architecture
+
+pgvector operates as a native PostgreSQL extension running within the PostgreSQL backend process:
+
+- **In-process execution**: Vector operations run inside the PostgreSQL backend, avoiding network round-trips to external services. Distance calculations are implemented in C with CPU-dispatched SIMD optimizations on Linux x86-64.
+- **WAL integration**: All vector data and index changes are written to the Write-Ahead Log, ensuring crash recovery and streaming replication work identically to standard PostgreSQL tables.
+- **Planner integration**: The PostgreSQL query planner can combine vector index scans with B-tree index scans, filters, and joins in a single query plan. Cost estimation is tuned to help the planner select between sequential scan, vector index scan, and exact index scan depending on filter selectivity.
+- **Shared buffer usage**: Vector data and indexes use PostgreSQL's shared buffer pool and benefit from the same caching, memory management, and vacuum processes as regular tables.
+- **HNSW internals**: The HNSW implementation uses a multilayer graph structure with per-element neighbor arrays at each layer. Elements are stored as heap tuples with TID-based visited tracking for on-disk scans. The code implements the original paper's algorithms for search layer traversal (Algorithm 2), neighbor selection with pruning (Algorithm 4), and element insertion (Algorithm 1).
+- **Storage**: Vector data uses `external` storage (stored out-of-line, not compressed), preventing TOAST compression overhead on vector columns.
+
+## Key Features
+
+- **Colocation of vectors and relational data**: Store embeddings in the same table as metadata, foreign keys, and other columns without external synchronization.
+- **ACID transactions**: Vector inserts, updates, and deletes participate in PostgreSQL transactions with full consistency guarantees during concurrent writes.
+- **JOIN support**: Combine vector similarity search with relational joins in a single query.
+- **Six distance metrics**: L2, cosine, inner product, L1, Hamming, and Jaccard distances with corresponding operators and index support.
+- **Two ANN index types**: HNSW for higher recall and IVFFlat for faster builds with lower memory consumption.
+- **Iterative index scans (v0.8.0+)**: Automatically scan more of the index when filters reduce result count, available in `strict_order` mode for both HNSW and IVFFlat.
+- **Half-precision vectors**: `halfvec` type halves storage while supporting all distance functions.
+- **Sparse vector support**: `sparsevec` type for efficient storage of vectors with mostly zero values.
+- **Binary quantization**: `binary_quantize()` function converts full-precision vectors to binary for compact storage and fast Hamming distance comparison.
+- **Subvector indexing**: Create indexes on vector slices using expression indexes.
+- **Parallel index builds**: Both HNSW and IVFFlat support parallel construction workers for faster index creation on multi-core systems.
+- **Bulk loading**: COPY with binary format for high-throughput vector insertion.
+- **Concatenation operator**: Combine vectors with the concatenation operator.
+- **Aggregate functions**: `AVG()` and `SUM()` for vector columns.
+- **Helper functions**: `vector_dims()`, `vector_norm()`, `cosine_similarity()`, `l2_normalize()`, `subvector()`, `hamming_distance()`, `jaccard_distance()`.
+
+## Use Cases
+
+- **Retrieval-Augmented Generation (RAG)**: Store document chunk embeddings and retrieve the most relevant chunks for a query embedding before passing them to a large language model.
+- **Semantic search**: Find documents, products, or records by meaning rather than keyword matching.
+- **Hybrid search**: Combine full-text search (`tsvector`/`tsquery`) with vector similarity search in a single PostgreSQL query using reciprocal rank fusion or other combination strategies.
+- **Recommendation systems**: Compute similarity between user and item embeddings stored alongside transactional data.
+- **Duplicate detection**: Identify near-duplicate records by finding vectors within a small distance threshold.
+- **Image retrieval**: Store image embeddings and find visually similar images using cosine or L2 distance.
+- **Classification**: Use nearest neighbor vectors with known labels to classify new items.
+
+## API Reference
+
+### Table Definition
+
+``` sql
+CREATE TABLE documents (
+    id BIGSERIAL PRIMARY KEY,
+    content TEXT NOT NULL,
+    embedding vector(1536)
+);
+
+-- Add vector column to existing table
+ALTER TABLE documents ADD COLUMN embedding vector(1536);
+```
+
+### Insert Vectors
+
+``` sql
+-- Single insert
+INSERT INTO documents (content, embedding)
+VALUES ('Sample text', '[0.1, 0.2, 0.3, ...]');
+
+-- Bulk upsert
+INSERT INTO documents (id, content, embedding)
+VALUES (1, 'text one', '[0.1, 0.2, 0.3]'), (2, 'text two', '[0.4, 0.5, 0.6]')
+ON CONFLICT (id) DO UPDATE SET embedding = EXCLUDED.embedding;
+```
+
+### Nearest Neighbor Queries
+
+``` sql
+-- L2 distance (Euclidean)
+SELECT id, content, embedding <-> '[0.1, 0.2, 0.3]' AS distance
+FROM documents
+ORDER BY embedding <-> '[0.1, 0.2, 0.3]'
+LIMIT 5;
+
+-- Cosine similarity (1 - cosine distance)
+SELECT id, content, 1 - (embedding <=> '[0.1, 0.2, 0.3]') AS similarity
+FROM documents
+ORDER BY embedding <=> '[0.1, 0.2, 0.3]'
+LIMIT 5;
+
+-- Inner product (multiply by -1 since <#> returns negative)
+SELECT id, content, (embedding <#> '[0.1, 0.2, 0.3]') * -1 AS inner_product
+FROM documents
+ORDER BY embedding <#> '[0.1, 0.2, 0.3]'
+LIMIT 5;
+
+-- Find nearest neighbors to an existing row
+SELECT * FROM documents WHERE id != 1
+ORDER BY embedding <-> (SELECT embedding FROM documents WHERE id = 1)
+LIMIT 5;
+
+-- Distance threshold query
+SELECT id, content, embedding <=> '[0.1, 0.2, 0.3]' AS distance
+FROM documents
+WHERE embedding <=> '[0.1, 0.2, 0.3]' < 0.3
+ORDER BY embedding <=> '[0.1, 0.2, 0.3]';
+```
+
+### Create Indexes
+
+``` sql
+-- HNSW indexes
+CREATE INDEX ON documents USING hnsw (embedding vector_l2_ops);
+CREATE INDEX ON documents USING hnsw (embedding vector_ip_ops);
+CREATE INDEX ON documents USING hnsw (embedding vector_cosine_ops);
+CREATE INDEX ON documents USING hnsw (embedding vector_l1_ops);
+CREATE INDEX ON documents USING hnsw (embedding bit_hamming_ops);
+CREATE INDEX ON documents USING hnsw (embedding bit_jaccard_ops);
+
+-- HNSW with custom parameters
+CREATE INDEX ON documents
+USING hnsw (embedding vector_cosine_ops)
+WITH (m = 16, ef_construction = 64);
+
+-- IVFFlat indexes
+CREATE INDEX ON documents USING ivfflat (embedding vector_l2_ops) WITH (lists = 100);
+CREATE INDEX ON documents USING ivfflat (embedding vector_ip_ops) WITH (lists = 100);
+CREATE INDEX ON documents USING ivfflat (embedding vector_cosine_ops) WITH (lists = 100);
+CREATE INDEX ON documents USING ivfflat (embedding bit_hamming_ops) WITH (lists = 100);
+
+-- Subvector index
+CREATE INDEX ON documents USING hnsw ((embedding[1:100]) vector_l2_ops);
+
+-- Partial index for filtered queries
+CREATE INDEX ON documents USING hnsw (embedding vector_l2_ops) WHERE (category_id = 123);
+```
+
+### Index Operator Classes
+
+HNSW supported types: `vector` (up to 2,000 dimensions), `halfvec` (up to 4,000 dimensions), `bit` (up to 64,000 dimensions), `sparsevec` (up to 1,000 non-zero elements).
+
+IVFFlat supported types: `vector` (up to 2,000 dimensions), `halfvec` (up to 4,000 dimensions), `bit` (up to 64,000 dimensions).
+
+Operator classes by distance function:
+
+- L2: `vector_l2_ops`, `halfvec_l2_ops`
+- Inner product: `vector_ip_ops`, `halfvec_ip_ops`
+- Cosine: `vector_cosine_ops`, `halfvec_cosine_ops`
+- L1: `vector_l1_ops`, `halfvec_l1_ops`
+- Hamming: `bit_hamming_ops`
+- Jaccard: `bit_jaccard_ops`
+
+### Half-Precision Vectors
+
+``` sql
+CREATE TABLE items (id bigserial PRIMARY KEY, embedding halfvec(3));
+INSERT INTO items (embedding) VALUES ('[0.1, 0.2, 0.3]');
+CREATE INDEX ON items USING hnsw (embedding halfvec_cosine_ops);
+```
+
+### Binary Vectors
+
+``` sql
+CREATE TABLE items (id bigserial PRIMARY KEY, embedding bit(8));
+INSERT INTO items (embedding) VALUES ('10101010'), ('11001100');
+
+-- Binary quantization from full-precision vectors
+SELECT binary_quantize(embedding) FROM documents;
+```
+
+### Sparse Vectors
+
+``` sql
+CREATE TABLE items (id bigserial PRIMARY KEY, embedding sparsevec(1000));
+INSERT INTO items (embedding) VALUES ('{0:0.1,10:0.2}'::sparsevec);
+```
+
+### Aggregate and Helper Functions
+
+``` sql
+-- Aggregates
+SELECT AVG(embedding) FROM documents;
+SELECT SUM(embedding) FROM documents;
+SELECT category_id, AVG(embedding) FROM documents GROUP BY category_id;
+
+-- Helper functions
+SELECT vector_dims(embedding) FROM documents LIMIT 1;
+SELECT vector_norm(embedding) FROM documents LIMIT 1;
+SELECT cosine_similarity(a.embedding, b.embedding) FROM documents a, documents b WHERE a.id = 1 AND b.id = 2;
+SELECT l2_normalize(embedding) FROM documents LIMIT 1;
+SELECT subvector(embedding, 1, 100) FROM documents LIMIT 1;
+```
+
+## Configuration
+
+### HNSW Parameters
+
+Index build parameters (set at creation time):
+
+- **`m`** (default 16): Maximum number of connections per node in each layer. Higher values improve recall but increase memory and build time.
+- **`ef_construction`** (default 64): Size of the dynamic candidate list during index construction. Higher values improve recall at the cost of slower builds.
+
+Query-time parameters (set per session or transaction):
+
+- **`hnsw.ef_search`** (default 40): Size of the dynamic candidate list during search. Higher values improve recall at the cost of higher latency.
+- **`hnsw.iterative_scan`** (default `off`): Enable iterative scans with `strict_order` to automatically scan more of the index when filters reduce result count.
+
+``` sql
+SET hnsw.ef_search = 100;
+SET hnsw.iterative_scan = strict_order;
+
+-- Transaction-scoped setting
+BEGIN;
+SET LOCAL hnsw.ef_search = 200;
+SELECT ...;
+COMMIT;
+```
+
+### IVFFlat Parameters
+
+Index build parameter:
+
+- **`lists`**: Number of inverted lists (clusters). Starting point: `rows / 1000` for up to 1M rows, `sqrt(rows)` for over 1M rows.
+
+Query-time parameters:
+
+- **`ivfflat.probes`** (default 1): Number of lists to search. Starting point: `sqrt(lists)`. Setting to the total number of lists produces exact search (planner will not use the index).
+- **`ivfflat.iterative_scan`** (default `off`): Enable with `strict_order` for automatic additional scanning.
+
+``` sql
+SET ivfflat.probes = 10;
+SET ivfflat.iterative_scan = strict_order;
+```
+
+### Index Build Performance
+
+``` sql
+-- Increase work memory for faster HNSW builds (graph must fit in memory)
+SET maintenance_work_mem = '8GB';
+
+-- Parallelize index construction (both HNSW and IVFFlat)
+SET max_parallel_maintenance_workers = 7;  -- plus leader
+
+-- May also need to increase max_parallel_workers (default: 8)
+SET max_parallel_workers = 15;
+```
+
+A notice appears when the HNSW graph no longer fits in `maintenance_work_mem`:
+
+``` 
+NOTICE: hnsw graph no longer fits into maintenance_work_mem after 100000 tuples
+DETAIL: Building will take significantly more time.
+HINT: Increase maintenance_work_mem to speed up builds.
+```
+
+### Index Build Progress Monitoring
+
+``` sql
+-- Check progress during index creation
+SELECT phase, round(100.0 * blocks_done / nullif(blocks_total, 0), 1) AS "%"
+FROM pg_stat_progress_create_index;
+```
+
+HNSW phases: `initializing`, `loading tuples`.
+
+IVFFlat phases: `initializing`, `performing k-means`, `assigning tuples`, `loading tuples` (percentage only populated during `loading tuples`).
+
+### General Recommendations
+
+- Create indexes after loading initial data for better performance.
+- For HNSW, increase `hnsw.ef_search` to improve recall at the cost of higher latency.
+- For IVFFlat, increase `ivfflat.probes` to improve recall; use `sqrt(lists)` as a starting point.
+- Set `maintenance_work_mem` to at least 1-8 GB when building indexes on large tables.
+- Use `max_parallel_maintenance_workers` to speed up index creation on multi-core systems.
+- Use COPY with binary format for bulk data loading.
+- For filtered queries, create B-tree indexes on filter columns; enable iterative scans for approximate indexes with filters.
+- For few distinct filter values, use partial indexes; for many values, use table partitioning.
+
+## Integration Patterns
+
+### Python with psycopg3
+
+``` python
+import psycopg
+
+conn = psycopg.connect("dbname=mydb")
+conn.execute("CREATE EXTENSION IF NOT EXISTS vector")
+conn.execute("""
+    CREATE TABLE IF NOT EXISTS documents (
+        id BIGSERIAL PRIMARY KEY,
+        content TEXT,
+        embedding vector(1536)
+    )
+""")
+
+# Insert
+embedding = [0.1, 0.2, 0.3]  # truncated
+conn.execute(
+    "INSERT INTO documents (content, embedding) VALUES (%s, %s)",
+    ("sample text", str(embedding))
+)
+
+# Query nearest neighbors
+query_embedding = [0.1, 0.2, 0.3]
+results = conn.execute(
+    "SELECT id, content FROM documents ORDER BY embedding <=> %s LIMIT 5",
+    (str(query_embedding),)
+).fetchall()
+```
+
+### Python with pgvector-python
+
+The `pgvector` Python package (`pip install pgvector`) provides native type support for multiple drivers:
+
+``` python
+from pgvector.psycopg import register_vector
+import psycopg
+import numpy as np
+
+conn = psycopg.connect("dbname=mydb")
+register_vector(conn)
+
+# Insert with numpy array (no manual string conversion)
+embedding = np.array([0.1, 0.2, 0.3])
+conn.execute(
+    "INSERT INTO documents (content, embedding) VALUES (%s, %s)",
+    ("sample text", embedding)
+)
+```
+
+Supported drivers: psycopg3, psycopg2, asyncpg, pg8000.
+
+### SQLAlchemy
+
+``` python
+from pgvector.sqlalchemy import Vector
+from sqlalchemy import Column, Integer, Text, create_engine
+from sqlalchemy.orm import declarative_base, Session
+
+Base = declarative_base()
+
+class Document(Base):
+    __tablename__ = "documents"
+    id = Column(Integer, primary_key=True)
+    content = Column(Text)
+    embedding = Column(Vector(1536))
+
+engine = create_engine("postgresql://user:password@localhost/mydb")
+Base.metadata.create_all(engine)
+
+with Session(engine) as session:
+    session.add(Document(content="text", embedding=[0.1, 0.2, 0.3]))
+    session.commit()
+
+    # Nearest neighbor query
+    from pgvector.sqlalchemy import Vector
+    results = session.query(Document).order_by(
+        Document.embedding.cosine_distance([0.1, 0.2, 0.3])
+    ).limit(5).all()
+```
+
+### Django
+
+``` python
+from pgvector.django import VectorExtension, VectorField, HnswIndex
+
+# Migration
+class Migration(migrations.Migration):
+    operations = [VectorExtension()]
+
+# Model
+class Document(models.Model):
+    content = models.TextField()
+    embedding = VectorField(dimensions=1536)
+
+    class Meta:
+        indexes = [HnswIndex(fields=['embedding'], opclasses=['vector_cosine_ops'])]
+```
+
+### LangChain
+
+``` python
+from langchain_community.vectorstores import PGVector
+
+connection_string = "postgresql://user:password@localhost:5432/mydb"
+vectorstore = PGVector.from_documents(
+    documents=docs,
+    embedding=embeddings_model,
+    connection_string=connection_string,
+    collection_name="my_collection",
+)
+results = vectorstore.similarity_search("query text", k=5)
+```
+
+### Other Language Libraries
+
+pgvector works with any language that has a PostgreSQL client. Official client libraries exist for Ruby, JavaScript/TypeScript (node-postgres, Knex.js, Objection.js, Sequelize, Prisma), PHP (Laravel), Go, Java (JDBC, Spring), Rust, .NET (Npgsql, Entity Framework Core), Elixir (Ecto), and Lua.
+
+## Examples
+
+### Basic RAG Pipeline
+
+``` sql
+CREATE TABLE chunks (
+    id BIGSERIAL PRIMARY KEY,
+    document_id INTEGER REFERENCES documents(id),
+    chunk_text TEXT NOT NULL,
+    embedding vector(1536),
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE INDEX chunks_embedding_idx ON chunks
+USING hnsw (embedding vector_cosine_ops);
+
+-- Retrieve top 5 chunks for a query embedding
+SELECT chunk_text, 1 - (embedding <=> :query_embedding) AS similarity
+FROM chunks
+WHERE document_id IN (SELECT id FROM documents WHERE project_id = :project_id)
+ORDER BY embedding <=> :query_embedding
+LIMIT 5;
+```
+
+### Hybrid Search with Full-Text and Vector
+
+``` sql
+CREATE TABLE articles (
+    id BIGSERIAL PRIMARY KEY,
+    title TEXT,
+    body TEXT,
+    tsv TSVECTOR GENERATED ALWAYS AS (to_tsvector('english', title || ' ' || body)) STORED,
+    embedding vector(1536)
+);
+
+CREATE INDEX articles_tsv_idx ON articles USING gin(tsv);
+CREATE INDEX articles_embedding_idx ON articles USING hnsw (embedding vector_cosine_ops);
+
+-- Reciprocal Rank Fusion combining keyword and semantic search
+WITH keyword_results AS (
+    SELECT id, ROW_NUMBER() OVER (ORDER BY ts_rank(tsv, plainto_tsquery('english', :query)) DESC) AS rank
+    FROM articles
+    WHERE tsv @@ plainto_tsquery('english', :query)
+    LIMIT 20
+),
+vector_results AS (
+    SELECT id, ROW_NUMBER() OVER (ORDER BY embedding <=> :query_embedding ASC) AS rank
+    FROM articles
+    ORDER BY embedding <=> :query_embedding
+    LIMIT 20
+),
+combined AS (
+    SELECT COALESCE(k.id, v.id) AS id,
+           COALESCE(1.0 / (60 + k.rank), 0) + COALESCE(1.0 / (60 + v.rank), 0) AS rrf_score
+    FROM keyword_results k
+    FULL OUTER JOIN vector_results v ON k.id = v.id
+)
+SELECT a.id, a.title, c.rrf_score
+FROM combined c
+JOIN articles a ON a.id = c.id
+ORDER BY c.rrf_score DESC
+LIMIT 10;
+```
+
+### Binary Quantization with Re-ranking
+
+``` sql
+-- Create binary quantized column for fast initial retrieval
+ALTER TABLE documents ADD COLUMN embedding_binary bit(1536)
+    GENERATED ALWAYS AS (binary_quantize(embedding)::bit(1536)) STORED;
+
+CREATE INDEX ON documents USING hnsw (embedding_binary bit_hamming_ops);
+
+-- Two-stage retrieval: fast binary search then re-rank with full precision
+WITH candidates AS (
+    SELECT id, content, embedding
+    FROM documents
+    ORDER BY embedding_binary <~> binary_quantize(:query_embedding)::bit(1536)
+    LIMIT 100
+)
+SELECT id, content, 1 - (embedding <=> :query_embedding) AS similarity
+FROM candidates
+ORDER BY embedding <=> :query_embedding
+LIMIT 10;
+```
+
+### Filtered Vector Search with Iterative Scans
+
+``` sql
+-- Enable iterative scans for better filtered search
+SET hnsw.iterative_scan = strict_order;
+
+SELECT id, content
+FROM documents
+WHERE category = 'technical' AND created_at > '2025-01-01'
+ORDER BY embedding <=> :query_embedding
+LIMIT 10;
+```
+
+### Partitioned Table for Scaling
+
+``` sql
+CREATE TABLE items (
+    id BIGSERIAL,
+    embedding vector(1536),
+    category_id INT
+) PARTITION BY LIST(category_id);
+
+CREATE TABLE items_cat_1 PARTITION OF items FOR VALUES IN (1);
+CREATE TABLE items_cat_2 PARTITION OF items FOR VALUES IN (2);
+
+-- Create per-partition indexes
+CREATE INDEX ON items_cat_1 USING hnsw (embedding vector_cosine_ops);
+CREATE INDEX ON items_cat_2 USING hnsw (embedding vector_cosine_ops);
+```
+
+## Limitations
+
+- **vector(n) dimension limit**: Dense vector indexes are limited to 2,000 dimensions. Unindexed vector columns support up to 16,000 dimensions. Models producing higher-dimensional embeddings require dimensionality reduction or `halfvec` (up to 4,000 indexed dimensions).
+- **Approximate recall**: HNSW and IVFFlat indexes provide approximate results. Recall depends on index parameters and may not reach 100% without exact (sequential) scan.
+- **HNSW build time**: HNSW index construction can be slow on large datasets (millions of vectors) and requires the graph to fit in `maintenance_work_mem` for optimal build speed.
+- **HNSW memory consumption**: HNSW indexes reside in memory and can be substantial. Sizing depends on number of vectors, dimensionality, and the `m` parameter. Indexes can exceed memory but performance degrades with disk access.
+- **IVFFlat requires pre-populated data**: Building an IVFFlat index on an empty or very small table produces poor clusters. The table should contain a representative sample of data before index creation.
+- **No built-in sharding**: pgvector relies on PostgreSQL's native partitioning and external sharding solutions (such as Citus) for horizontal scaling. It does not provide built-in distributed vector search.
+- **Single-node scaling**: Performance is bounded by single-node PostgreSQL limits. For datasets exceeding hundreds of millions of vectors, purpose-built distributed vector databases may offer better throughput.
+- **Fixed dimensions per column**: All vectors in a column must have the same number of dimensions. Mixed-dimension storage requires separate columns or tables.
+- **sparsevec index support**: Sparse vectors support HNSW indexing only (not IVFFlat) and are limited to L2, inner product, and cosine distances.
+
+## Changelog
+
+- **v0.8.2** (2026-02-25): Fixed buffer overflow with parallel HNSW index build. Improved Windows install target. Fixed EXPLAIN output for Postgres 18.
+- **v0.8.1** (2025-09-04): Added support for Postgres 18 rc1. Improved `binary_quantize` performance.
+- **v0.8.0** (2024-10-30): Added iterative index scans for both HNSW and IVFFlat. Added array-to-sparsevec casts. Improved cost estimation for filtered queries. Improved HNSW scan, insert, and on-disk build performance. Dropped Postgres 12 support.
+- **v0.7.0** (2024-04-29): Added `halfvec` and `sparsevec` types. Added `bit` type indexing. Added L1 distance indexing for HNSW. Added `binary_quantize`, `hamming_distance`, `jaccard_distance`, `l2_normalize`, `subvector` functions. Added vector concatenation operator. Added CPU dispatching for distance functions on Linux x86-64.
+- **v0.6.0** (2024-01-29): Added parallel HNSW index builds. Changed vector storage from `extended` to `external`. Improved HNSW performance and reduced WAL generation. Moved Docker image to `pgvector` org. Dropped Postgres 11 support.
+- **v0.5.0** (2023-08-28): Added HNSW index type. Added parallel IVFFlat builds. Added `l1_distance` function, element-wise multiplication, `sum` aggregate. Improved distance function performance.
+- **v0.4.0** (2023-01-11): Increased max vector dimensions from 1,024 to 16,000 (indexed: 2,000). Changed storage from `plain` to `extended`. Added `avg` aggregate. Added experimental Windows support. Dropped Postgres 10 support.
+- **v0.3.0** (2022-10-15): Added Postgres 15 support. Dropped Postgres 9.6 support.
+- **v0.1.0** (2021-04-20): First release with IVFFlat indexing, L2/inner product/cosine distance operators, and basic vector type.
+
+## Citations
+
+- \[1\] pgvector GitHub repository and README - https://github.com/pgvector/pgvector
+- \[2\] pgvector Changelog - https://github.com/pgvector/pgvector/blob/master/CHANGELOG.md
+- \[3\] pgvector-python client library - https://github.com/pgvector/pgvector-python
+- \[4\] pgvector HNSW implementation (hnswutils.c) - https://github.com/pgvector/pgvector/blob/master/src/hnswutils.c
+- \[5\] pgvector GitHub API metadata - https://api.github.com/repos/pgvector/pgvector
 
 # Pinecone
 
@@ -11299,1360 +17853,4409 @@ for (const obj of response.objects) {
 
 - \[1\] Weaviate Documentation - <https://docs.weaviate.io/weaviate/>
 
-# DSPy
+# Qdrant
 
-> Stanford NLP declarative framework for programming language models. "Iterate fast on structured code, rather than brittle strings." Compiles AI programs into optimized prompts and weights.
+> Open-source AI-native vector database written in Rust for high-performance similarity search at scale
 
-| Field        | Value                                                   |
-|--------------|---------------------------------------------------------|
-| Name         | DSPy                                                    |
-| Group        | Structured Output & Prompt Engineering                  |
-| Type         | SDK                                                     |
-| Open Source  | Yes                                                     |
-| GitHub       | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) |
-| Stars        | 32,331                                                  |
-| Docs         | [dspy.ai](https://dspy.ai/)                             |
-| License      | MIT                                                     |
-| Contributors | 250+                                                    |
+| Field | Value |
+|----|----|
+| Name | Qdrant |
+| Group | Vector Databases |
+| Type | SDK/Infra |
+| Open Source | yes |
+| GitHub | [qdrant/qdrant](https://github.com/qdrant/qdrant) |
+| Stars | 29275 |
+| Docs | [qdrant.tech/documentation](https://qdrant.tech/documentation/) |
 
 ## Overview
 
-DSPy replaces hand-written prompts and brittle string manipulation with a programming model for language models. Rather than crafting prompt templates, developers define typed signatures that specify input and output fields, compose them into modules, and let optimizers automatically tune the prompts and weights for a given metric. The framework treats LM calls as declarative operations, compiling high-level AI programs into efficient prompts or fine-tuning configurations. DSPy supports 40+ LM providers and delivers measurable accuracy improvements through its optimization pipeline, typically costing around \$2 USD and taking approximately 20 minutes to run.
+Qdrant (pronounced "quadrant") is an open-source vector database and semantic search engine written in Rust. It stores, indexes, and searches high-dimensional vector embeddings with associated metadata payloads, enabling similarity search that goes beyond keyword matching. Founded in 2021 and based in Berlin, Qdrant provides fast, scalable vector similarity search with convenient APIs \[1\].
+
+The platform converts unstructured data (text, images, audio) into dense vector embeddings using embedding models, mapping them into high-dimensional space where semantically similar items cluster together. Qdrant combines dense vectors for contextual understanding with sparse vectors for precise lexical keyword matching through hybrid retrieval \[1\].
+
+Qdrant offers four deployment options \[1\]:
+
+- **Open Source (Self-Hosted)**: Full control over data and deployment with Docker, Kubernetes, or binary
+- **Qdrant Cloud (Managed)**: Fully managed service with high availability and zero-downtime upgrades
+- **Hybrid Cloud**: Managed control plane with data remaining in the user's infrastructure
+- **Private Cloud**: Fully isolated deployment on user's own infrastructure
+
+Official client libraries are available for Python, JavaScript/TypeScript, Rust, Go, Java, and .NET, with both REST (port 6333) and gRPC (port 6334) API interfaces \[5\].
 
 ## Core Concepts
 
-### Signatures
+### Collections
 
-Signatures are typed declarations of input and output fields for a language model call. They replace free-form prompt strings with structured contracts.
+A **collection** is a named set of points (vectors with payloads) among which you search. All vectors within a collection must share the same dimensionality and distance metric, though named vectors allow multiple vector types per point with independent configurations. Collections support four distance metrics: Dot product, Cosine similarity, Euclidean distance, and Manhattan distance \[2\].
 
-``` python
-import dspy
+### Points
 
-# Inline signature: question -> answer
-predict = dspy.Predict("question -> answer")
+A **point** is the central entity consisting of three components: an identifier (64-bit unsigned integer or UUID), a vector (dense, sparse, or multi-vector), and an optional payload (metadata). Points are the fundamental storage unit combining vector embeddings with arbitrary JSON metadata \[3\].
 
-# Class-based signature with typed fields
-class Assess(dspy.Signature):
-    """Assess the quality of a tweet along the specified dimension."""
-    assessed_text: str = dspy.InputField()
-    assessment_question: str = dspy.InputField()
-    assessment_answer: float = dspy.OutputField()
-```
+### Vectors
 
-Signatures define what the LM should do without prescribing how it should do it. The framework handles prompt formatting, parsing, and retry logic.
+Qdrant supports multiple vector types \[3\]:
 
-### Modules
+- **Dense vectors**: Standard floating-point embeddings (Float32, Uint8) from neural network models
+- **Sparse vectors**: High-dimensional vectors with mostly zero values, represented as index-value pairs for keyword-based search (BM25-style)
+- **Multi-vectors**: Matrices from late-interaction models like ColBERT, where each document is represented as multiple vector chunks
+- **Named vectors**: Multiple independently configured vectors per point, enabling storage of different embedding types (e.g., image and text) in a single collection
 
-Modules are composable building blocks that wrap signatures with specific inference strategies.
+### Payloads
 
-- **Predict** - Direct signature invocation, the simplest module
-- **ChainOfThought** - Adds intermediate reasoning steps before producing the final output
-- **ReAct** - Interleaves reasoning with tool use actions in a loop
-- **ProgramOfThought** - Generates and executes code to arrive at answers
-- **MultiChainComparison** - Runs multiple chains and selects the best output
-- **RAG** - Retrieval-augmented generation combining a retriever with a generator
+**Payloads** are arbitrary JSON metadata attached to points. Qdrant supports payload types including keyword (string), integer, float, bool, geo coordinates, datetime, text (full-text indexed), and UUID. Payload indexes extend the HNSW graph, enabling filtering criteria during the semantic search phase in a single-pass traversal rather than separate pre/post-filtering steps \[1\]\[4\].
 
-Custom modules inherit from `dspy.Module` and compose other modules in their `forward` method.
+### Segments
 
-### Optimizers
+Collections organize data into **segments**, each with independent vector storage, payload storage, indexes, and an ID mapper. Segments are either appendable (full CRUD) or non-appendable (read and delete only). Data integrity is maintained through a Write-Ahead Log (WAL) that orders operations sequentially before propagating to segments \[8\].
 
-Optimizers automatically improve program performance against a defined metric by tuning prompts, few-shot examples, or model weights.
+## Installation
 
-- **BootstrapRS** - Random search over bootstrapped few-shot demonstrations
-- **MIPROv2** - Multi-prompt instruction proposal with Bayesian optimization
-- **GEPA** - Genetic evolutionary prompt algorithm for instruction tuning
-- **BetterTogether** - Joint optimization of prompts and weights together
-
-### Adapters
-
-Adapters translate signatures into the specific prompt format expected by a given LM provider. They handle serialization, field mapping, and structured output parsing transparently.
-
-## Installation and Setup
+### Docker (Primary Method)
 
 ``` bash
-pip install -U dspy
+docker pull qdrant/qdrant
+docker run -p 6333:6333 -p 6334:6334 \
+    -v "$(pwd)/qdrant_storage:/qdrant/storage:z" \
+    qdrant/qdrant
 ```
 
-For specific provider support:
+Access points: REST API at `http://localhost:6333`, Web UI at `http://localhost:6333/dashboard`, gRPC API at `localhost:6334` \[9\].
+
+### Kubernetes (Helm)
 
 ``` bash
-# With Anthropic
-pip install -U dspy[anthropic]
-
-# With Google
-pip install -U dspy[google]
+helm repo add qdrant https://qdrant.to/helm
+helm install qdrant qdrant/qdrant
 ```
 
-Requires Python 3.9 or higher.
+### From Source (Rust)
 
-### Quick Start
+``` bash
+cargo build --release --bin qdrant
+```
+
+### Client SDKs
+
+``` bash
+# Python
+pip install qdrant-client[fastembed]
+
+# JavaScript/TypeScript
+npm install @qdrant/js-client-rest
+
+# Rust
+cargo add qdrant-client
+
+# Go
+go get github.com/qdrant/go-client
+
+# .NET
+dotnet add package Qdrant.Client
+```
+
+### Client Initialization
 
 ``` python
-import dspy
+from qdrant_client import QdrantClient
 
-lm = dspy.LM("openai/gpt-4o-mini")
-dspy.configure(lm=lm)
+# Local Docker instance
+client = QdrantClient(url="http://localhost:6333")
 
-qa = dspy.ChainOfThought("question -> answer")
-result = qa(question="What is the tallest mountain in the world?")
-print(result.answer)
+# Qdrant Cloud
+client = QdrantClient(
+    url="https://your-cluster.cloud.qdrant.io",
+    api_key="your-api-key",
+)
 ```
 
 ## Architecture
 
-DSPy follows a Define, Evaluate, Compile, Deploy workflow:
-
-1.  **Define** - Write signatures and compose modules into a program
-2.  **Evaluate** - Measure program accuracy on a development dataset using a metric function
-3.  **Compile** - Run an optimizer that searches for better prompts, demonstrations, or weights
-4.  **Deploy** - Use the compiled program with the tuned configuration in production
+Qdrant uses a client-server architecture with distributed clustering capabilities:
 
 ``` 
-Signature --> Module --> Program --> Optimizer --> Compiled Program
-    ^                                   ^
-  Types                              Metric
-  Fields                             Dataset
+┌─────────────────────────────────────────────────┐
+│                Client SDKs                       │
+│  Python, JS/TS, Rust, Go, Java, .NET            │
+└──────────┬─────────────────┬────────────────────┘
+           │ REST :6333      │ gRPC :6334
+           v                 v
+┌─────────────────────────────────────────────────┐
+│              Qdrant Node(s)                      │
+│  ┌─────────────────────────────────────────┐    │
+│  │         Raft Consensus (Cluster)         │    │
+│  │    (topology + collection structure)     │    │
+│  └─────────────────────────────────────────┘    │
+│  ┌──────────────┐  ┌──────────────────────┐    │
+│  │  Collection   │  │  Collection          │    │
+│  │  ┌─────────┐  │  │  ┌─────────┐        │    │
+│  │  │ Shard 1 │  │  │  │ Shard 1 │        │    │
+│  │  │┌───────┐│  │  │  │┌───────┐│        │    │
+│  │  ││Segment││  │  │  ││Segment││        │    │
+│  │  ││ HNSW  ││  │  │  ││ HNSW  ││        │    │
+│  │  ││ WAL   ││  │  │  ││ WAL   ││        │    │
+│  │  │└───────┘│  │  │  │└───────┘│        │    │
+│  │  └─────────┘  │  │  └─────────┘        │    │
+│  │  ┌─────────┐  │  │  ┌─────────┐        │    │
+│  │  │ Shard 2 │  │  │  │ Shard 2 │        │    │
+│  │  └─────────┘  │  │  └─────────┘        │    │
+│  └──────────────┘  └──────────────────────┘    │
+│                                                  │
+│  ┌──────────────────────────────────────────┐   │
+│  │           Storage Engine (Rust)           │   │
+│  │  In-Memory / Memmap / On-Disk / RocksDB  │   │
+│  └──────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────┘
 ```
 
-The compilation step differentiates DSPy from standard prompt engineering. Instead of manually iterating on prompt text, the optimizer systematically explores the space of possible prompts and demonstrations, guided by the evaluation metric.
+In distributed mode, Qdrant uses **Raft consensus** for cluster topology and collection structure operations. Point operations (insert, search) bypass consensus for low overhead. Collections split into **shards** distributed across nodes via consistent hashing. **Replication** creates shard copies across nodes, with configurable write consistency factors and read consistency levels (all, majority, quorum) \[6\].
 
-## Key Features and Functionality
+### Vector Storage Options
 
-- **Declarative LM programming** - Define what the model should compute via typed signatures rather than how via prompt strings
-- **Automatic prompt optimization** - Optimizers tune prompts and few-shot examples to maximize a user-defined metric
-- **Composable modules** - Chain, nest, and reuse modules like standard software components
-- **Provider agnostic** - Supports 40+ LM providers through a unified interface
-- **Typed input/output** - Signatures enforce structured contracts between program components
-- **Reproducible optimization** - Compilation produces deterministic, serializable configurations
-- **Built-in evaluation** - Integrated metric evaluation over datasets for systematic benchmarking
-- **Assertion and constraint system** - `dspy.Assert` and `dspy.Suggest` enforce runtime constraints on LM outputs
-- **Automatic few-shot bootstrapping** - Generates high-quality demonstrations from training data without manual curation
+- **In-Memory**: All vectors in RAM for maximum speed; disk used only for persistence
+- **Memmap**: Memory-mapped files using page cache for near in-memory performance with lower RAM usage
+- **On-Disk**: Full disk-based storage for datasets exceeding available memory \[8\]
+
+## Key Features
+
+- **HNSW Index**: Hierarchical Navigable Small World graph for fast approximate nearest neighbor search with configurable m, ef_construct, and ef parameters
+- **Filterable HNSW**: Payload indexes extend HNSW graph edges, enabling single-pass filtered vector search without separate pre/post-filtering
+- **Hybrid Search**: Combine dense and sparse vector queries with Reciprocal Rank Fusion (RRF) or Distribution-Based Score Fusion (DBSF) via the prefetch mechanism
+- **Multi-Stage Search**: Nested prefetch pipelines for re-scoring — retrieve candidates with compact vectors, then re-rank with full-precision or ColBERT multi-vectors
+- **Quantization**: Scalar (4x compression), Binary (up to 32x compression, 40x speedup), and Product quantization (up to 64x compression) with configurable rescoring and oversampling
+- **Named Vectors**: Store multiple independently configured vector types per point (e.g., image and text embeddings)
+- **Sparse Vectors**: Native sparse vector support with IDF modifier for keyword-based search
+- **Rich Filtering**: Boolean clauses (must, should, must_not), range, geo (bounding box, radius, polygon), full-text match, datetime, nested object filters
+- **Distributed Clustering**: Sharding with consistent hashing, replication, Raft consensus, and three shard transfer methods (stream_records, snapshot, wal_delta)
+- **Collection Aliases**: Zero-downtime model upgrades by atomically switching collection pointers
+- **ACORN Search**: Enhanced HNSW exploration for restrictive multi-filter queries via second-hop neighbor traversal
+- **Grouping API**: Aggregate search results by payload field to avoid redundant items
+- **Batch Operations**: Execute multiple operations (upsert, delete, update vectors, set payload) in a single request
+- **Conditional Updates**: Optimistic locking with version-based filters to prevent concurrent overwrites
+- **FastEmbed**: Built-in embedding generation library for client-side inference
+- **Web UI Dashboard**: Built-in web interface for collection management and query exploration
+- **MCP Server**: Model Context Protocol server for AI assistant integration
 
 ## Use Cases
 
-- **Multi-hop question answering** - Compose retrieval and reasoning modules to answer questions requiring multiple evidence steps
-- **Classification pipelines** - Build typed classifiers with automatic few-shot optimization (reported improvements from 66% to 87%)
-- **Agentic workflows** - Use ReAct modules for tool-augmented reasoning (reported improvements from 24% to 51% on HotPotQA)
-- **Information extraction** - Define output signatures with structured fields for entity and relation extraction
-- **RAG systems** - Combine retrieval modules with generation modules, optimizing the full pipeline end-to-end
-- **Data labeling and assessment** - Use typed output fields (including floats and enums) for structured scoring tasks
+- **Semantic Search**: Find documents, products, or media by meaning rather than exact keywords using dense vector similarity
+- **Retrieval-Augmented Generation (RAG)**: Store document chunk embeddings and retrieve relevant context for LLM prompts with hybrid dense+sparse search
+- **Recommendation Systems**: Find similar items based on user behavior embeddings with payload-based filtering for business rules
+- **Image and Video Search**: Index visual embeddings for reverse image search and content-based retrieval
+- **Anomaly Detection**: Identify outliers by measuring vector distances from normal behavior patterns
+- **Multi-Tenant Applications**: Serve millions of users with payload-based partitioning or user-defined custom sharding for strict isolation
+- **E-Commerce**: Product search combining visual similarity, text descriptions, and metadata filtering (price, category, availability)
+- **Content Deduplication**: Detect near-duplicate documents or media using vector similarity thresholds
+
+## API Reference
+
+### Collection Operations
+
+``` python
+from qdrant_client import QdrantClient, models
+
+client = QdrantClient(url="http://localhost:6333")
+
+# Create collection
+client.create_collection(
+    collection_name="my_collection",
+    vectors_config=models.VectorParams(size=768, distance=models.Distance.COSINE),
+)
+
+# Multi-vector collection
+client.create_collection(
+    collection_name="multi_vec",
+    vectors_config={
+        "image": models.VectorParams(size=512, distance=models.Distance.DOT),
+        "text": models.VectorParams(size=768, distance=models.Distance.COSINE),
+    },
+)
+
+# Check existence
+client.collection_exists("my_collection")
+
+# Get collection info
+client.get_collection("my_collection")
+```
+
+### Upserting Points
+
+``` python
+client.upsert(
+    collection_name="my_collection",
+    wait=True,
+    points=[
+        models.PointStruct(
+            id=1,
+            vector=[0.05, 0.61, 0.76, 0.74],
+            payload={"city": "Berlin", "category": "travel"},
+        ),
+        models.PointStruct(
+            id=2,
+            vector=[0.19, 0.81, 0.75, 0.11],
+            payload={"city": "London", "category": "business"},
+        ),
+    ],
+)
+```
+
+### Vector Search
+
+``` python
+# Basic search
+results = client.query_points(
+    collection_name="my_collection",
+    query=[0.2, 0.1, 0.9, 0.7],
+    limit=5,
+    with_payload=True,
+)
+
+# Filtered search
+results = client.query_points(
+    collection_name="my_collection",
+    query=[0.2, 0.1, 0.9, 0.7],
+    query_filter=models.Filter(
+        must=[
+            models.FieldCondition(
+                key="city",
+                match=models.MatchValue(value="London"),
+            )
+        ]
+    ),
+    limit=5,
+)
+
+# Search with parameters
+results = client.query_points(
+    collection_name="my_collection",
+    query=[0.2, 0.1, 0.9, 0.7],
+    search_params=models.SearchParams(hnsw_ef=128, exact=False),
+    limit=10,
+)
+```
+
+### Hybrid Search (Dense + Sparse)
+
+``` python
+results = client.query_points(
+    collection_name="my_collection",
+    prefetch=[
+        models.Prefetch(
+            query=models.SparseVector(indices=[1, 42], values=[0.22, 0.8]),
+            using="sparse",
+            limit=20,
+        ),
+        models.Prefetch(
+            query=[0.01, 0.45, 0.67],
+            using="dense",
+            limit=20,
+        ),
+    ],
+    query=models.RrfQuery(rrf=models.Rrf(weights=[3.0, 1.0])),
+)
+```
+
+### Payload Filtering
+
+``` python
+# Scroll with complex filter
+results = client.scroll(
+    collection_name="my_collection",
+    scroll_filter=models.Filter(
+        must=[
+            models.FieldCondition(key="city", match=models.MatchValue(value="Berlin")),
+        ],
+        must_not=[
+            models.FieldCondition(key="category", match=models.MatchValue(value="spam")),
+        ],
+    ),
+    limit=10,
+    with_payload=True,
+)
+
+# Range filter
+models.FieldCondition(key="price", range=models.Range(gte=100.0, lte=450.0))
+
+# Geo filter
+models.FieldCondition(
+    key="location",
+    geo_radius=models.GeoRadius(
+        center=models.GeoPoint(lon=13.403683, lat=52.520711),
+        radius=1000.0,
+    ),
+)
+```
+
+### Delete Operations
+
+``` python
+# Delete by IDs
+client.delete(
+    collection_name="my_collection",
+    points_selector=models.PointIdsList(points=[0, 3, 100]),
+)
+
+# Delete by filter
+client.delete(
+    collection_name="my_collection",
+    points_selector=models.FilterSelector(
+        filter=models.Filter(
+            must=[models.FieldCondition(key="city", match=models.MatchValue(value="London"))]
+        )
+    ),
+)
+```
+
+## Configuration
+
+### Collection-Level Configuration
+
+``` python
+client.create_collection(
+    collection_name="optimized",
+    vectors_config=models.VectorParams(
+        size=768,
+        distance=models.Distance.COSINE,
+        on_disk=True,  # Memmap storage
+    ),
+    hnsw_config=models.HnswConfigDiff(m=16, ef_construct=100),
+    optimizers_config=models.OptimizersConfigDiff(indexing_threshold=20000),
+    quantization_config=models.ScalarQuantization(
+        scalar=models.ScalarQuantizationConfig(
+            type=models.ScalarType.INT8,
+            quantile=0.99,
+            always_ram=True,
+        ),
+    ),
+)
+```
+
+### Payload Index Configuration
+
+``` python
+# Keyword index
+client.create_payload_index(
+    collection_name="my_collection",
+    field_name="category",
+    field_schema=models.PayloadSchemaType.KEYWORD,
+)
+
+# Full-text index with tokenization
+client.create_payload_index(
+    collection_name="my_collection",
+    field_name="description",
+    field_schema=models.TextIndexParams(
+        type="text",
+        tokenizer=models.TokenizerType.WORD,
+        min_token_len=2,
+        max_token_len=15,
+        lowercase=True,
+    ),
+)
+
+# Tenant-optimized index
+client.create_payload_index(
+    collection_name="my_collection",
+    field_name="tenant_id",
+    field_schema=models.KeywordIndexParams(
+        type="keyword",
+        is_tenant=True,
+    ),
+)
+```
+
+### Server Configuration (YAML)
+
+Key `config.yaml` parameters:
+
+``` yaml
+storage:
+  hnsw_index:
+    m: 16
+    ef_construct: 100
+    full_scan_threshold: 10000
+  on_disk_payload: false
+  performance:
+    max_search_threads: 0  # auto-detect
+
+service:
+  host: 0.0.0.0
+  http_port: 6333
+  grpc_port: 6334
+
+cluster:
+  enabled: false
+  p2p:
+    port: 6335
+```
+
+## Integration Patterns
+
+### FastEmbed (Built-in Embeddings)
+
+Qdrant maintains FastEmbed, a lightweight embedding generation library. Install with `pip install qdrant-client[fastembed]` for client-side inference without external API calls \[1\].
+
+### LangChain Integration
+
+Qdrant provides a native LangChain vector store for RAG pipelines, enabling document embedding storage and retrieval during LLM prompt construction.
+
+### LlamaIndex Integration
+
+LlamaIndex supports Qdrant as a vector store backend for document indexing and retrieval in RAG applications.
+
+### MCP Server
+
+Qdrant provides a Model Context Protocol server (`mcp-server-qdrant`) for connecting AI coding assistants and agents directly to Qdrant collections \[1\].
+
+### Qdrant Edge
+
+A lightweight deployment mode for edge computing environments with resource constraints \[1\].
+
+## Examples
+
+### RAG Pipeline with Hybrid Search
+
+``` python
+from qdrant_client import QdrantClient, models
+
+client = QdrantClient(url="http://localhost:6333")
+
+# Create collection with dense + sparse vectors
+client.create_collection(
+    collection_name="rag_docs",
+    vectors_config={
+        "dense": models.VectorParams(size=768, distance=models.Distance.COSINE),
+    },
+    sparse_vectors_config={
+        "sparse": models.SparseVectorParams(),
+    },
+)
+
+# Insert document chunks
+client.upsert(
+    collection_name="rag_docs",
+    points=[
+        models.PointStruct(
+            id=1,
+            vector={
+                "dense": [0.1, 0.2, ...],  # from embedding model
+                "sparse": models.SparseVector(indices=[5, 10, 42], values=[0.5, 0.3, 0.8]),
+            },
+            payload={"text": "Document chunk content", "source": "docs/intro.md"},
+        ),
+    ],
+)
+
+# Hybrid search combining semantic + keyword
+results = client.query_points(
+    collection_name="rag_docs",
+    prefetch=[
+        models.Prefetch(query=[0.1, 0.2, ...], using="dense", limit=20),
+        models.Prefetch(
+            query=models.SparseVector(indices=[5, 42], values=[0.5, 0.8]),
+            using="sparse",
+            limit=20,
+        ),
+    ],
+    query=models.RrfQuery(rrf=models.Rrf()),
+    with_payload=True,
+    limit=5,
+)
+```
+
+### Multi-Tenant Collection
+
+``` python
+# Create collection with tenant optimization
+client.create_collection(
+    collection_name="multi_tenant",
+    vectors_config=models.VectorParams(size=768, distance=models.Distance.COSINE),
+)
+
+# Create tenant-optimized index
+client.create_payload_index(
+    collection_name="multi_tenant",
+    field_name="tenant_id",
+    field_schema=models.KeywordIndexParams(type="keyword", is_tenant=True),
+)
+
+# Insert tenant-specific data
+client.upsert(
+    collection_name="multi_tenant",
+    points=[
+        models.PointStruct(
+            id=1,
+            vector=[0.1, 0.2, ...],
+            payload={"tenant_id": "company_a", "text": "Tenant A document"},
+        ),
+    ],
+)
+
+# Search scoped to tenant
+results = client.query_points(
+    collection_name="multi_tenant",
+    query=[0.1, 0.2, ...],
+    query_filter=models.Filter(
+        must=[models.FieldCondition(key="tenant_id", match=models.MatchValue(value="company_a"))]
+    ),
+    limit=10,
+)
+```
+
+### Quantized Collection for Large-Scale Deployment
+
+``` python
+# Binary quantization for high-dimensional embeddings (32x compression)
+client.create_collection(
+    collection_name="large_scale",
+    vectors_config=models.VectorParams(
+        size=1536,
+        distance=models.Distance.COSINE,
+        on_disk=True,
+    ),
+    quantization_config=models.BinaryQuantization(
+        binary=models.BinaryQuantizationConfig(
+            always_ram=True,
+        ),
+    ),
+)
+
+# Search with rescoring for quality
+results = client.query_points(
+    collection_name="large_scale",
+    query=[0.1, 0.2, ...],
+    search_params=models.SearchParams(
+        quantization=models.QuantizationSearchParams(
+            rescore=True,
+            oversampling=2.0,
+        ),
+    ),
+    limit=10,
+)
+```
+
+## Limitations
+
+- **No ACID transactions**: Point operations bypass Raft consensus for performance; distributed atomicity is limited to single-point operations
+- **Single distance metric per vector**: All dense vectors within a collection (or named vector) must use the same distance metric and dimensionality
+- **Sparse vector constraints**: Sparse vectors support only dot-product distance and always use exact matching (no approximate indexing)
+- **Two-node cluster limitations**: Collection create/edit/delete operations fail when one node is offline since recovery requires \>50% of nodes healthy \[6\]
+- **No built-in embedding**: Qdrant stores and searches vectors but does not generate embeddings (FastEmbed is a separate client-side library); server-side inference is limited to Qdrant Cloud
+- **Product quantization performance**: PQ is slower than scalar quantization (non-SIMD-friendly) with significant accuracy loss (~0.7 accuracy) \[7\]
+- **Memory requirements**: In-memory HNSW indexes require substantial RAM for large datasets; memmap or on-disk storage must be explicitly configured
+- **Default no authentication**: Qdrant starts with no encryption or authentication by default; security must be explicitly configured \[9\]
+- **Eventual consistency default**: Distributed deployments prioritize availability and throughput; strong consistency requires explicit configuration of write ordering and read consistency levels \[6\]
+
+## Changelog
+
+- **v1.17.0**: RRF weighted fusion, update modes (insert_only, update_only), disable HNSW edges per field
+- **v1.16.0**: ACORN search algorithm, conditional updates with filters, collection metadata, ASCII folding in text indexes, full-text any matching
+- **v1.15.0**: 1.5-bit and 2-bit binary quantization, asymmetric quantization with query encoding
+- **v1.13.0**: Resharding (Cloud), has_vector filter condition
+- **v1.11.0**: Distribution-Based Score Fusion (DBSF), on-disk payload indexes, tenant/principal index types, UUID matching, grouping in hybrid queries
+- **v1.10.0**: Sparse vector IDF modifier
+- **v1.9.0**: Uint8 vector datatype support
+- **v1.8.0**: WAL delta shard transfer, datetime range filters, order-by payload scrolling, parameterized integer indexes
+- **v1.7.0**: Sparse vector support, user-defined custom sharding, snapshot shard transfer
+- **v1.5.0**: Binary quantization, batch update operations
+
+## Citations
+
+- \[1\] Overview - https://qdrant.tech/documentation/overview/
+- \[2\] Collections - https://qdrant.tech/documentation/concepts/collections/
+- \[3\] Points - https://qdrant.tech/documentation/concepts/points/
+- \[4\] Filtering - https://qdrant.tech/documentation/concepts/filtering/
+- \[5\] API & SDKs - https://qdrant.tech/documentation/interfaces/
+- \[6\] Distributed Deployment - https://qdrant.tech/documentation/guides/distributed_deployment/
+- \[7\] Quantization - https://qdrant.tech/documentation/guides/quantization/
+- \[8\] Storage - https://qdrant.tech/documentation/concepts/storage/
+- \[9\] Quickstart - https://qdrant.tech/documentation/quickstart/
+- \[10\] Search - https://qdrant.tech/documentation/concepts/search/
+- \[11\] Hybrid Queries - https://qdrant.tech/documentation/concepts/hybrid-queries/
+- \[12\] Indexing - https://qdrant.tech/documentation/concepts/indexing/
+
+# Milvus
+
+> Open-source cloud-native vector database for scalable similarity search and AI applications
+
+| Field       | Value                                                   |
+|-------------|---------------------------------------------------------|
+| Name        | Milvus                                                  |
+| Group       | Vector Databases                                        |
+| Type        | SDK/Infra                                               |
+| Open Source | yes                                                     |
+| GitHub      | [milvus-io/milvus](https://github.com/milvus-io/milvus) |
+| Stars       | 43127                                                   |
+| Docs        | [milvus.io/docs](https://milvus.io/docs)                |
+
+## Overview
+
+Milvus is an open-source, cloud-native vector database purpose-built for scalable similarity search and AI applications. It stores, indexes, and manages massive embedding vectors generated by deep neural networks and machine learning models. Milvus supports billions of vectors with sub-second query latency and integrates with popular AI frameworks and embedding models \[1\].
+
+The database is available in three deployment modes \[1\]:
+
+- **Milvus Lite**: A lightweight Python library for local development and prototyping, storing data as a local file
+- **Milvus Standalone**: A single-machine deployment using Docker Compose for small-to-medium datasets
+- **Milvus Distributed**: A horizontally scalable deployment on Kubernetes for billion-scale production workloads
+
+Milvus features a C++ search engine with hardware-aware optimizations (AVX512, SIMD, GPU acceleration), column-oriented storage with tiered memory management, and a stateless architecture with decoupled compute and storage. It claims 2-5x performance improvement over competing solutions on standard benchmarks \[1\].
+
+## Core Concepts
+
+### Collections and Fields
+
+A **collection** is the primary data container in Milvus, analogous to a table in a relational database. Collections hold documents organized into **fields** (columns). Each collection must have a primary key field and at least one vector field. Collections support dynamic schemas where fields can be added without modifying the existing structure \[1\].
+
+### Vector Types
+
+Milvus supports multiple vector data types \[1\]:
+
+- **Dense vectors**: Standard floating-point vectors (Float32, Float16, BFloat16) for semantic similarity
+- **Sparse vectors**: High-dimensional vectors with mostly zero values, suited for keyword-aware and term-based search
+- **Binary vectors**: Bit-encoded vectors for compact storage and fast Hamming/Jaccard distance computation
+
+### Index Types
+
+Milvus provides a range of indexing algorithms optimized for different use cases \[1\]:
+
+- **FLAT**: Brute-force search with 100% recall, suited for small datasets
+- **IVF_FLAT / IVF_SQ8 / IVF_PQ**: Inverted file indexes with optional quantization for memory-performance tradeoffs
+- **HNSW**: Hierarchical Navigable Small World graph for high-recall, low-latency search
+- **SCANN**: Score-aware quantization for balanced performance
+- **DiskANN**: Disk-based index for billion-scale datasets that exceed memory capacity
+- **GPU_CAGRA / GPU_IVF_FLAT / GPU_IVF_PQ / GPU_BRUTE_FORCE**: GPU-accelerated indexes for maximum throughput
+
+### Search Types
+
+Milvus supports multiple search paradigms \[1\]:
+
+- **ANN Search**: Approximate nearest neighbor search on vector embeddings
+- **Filtering Search**: Scalar metadata filtering combined with vector similarity
+- **Range Search**: Find vectors within a specified distance threshold
+- **Hybrid Search**: Multi-vector search with weighted fusion across multiple vector fields
+- **Full Text Search**: BM25-based keyword search on text fields using sparse vectors
+- **Reranking**: Re-order results using additional scoring models
+- **Query**: Scalar-only retrieval using boolean filter expressions
+- **Fetch**: Direct retrieval by primary key
+
+### Partitions and Partition Keys
+
+**Partitions** divide a collection into physical subsets for targeted search. **Partition keys** enable automatic data routing — Milvus hashes a designated scalar field to distribute entities across partitions, enabling multi-tenant isolation at the data level without manually managing partitions \[1\].
+
+### Consistency Levels
+
+Milvus offers four consistency levels to balance between data freshness and query performance \[1\]:
+
+- **Strong**: Reads always see the latest committed data
+- **Bounded Staleness**: Reads may lag by a configurable time window
+- **Session**: Reads within the same session see their own writes
+- **Eventually**: No ordering guarantees, maximum throughput
+
+## Installation
+
+### Milvus Lite (Python)
+
+``` bash
+pip install -U pymilvus
+```
+
+``` python
+from pymilvus import MilvusClient
+
+# Local file-based storage
+client = MilvusClient("milvus_demo.db")
+```
+
+Milvus Lite bundles the database engine as a Python library — no external services required. Suited for notebooks, prototyping, and small-scale applications (under 1 million vectors) \[2\].
+
+### Milvus Standalone (Docker)
+
+``` bash
+# Download and run the install script
+curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_up.sh | bash
+
+# Connect
+from pymilvus import MilvusClient
+client = MilvusClient(uri="http://localhost:19530")
+```
+
+Runs Milvus with all components in a single Docker container, using etcd for metadata, MinIO for object storage, and Pulsar for log streaming \[2\].
+
+### Milvus Distributed (Kubernetes)
+
+Deployed via Milvus Operator or Helm chart on Kubernetes for production-scale workloads with horizontal scaling, high availability, and rolling upgrades \[1\].
+
+### SDK Installation
+
+``` bash
+# Python
+pip install -U "pymilvus[model]"
+
+# Node.js
+npm install @zilliz/milvus2-sdk-node
+
+# Go
+go get github.com/milvus-io/milvus-sdk-go/v2
+
+# Java
+# Maven dependency: io.milvus:milvus-sdk-java
+
+# C#
+dotnet add package Milvus.Client
+```
+
+## Architecture
+
+Milvus Distributed uses a shared-storage disaggregated architecture with four layers \[1\]:
+
+``` 
+┌─────────────────────────────────────────────────┐
+│                 Access Layer                     │
+│  ┌───────────┐  ┌───────────┐  ┌───────────┐   │
+│  │  Proxy 1  │  │  Proxy 2  │  │  Proxy N  │   │
+│  │ (stateless│  │           │  │           │   │
+│  │  gateway) │  │           │  │           │   │
+│  └─────┬─────┘  └─────┬─────┘  └─────┬─────┘   │
+└────────┼──────────────┼──────────────┼──────────┘
+         │              │              │
+┌────────┼──────────────┼──────────────┼──────────┐
+│        v     Coordinator Layer       v           │
+│  ┌──────────┐ ┌──────────┐ ┌──────────────────┐ │
+│  │  Root     │ │  Query   │ │  Data    Index   │ │
+│  │  Coord   │ │  Coord   │ │  Coord   Coord   │ │
+│  └──────────┘ └──────────┘ └──────────────────┘ │
+└─────────────────────┬───────────────────────────┘
+                      │
+┌─────────────────────┼───────────────────────────┐
+│              Worker Layer                        │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐        │
+│  │  Query   │ │  Data    │ │  Index   │        │
+│  │  Nodes   │ │  Nodes   │ │  Nodes   │        │
+│  │ (search) │ │ (ingest) │ │ (build)  │        │
+│  └──────────┘ └──────────┘ └──────────┘        │
+└─────────────────────┬───────────────────────────┘
+                      │
+┌─────────────────────┼───────────────────────────┐
+│              Storage Layer                       │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐        │
+│  │   etcd   │ │  Object  │ │   Log    │        │
+│  │(metadata)│ │  Storage │ │  Broker  │        │
+│  │          │ │ (S3/MinIO│ │ (Pulsar/ │        │
+│  │          │ │  /GCS)   │ │  Kafka)  │        │
+│  └──────────┘ └──────────┘ └──────────┘        │
+└─────────────────────────────────────────────────┘
+```
+
+- **Access Layer**: Stateless proxies that handle client connections, request routing, and result aggregation
+- **Coordinator Layer**: Manages cluster topology, load balancing, data distribution, and index building schedules
+- **Worker Layer**: Stateless nodes executing search (Query Nodes), ingestion (Data Nodes), and index construction (Index Nodes) — each type scales independently
+- **Storage Layer**: etcd for metadata, object storage (S3, MinIO, GCS, Azure Blob) for segments, and a log broker (Pulsar or Kafka) for write-ahead logging and change data capture \[1\]
+
+## Key Features
+
+- **Multi-Vector Search**: Store and search across multiple vector fields per collection with weighted fusion (RRF, weighted scoring)
+- **Hybrid Search**: Combine dense vector similarity, sparse BM25 keyword search, and scalar filtering in a single query
+- **GPU Acceleration**: Native GPU-accelerated indexes (CAGRA, GPU_IVF) for high-throughput workloads
+- **DiskANN Index**: Search billion-scale datasets that exceed available memory using SSD-based indexing
+- **Dynamic Schema**: Add fields to collections without schema migrations or downtime
+- **Multi-Tenancy**: Database-level, collection-level, partition-level, and partition-key-level isolation strategies
+- **Hot/Cold Storage Tiering**: Automatically move less-accessed data to cheaper storage while keeping hot data in memory
+- **RBAC and Authentication**: Role-based access control with user authentication and TLS encryption
+- **Mmap File Management**: Memory-mapped file support for loading data beyond available RAM
+- **Iterator Support**: Cursor-based iteration over large result sets without loading all results into memory
+- **Resource Groups**: Isolate query workloads by assigning query nodes to dedicated resource groups
+- **Clustering Compaction**: Reorganize data segments by clustering key to improve scan performance
+- **CDC (Change Data Capture)**: Stream data changes to downstream systems for real-time synchronization
+- **Backup and Restore**: Native backup tool for point-in-time snapshots and cross-cluster migration
+
+## Use Cases
+
+- **Retrieval-Augmented Generation (RAG)**: Store document embeddings and retrieve relevant context for LLM prompts with hybrid search combining semantic and keyword matching
+- **Image and Video Search**: Index visual embeddings for reverse image search, content-based image retrieval, and video frame matching
+- **Recommendation Systems**: Find similar items (products, content, users) based on embedding similarity for personalized recommendations
+- **Anomaly Detection**: Identify outliers by measuring vector distances from normal behavior patterns in IoT, fraud detection, and security
+- **Drug Discovery**: Search molecular structure embeddings to find candidate compounds similar to known effective drugs
+- **Natural Language Processing (NLP)**: Semantic text search, document deduplication, question answering, and text classification using sentence embeddings
+- **Audio and Music Retrieval**: Index audio fingerprints and embeddings for music similarity search and audio-based content matching
+- **Multimodal Search**: Combine text and image vectors with cross-modal retrieval using multi-vector search capabilities
+
+## API Reference
+
+### Collection Operations
+
+``` python
+from pymilvus import MilvusClient
+
+client = MilvusClient("milvus_demo.db")
+
+# Create collection with auto-generated ID
+client.create_collection(
+    collection_name="demo_collection",
+    dimension=768,
+)
+
+# List collections
+collections = client.list_collections()
+
+# Drop collection
+client.drop_collection(collection_name="demo_collection")
+```
+
+### Insert Data
+
+``` python
+data = [
+    {"id": 0, "vector": [0.1, 0.2, ...], "text": "Document text", "subject": "science"},
+    {"id": 1, "vector": [0.3, 0.4, ...], "text": "Another doc", "subject": "history"},
+]
+
+result = client.insert(collection_name="demo_collection", data=data)
+```
+
+### Vector Search
+
+``` python
+# Basic ANN search
+results = client.search(
+    collection_name="demo_collection",
+    data=[query_vector],
+    limit=5,
+    output_fields=["text", "subject"],
+)
+
+# Filtered search
+results = client.search(
+    collection_name="demo_collection",
+    data=[query_vector],
+    limit=5,
+    filter='subject == "science"',
+    output_fields=["text", "subject"],
+)
+```
+
+### Query (Scalar Filtering)
+
+``` python
+# Filter by metadata
+results = client.query(
+    collection_name="demo_collection",
+    filter='subject == "history"',
+    output_fields=["text", "subject"],
+)
+
+# Fetch by ID
+results = client.get(
+    collection_name="demo_collection",
+    ids=[0, 1, 2],
+)
+```
+
+### Delete
+
+``` python
+# Delete by ID
+client.delete(collection_name="demo_collection", ids=[0, 1, 2])
+
+# Delete by filter
+client.delete(collection_name="demo_collection", filter='subject == "history"')
+```
+
+### Embedding Integration
+
+``` python
+from pymilvus import model
+
+# Use built-in embedding function
+embedding_fn = model.DefaultEmbeddingFunction()  # paraphrase-albert-small-v2
+
+docs = ["Document one", "Document two"]
+vectors = embedding_fn.encode_documents(docs)
+query_vectors = embedding_fn.encode_queries(["search query"])
+```
+
+## Configuration
+
+### Connection Configuration
+
+``` python
+# Milvus Lite (local file)
+client = MilvusClient("./milvus.db")
+
+# Milvus Standalone (Docker)
+client = MilvusClient(
+    uri="http://localhost:19530",
+    token="root:Milvus",
+)
+
+# Zilliz Cloud (managed)
+client = MilvusClient(
+    uri="https://your-instance.zillizcloud.com",
+    token="your-api-key",
+)
+```
+
+### Collection Schema Configuration
+
+``` python
+from pymilvus import CollectionSchema, FieldSchema, DataType
+
+fields = [
+    FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
+    FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=768),
+    FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=65535),
+    FieldSchema(name="category", dtype=DataType.VARCHAR, max_length=256),
+]
+
+schema = CollectionSchema(fields=fields, enable_dynamic_field=True)
+```
+
+### Index Configuration
+
+``` python
+index_params = client.prepare_index_params()
+
+index_params.add_index(
+    field_name="embedding",
+    index_type="HNSW",
+    metric_type="COSINE",
+    params={"M": 16, "efConstruction": 256},
+)
+
+client.create_index(
+    collection_name="demo_collection",
+    index_params=index_params,
+)
+```
+
+### Server Configuration
+
+Key `milvus.yaml` parameters for standalone and distributed deployments:
+
+- `etcd.endpoints`: Metadata store connection
+- `minio.address`, `minio.bucketName`: Object storage configuration
+- `common.security.authorizationEnabled`: Enable RBAC authentication
+- `common.security.tlsMode`: TLS encryption (0=disabled, 1=server-only, 2=mutual)
+- `queryNode.gracefulTime`: Query node staleness tolerance in milliseconds
+- `dataCoord.segment.maxSize`: Maximum segment size in MB \[1\]
+
+## Integration Patterns
+
+### LangChain Integration
+
+Milvus provides a native LangChain vector store integration for building RAG pipelines. Documents are embedded, stored in Milvus collections, and retrieved via similarity search during LLM prompt construction \[3\].
+
+### LlamaIndex Integration
+
+LlamaIndex supports Milvus as a vector store backend for document indexing and retrieval in RAG applications \[3\].
+
+### Embedding Model Support
+
+Milvus integrates with embedding providers through PyMilvus model utilities \[1\]:
+
+- OpenAI (text-embedding-3-small/large)
+- Sentence Transformers (local models)
+- BGE (BAAI embedding models)
+- Cohere, Voyage AI, Jina AI
+- Built-in default model (paraphrase-albert-small-v2)
+
+### Spark Connector
+
+The Milvus Spark Connector enables batch ingestion from Apache Spark DataFrames into Milvus collections for ETL pipelines and large-scale data processing \[1\].
+
+### Tools Ecosystem
+
+- **Attu**: Web-based GUI for collection management, data visualization, and query exploration
+- **Birdwatcher**: CLI debugging tool for inspecting Milvus cluster state and diagnostics
+- **Milvus Backup**: Backup and restore tool for data migration and disaster recovery
+- **Milvus CDC**: Change data capture for real-time data synchronization to downstream systems
+- **VTS (Vector Transport Service)**: Cross-database migration tool \[1\]
+
+## Examples
+
+### RAG Pipeline with PyMilvus
+
+``` python
+from pymilvus import MilvusClient, model
+
+# Initialize
+client = MilvusClient("rag_demo.db")
+embedding_fn = model.DefaultEmbeddingFunction()
+
+# Prepare documents
+docs = [
+    "Machine learning is a subset of artificial intelligence.",
+    "Neural networks are inspired by biological neurons.",
+    "Deep learning uses multiple layers of neural networks.",
+]
+vectors = embedding_fn.encode_documents(docs)
+
+# Create collection and insert
+client.create_collection(collection_name="rag_docs", dimension=768)
+data = [
+    {"id": i, "vector": vectors[i], "text": docs[i]}
+    for i in range(len(docs))
+]
+client.insert(collection_name="rag_docs", data=data)
+
+# Search for relevant context
+query = "What is deep learning?"
+query_vectors = embedding_fn.encode_queries([query])
+results = client.search(
+    collection_name="rag_docs",
+    data=query_vectors,
+    limit=2,
+    output_fields=["text"],
+)
+
+# Use results as LLM context
+context = "\n".join([hit["entity"]["text"] for hit in results[0]])
+```
+
+### Multi-Tenant Collection with Partition Keys
+
+``` python
+from pymilvus import MilvusClient, CollectionSchema, FieldSchema, DataType
+
+client = MilvusClient("multi_tenant.db")
+
+schema = CollectionSchema(fields=[
+    FieldSchema("id", DataType.INT64, is_primary=True, auto_id=True),
+    FieldSchema("tenant_id", DataType.VARCHAR, max_length=64, is_partition_key=True),
+    FieldSchema("embedding", DataType.FLOAT_VECTOR, dim=128),
+    FieldSchema("content", DataType.VARCHAR, max_length=65535),
+])
+
+client.create_collection(
+    collection_name="multi_tenant_docs",
+    schema=schema,
+    num_partitions=64,
+)
+
+# Insert tenant-specific data
+client.insert("multi_tenant_docs", [
+    {"tenant_id": "tenant_A", "embedding": [...], "content": "Tenant A doc"},
+    {"tenant_id": "tenant_B", "embedding": [...], "content": "Tenant B doc"},
+])
+
+# Search scoped to a single tenant
+results = client.search(
+    collection_name="multi_tenant_docs",
+    data=[query_vector],
+    filter='tenant_id == "tenant_A"',
+    limit=10,
+)
+```
+
+## Limitations
+
+- **Memory requirements**: In-memory indexes (HNSW, IVF) require significant RAM for large datasets; DiskANN or mmap must be configured for datasets exceeding available memory
+- **Standalone scaling ceiling**: Milvus Standalone runs on a single machine and cannot scale horizontally; migration to Distributed mode requires re-deployment
+- **Milvus Lite constraints**: Limited to Python, runs in-process, not suited for production or multi-client access; maximum recommended scale is approximately 1 million vectors \[2\]
+- **Eventual consistency default**: Default consistency level is Bounded Staleness, meaning recently inserted data may not be immediately visible in search results
+- **No native transaction support**: Milvus does not support multi-document ACID transactions
+- **Complex deployment**: Milvus Distributed requires Kubernetes, etcd, object storage, and a log broker (Pulsar or Kafka), increasing operational complexity
+- **Delete performance**: Deletion marks entities as deleted but does not immediately reclaim storage; space is reclaimed during compaction
+- **Dynamic schema overhead**: While dynamic fields are flexible, they incur additional storage and query overhead compared to statically defined schemas
+- **Index build time**: Large-scale index construction (especially GPU indexes) can take significant time and compute resources
+
+## Changelog
+
+- **v2.6.x** (June 2025): Latest stable release series with GPU CAGRA index, clustering compaction, hot/cold storage tiering, and enhanced hybrid search
+- **v2.5.x**: Added full text search (BM25), text match filtering, and improved multi-vector search support
+- **v2.4.x**: Added sparse vector support, multi-vector search, GPU index improvements
+- **v2.3.x**: Added iterator support, range search, and upsert operations
+- **Milvus Lite**: Introduced as lightweight Python-embedded deployment mode
+- **CDC**: Added Change Data Capture for real-time data synchronization
+- **Milvus Backup**: Native backup and restore tooling \[1\]
+
+## Citations
+
+- \[1\] What is Milvus - https://milvus.io/docs/overview.md
+- \[2\] Quickstart - https://milvus.io/docs/quickstart.md
+- \[3\] Integrations - https://milvus.io/docs/integrations_overview.md
+
+# Unstructured
+
+> Open-source ETL library for converting documents into structured data for language models
+
+| Field | Value |
+|----|----|
+| Name | Unstructured |
+| Group | Data Pipelines |
+| Type | SDK |
+| Open Source | yes |
+| GitHub | [Unstructured-IO/unstructured](https://github.com/Unstructured-IO/unstructured) |
+| Stars | 14118 |
+| Docs | [docs.unstructured.io](https://docs.unstructured.io/open-source/ingestion/overview) |
+
+## Overview
+
+Unstructured is an open-source document ingestion and processing platform that converts unstructured data from files (PDFs, Word documents, images, emails, HTML, and 25+ other formats) into structured, enriched content suitable for large language models (LLMs) and Retrieval-Augmented Generation (RAG) systems \[1\].
+
+The platform is available through three interfaces \[1\]:
+
+- **Unstructured UI**: No-code web interface for batch processing
+- **Unstructured API**: REST API with full feature access
+- **Open Source Library**: Python library and CLI for programmatic use
+
+The open-source library provides four core operations: **partitioning** (extracting structured elements from documents), **cleaning** (removing unwanted content), **extraction** (retrieving specific content), and **staging** (preparing data for downstream applications). An ingestion pipeline extends these with source/destination connectors for batch ETL workflows \[2\].
+
+## Core Concepts
+
+### Partitioning
+
+Partitioning is the core operation that converts raw documents into structured **elements** — semantic units like Title, NarrativeText, ListItem, Table, Image, Header, Footer, and PageBreak. The `partition()` function auto-detects file types using `libmagic` and routes to appropriate handlers \[3\].
+
+Four partitioning strategies control accuracy-speed tradeoffs for PDFs and images \[3\]:
+
+- **auto** (default): Selects strategy based on document characteristics
+- **hi_res**: Uses `detectron2_onnx` layout analysis for precise element classification; best for structured documents with tables
+- **fast**: Uses `pdfminer` text extraction; recommended for standard PDFs with extractable text
+- **ocr_only**: Runs Tesseract OCR then processes via text partitioning; handles multi-column layouts and scanned documents
+
+### Document Elements
+
+Elements are the output units of partitioning. Each element has a type (Title, NarrativeText, ListItem, Table, etc.) and carries metadata including page numbers, element classification, coordinates, and source information. Email-specific elements include Subject, Sender, and Recipient \[3\].
+
+### Chunking
+
+Chunking operates on partitioned elements (not raw text), combining consecutive elements to form chunks as large as possible without exceeding a maximum size. Two strategies are available \[4\]:
+
+- **basic**: Sequentially combines elements respecting character limits; tables remain isolated
+- **by_title**: Preserves section boundaries by treating Title elements as section starts; supports `multipage_sections` and `combine_text_under_n_chars` parameters
+
+Key parameters: `max_characters` (hard limit, default 500), `new_after_n_chars` (soft limit), `overlap` (characters shared between split chunks), `overlap_all` (extend overlap to all chunks) \[4\].
+
+### Ingestion Pipeline
+
+The ingestion pipeline follows an 11-step ETL workflow \[1\]:
+
+1.  **Index** → 2. **Post-Index Filter** → 3. **Download** → 4. **Post-Download Filter** → 5. **Uncompress** → 6. **Post-Uncompress Filter** → 7. **Partition** → 8. **Chunk** → 9. **Embed** → 10. **Stage** → 11. **Upload**
+
+Filtering can be applied at three stages (post-index, post-download, post-uncompress) to exclude files by type, name, path, or size before processing \[1\].
+
+## Installation
+
+### Python Package
+
+``` bash
+# Full installation (all file types)
+pip install "unstructured[all-docs]"
+
+# Minimal installation (txt, html, xml, email only)
+pip install unstructured
+
+# Selective file type extras
+pip install "unstructured[pdf,docx]"
+```
+
+Available extras: `csv`, `docx`, `epub`, `image`, `md`, `odt`, `org`, `pdf`, `pptx`, `rst`, `rtf`, `tsv`, `xlsx`, and `all-docs` \[6\].
+
+### System Dependencies
+
+- **libmagic-dev**: File type detection
+- **poppler-utils** and **tesseract-ocr**: Image and PDF processing; `tesseract-lang` for additional language support
+- **libreoffice**: Microsoft Office document handling (.doc, .ppt)
+- **pandoc** (v2.14.2+): `.epub`, `.odt`, and `.rtf` file support \[6\]
+
+### Docker
+
+Unstructured provides Docker images for containerized deployment without manual system dependency management.
+
+## Architecture
+
+``` 
+┌─────────────────────────────────────────────────────┐
+│                  Source Connectors (34)               │
+│  S3, Azure, GCS, Local, Dropbox, Google Drive,      │
+│  SharePoint, Confluence, Slack, GitHub, PostgreSQL...│
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│              Ingestion Pipeline                      │
+│                                                      │
+│  ┌───────┐  ┌────────┐  ┌──────────┐  ┌─────────┐ │
+│  │ Index │→ │Download │→ │Uncompress│→ │Partition │ │
+│  └───────┘  └────────┘  └──────────┘  └────┬────┘ │
+│                                              │      │
+│  Filters applied at 3 stages                 v      │
+│                                        ┌──────────┐ │
+│  ┌───────┐  ┌───────┐  ┌──────────┐  │  Chunk   │ │
+│  │Upload │← │ Stage │← │  Embed   │← │          │ │
+│  └───────┘  └───────┘  └──────────┘  └──────────┘ │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│              Destination Connectors (36)              │
+│  Pinecone, Qdrant, Weaviate, Milvus, Chroma,       │
+│  Elasticsearch, PostgreSQL, S3, Snowflake, Neo4j... │
+└─────────────────────────────────────────────────────┘
+```
+
+The partitioning engine supports multiple strategies with pluggable OCR backends (Tesseract, PaddleOCR) and layout detection models (detectron2_onnx). Connectors are modular — any source can connect to any destination \[1\].
+
+## Key Features
+
+- **25+ File Formats**: PDF, DOCX, PPTX, XLSX, HTML, Markdown, XML, CSV, TSV, JSON, EML, MSG, EPUB, RTF, ODT, images (PNG, JPG, TIFF, BMP, HEIC), and more
+- **Layout Detection**: Hi-res strategy uses detectron2_onnx for precise element classification in structured documents
+- **OCR Support**: Tesseract OCR with multi-language support via ISO 639-3 codes; PaddleOCR as alternative backend
+- **Table Extraction**: Extracts tables as HTML representation via `text_as_html` metadata field
+- **Image Extraction**: Extracts images with base64 encoding from PDFs and documents
+- **Semantic Chunking**: Element-aware chunking that respects document structure (sections, titles, page boundaries)
+- **Text Cleaning**: Functions for removing bullets, dashes, non-ASCII characters, extra whitespace, punctuation, and unicode quote normalization
+- **Text Translation**: Built-in translation using Helsinki NLP MT models via transformers
+- **34 Source Connectors**: S3, Azure, GCS, Google Drive, SharePoint, Confluence, Dropbox, Slack, GitHub, GitLab, Kafka, PostgreSQL, MongoDB, Salesforce, Jira, Notion, and more
+- **36 Destination Connectors**: Pinecone, Qdrant, Weaviate, Milvus, Chroma, Elasticsearch, Neo4j, PostgreSQL, Snowflake, S3, DuckDB, LanceDB, Redis, and more
+- **Embedding Integration**: Support for OpenAI, HuggingFace, Amazon Bedrock, Vertex AI, Voyage AI, OctoAI, and together.ai via the ingest pipeline
+- **Multi-Stage Filtering**: Filter files by type, name, path, or size at three pipeline stages
+- **Batch Processing**: Process large file collections with asynchronous and multiprocessing execution
+- **Email Processing**: Parse EML and MSG formats with header extraction (Subject, From, To, CC, BCC) and attachment processing
+
+## Use Cases
+
+- **RAG Data Preparation**: Extract and chunk documents from diverse sources into vector-database-ready formats for Retrieval-Augmented Generation pipelines
+- **Document Intelligence**: Parse PDFs, scanned documents, and images to extract structured content including tables, headers, and narrative text
+- **Knowledge Base Construction**: Ingest documents from SharePoint, Confluence, Google Drive, and other enterprise sources into searchable knowledge stores
+- **Email Processing**: Extract structured content from email archives for compliance, search, and analysis
+- **Data Lake Ingestion**: Convert unstructured files from cloud storage (S3, GCS, Azure) into structured JSON for data warehouses
+- **Multi-Language Document Processing**: Process documents in multiple languages with OCR and translation capabilities
+- **Legal and Financial Document Parsing**: Extract structured data from contracts, reports, and regulatory filings
+
+## API Reference
+
+### Partitioning
+
+``` python
+from unstructured.partition.auto import partition
+
+# Auto-detect file type and partition
+elements = partition(filename="document.pdf")
+
+# With strategy selection
+elements = partition(filename="scan.pdf", strategy="hi_res")
+
+# With OCR language support
+elements = partition(filename="german_doc.pdf", languages=["eng", "deu"])
+
+# From URL
+elements = partition(url="https://example.com/report.pdf")
+```
+
+### Type-Specific Partitioning
+
+``` python
+from unstructured.partition.pdf import partition_pdf
+from unstructured.partition.html import partition_html
+from unstructured.partition.email import partition_email
+
+# PDF with hi-res layout detection
+elements = partition_pdf("document.pdf", strategy="hi_res")
+
+# HTML from URL
+elements = partition_html(url="https://example.com")
+
+# Email with attachments
+elements = partition_email(
+    filename="message.eml",
+    include_headers=True,
+    process_attachments=True,
+)
+```
+
+### Chunking
+
+``` python
+from unstructured.partition.auto import partition
+from unstructured.chunking.basic import chunk_elements
+
+# Chunk during partitioning
+chunks = partition("document.pdf", chunking_strategy="basic")
+
+# Chunk separately
+elements = partition("document.pdf")
+chunks = chunk_elements(elements, max_characters=1000, overlap=200)
+```
+
+### Cleaning
+
+``` python
+from unstructured.cleaners.core import clean, clean_non_ascii_chars
+
+# Multi-option cleaning
+result = clean("● An excellent point!", bullets=True, lowercase=True)
+# Returns: "an excellent point!"
+
+# Remove non-ASCII characters
+result = clean_non_ascii_chars("\x88Text with ®special chars●")
+# Returns: "Text with special chars"
+```
+
+### API-Based Processing
+
+``` python
+from unstructured.partition.api import partition_via_api
+
+elements = partition_via_api(
+    filename="document.pdf",
+    api_key="YOUR_API_KEY",
+    strategy="auto",
+)
+```
+
+## Configuration
+
+### Partitioning Parameters
+
+- `strategy`: Processing approach — `auto`, `hi_res`, `fast`, `ocr_only` (default: `auto`)
+- `languages`: OCR language codes as list (default: English)
+- `include_page_breaks`: Include PageBreak elements (default: False)
+- `max_partition`: Character limit per element (default: 1500)
+- `content_type`: Override MIME type auto-detection
+- `extract_image_block_to_payload`: Extract images as base64 (default: False) \[3\]
+
+### Chunking Parameters
+
+- `chunking_strategy`: `basic` or `by_title`
+- `max_characters`: Hard character limit per chunk (default: 500)
+- `new_after_n_chars`: Soft limit for preferred chunk size
+- `overlap`: Characters shared between split chunks (default: 0)
+- `multipage_sections`: Allow chunks to span pages (default: True, by_title only)
+- `combine_text_under_n_chars`: Merge small sections (by_title only) \[4\]
+
+### Embedding Configuration
+
+Embedding providers are configured within the ingest pipeline. Supported providers: Amazon Bedrock (Titan), HuggingFace, OctoAI, OpenAI, together.ai, Vertex AI, and Voyage AI \[7\].
+
+## Integration Patterns
+
+### LangChain Integration
+
+Unstructured provides LangChain document loaders for direct integration with LangChain RAG pipelines.
+
+### Vector Database Integration
+
+The destination connector system supports direct ingestion into vector databases: Pinecone, Qdrant, Weaviate, Milvus, Chroma, Elasticsearch, LanceDB, Vectara, and Redis.
+
+### Third-Party Embedding
+
+``` python
+from langchain.embeddings import HuggingFaceEmbeddings
+from unstructured.staging.base import elements_from_json
+
+# Load processed elements
+elements = elements_from_json(filename="output.json")
+
+# Generate embeddings with external library
+embedder = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+for element in elements:
+    element["embeddings"] = embedder.embed_query(str(element))
+```
+
+### Ingest Pipeline (Python)
+
+``` python
+import airbyte as ab
+from unstructured.staging.base import elements_from_json
+
+# Rehydrate JSON output into element objects
+elements = elements_from_json(filename="path/to/output.json")
+```
+
+## Examples
+
+### Basic Document Processing
+
+``` python
+from unstructured.partition.auto import partition
+
+# Process a PDF
+elements = partition(filename="annual_report.pdf", strategy="hi_res")
+
+# Filter to narrative text only
+narratives = [e for e in elements if e.category == "NarrativeText"]
+
+# Access element metadata
+for element in elements:
+    print(f"Type: {element.category}, Page: {element.metadata.page_number}")
+    print(f"Text: {element.text[:100]}")
+```
+
+### End-to-End RAG Preparation
+
+``` python
+from unstructured.partition.auto import partition
+from unstructured.chunking.basic import chunk_elements
+
+# Partition document
+elements = partition("research_paper.pdf", strategy="hi_res")
+
+# Chunk for vector database
+chunks = chunk_elements(
+    elements,
+    max_characters=1000,
+    new_after_n_chars=800,
+    overlap=100,
+)
+
+# Access original elements from chunks
+for chunk in chunks:
+    pages = {e.metadata.page_number for e in chunk.metadata.orig_elements}
+    print(f"Chunk covers pages: {pages}")
+    print(f"Text: {chunk.text[:200]}")
+```
+
+### Email Processing
+
+``` python
+from unstructured.partition.email import partition_email
+
+elements = partition_email(
+    filename="message.eml",
+    include_headers=True,
+    process_attachments=True,
+)
+
+for element in elements:
+    if hasattr(element.metadata, 'sent_from'):
+        print(f"From: {element.metadata.sent_from}")
+    print(f"{element.category}: {element.text[:100]}")
+```
+
+## Limitations
+
+- **Open source not actively updated**: The documentation notes that the open-source tools "are not actively updated with latest features" — the API and UI receive priority updates \[1\]
+- **System dependency complexity**: Full installation requires libmagic, poppler, tesseract, libreoffice, and pandoc as system-level dependencies \[6\]
+- **Hi-res strategy requirements**: The `hi_res` partitioning strategy requires `detectron2_onnx` and additional ML model dependencies; falls back to `ocr_only` if unavailable \[3\]
+- **Multi-column PDF limitations**: The `hi_res` strategy "excels with structured documents but struggles with multi-column layouts"; `ocr_only` handles these better \[3\]
+- **Format conversion dependencies**: Processing `.doc`, `.ppt`, `.epub`, `.rst`, `.rtf`, and `.odt` requires intermediate conversion via LibreOffice or Pandoc \[3\]
+- **PGP-encrypted emails**: Encrypted email files return empty element lists with warnings \[3\]
+- **No built-in embedding**: The open-source library does not directly call embedding providers; embedding requires the ingest pipeline or external libraries \[7\]
+- **Metadata loss during chunking**: Chunking consolidates elements, losing granular metadata (page numbers, coordinates); original elements can be accessed via `metadata.orig_elements` \[4\]
+- **Per-page billing**: The managed platform charges per page (PDFs/presentations) or per 100 KB increment (other formats) \[1\]
+
+## Changelog
+
+- **Ingestion Pipeline**: 11-step ETL pipeline with source/destination connectors, filtering, chunking, and embedding
+- **34 Source Connectors**: Cloud storage, SaaS platforms, databases, and messaging systems
+- **36 Destination Connectors**: Vector databases, cloud storage, data warehouses, and graph databases
+- **Hi-Res Strategy**: detectron2_onnx layout detection for precise document element classification
+- **Chunking Strategies**: Basic and by_title strategies with overlap and section-boundary awareness
+- **Multi-Language OCR**: Tesseract and PaddleOCR support with ISO 639-3 language codes
+- **API Processing**: Remote partitioning via `partition_via_api` and batch processing via `partition_multiple_via_api`
+- **Direct-Load Table Support**: Emerging integration for typed destination outputs
+
+## Citations
+
+- \[1\] Ingestion Overview - https://docs.unstructured.io/open-source/ingestion/overview
+- \[2\] Core Functionality Overview - https://docs.unstructured.io/open-source/core-functionality/overview
+- \[3\] Partitioning - https://docs.unstructured.io/open-source/core-functionality/partitioning
+- \[4\] Chunking - https://docs.unstructured.io/open-source/core-functionality/chunking
+- \[5\] Cleaning - https://docs.unstructured.io/open-source/core-functionality/cleaning
+- \[6\] Full Installation - https://docs.unstructured.io/open-source/installation/full-installation
+- \[7\] Embedding - https://docs.unstructured.io/open-source/core-functionality/embedding
+- \[8\] Source Connectors - https://docs.unstructured.io/open-source/ingestion/source-connectors/overview
+- \[9\] Destination Connectors - https://docs.unstructured.io/open-source/ingestion/destination-connectors/overview
+
+# Airbyte
+
+> Open-source data integration platform with 600+ connectors for ETL and ELT pipelines
+
+| Field       | Value                                                     |
+|-------------|-----------------------------------------------------------|
+| Name        | Airbyte                                                   |
+| Group       | Data Pipelines                                            |
+| Type        | API/SDK/Infra                                             |
+| Open Source | yes                                                       |
+| GitHub      | [airbytehq/airbyte](https://github.com/airbytehq/airbyte) |
+| Stars       | 20819                                                     |
+| Docs        | [docs.airbyte.com](https://docs.airbyte.com/)             |
+
+## Overview
+
+Airbyte is an open-source data integration, activation, and agentic data platform that consolidates data from hundreds of sources into data warehouses, lakes, and databases, then distributes that data to operational tools like CRMs and marketing platforms. It provides over 600 pre-built connectors for Extract-Load-Transform (ELT) and Extract-Transform-Load (ETL) pipelines \[1\].
+
+The platform is available in multiple deployment models \[3\]:
+
+- **Self-Managed Core**: Free and open-source version for local or self-hosted infrastructure deployment
+- **Self-Managed Enterprise**: Highly available solution for organizations prioritizing data sovereignty
+- **Airbyte Cloud (Standard/Plus/Pro)**: Fully managed cloud offering with 30-day free trial
+- **Enterprise Flex**: Hybrid solution combining managed convenience with separate data planes
+
+Airbyte can be interacted with through a no-code UI, REST API, Python and Java SDKs, Terraform provider, or PyAirbyte (a standalone Python library for data movement without running a server) \[3\].
+
+## Core Concepts
+
+### Sources, Destinations, and Connectors
+
+A **source** is an API, file, database, or data warehouse from which data is ingested. A **destination** is a data warehouse, lake, database, or analytics tool where data is loaded. A **connector** is the Airbyte component that pulls from sources or pushes to destinations, packaged as Docker images \[2\].
+
+### Connections
+
+A **connection** is an automated data pipeline that replicates data from a configured source to a configured destination. Connections define sync schedules (scheduled intervals, CRON expressions, or manual triggering), sync modes, stream selection, namespace configuration, and schema change handling \[2\]\[8\].
+
+### Streams, Records, and Fields
+
+A **stream** is a group of related records — called tables, files, or blobs depending on the destination. A **record** is a single data entry, and a **field** is an attribute of a record (analogous to a database column) \[2\].
+
+### Sync Modes
+
+Sync modes govern how Airbyte reads from sources and writes to destinations. Five combinations are available \[4\]:
+
+- **Full Refresh \| Overwrite**: Reads entire source, replaces destination data
+- **Full Refresh \| Append**: Reads entire source, appends to destination
+- **Full Refresh \| Overwrite + Deduped**: Full read with deduplication on primary key
+- **Incremental \| Append**: Reads only new/changed records, appends to destination
+- **Incremental \| Append + Deduped**: Reads changes, appends and deduplicates on primary key
+
+Incremental modes use either cursor-based extraction or Change Data Capture (CDC) for supported databases \[4\].
+
+### Typing and Deduping
+
+Airbyte's Destinations V2 framework provides one-to-one mapping from streams to destination tables. Raw data is stored in an `airbyte_internal` schema, then typed and deduplicated into final tables with system columns: `_airbyte_raw_id` (unique ID), `_airbyte_extracted_at` (timestamp), and `_airbyte_meta` (error/change tracking) \[6\].
+
+### Change Data Capture (CDC)
+
+For supported databases (PostgreSQL, MySQL, MSSQL, MongoDB, Oracle DB, SAP HANA, IBM Db2), Airbyte reads database transaction logs to capture all INSERT, UPDATE, and DELETE operations. The initial sync takes a full snapshot; subsequent syncs read from the last log position. CDC metadata columns (`_ab_cdc_lsn`, `_ab_cdc_updated_at`, `_ab_cdc_deleted_at`) track change details \[7\].
+
+## Installation
+
+### PyAirbyte (Python Library)
+
+``` bash
+pip install airbyte
+```
+
+``` python
+import airbyte as ab
+
+source = ab.get_source(
+    "source-faker",
+    config={"count": 5_000},
+    install_if_missing=True,
+)
+source.check()
+source.select_all_streams()
+result = source.read()
+```
+
+PyAirbyte enables data extraction directly within Python without running an Airbyte server \[9\].
+
+### Helm (Kubernetes - Recommended for Production)
+
+``` bash
+# Add Helm repository
+helm repo add airbyte https://airbytehq.github.io/helm-charts
+
+# Create namespace
+kubectl create namespace airbyte
+
+# Install with custom values
+helm install airbyte airbyte/airbyte --namespace airbyte --values ./values.yaml
+
+# Access UI
+kubectl -n airbyte port-forward deployment/airbyte-server 8080:8001
+```
+
+Requires a running Kubernetes cluster (Docker Desktop, kind, k3s, or cloud-managed) and the Helm client \[10\].
+
+### Docker (Local Development)
+
+Airbyte provides Docker Compose configurations for local single-machine development and testing. The platform is designed to be deployed into Kubernetes clusters for production \[10\].
+
+## Architecture
+
+Airbyte consists of a platform layer and a connector layer \[5\]:
+
+``` 
+┌─────────────────────────────────────────────────┐
+│                 Platform Layer                   │
+│  ┌──────────┐ ┌──────────┐ ┌──────────────────┐│
+│  │  Config   │ │  Web UI  │ │   Temporal       ││
+│  │  API      │ │          │ │  (Scheduling)    ││
+│  │  Server   │ │          │ │                  ││
+│  └─────┬────┘ └──────────┘ └────────┬─────────┘│
+│        │                            │           │
+│  ┌─────v────┐ ┌──────────┐ ┌───────v──────┐   │
+│  │ Database  │ │   Cron   │ │   Worker     │   │
+│  │ (Config + │ │ (Cleanup │ │ (Task Queue  │   │
+│  │  History) │ │  + Defs) │ │  Consumer)   │   │
+│  └──────────┘ └──────────┘ └───────┬───────┘   │
+│                                     │           │
+│  ┌──────────────┐  ┌───────────────v─────────┐ │
+│  │  Bootloader   │  │  Workload API + Launcher│ │
+│  │ (Migrations)  │  │  (K8s Pod Management)   │ │
+│  └──────────────┘  └─────────────────────────┘ │
+└─────────────────────────────────────────────────┘
+                         │
+                         v
+┌─────────────────────────────────────────────────┐
+│              Connector Layer (Docker)             │
+│  ┌──────────────┐        ┌───────────────────┐  │
+│  │   Source      │ ──→   │   Destination      │  │
+│  │  Connector    │ JSON  │   Connector        │  │
+│  │  (Docker)     │ msgs  │   (Docker)         │  │
+│  └──────────────┘        └───────────────────┘  │
+│                                                  │
+│  Protocol: spec → check → discover → read/write │
+└─────────────────────────────────────────────────┘
+```
+
+The **platform layer** provides horizontal services: UI, configuration API, job scheduling (via Temporal), logging, and worker task queue management. The **connector layer** consists of independent Docker-packaged modules that push/pull data via the Airbyte Protocol — a JSON message serialization standard using STDIN/STDOUT with message types: RECORD, STATE, LOG, SPEC, CATALOG, CONNECTION_STATUS, and TRACE \[5\]\[11\].
+
+Connectors implement standard operations: `spec()` (capabilities), `check(config)` (validate connectivity), `discover(config)` (list available streams), and `read()`/`write()` for data transfer \[11\].
+
+## Key Features
+
+- **600+ Connectors**: Pre-built sources and destinations for databases, APIs, SaaS platforms, file systems, and warehouses
+- **Connector Builder**: No-code web-based tool for building custom API source connectors without local development
+- **Low-Code CDK**: Declarative YAML framework for HTTP API sources with optional custom Python components
+- **Python CDK**: Full-flexibility connector development with pre-built classes and scaffold generators
+- **Change Data Capture**: Log-based incremental replication for PostgreSQL, MySQL, MSSQL, MongoDB, Oracle, SAP HANA, and Db2
+- **Incremental Sync**: Cursor-based or CDC-based change detection with state checkpointing for resumable syncs
+- **Typing and Deduping**: Automatic type-casting and primary-key deduplication in destination tables
+- **Schema Propagation**: Automated detection and handling of source schema changes
+- **Field Selection**: Exclude specific fields from synchronization at the stream level
+- **Sync Schedules**: Scheduled intervals, CRON expressions, or manual triggering
+- **PyAirbyte**: Standalone Python library for data extraction without running an Airbyte server
+- **Terraform Provider**: Infrastructure-as-code management of Airbyte resources
+- **REST API + SDKs**: Programmatic control via REST API with Python and Java SDKs
+- **Resumability**: Checkpoint-based progress tracking with automatic retry for failed syncs
+- **Namespace Configuration**: Control where replicated data is written in the destination schema
+- **Stream Prefix**: Add naming conventions to destination table identifiers
+- **Per-Row Error Handling**: `_airbyte_meta` column tracks typing and size changes per record
+
+## Use Cases
+
+- **Data Warehouse Loading**: Consolidate data from SaaS applications (Salesforce, HubSpot, Stripe), databases, and APIs into Snowflake, BigQuery, Databricks, or Redshift
+- **ELT Pipelines**: Extract and load raw data into warehouses for transformation with dbt or SQL
+- **Database Replication**: Replicate PostgreSQL, MySQL, or MongoDB databases using CDC for near real-time synchronization
+- **Analytics Data Integration**: Aggregate marketing, sales, and product data for business intelligence dashboards
+- **Data Lake Ingestion**: Load structured and unstructured data into S3, GCS, or Azure Blob Storage data lakes
+- **RAG Data Preparation**: Extract and prepare data from various sources for Retrieval-Augmented Generation pipelines using PyAirbyte
+- **Reverse ETL / Data Activation**: Distribute warehouse data back to operational tools like CRMs and marketing platforms
+- **Migration**: Move data between databases or from legacy systems to modern cloud infrastructure
+
+## API Reference
+
+### REST API
+
+``` bash
+# List sources (Cloud)
+curl --request GET \
+  --url 'https://api.airbyte.com/v1/sources?workspaceIds=<WORKSPACE_ID>' \
+  --header 'authorization: Bearer <TOKEN>'
+
+# Base URLs
+# Cloud: https://api.airbyte.com/v1/
+# Self-managed (local): http://localhost:8000/api/public/v1/
+# Self-managed (web): <YOUR_AIRBYTE_URL>/api/public/v1/
+```
+
+Access tokens are short-lived and require regular renewal. The API supports creating and managing sources, destinations, connections, and triggering syncs \[12\].
+
+### PyAirbyte API
+
+``` python
+import airbyte as ab
+
+# Initialize source
+source = ab.get_source(
+    "source-faker",
+    config={"count": 5_000},
+    install_if_missing=True,
+)
+
+# Validate connection
+source.check()
+
+# Select streams
+source.select_all_streams()
+# Or select specific streams: source.select_streams(["users", "products"])
+
+# Read data
+result = source.read()
+
+# Access stream data
+for name, records in result.streams.items():
+    print(f"Stream {name}: {len(list(records))} records")
+```
+
+### Airbyte Protocol (Connector Interface)
+
+Sources implement four operations \[11\]:
+
+- `spec()` → Returns connector specification with configuration requirements
+- `check(config)` → Validates connectivity and credentials
+- `discover(config)` → Returns catalog of available streams and schemas
+- `read(config, catalog, state)` → Extracts records with state checkpoints
+
+Destinations implement: `spec()`, `check(config)`, and `write(config, catalog, messages)`.
+
+## Configuration
+
+### Connection Configuration
+
+Connections are configured with \[8\]:
+
+- **Sync Schedule**: Scheduled intervals, CRON expressions, or manual triggering
+- **Sync Mode**: Per-stream selection of Full Refresh or Incremental reading with Overwrite, Append, or Deduped writing
+- **Namespace**: Determines where replicated data is written in the destination
+- **Stream Prefix**: Optional prefix added to destination table names
+- **Cursor Field**: Defines which field tracks new/updated records for incremental syncs
+- **Primary Key**: Used for deduplication in Append Deduped and Overwrite Deduped modes
+- **Field Selection**: Include or exclude specific fields from sync
+- **Schema Change Handling**: Configure automatic or manual approval of source schema changes
+
+### Deployment Configuration (Helm)
+
+Custom `values.yaml` for Kubernetes deployments supports:
+
+- State and logging storage (S3, GCS)
+- Secret management
+- External database configuration
+- Ingress configuration
+- Resource limits and scaling \[10\]
+
+### Connector Configuration
+
+Each connector requires source-specific configuration (credentials, endpoints, database connection strings) defined through the UI, API, or Terraform provider.
+
+## Integration Patterns
+
+### dbt Transformation
+
+Airbyte integrates with dbt for post-load transformation. The connections UI includes a dedicated dbt Transformation tab for configuring transformations that run after data loads \[8\].
+
+### Terraform Provider
+
+Manage Airbyte resources as infrastructure-as-code using the official Terraform provider for automated, version-controlled pipeline management \[3\].
+
+### Orchestration Integration
+
+Airbyte syncs can be triggered and monitored through external orchestrators like Apache Airflow, Dagster, or Prefect using the REST API or SDKs.
+
+### PyAirbyte for AI/ML
+
+PyAirbyte enables direct data extraction into Python environments for machine learning pipelines, RAG implementations, and data science workflows without running an Airbyte server \[9\].
+
+## Examples
+
+### Basic PyAirbyte Data Extraction
+
+``` python
+import airbyte as ab
+
+# Extract data from GitHub
+source = ab.get_source(
+    "source-github",
+    config={
+        "credentials": {"personal_access_token": "ghp_..."},
+        "repositories": ["airbytehq/airbyte"],
+    },
+    install_if_missing=True,
+)
+
+source.check()
+source.select_streams(["commits", "pull_requests"])
+result = source.read()
+
+# Process commits
+for record in result["commits"]:
+    print(record["sha"], record["message"])
+```
+
+### API-Driven Connection Setup
+
+``` bash
+# Create a source
+curl --request POST \
+  --url https://api.airbyte.com/v1/sources \
+  --header 'authorization: Bearer <TOKEN>' \
+  --header 'content-type: application/json' \
+  --data '{
+    "name": "My Postgres Source",
+    "workspaceId": "<WORKSPACE_ID>",
+    "configuration": {
+      "sourceType": "postgres",
+      "host": "db.example.com",
+      "port": 5432,
+      "database": "production",
+      "username": "airbyte_user",
+      "password": "secret"
+    }
+  }'
+```
+
+## Limitations
+
+- **Kubernetes complexity**: Production deployments require Kubernetes clusters with Helm, increasing operational overhead for small teams \[10\]
+- **Docker resource usage**: Connectors run as Docker containers, consuming significant resources when running many concurrent syncs
+- **CDC constraints**: CDC requires primary keys, only captures table data (not views), and does not capture TRUNCATE or ALTER operations \[7\]
+- **Schema change sensitivity**: CDC syncs may fail if schema changes are not properly managed; Airbyte recommends manual approval of schema changes for CDC sources \[7\]
+- **Connector maturity variance**: While 600+ connectors exist, quality and feature completeness vary between official Airbyte connectors, marketplace connectors, and community-built connectors
+- **Java CDK unavailable**: The Java CDK is being revamped and currently does not accept contributions; custom destination development options are limited \[13\]
+- **Eventual consistency**: Syncs run on scheduled intervals rather than streaming continuously; real-time replication is not supported
+- **Typing and deduping overhead**: The intermediate raw table approach consumes additional storage and compute in destination warehouses \[6\]
+- **Full refresh on new CDC tables**: Adding new tables to a CDC connection requires a full initial snapshot before incremental tracking begins \[7\]
+
+## Changelog
+
+- **Destinations V2**: Typing and deduping framework with one-to-one stream-to-table mapping, per-row error handling, and incremental loading to final tables
+- **Direct-Load Tables**: Emerging replacement for typing and deduping that eliminates intermediate raw JSON blobs
+- **Connector Builder**: No-code web-based tool for building custom API source connectors
+- **Low-Code CDK**: Declarative YAML framework for HTTP API sources
+- **PyAirbyte**: Standalone Python library for data extraction without server infrastructure
+- **CDC Support**: Log-based incremental replication for PostgreSQL, MySQL, MSSQL, MongoDB, Oracle, SAP HANA, and Db2
+- **Airbyte Protocol v0.5.2**: Current protocol version with STATE, RECORD, CATALOG, and TRACE message types
+- **Terraform Provider**: Infrastructure-as-code management for Airbyte resources
+- **AI Agents**: Data exploration capabilities for agentic workflows
+
+## Citations
+
+- \[1\] Airbyte Documentation Home - https://docs.airbyte.com/
+- \[2\] Core Concepts - https://docs.airbyte.com/using-airbyte/core-concepts/
+- \[3\] Getting Started - https://docs.airbyte.com/using-airbyte/getting-started/
+- \[4\] Sync Modes - https://docs.airbyte.com/using-airbyte/core-concepts/sync-modes/
+- \[5\] Architecture Overview - https://docs.airbyte.com/understanding-airbyte/high-level-view/
+- \[6\] Typing and Deduping - https://docs.airbyte.com/understanding-airbyte/typing-deduping/
+- \[7\] Change Data Capture - https://docs.airbyte.com/understanding-airbyte/cdc/
+- \[8\] Configuring Connections - https://docs.airbyte.com/cloud/managing-airbyte-cloud/configuring-connections/
+- \[9\] PyAirbyte Getting Started - https://docs.airbyte.com/using-airbyte/pyairbyte/getting-started/
+- \[10\] Deploying Airbyte - https://docs.airbyte.com/deploying-airbyte/
+- \[11\] Airbyte Protocol - https://docs.airbyte.com/understanding-airbyte/airbyte-protocol/
+- \[12\] API Documentation - https://docs.airbyte.com/api-documentation/
+- \[13\] Connector Development - https://docs.airbyte.com/connector-development/
+
+# Hugging Face Transformers
+
+> Model-definition framework for state-of-the-art ML models in text/vision/audio/video with inference and training
+
+| Field | Value |
+|----|----|
+| Group | Inference Serving |
+| Type | SDK |
+| Open Source | Yes |
+| GitHub | <https://github.com/huggingface/transformers> |
+| Stars | 156821 |
+| Documentation | [Official Docs](https://huggingface.co/docs/transformers/en/index) |
+
+## Overview
+
+Hugging Face Transformers is the model-definition framework for state-of-the-art machine learning models spanning text, computer vision, audio, video, and multimodal tasks, for both inference and training. It centralizes model definitions so they are agreed upon across the ecosystem -- if a model definition is supported in Transformers, it is compatible with the majority of training frameworks (Axolotl, Unsloth, DeepSpeed, FSDP, PyTorch-Lightning), inference engines (vLLM, SGLang, TGI), and adjacent modeling libraries (llama.cpp, MLX). \[1\]
+
+With over 1M+ model checkpoints on the Hugging Face Hub, Transformers provides the Pipeline API for easy inference, the Trainer API for training, and the `generate` method for fast text generation with LLMs and VLMs. Every model is implemented from three main classes: configuration, model, and preprocessor. \[1\]
+
+## Core Concepts
+
+### Pipeline
+
+The Pipeline API is the simplest inference interface, supporting many ML tasks with a single function call. Pipelines handle tokenization, model inference, and postprocessing automatically:
+
+``` python
+from transformers import pipeline
+
+classifier = pipeline("sentiment-analysis")
+result = classifier("I love this product!")
+# [{'label': 'POSITIVE', 'score': 0.9998}]
+```
+
+Supported tasks include text generation, text classification, question answering, summarization, translation, image classification, object detection, automatic speech recognition, and more. \[1\]
+
+### AutoModel Classes
+
+AutoModel classes automatically detect and load the correct model architecture based on the model name or path:
+
+- `AutoModelForCausalLM` -- Causal language models (GPT, Llama, Mistral)
+- `AutoModelForSequenceClassification` -- Text classification
+- `AutoModelForTokenClassification` -- Named entity recognition
+- `AutoModelForQuestionAnswering` -- Extractive QA
+- `AutoModelForSeq2SeqLM` -- Encoder-decoder models (T5, BART)
+- `AutoModel` -- Base model without task head \[1\]
+
+### Tokenizer
+
+Tokenizers convert text to model-compatible token IDs and back. AutoTokenizer loads the correct tokenizer for any model:
+
+``` python
+from transformers import AutoTokenizer
+
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
+tokens = tokenizer("Hello, world!", return_tensors="pt")
+```
+
+\[1\]
+
+### Trainer
+
+The Trainer API provides a comprehensive training loop supporting mixed precision, gradient accumulation, distributed training, evaluation, and logging. It handles the complexity of training modern transformer models. \[1\]
+
+### Generate
+
+The `generate` method provides fast text generation for LLMs and VLMs with support for multiple decoding strategies (greedy, sampling, beam search, contrastive), streaming, and KV cache optimization. \[1\]
+
+## Installation and Setup
+
+### pip Install
+
+``` bash
+pip install transformers
+```
+
+### With Framework Backends
+
+``` bash
+# PyTorch (most common)
+pip install transformers[torch]
+
+# TensorFlow
+pip install transformers[tf-cpu]   # CPU only
+pip install transformers[tf]       # With GPU support
+
+# JAX/Flax
+pip install transformers[flax]
+```
+
+### From Source
+
+``` bash
+pip install git+https://github.com/huggingface/transformers
+```
+
+### Additional Dependencies
+
+``` bash
+# For tokenizers
+pip install transformers[sentencepiece]
+
+# For audio
+pip install transformers[audio]
+
+# For vision
+pip install transformers[vision]
+```
+
+\[1\]
+
+## Architecture
+
+### Design Principles
+
+1.  **Three classes per model** -- Configuration (hyperparameters), Model (architecture), and Preprocessor (tokenizer/feature extractor)
+2.  **Pretrained models** -- Every model loads pretrained weights for immediate use
+3.  **Framework agnostic** -- Core model definitions work across PyTorch, TensorFlow, and JAX
+
+### Model Architecture
+
+``` 
+Configuration (config.json)
+    └── Model (model weights)
+        └── Preprocessor (tokenizer/feature extractor)
+```
+
+Each model is self-contained with its configuration, weights, and preprocessing requirements. The Hub stores all three components together. \[1\]
+
+### Hub Integration
+
+Transformers tightly integrates with the Hugging Face Hub for model discovery, downloading, sharing, and versioning. Models are identified by `organization/model-name` and automatically downloaded on first use. \[1\]
+
+### Ecosystem Pivot
+
+Transformers serves as the central model definition that other tools build upon:
+
+- **Training**: Axolotl, Unsloth, DeepSpeed, FSDP reference Transformers model definitions
+- **Inference**: vLLM, SGLang, TGI use Transformers model architectures
+- **Export**: llama.cpp, MLX, ONNX converters read Transformers models \[1\]
+
+## Key Features and Functionality
+
+### Pipeline API
+
+``` python
+from transformers import pipeline
+
+# Text generation
+generator = pipeline("text-generation", model="meta-llama/Llama-3.1-8B-Instruct")
+output = generator("Once upon a time", max_length=50)
+
+# Image classification
+classifier = pipeline("image-classification", model="google/vit-base-patch16-224")
+result = classifier("image.jpg")
+
+# Automatic speech recognition
+transcriber = pipeline("automatic-speech-recognition", model="openai/whisper-large-v3")
+text = transcriber("audio.mp3")
+
+# Document question answering
+qa = pipeline("document-question-answering", model="impira/layoutlm-document-qa")
+answer = qa(image="document.png", question="What is the total?")
+```
+
+\[1\]
+
+### Text Generation with LLMs
+
+``` python
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+model_name = "meta-llama/Llama-3.1-8B-Instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name, torch_dtype=torch.bfloat16, device_map="auto")
+
+messages = [
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "What is machine learning?"},
+]
+inputs = tokenizer.apply_chat_template(messages, return_tensors="pt").to(model.device)
+outputs = model.generate(inputs, max_new_tokens=256)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
+
+\[1\]
+
+### Streaming Generation
+
+``` python
+from transformers import AutoModelForCausalLM, AutoTokenizer, TextStreamer
+
+model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.1-8B-Instruct", device_map="auto")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.1-8B-Instruct")
+streamer = TextStreamer(tokenizer)
+
+inputs = tokenizer("Explain quantum computing:", return_tensors="pt").to(model.device)
+model.generate(**inputs, streamer=streamer, max_new_tokens=200)
+```
+
+\[1\]
+
+### Training with Trainer
+
+``` python
+from transformers import AutoModelForSequenceClassification, TrainingArguments, Trainer
+
+model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=2)
+
+training_args = TrainingArguments(
+    output_dir="./results",
+    num_train_epochs=3,
+    per_device_train_batch_size=16,
+    evaluation_strategy="epoch",
+    learning_rate=5e-5,
+)
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=train_dataset,
+    eval_dataset=eval_dataset,
+)
+trainer.train()
+```
+
+\[1\]
+
+### Quantization
+
+``` python
+from transformers import AutoModelForCausalLM, BitsAndBytesConfig
+
+quantization_config = BitsAndBytesConfig(load_in_4bit=True)
+model = AutoModelForCausalLM.from_pretrained(
+    "meta-llama/Llama-3.1-8B-Instruct",
+    quantization_config=quantization_config,
+    device_map="auto",
+)
+```
+
+\[1\]
+
+## Use Cases
+
+### Text Generation
+
+Use Pipeline or AutoModelForCausalLM for chatbots, content generation, code completion, and summarization with pretrained LLMs. \[1\]
+
+### Computer Vision
+
+Image classification, object detection, image segmentation, and image generation using vision transformer models. \[1\]
+
+### Audio Processing
+
+Speech recognition, audio classification, and text-to-speech using audio transformer models like Whisper. \[1\]
+
+### Fine-Tuning
+
+Adapt pretrained models to domain-specific tasks using the Trainer API with custom datasets. \[1\]
+
+### Feature Extraction
+
+Generate embeddings for semantic search, clustering, and similarity using model hidden states or dedicated embedding models. \[1\]
 
 ## API Reference Summary
 
-### Language Model Configuration
+### Key Classes
+
+- `pipeline(task, model)` -- Create task-specific inference pipeline
+- `AutoModel.from_pretrained(name)` -- Load pretrained model
+- `AutoTokenizer.from_pretrained(name)` -- Load pretrained tokenizer
+- `AutoConfig.from_pretrained(name)` -- Load model configuration
+- `Trainer(model, args, train_dataset)` -- Create training loop
+- `TrainingArguments(...)` -- Configure training parameters
+
+### Generation Methods
+
+- `model.generate(inputs, max_new_tokens, temperature, ...)` -- Generate text
+- `TextStreamer(tokenizer)` -- Stream generated tokens
+- `TextIteratorStreamer(tokenizer)` -- Iterate over generated tokens
+
+### Model Saving/Loading
+
+- `model.save_pretrained(path)` -- Save model locally
+- `model.push_to_hub(repo_id)` -- Upload to HuggingFace Hub
+- `AutoModel.from_pretrained(path_or_hub_id)` -- Load from local or Hub \[1\]
+
+## Configuration and Customization
+
+### Model Configuration
+
+- **`torch_dtype`** -- Precision (float32, float16, bfloat16)
+- **`device_map`** -- Device placement ("auto", "cpu", "cuda:0")
+- **`quantization_config`** -- Quantization settings (BitsAndBytes, GPTQ, AWQ)
+- **`attn_implementation`** -- Attention backend ("flash_attention_2", "sdpa")
+- **`low_cpu_mem_usage`** -- Reduce CPU memory during loading
+
+### Generation Configuration
+
+- **`max_new_tokens`** -- Maximum generated tokens
+- **`temperature`** -- Sampling temperature
+- **`top_p`** / **`top_k`** -- Sampling parameters
+- **`do_sample`** -- Enable sampling (vs greedy)
+- **`num_beams`** -- Beam search width
+- **`repetition_penalty`** -- Penalize repeated tokens
+
+### Training Configuration
+
+- **`num_train_epochs`** -- Number of training epochs
+- **`per_device_train_batch_size`** -- Batch size per GPU
+- **`learning_rate`** -- Optimizer learning rate
+- **`fp16`** / **`bf16`** -- Mixed precision training
+- **`gradient_accumulation_steps`** -- Effective batch size multiplier \[1\]
+
+## Integration Patterns
+
+### With Inference Engines (vLLM, SGLang, TGI)
+
+Transformers model definitions are the foundation for inference engines. Models defined in Transformers automatically work with vLLM, SGLang, and TGI.
+
+### With Training Frameworks (Axolotl, Unsloth, DeepSpeed)
+
+Training frameworks build on Transformers models and Trainer for distributed fine-tuning.
+
+### With Export Tools (ONNX, llama.cpp, MLX)
+
+Convert Transformers models to optimized formats for deployment on specific hardware.
+
+### With Hugging Face Hub
+
+Seamless integration for model discovery, downloading, sharing, and versioning.
+
+### With Datasets Library
+
+Hugging Face Datasets integrates with Trainer for efficient data loading and preprocessing.
+
+### With PEFT (Parameter-Efficient Fine-Tuning)
+
+LoRA, QLoRA, and other PEFT methods integrate with Transformers models for efficient fine-tuning.
+
+## Examples
+
+### Sentiment Analysis Pipeline
 
 ``` python
-import dspy
+from transformers import pipeline
 
-# Configure the default LM
-lm = dspy.LM("openai/gpt-4o-mini", temperature=0.7)
-dspy.configure(lm=lm)
-
-# Use Anthropic
-lm = dspy.LM("anthropic/claude-sonnet-4-20250514")
-dspy.configure(lm=lm)
+classifier = pipeline("sentiment-analysis")
+results = classifier([
+    "I love this movie!",
+    "This was terrible.",
+])
+for result in results:
+    print(f"{result['label']}: {result['score']:.4f}")
 ```
 
-### Signatures
+\[1\]
+
+### Multi-Turn Chat
 
 ``` python
-# Inline notation
-"question -> answer"
-"context, question -> answer"
-"question -> answer: float"
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# Class-based
-class Summarize(dspy.Signature):
-    """Summarize the document in one sentence."""
-    document: str = dspy.InputField(desc="The document to summarize")
-    summary: str = dspy.OutputField(desc="A one-sentence summary")
+model_name = "meta-llama/Llama-3.1-8B-Instruct"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name, device_map="auto")
+
+messages = [
+    {"role": "user", "content": "What is Python?"},
+    {"role": "assistant", "content": "Python is a high-level programming language."},
+    {"role": "user", "content": "What makes it popular?"},
+]
+inputs = tokenizer.apply_chat_template(messages, return_tensors="pt").to(model.device)
+outputs = model.generate(inputs, max_new_tokens=200)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
 ```
 
-### Modules
+\[1\]
 
-``` python
-# Basic prediction
-predict = dspy.Predict(Summarize)
-result = predict(document="...")
+## Limitations and Considerations
 
-# Chain of thought
-cot = dspy.ChainOfThought("question -> answer")
-result = cot(question="What is the capital of France?")
+- **Memory requirements** -- Large models require significant GPU memory; quantization or device_map="auto" helps
+- **Inference speed** -- Native Transformers inference is slower than optimized engines (vLLM, TGI); use Transformers for prototyping, optimized engines for production
+- **Model compatibility** -- Not all model architectures are supported; new models may need community contributions
+- **Framework coupling** -- While supporting PyTorch, TensorFlow, and JAX, the majority of models are PyTorch-only
+- **API complexity** -- The library has a large surface area; many ways to accomplish the same task
+- **Breaking changes** -- Major version updates may change APIs; pin versions for production \[1\]
 
-# Custom module
-class RAGModule(dspy.Module):
-    def __init__(self, num_passages=3):
-        self.retrieve = dspy.Retrieve(k=num_passages)
-        self.generate = dspy.ChainOfThought("context, question -> answer")
+## Changelog Highlights
 
-    def forward(self, question):
-        context = self.retrieve(question).passages
-        return self.generate(context=context, question=question)
+- **v5.x** -- Current major version with latest model architectures
+- **1M+ models** -- Over one million model checkpoints on HuggingFace Hub
+- **Pipeline API** -- Simplified inference for dozens of tasks
+- **Trainer API** -- Comprehensive training with mixed precision and distributed support
+- **generate()** -- Optimized text generation with streaming and KV cache
+- **Flash Attention 2** -- Hardware-accelerated attention computation
+- **BitsAndBytes** -- 4-bit and 8-bit quantization for memory reduction
+- **Chat templates** -- Standardized chat formatting across models
+- **Vision/Audio/Video** -- Multimodal model support beyond text
+- **Ecosystem pivot** -- Central model definition for training and inference tools \[1\]
+
+## Citations
+
+- \[1\] Hugging Face Transformers Documentation - <https://huggingface.co/docs/transformers/index>
+
+# PEFT
+
+> HuggingFace library for parameter-efficient fine-tuning with LoRA and adapter methods
+
+| Field | Value |
+|----|----|
+| Name | PEFT |
+| Group | Fine-tuning |
+| Type | SDK |
+| Open Source | yes |
+| GitHub | [huggingface/peft](https://github.com/huggingface/peft) |
+| Stars | 20720 |
+| Docs | [huggingface.co/docs/peft](https://huggingface.co/docs/peft/en/index) |
+
+## Overview
+
+PEFT (Parameter-Efficient Fine-Tuning) is a Hugging Face library for adapting large pretrained models to downstream tasks by training only a small number of extra parameters instead of all model weights. This dramatically reduces computational and storage costs while yielding performance comparable to full fine-tuning \[1\].
+
+PEFT is integrated with the Hugging Face Transformers, Diffusers, and Accelerate libraries. It supports training with the Transformers Trainer, Accelerate, or custom PyTorch training loops. Trained adapters are stored as small files (e.g., 6MB for a LoRA adapter on a 350M model vs. 700MB for the full model) and can be loaded, swapped, and merged at inference time \[2\].
+
+The library supports two broad categories of methods: **adapter-based methods** (LoRA, AdaLoRA, LoHa, LoKr, OFT, BOFT, HRA, MiSS, Llama-Adapter) that add trainable parameters to frozen model layers, and **soft prompting methods** (Prompt Tuning, Prefix Tuning, P-Tuning, Multitask Prompt Tuning, CPT) that prepend learnable tokens to model inputs \[3\]\[4\].
+
+## Core Concepts
+
+### Low-Rank Adaptation (LoRA)
+
+LoRA decomposes weight updates into two smaller low-rank matrices (A and B) instead of modifying the full weight matrix. The original weights remain frozen, and only the low-rank matrices are trained. Key parameters \[5\]\[6\]:
+
+- **r**: Rank dimension of the decomposition (higher = more parameters, more capacity)
+- **lora_alpha**: Scaling factor (effective scaling is `lora_alpha/r`, or `lora_alpha/sqrt(r)` with rsLoRA)
+- **target_modules**: Which layers to apply LoRA to (e.g., `"all-linear"` for QLoRA-style)
+- **lora_dropout**: Dropout probability for LoRA layers
+
+LoRA adapters can be merged into the base model via `merge_and_unload()` to eliminate inference latency, or kept separate for swapping between tasks \[6\].
+
+### LoRA Variants
+
+PEFT supports many LoRA initialization and optimization strategies \[5\]\[6\]:
+
+- **DoRA (Weight-Decomposed Low-Rank Adaptation)**: Separates weight updates into magnitude and direction components, improving performance especially at low ranks
+- **rsLoRA (Rank-Stabilized LoRA)**: Uses `lora_alpha/sqrt(r)` scaling for more stable training at higher ranks
+- **PiSSA**: Initializes LoRA from principal singular values for faster convergence
+- **OLoRA**: Uses QR decomposition initialization for improved stability
+- **EVA (Explained Variance Adaptation)**: Data-driven initialization via SVD of layer input activations with adaptive rank redistribution
+- **CorDA (Context-Oriented Decomposition Adaptation)**: Task-aware initialization with instruction-previewed or knowledge-preserved modes
+- **LoftQ**: Initializes LoRA to minimize quantization error for QLoRA training
+- **aLoRA (Activated LoRA)**: Selectively activates adapters only on tokens after an invocation sequence, enabling KV cache reuse
+
+### Other Adapter Methods
+
+- **AdaLoRA**: Adaptively allocates rank across layers based on importance scoring via SVD-like parameterization \[3\]
+- **LoHa**: Uses Hadamard product of four low-rank matrices for higher expressivity at the same parameter count \[3\]
+- **LoKr**: Uses Kronecker product decomposition preserving rank of original weights \[3\]
+- **OFT (Orthogonal Finetuning)**: Learns orthogonal transformations preserving cosine similarity between neurons \[3\]
+- **BOFT (Orthogonal Butterfly)**: Factorizes orthogonal transformation into sparse butterfly matrices with O(d log d) parameters \[3\]
+- **HRA (Householder Reflection Adaptation)**: Chains trainable Householder reflections bridging LoRA and OFT \[3\]
+- **MiSS (Matrix Shard Sharing)**: Uses a single trainable matrix with shard-sharing mechanism \[3\]
+- **X-LoRA**: Mixture of LoRA experts with dynamic gating for token-level adapter activation \[3\]
+- **Llama-Adapter**: Zero-initialized attention with learnable adaption prompts for upper model layers \[3\]
+
+### Soft Prompting Methods
+
+- **Prompt Tuning**: Adds learnable prompt tokens to model input embeddings; model parameters remain frozen \[4\]
+- **Prefix Tuning**: Inserts trainable prefix parameters into all model layers (not just input), optimized via a feed-forward network \[4\]
+- **P-Tuning**: Learnable prompt tokens insertable anywhere in the input sequence, optimized by a bidirectional LSTM encoder \[4\]
+- **Multitask Prompt Tuning**: Learns a single shared prompt from multiple tasks via Hadamard product decomposition \[4\]
+- **CPT (Context-Aware Prompt Tuning)**: Refines context embeddings for few-shot classification with controlled perturbations \[4\]
+
+### Quantization Support
+
+PEFT works with quantized models via multiple backends \[7\]:
+
+- **bitsandbytes**: 4-bit and 8-bit quantization (QLoRA)
+- **GPTQ**: 2/3/4/8-bit post-training quantization
+- **AWQ**: Activation-aware weight quantization
+- **AQLM**: Additive quantization down to 2-bit
+- **EETQ**: Efficient 8-bit quantization
+- **HQQ**: Half-Quadratic Quantization
+- **torchao**: PyTorch native int8 quantization
+- **INC**: Intel Neural Compressor for FP8 on HPU devices
+
+## Installation
+
+``` bash
+# From PyPI
+pip install peft
+
+# From source (latest features)
+pip install git+https://github.com/huggingface/peft
+
+# Development install
+git clone https://github.com/huggingface/peft
+cd peft
+pip install -e .[test]
 ```
 
-### Evaluation
+PEFT requires Python 3.9+ \[8\].
+
+## Architecture
+
+``` 
+┌─────────────────────────────────────────────────────┐
+│                   PeftConfig                         │
+│  LoraConfig │ PrefixTuningConfig │ PromptTuningConfig│
+│  AdaLoraConfig │ OFTConfig │ LoHaConfig │ ...       │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│              get_peft_model()                         │
+│  Wraps base model + config into PeftModel            │
+└──────────────────────┬──────────────────────────────┘
+                       │
+          ┌────────────┼────────────┐
+          v            v            v
+┌──────────────┐ ┌──────────┐ ┌──────────────────┐
+│  Adapter     │ │   Soft   │ │  Base Model      │
+│  Methods     │ │  Prompts │ │  (Frozen)         │
+│              │ │          │ │                   │
+│  LoRA A/B    │ │  Learned │ │  Transformers     │
+│  OFT blocks  │ │  tokens  │ │  Diffusers        │
+│  LoHa/LoKr   │ │  prefixes│ │  Any PyTorch      │
+└──────────────┘ └──────────┘ └──────────────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│                   Output                             │
+│  save_pretrained() → adapter_config.json             │
+│                    + adapter_model.safetensors        │
+│  push_to_hub() → Hugging Face Hub                    │
+│  merge_and_unload() → Standalone merged model        │
+└─────────────────────────────────────────────────────┘
+```
+
+PEFT wraps any base model (Transformers, Diffusers, or custom PyTorch) with a PeftModel that injects trainable adapter layers while keeping the base frozen. Only adapter weights are saved and loaded. Multiple adapters can coexist on the same base model and be activated, swapped, or merged independently \[2\]\[6\].
+
+## Key Features
+
+- **15+ PEFT Methods**: LoRA, DoRA, AdaLoRA, LoHa, LoKr, OFT, BOFT, HRA, MiSS, X-LoRA, Llama-Adapter, Prompt Tuning, Prefix Tuning, P-Tuning, Multitask Prompt Tuning, CPT
+- **7+ LoRA Initialization Strategies**: Default, Gaussian, PiSSA, OLoRA, EVA, CorDA, LoftQ, orthogonal
+- **Adapter Merging**: Merge multiple LoRA adapters via SVD, linear combination, TIES, DARE, magnitude pruning, or concatenation
+- **Adapter Swapping**: Load, activate, and switch between multiple adapters at inference time without reloading the base model
+- **Mixed-Adapter Batches**: Use different LoRA adapters for different samples in the same batch via `adapter_names`
+- **Weight Merging**: Merge adapters into base model via `merge_and_unload()` for zero-overhead inference
+- **8+ Quantization Backends**: bitsandbytes (QLoRA), GPTQ, AWQ, AQLM, EETQ, HQQ, torchao, INC
+- **Specialized Optimizers**: LoRA-FA (fixed A matrix) and LoRA+ (differential learning rates for A and B)
+- **Trainable Token Indices**: Efficiently fine-tune specific embedding tokens alongside LoRA
+- **Per-Layer Rank Control**: `rank_pattern` and `alpha_pattern` for layer-specific ranks and scaling
+- **Layer Replication**: Memory-efficient model expansion by duplicating layers with separate LoRA adapters
+- **Arrow Routing**: Gradient-free token-wise mixture-of-experts routing across LoRA adapters
+- **Integration**: Seamless with Transformers Trainer, Accelerate, DeepSpeed, FSDP, Diffusers, and Hugging Face Hub
+
+## Use Cases
+
+- **LLM Fine-Tuning**: Adapt large language models to domain-specific tasks with LoRA/QLoRA using minimal GPU memory
+- **QLoRA Training**: Fine-tune 65B+ parameter models on a single 48GB GPU by combining 4-bit quantization with LoRA
+- **Image Generation**: Fine-tune Stable Diffusion and FLUX models with LoRA, LoHa, or LoKr adapters via Diffusers
+- **Multi-Task Adapters**: Train separate LoRA adapters for different tasks on the same base model, swapping at inference
+- **Instruction Following**: Adapt base models into instruction-following assistants with Llama-Adapter or LoRA
+- **Speech Recognition**: Apply adapter methods to automatic speech recognition models like Whisper
+- **Classification**: Use soft prompting or LoRA for text/image classification with minimal trainable parameters
+- **Adapter Composition**: Combine multiple trained LoRA adapters into new capabilities via Arrow routing or weighted merging
+
+## API Reference
+
+### Training
 
 ``` python
-def answer_exact_match(example, prediction, trace=None):
-    return example.answer.lower() == prediction.answer.lower()
+from peft import LoraConfig, get_peft_model, TaskType
 
-evaluate = dspy.Evaluate(
-    devset=dev_examples,
-    metric=answer_exact_match,
-    num_threads=4,
-    display_progress=True
+# Configure LoRA
+config = LoraConfig(
+    task_type=TaskType.CAUSAL_LM,
+    r=16,
+    lora_alpha=32,
+    lora_dropout=0.1,
+    target_modules=["q_proj", "v_proj", "k_proj", "o_proj"],
 )
-score = evaluate(program)
-```
 
-### Optimization
-
-``` python
-# Bootstrap few-shot examples
-optimizer = dspy.BootstrapRS(
-    metric=answer_exact_match,
-    max_bootstrapped_demos=4,
-    num_candidate_programs=10
-)
-compiled_program = optimizer.compile(program, trainset=train_examples)
-
-# MIPROv2 for instruction optimization
-optimizer = dspy.MIPROv2(
-    metric=answer_exact_match,
-    auto="medium"
-)
-compiled_program = optimizer.compile(program, trainset=train_examples)
+# Wrap base model
+model = get_peft_model(base_model, config)
+model.print_trainable_parameters()
+# "trainable params: 2359296 || all params: 1231940608 || trainable%: 0.19"
 ```
 
 ### Saving and Loading
 
 ``` python
-compiled_program.save("optimized_program.json")
+# Save adapter only
+model.save_pretrained("output_dir")
 
-program = RAGModule()
-program.load("optimized_program.json")
+# Push to Hub
+model.push_to_hub("username/model-lora")
+
+# Load for inference
+from peft import AutoPeftModelForCausalLM
+model = AutoPeftModelForCausalLM.from_pretrained("username/model-lora")
 ```
 
-## Configuration and Customization
-
-### Global Settings
+### Adapter Operations
 
 ``` python
-dspy.configure(
-    lm=dspy.LM("openai/gpt-4o-mini"),
-    rm=dspy.ColBERTv2(url="http://localhost:8893"),  # retrieval model
-    trace=[],  # enable tracing
+from peft import PeftModel
+
+# Load base + adapter
+model = PeftModel.from_pretrained(base_model, "adapter-path", adapter_name="sft")
+
+# Load additional adapter
+model.load_adapter("another-adapter-path", adapter_name="dpo")
+
+# Switch active adapter
+model.set_adapter("dpo")
+
+# Merge into base model
+model = model.merge_and_unload()
+
+# Or merge/unmerge reversibly
+model.merge_adapter()
+model.unmerge_adapter()
+```
+
+### Weighted Adapter Merging
+
+``` python
+model.add_weighted_adapter(
+    adapters=["sft", "dpo"],
+    weights=[0.7, 0.3],
+    adapter_name="merged",
+    combination_type="linear",  # or svd, ties, dare_linear, etc.
 )
 ```
 
-### Per-Call Overrides
+## Configuration
+
+### LoraConfig Parameters
+
+- `r` (int): LoRA rank dimension
+- `lora_alpha` (int): Scaling factor
+- `lora_dropout` (float): Dropout probability (default: 0.0)
+- `target_modules` (list/str): Modules to apply LoRA; `"all-linear"` for all linear layers
+- `bias` (str): `"none"`, `"all"`, or `"lora_only"`
+- `task_type` (TaskType): `CAUSAL_LM`, `SEQ_2_SEQ_LM`, `TOKEN_CLS`, `SEQ_CLS`, `FEATURE_EXTRACTION`
+- `use_rslora` (bool): Rank-stabilized scaling (default: False)
+- `use_dora` (bool): Weight-Decomposed adaptation (default: False)
+- `init_lora_weights` (str/bool): Initialization — `True`, `"gaussian"`, `"pissa"`, `"olora"`, `"eva"`, `"corda"`, `"loftq"`, `"orthogonal"`
+- `rank_pattern` (dict): Per-layer rank overrides via regex
+- `alpha_pattern` (dict): Per-layer alpha overrides via regex
+- `modules_to_save` (list): Additional modules to train and save beyond adapters
+
+### QLoRA Setup
 
 ``` python
-with dspy.context(lm=dspy.LM("anthropic/claude-sonnet-4-20250514")):
-    result = program(question="...")
+from transformers import BitsAndBytesConfig
+from peft import prepare_model_for_kbit_training
+
+bnb_config = BitsAndBytesConfig(
+    load_in_4bit=True,
+    bnb_4bit_quant_type="nf4",
+    bnb_4bit_use_double_quant=True,
+    bnb_4bit_compute_dtype=torch.bfloat16,
+)
+
+model = AutoModelForCausalLM.from_pretrained(model_id, quantization_config=bnb_config)
+model = prepare_model_for_kbit_training(model)
+model = get_peft_model(model, lora_config)
 ```
-
-### Assertions and Constraints
-
-``` python
-class FactCheckedAnswer(dspy.Module):
-    def __init__(self):
-        self.generate = dspy.ChainOfThought("question -> answer")
-
-    def forward(self, question):
-        result = self.generate(question=question)
-        dspy.Assert(
-            len(result.answer) > 10,
-            "Answer must be substantive (more than 10 characters)"
-        )
-        return result
-```
-
-`dspy.Assert` raises a hard failure when the constraint is not met, while `dspy.Suggest` provides a soft signal that the optimizer can use during compilation to improve outputs.
 
 ## Integration Patterns
 
-### With Retrieval Systems
+### Transformers Trainer
 
 ``` python
-import dspy
+from transformers import Trainer, TrainingArguments
 
-colbert = dspy.ColBERTv2(url="http://localhost:8893")
-dspy.configure(rm=colbert)
-
-class SearchAndAnswer(dspy.Module):
-    def __init__(self):
-        self.retrieve = dspy.Retrieve(k=5)
-        self.answer = dspy.ChainOfThought("context, question -> answer")
-
-    def forward(self, question):
-        passages = self.retrieve(question).passages
-        return self.answer(context=passages, question=question)
-```
-
-### With Custom Tools
-
-``` python
-def search_wikipedia(query: str) -> str:
-    """Search Wikipedia for information."""
-    # implementation
-    return result
-
-react = dspy.ReAct(
-    "question -> answer",
-    tools=[search_wikipedia]
+training_args = TrainingArguments(
+    output_dir="output",
+    learning_rate=1e-3,
+    per_device_train_batch_size=32,
+    num_train_epochs=2,
 )
+
+trainer = Trainer(
+    model=model,
+    args=training_args,
+    train_dataset=dataset["train"],
+    processing_class=tokenizer,
+)
+trainer.train()
 ```
 
-### Pipeline Composition
+### Hugging Face Hub
 
-``` python
-class MultiStepPipeline(dspy.Module):
-    def __init__(self):
-        self.extract = dspy.Predict("document -> entities: list[str]")
-        self.classify = dspy.ChainOfThought("entity, context -> category")
-        self.summarize = dspy.Predict("entities, categories -> summary")
+Adapters are uploaded to and loaded from the Hub. Only the small adapter files (config + weights) are stored, with the base model referenced by name \[2\].
 
-    def forward(self, document):
-        entities = self.extract(document=document).entities
-        categories = [
-            self.classify(entity=e, context=document).category
-            for e in entities
-        ]
-        return self.summarize(entities=entities, categories=categories)
-```
+### DeepSpeed and FSDP
+
+PEFT adapters work with DeepSpeed ZeRO stages and Fully Sharded Data Parallel via Accelerate for distributed training \[1\].
+
+### Diffusers
+
+PEFT integrates with Diffusers for training LoRA adapters on Stable Diffusion, SDXL, and FLUX models \[1\].
 
 ## Examples
 
-### Optimized Classification
+### LoRA on Causal LM
 
 ``` python
-import dspy
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from peft import LoraConfig, get_peft_model, TaskType
 
-class ClassifyIntent(dspy.Signature):
-    """Classify the user message into an intent category."""
-    message: str = dspy.InputField()
-    intent: str = dspy.OutputField(
-        desc="One of: greeting, question, complaint, feedback"
-    )
+model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-3.2-1B")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B")
 
-classifier = dspy.Predict(ClassifyIntent)
-
-def intent_match(example, prediction, trace=None):
-    return example.intent == prediction.intent
-
-optimizer = dspy.BootstrapRS(metric=intent_match, max_bootstrapped_demos=4)
-optimized = optimizer.compile(classifier, trainset=train_data)
-
-result = optimized(message="I'm having trouble with my order")
-print(result.intent)
-```
-
-### Multi-Hop RAG with Optimization
-
-``` python
-import dspy
-
-class MultiHopRAG(dspy.Module):
-    def __init__(self, passages_per_hop=3, num_hops=2):
-        self.retrieve = [
-            dspy.Retrieve(k=passages_per_hop)
-            for _ in range(num_hops)
-        ]
-        self.generate_query = dspy.ChainOfThought(
-            "context, question -> search_query"
-        )
-        self.generate_answer = dspy.ChainOfThought(
-            "context, question -> answer"
-        )
-
-    def forward(self, question):
-        context = []
-        for hop in range(len(self.retrieve)):
-            if hop == 0:
-                passages = self.retrieve[hop](question).passages
-            else:
-                query = self.generate_query(
-                    context=context, question=question
-                ).search_query
-                passages = self.retrieve[hop](query).passages
-            context = deduplicate(context + passages)
-        return self.generate_answer(context=context, question=question)
-
-optimizer = dspy.MIPROv2(metric=answer_f1, auto="medium")
-compiled_rag = optimizer.compile(MultiHopRAG(), trainset=train_examples)
-```
-
-### Structured Assessment
-
-``` python
-import dspy
-
-class TweetAssessment(dspy.Signature):
-    """Assess tweet quality on a numeric scale."""
-    tweet: str = dspy.InputField()
-    dimension: str = dspy.InputField(
-        desc="The quality dimension to assess"
-    )
-    score: float = dspy.OutputField(
-        desc="Quality score from 0.0 to 1.0"
-    )
-
-assessor = dspy.ChainOfThought(TweetAssessment)
-result = assessor(
-    tweet="DSPy lets you program LMs declaratively!",
-    dimension="informativeness"
+config = LoraConfig(
+    task_type=TaskType.CAUSAL_LM,
+    r=8,
+    lora_alpha=32,
+    target_modules=["q_proj", "v_proj"],
+    lora_dropout=0.05,
 )
-print(f"Score: {result.score}")
+
+model = get_peft_model(model, config)
+model.print_trainable_parameters()
+# Train with Trainer or custom loop...
+model.save_pretrained("llama-lora")
 ```
 
-## Limitations and Considerations
+### Inference with AutoPeftModel
 
-- **Optimization cost** - Compiling programs requires LM calls over the training set, which incurs API costs and wall-clock time (typically ~\$2 and ~20 minutes for medium-sized programs)
-- **Dataset requirement** - Optimizers need labeled examples to tune against; cold-start scenarios with no evaluation data cannot leverage compilation
-- **Debugging complexity** - Compiled programs with optimized prompts and demonstrations can be harder to inspect and debug than hand-written prompts
-- **Provider-specific behavior** - While DSPy abstracts across providers, underlying model differences can cause optimized programs to transfer poorly between LMs
-- **Learning curve** - The programming model (signatures, modules, optimizers) introduces concepts that differ from conventional prompt engineering workflows
-- **Non-determinism** - LM outputs are inherently stochastic; optimization results may vary across runs depending on the training data sampling
+``` python
+from peft import AutoPeftModelForCausalLM
+from transformers import AutoTokenizer
 
-## Changelog Highlights
+model = AutoPeftModelForCausalLM.from_pretrained("username/llama-lora")
+tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-3.2-1B")
 
-- DSPy 2.0 introduced the current signature and module system, replacing the earlier template-based approach
-- Adapter system added for structured output mapping across providers
-- MIPROv2 and BetterTogether optimizers added for more sophisticated prompt and weight tuning
-- Support expanded to 40+ LM providers
-- Assertion and suggestion system introduced for runtime constraint enforcement
+inputs = tokenizer("The capital of France is", return_tensors="pt")
+outputs = model.generate(**inputs, max_new_tokens=20)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
+
+### EVA Initialization
+
+``` python
+from peft import LoraConfig, EvaConfig, get_peft_model, initialize_lora_eva_weights
+
+config = LoraConfig(
+    init_lora_weights="eva",
+    eva_config=EvaConfig(rho=2.0),
+    r=16,
+    target_modules="all-linear",
+)
+
+model = get_peft_model(base_model, config, low_cpu_mem_usage=True)
+initialize_lora_eva_weights(model, dataloader)
+```
+
+## Limitations
+
+- **Soft prompts not human-readable**: Learned prompt tokens are virtual embeddings that don't correspond to real words, making interpretation difficult \[4\]
+- **DoRA inference overhead**: DoRA introduces larger overhead than pure LoRA during inference; weight merging is recommended for production \[6\]
+- **aLoRA cannot be merged**: Activated LoRA adapters cannot be merged into the base model due to selective token application \[6\]
+- **Mixed-adapter batches inference only**: Using different adapters per sample in a batch works only for inference, not training \[6\]
+- **AQLM merging not supported**: LoRA adapters trained on AQLM-quantized models cannot be merged with quantized weights \[7\]
+- **torchao limited support**: Only int8 weight-only quantization is fully supported; int4 and NF4 not yet available; merging only works with LoRA + int8 \[7\]
+- **INC no merge/unmerge**: Intel Neural Compressor quantized models do not support adapter merging \[7\]
+- **Adapter composition complexity**: Methods like Arrow and X-LoRA require all adapters to share the same rank and target modules \[6\]
+
+## Changelog
+
+- **v0.18.0**: Current release with aLoRA (Activated LoRA), Arrow routing, GenKnowSub, MiSS, target_parameters for MoE nn.Parameter support
+- **EVA**: Data-driven initialization with adaptive rank redistribution
+- **CorDA**: Context-oriented decomposition with instruction-previewed and knowledge-preserved modes
+- **DoRA**: Weight-decomposed adaptation with magnitude/direction separation
+- **Arrow + GenKnowSub**: Modular routing and general knowledge subtraction for multi-adapter composition
+- **LoRA-FA and LoRA+**: Specialized optimizers for improved LoRA training
+- **CPT**: Context-Aware Prompt Tuning for few-shot classification
+- **Trainable Token Indices**: Memory-efficient selective token fine-tuning alongside LoRA
+- **8+ Quantization Backends**: bitsandbytes, GPTQ, AWQ, AQLM, EETQ, HQQ, torchao, INC
 
 ## Citations
 
-- \[1\] [DSPy Documentation](https://dspy.ai/)
+- \[1\] PEFT Overview - https://huggingface.co/docs/peft/en/index
+- \[2\] Quicktour - https://huggingface.co/docs/peft/en/quicktour
+- \[3\] Adapter Conceptual Guide - https://huggingface.co/docs/peft/en/conceptual_guides/adapter
+- \[4\] Prompting Conceptual Guide - https://huggingface.co/docs/peft/en/conceptual_guides/prompting
+- \[5\] LoRA API Reference - https://huggingface.co/docs/peft/en/package_reference/lora
+- \[6\] LoRA Developer Guide - https://huggingface.co/docs/peft/en/developer_guides/lora
+- \[7\] Quantization Guide - https://huggingface.co/docs/peft/en/developer_guides/quantization
+- \[8\] Installation - https://huggingface.co/docs/peft/en/install
 
-# Outlines
+# Unsloth
 
-> Python library for structured Large Language Model (LLM) generation via JSON Schema, regex, and context-free grammars. Guarantees structured outputs during the generation process itself rather than through post-hoc parsing.
+> Fine-tuning and reinforcement learning framework that trains LLMs 2x faster with 70% less VRAM
 
-| Field | Value |
-|----|----|
-| Name | Outlines |
-| Group | Structured Output & Prompt Engineering |
-| Type | SDK |
-| Open Source | Yes |
-| GitHub | [dottxt-ai/outlines](https://github.com/dottxt-ai/outlines) |
-| Stars | 13,449 |
-| Docs | [dottxt-ai.github.io/outlines](https://dottxt-ai.github.io/outlines/) |
-| License | Apache 2.0 |
-| Language | Python |
+| Field       | Value                                                     |
+|-------------|-----------------------------------------------------------|
+| Name        | Unsloth                                                   |
+| Group       | Fine-tuning                                               |
+| Type        | SDK                                                       |
+| Open Source | yes                                                       |
+| GitHub      | [unslothai/unsloth](https://github.com/unslothai/unsloth) |
+| Stars       | 53240                                                     |
+| Docs        | [unsloth.ai/docs](https://unsloth.ai/docs)                |
 
 ## Overview
 
-Outlines is a Python library developed by dottxt-ai that enables structured text generation from LLMs. Unlike approaches that generate free-form text and then attempt to parse it into a desired format, Outlines constrains the generation process at the token level using Finite-State Machines (FSMs) and specialized backends. This means every token produced by the model is guaranteed to conform to the specified structure, eliminating parsing failures, broken JSON, and malformed outputs entirely.
+Unsloth is an open-source framework for fine-tuning and reinforcement learning of large language models that achieves 2x faster training speeds with 70% less VRAM compared to standard implementations. It supports 500+ models including text, vision, text-to-speech, and embedding models, with optimized kernels written in Triton for memory-efficient training \[1\].
 
-The library supports a range of structured output formats including JSON Schema, regular expressions, Context-Free Grammars (CFGs), native Python types, Pydantic models, and multiple-choice selection. It integrates with major LLM providers and inference engines, making it a versatile tool for any workflow that requires reliable, machine-readable output from language models.
+The framework collaborates directly with model teams behind gpt-oss, Qwen3, Llama 4, Mistral, Gemma, and Phi-4, fixing critical bugs that improve model accuracy. It provides a streamlined pipeline from training through evaluation to deployment with Ollama, llama.cpp, vLLM, and other inference engines \[1\].
 
-Outlines is used in production by organizations including Amazon, Apple, Databricks, and Meta.
+Unsloth claims 0% loss in accuracy — no approximation methods are used, all computations are exact. The VRAM savings come from optimized Triton kernels, smart gradient checkpointing, and memory-efficient loss calculations rather than quantization or approximation during training \[1\].
+
+The framework supports Linux, Windows, NVIDIA GPUs (CUDA Capability 7.0+), AMD GPUs, and Intel GPUs. Python 3.13 is supported \[6\].
 
 ## Core Concepts
 
-- **Generation-Time Constraints**: Outlines applies structural constraints during the token generation process rather than after it. Each token is validated against the target schema before being emitted, ensuring 100% conformance without retry loops or post-processing.
-- **Finite-State Machine (FSM) Guided Decoding**: The library compiles output schemas (JSON Schema, regex patterns, grammars) into FSMs that mask invalid tokens at each generation step. Only tokens that maintain a valid path through the FSM are considered by the model's sampling procedure.
-- **Schema Compilation**: Schemas are compiled into their FSM representations once per session. Subsequent generation calls reuse the compiled representation, amortizing the compilation cost across multiple invocations.
-- **Backend Agnosticism**: Outlines decouples the structured generation logic from the model backend. The same schema definition works across OpenAI, Anthropic, vLLM, Hugging Face Transformers, Ollama, and Gemini without modification.
-- **Type-Safe Output**: When using Pydantic models or Python type annotations, the generated output is automatically deserialized into the corresponding typed object, providing immediate programmatic access without manual parsing.
+### FastLanguageModel
+
+The primary API is `FastLanguageModel`, which handles model loading, adapter configuration, inference optimization, and model saving. It wraps Hugging Face Transformers and PEFT with optimized Triton kernels \[2\]:
+
+- `FastLanguageModel.from_pretrained()`: Loads models with 4-bit, 8-bit, 16-bit, or full precision
+- `FastLanguageModel.get_peft_model()`: Applies LoRA adapters with Unsloth-optimized kernels
+- `FastLanguageModel.for_inference()`: Enables 2x faster native inference after training
+
+### Training Methods
+
+Unsloth supports multiple training approaches \[2\]:
+
+- **QLoRA (4-bit)**: Default recommended mode; loads model quantized to 4-bit, trains LoRA adapters in 16-bit
+- **LoRA (16-bit)**: Full 16-bit LoRA fine-tuning with ~4x more VRAM than QLoRA
+- **Full Fine-Tuning**: Updates all model parameters; most compute-intensive
+- **Continued Pretraining**: Extend base model training on domain-specific corpora
+
+### Reinforcement Learning
+
+Unsloth provides the most memory-efficient RL implementation, using up to 90% less VRAM than standard implementations with Flash Attention 2. Supported methods \[3\]:
+
+- **GRPO (Group Relative Policy Optimization)**: DeepSeek's method that removes both value and reward models, using statistical sampling across multiple outputs to estimate advantages via Z-score standardization
+- **PPO (Proximal Policy Optimization)**: Traditional three-component system with generating policy, reference policy, and value model
+- **RLHF (Reinforcement Learning from Human Feedback)**: Training agents to produce outputs rated useful by human evaluators
+- **RLVR (Reinforcement Learning with Verifiable Rewards)**: Rewards based on tasks with verifiable solutions (math, code)
+- **GSPO, DR-GRPO**: Additional variants accessible via `GRPOConfig` parameters
+
+### Dynamic 2.0 GGUFs
+
+Unsloth's Dynamic 2.0 quantization system intelligently varies quantization types per layer and per model, rather than applying uniform quantization. It uses a calibration dataset of 1.5+ million hand-curated tokens optimized for conversational performance. Available formats include IQ1_S through Q5_1 \[5\].
+
+### Vision Fine-Tuning
+
+Unsloth supports fine-tuning Vision-Language Models (VLMs) including Qwen3-VL, Gemma 3, Llama 3.2 Vision, and Qwen2.5 VL. Users can selectively fine-tune vision layers, language layers, attention modules, or MLP modules independently \[7\].
+
+## Installation
+
+### pip (Recommended)
+
+``` bash
+pip install unsloth
+```
+
+### UV
+
+``` bash
+uv pip install unsloth
+```
+
+### Docker
+
+``` bash
+docker pull unsloth/unsloth
+```
+
+### Update
+
+``` bash
+pip install --upgrade unsloth
+```
+
+Platform-specific installation guides are available for Windows, AMD GPUs, Intel GPUs, and Conda environments \[8\].
+
+## Architecture
+
+``` 
+┌─────────────────────────────────────────────────────┐
+│              FastLanguageModel API                    │
+│  from_pretrained │ get_peft_model │ for_inference    │
+└──────────────────────┬──────────────────────────────┘
+                       │
+          ┌────────────┼────────────┐
+          v            v            v
+┌──────────────┐ ┌──────────┐ ┌──────────────────┐
+│  Model       │ │  LoRA    │ │  Optimized       │
+│  Loading     │ │  Adapter │ │  Triton Kernels  │
+│              │ │          │ │                   │
+│  4/8/16-bit  │ │  PEFT    │ │  Memory-efficient│
+│  HF Hub      │ │  QLoRA   │ │  loss functions  │
+│  BitsAndBytes│ │  rsLoRA  │ │  Gradient ckpt   │
+└──────────────┘ └──────────┘ └──────────────────┘
+                       │
+          ┌────────────┼────────────┐
+          v            v            v
+┌──────────────┐ ┌──────────┐ ┌──────────────────┐
+│  SFTTrainer  │ │  GRPO    │ │  DPO/ORPO/PPO    │
+│  (TRL)       │ │  Trainer │ │  Trainers        │
+│              │ │          │ │                   │
+│  Supervised  │ │  Reward  │ │  Preference       │
+│  Fine-tuning │ │  funcs   │ │  Alignment        │
+└──────────────┘ └──────────┘ └──────────────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│                  Export / Deploy                      │
+│  GGUF (Ollama, llama.cpp, LM Studio)                │
+│  vLLM (FP8, AWQ) │ SGLang │ HF Hub │ LoRA merge    │
+└─────────────────────────────────────────────────────┘
+```
+
+Unsloth sits between the Hugging Face ecosystem (Transformers, PEFT, TRL) and optimized Triton kernels. The framework intercepts standard training operations and replaces them with memory-efficient implementations while maintaining mathematical equivalence \[1\]\[2\].
+
+## Key Features
+
+- **2x Faster Training**: Optimized Triton kernels for training with zero accuracy loss
+- **70-90% Less VRAM**: Memory-efficient implementations for both SFT and RL training
+- **500+ Model Support**: Text, vision, TTS, embedding, and MoE models from Llama, Qwen, Gemma, DeepSeek, Mistral, Phi, and more
+- **QLoRA/LoRA/Full Fine-Tuning**: 4-bit, 8-bit, 16-bit, and full precision training modes
+- **Reinforcement Learning**: GRPO, PPO, RLHF, RLVR, GSPO, DR-GRPO with up to 90% VRAM reduction
+- **Vision Fine-Tuning**: Selective layer fine-tuning for VLMs (vision, language, attention, MLP)
+- **Text-to-Speech Fine-Tuning**: TTS model training support
+- **Embedding Fine-Tuning**: Train custom embedding models
+- **Dynamic 2.0 GGUFs**: Intelligent per-layer quantization with custom calibration datasets
+- **Ultra Long Context RL**: 500K+ context length fine-tuning support
+- **Multi-GPU Training**: Distributed training across multiple GPUs
+- **Faster MoE Training**: 12x faster Mixture-of-Experts training with less VRAM
+- **GGUF Export**: Direct conversion for Ollama, llama.cpp, and LM Studio deployment
+- **vLLM Integration**: Enterprise deployment with FP8/AWQ quantization and LoRA hot-swapping
+- **2x Faster Inference**: Native accelerated inference via `for_inference()`
+- **Chat Templates**: Flexible template system for conversation formatting
+- **Ready-to-Use Notebooks**: Google Colab notebooks for all supported models
+
+## Use Cases
+
+- **Instruction Tuning**: Fine-tune base models to follow instructions using SFTTrainer with alpaca or chat formats
+- **Reasoning Model Training**: Use GRPO to train reasoning capabilities similar to DeepSeek-R1 approach
+- **Domain Adaptation**: Continue pretraining on domain-specific data then fine-tune for specialized tasks
+- **Medical Imaging**: Fine-tune Llama 3.2 Vision on radiography and other medical imaging datasets
+- **Document Analysis**: Train VLMs for handwriting-to-LaTeX conversion and document understanding
+- **Local LLM Deployment**: Train, quantize to GGUF, and deploy via Ollama or llama.cpp for local inference
+- **Enterprise Serving**: Fine-tune and deploy via vLLM with LoRA hot-swapping for multi-tenant systems
+- **Preference Alignment**: Align models with human preferences using DPO, ORPO, or GRPO
+- **Code Generation**: Fine-tune coding models using RL with verifiable rewards from code execution
+
+## API Reference
+
+### Model Loading
+
+``` python
+from unsloth import FastLanguageModel
+
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name="unsloth/Llama-3.1-8B-bnb-4bit",
+    max_seq_length=2048,
+    dtype=None,            # Auto-detect; or torch.float16/bfloat16
+    load_in_4bit=True,     # QLoRA mode
+)
+```
+
+### LoRA Configuration
+
+``` python
+model = FastLanguageModel.get_peft_model(
+    model,
+    r=16,
+    target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                     "gate_proj", "up_proj", "down_proj"],
+    lora_alpha=16,
+    lora_dropout=0,
+    bias="none",
+    use_rslora=False,
+    use_gradient_checkpointing="unsloth",
+)
+```
+
+### Supervised Fine-Tuning
+
+``` python
+from trl import SFTTrainer
+from transformers import TrainingArguments
+
+trainer = SFTTrainer(
+    model=model,
+    tokenizer=tokenizer,
+    train_dataset=dataset,
+    args=TrainingArguments(
+        per_device_train_batch_size=2,
+        gradient_accumulation_steps=4,
+        max_steps=60,
+        learning_rate=2e-4,
+        fp16=not torch.cuda.is_bf16_supported(),
+        bf16=torch.cuda.is_bf16_supported(),
+        output_dir="outputs",
+    ),
+)
+trainer.train()
+```
+
+### GRPO Training
+
+``` python
+from trl import GRPOConfig, GRPOTrainer
+
+training_args = GRPOConfig(
+    learning_rate=5e-6,
+    num_generations=8,
+    max_completion_length=256,
+    per_device_train_batch_size=1,
+    gradient_accumulation_steps=4,
+    output_dir="grpo_outputs",
+)
+
+trainer = GRPOTrainer(
+    model=model,
+    processing_class=tokenizer,
+    reward_funcs=[correctness_reward_func, format_reward_func],
+    args=training_args,
+    train_dataset=dataset,
+)
+trainer.train()
+```
+
+### Inference
+
+``` python
+FastLanguageModel.for_inference(model)
+
+inputs = tokenizer(["What is AI?"], return_tensors="pt").to("cuda")
+outputs = model.generate(**inputs, max_new_tokens=128)
+print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+```
+
+### Export and Saving
+
+``` python
+# Save LoRA adapter (~100MB)
+model.save_pretrained("lora_model")
+
+# Save to GGUF for Ollama/llama.cpp
+model.save_pretrained_gguf("model_gguf", tokenizer, quantization_method="q4_k_m")
+
+# Push to Hugging Face Hub
+model.push_to_hub("username/model-name", token="hf_...")
+model.push_to_hub_gguf("username/model-gguf", tokenizer, quantization_method="q4_k_m", token="hf_...")
+```
+
+## Configuration
+
+### Model Loading Options
+
+- `model_name`: Hugging Face model ID or local path
+- `max_seq_length`: Maximum context length (default: 2048)
+- `dtype`: `None` (auto), `torch.float16`, or `torch.bfloat16`
+- `load_in_4bit`: Enable 4-bit QLoRA (default: True)
+- `load_in_16bit`: Enable 16-bit LoRA
+- `full_finetuning`: Enable full parameter fine-tuning
+
+### LoRA Parameters
+
+- `r`: LoRA rank (8, 16, 32, 64 common values)
+- `lora_alpha`: Scaling factor (typically equal to r)
+- `lora_dropout`: Dropout rate (0 recommended for Unsloth)
+- `target_modules`: List of modules to apply LoRA
+- `use_rslora`: Rank-stabilized LoRA scaling
+- `use_gradient_checkpointing`: `"unsloth"` for optimized checkpointing
+
+### VRAM Requirements
+
+| Model Size | QLoRA (4-bit) | LoRA (16-bit) |
+|------------|---------------|---------------|
+| 3B         | 3.5 GB        | 8 GB          |
+| 7-8B       | 5 GB          | 19 GB         |
+| 14B        | 10 GB         | 38 GB         |
+| 70B        | 41 GB         | 164 GB        |
+| 405B       | 237 GB        | 950 GB        |
+
+### Environment Flags
+
+Unsloth provides environment flags for controlling behavior (logging, memory management, kernel selection) via the `UNSLOTH_*` environment variable prefix \[1\].
+
+## Integration Patterns
+
+### Ollama Deployment
+
+Export trained models to GGUF format, then serve via Ollama for local inference with `ollama run` \[4\].
+
+### vLLM Serving
+
+Deploy fine-tuned models via vLLM for enterprise serving with LoRA hot-swapping — swap adapters without reloading the base model \[4\].
+
+### Hugging Face TRL
+
+Unsloth uses TRL's `SFTTrainer`, `GRPOTrainer`, `DPOTrainer`, and `ORPOTrainer` directly. The optimization is transparent — standard TRL code works with Unsloth models \[2\]\[3\].
+
+### llama.cpp and LM Studio
+
+GGUF exports are directly compatible with llama.cpp for CLI inference and LM Studio for GUI-based local inference \[4\].
+
+## Examples
+
+### Quick LoRA Fine-Tuning
+
+``` python
+from unsloth import FastLanguageModel
+from trl import SFTTrainer
+from transformers import TrainingArguments
+from datasets import load_dataset
+
+# Load model
+model, tokenizer = FastLanguageModel.from_pretrained(
+    model_name="unsloth/Llama-3.1-8B-bnb-4bit",
+    max_seq_length=2048,
+    load_in_4bit=True,
+)
+
+# Apply LoRA
+model = FastLanguageModel.get_peft_model(
+    model, r=16, target_modules=["q_proj", "k_proj", "v_proj", "o_proj",
+                                  "gate_proj", "up_proj", "down_proj"],
+    lora_alpha=16, lora_dropout=0,
+)
+
+# Train
+dataset = load_dataset("yahma/alpaca-cleaned", split="train")
+trainer = SFTTrainer(
+    model=model, tokenizer=tokenizer, train_dataset=dataset,
+    args=TrainingArguments(
+        per_device_train_batch_size=2,
+        gradient_accumulation_steps=4,
+        num_train_epochs=1,
+        learning_rate=2e-4,
+        output_dir="outputs",
+    ),
+)
+trainer.train()
+
+# Export to GGUF
+model.save_pretrained_gguf("model_gguf", tokenizer, quantization_method="q4_k_m")
+```
+
+### Vision Fine-Tuning
+
+``` python
+from unsloth import FastVisionModel
+
+model, tokenizer = FastVisionModel.from_pretrained(
+    "unsloth/Qwen2-VL-7B-Instruct-bnb-4bit",
+    load_in_4bit=True,
+)
+
+model = FastVisionModel.get_peft_model(
+    model, r=16,
+    finetune_vision_layers=True,
+    finetune_language_layers=True,
+    finetune_attention_modules=True,
+    finetune_mlp_modules=True,
+)
+```
+
+## Limitations
+
+- **NVIDIA GPU focused**: Requires CUDA Capability 7.0+; AMD and Intel support available but less mature \[6\]
+- **No Apple Silicon support**: macOS/M-series GPU support is not yet available \[6\]
+- **Single GPU default**: Multi-GPU training works but an improved version is still in development \[1\]
+- **TRL dependency**: Training workflows depend on Hugging Face TRL; custom training loops require more manual integration
+- **RL minimum model size**: Reasoning token generation requires minimum 1.5B parameter models \[3\]
+- **RL convergence time**: GRPO training requires minimum 300 steps before meaningful reward increases \[3\]
+- **Memory for large models**: Despite optimizations, 70B+ models still require 41GB+ VRAM even with QLoRA \[6\]
+
+## Changelog
+
+- **Dynamic 2.0 GGUFs**: Intelligent per-layer quantization with 1.5M+ token calibration dataset
+- **Faster MoE Training**: 12x faster Mixture-of-Experts training with less VRAM
+- **Ultra Long Context RL**: 500K+ context length support for GRPO training
+- **Embedding Fine-Tuning**: Custom embedding model training
+- **TTS Fine-Tuning**: Text-to-speech model training support
+- **Vision Fine-Tuning**: Selective layer fine-tuning for VLMs
+- **GRPO/GSPO/DR-GRPO**: Multiple RL method variants with 90% VRAM reduction
+- **3x Faster Training**: Packing optimizations for additional speedup
+- **Quantization-Aware Training**: QAT support for training-time quantization
+- **Blackwell/RTX 50 Support**: Compatibility with NVIDIA Blackwell architecture
+
+## Citations
+
+- \[1\] Unsloth Documentation Home - https://unsloth.ai/docs
+- \[2\] Fine-tuning Guide - https://unsloth.ai/docs/get-started/fine-tuning-llms-guide
+- \[3\] Reinforcement Learning Guide - https://unsloth.ai/docs/get-started/reinforcement-learning-rl-guide
+- \[4\] Inference & Deployment - https://unsloth.ai/docs/basics/inference-and-deployment
+- \[5\] Dynamic 2.0 GGUFs - https://unsloth.ai/docs/basics/unsloth-dynamic-2.0-ggufs
+- \[6\] System Requirements - https://unsloth.ai/docs/get-started/fine-tuning-for-beginners/unsloth-requirements
+- \[7\] Vision Fine-tuning - https://unsloth.ai/docs/basics/vision-fine-tuning
+- \[8\] Installation - https://unsloth.ai/docs/get-started/install
+
+# Axolotl
+
+> Open-source LLM post-training framework with YAML config for LoRA and full fine-tuning
+
+| Field | Value |
+|----|----|
+| Name | Axolotl |
+| Group | Fine-tuning |
+| Type | SDK |
+| Open Source | yes |
+| GitHub | [axolotl-ai-cloud/axolotl](https://github.com/axolotl-ai-cloud/axolotl) |
+| Stars | 11393 |
+| Docs | [docs.axolotl.ai](https://docs.axolotl.ai/) |
+
+## Overview
+
+Axolotl is an open-source framework for fine-tuning and post-training large language models (LLMs). It provides a YAML-driven configuration system that abstracts the complexity of training pipelines, supporting LoRA, QLoRA, full fine-tuning, and reinforcement learning from human feedback (RLHF) methods. The framework wraps Hugging Face Transformers, PEFT, TRL, and DeepSpeed into a unified interface controlled by a single configuration file \[1\].
+
+Key capabilities include multimodal training (Vision-Language Models), multiple model architecture support (Llama, Mistral, Mixtral, Qwen, Gemma, Phi, Falcon, and others), sample packing for training efficiency, and distributed training via Fully Sharded Data Parallel (FSDP) and DeepSpeed \[1\].
+
+Axolotl requires an NVIDIA Ampere or newer GPU (or AMD GPU), Python 3.11+, and PyTorch 2.8.0 or higher. macOS M-series is also supported \[2\].
+
+## Core Concepts
+
+### YAML Configuration
+
+All training parameters are specified in a single YAML configuration file. This file controls the base model, adapter type, dataset paths and formats, training hyperparameters, optimizer, scheduler, precision settings, and output location. The CLI passes this config file to all commands \[3\]\[4\].
+
+### Training Methods
+
+Axolotl supports several training approaches \[3\]:
+
+- **Full Fine-tuning**: Updates all model parameters
+- **LoRA (Low-Rank Adaptation)**: Attaches low-rank adapter matrices to target modules, training only the adapter weights
+- **QLoRA**: Combines 4-bit quantization of the base model with LoRA adapters for reduced memory usage
+- **llama-adapter**: Lightweight adapter method for Llama models
+
+### Dataset Formats
+
+Axolotl provides built-in support for multiple dataset formats \[5\]\[6\]:
+
+**Instruction Tuning**: `alpaca` (instruction/input/output), `gpteacher`, `oasst`, `reflection`, `summarizetldr`, `jeopardy`, `context_qa`, and custom field mappings.
+
+**Conversation/Chat**: The recommended `chat_template` format uses Jinja2 templates to convert message lists into model-specific prompts. It supports tokenizer defaults, built-in templates (chatml, gemma, llama4, qwen3), and custom templates. Legacy `sharegpt` and `pygmalion` formats are also supported but deprecated in favor of chat_template \[6\].
+
+**Pre-training**: Raw text datasets for continued pre-training of base models.
+
+**Preference Data**: Chosen/rejected pairs for DPO, IPO, KTO, and ORPO training methods \[7\].
+
+### Sample Packing (Multipack)
+
+Multipack is a technique that packs multiple sequences into a single batch to increase training throughput. With Flash Attention, sequences are concatenated and Flash Attention is notified of sequence boundaries through `cu_seqlens` parameters, preventing cross-sequence attention while maintaining efficiency. Without Flash Attention, packing uses 4D attention masks with reduced efficiency \[8\].
+
+Benefits include reduced padding waste, better GPU utilization, and consistent token counts per training step despite variable input lengths.
+
+### Reinforcement Learning Methods
+
+Axolotl wraps the TRL library to support multiple RL methods (beta feature) \[7\]:
+
+- **DPO (Direct Preference Optimization)**: 15+ dataset format variants
+- **IPO (Identity Preference Optimization)**: DPO with a different loss function
+- **KTO (Kahneman-Tversky Optimization)**: Completion-based formats with boolean labels
+- **ORPO (Odds Ratio Preference Optimization)**: Configurable via `orpo_alpha`
+- **GRPO (Group Relative Policy Optimization)**: Uses vLLM for trajectory generation with custom reward functions
+- **GDPO (Group Reward-Decoupled Policy Optimization)**: Extends GRPO for multi-reward training
+- **SimPO**: Alternative loss function using CPOTrainer
+
+## Installation
+
+### pip
+
+``` bash
+pip3 install --no-build-isolation axolotl[flash-attn,deepspeed]
+```
+
+### UV
+
+``` bash
+uv pip install --no-build-isolation axolotl[flash-attn,deepspeed]
+```
+
+### From Source (Edge Build)
+
+``` bash
+git clone https://github.com/axolotl-ai-cloud/axolotl.git
+cd axolotl
+pip3 install packaging ninja
+pip3 install --no-build-isolation -e '.[flash-attn,deepspeed]'
+```
+
+### Docker
+
+``` bash
+docker run --gpus '"all"' \
+  --volume $HOME/.cache/huggingface:/root/.cache/huggingface \
+  axolotlai/axolotl:main-latest
+```
+
+Docker images are available as `axolotlai/axolotl:main-latest` with all dependencies pre-installed \[2\].
+
+## Architecture
+
+``` 
+┌─────────────────────────────────────────────────────┐
+│                    YAML Config                       │
+│  base_model, adapter, datasets, hyperparameters     │
+└──────────────────────┬──────────────────────────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│                  Axolotl CLI                          │
+│  preprocess │ train │ inference │ merge-lora │ eval  │
+└──────────────────────┬──────────────────────────────┘
+                       │
+          ┌────────────┼────────────┐
+          v            v            v
+┌──────────────┐ ┌──────────┐ ┌──────────────────┐
+│  Dataset     │ │  Model   │ │  Training Loop   │
+│  Pipeline    │ │  Loading │ │                   │
+│              │ │          │ │  ┌─────────────┐  │
+│  Tokenize    │ │  HF Hub  │ │  │ Transformers│  │
+│  Format      │ │  PEFT    │ │  │ Trainer     │  │
+│  Pack        │ │  BnB     │ │  │ + TRL       │  │
+│  Validate    │ │  Quant   │ │  └─────────────┘  │
+└──────────────┘ └──────────┘ └────────┬──────────┘
+                                        │
+                       ┌────────────────┼──────────┐
+                       v                v          v
+                ┌────────────┐  ┌──────────┐ ┌────────┐
+                │   FSDP     │  │DeepSpeed │ │ Single │
+                │  Multi-GPU │  │  ZeRO    │ │  GPU   │
+                └────────────┘  └──────────┘ └────────┘
+                       │
+                       v
+┌─────────────────────────────────────────────────────┐
+│                     Output                           │
+│  Checkpoints │ Merged Model │ LoRA Adapters          │
+│  WandB Logs  │ TensorBoard  │ MLflow                 │
+└─────────────────────────────────────────────────────┘
+```
+
+The framework orchestrates a pipeline from YAML configuration through dataset preprocessing, model loading (with optional quantization and adapter attachment), training execution (via Hugging Face Trainer or TRL), and output of trained weights. Distributed training is handled through FSDP or DeepSpeed integration \[1\]\[3\].
+
+## Key Features
+
+- **YAML-Driven Configuration**: Single config file controls all training parameters — model, data, hyperparameters, and infrastructure
+- **Multiple Training Methods**: Full fine-tuning, LoRA, QLoRA, and llama-adapter with configurable target modules and ranks
+- **RLHF/Preference Training**: DPO, IPO, KTO, ORPO, GRPO, GDPO, and SimPO via TRL integration
+- **Sample Packing (Multipack)**: Packs multiple sequences per batch using Flash Attention block diagonal masks for improved throughput
+- **Flash Attention**: Native integration for memory-efficient attention computation
+- **FSDP + QLoRA**: Train 70B+ parameter models on consumer GPUs (e.g., two 24GB GPUs) by combining Fully Sharded Data Parallel with quantized LoRA
+- **DeepSpeed Integration**: ZeRO optimization stages for distributed training with CPU/disk offloading
+- **Multimodal Training**: Vision-Language Model (VLM) fine-tuning support
+- **12+ Dataset Formats**: Built-in support for alpaca, chat_template, sharegpt, oasst, gpteacher, reflection, and custom formats
+- **Chat Template System**: Jinja2-based templates with per-token loss masking, tool use support, and reasoning split (Qwen3)
+- **Gradient Checkpointing**: Memory optimization trading compute for reduced VRAM usage
+- **Mixed Precision Training**: BF16 and FP16 with automatic detection
+- **Hyperparameter Sweeps**: YAML-based sweep configurations for automated tuning
+- **Cloud Execution**: Modal integration for remote GPU training with `--cloud` flag
+- **Experiment Tracking**: Weights & Biases, TensorBoard, and MLflow logging
+- **torch.compile**: Optional compilation for optimized training performance
+
+## Use Cases
+
+- **Instruction Tuning**: Fine-tune base models to follow instructions using alpaca, chat, or custom formats
+- **Chat Model Training**: Build conversational models using multi-turn chat datasets with chat_template formatting
+- **Preference Alignment**: Align models with human preferences using DPO, ORPO, or KTO on chosen/rejected pairs
+- **Domain Adaptation**: Continue pre-training on domain-specific corpora then fine-tune for specialized tasks
+- **LoRA Adapter Training**: Create lightweight task-specific adapters that can be merged or swapped at inference time
+- **Large Model Training on Consumer Hardware**: Fine-tune 70B+ models using FSDP + QLoRA across multiple consumer GPUs
+- **Multimodal Fine-tuning**: Train Vision-Language Models on image-text datasets
+- **Reward Model Training**: Build reward models for RLHF pipelines using preference datasets
+
+## API Reference
+
+### CLI Commands
+
+``` bash
+# Fetch example configs
+axolotl fetch examples
+
+# Preprocess datasets (tokenization)
+axolotl preprocess config.yml
+
+# Train a model
+axolotl train config.yml
+
+# Train with overrides
+axolotl train config.yml --learning-rate 1e-4 --micro-batch-size 2
+
+# Resume from checkpoint
+axolotl train config.yml --resume-from-checkpoint path/to/checkpoint
+
+# Multi-GPU training
+axolotl train config.yml --launcher torchrun -- --nproc_per_node=4
+
+# Run inference (CLI)
+axolotl inference config.yml --lora-model-dir="./outputs/lora-out"
+
+# Run inference (Gradio UI)
+axolotl inference config.yml --gradio
+
+# Merge LoRA adapters into base model
+axolotl merge-lora config.yml --lora-model-dir="./outputs/lora-out"
+
+# Evaluate model
+axolotl evaluate config.yml
+
+# Run LM evaluation harness
+axolotl lm-eval config.yml
+
+# Hyperparameter sweep
+axolotl train config.yml --sweep path/to/sweep.yaml
+
+# Cloud execution (Modal)
+axolotl train config.yml --cloud cloud_config.yml
+```
+
+### Debug Preprocessing
+
+``` bash
+axolotl preprocess config.yml --debug --debug-num-examples 5
+```
+
+## Configuration
+
+### Model Configuration
+
+``` yaml
+base_model: NousResearch/Llama-3.2-1B
+model_type: LlamaForCausalLM
+tokenizer_type: AutoTokenizer
+load_in_8bit: false
+load_in_4bit: true
+```
+
+### LoRA Configuration
+
+``` yaml
+adapter: lora
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - v_proj
+  - k_proj
+  - o_proj
+```
+
+### Dataset Configuration
+
+``` yaml
+datasets:
+  - path: my_dataset.jsonl
+    type: alpaca
+    ds_type: json
+  - path: HuggingFaceH4/ultrachat_200k
+    type: chat_template
+    chat_template: chatml
+    split: train_sft
+
+val_set_size: 0.05
+```
+
+### Training Hyperparameters
+
+``` yaml
+learning_rate: 3e-4
+num_epochs: 3
+micro_batch_size: 2
+gradient_accumulation_steps: 4
+sequence_len: 4096
+optimizer: adamw_torch_fused
+lr_scheduler: cosine
+weight_decay: 0.01
+max_grad_norm: 1.0
+```
+
+### Performance Options
+
+``` yaml
+bf16: auto
+flash_attention: true
+sample_packing: true
+gradient_checkpointing: true
+pad_to_sequence_len: true
+torch_compile: true
+```
+
+### RLHF Configuration
+
+``` yaml
+rl: dpo
+rl_beta: 0.1
+remove_unused_columns: false
+datasets:
+  - path: Intel/orca_dpo_pairs
+    type: chatml.intel
+    split: train
+```
+
+### Distributed Training
+
+``` yaml
+# FSDP
+fsdp:
+  - full_shard
+  - auto_wrap
+fsdp_config:
+  fsdp_offload_params: true
+
+# Or DeepSpeed
+deepspeed: deepspeed_configs/zero3_bf16.json
+```
+
+### Logging
+
+``` yaml
+use_wandb: true
+wandb_project: my-project
+wandb_entity: my-team
+save_steps: 100
+eval_steps: 100
+logging_steps: 10
+save_total_limit: 3
+```
+
+## Integration Patterns
+
+### Hugging Face Hub
+
+Models are loaded directly from Hugging Face Hub via `base_model`. Trained models and adapters can be pushed back to the Hub. Datasets are loaded from Hub paths or local files \[3\].
+
+### PEFT (Parameter-Efficient Fine-Tuning)
+
+Axolotl uses the PEFT library for LoRA and QLoRA adapter management. Adapters can be merged into the base model via `axolotl merge-lora` or loaded separately at inference time \[3\].
+
+### DeepSpeed
+
+DeepSpeed ZeRO stages are configured via JSON config files passed through the `deepspeed` YAML key. Supports ZeRO-1, ZeRO-2, and ZeRO-3 with CPU and disk offloading \[3\].
+
+### Weights & Biases
+
+Native integration for experiment tracking, hyperparameter logging, and loss visualization via `use_wandb: true` \[3\].
+
+### Modal (Cloud Training)
+
+The `--cloud` flag enables remote GPU training on Modal with configurable GPU types and persistent storage volumes \[4\].
+
+### Unsloth
+
+Axolotl integrates with Unsloth for optimized LoRA training kernels that reduce memory usage and increase training speed \[1\].
+
+## Examples
+
+### Basic LoRA Fine-Tuning
+
+``` yaml
+base_model: NousResearch/Llama-3.2-1B
+load_in_8bit: true
+adapter: lora
+lora_r: 8
+lora_alpha: 16
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - v_proj
+
+datasets:
+  - path: mhenrichsen/alpaca_2k_test
+    type: alpaca
+
+sequence_len: 2048
+micro_batch_size: 2
+gradient_accumulation_steps: 4
+num_epochs: 3
+learning_rate: 3e-4
+optimizer: adamw_torch_fused
+lr_scheduler: cosine
+
+bf16: auto
+flash_attention: true
+sample_packing: true
+output_dir: ./outputs/lora-out
+```
+
+``` bash
+axolotl train lora_config.yml
+axolotl merge-lora lora_config.yml
+```
+
+### Chat Model with DPO
+
+``` yaml
+base_model: NousResearch/Llama-3.2-1B
+adapter: lora
+lora_r: 16
+lora_alpha: 32
+
+rl: dpo
+rl_beta: 0.1
+remove_unused_columns: false
+
+datasets:
+  - path: Intel/orca_dpo_pairs
+    type: chatml.intel
+    split: train
+
+sequence_len: 2048
+micro_batch_size: 1
+num_epochs: 1
+learning_rate: 5e-6
+optimizer: adamw_torch_fused
+
+bf16: auto
+flash_attention: true
+output_dir: ./outputs/dpo-out
+```
+
+### FSDP + QLoRA for 70B Models
+
+``` yaml
+base_model: meta-llama/Llama-2-70b-hf
+load_in_4bit: true
+adapter: qlora
+lora_r: 32
+lora_alpha: 64
+
+fsdp:
+  - full_shard
+  - auto_wrap
+fsdp_config:
+  fsdp_offload_params: true
+  fsdp_cpu_ram_efficient_loading: true
+
+datasets:
+  - path: my_dataset.jsonl
+    type: alpaca
+
+sequence_len: 4096
+micro_batch_size: 1
+gradient_accumulation_steps: 8
+num_epochs: 1
+learning_rate: 2e-4
+bf16: auto
+flash_attention: true
+gradient_checkpointing: true
+output_dir: ./outputs/70b-qlora
+```
+
+## Limitations
+
+- **RLHF is beta**: The documentation notes RLHF features are in beta and many features are not fully implemented \[7\]
+- **GPU requirements**: Requires NVIDIA Ampere or newer GPUs (or AMD); older NVIDIA architectures are not supported \[2\]
+- **Flash Attention dependency**: Maximum sample packing efficiency requires Flash Attention support; without it, packing uses less efficient 4D masks \[8\]
+- **Memory demands**: Full fine-tuning of large models requires substantial GPU memory; even QLoRA of 70B models needs multiple 24GB GPUs \[9\]
+- **Python version constraint**: Requires Python 3.11+ specifically, which may conflict with environments using older Python versions \[2\]
+- **PyTorch minimum version**: Requires PyTorch 2.8.0+, limiting compatibility with older CUDA toolkit installations \[2\]
+- **Blackwell GPU constraints**: NVIDIA Blackwell GPUs require PyTorch 2.9.1+ and CUDA 12.8 with specific nightly builds \[2\]
+- **Dataset format complexity**: The number of dataset formats and configuration options creates a learning curve for new users
+
+## Changelog
+
+- **2026/03**: Qwen3.5 support, Mixture-of-Experts (MoE) expert quantization, SageAttention v2
+- **2026/02**: ScatterMoE LoRA, SageAttention v1, GDPO (Group Reward-Decoupled Policy Optimization)
+- **2026/01**: EAFT (Efficient Attention Fine-Tuning), Scalable Softmax
+- **GRPO**: Group Relative Policy Optimization with vLLM trajectory generation and custom reward functions
+- **Chat Template System**: Jinja2-based conversation formatting replacing legacy ShareGPT
+- **Modal Cloud**: Remote GPU training integration
+- **N-D Parallelism**: Multi-dimensional parallelism support
+- **Sequence Parallelism**: Distributed sequence processing across GPUs
+- **Quantization-Aware Training (QAT)**: Training-time quantization via torchao
+
+## Citations
+
+- \[1\] Axolotl Documentation Home - https://docs.axolotl.ai/
+- \[2\] Installation Guide - https://docs.axolotl.ai/docs/installation.html
+- \[3\] Config Reference - https://docs.axolotl.ai/docs/config-reference.html
+- \[4\] CLI Reference - https://docs.axolotl.ai/docs/cli.html
+- \[5\] Instruction Tuning Formats - https://docs.axolotl.ai/docs/dataset-formats/inst_tune.html
+- \[6\] Conversation Formats - https://docs.axolotl.ai/docs/dataset-formats/conversation.html
+- \[7\] RLHF Guide - https://docs.axolotl.ai/docs/rlhf.html
+- \[8\] Multipack - https://docs.axolotl.ai/docs/multipack.html
+- \[9\] FSDP + QLoRA - https://docs.axolotl.ai/docs/fsdp_qlora.html
+
+# Label Studio
+
+> Open-source multi-type data labeling and annotation tool
+
+| Field         | Value                                         |
+|---------------|-----------------------------------------------|
+| Group         | Data Labeling                                 |
+| Type          | UI                                            |
+| Open Source   | Yes                                           |
+| GitHub        | <https://github.com/HumanSignal/label-studio> |
+| Stars         | 26488                                         |
+| Documentation | [Official Docs](https://labelstud.io/guide/)  |
+
+## Overview
+
+Label Studio is an open-source data labeling and annotation platform built to support the full lifecycle of supervised learning data preparation. The backend is written in Python using Django, and the frontend is built with JavaScript, React, and MobX-State-Tree (MST). It provides a web-based interface for annotating text, images, audio, video, time series, and multi-modal data through configurable labeling templates defined in XML.
+
+The platform organizes work into projects, each containing a set of tasks (data items) and a labeling configuration that defines the annotation interface. Annotators apply labels to tasks, producing annotations that can be exported in industry-standard formats such as JSON, COCO, YOLO, Pascal VOC, and CoNLL2003. Label Studio integrates with Machine Learning (ML) backends for pre-annotation and active learning, cloud storage services for data import and export, and external systems through webhooks and a RESTful API with an official Python Software Development Kit (SDK).
+
+Label Studio Community Edition is fully open source under the Apache 2.0 license. HumanSignal also offers Label Studio Enterprise, which adds role-based access control, advanced queue management, audit logging, and additional ML automation features on top of the open-source core.
+
+## Core Concepts
+
+**Projects** are the top-level organizational unit. Each project contains a labeling configuration (an XML template defining the annotation interface), a set of tasks, and associated settings such as annotation instructions, quality controls, and connected ML backends. A single Label Studio instance can host multiple projects, each targeting a different data type or annotation task.
+
+**Tasks** represent individual data items to be labeled. A task contains a `data` field holding the content to annotate (text, image URL, audio URL, or structured JSON) and metadata fields for tracking status, assignments, and predictions. Tasks are imported via the UI, API, cloud storage sync, or file upload (JSON, CSV, TSV, or plain text formats).
+
+**Annotations** are the labels applied to tasks by human annotators. Each annotation contains a `result` array with structured label data referencing the control and object tags defined in the labeling configuration. A single task can have multiple annotations from different annotators, enabling inter-annotator agreement measurement.
+
+**Predictions** are pre-annotations generated by ML models. They follow the same result format as annotations and are displayed to annotators as starting suggestions. Predictions can be imported in bulk via the API or generated on demand by a connected ML backend. When annotators accept or modify predictions, the feedback loop enables active learning.
+
+**Labeling Configuration** is an XML document that defines the annotation interface. It uses a tag-based system where control tags (Labels, Choices, Rating, TextArea) define what annotations can be created, and object tags (Text, Image, Audio, Video) define what data is displayed. The `name` attribute on control tags and `toName` attribute linking them to object tags establish the relationship between annotation controls and data objects.
+
+**Data Manager** is the tabular interface for browsing, filtering, sorting, and managing tasks within a project. It supports column customization, bulk actions (assign, delete, retrieve predictions), and saved views (tabs) for organizing workflow queues.
+
+**ML Backend** is an external web service that wraps an ML model and exposes prediction and training endpoints compatible with the Label Studio ML SDK. When connected to a project, it provides pre-annotations, interactive predictions during labeling, and model training triggered by annotation submissions.
 
 ## Installation and Setup
 
-Install Outlines via pip:
+### pip Installation
+
+Label Studio requires Python 3.9 or later. Install and start with pip:
 
 ``` bash
-pip install outlines
+pip install label-studio
+label-studio start
 ```
 
-For specific backend support, install with extras as needed:
+The server launches on `http://localhost:8080` by default. On first run, it creates a local SQLite database and prompts for account creation.
+
+### Docker
+
+Run Label Studio as a Docker container with persistent data storage:
 
 ``` bash
-pip install outlines[openai]
-pip install outlines[anthropic]
-pip install outlines[transformers]
-pip install outlines[vllm]
-pip install outlines[ollama]
-pip install outlines[gemini]
+docker run -it -p 8080:8080 \
+  -v $(pwd)/mydata:/label-studio/data \
+  heartexlabs/label-studio:latest
 ```
+
+### Docker Compose with PostgreSQL
+
+For production deployments, use Docker Compose with PostgreSQL and Redis:
+
+``` yaml
+version: "3.8"
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./mydata:/label-studio/data:rw
+
+  app:
+    image: heartexlabs/label-studio:latest
+    expose:
+      - "8080"
+    environment:
+      - DJANGO_DB=default
+      - POSTGRE_NAME=postgres
+      - POSTGRE_USER=postgres
+      - POSTGRE_PASSWORD=postgres
+      - POSTGRE_HOST=db
+      - POSTGRE_PORT=5432
+    volumes:
+      - ./mydata:/label-studio/data:rw
+    depends_on:
+      - db
+      - redis
+
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  postgres_data:
+  redis_data:
+```
+
+``` bash
+docker-compose up -d
+```
+
+### Kubernetes
+
+Label Studio can be deployed on Kubernetes using Helm charts with ingress controller configuration. Consult the official Helm chart repository for production-grade manifests with PostgreSQL, Redis, and persistent volume claims.
+
+### Homebrew (macOS)
+
+``` bash
+brew install humansignal/tap/label-studio
+label-studio start
+```
+
+### System Requirements
+
+- Python 3.9 or later
+- RAM: 8 GB minimum, 16 GB recommended
+- Disk: 50 GB for production instances
+- Database: PostgreSQL 13+ (recommended for production) or SQLite 3.35+ (development only)
+- Browser: latest Google Chrome
+
+### Initial Setup Workflow
+
+1.  Start Label Studio and create an account
+2.  Create a new project and provide a name and description
+3.  Configure the labeling interface using a template or custom XML
+4.  Import data (upload files, connect cloud storage, or use the API)
+5.  Distribute tasks to annotators and begin labeling
+6.  Export annotations in the desired format
 
 ## Architecture
 
-Outlines is organized around three primary layers:
+Label Studio follows a client-server architecture with four principal components:
 
-- **Schema Layer**: Accepts user-defined output specifications in the form of JSON Schema objects, regex patterns, CFGs, Pydantic models, Python type annotations, or enumerated choices. This layer validates and normalizes the schema definition.
-- **Compilation Layer**: Transforms the normalized schema into an FSM or equivalent constraint representation. Compilation happens once per unique schema within a session. The compiled artifact encodes all valid token sequences that satisfy the schema.
-- **Generation Layer**: Interfaces with the LLM backend to perform constrained decoding. At each generation step, the FSM state determines which tokens are valid continuations. Invalid tokens are masked (assigned zero probability) before sampling, ensuring the output always conforms to the schema.
+**Django Application Server** handles HTTP requests, manages the database Object-Relational Mapping (ORM), processes authentication and authorization, and exposes the RESTful API. The server uses Django REST Framework for API endpoints and supports both SQLite (development) and PostgreSQL (production) as database backends.
 
-The separation of these layers allows Outlines to support multiple backends through a common interface while keeping the constraint logic centralized and reusable.
+**React Frontend** renders the Data Manager, project settings, and administrative interfaces. The labeling interface is a separate React component (Label Studio Frontend) that interprets the XML labeling configuration and renders the corresponding annotation controls. MobX-State-Tree manages frontend state, providing a structured approach to handling annotation data, undo/redo operations, and UI state transitions.
+
+**ML Backend Service** is an optional external component that communicates with Label Studio via HTTP. The ML backend SDK provides a base class that wraps any Python ML model into a Flask-based web server exposing `/predict`, `/setup`, and `/train` endpoints. Multiple ML backends can be connected to a single project.
+
+**Cloud Storage Connectors** handle bidirectional data synchronization. Source storage connectors import task data from Amazon Web Services (AWS) S3, Google Cloud Storage (GCS), Microsoft Azure Blob Storage, Redis, or local file systems. Target storage connectors export completed annotations back to cloud storage. Data accessed from cloud storage uses presigned URLs by default, keeping media files isolated from the Label Studio network. A proxy mode is available to route all data through the Label Studio server for network-restricted environments.
+
+The system uses a task-centric data model where projects contain tasks, tasks contain annotations and predictions, and annotations contain structured result arrays. All annotation coordinates use percentage-based values rather than absolute pixels, ensuring format-agnostic compatibility across different display sizes and export formats.
 
 ## Key Features and Functionality
 
-- **JSON Schema Generation**: Define output structure using JSON Schema and receive guaranteed-valid JSON from any supported model. Supports nested objects, arrays, enums, optional fields, and all standard JSON Schema constructs.
-- **Regex-Constrained Generation**: Specify output format using regular expressions. Useful for dates, phone numbers, identifiers, and other pattern-based formats.
-- **Context-Free Grammar (CFG) Support**: Define output structure using formal grammars for complex, recursive structures that go beyond what regex can express.
-- **Pydantic Model Integration**: Pass a Pydantic model class directly and receive a fully instantiated, validated model object as output.
-- **Python Type Support**: Use native Python types (str, int, float, bool, lists, dicts) as output specifications for simple structured outputs.
-- **Multiple-Choice Selection**: Constrain the model to select from a predefined set of options, useful for classification and decision-making tasks.
-- **One-Time Compilation**: Schemas are compiled into FSMs once per session, making repeated generation calls with the same schema efficient.
-- **Multi-Provider Support**: Works with OpenAI, Anthropic, vLLM, Hugging Face Transformers, Ollama, and Gemini through a unified interface.
+**Multi-Type Data Annotation** supports labeling across text, images, audio, video, HTML, time series, and multi-modal combinations within a single project. Each data type has dedicated object tags (Text, Image, Audio, Video, TimeSeries, HyperText) with type-specific rendering and interaction patterns.
+
+**Configurable Labeling Interface** uses XML templates with control tags and object tags that compose into custom annotation workflows. Control tags include Labels (span/region labeling), Choices (classification), TextArea (free-text input), Rating (numerical scoring), RectangleLabels (bounding boxes), PolygonLabels (polygon segmentation), BrushLabels (pixel-level masks), and KeyPointLabels (landmark annotation). Over 50 built-in templates cover common annotation tasks.
+
+**ML Backend Integration** connects external ML models for three workflows: batch pre-annotation (generating predictions for all tasks), interactive annotation (real-time predictions as annotators draw regions or select text), and model training (triggered manually or via API after annotation submissions). The ML backend SDK ships with 16+ example models including Meta Segment Anything Model (SAM), GroundingDINO, OpenAI, spaCy, Flair, HuggingFace Transformers, Bidirectional Encoder Representations from Transformers (BERT), Tesseract Optical Character Recognition (OCR), and NVIDIA NeMo Automatic Speech Recognition (ASR).
+
+**Active Learning** prioritizes tasks for annotation based on model uncertainty. When an ML backend is connected, predictions include confidence scores that the Data Manager can use to sort tasks by uncertainty, directing annotators to the most informative samples first. This iterative loop of predict-label-retrain accelerates model convergence while reducing total annotation effort.
+
+**Cloud Storage Integration** supports AWS S3, Google Cloud Storage, Azure Blob Storage, Redis, and local file systems as both source (import) and target (export) storage. Source storage requires LIST and GET permissions; target storage requires PUT permissions. Data syncs can import tasks from JSON, JSONL, or Parquet files, or automatically construct tasks from individual media files in a bucket.
+
+**Data Manager** provides a tabular task browser with column customization, filtering, sorting, bulk actions, and saved views. Annotators can filter by completion status, prediction score, or custom metadata fields. Bulk operations include task deletion, annotator assignment, and batch prediction retrieval.
+
+**Export Formats** include JSON (full Label Studio format), JSON-MIN (minimal format), CSV, TSV, COCO (object detection and segmentation), YOLO (YOLOv3/v4 bounding boxes), Pascal VOC XML, CoNLL2003 (Named Entity Recognition (NER)), ASR_MANIFEST (NVIDIA NeMo compatible), Brush Labels (NumPy arrays and PNG masks), and spaCy (via CoNLL2003 conversion).
+
+**Webhooks** notify external systems when events occur: task created, task deleted, annotation created, annotation updated, annotation deleted, project created, project updated, and project deleted. Webhook payloads include the affected entity data and can be configured with custom headers for authentication.
+
+**PDF and OCR Interface** provides a specialized annotation mode for document AI workflows, enabling text extraction, bounding box annotation, and classification on scanned documents and PDF files.
 
 ## Use Cases
 
-- **Classification**: Constrain model output to a fixed set of labels for text classification, sentiment analysis, or intent detection tasks.
-- **Named Entity Recognition (NER)**: Extract structured entity data from unstructured text with guaranteed output format conformance.
-- **Knowledge Graph Construction**: Generate structured triples (subject, predicate, object) from text for knowledge graph population.
-- **Question Answering with Citations**: Produce answers that include structured citation references pointing back to source material.
-- **PDF and Document Processing**: Extract structured data from unstructured document content with reliable output formatting.
-- **ReAct Agents**: Generate structured action-observation-thought sequences for agent-based reasoning frameworks.
-- **Data Extraction Pipelines**: Convert unstructured text into structured records for database ingestion or downstream processing.
-- **Form Generation**: Produce structured form data from natural language descriptions.
+- **Natural Language Processing (NLP)**: Named entity recognition, text classification, sentiment analysis, relation extraction, question answering, and document summarization annotation
+- **Computer Vision**: Object detection with bounding boxes, image segmentation with polygons and masks, image classification, keypoint annotation for pose estimation, and Optical Character Recognition (OCR) ground truth creation
+- **Audio and Speech**: Speech transcription, speaker diarization, audio event detection, and music segmentation
+- **Video**: Temporal action recognition, object tracking across frames, and video classification
+- **Document AI**: PDF annotation, form field extraction, table recognition, and invoice processing ground truth
+- **Multi-Modal**: Combining text, image, and metadata annotation in a single interface for tasks such as visual question answering or content moderation
+- **Active Learning Pipelines**: Iterative model improvement by connecting ML backends, generating predictions, having annotators correct errors, retraining, and repeating until quality targets are met
+- **Quality Assurance**: Multi-annotator workflows for measuring inter-annotator agreement and identifying annotation inconsistencies
 
 ## API Reference Summary
 
-### Model Initialization
+Label Studio exposes a RESTful API at `/api/` with token-based authentication. The official Python SDK (`label-studio-sdk`) wraps all endpoints.
 
-``` python
-import outlines
+**Authentication**: All API requests require an `Authorization: Token <api_key>` header. API keys are generated per user in the Account & Settings page.
 
-# OpenAI backend
-model = outlines.models.openai("gpt-4o")
+**Projects API**:
 
-# Transformers backend
-model = outlines.models.transformers("mistralai/Mistral-7B-v0.1")
+``` bash
+# List all projects
+curl -H "Authorization: Token <api_key>" \
+  http://localhost:8080/api/projects/
 
-# vLLM backend
-model = outlines.models.vllm("mistralai/Mistral-7B-v0.1")
-
-# Ollama backend
-model = outlines.models.ollama("llama3")
+# Create a project
+curl -X POST http://localhost:8080/api/projects/ \
+  -H "Authorization: Token <api_key>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "NER Project",
+    "label_config": "<View><Labels name=\"label\" toName=\"text\"><Label value=\"PER\"/><Label value=\"ORG\"/><Label value=\"LOC\"/></Labels><Text name=\"text\" value=\"$text\"/></View>"
+  }'
 ```
 
-### JSON Schema Generation
+**Tasks API**:
 
-``` python
-from pydantic import BaseModel
-import outlines
-
-class Customer(BaseModel):
-    name: str
-    age: int
-    email: str
-
-model = outlines.models.openai("gpt-4o")
-generator = outlines.generate.json(model, Customer)
-
-result = generator("Alice needs help with her account.")
-# result is a Customer instance with guaranteed valid fields
+``` bash
+# Create a task
+curl -X POST http://localhost:8080/api/tasks/ \
+  -H "Authorization: Token <api_key>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "data": {"text": "Barack Obama visited Berlin."},
+    "project": 1
+  }'
 ```
 
-### Regex-Constrained Generation
+**Import Tasks** (bulk):
 
 ``` python
-import outlines
+from label_studio_sdk import LabelStudio
 
-model = outlines.models.openai("gpt-4o")
-date_pattern = r"\d{4}-\d{2}-\d{2}"
-generator = outlines.generate.regex(model, date_pattern)
-
-result = generator("What is today's date?")
-# result matches the YYYY-MM-DD pattern
+client = LabelStudio(api_key="YOUR_API_KEY")
+client.projects.import_tasks(
+    id=1,
+    request=[
+        {"data": {"text": "First task text."}},
+        {"data": {"text": "Second task text."}},
+    ],
+)
 ```
 
-### Multiple-Choice Selection
+**Import Predictions**:
 
 ``` python
-import outlines
+from label_studio_sdk import LabelStudio, PredictionRequest
 
-model = outlines.models.openai("gpt-4o")
-generator = outlines.generate.choice(model, ["positive", "negative", "neutral"])
-
-result = generator("Classify the sentiment: 'I love this product!'")
-# result is one of "positive", "negative", or "neutral"
+client = LabelStudio(api_key="YOUR_API_KEY")
+client.projects.import_predictions(
+    id=1,
+    request=[
+        PredictionRequest(
+            result=[{
+                "from_name": "label",
+                "to_name": "text",
+                "type": "labels",
+                "value": {
+                    "start": 0,
+                    "end": 12,
+                    "text": "Barack Obama",
+                    "labels": ["PER"],
+                },
+            }],
+            task=1,
+        )
+    ],
+)
 ```
 
-### Grammar-Based Generation
+**Export Annotations**:
 
-``` python
-import outlines
+``` bash
+# Export all annotations in JSON format
+curl -H "Authorization: Token <api_key>" \
+  "http://localhost:8080/api/projects/1/export?exportType=JSON"
 
-model = outlines.models.transformers("mistralai/Mistral-7B-v0.1")
-grammar = r"""
-    start: expression
-    expression: term (("+"|"-") term)*
-    term: NUMBER
-    NUMBER: /[0-9]+/
-"""
-generator = outlines.generate.cfg(model, grammar)
-
-result = generator("Generate a simple arithmetic expression.")
+# Export in COCO format
+curl -H "Authorization: Token <api_key>" \
+  "http://localhost:8080/api/projects/1/export?exportType=COCO"
 ```
 
-### Text Generation (Unconstrained)
+**CLI Export**:
+
+``` bash
+label-studio export 1 JSON --export-path=./annotations.json
+label-studio export 1 COCO --export-path=./coco_output/
+```
+
+**ML Backend API**:
+
+``` bash
+# Connect ML backend to project
+curl -X POST http://localhost:8080/api/ml/ \
+  -H "Authorization: Token <api_key>" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "project": 1,
+    "title": "NER Model",
+    "url": "http://localhost:9090"
+  }'
+
+# Trigger training
+curl -X POST http://localhost:8080/api/ml/1/train \
+  -H "Authorization: Token <api_key>"
+```
+
+**Python SDK -- Full Workflow**:
 
 ``` python
-import outlines
+from label_studio_sdk import Client
 
-model = outlines.models.openai("gpt-4o")
-generator = outlines.generate.text(model)
+ls = Client(url="http://localhost:8080", api_key="<your-token>")
 
-result = generator("Tell me a story.")
+# Create project
+project = ls.create_project(
+    title="Sentiment Analysis",
+    label_config="""
+    <View>
+      <Text name="text" value="$review"/>
+      <Choices name="sentiment" toName="text" choice="single">
+        <Choice value="Positive"/>
+        <Choice value="Negative"/>
+        <Choice value="Neutral"/>
+      </Choices>
+    </View>
+    """,
+)
+
+# Import tasks
+project.import_tasks([
+    {"data": {"review": "This product is amazing!"}},
+    {"data": {"review": "Terrible experience, would not recommend."}},
+    {"data": {"review": "It works as expected, nothing special."}},
+])
+
+# Connect ML backend
+ml_backend = project.connect_ml_backend(
+    url="http://localhost:9090",
+    title="Sentiment Classifier",
+)
+
+# Trigger training
+ml_backend.train()
+
+# Retrieve predictions
+predictions = ml_backend.predict(tasks=[
+    {"data": {"review": "Loved the fast delivery!"}}
+])
+for pred in predictions:
+    print(f"Prediction: {pred['result']}")
+    print(f"Score: {pred.get('score', 'N/A')}")
+
+# Export annotations
+annotations = project.export_tasks(export_type="JSON")
 ```
 
 ## Configuration and Customization
 
-- **Schema Compilation Caching**: Compiled FSMs are cached for the duration of the session. No explicit configuration is required; reusing the same generator object across calls leverages the cached compilation.
-- **Sampling Parameters**: Generation calls accept standard sampling parameters (temperature, top_p, max_tokens) through the underlying model backend configuration.
-- **Backend Selection**: The backend is determined by the model initialization call. Each backend may support additional configuration options specific to the provider (API keys, base URLs, device placement).
+### Labeling Configuration Templates
+
+**Text Classification**:
+
+``` xml
+<View>
+  <Text name="text" value="$text"/>
+  <Choices name="topic" toName="text" choice="single">
+    <Choice value="Sports"/>
+    <Choice value="Politics"/>
+    <Choice value="Technology"/>
+    <Choice value="Entertainment"/>
+  </Choices>
+</View>
+```
+
+**Named Entity Recognition (NER)**:
+
+``` xml
+<View>
+  <Labels name="label" toName="text">
+    <Label value="PER" background="red"/>
+    <Label value="ORG" background="darkorange"/>
+    <Label value="LOC" background="orange"/>
+    <Label value="MISC" background="green"/>
+  </Labels>
+  <Text name="text" value="$text" granularity="word"/>
+</View>
+```
+
+**Image Object Detection with Bounding Boxes**:
+
+``` xml
+<View>
+  <Image name="image" value="$image"/>
+  <RectangleLabels name="label" toName="image">
+    <Label value="Car" background="blue"/>
+    <Label value="Pedestrian" background="red"/>
+    <Label value="Bicycle" background="green"/>
+  </RectangleLabels>
+</View>
+```
+
+**Image Segmentation with Polygons**:
+
+``` xml
+<View>
+  <Image name="image" value="$image"/>
+  <PolygonLabels name="label" toName="image">
+    <Label value="Building"/>
+    <Label value="Road"/>
+    <Label value="Vegetation"/>
+  </PolygonLabels>
+</View>
+```
+
+**Audio Transcription**:
+
+``` xml
+<View>
+  <Audio name="audio" value="$audio"/>
+  <TextArea name="transcription" toName="audio"
+    rows="4" editable="true" maxSubmissions="1"/>
+</View>
+```
+
+**Multi-Type Annotation (Text + Classification + Free Text)**:
+
+``` xml
+<View>
+  <Text name="text" value="$text"/>
+  <Labels name="entities" toName="text">
+    <Label value="Person"/>
+    <Label value="Organization"/>
+    <Label value="Location"/>
+  </Labels>
+  <Choices name="sentiment" toName="text" choice="single">
+    <Choice value="Positive"/>
+    <Choice value="Negative"/>
+    <Choice value="Neutral"/>
+  </Choices>
+  <TextArea name="comments" toName="text"
+    rows="2" placeholder="Additional notes..."/>
+</View>
+```
+
+### Environment Variables
+
+Key environment variables for production configuration:
+
+``` bash
+# Database
+DJANGO_DB=default
+POSTGRE_NAME=labelstudio
+POSTGRE_USER=postgres
+POSTGRE_PASSWORD=<password>
+POSTGRE_HOST=db
+POSTGRE_PORT=5432
+
+# Security
+LABEL_STUDIO_USERNAME=admin@example.com
+LABEL_STUDIO_PASSWORD=<password>
+USE_JWT_AUTH=true
+JWT_ACCESS_TOKEN_LIFETIME=3600
+JWT_REFRESH_TOKEN_LIFETIME=86400
+
+# Server
+LABEL_STUDIO_HOST=https://labeling.example.com
+LABEL_STUDIO_PORT=8080
+
+# Webhooks
+LABEL_STUDIO_ALLOW_ORGANIZATION_WEBHOOKS=true
+WEBHOOK_TIMEOUT=5
+
+# Cloud Storage
+LABEL_STUDIO_COPY_BUCKET_DATA=true
+```
+
+### Custom Tags
+
+Label Studio supports custom frontend tags for specialized annotation workflows. Custom tags extend the built-in tag vocabulary with application-specific controls and rendering logic, allowing teams to build annotation interfaces tailored to domain-specific data types or interaction patterns that are not covered by the default tag library.
 
 ## Integration Patterns
 
-### With Pydantic for Validated Outputs
+### ML Backend for Pre-Annotation
 
-``` python
-from pydantic import BaseModel, Field
-import outlines
+Deploy a custom ML backend using the Label Studio ML SDK:
 
-class Invoice(BaseModel):
-    vendor: str
-    amount: float = Field(ge=0)
-    currency: str
-    date: str
-
-model = outlines.models.openai("gpt-4o")
-generator = outlines.generate.json(model, Invoice)
-
-invoice = generator("Extract invoice data: Acme Corp charged $150.00 USD on 2025-03-15")
-# invoice.vendor == "Acme Corp", invoice.amount == 150.0, etc.
+``` bash
+git clone https://github.com/HumanSignal/label-studio-ml-backend.git
+cd label-studio-ml-backend/
+pip install -e .
 ```
 
-### With vLLM for High-Throughput Inference
+Create a custom model by subclassing the base ML backend:
 
 ``` python
-import outlines
-from pydantic import BaseModel
+from label_studio_ml.model import LabelStudioMLBase
 
-class Entity(BaseModel):
-    name: str
-    entity_type: str
-    confidence: float
+class SentimentModel(LabelStudioMLBase):
+    def setup(self):
+        """Initialize model on startup."""
+        self.model = load_your_model()
 
-model = outlines.models.vllm("mistralai/Mistral-7B-v0.1")
-generator = outlines.generate.json(model, Entity)
+    def predict(self, tasks, **kwargs):
+        """Generate predictions for a list of tasks."""
+        predictions = []
+        for task in tasks:
+            text = task["data"]["text"]
+            label, score = self.model.classify(text)
+            predictions.append({
+                "result": [{
+                    "from_name": "sentiment",
+                    "to_name": "text",
+                    "type": "choices",
+                    "value": {"choices": [label]},
+                }],
+                "score": score,
+            })
+        return predictions
 
-results = [generator(text) for text in batch_of_texts]
+    def fit(self, event, data, **kwargs):
+        """Train model on new annotations."""
+        annotations = data.get("annotation", {})
+        # Retrain logic here
+        pass
 ```
 
-### With ReAct Agent Patterns
+Start the ML backend server:
+
+``` bash
+label-studio-ml start ./sentiment_model --port 9090
+```
+
+### Cloud Storage Sync with AWS S3
+
+Configure source storage to import images from an S3 bucket and target storage to export annotations back:
 
 ``` python
-from pydantic import BaseModel
-from typing import Literal
-import outlines
+from label_studio_sdk import Client
 
-class AgentStep(BaseModel):
-    thought: str
-    action: Literal["search", "calculate", "respond"]
-    action_input: str
+ls = Client(url="http://localhost:8080", api_key="<token>")
+project = ls.get_project(id=1)
 
-model = outlines.models.openai("gpt-4o")
-generator = outlines.generate.json(model, AgentStep)
+# Connect source storage (import data from S3)
+project.connect_s3_import_storage(
+    bucket="my-labeling-data",
+    prefix="images/batch-001/",
+    regex_filter=".*\\.jpg",
+    aws_access_key_id="AKIA...",
+    aws_secret_access_key="...",
+    region_name="us-east-1",
+    presign=True,
+)
 
-step = generator("The user asked about the weather in Paris. Think step by step.")
-# step.action is guaranteed to be one of the valid actions
+# Connect target storage (export annotations to S3)
+project.connect_s3_export_storage(
+    bucket="my-annotation-output",
+    prefix="annotations/batch-001/",
+    aws_access_key_id="AKIA...",
+    aws_secret_access_key="...",
+    region_name="us-east-1",
+)
+```
+
+### Webhook-Driven Pipeline
+
+Configure a webhook to trigger model retraining when annotations are submitted:
+
+``` python
+import json
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route("/webhook", methods=["POST"])
+def handle_webhook():
+    payload = request.json
+    action = payload.get("action")
+
+    if action == "ANNOTATION_CREATED":
+        annotation = payload["annotation"]
+        task = payload["task"]
+        print(f"New annotation on task {task['id']}: {annotation['result']}")
+        # Trigger model retraining or dataset versioning
+        trigger_retraining(project_id=task["project"])
+
+    elif action == "ANNOTATION_UPDATED":
+        print(f"Annotation updated: {payload['annotation']['id']}")
+
+    return json.dumps({"status": "ok"}), 200
+
+def trigger_retraining(project_id):
+    """Call ML backend train endpoint."""
+    import requests
+    requests.post(
+        f"http://localhost:8080/api/ml/1/train",
+        headers={"Authorization": "Token <api_key>"},
+    )
+
+if __name__ == "__main__":
+    app.run(port=5000)
+```
+
+### Pre-Annotation Import via API
+
+Import predictions from an external model before annotators begin labeling:
+
+``` python
+from label_studio_sdk import LabelStudio, PredictionRequest
+
+client = LabelStudio(api_key="YOUR_API_KEY")
+
+# NER predictions
+ner_predictions = [
+    PredictionRequest(
+        task=1,
+        result=[
+            {
+                "from_name": "label",
+                "to_name": "text",
+                "type": "labels",
+                "value": {
+                    "start": 0,
+                    "end": 12,
+                    "text": "Barack Obama",
+                    "labels": ["PER"],
+                },
+            },
+            {
+                "from_name": "label",
+                "to_name": "text",
+                "type": "labels",
+                "value": {
+                    "start": 21,
+                    "end": 27,
+                    "text": "Berlin",
+                    "labels": ["LOC"],
+                },
+            },
+        ],
+        score=0.92,
+    ),
+]
+
+client.projects.import_predictions(id=1, request=ner_predictions)
+```
+
+### Continuous Integration Export
+
+Automate annotation export as part of a CI/CD pipeline:
+
+``` bash
+#!/bin/bash
+# export_annotations.sh
+PROJECT_ID=1
+API_KEY="<api_key>"
+BASE_URL="http://localhost:8080"
+OUTPUT_DIR="./datasets/$(date +%Y%m%d)"
+
+mkdir -p "$OUTPUT_DIR"
+
+# Export JSON
+curl -s -H "Authorization: Token $API_KEY" \
+  "$BASE_URL/api/projects/$PROJECT_ID/export?exportType=JSON" \
+  -o "$OUTPUT_DIR/annotations.json"
+
+# Export COCO (for object detection projects)
+curl -s -H "Authorization: Token $API_KEY" \
+  "$BASE_URL/api/projects/$PROJECT_ID/export?exportType=COCO" \
+  -o "$OUTPUT_DIR/coco_annotations.json"
+
+echo "Exported $(jq length $OUTPUT_DIR/annotations.json) annotations"
 ```
 
 ## Examples
 
-### Named Entity Recognition
+### End-to-End NER Pipeline
 
 ``` python
-from pydantic import BaseModel
-import outlines
+from label_studio_sdk import Client
 
-class ExtractedEntities(BaseModel):
-    persons: list[str]
-    organizations: list[str]
-    locations: list[str]
+# Initialize client
+ls = Client(url="http://localhost:8080", api_key="<token>")
 
-model = outlines.models.openai("gpt-4o")
-generator = outlines.generate.json(model, ExtractedEntities)
+# Create NER project
+project = ls.create_project(
+    title="News NER",
+    label_config="""
+    <View>
+      <Labels name="label" toName="text">
+        <Label value="PER" background="red"/>
+        <Label value="ORG" background="darkorange"/>
+        <Label value="LOC" background="orange"/>
+      </Labels>
+      <Text name="text" value="$text" granularity="word"/>
+    </View>
+    """,
+)
 
-text = "Tim Cook announced that Apple will open a new office in Austin, Texas."
-entities = generator(f"Extract named entities from: {text}")
-# entities.persons == ["Tim Cook"]
-# entities.organizations == ["Apple"]
-# entities.locations == ["Austin", "Texas"]
+# Import tasks from a list of news articles
+articles = [
+    {"data": {"text": "Apple Inc. announced a new product line in Cupertino."}},
+    {"data": {"text": "President Biden addressed the United Nations in New York."}},
+    {"data": {"text": "Tesla CEO Elon Musk visited the Berlin Gigafactory."}},
+]
+project.import_tasks(articles)
+
+# Connect an ML backend for pre-annotation
+project.connect_ml_backend(
+    url="http://localhost:9090",
+    title="spaCy NER",
+)
+
+# After annotation, export in CoNLL2003 format
+annotations = project.export_tasks(export_type="CONLL2003")
 ```
 
-### Text Classification with Confidence
+### Image Classification Project
 
 ``` python
-from pydantic import BaseModel
-from typing import Literal
-import outlines
+from label_studio_sdk import Client
 
-class Classification(BaseModel):
-    label: Literal["spam", "not_spam"]
-    confidence: float
-    reasoning: str
+ls = Client(url="http://localhost:8080", api_key="<token>")
 
-model = outlines.models.openai("gpt-4o")
-generator = outlines.generate.json(model, Classification)
+project = ls.create_project(
+    title="Animal Classification",
+    label_config="""
+    <View>
+      <Image name="image" value="$image"/>
+      <Choices name="animal" toName="image" choice="single">
+        <Choice value="Cat"/>
+        <Choice value="Dog"/>
+        <Choice value="Bird"/>
+        <Choice value="Other"/>
+      </Choices>
+    </View>
+    """,
+)
 
-result = generator("Classify this email: 'Congratulations! You won a free iPhone!'")
-# result.label is guaranteed to be "spam" or "not_spam"
+# Import tasks referencing images in cloud storage
+project.import_tasks([
+    {"data": {"image": "s3://my-bucket/images/img001.jpg"}},
+    {"data": {"image": "s3://my-bucket/images/img002.jpg"}},
+    {"data": {"image": "s3://my-bucket/images/img003.jpg"}},
+])
 ```
 
-### Structured Q&A with Citations
+### Object Detection with Bounding Boxes
+
+``` xml
+<!-- Labeling configuration -->
+<View>
+  <Image name="image" value="$image" zoom="true" zoomControl="true"/>
+  <RectangleLabels name="label" toName="image">
+    <Label value="Vehicle" background="#FF0000"/>
+    <Label value="Pedestrian" background="#00FF00"/>
+    <Label value="Traffic Sign" background="#0000FF"/>
+  </RectangleLabels>
+</View>
+```
+
+Corresponding prediction import for pre-labeling:
 
 ``` python
-from pydantic import BaseModel
-import outlines
+from label_studio_sdk import LabelStudio, PredictionRequest
 
-class Citation(BaseModel):
-    text: str
-    source: str
-    page: int
+client = LabelStudio(api_key="YOUR_API_KEY")
 
-class Answer(BaseModel):
-    answer: str
-    citations: list[Citation]
+client.projects.import_predictions(
+    id=1,
+    request=[
+        PredictionRequest(
+            task=1,
+            result=[{
+                "from_name": "label",
+                "to_name": "image",
+                "type": "rectanglelabels",
+                "value": {
+                    "x": 10.5,       # percentage from left
+                    "y": 20.3,       # percentage from top
+                    "width": 30.0,   # percentage of image width
+                    "height": 25.0,  # percentage of image height
+                    "rotation": 0,
+                    "rectanglelabels": ["Vehicle"],
+                },
+                "original_width": 1920,
+                "original_height": 1080,
+            }],
+            score=0.87,
+        ),
+    ],
+)
+```
 
-model = outlines.models.openai("gpt-4o")
-generator = outlines.generate.json(model, Answer)
+### Audio Transcription Workflow
 
-context = "According to Smith (2024, p.12), transformers revolutionized NLP..."
-result = generator(f"Answer with citations based on: {context}\nQuestion: What revolutionized NLP?")
-# result.citations contains structured Citation objects
+``` xml
+<!-- Labeling configuration for speaker-aware transcription -->
+<View>
+  <Audio name="audio" value="$audio" hotkey="ctrl+enter"/>
+  <Header value="Transcription"/>
+  <TextArea name="transcription" toName="audio"
+    rows="4" editable="true" maxSubmissions="1"/>
+  <Choices name="quality" toName="audio" choice="single">
+    <Choice value="Clear"/>
+    <Choice value="Noisy"/>
+    <Choice value="Unintelligible"/>
+  </Choices>
+</View>
 ```
 
 ## Limitations and Considerations
 
-- **Compilation Overhead**: The initial compilation of a schema into an FSM adds latency to the first generation call. Complex schemas with deeply nested structures or large enumerations increase this overhead.
-- **Grammar Support Variability**: CFG support may vary across backends. Not all providers support grammar-based constrained generation natively.
-- **Structural vs. Semantic Guarantees**: The constrained decoding operates at the token level, which means the model may produce semantically incorrect but structurally valid output. The structure is guaranteed; the semantic quality depends on the underlying model.
-- **Backend Feature Parity**: Not all backends support every generation mode. Some constrained generation features may be available only with local model backends (Transformers, vLLM) and not with API-based providers.
-- **Local Model Requirements**: When using Transformers or vLLM backends, adequate GPU memory and compute resources are required to run the models locally.
+- **SQLite limitations in production**: The default SQLite database does not support concurrent writes and degrades under multi-user workloads. PostgreSQL is required for any production deployment with multiple simultaneous annotators.
+- **Enterprise features gated**: Role-based access control, advanced queue management, audit logging, and some ML automation features (such as out-of-the-box Large Language Model (LLM)-assisted auto-labeling and comparative LLM analysis) require the commercial Label Studio Enterprise license and are not available in the open-source edition.
+- **ML backend latency**: Interactive predictions (real-time suggestions during annotation) depend on the ML backend response time. Slow models or network latency between Label Studio and the ML service degrade the annotator experience. A one-second default webhook timeout may be insufficient for complex model inference.
+- **Cloud storage presigned URL expiration**: When using presigned URLs for cloud storage access, URLs have a limited lifetime. Long annotation sessions on a single task may encounter expired URLs, requiring a page refresh.
+- **Annotation coordinate system**: All spatial annotations (bounding boxes, polygons, keypoints) use percentage-based coordinates relative to the displayed image dimensions. Converting to absolute pixel coordinates requires the original image dimensions, which must be tracked separately or extracted from the annotation metadata.
+- **No built-in annotator agreement metrics in Community Edition**: Inter-annotator agreement calculation and consensus management are limited in the open-source version. Teams requiring formal agreement metrics need to implement custom calculation logic over exported annotations.
+- **Webhook reliability**: Webhooks have no automatic retry on delivery failure. External systems must implement their own idempotency and reconciliation logic. The default one-second timeout (configurable via `WEBHOOK_TIMEOUT`) can cause missed events for slow consumers.
+- **Frontend customization complexity**: While the XML-based labeling configuration is flexible for standard annotation types, deeply custom interfaces requiring new interaction patterns may require forking and modifying the Label Studio Frontend React component.
 
 ## Changelog Highlights
 
-Outlines is under active development. The project maintains releases on PyPI and GitHub. Refer to the [GitHub releases page](https://github.com/dottxt-ai/outlines/releases) for version history and detailed changelogs.
+Label Studio is under active development with frequent releases. Key milestones in the project's evolution include the introduction of the ML backend SDK enabling plug-and-play model integration, the Data Manager overhaul providing a spreadsheet-like task management interface, cloud storage connectors for AWS S3, Google Cloud Storage, Azure Blob, and Redis, the webhook system for event-driven pipeline integration, the PDF and OCR annotation interface for document AI workflows, interactive ML predictions with smart tools (SAM, GroundingDINO) for real-time annotation assistance, support for YOLO and COCO export formats alongside the existing JSON and VOC formats, JWT-based authentication for production security hardening, and Kubernetes deployment support with Helm charts. The project transitioned from the Heartex organization to HumanSignal, reflecting the company's broader mission in human-in-the-loop AI development.
 
 ## Citations
 
-- \[1\] [Outlines Documentation](https://dottxt-ai.github.io/outlines/latest/)
-
-# Instructor
-
-> Multi-language library for extracting structured, type-safe data from Large Language Models (LLMs) using Pydantic validation and automatic retries.
-
-| Field | Value |
-|----|----|
-| Name | Instructor |
-| Group | Structured Output & Prompt Engineering |
-| Type | SDK |
-| Open Source | Yes |
-| License | MIT |
-| GitHub | [instructor-ai/instructor](https://github.com/instructor-ai/instructor) |
-| Stars | ~12.4k |
-| Docs | [python.useinstructor.com](https://python.useinstructor.com/) |
-| Downloads | 3M+ monthly |
-| Contributors | 100+ |
-
-## Overview
-
-Instructor is a library that patches LLM API clients to return structured, validated data instead of raw text. Built on top of Pydantic, it lets developers define response schemas as Python models and have the LLM fill them in directly. When the LLM output fails validation, Instructor automatically retries the request with the validation error context, enabling self-correcting extraction pipelines. The library supports 15+ LLM providers through a unified interface, offers streaming for partial results, and provides full type inference with IDE autocompletion. With over 3 million monthly downloads and 100+ contributors, Instructor has become one of the most widely adopted tools for structured output extraction.
-
-## Core Concepts
-
-### Structured Outputs via Pydantic Models
-
-The fundamental idea behind Instructor is that a Pydantic model defines the expected shape of the LLM response. The library injects the model schema into the LLM request (via function calling, tool use, or JSON mode depending on the provider), parses the raw output, and validates it against the model. The developer receives a fully typed Python object rather than a string.
-
-### Automatic Retries (Reasks)
-
-When the LLM returns output that fails Pydantic validation, Instructor does not simply raise an error. Instead, it feeds the validation error message back to the LLM as context and retries the request. This "reask" loop continues up to a configurable maximum number of retries, giving the model the opportunity to self-correct. This is especially useful for enforcing constraints that are difficult to express purely in a prompt (for example, value ranges, string formats, or cross-field dependencies).
-
-### Client Patching
-
-Instructor works by wrapping (patching) existing LLM client libraries. Rather than replacing the client, it augments it with structured output capabilities. This means developers keep their existing authentication, configuration, and error handling while gaining schema-driven extraction on top.
-
-## Installation
-
-``` bash
-pip install instructor
-```
-
-Provider-specific extras may be required depending on the target LLM backend (for example, `pip install openai` for OpenAI, `pip install anthropic` for Anthropic).
-
-## Architecture
-
-Instructor sits as a thin middleware layer between the application and the LLM provider client:
-
-1.  **Application Layer** -- Defines Pydantic response models and sends messages through the Instructor-patched client.
-2.  **Instructor Layer** -- Injects the Pydantic model schema into the LLM request, parses the response, runs Pydantic validation, and handles retries on failure.
-3.  **Provider Client Layer** -- The underlying LLM SDK (OpenAI, Anthropic, Google, and others) handles authentication, transport, and raw API communication.
-
-The patching mechanism wraps the provider client's completion method so that all existing client configuration (API keys, base URLs, timeouts) is preserved. Instructor intercepts only the response parsing step.
-
-### Retry Flow
-
-``` 
-Application -> Instructor -> LLM Provider
-                  |
-                  v
-          Parse response
-                  |
-           Validate with Pydantic
-                  |
-         [Pass] -> Return typed object
-         [Fail] -> Append validation error to messages -> Retry LLM call
-```
-
-## Key Features
-
-- **Type Safety and IDE Autocompletion** -- Response models are standard Pydantic classes, giving full type inference, autocomplete, and static analysis support in editors and type checkers.
-- **Automatic Retries with Validation Context** -- Failed validations trigger retries where the error message is included in the next prompt, allowing the LLM to self-correct.
-- **Multi-Provider Support** -- A single `from_provider()` interface supports OpenAI, Anthropic, Google, Ollama, DeepSeek, and 15+ other providers without changing application code.
-- **Streaming** -- `create_partial()` streams partial results as the LLM generates tokens, enabling progressive UI updates. `create_iterable()` streams a sequence of complete objects.
-- **Custom Pydantic Validators** -- Standard Pydantic field validators and model validators work seamlessly, enabling arbitrarily complex validation logic (regex patterns, cross-field checks, business rules).
-- **Async/Await** -- Full async support for non-blocking LLM calls in asynchronous applications.
-- **Jinja Templating** -- Prompt templates can use Jinja syntax for dynamic prompt construction with variables and control flow.
-- **Hooks** -- Lifecycle hooks allow injecting custom logic at various stages of the request/response cycle (for example, logging, metrics, or transformation).
-
-## Use Cases
-
-- **Data Extraction** -- Pulling structured records (names, dates, amounts, entities) from unstructured text such as emails, documents, or web pages.
-- **Classification** -- Categorizing text into predefined enums or labels with guaranteed valid output values.
-- **Content Generation with Constraints** -- Generating content that must conform to a specific schema (for example, product descriptions with required fields, quiz questions with exactly four options).
-- **Multi-Step Pipelines** -- Chaining structured outputs where the validated result of one step feeds into the next, with type safety preserved throughout.
-- **Search and Retrieval Augmented Generation (RAG)** -- Extracting structured queries or filters from natural language to drive database lookups or search APIs.
-- **Streaming User Interfaces** -- Progressively rendering structured data in a UI as the LLM generates it, using partial streaming.
-
-## API Reference
-
-### Client Creation
-
-``` python
-import instructor
-
-# Universal provider interface
-client = instructor.from_provider("openai/gpt-5-nano")
-
-# Provider-specific patching
-import openai
-client = instructor.from_openai(openai.OpenAI())
-
-import anthropic
-client = instructor.from_anthropic(anthropic.Anthropic())
-```
-
-### Core Methods
-
-- **`client.create(response_model, messages, max_retries=...)`** -- Sends a completion request and returns a validated instance of `response_model`. Retries automatically on validation failure up to `max_retries`.
-- **`client.create_with_completion(response_model, messages)`** -- Returns a tuple of `(response_model_instance, raw_completion)`, giving access to both the validated object and the raw provider response (token usage, finish reason, and similar metadata).
-- **`client.create_partial(response_model, messages)`** -- Returns an iterator that yields progressively more complete instances of `response_model` as tokens stream in. Fields populate incrementally.
-- **`client.create_iterable(response_model, messages)`** -- Returns an iterator of complete `response_model` instances, useful when the LLM is expected to produce a list of structured objects.
-
-### Response Model Definition
-
-``` python
-from pydantic import BaseModel, Field, field_validator
-
-class Person(BaseModel):
-    name: str = Field(description="Full legal name")
-    age: int = Field(ge=0, le=150, description="Age in years")
-
-    @field_validator("name")
-    @classmethod
-    def name_must_not_be_empty(cls, v: str) -> str:
-        if not v.strip():
-            raise ValueError("Name must not be empty")
-        return v.strip()
-```
-
-## Configuration
-
-### Retry Configuration
-
-``` python
-person = client.create(
-    response_model=Person,
-    messages=[{"role": "user", "content": "Extract: John is 28 years old."}],
-    max_retries=3,  # Maximum number of validation retry attempts
-)
-```
-
-### Provider Selection
-
-The `from_provider()` method accepts a string in the format `"provider/model"`:
-
-``` python
-client = instructor.from_provider("openai/gpt-5-nano")
-client = instructor.from_provider("anthropic/claude-sonnet-4-20250514")
-client = instructor.from_provider("google/gemini-2.0-flash")
-```
-
-### Mode Configuration
-
-Instructor supports multiple extraction modes depending on provider capabilities:
-
-- **Function Calling / Tool Use** -- The default for providers that support it. The schema is passed as a function or tool definition.
-- **JSON Mode** -- Forces the LLM to output valid JSON, which is then parsed against the Pydantic model.
-- **Markdown JSON** -- Extracts JSON from markdown code blocks in the response.
-
-## Integration Patterns
-
-### Basic Extraction
-
-``` python
-import instructor
-from pydantic import BaseModel
-
-client = instructor.from_provider("openai/gpt-5-nano")
-
-class Person(BaseModel):
-    name: str
-    age: int
-
-person = client.create(
-    response_model=Person,
-    messages=[{"role": "user", "content": "Extract: Jason is 25 years old."}],
-)
-# person.name == "Jason"
-# person.age == 25
-```
-
-### Streaming Partial Results
-
-``` python
-for partial_person in client.create_partial(
-    response_model=Person,
-    messages=[{"role": "user", "content": "Extract: Jason is 25 years old."}],
-):
-    print(partial_person)
-    # Yields progressively: Person(name=None, age=None) -> Person(name="Ja", age=None) -> ...
-```
-
-### Iterable Extraction
-
-``` python
-users = client.create_iterable(
-    response_model=Person,
-    messages=[
-        {"role": "user", "content": "Extract all people: Jason is 25. Sarah is 30."}
-    ],
-)
-for user in users:
-    print(user)
-    # Person(name="Jason", age=25)
-    # Person(name="Sarah", age=30)
-```
-
-### Async Usage
-
-``` python
-import asyncio
-import instructor
-
-async_client = instructor.from_provider("openai/gpt-5-nano", async_=True)
-
-async def extract():
-    person = await async_client.create(
-        response_model=Person,
-        messages=[{"role": "user", "content": "Extract: Jason is 25 years old."}],
-    )
-    return person
-
-result = asyncio.run(extract())
-```
-
-### Custom Validators for Business Logic
-
-``` python
-from pydantic import BaseModel, field_validator
-
-class UserProfile(BaseModel):
-    username: str
-    email: str
-    age: int
-
-    @field_validator("email")
-    @classmethod
-    def validate_email(cls, v: str) -> str:
-        if "@" not in v:
-            raise ValueError("Invalid email format")
-        return v
-
-    @field_validator("age")
-    @classmethod
-    def validate_age(cls, v: int) -> int:
-        if v < 18:
-            raise ValueError("User must be at least 18 years old")
-        return v
-```
-
-When the LLM produces an email without `@` or an age below 18, Instructor feeds the validation error back to the model and retries, guiding it toward a valid response.
-
-## Examples
-
-### Classification with Enums
-
-``` python
-from enum import Enum
-from pydantic import BaseModel
-
-class Sentiment(str, Enum):
-    POSITIVE = "positive"
-    NEGATIVE = "negative"
-    NEUTRAL = "neutral"
-
-class SentimentResult(BaseModel):
-    sentiment: Sentiment
-    confidence: float
-
-result = client.create(
-    response_model=SentimentResult,
-    messages=[{"role": "user", "content": "Classify: I love this product!"}],
-)
-# result.sentiment == Sentiment.POSITIVE
-```
-
-### Nested Models
-
-``` python
-from pydantic import BaseModel
-
-class Address(BaseModel):
-    street: str
-    city: str
-    country: str
-
-class Company(BaseModel):
-    name: str
-    address: Address
-    employee_count: int
-
-company = client.create(
-    response_model=Company,
-    messages=[
-        {
-            "role": "user",
-            "content": "Extract company info: Acme Corp is based at 123 Main St, Springfield, USA with 500 employees.",
-        }
-    ],
-)
-```
-
-### With Completion Metadata
-
-``` python
-person, completion = client.create_with_completion(
-    response_model=Person,
-    messages=[{"role": "user", "content": "Extract: Jason is 25 years old."}],
-)
-print(person.name)  # "Jason"
-print(completion.usage.total_tokens)  # Access token usage from raw completion
-```
-
-## Limitations
-
-- **Provider-Dependent Behavior** -- Extraction quality and reliability vary across LLM providers and models. Smaller models may require more retries or produce lower-quality structured output.
-- **Retry Cost** -- Each validation-triggered retry is a full LLM API call, adding latency and token cost. Complex validators on weaker models can lead to retry loops that exhaust the maximum retry count.
-- **Schema Complexity Ceiling** -- Deeply nested or very large Pydantic models may exceed the context window or confuse the LLM, leading to incomplete or incorrect extraction.
-- **No Guaranteed Correctness** -- Validation ensures structural correctness (types, formats, constraints) but cannot verify factual accuracy of the extracted content. The LLM may hallucinate values that pass validation.
-- **Streaming Limitations** -- Partial streaming yields incomplete objects during generation. Application code must handle `None` fields and incomplete state gracefully.
-
-## Changelog
-
-Instructor follows semantic versioning. The library has evolved from OpenAI-only function calling support to a multi-provider, multi-language platform. Key milestones include the introduction of `from_provider()` for unified provider access, streaming support via `create_partial()` and `create_iterable()`, and expansion to 15+ LLM providers. The project maintains an active release cadence with frequent updates.
-
-## Citations
-
-- \[1\] [Instructor Documentation](https://python.useinstructor.com/)
-
-# BAML
-
-> Domain-specific language for generating structured outputs from Large Language Models (LLMs), providing type-safe definitions, generated client libraries, and production-ready extraction pipelines across multiple programming languages.
-
-| Field       | Value                                                 |
-|-------------|-------------------------------------------------------|
-| Name        | BAML                                                  |
-| Group       | Structured Output & Prompt Engineering                |
-| Type        | SDK                                                   |
-| Open Source | Yes                                                   |
-| GitHub      | [BoundaryML/baml](https://github.com/BoundaryML/baml) |
-| Stars       | 7642                                                  |
-| Docs        | [docs.boundaryml.com](https://docs.boundaryml.com/)   |
-
-## Overview
-
-BAML is a domain-specific language (DSL) created by BoundaryML for defining, generating, and validating structured outputs from LLMs. Described as the "easiest way to use LLMs," BAML provides a declarative approach to specifying data types, LLM functions, prompt templates, and client configurations in dedicated source files (`baml_src/`), then generates fully typed client libraries (`baml_client/`) for use in application code. This architecture separates LLM interaction concerns from business logic, enabling type-safe extraction, classification, and generation workflows that move cleanly from prototyping to production deployment. BAML supports Python, TypeScript/JavaScript, Go, Ruby, Elixir, and a REST API interface, making it accessible across a broad range of technology stacks \[1\].
-
-## Core Concepts
-
-BAML introduces several foundational abstractions that distinguish it from general-purpose LLM client libraries.
-
-**Type Definitions.** The DSL provides `class` and `enum` keywords for defining the shape of structured data that LLMs should produce. These type definitions serve as the contract between the LLM prompt and the application code, enabling compile-time and runtime validation of outputs.
-
-**Functions.** BAML functions declare the input and output types for an LLM call, binding a prompt template to a specific extraction or generation task. Functions are the primary unit of LLM interaction and are compiled into typed methods in the generated client.
-
-**Template Strings.** Prompt engineering is handled through Jinja-based template strings that compose prompt fragments. Template strings support variable interpolation, conditional logic, and reuse across multiple functions, enabling modular prompt construction.
-
-**LLM Clients.** Provider-specific configuration (model name, API keys, parameters) is declared as client definitions within the DSL. BAML supports over 20 LLM providers including OpenAI, Anthropic, Google, AWS Bedrock, Azure, Groq, Ollama, and LiteLLM.
-
-**Code Generation.** The BAML compiler reads `baml_src/` definitions and generates a `baml_client/` directory containing fully typed client code in the target language. This generated code handles serialization, deserialization, prompt rendering, and provider communication.
-
-**Testing.** The DSL includes native test declarations that define input/output expectations for functions, enabling structured testing of LLM behavior without leaving the BAML ecosystem.
-
-## Installation
-
-BAML provides language-specific installation paths alongside a CLI and editor extensions.
-
-**CLI Installation.** The BAML CLI handles project initialization, code generation, testing, and development server operations:
-
-``` bash
-# Install via npm (also available through other package managers)
-npm install -g @boundaryml/baml
-
-# Initialize a new BAML project
-baml init
-
-# Generate client code from baml_src definitions
-baml generate
-
-# Run BAML tests
-baml test
-
-# Start development server with file watching
-baml dev
-```
-
-**Python.**
-
-``` bash
-pip install baml-py
-```
-
-**TypeScript/JavaScript.**
-
-``` bash
-npm install @boundaryml/baml
-```
-
-**Go.**
-
-``` bash
-go get github.com/boundaryml/baml-go
-```
-
-**Ruby and Elixir** packages are available through their respective package managers.
-
-**Editor Extensions.** BAML provides extensions for VSCode, Cursor, JetBrains IDEs, Zed, and Claude Code, offering syntax highlighting, autocompletion, inline diagnostics, and live preview of generated prompts.
-
-## Architecture
-
-BAML follows a two-directory architecture that cleanly separates definitions from generated code.
-
-**`baml_src/` (Source Definitions).** This directory contains all BAML DSL files (`.baml` extension) where types, functions, clients, template strings, and tests are defined. These files are the single source of truth for LLM interaction contracts. Developers author and version-control these files directly.
-
-**`baml_client/` (Generated Client Library).** Running `baml generate` compiles the source definitions into a fully typed client library in the target programming language. The generated code includes typed function signatures matching the BAML function definitions, serialization and deserialization logic for all declared types, prompt rendering from template strings with variable binding, provider-specific API communication through declared LLM clients, and streaming support where applicable. The generated client is not intended for manual editing; it is regenerated whenever source definitions change.
-
-**Compilation Pipeline.** The BAML compiler parses `.baml` files, validates type consistency and function signatures, resolves template string references, and emits language-specific client code. This compile step catches type mismatches, missing fields, and invalid references before runtime.
-
-## Key Features
-
-**Streaming.** BAML supports streaming responses from LLMs with partial structured output parsing. As tokens arrive, the generated client can provide incrementally populated typed objects, enabling real-time UI updates while maintaining type safety.
-
-**Multi-Modal Input.** Functions can accept images, audio files, PDFs, and video as inputs alongside text. The DSL provides type annotations for multi-modal content, and the generated client handles encoding and provider-specific formatting.
-
-**Concurrent Execution.** Multiple LLM calls can be executed concurrently through the generated client, with BAML managing parallel provider requests and aggregating results according to function return types.
-
-**Error Handling and Timeouts.** The generated client provides structured error types for provider failures, parsing errors, and timeout conditions. Timeout configuration is declarable at the client or function level.
-
-**Prompt Caching.** BAML supports prompt caching strategies for providers that offer them, reducing latency and cost for repeated or similar prompts.
-
-**TypeBuilder.** A runtime API for dynamically constructing BAML types programmatically, enabling scenarios where the output schema is not known at compile time.
-
-**Symbol Tuning.** BAML can optimize enum and class field names in prompts by substituting shorter symbol representations, reducing token usage while maintaining semantic clarity for the LLM.
-
-**Jinja Templating.** Template strings use Jinja syntax for prompt composition, supporting conditionals, loops, filters, and macro definitions for reusable prompt fragments.
-
-## Use Cases
-
-**Classification.** Defining enum types for categories and functions that map input text to those categories, producing type-safe classification results with structured confidence or reasoning fields.
-
-**PII Extraction.** Declaring class types for personally identifiable information (PII) fields such as names, emails, addresses, and phone numbers, then defining functions that extract all PII instances from unstructured text into typed objects.
-
-**Action Item Extraction.** Parsing meeting transcripts, emails, or documents into structured action item objects with assignees, deadlines, priorities, and descriptions.
-
-**Retrieval-Augmented Generation (RAG).** Structuring RAG pipeline outputs so that retrieved context and generated answers are returned as typed objects with source attribution fields.
-
-**Chain-of-Thought Reasoning.** Defining output types that include both a reasoning trace and a final answer, enforcing that the LLM provides its reasoning process in a structured format alongside the conclusion.
-
-**Hallucination Reduction.** Using strict type definitions and validation to constrain LLM outputs to declared schemas, catching responses that do not conform to expected structures before they reach application logic.
-
-## API Reference
-
-The BAML DSL provides the following primary constructs.
-
-**Type Declarations.**
-
-``` 
-class Resume {
-  name string
-  email string
-  skills string[]
-  experience Experience[]
-}
-
-enum Sentiment {
-  POSITIVE
-  NEGATIVE
-  NEUTRAL
-}
-```
-
-**Function Declarations.**
-
-``` 
-function ExtractResume(raw_text: string) -> Resume {
-  client GPT4
-  prompt #"
-    Extract resume information from the following text:
-    {{ raw_text }}
-
-    {{ ctx.output_format }}
-  "#
-}
-```
-
-**Client Declarations.**
-
-``` 
-client<llm> GPT4 {
-  provider openai
-  options {
-    model "gpt-4"
-    temperature 0.0
-  }
-}
-```
-
-**Template Strings.**
-
-``` 
-template_string ExtractionPreamble() #"
-  You are an expert data extraction assistant.
-  Always return valid structured data matching the requested format.
-"#
-```
-
-**Test Declarations.**
-
-``` 
-test ExtractBasicResume {
-  functions [ExtractResume]
-  args {
-    raw_text "John Doe, john@example.com, Python, 5 years at Acme Corp"
-  }
-}
-```
-
-**CLI Commands.**
-
-- `baml init` -- Initialize a new BAML project with starter files
-- `baml generate` -- Compile `baml_src/` and produce `baml_client/`
-- `baml test` -- Run declared test cases against LLM providers
-- `baml serve` -- Start a REST API server exposing BAML functions as HTTP endpoints
-- `baml dev` -- Start development mode with file watching and auto-regeneration
-- `baml fmt` -- Format BAML source files
-
-## Configuration
-
-**LLM Provider Configuration.** Each provider is configured through a client declaration specifying the provider name, model, and provider-specific options (temperature, max tokens, API base URL, timeout). API keys are typically sourced from environment variables.
-
-**Multi-Provider Setup.** Multiple clients can be declared for different providers or model variants, and functions can reference specific clients or use fallback chains.
-
-**Project Configuration.** The BAML project root is identified by a configuration file that specifies the target language for code generation, output directory paths, and global settings.
-
-**Environment Variables.** Provider API keys and environment-specific settings are configured through environment variables, keeping secrets out of version-controlled BAML source files.
-
-## Integration Patterns
-
-**Direct Client Usage.** The generated `baml_client` is imported directly into application code and called as typed functions. Input parameters and return values are fully typed according to the BAML definitions.
-
-**REST API Deployment.** Running `baml serve` exposes all declared functions as HTTP endpoints with OpenAPI documentation, enabling language-agnostic integration and microservice deployment patterns.
-
-**Docker Deployment.** BAML applications can be containerized with the generated client and served via the built-in REST server or embedded in application containers.
-
-**AWS Deployment.** BAML provides deployment patterns for AWS Lambda and container services, with documentation covering serverless and long-running service configurations.
-
-**Observability with Boundary Studio.** BoundaryML offers Boundary Studio as an observability platform for monitoring BAML function calls, tracking latency, inspecting prompts and responses, and analyzing extraction accuracy across production traffic.
-
-## Examples
-
-**Basic Classification (Python).**
-
-Given a BAML function `ClassifySentiment(text: string) -> Sentiment`, the generated Python client is used as follows:
-
-``` python
-from baml_client import b
-
-result = b.ClassifySentiment("This product is excellent and exceeded my expectations")
-# result is a typed Sentiment enum value: Sentiment.POSITIVE
-```
-
-**Structured Extraction with Streaming (TypeScript).**
-
-``` typescript
-import { b } from './baml_client';
-
-const stream = b.stream.ExtractResume({ raw_text: documentText });
-
-for await (const partial of stream) {
-  // partial is an incrementally populated Resume object
-  console.log(partial.name, partial.skills);
-}
-
-const final = await stream.getFinalResponse();
-// final is a fully validated Resume object
-```
-
-**Multi-Modal Input.**
-
-BAML functions can accept image inputs for tasks like document extraction:
-
-``` 
-function ExtractInvoice(invoice_image: image) -> Invoice {
-  client GPT4Vision
-  prompt #"
-    Extract all invoice fields from this image:
-    {{ invoice_image }}
-
-    {{ ctx.output_format }}
-  "#
-}
-```
-
-## Limitations
-
-- Generated client code must be regenerated whenever BAML source definitions change, adding a build step to the development workflow
-- The DSL introduces a learning curve separate from general-purpose programming languages
-- Provider-specific features (function calling, tool use, structured output modes) are abstracted, which may limit access to provider-specific optimizations in edge cases
-- Runtime type validation depends on LLM output quality; malformed responses that do not match the declared schema produce parse errors that must be handled by the application
-- Boundary Studio observability is a separate hosted service, not included in the open-source distribution
-
-## Changelog
-
-BAML is under active development with frequent releases. The project changelog and release notes are maintained on the GitHub repository at [github.com/BoundaryML/baml/releases](https://github.com/BoundaryML/baml/releases). Consult the official documentation for migration guides between major versions \[1\].
-
-## Citations
-
-- \[1\] BAML Documentation. BoundaryML. Available at: <https://docs.boundaryml.com/>
+- \[1\] [Label Studio Documentation - Installation Guide](https://labelstud.io/guide/install)
+- \[2\] [Label Studio Documentation - Start Your Project](https://labelstud.io/guide/)
+- \[3\] [Label Studio Documentation - Machine Learning Integration](https://labelstud.io/guide/ml)
+- \[4\] [Label Studio Documentation - Cloud Storage](https://labelstud.io/guide/storage)
+- \[5\] [Label Studio Documentation - Webhooks](https://labelstud.io/guide/webhooks)
+- \[6\] [Label Studio Documentation - Export Formats](https://labelstud.io/guide/export)
+- \[7\] [Label Studio Documentation - Labeling Configuration Tags](https://labelstud.io/tags/)
+- \[8\] [Label Studio API Reference](https://api.labelstud.io/api-reference/)
+- \[9\] [Label Studio ML Backend Repository](https://github.com/HumanSignal/label-studio-ml-backend)
+- \[10\] [Label Studio GitHub Repository](https://github.com/HumanSignal/label-studio)
 
 # Guardrails AI
 
@@ -20927,1679 +30530,6 @@ curl -X POST \
 - \[7\] Datasets Overview - <https://langfuse.com/docs/datasets/overview>
 - \[8\] Self-Hosting Guide - <https://langfuse.com/docs/deployment/self-host>
 
-# LiteLLM
-
-> Python SDK and proxy for unified access to 100+ LLM APIs
-
-| Field         | Value                                                 |
-|---------------|-------------------------------------------------------|
-| Group         | API Gateways & Model Routing                          |
-| Type          | SDK                                                   |
-| Open Source   | Yes                                                   |
-| GitHub        | [BerriAI/litellm](https://github.com/BerriAI/litellm) |
-| Stars         | 36571                                                 |
-| Documentation | [Official Docs](https://docs.litellm.ai/docs/)        |
-
-## Overview
-
-LiteLLM is an open source Python SDK and proxy server that provides a unified interface for calling 100+ large language models using the OpenAI input/output format. It translates inputs to provider-specific endpoints and normalizes responses into a consistent format, allowing developers to switch between providers without rewriting application code. The project is maintained by BerriAI and supports providers including OpenAI, Anthropic, xAI, Google Vertex AI, Azure OpenAI, NVIDIA NIM, HuggingFace, Ollama, OpenRouter, Novita AI, and Vercel AI Gateway. \[1\]
-
-LiteLLM ships as two components. The **Python SDK** embeds directly into applications and provides completion calls, retry/fallback logic, observability callbacks, and cost tracking. The **Proxy Server** (also called the LLM Gateway) runs as a standalone service that exposes an OpenAI-compatible API with authentication, multi-tenant cost tracking, virtual keys, rate limiting, load balancing, and an admin dashboard. Both components share the same underlying translation layer and provider support. \[1\]
-
-## Core Concepts
-
-**Unified Completion Interface**: The `completion()` function accepts an OpenAI-style model identifier and messages array, translating the request to the target provider's native format. Responses are normalized to match OpenAI's chat completion structure regardless of the underlying provider. \[1\]
-
-**Provider Prefixes**: Models are specified using a `provider/model-name` format (e.g., `openai/gpt-4o`, `anthropic/claude-opus-4-6`, `azure/gpt-4o-eu`). The prefix tells LiteLLM which translation layer to apply for the request and response. \[1\]\[4\]
-
-**Router**: The Router manages load balancing across multiple deployments of the same model. Deployments sharing the same `model_name` form a model group, and the Router selects among them using configurable strategies. The Router also handles cooldowns, retries, and fallbacks when deployments fail. \[3\]
-
-**Virtual Keys**: The Proxy Server issues virtual API keys that abstract over underlying provider credentials. Each virtual key can have its own spend budget, rate limits, and model access restrictions. Users and teams interact with virtual keys rather than raw provider API keys. \[5\]
-
-**Exception Mapping**: Provider-specific errors are mapped to OpenAI exception types (`AuthenticationError`, `RateLimitError`, `APIError`, `Timeout`, `NotFoundError`, `ServiceUnavailableError`, `ContentPolicyViolationError`). All exceptions include `status_code`, `message`, and `llm_provider` attributes for debugging. \[6\]
-
-**Observability Callbacks**: Three callback types (input, success, failure) send telemetry to external platforms. Callbacks are configured declaratively by setting `litellm.success_callback` and `litellm.failure_callback` to lists of integration names. \[7\]
-
-## Installation and Setup
-
-### SDK Installation
-
-``` bash
-pip install litellm
-```
-
-Set the API key for your target provider:
-
-``` bash
-export OPENAI_API_KEY="sk-..."
-# or
-export ANTHROPIC_API_KEY="sk-ant-..."
-```
-
-Verify the installation:
-
-``` python
-from litellm import completion
-
-response = completion(
-    model="openai/gpt-4o",
-    messages=[{"role": "user", "content": "Hello, world!"}]
-)
-print(response.choices[0].message.content)
-```
-
-\[1\]
-
-### Proxy Server Installation
-
-``` bash
-pip install 'litellm[proxy]'
-```
-
-Start the proxy with a single model:
-
-``` bash
-litellm --model huggingface/bigcode/starcoder
-```
-
-The proxy runs on `http://0.0.0.0:4000` by default. Clients connect using any OpenAI-compatible SDK:
-
-``` python
-from openai import OpenAI
-
-client = OpenAI(base_url="http://0.0.0.0:4000", api_key="sk-1234")
-response = client.chat.completions.create(
-    model="huggingface/bigcode/starcoder",
-    messages=[{"role": "user", "content": "Write a Python function"}]
-)
-```
-
-\[2\]
-
-### Docker Deployment
-
-``` bash
-docker run -p 4000:4000 \
-  -v /path/to/config.yaml:/app/config.yaml \
-  ghcr.io/berriai/litellm:main-latest \
-  --config /app/config.yaml
-```
-
-\[2\]
-
-## Architecture
-
-LiteLLM is organized into three layers:
-
-``` 
-SDK Layer              completion(), embedding(), image_generation()
-    |                  Provider translation, response normalization
-    |
-Router Layer           Load balancing, retries, fallbacks, cooldowns
-    |                  Model groups, deployment health tracking
-    |
-Proxy Layer            HTTP server, virtual keys, spend tracking
-                       Admin dashboard, rate limiting, auth
-```
-
-**SDK Layer**: The core translation engine. Each provider has a handler that converts OpenAI-format requests into provider-native API calls and normalizes responses back to OpenAI format. The SDK is stateless and can be embedded directly into Python applications. \[1\]
-
-**Router Layer**: Sits on top of the SDK and manages multiple deployments. It tracks deployment health, enforces rate limits (Requests Per Minute (RPM) and Tokens Per Minute (TPM)), and applies routing strategies to distribute traffic. The Router operates in-process for SDK usage or as part of the Proxy Server. \[3\]
-
-**Proxy Layer**: A standalone HTTP server built on the Router. It adds authentication (master key and virtual keys), a PostgreSQL-backed spend tracking database, team and user management, and an admin dashboard. Clients interact with it using standard OpenAI SDKs pointed at the proxy's base URL. \[2\]\[5\]
-
-## Key Features and Functionality
-
-**Unified Completion Calls**: Call any supported provider through a single function with consistent input/output format:
-
-``` python
-from litellm import completion
-
-# OpenAI
-response = completion(model="openai/gpt-4o", messages=[{"role": "user", "content": "Hi"}])
-
-# Anthropic
-response = completion(model="anthropic/claude-opus-4-6", messages=[{"role": "user", "content": "Hi"}])
-
-# Azure OpenAI
-response = completion(model="azure/gpt-4o-eu", messages=[{"role": "user", "content": "Hi"}])
-```
-
-\[1\]
-
-**Streaming**: All providers support streaming via `stream=True`. Streamed responses return chunks in OpenAI's Server-Sent Events (SSE) format with token-level deltas and usage metadata:
-
-``` python
-response = completion(
-    model="openai/gpt-4o",
-    messages=[{"role": "user", "content": "Write a story"}],
-    stream=True,
-)
-for chunk in response:
-    print(chunk.choices[0].delta.content or "", end="")
-```
-
-\[1\]
-
-**Retry and Fallback Logic**: Configure automatic retries with exponential backoff and model fallbacks:
-
-``` python
-from litellm import completion
-
-response = completion(
-    model="openai/gpt-4o",
-    messages=[{"role": "user", "content": "Hello"}],
-    num_retries=3,
-    fallbacks=["anthropic/claude-sonnet-4-6", "azure/gpt-4o"],
-)
-```
-
-\[1\]
-
-**Cost Tracking**: LiteLLM calculates costs per request using built-in model pricing data. Custom per-token pricing can be specified per deployment:
-
-``` python
-response = completion(
-    model="openai/gpt-4o",
-    messages=[{"role": "user", "content": "Hello"}],
-    input_cost_per_token=0.00001,
-    output_cost_per_token=0.00003,
-)
-```
-
-\[1\]\[4\]
-
-**Load Balancing**: The Router distributes traffic across multiple deployments of the same model using configurable strategies: simple-shuffle (default), usage-based, latency-based, least-busy, and cost-based routing. \[3\]
-
-**Virtual Keys and Spend Caps**: The Proxy Server issues virtual API keys with per-key budgets, rate limits (RPM, TPM), and concurrent request limits. Spend is tracked automatically per key, user, and team:
-
-``` bash
-curl -X POST http://0.0.0.0:4000/key/generate \
-  -H "Authorization: Bearer sk-master-key" \
-  -H "Content-Type: application/json" \
-  -d '{"max_budget": 100, "tpm_limit": 10000, "rpm_limit": 100}'
-```
-
-\[5\]
-
-**Observability Integration**: Send telemetry to external platforms through declarative callbacks:
-
-``` python
-import litellm
-
-litellm.success_callback = ["langfuse", "helicone", "lunary"]
-litellm.failure_callback = ["sentry", "langfuse"]
-```
-
-Supported integrations include Langfuse, Helicone, Lunary, LangSmith, MLflow, Traceloop, Arize, PromptLayer, PostHog, Sentry, and Slack. \[7\]
-
-**Exception Mapping**: Provider errors are mapped to OpenAI exception types for consistent error handling:
-
-``` python
-import litellm
-import openai
-
-try:
-    response = litellm.completion(model="anthropic/claude-opus-4-6", messages=[...])
-except openai.AuthenticationError as e:
-    print(f"Auth failed on {e.llm_provider}: {e.message}")
-except openai.RateLimitError as e:
-    should_retry = litellm._should_retry(e.status_code)
-```
-
-\[6\]
-
-## Use Cases
-
-**Multi-Provider Abstraction**: Applications that need to call multiple LLM providers without maintaining separate client libraries for each. A single `completion()` call works across OpenAI, Anthropic, Azure, Vertex AI, and dozens of other providers.
-
-**Production LLM Gateway**: Organizations deploying the Proxy Server as a centralized gateway for all LLM traffic. Teams authenticate with virtual keys, budgets enforce cost controls, and the admin dashboard provides visibility into usage patterns.
-
-**Failover and Reliability**: Systems that need automatic failover when a primary provider experiences outages. The Router's cooldown and fallback mechanisms route traffic to healthy deployments without application-level changes.
-
-**Cost Optimization**: Teams routing traffic to the cheapest available deployment using cost-based routing, or using model aliasing to redirect expensive model requests to more affordable alternatives without changing client code.
-
-**Multi-Tenant Platforms**: SaaS applications that issue virtual keys to customers, each with independent spend caps and rate limits. The Proxy Server tracks per-tenant costs and enforces budgets automatically.
-
-**Development and Testing**: Developers using the SDK to test prompts across multiple providers during development, comparing response quality and latency before committing to a production provider.
-
-## API Reference Summary
-
-### SDK Functions
-
-- `completion(model, messages, **kwargs)` -- Chat completion across all providers
-- `embedding(model, input, **kwargs)` -- Text embedding generation
-- `image_generation(model, prompt, **kwargs)` -- Image generation
-- `text_completion(model, prompt, **kwargs)` -- Legacy text completion
-- `completion_cost(response)` -- Calculate cost from a completion response
-
-### Proxy Endpoints
-
-- `POST /chat/completions` -- OpenAI-compatible chat completion
-- `POST /completions` -- Legacy text completion
-- `POST /embeddings` -- Embedding generation
-- `POST /images/generations` -- Image generation
-- `POST /audio/transcriptions` -- Audio transcription
-- `POST /audio/speech` -- Text-to-speech
-- `POST /batches` -- Batch processing
-- `GET /models` -- List available models
-- `POST /key/generate` -- Create virtual key
-- `POST /key/info` -- Get key spend and metadata
-- `POST /key/block` -- Disable a virtual key
-- `POST /key/unblock` -- Re-enable a virtual key
-- `POST /user/info` -- Get user-level spend
-- `POST /team/info` -- Get team-level spend
-- `GET /utils/transform_request` -- Inspect request transformation
-
-### Completion Parameters
-
-- `model` -- Provider-prefixed model ID (e.g., `openai/gpt-4o`)
-- `messages` -- Conversation messages array (system, user, assistant, tool roles)
-- `temperature` -- Sampling temperature
-- `max_tokens` / `max_completion_tokens` -- Output token limit
-- `top_p` -- Nucleus sampling threshold
-- `stream` -- Enable streaming responses
-- `tools` -- Tool/function definitions array
-- `tool_choice` -- Tool selection control
-- `response_format` -- JSON mode or structured output schema
-- `stop` -- Stop sequences
-- `seed` -- Deterministic output seed
-- `num_retries` -- Automatic retry count
-- `fallbacks` -- Fallback model list
-- `api_base` -- Custom provider endpoint
-- `api_key` -- Provider API key override
-- `metadata` -- Custom metadata for logging
-- `input_cost_per_token` -- Custom input pricing
-- `output_cost_per_token` -- Custom output pricing \[1\]\[4\]
-
-## Configuration and Customization
-
-### Proxy Configuration (YAML)
-
-The Proxy Server is configured through a YAML file with four main sections:
-
-``` yaml
-model_list:
-  - model_name: gpt-4o                    # User-facing alias
-    litellm_params:
-      model: openai/gpt-4o               # Actual provider model
-      api_key: os.environ/OPENAI_API_KEY  # Environment variable reference
-      rpm: 1000                           # Requests per minute limit
-      tpm: 100000                         # Tokens per minute limit
-
-  - model_name: gpt-4o                    # Second deployment (load balanced)
-    litellm_params:
-      model: azure/gpt-4o-eu
-      api_base: https://my-azure.openai.azure.com
-      api_key: os.environ/AZURE_API_KEY
-
-router_settings:
-  routing_strategy: simple-shuffle        # Load balancing strategy
-  num_retries: 3                          # Retry attempts
-  retry_after: 1                          # Minimum wait between retries (seconds)
-
-litellm_settings:
-  drop_params: true                       # Drop unsupported params silently
-  set_verbose: false                      # Disable verbose logging
-
-general_settings:
-  master_key: sk-master-key               # Admin authentication key
-  database_url: os.environ/DATABASE_URL   # PostgreSQL for spend tracking
-  database_connection_pool_limit: 15      # Connections per worker
-```
-
-Launch with: `litellm --config /path/to/config.yaml` \[8\]
-
-### Environment Variable Loading
-
-Configuration values prefixed with `os.environ/` are resolved from environment variables at startup, keeping secrets out of configuration files. \[8\]
-
-### Credential Lists
-
-Define credentials once and reference them across multiple models:
-
-``` yaml
-credential_list:
-  - credential_name: azure-prod
-    api_key: os.environ/AZURE_PROD_KEY
-    api_base: https://prod.openai.azure.com
-
-model_list:
-  - model_name: gpt-4o
-    litellm_params:
-      model: azure/gpt-4o
-      litellm_credential_name: azure-prod
-```
-
-\[8\]
-
-### Wildcard Models
-
-Route any model through default credentials using wildcards:
-
-``` yaml
-model_list:
-  - model_name: "*"
-    litellm_params:
-      model: "*"
-```
-
-\[8\]
-
-### Router Strategies
-
-- `simple-shuffle` -- Default. Random selection weighted by RPM/TPM limits. Lowest latency overhead
-- `usage-based-routing-v2` -- Routes to deployments with lowest TPM usage (requires Redis)
-- `latency-based-routing` -- Selects deployment with lowest observed response time
-- `least-busy` -- Routes to deployment with fewest active requests
-- `cost-based-routing` -- Selects cheapest available deployment \[3\]
-
-### Cooldown Configuration
-
-Deployments experiencing failures are automatically cooled down:
-
-``` yaml
-router_settings:
-  allowed_fails: 3              # Failures before cooldown triggers
-  cooldown_time: 5              # Cooldown duration in seconds
-```
-
-\[3\]
-
-## Integration Patterns
-
-### With OpenAI SDK
-
-Point any OpenAI SDK client at the Proxy Server:
-
-``` python
-from openai import OpenAI
-
-client = OpenAI(base_url="http://0.0.0.0:4000", api_key="sk-virtual-key")
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "Hello"}]
-)
-```
-
-\[2\]
-
-### With LangChain
-
-``` python
-from langchain_openai import ChatOpenAI
-
-llm = ChatOpenAI(
-    model="gpt-4o",
-    openai_api_base="http://0.0.0.0:4000",
-    openai_api_key="sk-virtual-key",
-)
-```
-
-\[2\]
-
-### With Observability Platforms
-
-SDK-level callbacks send telemetry without proxy overhead:
-
-``` python
-import litellm
-import os
-
-os.environ["LANGFUSE_PUBLIC_KEY"] = "pk-..."
-os.environ["LANGFUSE_SECRET_KEY"] = "sk-..."
-
-litellm.success_callback = ["langfuse"]
-litellm.failure_callback = ["langfuse"]
-
-# All subsequent completion calls are automatically traced
-response = litellm.completion(model="openai/gpt-4o", messages=[...])
-```
-
-\[7\]
-
-### With Agent Frameworks
-
-LiteLLM can serve as the LLM backend for agent frameworks by running the Proxy Server and pointing the framework's OpenAI client at the proxy URL. This centralizes provider credentials, adds cost tracking, and enables model routing without modifying the framework's code.
-
-### With Docker and Kubernetes
-
-Deploy the Proxy Server as a container with configuration mounted as a volume. Helm charts and Terraform modules are available for Kubernetes deployments. The proxy handles 1,500+ requests per second under load testing. \[2\]
-
-## Examples
-
-### Multi-Provider Completion
-
-``` python
-from litellm import completion
-
-# Same interface for every provider
-providers = [
-    "openai/gpt-4o",
-    "anthropic/claude-sonnet-4-6",
-    "azure/gpt-4o-eu",
-    "ollama/llama3",
-]
-
-for model in providers:
-    response = completion(
-        model=model,
-        messages=[{"role": "user", "content": "What is 2+2?"}]
-    )
-    print(f"{model}: {response.choices[0].message.content}")
-```
-
-### Router with Fallbacks
-
-``` python
-from litellm import Router
-
-router = Router(
-    model_list=[
-        {
-            "model_name": "gpt-4o",
-            "litellm_params": {"model": "openai/gpt-4o", "api_key": "sk-..."},
-            "rpm": 500,
-        },
-        {
-            "model_name": "gpt-4o",
-            "litellm_params": {"model": "azure/gpt-4o-eu", "api_key": "az-..."},
-            "rpm": 1000,
-        },
-    ],
-    routing_strategy="simple-shuffle",
-    num_retries=3,
-)
-
-response = router.completion(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "Hello"}]
-)
-```
-
-\[3\]
-
-### Proxy with Virtual Keys and Budgets
-
-``` yaml
-# config.yaml
-model_list:
-  - model_name: gpt-4o
-    litellm_params:
-      model: openai/gpt-4o
-      api_key: os.environ/OPENAI_API_KEY
-
-general_settings:
-  master_key: sk-master-key
-  database_url: os.environ/DATABASE_URL
-```
-
-``` bash
-# Start proxy
-litellm --config config.yaml
-
-# Generate a virtual key with $50 budget and rate limits
-curl -X POST http://0.0.0.0:4000/key/generate \
-  -H "Authorization: Bearer sk-master-key" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "max_budget": 50,
-    "rpm_limit": 100,
-    "tpm_limit": 50000,
-    "budget_duration": "30d"
-  }'
-
-# Client uses the virtual key
-curl -X POST http://0.0.0.0:4000/chat/completions \
-  -H "Authorization: Bearer sk-generated-virtual-key" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "gpt-4o",
-    "messages": [{"role": "user", "content": "Hello"}]
-  }'
-```
-
-\[2\]\[5\]
-
-### Streaming with Cost Tracking
-
-``` python
-import litellm
-
-litellm.success_callback = ["langfuse"]
-
-response = litellm.completion(
-    model="anthropic/claude-sonnet-4-6",
-    messages=[{"role": "user", "content": "Explain quantum computing"}],
-    stream=True,
-)
-
-for chunk in response:
-    content = chunk.choices[0].delta.content
-    if content:
-        print(content, end="")
-
-# Cost is automatically calculated and sent to Langfuse
-```
-
-\[1\]\[7\]
-
-## Limitations and Considerations
-
-- **Python-only SDK**: The SDK is Python-only. Non-Python applications must use the Proxy Server and connect via HTTP with an OpenAI-compatible client library
-- **Provider parameter coverage**: Not all provider-specific parameters are supported through the unified interface. The `drop_params` setting silently drops unsupported parameters rather than raising errors
-- **PostgreSQL requirement for spend tracking**: Virtual key management and spend tracking require a PostgreSQL database connection on the Proxy Server
-- **Redis for advanced routing**: Usage-based and latency-based routing strategies require a Redis instance for cross-process metric sharing
-- **Model pricing accuracy**: Built-in cost calculations depend on LiteLLM's pricing data, which may lag behind provider pricing changes. Custom per-token pricing can override defaults
-- **Exception mapping coverage**: Not all providers support the full set of mapped exception types. OpenAI and Anthropic have comprehensive mapping; smaller providers may have limited coverage \[6\]
-- **Streaming error propagation**: Errors during streaming propagate as exceptions during chunk iteration, which requires error handling within the streaming loop
-- **Proxy latency overhead**: The Proxy Server adds network hop latency compared to direct SDK calls. For latency-sensitive applications, the SDK with in-process Router may be preferable
-
-## Changelog Highlights
-
-- **100+ provider support**: Expanded from initial providers to support over 100 LLM APIs through the OpenAI format
-- **Proxy Server (LLM Gateway)**: Standalone HTTP server with authentication, virtual keys, and admin dashboard
-- **Router load balancing**: Multiple routing strategies (simple-shuffle, usage-based, latency-based, least-busy, cost-based)
-- **Virtual key management**: Per-key budgets, rate limits, and team-based spend tracking with PostgreSQL backend
-- **Observability callbacks**: Integration with Langfuse, Helicone, Lunary, LangSmith, MLflow, Arize, and others
-- **Credential lists**: Centralized credential management with reference-based model configuration
-- **Custom routing strategies**: Extensible routing through `CustomRoutingStrategyBase` for deployment selection logic
-- **Enterprise features**: Automatic key rotation, audit logging, and granular access controls
-- **Performance**: 1,500+ requests per second throughput under load testing
-
-## Citations
-
-- \[1\] LiteLLM Documentation - <https://docs.litellm.ai/docs/>
-- \[2\] Proxy Quick Start - <https://docs.litellm.ai/docs/proxy/quick_start>
-- \[3\] Router Documentation - <https://docs.litellm.ai/docs/routing>
-- \[4\] Completion Input Parameters - <https://docs.litellm.ai/docs/completion/input>
-- \[5\] Virtual Keys - <https://docs.litellm.ai/docs/proxy/virtual_keys>
-- \[6\] Exception Mapping - <https://docs.litellm.ai/docs/exception_mapping>
-- \[7\] Observability Callbacks - <https://docs.litellm.ai/docs/observability/callbacks>
-- \[8\] Proxy Configuration - <https://docs.litellm.ai/docs/proxy/configs>
-
-# Portkey
-
-> AI gateway for managing 200+ LLMs with observability and guardrails
-
-| Field | Value |
-|----|----|
-| Group | API Gateways & Model Routing |
-| Type | API/SDK |
-| Open Source | Yes |
-| GitHub | [Portkey-AI/gateway](https://github.com/Portkey-AI/gateway) |
-| Stars | 10675 |
-| Documentation | [Official Docs](https://portkey.ai/docs/introduction/what-is-portkey) |
-
-## Overview
-
-Portkey is a unified AI gateway that provides a single interface for routing requests to 250+ Large Language Model (LLM) providers. It operates as a proxy layer between applications and LLM APIs, adding observability, guardrails, caching, fallback routing, and load balancing without requiring changes to the underlying model calls. The gateway runs on globally distributed edge workers, adding approximately 20-40ms of latency compared to direct API calls. \[1\]
-
-The platform processes over 25 million requests daily with 99.99% uptime and handles millions of requests per minute at scale. Integration takes approximately 2 minutes through native SDKs (Python, Node.js), a REST API, or drop-in compatibility with the OpenAI SDK by changing the base URL. Portkey holds ISO 27001, SOC 2, GDPR, and HIPAA certifications, with AES-256 encryption for data in transit and at rest. \[1\]
-
-Portkey ships as both an open-source gateway (free, self-hosted) and a managed cloud service. The managed service includes a free tier of 10,000 requests per month, with paid plans for higher volumes. Enterprise customers can deploy Portkey in a private cloud configuration. \[1\]
-
-## Core Concepts
-
-**Gateway Configs** are JSON objects that define how Portkey processes requests. A config specifies the routing strategy, target providers, caching behavior, retry logic, guardrails, and request timeouts. Configs are the central orchestration mechanism for all gateway features and can be stored server-side (referenced by ID) or passed inline with each request. \[2\]
-
-**Model Catalog** (formerly Virtual Keys) provides a centralized system for managing provider credentials. Instead of embedding API keys in application code, credentials are stored securely in Portkey and referenced using the `@provider-slug/model-name` syntax. The Model Catalog supports organization-level credential sharing across workspaces, fine-grained budgets, rate limits, and model allow-lists. \[3\]
-
-**Targets** are the downstream LLM providers or model endpoints that receive routed requests. Each target in a config specifies a provider, credentials, optional model overrides, and weight (for load balancing). Targets can be nested to create complex routing trees with multiple fallback layers. \[2\]
-
-**Strategy Modes** define how Portkey distributes requests across targets. The four modes are `single` (one provider), `loadbalance` (weighted distribution), `fallback` (sequential failover), and `conditional` (rule-based routing). \[2\]
-
-**Guardrails** are real-time validators that check inputs before they reach the LLM and outputs before they reach the user. Guardrails can block requests, log violations, trigger fallbacks, or build evaluation datasets. Over 20 deterministic checks are available alongside LLM-based and third-party guardrail integrations. \[4\]
-
-**Observability** is an OpenTelemetry-compliant monitoring suite that automatically captures all requests, responses, costs, latencies, and token usage. The suite includes logs, distributed tracing, analytics dashboards with 21+ metrics, custom metadata tagging, and feedback integration. \[5\]
-
-## Installation and Setup
-
-### Python SDK
-
-``` bash
-pip install portkey-ai
-```
-
-``` python
-from portkey_ai import Portkey
-
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",
-)
-
-response = portkey.chat.completions.create(
-    model="@openai-prod/gpt-4o",
-    messages=[
-        {"role": "user", "content": "Hello, world!"}
-    ]
-)
-print(response.choices[0].message.content)
-```
-
-### Node.js SDK
-
-``` bash
-npm install portkey-ai
-```
-
-``` javascript
-import Portkey from "portkey-ai";
-
-const portkey = new Portkey({
-    apiKey: "PORTKEY_API_KEY",
-});
-
-const response = await portkey.chat.completions.create({
-    model: "@openai-prod/gpt-4o",
-    messages: [
-        { role: "user", content: "Hello, world!" }
-    ]
-});
-console.log(response.choices[0].message.content);
-```
-
-### OpenAI SDK Compatibility
-
-Route existing OpenAI SDK calls through Portkey by changing the base URL:
-
-``` python
-from openai import OpenAI
-from portkey_ai import createHeaders
-
-client = OpenAI(
-    api_key="YOUR_OPENAI_API_KEY",
-    base_url="https://api.portkey.ai/v1",
-    default_headers=createHeaders(
-        api_key="YOUR_PORTKEY_API_KEY",
-    )
-)
-
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "Hello!"}]
-)
-```
-
-### REST API
-
-``` bash
-curl https://api.portkey.ai/v1/chat/completions \
-  -H "Content-Type: application/json" \
-  -H "Authorization: Bearer $OPENAI_API_KEY" \
-  -H "x-portkey-api-key: $PORTKEY_API_KEY" \
-  -d '{
-    "model": "gpt-4o",
-    "messages": [{"role": "user", "content": "Hello!"}]
-  }'
-```
-
-### Self-Hosted Gateway
-
-Run the open-source gateway locally:
-
-``` bash
-npx @portkey-ai/gateway
-```
-
-## Architecture
-
-Portkey operates as an edge-deployed proxy between client applications and LLM providers:
-
-``` 
-Application (SDK / REST)
-    |
-    v
-Portkey Gateway (Edge Workers)
-    |--- Guardrails (input validation)
-    |--- Routing (fallback / loadbalance / conditional)
-    |--- Caching (simple / semantic)
-    |--- Retry Logic
-    |--- Observability (logs, traces, metrics)
-    |
-    v
-LLM Providers (OpenAI, Anthropic, Azure, Bedrock, 250+ others)
-```
-
-**Edge Infrastructure**: The gateway runs on globally distributed edge workers, minimizing latency by processing requests close to their origin. The edge layer handles routing decisions, cache lookups, guardrail evaluation, and retry logic before forwarding to the target provider. \[1\]
-
-**Config-Driven Orchestration**: All gateway behavior is defined through JSON config objects. Configs can be stored server-side and referenced by ID (`pc-xxx`) or passed inline. Server-side configs enable runtime changes without code deployments. \[2\]
-
-**OpenAI-Compatible Interface**: Portkey exposes an API surface compatible with the OpenAI Chat Completions format (`/v1/chat/completions`). Applications using the OpenAI SDK can switch to Portkey by changing the base URL and adding Portkey headers, with no changes to the request body. \[1\]
-
-**Credential Isolation**: Provider API keys are stored in Portkey's vault (Model Catalog) and never exposed in application code. Requests reference credentials through the `@provider-slug` syntax, and Portkey injects the actual key at the edge layer before forwarding to the provider. \[3\]
-
-## Key Features and Functionality
-
-### Fallback Routing
-
-Automatically switch to backup providers when the primary fails:
-
-``` json
-{
-    "strategy": {
-        "mode": "fallback"
-    },
-    "targets": [
-        {
-            "virtual_key": "openai-key",
-            "override_params": {"model": "gpt-4o"}
-        },
-        {
-            "virtual_key": "anthropic-key",
-            "override_params": {"model": "claude-sonnet-4-6"}
-        }
-    ]
-}
-```
-
-Fallbacks can be triggered by specific HTTP status codes using `on_status_codes` at the target level. \[2\]
-
-### Load Balancing
-
-Distribute requests across providers or API keys using weighted targets:
-
-``` json
-{
-    "strategy": {
-        "mode": "loadbalance"
-    },
-    "targets": [
-        {
-            "virtual_key": "openai-key-1",
-            "weight": 0.7,
-            "override_params": {"model": "gpt-4o"}
-        },
-        {
-            "virtual_key": "anthropic-key",
-            "weight": 0.3,
-            "override_params": {"model": "claude-sonnet-4-6"}
-        }
-    ]
-}
-```
-
-Weights control traffic distribution probability and are normalized automatically. \[2\]
-
-### Conditional Routing
-
-Route requests based on custom criteria using query conditions:
-
-``` json
-{
-    "strategy": {
-        "mode": "conditional",
-        "conditions": [
-            {
-                "query": {"metadata.tier": "premium"},
-                "then": "target-gpt4"
-            }
-        ],
-        "default": "target-gpt4o-mini"
-    },
-    "targets": [...]
-}
-```
-
-### Caching
-
-Reduce latency and costs with simple (exact match) or semantic (similarity-based) caching:
-
-``` json
-{
-    "cache": {
-        "mode": "semantic",
-        "max_age": 3600
-    }
-}
-```
-
-- **Simple cache**: Exact match on request body; fastest lookup
-- **Semantic cache**: Similarity-based matching; returns cached responses for semantically equivalent prompts \[2\]
-
-### Automatic Retries
-
-Retry failed requests with configurable attempts and status code filters:
-
-``` json
-{
-    "retry": {
-        "attempts": 3,
-        "on_status_codes": [429, 500, 502, 503, 504],
-        "use_retry_after_headers": true
-    }
-}
-```
-
-The `use_retry_after_headers` option respects provider-sent `Retry-After` headers for rate-limited requests. \[2\]
-
-### Circuit Breaker
-
-Prevent cascading failures by temporarily disabling unhealthy targets:
-
-``` json
-{
-    "cb_config": {
-        "failure_threshold": 5,
-        "cooldown_interval": 60000,
-        "failure_status_codes": [500, 502, 503]
-    }
-}
-```
-
-When a target exceeds the `failure_threshold`, the circuit opens and requests are routed to other targets for the duration of the `cooldown_interval` (minimum 30 seconds). \[2\]
-
-### Guardrails
-
-Validate inputs and outputs with deterministic, LLM-based, or third-party checks:
-
-``` json
-{
-    "input_guardrails": ["guardrail-id-xxx"],
-    "output_guardrails": ["guardrail-id-yyy"]
-}
-```
-
-Guardrail actions include synchronous blocking (status 446 on failure), asynchronous logging (non-blocking), sequential or parallel execution, and feedback collection for evaluation datasets. Built-in checks cover regex matching, JSON schema validation, code detection (SQL, Python, TypeScript), prompt injection scanning, and gibberish detection. Third-party integrations with Aporia, SydeLabs, and Pillar Security are available. \[4\]
-
-### Observability
-
-All requests are automatically logged with cost, latency, token usage, and provider metadata. Features include:
-
-- **Logs**: Full request and response capture for all multimodal interactions
-- **Traces**: Distributed tracing across the lifecycle of each request
-- **Analytics**: 21+ metrics on dashboards for trend analysis
-- **Custom Metadata**: Tag requests with arbitrary key-value pairs for grouping and filtering
-- **Feedback**: Attach feedback values and weights to close observability loops
-- **Budget Limits**: Configure cost limits per provider API key \[5\]
-
-### Model Context Protocol (MCP)
-
-Connect external tools and data sources to LLM requests through MCP support, enabling agents to access databases, file systems, and APIs through a standardized protocol. \[6\]
-
-## Use Cases
-
-**Multi-Provider Resilience**: Route production traffic through Portkey with fallback configs to ensure continuity when a single provider experiences downtime. An application can fall back from OpenAI to Anthropic to Azure OpenAI without any code changes.
-
-**Cost Optimization**: Use load balancing to distribute traffic across cheaper model tiers for routine queries while routing complex queries to frontier models via conditional routing. Semantic caching further reduces costs by serving cached responses for repeated or similar prompts.
-
-**Compliance and Security**: Store all provider credentials in the Model Catalog, enforce guardrails on inputs and outputs to prevent prompt injection and data leakage, and enable audit logging through the observability suite. The HIPAA, SOC 2, and GDPR certifications support regulated industry deployments.
-
-**A/B Testing and Canary Deployments**: Use weighted load balancing to gradually shift traffic from an existing model to a new model, monitoring performance and cost metrics through the analytics dashboard before full rollout.
-
-**Agent Observability**: Trace multi-step agent workflows across multiple LLM calls, tool invocations, and retrieval steps. Custom metadata tags enable grouping traces by user session, agent type, or business workflow.
-
-**Rate Limit Management**: Distribute requests across multiple API keys for the same provider using load balancing, effectively multiplying rate limits without application-level key rotation logic.
-
-## API Reference Summary
-
-### Endpoints
-
-Portkey mirrors the OpenAI-compatible API surface:
-
-- `POST /v1/chat/completions` -- Chat completions (text generation)
-- `POST /v1/completions` -- Legacy completions
-- `POST /v1/embeddings` -- Vector embeddings
-- `POST /v1/images/generations` -- Image generation
-- `POST /v1/audio/speech` -- Text-to-speech
-- `POST /v1/audio/transcriptions` -- Speech-to-text
-
-### Request Headers
-
-- `x-portkey-api-key` -- Portkey API key (required)
-- `x-portkey-config` -- Gateway config ID or inline JSON
-- `x-portkey-virtual-key` -- Legacy virtual key reference
-- `x-portkey-metadata` -- Custom metadata as JSON string
-- `x-portkey-trace-id` -- Custom trace identifier
-- `x-portkey-cache-namespace` -- Cache namespace for isolation
-- `Authorization` -- Provider API key (when not using Model Catalog)
-
-### Response Additions
-
-Portkey responses include standard OpenAI-format fields plus:
-
-- `hook_results` -- Guardrail check results (when synchronous guardrails are configured)
-- Status 246: Guardrails failed but request continues
-- Status 446: Guardrails failed and request is denied
-
-## Configuration and Customization
-
-### Complete Config Structure
-
-``` json
-{
-    "strategy": {
-        "mode": "fallback | loadbalance | conditional | single",
-        "conditions": [],
-        "default": "target-id",
-        "on_status_codes": [429, 500]
-    },
-    "targets": [
-        {
-            "provider": "openai",
-            "api_key": "sk-...",
-            "virtual_key": "key-id",
-            "custom_host": "http://private-llm/v1",
-            "weight": 0.7,
-            "override_params": {"model": "gpt-4o", "temperature": 0.5},
-            "forward_headers": ["Authorization"],
-            "on_status_codes": [500, 502]
-        }
-    ],
-    "cache": {
-        "mode": "simple | semantic",
-        "max_age": 3600
-    },
-    "retry": {
-        "attempts": 3,
-        "on_status_codes": [429, 500, 502, 503, 504],
-        "use_retry_after_headers": true
-    },
-    "cb_config": {
-        "failure_threshold": 5,
-        "cooldown_interval": 60000,
-        "failure_status_codes": [500, 502, 503]
-    },
-    "request_timeout": 30000,
-    "input_guardrails": ["guardrail-id"],
-    "output_guardrails": ["guardrail-id"],
-    "strict_open_ai_compliance": true,
-    "forward_headers": ["X-Custom-Header"]
-}
-```
-
-### Cloud Provider Parameters
-
-Configs support direct cloud provider authentication:
-
-- **Azure OpenAI**: `azure_region`, `azure_deployment_name`, `azure_api_version`, `azure_endpoint_name`
-- **AWS Bedrock**: `aws_access_key_id`, `aws_secret_access_key`, `aws_region`, `aws_session_token`
-- **Google Vertex AI**: `vertex_project_id`, `vertex_region`, `vertex_service_account_json`
-
-### Config Application Methods
-
-Configs can be applied through multiple channels:
-
-- Portkey SDK `config` parameter (inline object or stored config ID)
-- OpenAI SDK via `x-portkey-config` header
-- REST API via `x-portkey-config` header
-- Default config attached to a Portkey API key in the dashboard
-
-## Integration Patterns
-
-### With OpenAI SDK (Python)
-
-``` python
-from openai import OpenAI
-from portkey_ai import createHeaders
-
-client = OpenAI(
-    api_key="dummy",
-    base_url="https://api.portkey.ai/v1",
-    default_headers=createHeaders(
-        api_key="YOUR_PORTKEY_API_KEY",
-        virtual_key="YOUR_OPENAI_VIRTUAL_KEY"
-    )
-)
-
-response = client.chat.completions.create(
-    model="gpt-4o",
-    messages=[{"role": "user", "content": "Hello!"}]
-)
-```
-
-### With LangChain
-
-``` python
-from langchain_openai import ChatOpenAI
-from portkey_ai import createHeaders
-
-llm = ChatOpenAI(
-    api_key="dummy",
-    base_url="https://api.portkey.ai/v1",
-    default_headers=createHeaders(
-        api_key="YOUR_PORTKEY_API_KEY",
-        virtual_key="YOUR_OPENAI_VIRTUAL_KEY"
-    ),
-    model="gpt-4o"
-)
-
-response = llm.invoke("What is the meaning of life?")
-```
-
-### With Observability Tracing (Logfire)
-
-``` python
-import logfire
-import os
-from portkey_ai import createHeaders
-from openai import OpenAI
-
-os.environ["OTEL_EXPORTER_OTLP_ENDPOINT"] = "https://api.portkey.ai/v1/logs/otel"
-os.environ["OTEL_EXPORTER_OTLP_HEADERS"] = "x-portkey-api-key=YOUR_PORTKEY_API_KEY"
-
-logfire.configure(service_name="my-llm-app", send_to_logfire=False)
-
-client = OpenAI(
-    api_key="YOUR_OPENAI_API_KEY",
-    base_url="https://api.portkey.ai/v1",
-    default_headers=createHeaders(
-        api_key="YOUR_PORTKEY_API_KEY",
-    )
-)
-
-logfire.instrument_openai(client)
-```
-
-### With Private or Self-Hosted Models
-
-``` json
-{
-    "strategy": {
-        "mode": "fallback"
-    },
-    "targets": [
-        {
-            "provider": "openai",
-            "custom_host": "http://my-private-llm:8080/v1",
-            "forward_headers": ["Authorization"]
-        },
-        {
-            "virtual_key": "openai-fallback-key"
-        }
-    ]
-}
-```
-
-## Examples
-
-### Production-Ready Config with Fallback, Caching, and Retries
-
-``` python
-from portkey_ai import Portkey
-
-config = {
-    "strategy": {
-        "mode": "fallback"
-    },
-    "targets": [
-        {
-            "virtual_key": "openai-prod",
-            "override_params": {"model": "gpt-4o"},
-            "weight": 1.0
-        },
-        {
-            "virtual_key": "anthropic-prod",
-            "override_params": {"model": "claude-sonnet-4-6"}
-        }
-    ],
-    "cache": {
-        "mode": "semantic",
-        "max_age": 3600
-    },
-    "retry": {
-        "attempts": 3,
-        "on_status_codes": [429, 500, 502, 503, 504]
-    },
-    "request_timeout": 30000
-}
-
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",
-    config=config
-)
-
-response = portkey.chat.completions.create(
-    messages=[{"role": "user", "content": "Summarize this document."}]
-)
-```
-
-### Weighted Load Balancing Across Providers
-
-``` python
-from portkey_ai import Portkey
-
-config = {
-    "strategy": {
-        "mode": "loadbalance"
-    },
-    "targets": [
-        {
-            "virtual_key": "openai-key-1",
-            "weight": 0.5,
-            "override_params": {"model": "gpt-4o"}
-        },
-        {
-            "virtual_key": "openai-key-2",
-            "weight": 0.3,
-            "override_params": {"model": "gpt-4o"}
-        },
-        {
-            "virtual_key": "anthropic-key",
-            "weight": 0.2,
-            "override_params": {"model": "claude-sonnet-4-6"}
-        }
-    ]
-}
-
-portkey = Portkey(api_key="PORTKEY_API_KEY", config=config)
-
-response = portkey.chat.completions.create(
-    messages=[{"role": "user", "content": "Hello!"}]
-)
-```
-
-### Embedding Request with Guardrails
-
-``` python
-from portkey_ai import Portkey
-
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",
-    config="pc-xxx"  # Config with embedding guardrails
-)
-
-response = portkey.embeddings.create(
-    input="Your text string goes here",
-    model="text-embedding-3-small"
-)
-```
-
-### Custom Metadata for Observability
-
-``` python
-from portkey_ai import Portkey
-
-portkey = Portkey(
-    api_key="PORTKEY_API_KEY",
-)
-
-response = portkey.with_options(
-    metadata={"user_id": "user-123", "session": "abc", "environment": "production"}
-).chat.completions.create(
-    model="@openai-prod/gpt-4o",
-    messages=[{"role": "user", "content": "Help me debug this error."}]
-)
-```
-
-## Limitations and Considerations
-
-**Added Latency**: The edge proxy adds 20-40ms of latency to every request compared to direct provider API calls. For latency-critical applications where every millisecond matters, this overhead should be evaluated against the benefits of routing and observability.
-
-**Vendor Lock-In on Managed Features**: While the open-source gateway handles routing, caching, and retries, advanced features like the analytics dashboard, guardrails management UI, Model Catalog, and budget controls require the managed Portkey service.
-
-**Semantic Cache Accuracy**: Semantic caching relies on similarity matching, which may return cached responses for prompts that are similar but not semantically equivalent. Applications requiring deterministic responses should use simple (exact-match) caching or disable caching entirely.
-
-**Guardrail Latency**: Synchronous guardrails add processing time to each request. Applications with tight latency requirements should consider running guardrails asynchronously (logging only) or limiting the number of active checks per request.
-
-**Provider Feature Parity**: Not all provider-specific features are exposed through Portkey's unified interface. Advanced or recently released provider capabilities may require direct API access until Portkey adds support.
-
-**Virtual Key Deprecation**: Virtual Keys have been migrated to the Model Catalog system. Existing implementations using Virtual Keys continue to work but should migrate to the `@provider-slug/model-name` syntax for new projects.
-
-**Free Tier Limits**: The managed service free tier is limited to 10,000 requests per month, which is sufficient for development but requires a paid plan for production workloads.
-
-## Changelog Highlights
-
-- **Model Catalog**: Replaced Virtual Keys with organization-level credential management, fine-grained budgets, rate limits, and model allow-lists
-- **Guardrails on the Gateway**: Real-time input/output validation with 20+ deterministic checks, LLM-based detection, and third-party integrations (Aporia, SydeLabs, Pillar Security)
-- **Conditional Routing**: Query-based routing rules for directing traffic based on custom criteria
-- **Circuit Breaker**: Per-strategy failure handling with configurable thresholds and cooldown intervals
-- **MCP Support**: Model Context Protocol integration for connecting external tools and data sources
-- **gRPC Transport (Beta)**: Reduced-latency transport option alongside REST
-- **Semantic Caching**: Similarity-based cache matching for semantically equivalent prompts
-- **250+ Provider Support**: Expanded from initial provider set to over 250 supported LLM providers and models
-
-## Citations
-
-- \[1\] What is Portkey - <https://portkey.ai/docs/introduction/what-is-portkey>
-- \[2\] Gateway Configs - <https://portkey.ai/docs/product/ai-gateway/configs>
-- \[3\] Virtual Keys / Model Catalog - <https://portkey.ai/docs/product/ai-gateway/virtual-keys>
-- \[4\] Guardrails - <https://portkey.ai/docs/product/guardrails>
-- \[5\] Observability - <https://portkey.ai/docs/product/observability>
-- \[6\] AI Gateway Overview - <https://portkey.ai/docs/product/ai-gateway>
-- \[7\] Config Object Schema - <https://portkey.ai/docs/api-reference/inference-api/config-object>
-- \[8\] Supported LLM Providers - <https://portkey.ai/docs/integrations/llms>
-- \[9\] GitHub Repository - <https://github.com/Portkey-AI/gateway>
-
-# ccapi
-
-> Unified AI API gateway for 100+ models with OpenAI-compatible endpoint
-
-| Field         | Value                              |
-|---------------|------------------------------------|
-| Group         | API Gateways & Model Routing       |
-| Type          | API                                |
-| Open Source   | No                                 |
-| GitHub        | N/A                                |
-| Stars         | N/A                                |
-| Documentation | [Official Docs](https://ccapi.ai/) |
-
-## Overview
-
-CCAPI is a multimodal AI API gateway that aggregates multiple providers under a single OpenAI-compatible endpoint. The platform routes requests to over 100 models across seven or more providers spanning four modalities: text, image, audio, and video. CCAPI's core value proposition is migration simplicity -- existing code targeting the OpenAI API can be redirected to CCAPI by changing only the base URL to `https://api.ccapi.ai/v1` and supplying a CCAPI API key. Smart routing automatically switches between providers on failure with approximately 120 milliseconds of failover latency, maintaining a reported 99.9% success rate. The service operates on a pay-per-use billing model denominated in United States Dollars (USD) with no subscriptions or credit conversion. \[1\]
-
-## Core Concepts
-
-- **Unified Endpoint**: A single OpenAI-compatible REST API base URL (`https://api.ccapi.ai/v1`) that fronts all supported providers and modalities. Developers interact with one API surface regardless of whether the underlying model is served by OpenAI, Anthropic, Google, DeepSeek, or another provider.
-- **Smart Routing**: An automatic failover mechanism that detects provider downtime or errors and reroutes requests to alternative providers. The failover occurs in approximately 120 milliseconds, which is transparent to the caller. This operates across multiple retry layers to sustain the 99.9% success rate target.
-- **Multimodal Support**: CCAPI supports four modalities through dedicated endpoints -- text (chat completions), image generation, audio (text-to-speech), and video generation -- all accessible under the same base URL and authentication scheme.
-- **Provider-Prefixed Model Identifiers**: Models are referenced using a `provider/model` format (for example, `anthropic/claude-4.6` or `bytedance/seedance-2`), which disambiguates models across providers and allows explicit routing to a specific backend.
-- **Custom Providers**: Users can configure additional OpenAI-compatible providers with their own API keys and endpoints, extending CCAPI beyond its built-in provider catalog.
-- **Pay-Per-Use Billing**: No subscriptions, no credit conversion gimmicks. A \$100 deposit equals \$100 of usable balance, with real-time cost tracking via the usage dashboard.
-
-## Installation and Setup
-
-CCAPI is a hosted API service with no local installation required. Integration uses existing OpenAI-compatible SDKs.
-
-### Authentication
-
-CCAPI uses bearer token authentication. API keys follow the `sk-ccapi-...` prefix convention and are obtained from the CCAPI dashboard.
-
-``` bash
-export CCAPI_API_KEY="sk-ccapi-your-key-here"
-```
-
-All requests must include the `Authorization: Bearer <key>` header.
-
-### Python (OpenAI SDK)
-
-``` bash
-pip install openai
-```
-
-``` python
-from openai import OpenAI
-
-client = OpenAI(
-    base_url="https://api.ccapi.ai/v1",
-    api_key="sk-ccapi-..."
-)
-```
-
-### Node.js (OpenAI SDK)
-
-``` bash
-npm install openai
-```
-
-``` javascript
-import OpenAI from "openai";
-
-const client = new OpenAI({
-    baseURL: "https://api.ccapi.ai/v1",
-    apiKey: "sk-ccapi-...",
-});
-```
-
-### cURL
-
-``` bash
-curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
-  -H "Authorization: Bearer $CCAPI_API_KEY" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-4.6",
-    "messages": [{"role": "user", "content": "Hello"}]
-  }'
-```
-
-Any HTTP client or SDK that speaks REST and supports the OpenAI chat completions format works with CCAPI by pointing to the `https://api.ccapi.ai/v1` base URL. \[1\]
-
-## Architecture
-
-CCAPI's architecture consists of three logical layers:
-
-1.  **API Gateway Layer**: An OpenAI-compatible REST API that accepts requests at `https://api.ccapi.ai/v1`. The gateway handles authentication (bearer tokens), request validation, rate management, and response formatting. All four modality endpoints (chat completions, image generation, audio, video generation) share the same gateway infrastructure and authentication scheme.
-2.  **Smart Routing Layer**: A routing and failover engine that sits between the gateway and upstream providers. When a request targets a specific provider-model pair, the routing layer forwards it to that provider. If the provider returns an error or is unreachable, the routing layer automatically retries with an alternative provider capable of serving an equivalent model, with failover latency of approximately 120 milliseconds. Multiple retry layers ensure high availability.
-3.  **Provider Integration Layer**: Connections to upstream AI providers (OpenAI, Anthropic, Google, DeepSeek, ByteDance, Kuaishou, Zhipu AI, MiniMax, Moonshot) plus user-configured custom providers. Each integration translates between the unified CCAPI request format and the provider's native API, handling authentication, request mapping, and response normalization.
-
-The system is monitored 24/7 with real-time tracking of latency, success rates, and provider health across all four modalities.
-
-## Key Features and Functionality
-
-- **Chat Completions**: Standard text generation via `/v1/chat/completions` supporting streaming (Server-Sent Events (SSE)), function/tool calling, JSON response mode, temperature and top-p sampling, stop sequences, and maximum token limits. \[2\]
-- **Extended Thinking**: A `thinking` parameter (`{"type": "enabled"}`) activates step-by-step reasoning mode on supported models, returning intermediate reasoning content alongside the final response. \[2\]
-- **Vision and Image Input**: Multimodal models accept image inputs within the messages array for Optical Character Recognition (OCR), image analysis, and visual question answering.
-- **Image Generation**: Endpoint at `/v1/images/generations` for generating images from text prompts through supported providers.
-- **Audio (Text-to-Speech)**: Endpoint at `/v1/audio/speech` for converting text to audio using available speech synthesis models.
-- **Video Generation**: Endpoint at `/v1/video/generations` for generating video content. Supported models include Seedance 2.0 (ByteDance) and Kling 3.0 (Kuaishou).
-- **Prompt Caching**: Repeated prompt prefixes (such as system prompts reused across conversations) receive reduced pricing, lowering cost for high-volume applications with shared context.
-- **Function/Tool Calling**: Tool definitions can be passed via the `tools` parameter with `tool_choice` controlling invocation behavior (`none`, `auto`, `required`).
-- **Usage Dashboard**: Real-time monitoring of costs, latency metrics, success rates, and per-request breakdowns. Tracks spending per model and per provider.
-- **Custom Provider Configuration**: Users can add any OpenAI-compatible provider with their own API keys, extending the gateway beyond the built-in provider catalog.
-
-## Use Cases
-
-- **Provider Migration**: Teams switching from one LLM provider to another can reroute by changing only the model identifier, with no SDK or integration code changes required. The OpenAI-compatible interface means the calling code remains identical.
-- **High-Availability AI Applications**: Production systems that cannot tolerate provider outages benefit from smart routing, which automatically fails over to alternative providers within 120 milliseconds.
-- **Multimodal Pipelines**: Applications that need text, image, audio, and video generation from a single integration point rather than maintaining separate SDKs and authentication for each provider.
-- **Cost Optimization**: Pay-per-use pricing with transparent USD billing and the ability to route to cost-effective providers (for example, DeepSeek V4 at \$0.27 per million tokens) for workloads where the lowest-cost model is sufficient.
-- **Video Generation Access**: Teams needing access to Chinese AI video models (Seedance 2.0, Kling 3.0) through a familiar OpenAI-compatible interface without managing direct integrations with ByteDance or Kuaishou APIs.
-- **Prototyping and Evaluation**: Rapidly testing different models from different providers (GPT-5.2, Claude 4.6, DeepSeek V4, GLM-5) against the same prompts by changing only the model parameter, enabling quick comparison without provider-specific setup.
-
-## API Reference Summary
-
-### Chat Completions
-
-**Endpoint**: `POST /v1/chat/completions`
-
-**Parameters**:
-
-- `model` (required): Model identifier in `provider/model` format (e.g., `anthropic/claude-4.6`).
-- `messages` (required): Array of message objects with `role` (`system`, `user`, `assistant`, `tool`) and `content` fields.
-- `stream`: Boolean to enable SSE streaming of partial responses.
-- `temperature`: Sampling temperature, range `0.0` to `2.0`, default `1.0`.
-- `top_p`: Nucleus sampling threshold, range `0.0` to `1.0`, default `1.0`.
-- `max_tokens`: Maximum tokens in the generated response.
-- `stop`: String or array of stop sequences.
-- `tools`: Array of function/tool definitions for tool calling.
-- `tool_choice`: Control tool invocation (`none`, `auto`, `required`).
-- `response_format`: `{"type": "json_object"}` to enforce JSON output.
-- `thinking`: `{"type": "enabled"}` for extended reasoning mode.
-
-**Response**: Chat completion object containing generated content, token usage statistics, and optional tool calls or reasoning content.
-
-**Error Codes**:
-
-- `400`: Bad request (malformed parameters).
-- `402`: Insufficient account balance.
-- `500`: Server error.
-
-### Image Generation
-
-**Endpoint**: `POST /v1/images/generations`
-
-### Audio (Text-to-Speech)
-
-**Endpoint**: `POST /v1/audio/speech`
-
-### Video Generation
-
-**Endpoint**: `POST /v1/video/generations`
-
-### Available Models (Selected)
-
-**Text Generation**:
-
-- `openai/gpt-5.2` -- OpenAI GPT-5.2 (\$2.50/\$10.00 per 1M input/output tokens)
-- `anthropic/claude-opus-4-6` -- Anthropic Claude Opus 4.6, 200K context (\$2.50/\$12.50 per 1M tokens)
-- `anthropic/claude-sonnet-4-6` -- Anthropic Claude Sonnet 4.6, 200K context (\$1.50/\$7.50 per 1M tokens)
-- `anthropic/claude-haiku-4-5` -- Anthropic Claude Haiku 4.5, 200K context (\$0.50/\$2.50 per 1M tokens)
-- `deepseek/deepseek-v4` -- DeepSeek V4 (\$0.27/1M tokens)
-- `zhipu/glm-5` -- Zhipu AI GLM-5 (\$0.40/1M tokens)
-
-**Video Generation**:
-
-- `bytedance/seedance-2` -- ByteDance Seedance 2.0 (\$0.34/second)
-- `kuaishou/kling-3.0` -- Kuaishou Kling 3.0 (\$0.39/video)
-
-CCAPI advertises up to 50% savings compared to direct provider pricing for certain models (notably Anthropic Claude models). \[1\] \[2\]
-
-## Configuration and Customization
-
-### Base URL Configuration
-
-The single required configuration change for any OpenAI SDK-based application:
-
-``` python
-# Python
-client = OpenAI(
-    base_url="https://api.ccapi.ai/v1",
-    api_key="sk-ccapi-..."
-)
-```
-
-``` javascript
-// Node.js
-const client = new OpenAI({
-    baseURL: "https://api.ccapi.ai/v1",
-    apiKey: "sk-ccapi-...",
-});
-```
-
-### Model Selection
-
-Models are selected via the `model` parameter using provider-prefixed identifiers:
-
-``` python
-# Route to Anthropic Claude
-response = client.chat.completions.create(
-    model="anthropic/claude-4.6",
-    messages=[{"role": "user", "content": "Hello"}]
-)
-
-# Route to DeepSeek
-response = client.chat.completions.create(
-    model="deepseek/deepseek-v4",
-    messages=[{"role": "user", "content": "Hello"}]
-)
-```
-
-### Custom Providers
-
-Users can configure additional OpenAI-compatible providers through the CCAPI dashboard, supplying their own API keys and endpoint URLs. This allows routing through CCAPI's unified interface to providers not in the built-in catalog.
-
-### Usage Dashboard
-
-The dashboard provides real-time visibility into:
-
-- Per-request cost breakdown
-- Latency metrics per model and provider
-- Success rate monitoring
-- API key management
-- Account balance tracking
-
-## Integration Patterns
-
-### Drop-In OpenAI Replacement
-
-The most common integration pattern requires changing only two values in existing OpenAI SDK code:
-
-``` python
-from openai import OpenAI
-
-# Before (direct OpenAI)
-# client = OpenAI(api_key="sk-openai-...")
-
-# After (via CCAPI)
-client = OpenAI(
-    base_url="https://api.ccapi.ai/v1",
-    api_key="sk-ccapi-..."
-)
-
-# All existing code works unchanged
-response = client.chat.completions.create(
-    model="openai/gpt-5.2",
-    messages=[{"role": "user", "content": "Explain quantum computing."}]
-)
-```
-
-### Multi-Provider Switching
-
-A single client instance can target different providers by changing only the model parameter:
-
-``` python
-models = [
-    "openai/gpt-5.2",
-    "anthropic/claude-4.6",
-    "deepseek/deepseek-v4",
-]
-for model in models:
-    response = client.chat.completions.create(
-        model=model,
-        messages=[{"role": "user", "content": "Summarize this document."}]
-    )
-```
-
-### Framework Integration
-
-Any framework built on the OpenAI SDK (LangChain, LlamaIndex, CrewAI, and others) can route through CCAPI by configuring the base URL at the client level. No framework-specific adapters are needed.
-
-### REST/HTTP Client Integration
-
-Any language or framework with HTTP client capabilities can call CCAPI directly:
-
-``` bash
-curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
-  -H "Authorization: Bearer sk-ccapi-..." \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-sonnet-4-6",
-    "messages": [{"role": "user", "content": "Hello"}],
-    "stream": false
-  }'
-```
-
-## Examples
-
-### Basic Chat Completion (Python)
-
-``` python
-from openai import OpenAI
-
-client = OpenAI(
-    base_url="https://api.ccapi.ai/v1",
-    api_key="sk-ccapi-..."
-)
-
-response = client.chat.completions.create(
-    model="anthropic/claude-4.6",
-    messages=[{"role": "user", "content": "What is machine learning?"}]
-)
-print(response.choices[0].message.content)
-```
-
-### Streaming Response (Node.js)
-
-``` javascript
-import OpenAI from "openai";
-
-const client = new OpenAI({
-    baseURL: "https://api.ccapi.ai/v1",
-    apiKey: "sk-ccapi-...",
-});
-
-const stream = await client.chat.completions.create({
-    model: "anthropic/claude-4.6",
-    messages: [
-        { role: "system", content: "You are a helpful assistant." },
-        { role: "user", content: "Explain recursion step by step." },
-    ],
-    stream: true,
-});
-
-for await (const chunk of stream) {
-    const content = chunk.choices[0]?.delta?.content;
-    if (content) process.stdout.write(content);
-}
-```
-
-### Tool Calling (Python)
-
-``` python
-from openai import OpenAI
-
-client = OpenAI(
-    base_url="https://api.ccapi.ai/v1",
-    api_key="sk-ccapi-..."
-)
-
-tools = [
-    {
-        "type": "function",
-        "function": {
-            "name": "get_weather",
-            "description": "Get current weather for a location",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "location": {"type": "string", "description": "City name"}
-                },
-                "required": ["location"]
-            }
-        }
-    }
-]
-
-response = client.chat.completions.create(
-    model="openai/gpt-5.2",
-    messages=[{"role": "user", "content": "What is the weather in Tokyo?"}],
-    tools=tools,
-    tool_choice="auto"
-)
-```
-
-### Extended Thinking (cURL)
-
-``` bash
-curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
-  -H "Authorization: Bearer sk-ccapi-..." \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "anthropic/claude-4.6",
-    "messages": [{"role": "user", "content": "Solve this step by step: 23 * 47 + 19"}],
-    "thinking": {"type": "enabled"}
-  }'
-```
-
-### Video Generation (cURL)
-
-``` bash
-curl -X POST "https://api.ccapi.ai/v1/video/generations" \
-  -H "Authorization: Bearer sk-ccapi-..." \
-  -H "Content-Type: application/json" \
-  -d '{
-    "model": "bytedance/seedance-2",
-    "prompt": "A serene mountain lake at sunrise with mist rolling over the water"
-  }'
-```
-
-### JSON Mode Response (Python)
-
-``` python
-from openai import OpenAI
-
-client = OpenAI(
-    base_url="https://api.ccapi.ai/v1",
-    api_key="sk-ccapi-..."
-)
-
-response = client.chat.completions.create(
-    model="deepseek/deepseek-v4",
-    messages=[{"role": "user", "content": "List three programming languages with their use cases."}],
-    response_format={"type": "json_object"}
-)
-```
-
-## Limitations and Considerations
-
-- **Closed-Source Service**: CCAPI is a proprietary hosted service with no self-hosted or on-premises deployment option. All requests transit through CCAPI's infrastructure, which introduces a dependency on their availability and data handling practices.
-- **Provider-Dependent Features**: Feature support (tool calling, vision, extended thinking, structured output) varies by upstream model and provider. Not all features are available across all models.
-- **No Model Fine-Tuning**: CCAPI is an inference routing layer, not a model training or fine-tuning platform. Fine-tuned models must be hosted by the upstream provider and accessed through CCAPI if that provider is supported.
-- **Latency Overhead**: Routing through an intermediary gateway adds network hops compared to calling a provider directly. While CCAPI reports sub-2-second latency, the additional hop may be noticeable for latency-sensitive applications where every millisecond matters.
-- **Rate Limits**: Rate limits and quotas are not publicly documented in detail. Throughput may be constrained by both CCAPI's gateway limits and the underlying provider's rate limits.
-- **Model Availability Lag**: New models released by providers may not be immediately available through CCAPI. There is an inherent delay between a provider launching a model and CCAPI integrating it.
-- **Limited Documentation**: As a newer service, CCAPI's public documentation is less extensive than established gateways. Detailed API reference for image, audio, and video endpoints is sparse compared to the chat completions documentation.
-- **Vendor Lock-In Risk**: While CCAPI uses an OpenAI-compatible interface (reducing switching cost), reliance on provider-prefixed model identifiers (`anthropic/claude-4.6`) creates a CCAPI-specific naming convention that requires mapping if migrating to another gateway.
-- **Data Privacy**: All requests and responses pass through CCAPI's servers. Organizations with strict data residency or privacy requirements should evaluate CCAPI's data handling policies before routing sensitive workloads through the gateway.
-
-## Changelog Highlights
-
-- Launch of unified multimodal API gateway supporting text, image, audio, and video through a single endpoint.
-- Smart routing with automatic provider failover in approximately 120 milliseconds.
-- Integration of video generation models Seedance 2.0 (ByteDance) and Kling 3.0 (Kuaishou).
-- Support for extended thinking mode on compatible models.
-- Function/tool calling support across providers.
-- Prompt caching with reduced pricing for repeated prefixes.
-- Custom provider configuration allowing users to bring their own API keys.
-- Real-time usage dashboard with cost, latency, and success rate monitoring.
-- Claude model pricing at up to 50% below direct Anthropic pricing.
-
-## Citations
-
-- \[1\] CCAPI Official Website - https://ccapi.ai/
-- \[2\] CCAPI API Documentation - https://docs.ccapi.ai/
-
 # Temporal
 
 > Durable execution platform for reliable distributed systems with automatic failure handling
@@ -26169,840 +34099,3 @@ return msg;
 - \[13\] Configuration - <https://nodered.org/docs/user-guide/runtime/configuration>
 - \[14\] Securing Node-RED - <https://nodered.org/docs/user-guide/runtime/securing-node-red>
 - \[15\] Node-RED Blog - <https://nodered.org/blog/>
-
-# Label Studio
-
-> Open-source multi-type data labeling and annotation tool
-
-| Field         | Value                                         |
-|---------------|-----------------------------------------------|
-| Group         | Data Labeling                                 |
-| Type          | UI                                            |
-| Open Source   | Yes                                           |
-| GitHub        | <https://github.com/HumanSignal/label-studio> |
-| Stars         | 26488                                         |
-| Documentation | [Official Docs](https://labelstud.io/guide/)  |
-
-## Overview
-
-Label Studio is an open-source data labeling and annotation platform built to support the full lifecycle of supervised learning data preparation. The backend is written in Python using Django, and the frontend is built with JavaScript, React, and MobX-State-Tree (MST). It provides a web-based interface for annotating text, images, audio, video, time series, and multi-modal data through configurable labeling templates defined in XML.
-
-The platform organizes work into projects, each containing a set of tasks (data items) and a labeling configuration that defines the annotation interface. Annotators apply labels to tasks, producing annotations that can be exported in industry-standard formats such as JSON, COCO, YOLO, Pascal VOC, and CoNLL2003. Label Studio integrates with Machine Learning (ML) backends for pre-annotation and active learning, cloud storage services for data import and export, and external systems through webhooks and a RESTful API with an official Python Software Development Kit (SDK).
-
-Label Studio Community Edition is fully open source under the Apache 2.0 license. HumanSignal also offers Label Studio Enterprise, which adds role-based access control, advanced queue management, audit logging, and additional ML automation features on top of the open-source core.
-
-## Core Concepts
-
-**Projects** are the top-level organizational unit. Each project contains a labeling configuration (an XML template defining the annotation interface), a set of tasks, and associated settings such as annotation instructions, quality controls, and connected ML backends. A single Label Studio instance can host multiple projects, each targeting a different data type or annotation task.
-
-**Tasks** represent individual data items to be labeled. A task contains a `data` field holding the content to annotate (text, image URL, audio URL, or structured JSON) and metadata fields for tracking status, assignments, and predictions. Tasks are imported via the UI, API, cloud storage sync, or file upload (JSON, CSV, TSV, or plain text formats).
-
-**Annotations** are the labels applied to tasks by human annotators. Each annotation contains a `result` array with structured label data referencing the control and object tags defined in the labeling configuration. A single task can have multiple annotations from different annotators, enabling inter-annotator agreement measurement.
-
-**Predictions** are pre-annotations generated by ML models. They follow the same result format as annotations and are displayed to annotators as starting suggestions. Predictions can be imported in bulk via the API or generated on demand by a connected ML backend. When annotators accept or modify predictions, the feedback loop enables active learning.
-
-**Labeling Configuration** is an XML document that defines the annotation interface. It uses a tag-based system where control tags (Labels, Choices, Rating, TextArea) define what annotations can be created, and object tags (Text, Image, Audio, Video) define what data is displayed. The `name` attribute on control tags and `toName` attribute linking them to object tags establish the relationship between annotation controls and data objects.
-
-**Data Manager** is the tabular interface for browsing, filtering, sorting, and managing tasks within a project. It supports column customization, bulk actions (assign, delete, retrieve predictions), and saved views (tabs) for organizing workflow queues.
-
-**ML Backend** is an external web service that wraps an ML model and exposes prediction and training endpoints compatible with the Label Studio ML SDK. When connected to a project, it provides pre-annotations, interactive predictions during labeling, and model training triggered by annotation submissions.
-
-## Installation and Setup
-
-### pip Installation
-
-Label Studio requires Python 3.9 or later. Install and start with pip:
-
-``` bash
-pip install label-studio
-label-studio start
-```
-
-The server launches on `http://localhost:8080` by default. On first run, it creates a local SQLite database and prompts for account creation.
-
-### Docker
-
-Run Label Studio as a Docker container with persistent data storage:
-
-``` bash
-docker run -it -p 8080:8080 \
-  -v $(pwd)/mydata:/label-studio/data \
-  heartexlabs/label-studio:latest
-```
-
-### Docker Compose with PostgreSQL
-
-For production deployments, use Docker Compose with PostgreSQL and Redis:
-
-``` yaml
-version: "3.8"
-services:
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      - ./mydata:/label-studio/data:rw
-
-  app:
-    image: heartexlabs/label-studio:latest
-    expose:
-      - "8080"
-    environment:
-      - DJANGO_DB=default
-      - POSTGRE_NAME=postgres
-      - POSTGRE_USER=postgres
-      - POSTGRE_PASSWORD=postgres
-      - POSTGRE_HOST=db
-      - POSTGRE_PORT=5432
-    volumes:
-      - ./mydata:/label-studio/data:rw
-    depends_on:
-      - db
-      - redis
-
-  db:
-    image: postgres:13
-    environment:
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres
-      - POSTGRES_USER=postgres
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  redis:
-    image: redis:7-alpine
-    ports:
-      - "6379:6379"
-    volumes:
-      - redis_data:/data
-
-volumes:
-  postgres_data:
-  redis_data:
-```
-
-``` bash
-docker-compose up -d
-```
-
-### Kubernetes
-
-Label Studio can be deployed on Kubernetes using Helm charts with ingress controller configuration. Consult the official Helm chart repository for production-grade manifests with PostgreSQL, Redis, and persistent volume claims.
-
-### Homebrew (macOS)
-
-``` bash
-brew install humansignal/tap/label-studio
-label-studio start
-```
-
-### System Requirements
-
-- Python 3.9 or later
-- RAM: 8 GB minimum, 16 GB recommended
-- Disk: 50 GB for production instances
-- Database: PostgreSQL 13+ (recommended for production) or SQLite 3.35+ (development only)
-- Browser: latest Google Chrome
-
-### Initial Setup Workflow
-
-1.  Start Label Studio and create an account
-2.  Create a new project and provide a name and description
-3.  Configure the labeling interface using a template or custom XML
-4.  Import data (upload files, connect cloud storage, or use the API)
-5.  Distribute tasks to annotators and begin labeling
-6.  Export annotations in the desired format
-
-## Architecture
-
-Label Studio follows a client-server architecture with four principal components:
-
-**Django Application Server** handles HTTP requests, manages the database Object-Relational Mapping (ORM), processes authentication and authorization, and exposes the RESTful API. The server uses Django REST Framework for API endpoints and supports both SQLite (development) and PostgreSQL (production) as database backends.
-
-**React Frontend** renders the Data Manager, project settings, and administrative interfaces. The labeling interface is a separate React component (Label Studio Frontend) that interprets the XML labeling configuration and renders the corresponding annotation controls. MobX-State-Tree manages frontend state, providing a structured approach to handling annotation data, undo/redo operations, and UI state transitions.
-
-**ML Backend Service** is an optional external component that communicates with Label Studio via HTTP. The ML backend SDK provides a base class that wraps any Python ML model into a Flask-based web server exposing `/predict`, `/setup`, and `/train` endpoints. Multiple ML backends can be connected to a single project.
-
-**Cloud Storage Connectors** handle bidirectional data synchronization. Source storage connectors import task data from Amazon Web Services (AWS) S3, Google Cloud Storage (GCS), Microsoft Azure Blob Storage, Redis, or local file systems. Target storage connectors export completed annotations back to cloud storage. Data accessed from cloud storage uses presigned URLs by default, keeping media files isolated from the Label Studio network. A proxy mode is available to route all data through the Label Studio server for network-restricted environments.
-
-The system uses a task-centric data model where projects contain tasks, tasks contain annotations and predictions, and annotations contain structured result arrays. All annotation coordinates use percentage-based values rather than absolute pixels, ensuring format-agnostic compatibility across different display sizes and export formats.
-
-## Key Features and Functionality
-
-**Multi-Type Data Annotation** supports labeling across text, images, audio, video, HTML, time series, and multi-modal combinations within a single project. Each data type has dedicated object tags (Text, Image, Audio, Video, TimeSeries, HyperText) with type-specific rendering and interaction patterns.
-
-**Configurable Labeling Interface** uses XML templates with control tags and object tags that compose into custom annotation workflows. Control tags include Labels (span/region labeling), Choices (classification), TextArea (free-text input), Rating (numerical scoring), RectangleLabels (bounding boxes), PolygonLabels (polygon segmentation), BrushLabels (pixel-level masks), and KeyPointLabels (landmark annotation). Over 50 built-in templates cover common annotation tasks.
-
-**ML Backend Integration** connects external ML models for three workflows: batch pre-annotation (generating predictions for all tasks), interactive annotation (real-time predictions as annotators draw regions or select text), and model training (triggered manually or via API after annotation submissions). The ML backend SDK ships with 16+ example models including Meta Segment Anything Model (SAM), GroundingDINO, OpenAI, spaCy, Flair, HuggingFace Transformers, Bidirectional Encoder Representations from Transformers (BERT), Tesseract Optical Character Recognition (OCR), and NVIDIA NeMo Automatic Speech Recognition (ASR).
-
-**Active Learning** prioritizes tasks for annotation based on model uncertainty. When an ML backend is connected, predictions include confidence scores that the Data Manager can use to sort tasks by uncertainty, directing annotators to the most informative samples first. This iterative loop of predict-label-retrain accelerates model convergence while reducing total annotation effort.
-
-**Cloud Storage Integration** supports AWS S3, Google Cloud Storage, Azure Blob Storage, Redis, and local file systems as both source (import) and target (export) storage. Source storage requires LIST and GET permissions; target storage requires PUT permissions. Data syncs can import tasks from JSON, JSONL, or Parquet files, or automatically construct tasks from individual media files in a bucket.
-
-**Data Manager** provides a tabular task browser with column customization, filtering, sorting, bulk actions, and saved views. Annotators can filter by completion status, prediction score, or custom metadata fields. Bulk operations include task deletion, annotator assignment, and batch prediction retrieval.
-
-**Export Formats** include JSON (full Label Studio format), JSON-MIN (minimal format), CSV, TSV, COCO (object detection and segmentation), YOLO (YOLOv3/v4 bounding boxes), Pascal VOC XML, CoNLL2003 (Named Entity Recognition (NER)), ASR_MANIFEST (NVIDIA NeMo compatible), Brush Labels (NumPy arrays and PNG masks), and spaCy (via CoNLL2003 conversion).
-
-**Webhooks** notify external systems when events occur: task created, task deleted, annotation created, annotation updated, annotation deleted, project created, project updated, and project deleted. Webhook payloads include the affected entity data and can be configured with custom headers for authentication.
-
-**PDF and OCR Interface** provides a specialized annotation mode for document AI workflows, enabling text extraction, bounding box annotation, and classification on scanned documents and PDF files.
-
-## Use Cases
-
-- **Natural Language Processing (NLP)**: Named entity recognition, text classification, sentiment analysis, relation extraction, question answering, and document summarization annotation
-- **Computer Vision**: Object detection with bounding boxes, image segmentation with polygons and masks, image classification, keypoint annotation for pose estimation, and Optical Character Recognition (OCR) ground truth creation
-- **Audio and Speech**: Speech transcription, speaker diarization, audio event detection, and music segmentation
-- **Video**: Temporal action recognition, object tracking across frames, and video classification
-- **Document AI**: PDF annotation, form field extraction, table recognition, and invoice processing ground truth
-- **Multi-Modal**: Combining text, image, and metadata annotation in a single interface for tasks such as visual question answering or content moderation
-- **Active Learning Pipelines**: Iterative model improvement by connecting ML backends, generating predictions, having annotators correct errors, retraining, and repeating until quality targets are met
-- **Quality Assurance**: Multi-annotator workflows for measuring inter-annotator agreement and identifying annotation inconsistencies
-
-## API Reference Summary
-
-Label Studio exposes a RESTful API at `/api/` with token-based authentication. The official Python SDK (`label-studio-sdk`) wraps all endpoints.
-
-**Authentication**: All API requests require an `Authorization: Token <api_key>` header. API keys are generated per user in the Account & Settings page.
-
-**Projects API**:
-
-``` bash
-# List all projects
-curl -H "Authorization: Token <api_key>" \
-  http://localhost:8080/api/projects/
-
-# Create a project
-curl -X POST http://localhost:8080/api/projects/ \
-  -H "Authorization: Token <api_key>" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "NER Project",
-    "label_config": "<View><Labels name=\"label\" toName=\"text\"><Label value=\"PER\"/><Label value=\"ORG\"/><Label value=\"LOC\"/></Labels><Text name=\"text\" value=\"$text\"/></View>"
-  }'
-```
-
-**Tasks API**:
-
-``` bash
-# Create a task
-curl -X POST http://localhost:8080/api/tasks/ \
-  -H "Authorization: Token <api_key>" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "data": {"text": "Barack Obama visited Berlin."},
-    "project": 1
-  }'
-```
-
-**Import Tasks** (bulk):
-
-``` python
-from label_studio_sdk import LabelStudio
-
-client = LabelStudio(api_key="YOUR_API_KEY")
-client.projects.import_tasks(
-    id=1,
-    request=[
-        {"data": {"text": "First task text."}},
-        {"data": {"text": "Second task text."}},
-    ],
-)
-```
-
-**Import Predictions**:
-
-``` python
-from label_studio_sdk import LabelStudio, PredictionRequest
-
-client = LabelStudio(api_key="YOUR_API_KEY")
-client.projects.import_predictions(
-    id=1,
-    request=[
-        PredictionRequest(
-            result=[{
-                "from_name": "label",
-                "to_name": "text",
-                "type": "labels",
-                "value": {
-                    "start": 0,
-                    "end": 12,
-                    "text": "Barack Obama",
-                    "labels": ["PER"],
-                },
-            }],
-            task=1,
-        )
-    ],
-)
-```
-
-**Export Annotations**:
-
-``` bash
-# Export all annotations in JSON format
-curl -H "Authorization: Token <api_key>" \
-  "http://localhost:8080/api/projects/1/export?exportType=JSON"
-
-# Export in COCO format
-curl -H "Authorization: Token <api_key>" \
-  "http://localhost:8080/api/projects/1/export?exportType=COCO"
-```
-
-**CLI Export**:
-
-``` bash
-label-studio export 1 JSON --export-path=./annotations.json
-label-studio export 1 COCO --export-path=./coco_output/
-```
-
-**ML Backend API**:
-
-``` bash
-# Connect ML backend to project
-curl -X POST http://localhost:8080/api/ml/ \
-  -H "Authorization: Token <api_key>" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "project": 1,
-    "title": "NER Model",
-    "url": "http://localhost:9090"
-  }'
-
-# Trigger training
-curl -X POST http://localhost:8080/api/ml/1/train \
-  -H "Authorization: Token <api_key>"
-```
-
-**Python SDK -- Full Workflow**:
-
-``` python
-from label_studio_sdk import Client
-
-ls = Client(url="http://localhost:8080", api_key="<your-token>")
-
-# Create project
-project = ls.create_project(
-    title="Sentiment Analysis",
-    label_config="""
-    <View>
-      <Text name="text" value="$review"/>
-      <Choices name="sentiment" toName="text" choice="single">
-        <Choice value="Positive"/>
-        <Choice value="Negative"/>
-        <Choice value="Neutral"/>
-      </Choices>
-    </View>
-    """,
-)
-
-# Import tasks
-project.import_tasks([
-    {"data": {"review": "This product is amazing!"}},
-    {"data": {"review": "Terrible experience, would not recommend."}},
-    {"data": {"review": "It works as expected, nothing special."}},
-])
-
-# Connect ML backend
-ml_backend = project.connect_ml_backend(
-    url="http://localhost:9090",
-    title="Sentiment Classifier",
-)
-
-# Trigger training
-ml_backend.train()
-
-# Retrieve predictions
-predictions = ml_backend.predict(tasks=[
-    {"data": {"review": "Loved the fast delivery!"}}
-])
-for pred in predictions:
-    print(f"Prediction: {pred['result']}")
-    print(f"Score: {pred.get('score', 'N/A')}")
-
-# Export annotations
-annotations = project.export_tasks(export_type="JSON")
-```
-
-## Configuration and Customization
-
-### Labeling Configuration Templates
-
-**Text Classification**:
-
-``` xml
-<View>
-  <Text name="text" value="$text"/>
-  <Choices name="topic" toName="text" choice="single">
-    <Choice value="Sports"/>
-    <Choice value="Politics"/>
-    <Choice value="Technology"/>
-    <Choice value="Entertainment"/>
-  </Choices>
-</View>
-```
-
-**Named Entity Recognition (NER)**:
-
-``` xml
-<View>
-  <Labels name="label" toName="text">
-    <Label value="PER" background="red"/>
-    <Label value="ORG" background="darkorange"/>
-    <Label value="LOC" background="orange"/>
-    <Label value="MISC" background="green"/>
-  </Labels>
-  <Text name="text" value="$text" granularity="word"/>
-</View>
-```
-
-**Image Object Detection with Bounding Boxes**:
-
-``` xml
-<View>
-  <Image name="image" value="$image"/>
-  <RectangleLabels name="label" toName="image">
-    <Label value="Car" background="blue"/>
-    <Label value="Pedestrian" background="red"/>
-    <Label value="Bicycle" background="green"/>
-  </RectangleLabels>
-</View>
-```
-
-**Image Segmentation with Polygons**:
-
-``` xml
-<View>
-  <Image name="image" value="$image"/>
-  <PolygonLabels name="label" toName="image">
-    <Label value="Building"/>
-    <Label value="Road"/>
-    <Label value="Vegetation"/>
-  </PolygonLabels>
-</View>
-```
-
-**Audio Transcription**:
-
-``` xml
-<View>
-  <Audio name="audio" value="$audio"/>
-  <TextArea name="transcription" toName="audio"
-    rows="4" editable="true" maxSubmissions="1"/>
-</View>
-```
-
-**Multi-Type Annotation (Text + Classification + Free Text)**:
-
-``` xml
-<View>
-  <Text name="text" value="$text"/>
-  <Labels name="entities" toName="text">
-    <Label value="Person"/>
-    <Label value="Organization"/>
-    <Label value="Location"/>
-  </Labels>
-  <Choices name="sentiment" toName="text" choice="single">
-    <Choice value="Positive"/>
-    <Choice value="Negative"/>
-    <Choice value="Neutral"/>
-  </Choices>
-  <TextArea name="comments" toName="text"
-    rows="2" placeholder="Additional notes..."/>
-</View>
-```
-
-### Environment Variables
-
-Key environment variables for production configuration:
-
-``` bash
-# Database
-DJANGO_DB=default
-POSTGRE_NAME=labelstudio
-POSTGRE_USER=postgres
-POSTGRE_PASSWORD=<password>
-POSTGRE_HOST=db
-POSTGRE_PORT=5432
-
-# Security
-LABEL_STUDIO_USERNAME=admin@example.com
-LABEL_STUDIO_PASSWORD=<password>
-USE_JWT_AUTH=true
-JWT_ACCESS_TOKEN_LIFETIME=3600
-JWT_REFRESH_TOKEN_LIFETIME=86400
-
-# Server
-LABEL_STUDIO_HOST=https://labeling.example.com
-LABEL_STUDIO_PORT=8080
-
-# Webhooks
-LABEL_STUDIO_ALLOW_ORGANIZATION_WEBHOOKS=true
-WEBHOOK_TIMEOUT=5
-
-# Cloud Storage
-LABEL_STUDIO_COPY_BUCKET_DATA=true
-```
-
-### Custom Tags
-
-Label Studio supports custom frontend tags for specialized annotation workflows. Custom tags extend the built-in tag vocabulary with application-specific controls and rendering logic, allowing teams to build annotation interfaces tailored to domain-specific data types or interaction patterns that are not covered by the default tag library.
-
-## Integration Patterns
-
-### ML Backend for Pre-Annotation
-
-Deploy a custom ML backend using the Label Studio ML SDK:
-
-``` bash
-git clone https://github.com/HumanSignal/label-studio-ml-backend.git
-cd label-studio-ml-backend/
-pip install -e .
-```
-
-Create a custom model by subclassing the base ML backend:
-
-``` python
-from label_studio_ml.model import LabelStudioMLBase
-
-class SentimentModel(LabelStudioMLBase):
-    def setup(self):
-        """Initialize model on startup."""
-        self.model = load_your_model()
-
-    def predict(self, tasks, **kwargs):
-        """Generate predictions for a list of tasks."""
-        predictions = []
-        for task in tasks:
-            text = task["data"]["text"]
-            label, score = self.model.classify(text)
-            predictions.append({
-                "result": [{
-                    "from_name": "sentiment",
-                    "to_name": "text",
-                    "type": "choices",
-                    "value": {"choices": [label]},
-                }],
-                "score": score,
-            })
-        return predictions
-
-    def fit(self, event, data, **kwargs):
-        """Train model on new annotations."""
-        annotations = data.get("annotation", {})
-        # Retrain logic here
-        pass
-```
-
-Start the ML backend server:
-
-``` bash
-label-studio-ml start ./sentiment_model --port 9090
-```
-
-### Cloud Storage Sync with AWS S3
-
-Configure source storage to import images from an S3 bucket and target storage to export annotations back:
-
-``` python
-from label_studio_sdk import Client
-
-ls = Client(url="http://localhost:8080", api_key="<token>")
-project = ls.get_project(id=1)
-
-# Connect source storage (import data from S3)
-project.connect_s3_import_storage(
-    bucket="my-labeling-data",
-    prefix="images/batch-001/",
-    regex_filter=".*\\.jpg",
-    aws_access_key_id="AKIA...",
-    aws_secret_access_key="...",
-    region_name="us-east-1",
-    presign=True,
-)
-
-# Connect target storage (export annotations to S3)
-project.connect_s3_export_storage(
-    bucket="my-annotation-output",
-    prefix="annotations/batch-001/",
-    aws_access_key_id="AKIA...",
-    aws_secret_access_key="...",
-    region_name="us-east-1",
-)
-```
-
-### Webhook-Driven Pipeline
-
-Configure a webhook to trigger model retraining when annotations are submitted:
-
-``` python
-import json
-from flask import Flask, request
-
-app = Flask(__name__)
-
-@app.route("/webhook", methods=["POST"])
-def handle_webhook():
-    payload = request.json
-    action = payload.get("action")
-
-    if action == "ANNOTATION_CREATED":
-        annotation = payload["annotation"]
-        task = payload["task"]
-        print(f"New annotation on task {task['id']}: {annotation['result']}")
-        # Trigger model retraining or dataset versioning
-        trigger_retraining(project_id=task["project"])
-
-    elif action == "ANNOTATION_UPDATED":
-        print(f"Annotation updated: {payload['annotation']['id']}")
-
-    return json.dumps({"status": "ok"}), 200
-
-def trigger_retraining(project_id):
-    """Call ML backend train endpoint."""
-    import requests
-    requests.post(
-        f"http://localhost:8080/api/ml/1/train",
-        headers={"Authorization": "Token <api_key>"},
-    )
-
-if __name__ == "__main__":
-    app.run(port=5000)
-```
-
-### Pre-Annotation Import via API
-
-Import predictions from an external model before annotators begin labeling:
-
-``` python
-from label_studio_sdk import LabelStudio, PredictionRequest
-
-client = LabelStudio(api_key="YOUR_API_KEY")
-
-# NER predictions
-ner_predictions = [
-    PredictionRequest(
-        task=1,
-        result=[
-            {
-                "from_name": "label",
-                "to_name": "text",
-                "type": "labels",
-                "value": {
-                    "start": 0,
-                    "end": 12,
-                    "text": "Barack Obama",
-                    "labels": ["PER"],
-                },
-            },
-            {
-                "from_name": "label",
-                "to_name": "text",
-                "type": "labels",
-                "value": {
-                    "start": 21,
-                    "end": 27,
-                    "text": "Berlin",
-                    "labels": ["LOC"],
-                },
-            },
-        ],
-        score=0.92,
-    ),
-]
-
-client.projects.import_predictions(id=1, request=ner_predictions)
-```
-
-### Continuous Integration Export
-
-Automate annotation export as part of a CI/CD pipeline:
-
-``` bash
-#!/bin/bash
-# export_annotations.sh
-PROJECT_ID=1
-API_KEY="<api_key>"
-BASE_URL="http://localhost:8080"
-OUTPUT_DIR="./datasets/$(date +%Y%m%d)"
-
-mkdir -p "$OUTPUT_DIR"
-
-# Export JSON
-curl -s -H "Authorization: Token $API_KEY" \
-  "$BASE_URL/api/projects/$PROJECT_ID/export?exportType=JSON" \
-  -o "$OUTPUT_DIR/annotations.json"
-
-# Export COCO (for object detection projects)
-curl -s -H "Authorization: Token $API_KEY" \
-  "$BASE_URL/api/projects/$PROJECT_ID/export?exportType=COCO" \
-  -o "$OUTPUT_DIR/coco_annotations.json"
-
-echo "Exported $(jq length $OUTPUT_DIR/annotations.json) annotations"
-```
-
-## Examples
-
-### End-to-End NER Pipeline
-
-``` python
-from label_studio_sdk import Client
-
-# Initialize client
-ls = Client(url="http://localhost:8080", api_key="<token>")
-
-# Create NER project
-project = ls.create_project(
-    title="News NER",
-    label_config="""
-    <View>
-      <Labels name="label" toName="text">
-        <Label value="PER" background="red"/>
-        <Label value="ORG" background="darkorange"/>
-        <Label value="LOC" background="orange"/>
-      </Labels>
-      <Text name="text" value="$text" granularity="word"/>
-    </View>
-    """,
-)
-
-# Import tasks from a list of news articles
-articles = [
-    {"data": {"text": "Apple Inc. announced a new product line in Cupertino."}},
-    {"data": {"text": "President Biden addressed the United Nations in New York."}},
-    {"data": {"text": "Tesla CEO Elon Musk visited the Berlin Gigafactory."}},
-]
-project.import_tasks(articles)
-
-# Connect an ML backend for pre-annotation
-project.connect_ml_backend(
-    url="http://localhost:9090",
-    title="spaCy NER",
-)
-
-# After annotation, export in CoNLL2003 format
-annotations = project.export_tasks(export_type="CONLL2003")
-```
-
-### Image Classification Project
-
-``` python
-from label_studio_sdk import Client
-
-ls = Client(url="http://localhost:8080", api_key="<token>")
-
-project = ls.create_project(
-    title="Animal Classification",
-    label_config="""
-    <View>
-      <Image name="image" value="$image"/>
-      <Choices name="animal" toName="image" choice="single">
-        <Choice value="Cat"/>
-        <Choice value="Dog"/>
-        <Choice value="Bird"/>
-        <Choice value="Other"/>
-      </Choices>
-    </View>
-    """,
-)
-
-# Import tasks referencing images in cloud storage
-project.import_tasks([
-    {"data": {"image": "s3://my-bucket/images/img001.jpg"}},
-    {"data": {"image": "s3://my-bucket/images/img002.jpg"}},
-    {"data": {"image": "s3://my-bucket/images/img003.jpg"}},
-])
-```
-
-### Object Detection with Bounding Boxes
-
-``` xml
-<!-- Labeling configuration -->
-<View>
-  <Image name="image" value="$image" zoom="true" zoomControl="true"/>
-  <RectangleLabels name="label" toName="image">
-    <Label value="Vehicle" background="#FF0000"/>
-    <Label value="Pedestrian" background="#00FF00"/>
-    <Label value="Traffic Sign" background="#0000FF"/>
-  </RectangleLabels>
-</View>
-```
-
-Corresponding prediction import for pre-labeling:
-
-``` python
-from label_studio_sdk import LabelStudio, PredictionRequest
-
-client = LabelStudio(api_key="YOUR_API_KEY")
-
-client.projects.import_predictions(
-    id=1,
-    request=[
-        PredictionRequest(
-            task=1,
-            result=[{
-                "from_name": "label",
-                "to_name": "image",
-                "type": "rectanglelabels",
-                "value": {
-                    "x": 10.5,       # percentage from left
-                    "y": 20.3,       # percentage from top
-                    "width": 30.0,   # percentage of image width
-                    "height": 25.0,  # percentage of image height
-                    "rotation": 0,
-                    "rectanglelabels": ["Vehicle"],
-                },
-                "original_width": 1920,
-                "original_height": 1080,
-            }],
-            score=0.87,
-        ),
-    ],
-)
-```
-
-### Audio Transcription Workflow
-
-``` xml
-<!-- Labeling configuration for speaker-aware transcription -->
-<View>
-  <Audio name="audio" value="$audio" hotkey="ctrl+enter"/>
-  <Header value="Transcription"/>
-  <TextArea name="transcription" toName="audio"
-    rows="4" editable="true" maxSubmissions="1"/>
-  <Choices name="quality" toName="audio" choice="single">
-    <Choice value="Clear"/>
-    <Choice value="Noisy"/>
-    <Choice value="Unintelligible"/>
-  </Choices>
-</View>
-```
-
-## Limitations and Considerations
-
-- **SQLite limitations in production**: The default SQLite database does not support concurrent writes and degrades under multi-user workloads. PostgreSQL is required for any production deployment with multiple simultaneous annotators.
-- **Enterprise features gated**: Role-based access control, advanced queue management, audit logging, and some ML automation features (such as out-of-the-box Large Language Model (LLM)-assisted auto-labeling and comparative LLM analysis) require the commercial Label Studio Enterprise license and are not available in the open-source edition.
-- **ML backend latency**: Interactive predictions (real-time suggestions during annotation) depend on the ML backend response time. Slow models or network latency between Label Studio and the ML service degrade the annotator experience. A one-second default webhook timeout may be insufficient for complex model inference.
-- **Cloud storage presigned URL expiration**: When using presigned URLs for cloud storage access, URLs have a limited lifetime. Long annotation sessions on a single task may encounter expired URLs, requiring a page refresh.
-- **Annotation coordinate system**: All spatial annotations (bounding boxes, polygons, keypoints) use percentage-based coordinates relative to the displayed image dimensions. Converting to absolute pixel coordinates requires the original image dimensions, which must be tracked separately or extracted from the annotation metadata.
-- **No built-in annotator agreement metrics in Community Edition**: Inter-annotator agreement calculation and consensus management are limited in the open-source version. Teams requiring formal agreement metrics need to implement custom calculation logic over exported annotations.
-- **Webhook reliability**: Webhooks have no automatic retry on delivery failure. External systems must implement their own idempotency and reconciliation logic. The default one-second timeout (configurable via `WEBHOOK_TIMEOUT`) can cause missed events for slow consumers.
-- **Frontend customization complexity**: While the XML-based labeling configuration is flexible for standard annotation types, deeply custom interfaces requiring new interaction patterns may require forking and modifying the Label Studio Frontend React component.
-
-## Changelog Highlights
-
-Label Studio is under active development with frequent releases. Key milestones in the project's evolution include the introduction of the ML backend SDK enabling plug-and-play model integration, the Data Manager overhaul providing a spreadsheet-like task management interface, cloud storage connectors for AWS S3, Google Cloud Storage, Azure Blob, and Redis, the webhook system for event-driven pipeline integration, the PDF and OCR annotation interface for document AI workflows, interactive ML predictions with smart tools (SAM, GroundingDINO) for real-time annotation assistance, support for YOLO and COCO export formats alongside the existing JSON and VOC formats, JWT-based authentication for production security hardening, and Kubernetes deployment support with Helm charts. The project transitioned from the Heartex organization to HumanSignal, reflecting the company's broader mission in human-in-the-loop AI development.
-
-## Citations
-
-- \[1\] [Label Studio Documentation - Installation Guide](https://labelstud.io/guide/install)
-- \[2\] [Label Studio Documentation - Start Your Project](https://labelstud.io/guide/)
-- \[3\] [Label Studio Documentation - Machine Learning Integration](https://labelstud.io/guide/ml)
-- \[4\] [Label Studio Documentation - Cloud Storage](https://labelstud.io/guide/storage)
-- \[5\] [Label Studio Documentation - Webhooks](https://labelstud.io/guide/webhooks)
-- \[6\] [Label Studio Documentation - Export Formats](https://labelstud.io/guide/export)
-- \[7\] [Label Studio Documentation - Labeling Configuration Tags](https://labelstud.io/tags/)
-- \[8\] [Label Studio API Reference](https://api.labelstud.io/api-reference/)
-- \[9\] [Label Studio ML Backend Repository](https://github.com/HumanSignal/label-studio-ml-backend)
-- \[10\] [Label Studio GitHub Repository](https://github.com/HumanSignal/label-studio)

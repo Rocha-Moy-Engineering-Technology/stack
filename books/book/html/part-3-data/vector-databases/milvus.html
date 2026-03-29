@@ -1,0 +1,670 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Milvus - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-3-data/vector-databases/milvus.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="milvus"><a class="header" href="#milvus">Milvus</a></h1>
+<blockquote>
+<p>Open-source cloud-native vector database for scalable similarity search and AI applications</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Milvus</td></tr>
+<tr><td>Group</td><td>Vector Databases</td></tr>
+<tr><td>Type</td><td>SDK/Infra</td></tr>
+<tr><td>Open Source</td><td>yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/milvus-io/milvus">milvus-io/milvus</a></td></tr>
+<tr><td>Stars</td><td>43127</td></tr>
+<tr><td>Docs</td><td><a href="https://milvus.io/docs">milvus.io/docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Milvus is an open-source, cloud-native vector database purpose-built for scalable similarity search and AI applications. It stores, indexes, and manages massive embedding vectors generated by deep neural networks and machine learning models. Milvus supports billions of vectors with sub-second query latency and integrates with popular AI frameworks and embedding models [1].</p>
+<p>The database is available in three deployment modes [1]:</p>
+<ul>
+<li><strong>Milvus Lite</strong>: A lightweight Python library for local development and prototyping, storing data as a local file</li>
+<li><strong>Milvus Standalone</strong>: A single-machine deployment using Docker Compose for small-to-medium datasets</li>
+<li><strong>Milvus Distributed</strong>: A horizontally scalable deployment on Kubernetes for billion-scale production workloads</li>
+</ul>
+<p>Milvus features a C++ search engine with hardware-aware optimizations (AVX512, SIMD, GPU acceleration), column-oriented storage with tiered memory management, and a stateless architecture with decoupled compute and storage. It claims 2-5x performance improvement over competing solutions on standard benchmarks [1].</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="collections-and-fields"><a class="header" href="#collections-and-fields">Collections and Fields</a></h3>
+<p>A <strong>collection</strong> is the primary data container in Milvus, analogous to a table in a relational database. Collections hold documents organized into <strong>fields</strong> (columns). Each collection must have a primary key field and at least one vector field. Collections support dynamic schemas where fields can be added without modifying the existing structure [1].</p>
+<h3 id="vector-types"><a class="header" href="#vector-types">Vector Types</a></h3>
+<p>Milvus supports multiple vector data types [1]:</p>
+<ul>
+<li><strong>Dense vectors</strong>: Standard floating-point vectors (Float32, Float16, BFloat16) for semantic similarity</li>
+<li><strong>Sparse vectors</strong>: High-dimensional vectors with mostly zero values, suited for keyword-aware and term-based search</li>
+<li><strong>Binary vectors</strong>: Bit-encoded vectors for compact storage and fast Hamming/Jaccard distance computation</li>
+</ul>
+<h3 id="index-types"><a class="header" href="#index-types">Index Types</a></h3>
+<p>Milvus provides a range of indexing algorithms optimized for different use cases [1]:</p>
+<ul>
+<li><strong>FLAT</strong>: Brute-force search with 100% recall, suited for small datasets</li>
+<li><strong>IVF_FLAT / IVF_SQ8 / IVF_PQ</strong>: Inverted file indexes with optional quantization for memory-performance tradeoffs</li>
+<li><strong>HNSW</strong>: Hierarchical Navigable Small World graph for high-recall, low-latency search</li>
+<li><strong>SCANN</strong>: Score-aware quantization for balanced performance</li>
+<li><strong>DiskANN</strong>: Disk-based index for billion-scale datasets that exceed memory capacity</li>
+<li><strong>GPU_CAGRA / GPU_IVF_FLAT / GPU_IVF_PQ / GPU_BRUTE_FORCE</strong>: GPU-accelerated indexes for maximum throughput</li>
+</ul>
+<h3 id="search-types"><a class="header" href="#search-types">Search Types</a></h3>
+<p>Milvus supports multiple search paradigms [1]:</p>
+<ul>
+<li><strong>ANN Search</strong>: Approximate nearest neighbor search on vector embeddings</li>
+<li><strong>Filtering Search</strong>: Scalar metadata filtering combined with vector similarity</li>
+<li><strong>Range Search</strong>: Find vectors within a specified distance threshold</li>
+<li><strong>Hybrid Search</strong>: Multi-vector search with weighted fusion across multiple vector fields</li>
+<li><strong>Full Text Search</strong>: BM25-based keyword search on text fields using sparse vectors</li>
+<li><strong>Reranking</strong>: Re-order results using additional scoring models</li>
+<li><strong>Query</strong>: Scalar-only retrieval using boolean filter expressions</li>
+<li><strong>Fetch</strong>: Direct retrieval by primary key</li>
+</ul>
+<h3 id="partitions-and-partition-keys"><a class="header" href="#partitions-and-partition-keys">Partitions and Partition Keys</a></h3>
+<p><strong>Partitions</strong> divide a collection into physical subsets for targeted search. <strong>Partition keys</strong> enable automatic data routing — Milvus hashes a designated scalar field to distribute entities across partitions, enabling multi-tenant isolation at the data level without manually managing partitions [1].</p>
+<h3 id="consistency-levels"><a class="header" href="#consistency-levels">Consistency Levels</a></h3>
+<p>Milvus offers four consistency levels to balance between data freshness and query performance [1]:</p>
+<ul>
+<li><strong>Strong</strong>: Reads always see the latest committed data</li>
+<li><strong>Bounded Staleness</strong>: Reads may lag by a configurable time window</li>
+<li><strong>Session</strong>: Reads within the same session see their own writes</li>
+<li><strong>Eventually</strong>: No ordering guarantees, maximum throughput</li>
+</ul>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="milvus-lite-python"><a class="header" href="#milvus-lite-python">Milvus Lite (Python)</a></h3>
+<pre><code class="language-bash">pip install -U pymilvus
+</code></pre>
+<pre><code class="language-python">from pymilvus import MilvusClient
+
+# Local file-based storage
+client = MilvusClient("milvus_demo.db")
+</code></pre>
+<p>Milvus Lite bundles the database engine as a Python library — no external services required. Suited for notebooks, prototyping, and small-scale applications (under 1 million vectors) [2].</p>
+<h3 id="milvus-standalone-docker"><a class="header" href="#milvus-standalone-docker">Milvus Standalone (Docker)</a></h3>
+<pre><code class="language-bash"># Download and run the install script
+curl -sfL https://raw.githubusercontent.com/milvus-io/milvus/master/scripts/standalone_up.sh | bash
+
+# Connect
+from pymilvus import MilvusClient
+client = MilvusClient(uri="http://localhost:19530")
+</code></pre>
+<p>Runs Milvus with all components in a single Docker container, using etcd for metadata, MinIO for object storage, and Pulsar for log streaming [2].</p>
+<h3 id="milvus-distributed-kubernetes"><a class="header" href="#milvus-distributed-kubernetes">Milvus Distributed (Kubernetes)</a></h3>
+<p>Deployed via Milvus Operator or Helm chart on Kubernetes for production-scale workloads with horizontal scaling, high availability, and rolling upgrades [1].</p>
+<h3 id="sdk-installation"><a class="header" href="#sdk-installation">SDK Installation</a></h3>
+<pre><code class="language-bash"># Python
+pip install -U "pymilvus[model]"
+
+# Node.js
+npm install @zilliz/milvus2-sdk-node
+
+# Go
+go get github.com/milvus-io/milvus-sdk-go/v2
+
+# Java
+# Maven dependency: io.milvus:milvus-sdk-java
+
+# C#
+dotnet add package Milvus.Client
+</code></pre>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Milvus Distributed uses a shared-storage disaggregated architecture with four layers [1]:</p>
+<pre><code>┌─────────────────────────────────────────────────┐
+│                 Access Layer                     │
+│  ┌───────────┐  ┌───────────┐  ┌───────────┐   │
+│  │  Proxy 1  │  │  Proxy 2  │  │  Proxy N  │   │
+│  │ (stateless│  │           │  │           │   │
+│  │  gateway) │  │           │  │           │   │
+│  └─────┬─────┘  └─────┬─────┘  └─────┬─────┘   │
+└────────┼──────────────┼──────────────┼──────────┘
+         │              │              │
+┌────────┼──────────────┼──────────────┼──────────┐
+│        v     Coordinator Layer       v           │
+│  ┌──────────┐ ┌──────────┐ ┌──────────────────┐ │
+│  │  Root     │ │  Query   │ │  Data    Index   │ │
+│  │  Coord   │ │  Coord   │ │  Coord   Coord   │ │
+│  └──────────┘ └──────────┘ └──────────────────┘ │
+└─────────────────────┬───────────────────────────┘
+                      │
+┌─────────────────────┼───────────────────────────┐
+│              Worker Layer                        │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐        │
+│  │  Query   │ │  Data    │ │  Index   │        │
+│  │  Nodes   │ │  Nodes   │ │  Nodes   │        │
+│  │ (search) │ │ (ingest) │ │ (build)  │        │
+│  └──────────┘ └──────────┘ └──────────┘        │
+└─────────────────────┬───────────────────────────┘
+                      │
+┌─────────────────────┼───────────────────────────┐
+│              Storage Layer                       │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐        │
+│  │   etcd   │ │  Object  │ │   Log    │        │
+│  │(metadata)│ │  Storage │ │  Broker  │        │
+│  │          │ │ (S3/MinIO│ │ (Pulsar/ │        │
+│  │          │ │  /GCS)   │ │  Kafka)  │        │
+│  └──────────┘ └──────────┘ └──────────┘        │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<ul>
+<li><strong>Access Layer</strong>: Stateless proxies that handle client connections, request routing, and result aggregation</li>
+<li><strong>Coordinator Layer</strong>: Manages cluster topology, load balancing, data distribution, and index building schedules</li>
+<li><strong>Worker Layer</strong>: Stateless nodes executing search (Query Nodes), ingestion (Data Nodes), and index construction (Index Nodes) — each type scales independently</li>
+<li><strong>Storage Layer</strong>: etcd for metadata, object storage (S3, MinIO, GCS, Azure Blob) for segments, and a log broker (Pulsar or Kafka) for write-ahead logging and change data capture [1]</li>
+</ul>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>Multi-Vector Search</strong>: Store and search across multiple vector fields per collection with weighted fusion (RRF, weighted scoring)</li>
+<li><strong>Hybrid Search</strong>: Combine dense vector similarity, sparse BM25 keyword search, and scalar filtering in a single query</li>
+<li><strong>GPU Acceleration</strong>: Native GPU-accelerated indexes (CAGRA, GPU_IVF) for high-throughput workloads</li>
+<li><strong>DiskANN Index</strong>: Search billion-scale datasets that exceed available memory using SSD-based indexing</li>
+<li><strong>Dynamic Schema</strong>: Add fields to collections without schema migrations or downtime</li>
+<li><strong>Multi-Tenancy</strong>: Database-level, collection-level, partition-level, and partition-key-level isolation strategies</li>
+<li><strong>Hot/Cold Storage Tiering</strong>: Automatically move less-accessed data to cheaper storage while keeping hot data in memory</li>
+<li><strong>RBAC and Authentication</strong>: Role-based access control with user authentication and TLS encryption</li>
+<li><strong>Mmap File Management</strong>: Memory-mapped file support for loading data beyond available RAM</li>
+<li><strong>Iterator Support</strong>: Cursor-based iteration over large result sets without loading all results into memory</li>
+<li><strong>Resource Groups</strong>: Isolate query workloads by assigning query nodes to dedicated resource groups</li>
+<li><strong>Clustering Compaction</strong>: Reorganize data segments by clustering key to improve scan performance</li>
+<li><strong>CDC (Change Data Capture)</strong>: Stream data changes to downstream systems for real-time synchronization</li>
+<li><strong>Backup and Restore</strong>: Native backup tool for point-in-time snapshots and cross-cluster migration</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Retrieval-Augmented Generation (RAG)</strong>: Store document embeddings and retrieve relevant context for LLM prompts with hybrid search combining semantic and keyword matching</li>
+<li><strong>Image and Video Search</strong>: Index visual embeddings for reverse image search, content-based image retrieval, and video frame matching</li>
+<li><strong>Recommendation Systems</strong>: Find similar items (products, content, users) based on embedding similarity for personalized recommendations</li>
+<li><strong>Anomaly Detection</strong>: Identify outliers by measuring vector distances from normal behavior patterns in IoT, fraud detection, and security</li>
+<li><strong>Drug Discovery</strong>: Search molecular structure embeddings to find candidate compounds similar to known effective drugs</li>
+<li><strong>Natural Language Processing (NLP)</strong>: Semantic text search, document deduplication, question answering, and text classification using sentence embeddings</li>
+<li><strong>Audio and Music Retrieval</strong>: Index audio fingerprints and embeddings for music similarity search and audio-based content matching</li>
+<li><strong>Multimodal Search</strong>: Combine text and image vectors with cross-modal retrieval using multi-vector search capabilities</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<h3 id="collection-operations"><a class="header" href="#collection-operations">Collection Operations</a></h3>
+<pre><code class="language-python">from pymilvus import MilvusClient
+
+client = MilvusClient("milvus_demo.db")
+
+# Create collection with auto-generated ID
+client.create_collection(
+    collection_name="demo_collection",
+    dimension=768,
+)
+
+# List collections
+collections = client.list_collections()
+
+# Drop collection
+client.drop_collection(collection_name="demo_collection")
+</code></pre>
+<h3 id="insert-data"><a class="header" href="#insert-data">Insert Data</a></h3>
+<pre><code class="language-python">data = [
+    {"id": 0, "vector": [0.1, 0.2, ...], "text": "Document text", "subject": "science"},
+    {"id": 1, "vector": [0.3, 0.4, ...], "text": "Another doc", "subject": "history"},
+]
+
+result = client.insert(collection_name="demo_collection", data=data)
+</code></pre>
+<h3 id="vector-search"><a class="header" href="#vector-search">Vector Search</a></h3>
+<pre><code class="language-python"># Basic ANN search
+results = client.search(
+    collection_name="demo_collection",
+    data=[query_vector],
+    limit=5,
+    output_fields=["text", "subject"],
+)
+
+# Filtered search
+results = client.search(
+    collection_name="demo_collection",
+    data=[query_vector],
+    limit=5,
+    filter='subject == "science"',
+    output_fields=["text", "subject"],
+)
+</code></pre>
+<h3 id="query-scalar-filtering"><a class="header" href="#query-scalar-filtering">Query (Scalar Filtering)</a></h3>
+<pre><code class="language-python"># Filter by metadata
+results = client.query(
+    collection_name="demo_collection",
+    filter='subject == "history"',
+    output_fields=["text", "subject"],
+)
+
+# Fetch by ID
+results = client.get(
+    collection_name="demo_collection",
+    ids=[0, 1, 2],
+)
+</code></pre>
+<h3 id="delete"><a class="header" href="#delete">Delete</a></h3>
+<pre><code class="language-python"># Delete by ID
+client.delete(collection_name="demo_collection", ids=[0, 1, 2])
+
+# Delete by filter
+client.delete(collection_name="demo_collection", filter='subject == "history"')
+</code></pre>
+<h3 id="embedding-integration"><a class="header" href="#embedding-integration">Embedding Integration</a></h3>
+<pre><code class="language-python">from pymilvus import model
+
+# Use built-in embedding function
+embedding_fn = model.DefaultEmbeddingFunction()  # paraphrase-albert-small-v2
+
+docs = ["Document one", "Document two"]
+vectors = embedding_fn.encode_documents(docs)
+query_vectors = embedding_fn.encode_queries(["search query"])
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="connection-configuration"><a class="header" href="#connection-configuration">Connection Configuration</a></h3>
+<pre><code class="language-python"># Milvus Lite (local file)
+client = MilvusClient("./milvus.db")
+
+# Milvus Standalone (Docker)
+client = MilvusClient(
+    uri="http://localhost:19530",
+    token="root:Milvus",
+)
+
+# Zilliz Cloud (managed)
+client = MilvusClient(
+    uri="https://your-instance.zillizcloud.com",
+    token="your-api-key",
+)
+</code></pre>
+<h3 id="collection-schema-configuration"><a class="header" href="#collection-schema-configuration">Collection Schema Configuration</a></h3>
+<pre><code class="language-python">from pymilvus import CollectionSchema, FieldSchema, DataType
+
+fields = [
+    FieldSchema(name="id", dtype=DataType.INT64, is_primary=True, auto_id=True),
+    FieldSchema(name="embedding", dtype=DataType.FLOAT_VECTOR, dim=768),
+    FieldSchema(name="text", dtype=DataType.VARCHAR, max_length=65535),
+    FieldSchema(name="category", dtype=DataType.VARCHAR, max_length=256),
+]
+
+schema = CollectionSchema(fields=fields, enable_dynamic_field=True)
+</code></pre>
+<h3 id="index-configuration"><a class="header" href="#index-configuration">Index Configuration</a></h3>
+<pre><code class="language-python">index_params = client.prepare_index_params()
+
+index_params.add_index(
+    field_name="embedding",
+    index_type="HNSW",
+    metric_type="COSINE",
+    params={"M": 16, "efConstruction": 256},
+)
+
+client.create_index(
+    collection_name="demo_collection",
+    index_params=index_params,
+)
+</code></pre>
+<h3 id="server-configuration"><a class="header" href="#server-configuration">Server Configuration</a></h3>
+<p>Key <code>milvus.yaml</code> parameters for standalone and distributed deployments:</p>
+<ul>
+<li><code>etcd.endpoints</code>: Metadata store connection</li>
+<li><code>minio.address</code>, <code>minio.bucketName</code>: Object storage configuration</li>
+<li><code>common.security.authorizationEnabled</code>: Enable RBAC authentication</li>
+<li><code>common.security.tlsMode</code>: TLS encryption (0=disabled, 1=server-only, 2=mutual)</li>
+<li><code>queryNode.gracefulTime</code>: Query node staleness tolerance in milliseconds</li>
+<li><code>dataCoord.segment.maxSize</code>: Maximum segment size in MB [1]</li>
+</ul>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="langchain-integration"><a class="header" href="#langchain-integration">LangChain Integration</a></h3>
+<p>Milvus provides a native LangChain vector store integration for building RAG pipelines. Documents are embedded, stored in Milvus collections, and retrieved via similarity search during LLM prompt construction [3].</p>
+<h3 id="llamaindex-integration"><a class="header" href="#llamaindex-integration">LlamaIndex Integration</a></h3>
+<p>LlamaIndex supports Milvus as a vector store backend for document indexing and retrieval in RAG applications [3].</p>
+<h3 id="embedding-model-support"><a class="header" href="#embedding-model-support">Embedding Model Support</a></h3>
+<p>Milvus integrates with embedding providers through PyMilvus model utilities [1]:</p>
+<ul>
+<li>OpenAI (text-embedding-3-small/large)</li>
+<li>Sentence Transformers (local models)</li>
+<li>BGE (BAAI embedding models)</li>
+<li>Cohere, Voyage AI, Jina AI</li>
+<li>Built-in default model (paraphrase-albert-small-v2)</li>
+</ul>
+<h3 id="spark-connector"><a class="header" href="#spark-connector">Spark Connector</a></h3>
+<p>The Milvus Spark Connector enables batch ingestion from Apache Spark DataFrames into Milvus collections for ETL pipelines and large-scale data processing [1].</p>
+<h3 id="tools-ecosystem"><a class="header" href="#tools-ecosystem">Tools Ecosystem</a></h3>
+<ul>
+<li><strong>Attu</strong>: Web-based GUI for collection management, data visualization, and query exploration</li>
+<li><strong>Birdwatcher</strong>: CLI debugging tool for inspecting Milvus cluster state and diagnostics</li>
+<li><strong>Milvus Backup</strong>: Backup and restore tool for data migration and disaster recovery</li>
+<li><strong>Milvus CDC</strong>: Change data capture for real-time data synchronization to downstream systems</li>
+<li><strong>VTS (Vector Transport Service)</strong>: Cross-database migration tool [1]</li>
+</ul>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="rag-pipeline-with-pymilvus"><a class="header" href="#rag-pipeline-with-pymilvus">RAG Pipeline with PyMilvus</a></h3>
+<pre><code class="language-python">from pymilvus import MilvusClient, model
+
+# Initialize
+client = MilvusClient("rag_demo.db")
+embedding_fn = model.DefaultEmbeddingFunction()
+
+# Prepare documents
+docs = [
+    "Machine learning is a subset of artificial intelligence.",
+    "Neural networks are inspired by biological neurons.",
+    "Deep learning uses multiple layers of neural networks.",
+]
+vectors = embedding_fn.encode_documents(docs)
+
+# Create collection and insert
+client.create_collection(collection_name="rag_docs", dimension=768)
+data = [
+    {"id": i, "vector": vectors[i], "text": docs[i]}
+    for i in range(len(docs))
+]
+client.insert(collection_name="rag_docs", data=data)
+
+# Search for relevant context
+query = "What is deep learning?"
+query_vectors = embedding_fn.encode_queries([query])
+results = client.search(
+    collection_name="rag_docs",
+    data=query_vectors,
+    limit=2,
+    output_fields=["text"],
+)
+
+# Use results as LLM context
+context = "\n".join([hit["entity"]["text"] for hit in results[0]])
+</code></pre>
+<h3 id="multi-tenant-collection-with-partition-keys"><a class="header" href="#multi-tenant-collection-with-partition-keys">Multi-Tenant Collection with Partition Keys</a></h3>
+<pre><code class="language-python">from pymilvus import MilvusClient, CollectionSchema, FieldSchema, DataType
+
+client = MilvusClient("multi_tenant.db")
+
+schema = CollectionSchema(fields=[
+    FieldSchema("id", DataType.INT64, is_primary=True, auto_id=True),
+    FieldSchema("tenant_id", DataType.VARCHAR, max_length=64, is_partition_key=True),
+    FieldSchema("embedding", DataType.FLOAT_VECTOR, dim=128),
+    FieldSchema("content", DataType.VARCHAR, max_length=65535),
+])
+
+client.create_collection(
+    collection_name="multi_tenant_docs",
+    schema=schema,
+    num_partitions=64,
+)
+
+# Insert tenant-specific data
+client.insert("multi_tenant_docs", [
+    {"tenant_id": "tenant_A", "embedding": [...], "content": "Tenant A doc"},
+    {"tenant_id": "tenant_B", "embedding": [...], "content": "Tenant B doc"},
+])
+
+# Search scoped to a single tenant
+results = client.search(
+    collection_name="multi_tenant_docs",
+    data=[query_vector],
+    filter='tenant_id == "tenant_A"',
+    limit=10,
+)
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>Memory requirements</strong>: In-memory indexes (HNSW, IVF) require significant RAM for large datasets; DiskANN or mmap must be configured for datasets exceeding available memory</li>
+<li><strong>Standalone scaling ceiling</strong>: Milvus Standalone runs on a single machine and cannot scale horizontally; migration to Distributed mode requires re-deployment</li>
+<li><strong>Milvus Lite constraints</strong>: Limited to Python, runs in-process, not suited for production or multi-client access; maximum recommended scale is approximately 1 million vectors [2]</li>
+<li><strong>Eventual consistency default</strong>: Default consistency level is Bounded Staleness, meaning recently inserted data may not be immediately visible in search results</li>
+<li><strong>No native transaction support</strong>: Milvus does not support multi-document ACID transactions</li>
+<li><strong>Complex deployment</strong>: Milvus Distributed requires Kubernetes, etcd, object storage, and a log broker (Pulsar or Kafka), increasing operational complexity</li>
+<li><strong>Delete performance</strong>: Deletion marks entities as deleted but does not immediately reclaim storage; space is reclaimed during compaction</li>
+<li><strong>Dynamic schema overhead</strong>: While dynamic fields are flexible, they incur additional storage and query overhead compared to statically defined schemas</li>
+<li><strong>Index build time</strong>: Large-scale index construction (especially GPU indexes) can take significant time and compute resources</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<ul>
+<li><strong>v2.6.x</strong> (June 2025): Latest stable release series with GPU CAGRA index, clustering compaction, hot/cold storage tiering, and enhanced hybrid search</li>
+<li><strong>v2.5.x</strong>: Added full text search (BM25), text match filtering, and improved multi-vector search support</li>
+<li><strong>v2.4.x</strong>: Added sparse vector support, multi-vector search, GPU index improvements</li>
+<li><strong>v2.3.x</strong>: Added iterator support, range search, and upsert operations</li>
+<li><strong>Milvus Lite</strong>: Introduced as lightweight Python-embedded deployment mode</li>
+<li><strong>CDC</strong>: Added Change Data Capture for real-time data synchronization</li>
+<li><strong>Milvus Backup</strong>: Native backup and restore tooling [1]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] What is Milvus - https://milvus.io/docs/overview.md</li>
+<li>[2] Quickstart - https://milvus.io/docs/quickstart.md</li>
+<li>[3] Integrations - https://milvus.io/docs/integrations_overview.md</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-3-data/vector-databases/qdrant.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-3-data/data-pipelines/unstructured.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-3-data/vector-databases/qdrant.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-3-data/data-pipelines/unstructured.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

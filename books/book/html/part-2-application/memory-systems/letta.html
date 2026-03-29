@@ -1,0 +1,663 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Letta - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-2-application/memory-systems/letta.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="letta"><a class="header" href="#letta">Letta</a></h1>
+<blockquote>
+<p>Platform for building stateful agents with persistent memory that learn and self-improve over time</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Letta</td></tr>
+<tr><td>Group</td><td>Memory Systems</td></tr>
+<tr><td>Type</td><td>API/SDK</td></tr>
+<tr><td>Open Source</td><td>yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/letta-ai/letta">letta-ai/letta</a></td></tr>
+<tr><td>Stars</td><td>21392</td></tr>
+<tr><td>Docs</td><td><a href="https://docs.letta.com/">docs.letta.com</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Letta is a platform for building <strong>stateful agents</strong> that remember, learn, and improve over time. Unlike traditional Large Language Model (LLM) applications that treat each interaction as isolated, Letta agents maintain persistent knowledge across all interactions, forming living memories about themselves, the world they operate in, and the users they interact with.</p>
+<p>The platform provides a complete infrastructure for managing agent state, including structured memory blocks, archival storage with semantic search, tool execution, multi-agent coordination through shared memory, and background memory processing via sleep-time agents. Letta is available as a hosted API service, a self-hosted Docker server, and as Letta Code — a memory-first coding agent for the terminal [1].</p>
+<p>Letta originated from the MemGPT research project, which pioneered the concept of using operating system-inspired memory management techniques (virtual memory, paging) to enable LLMs to manage their own context windows effectively.</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="stateful-agents"><a class="header" href="#stateful-agents">Stateful Agents</a></h3>
+<p>A stateful agent in Letta manages growing knowledge while maintaining consistent behavior and incorporating new experiences. The system stores all state — memories, user messages, reasoning traces, and tool calls — in a database, ensuring information survives context window limitations. Critical memories are injected into the LLM’s active context, while the agent can self-modify its memories through dedicated memory tools [2].</p>
+<h3 id="memory-blocks"><a class="header" href="#memory-blocks">Memory Blocks</a></h3>
+<p>Memory blocks are structured sections of the agent’s context window that persist across all interactions. They are prepended to prompts in XML-like formatting, making them immediately visible to the LLM without requiring retrieval. Each block has four components [3]:</p>
+<ul>
+<li><strong>Label</strong>: Unique identifier (e.g., <code>persona</code>, <code>human</code>, <code>organization</code>)</li>
+<li><strong>Description</strong>: Explains the block’s purpose — the primary signal agents use to decide how to read and write to a block</li>
+<li><strong>Value</strong>: The actual content stored in the block</li>
+<li><strong>Limit</strong>: Character size restriction</li>
+</ul>
+<p>Agents autonomously organize information within blocks based on their labels and descriptions. Blocks can be configured as read-only to prevent agent modification while maintaining visibility. The recommended maximum size is under 50,000 characters per block [5].</p>
+<h3 id="archival-memory"><a class="header" href="#archival-memory">Archival Memory</a></h3>
+<p>Archival memory is a semantically searchable database where agents store facts, knowledge, and information for long-term retrieval. Unlike memory blocks (which are always in-context), archival memory entries exist outside the context window and require active querying through tools [4]:</p>
+<ul>
+<li><code>archival_memory_insert</code>: Store new information with optional tags for categorization</li>
+<li><code>archival_memory_search</code>: Query memories semantically (e.g., searching “artificial memories” returns results about “implanted memories”)</li>
+</ul>
+<p>Archival memory is agent-immutable by design — agents cannot easily modify or delete entries, though developers retain full control via SDK. It scales to practically unlimited capacity and supports tag-based organization [4].</p>
+<h3 id="context-hierarchy"><a class="header" href="#context-hierarchy">Context Hierarchy</a></h3>
+<p>Letta provides four tiers of context abstractions, with placement strategy based on data scale [5]:</p>
+<ul>
+<li><strong>Memory Blocks</strong>: In-context, editable, for critical information under ~50k characters. Tools: <code>memory_rethink</code>, <code>memory_replace</code>, <code>memory_insert</code></li>
+<li><strong>Files</strong>: Partially in-context (openable/closable), read-only, up to 5MB per file. Tools: <code>open</code>, <code>close</code>, <code>semantic_search</code>, <code>grep</code></li>
+<li><strong>Archival Memory</strong>: Out-of-context, read-write, 300-token passages. Tools: <code>archival_memory_insert</code>, <code>archival_memory_search</code></li>
+<li><strong>External RAG</strong>: Out-of-context, unlimited scale, accessed via custom tools or Model Context Protocol (MCP)</li>
+</ul>
+<h3 id="shared-memory"><a class="header" href="#shared-memory">Shared Memory</a></h3>
+<p>Shared memory blocks enable multiple agents to access and modify the same memory simultaneously. When one agent updates a shared block, all connected agents see the change immediately, enabling real-time coordination without explicit agent-to-agent messaging [6].</p>
+<p>Concurrency safety varies by operation:</p>
+<ul>
+<li><code>memory_insert</code> (appending): concurrent-safe</li>
+<li><code>memory_replace</code> (targeted edits): mostly safe</li>
+<li><code>memory_rethink</code> (complete rewrites): unsafe (last-writer-wins)</li>
+</ul>
+<p>Best practice is to designate one agent as the “owner” for major edits, with other agents using append-only operations.</p>
+<h3 id="runs-steps-and-conversations"><a class="header" href="#runs-steps-and-conversations">Runs, Steps, and Conversations</a></h3>
+<p>Agent invocations are structured as <strong>runs</strong>, where a single run may contain sequential <strong>steps</strong> performing multiple LLM inference passes. <strong>Conversations</strong> enable concurrent messaging threads using the same agent with different users [2].</p>
+<h3 id="agentfile-af"><a class="header" href="#agentfile-af">AgentFile (.af)</a></h3>
+<p>AgentFile is an open standard file format for serializing stateful agents into a single portable file. It packages model configuration, message history, system prompt, memory blocks, tool rules, environment variables, and tool definitions. Agents can be exported and imported via the SDK, REST API, or the Agent Development Environment (ADE) [8].</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="letta-api-hosted"><a class="header" href="#letta-api-hosted">Letta API (Hosted)</a></h3>
+<p>Set up your API key and install the SDK:</p>
+<pre><code class="language-bash">export LETTA_API_KEY='your-api-key-here'
+
+# Python
+pip install letta-client
+
+# TypeScript
+npm install @letta-ai/letta-client
+</code></pre>
+<p>API keys are obtained from <a href="https://app.letta.com/api-keys">app.letta.com/api-keys</a> [9].</p>
+<h3 id="letta-code-terminal-agent"><a class="header" href="#letta-code-terminal-agent">Letta Code (Terminal Agent)</a></h3>
+<pre><code class="language-bash">npm install -g @letta-ai/letta-code
+</code></pre>
+<p>Requires Node.js 18+ [1].</p>
+<h3 id="docker-self-hosted"><a class="header" href="#docker-self-hosted">Docker (Self-Hosted)</a></h3>
+<pre><code class="language-bash">docker run \
+  -v ~/.letta/.persist/pgdata:/var/lib/postgresql/data \
+  -p 8283:8283 \
+  -e OPENAI_API_KEY="your_openai_api_key" \
+  letta/letta:latest
+</code></pre>
+<p>The server runs on port 8283 at <code>http://localhost:8283/v1</code>. Use <code>--env-file .env</code> for multiple provider keys. Linux users should use <code>--network host</code> instead of port mapping [7].</p>
+<p>For production deployments, enable authentication:</p>
+<pre><code class="language-bash">docker run \
+  -v ~/.letta/.persist/pgdata:/var/lib/postgresql/data \
+  -p 8283:8283 \
+  --env-file .env \
+  -e SECURE=true \
+  -e LETTA_SERVER_PASSWORD=yourpassword \
+  letta/letta:latest
+</code></pre>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Letta’s architecture centers on persistent state management for agents:</p>
+<pre><code>┌──────────────────────────────────────────┐
+│              Letta Platform              │
+│                                          │
+│  ┌─────────────────────────────────┐     │
+│  │           Agent                 │     │
+│  │  ┌───────────┐ ┌────────────┐  │     │
+│  │  │  System   │ │  Memory    │  │     │
+│  │  │  Prompt   │ │  Blocks    │  │     │
+│  │  └───────────┘ └────────────┘  │     │
+│  │  ┌───────────┐ ┌────────────┐  │     │
+│  │  │ Messages  │ │   Tools    │  │     │
+│  │  └───────────┘ └────────────┘  │     │
+│  └─────────────────────────────────┘     │
+│                                          │
+│  ┌──────────┐ ┌──────────┐ ┌─────────┐  │
+│  │ Archival │ │  Files   │ │ External│  │
+│  │ Memory   │ │          │ │   RAG   │  │
+│  │ (Vector) │ │ (Search) │ │  (MCP)  │  │
+│  └──────────┘ └──────────┘ └─────────┘  │
+│                                          │
+│  ┌──────────────────────────────────┐    │
+│  │     PostgreSQL + pgvector        │    │
+│  └──────────────────────────────────┘    │
+└──────────────────────────────────────────┘
+</code></pre>
+<p>All agent state is stored in PostgreSQL with the pgvector extension for semantic search. The system manages the context window by placing memory blocks directly in-context and providing tools for agents to access out-of-context data stores. This approach allows agents to effectively manage unbounded knowledge using a finite context window [2][7].</p>
+<h3 id="sleep-time-agents"><a class="header" href="#sleep-time-agents">Sleep-Time Agents</a></h3>
+<p>Sleep-time agents are an experimental multi-agent architecture where background agents asynchronously process and consolidate memories. When enabled, the system creates a primary (interactive) agent and a sleep-time agent that shares memory blocks. The sleep-time agent triggers every N steps (default: 5) to reflect on conversation history and derive important insights, writing “learned context” back to shared memory blocks [10].</p>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>Persistent Memory</strong>: All agent state (memories, messages, reasoning, tool calls) stored in a database and survives across sessions</li>
+<li><strong>Self-Modifying Memory</strong>: Agents autonomously read, write, and reorganize their own memory blocks using built-in memory tools</li>
+<li><strong>Shared Memory Blocks</strong>: Multiple agents access and modify the same memory in real-time for coordination without explicit messaging</li>
+<li><strong>Archival Memory</strong>: Semantically searchable long-term storage with tag-based organization and unlimited capacity</li>
+<li><strong>Context Hierarchy</strong>: Four-tier system (blocks, files, archival, external RAG) for managing data at different scales</li>
+<li><strong>Sleep-Time Compute</strong>: Background agents asynchronously consolidate and refine memories between interactions</li>
+<li><strong>Multi-Provider Models</strong>: Support for OpenAI, Anthropic, Google AI, Azure, AWS Bedrock, OpenRouter, and Ollama with hot-swappable models</li>
+<li><strong>Tool Ecosystem</strong>: Built-in tools (web search, code interpreter, fetch), custom server tools, MCP tools, and client-side tools</li>
+<li><strong>AgentFile (.af)</strong>: Open standard format for serializing and sharing complete stateful agents</li>
+<li><strong>Agent Development Environment (ADE)</strong>: Web-based interface for building, testing, and managing agents</li>
+<li><strong>Bring Your Own Keys (BYOK)</strong>: Direct billing through your own API provider accounts</li>
+<li><strong>Role-Based Access Control (RBAC)</strong>: Granular permissions for production deployments</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Personal AI Assistants</strong>: Agents that build deep user profiles over thousands of interactions, remembering preferences, relationships, and conversation history</li>
+<li><strong>Customer Support</strong>: Agents that accumulate institutional knowledge, track customer histories, and improve responses based on past resolutions</li>
+<li><strong>Coding Agents</strong>: Letta Code provides a memory-first coding agent that remembers your codebase, patterns, and preferences across sessions</li>
+<li><strong>Multi-Agent Coordination</strong>: Supervisor/worker patterns where supervisors write tasks to shared memory and workers read and update status</li>
+<li><strong>Research Assistants</strong>: Agents maintaining academic literature repositories with semantic cross-referencing in archival memory</li>
+<li><strong>Social Media Agents</strong>: Agents tracking tens of thousands of user interactions with persistent memory</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<h3 id="client-initialization"><a class="header" href="#client-initialization">Client Initialization</a></h3>
+<pre><code class="language-python">from letta_client import Letta
+
+# Hosted API
+client = Letta(api_key="your-api-key")
+
+# Self-hosted Docker
+client = Letta(base_url="http://localhost:8283")
+</code></pre>
+<h3 id="agent-operations"><a class="header" href="#agent-operations">Agent Operations</a></h3>
+<pre><code class="language-python"># Create agent with memory blocks
+agent = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[
+        {"label": "human", "value": "Name: Alice"},
+        {"label": "persona", "value": "You are a helpful assistant."},
+    ],
+)
+
+# Send message
+response = client.agents.messages.create(
+    agent_id=agent.id,
+    messages=[{"role": "user", "content": "Hello!"}],
+)
+
+# Process response
+for message in response.messages:
+    if hasattr(message, "content"):
+        print(message.content)
+</code></pre>
+<h3 id="memory-block-management"><a class="header" href="#memory-block-management">Memory Block Management</a></h3>
+<pre><code class="language-python"># Create standalone block
+block = client.blocks.create(
+    label="organization",
+    description="Shared company information",
+    value="Company policies...",
+)
+
+# Attach to agent
+client.agents.blocks.attach(agent_id=agent.id, block_id=block.id)
+
+# Retrieve by label
+block = client.agents.blocks.retrieve(agent_id=agent.id, block_label="persona")
+
+# Update block value
+client.blocks.update(block_id=block.id, value="Updated content")
+</code></pre>
+<h3 id="archival-memory-1"><a class="header" href="#archival-memory-1">Archival Memory</a></h3>
+<pre><code class="language-python"># Insert passage
+client.agents.passages.create(
+    agent_id=agent.id,
+    text="Important fact to remember",
+)
+
+# Search semantically
+results = client.agents.passages.list(
+    agent_id=agent.id,
+    query_text="related concept",
+)
+</code></pre>
+<h3 id="tool-creation"><a class="header" href="#tool-creation">Tool Creation</a></h3>
+<pre><code class="language-python">def roll_dice() -&gt; str:
+    """Simulate 20-sided die roll (d20).
+
+    Returns random integer between 1-20.
+
+    Returns:
+        str: Die roll outcome.
+    """
+    import random
+    return f"You rolled a {random.randint(1, 20)}"
+
+tool = client.tools.create_from_function(func=roll_dice)
+
+# Attach tool to agent
+agent = client.agents.create(
+    model="openai/gpt-4.1",
+    tools=[tool.name],
+    memory_blocks=[{"label": "persona", "value": "You love games."}],
+)
+</code></pre>
+<h3 id="exportimport-agents"><a class="header" href="#exportimport-agents">Export/Import Agents</a></h3>
+<pre><code class="language-python"># Export
+schema = client.agents.export_file(agent_id=agent.id)
+
+# Import
+imported = client.agents.import_file(file=open("agent.af", "rb"))
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="model-selection"><a class="header" href="#model-selection">Model Selection</a></h3>
+<p>Models are specified using the <code>provider/model-name</code> format:</p>
+<pre><code class="language-python">agent = client.agents.create(
+    model="anthropic/claude-sonnet-4-5-20250929",
+    memory_blocks=[...],
+)
+</code></pre>
+<p>Supported providers: <code>openai/</code>, <code>anthropic/</code>, <code>google_ai/</code>, <code>azure/</code>, <code>bedrock/</code>, <code>openrouter/</code>, <code>ollama/</code> [11].</p>
+<h3 id="docker-environment-variables"><a class="header" href="#docker-environment-variables">Docker Environment Variables</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Variable</th><th>Purpose</th></tr>
+</thead>
+<tbody>
+<tr><td><code>OPENAI_API_KEY</code></td><td>OpenAI model access</td></tr>
+<tr><td><code>ANTHROPIC_API_KEY</code></td><td>Anthropic model access</td></tr>
+<tr><td><code>GOOGLE_AI_API_KEY</code></td><td>Google AI model access</td></tr>
+<tr><td><code>OLLAMA_BASE_URL</code></td><td>Local Ollama endpoint</td></tr>
+<tr><td><code>LETTA_PG_URI</code></td><td>Custom PostgreSQL connection (requires pgvector)</td></tr>
+<tr><td><code>E2B_API_KEY</code></td><td>Sandbox for custom tool execution</td></tr>
+<tr><td><code>EXA_API_KEY</code></td><td>Web search and webpage fetch enhancement</td></tr>
+<tr><td><code>SECURE</code> / <code>LETTA_SERVER_PASSWORD</code></td><td>Authentication for production</td></tr>
+</tbody>
+</table>
+</div>
+<h3 id="embedding-models"><a class="header" href="#embedding-models">Embedding Models</a></h3>
+<p>When using Docker, embedding models must be specified explicitly:</p>
+<pre><code class="language-python">agent = client.agents.create(
+    model="openai/gpt-4o-mini",
+    embedding="openai/text-embedding-3-small",
+)
+</code></pre>
+<p>The hosted API handles embedding configuration automatically [7].</p>
+<h3 id="sleep-time-configuration"><a class="header" href="#sleep-time-configuration">Sleep-Time Configuration</a></h3>
+<pre><code class="language-python"># Enable sleep-time on agent creation
+agent = client.agents.create(
+    model="anthropic/claude-sonnet-4-5-20250929",
+    memory_blocks=[...],
+    enable_sleeptime=True,
+)
+
+# Adjust frequency (triggers every N steps)
+from letta_client import SleeptimeManagerUpdate
+group = client.groups.update(
+    group_id=group_id,
+    manager_config=SleeptimeManagerUpdate(sleeptime_agent_frequency=5),
+)
+</code></pre>
+<p>Recommended frequency: 5-10 steps. Lower values increase token usage with diminishing returns [10].</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="multi-agent-via-shared-blocks"><a class="header" href="#multi-agent-via-shared-blocks">Multi-Agent via Shared Blocks</a></h3>
+<pre><code class="language-python"># Create shared block
+shared = client.blocks.create(
+    label="task_board",
+    description="Shared task tracking between agents",
+    value="",
+)
+
+# Create supervisor with write access
+supervisor = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[{"label": "persona", "value": "You are a supervisor."}],
+    block_ids=[shared.id],
+)
+
+# Create worker with same shared block
+worker = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[{"label": "persona", "value": "You are a worker."}],
+    block_ids=[shared.id],
+)
+</code></pre>
+<h3 id="mcp-tool-integration"><a class="header" href="#mcp-tool-integration">MCP Tool Integration</a></h3>
+<p>Letta agents can connect to MCP servers for external tool access. MCP tools function as schema-only definitions on the Letta side, with execution delegated to the MCP server [12].</p>
+<h3 id="server-tools-with-injected-client"><a class="header" href="#server-tools-with-injected-client">Server Tools with Injected Client</a></h3>
+<p>Custom server tools automatically receive environment variables (<code>LETTA_AGENT_ID</code>, <code>LETTA_PROJECT_ID</code>, <code>LETTA_API_KEY</code>) and a pre-initialized <code>client</code> object, enabling tools to access the Letta API for dynamic memory management and sub-agent creation [13].</p>
+<pre><code class="language-python">def get_my_memory() -&gt; dict:
+    """Retrieve current agent's memory blocks."""
+    import os
+    agent_id = os.environ.get('LETTA_AGENT_ID')
+    agent = client.agents.retrieve(agent_id=agent_id)
+    return {block.label: block.value for block in agent.memory.blocks}
+</code></pre>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="basic-chat-agent-with-persistent-memory"><a class="header" href="#basic-chat-agent-with-persistent-memory">Basic Chat Agent with Persistent Memory</a></h3>
+<pre><code class="language-python">from letta_client import Letta
+
+client = Letta(api_key="your-key")
+
+agent = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[
+        {"label": "human", "value": "The user hasn't introduced themselves yet."},
+        {"label": "persona", "value": "You are a friendly assistant who remembers everything."},
+    ],
+)
+
+# First conversation
+response = client.agents.messages.create(
+    agent_id=agent.id,
+    messages=[{"role": "user", "content": "Hi! I'm Alice, I work at Acme Corp."}],
+)
+
+# Later conversation — agent remembers Alice
+response = client.agents.messages.create(
+    agent_id=agent.id,
+    messages=[{"role": "user", "content": "What do you remember about me?"}],
+)
+</code></pre>
+<h3 id="agent-with-archival-knowledge-base"><a class="header" href="#agent-with-archival-knowledge-base">Agent with Archival Knowledge Base</a></h3>
+<pre><code class="language-python">agent = client.agents.create(
+    model="openai/gpt-4.1",
+    memory_blocks=[
+        {"label": "persona", "value": "You are a research assistant."},
+    ],
+    tools=["archival_memory_insert", "archival_memory_search"],
+)
+
+# Seed archival memory with documents
+for doc in documents:
+    client.agents.passages.create(agent_id=agent.id, text=doc)
+
+# Agent can now search its knowledge base during conversations
+response = client.agents.messages.create(
+    agent_id=agent.id,
+    messages=[{"role": "user", "content": "What do we know about quantum computing?"}],
+)
+</code></pre>
+<h3 id="sleep-time-agent-for-background-learning"><a class="header" href="#sleep-time-agent-for-background-learning">Sleep-Time Agent for Background Learning</a></h3>
+<pre><code class="language-python">agent = client.agents.create(
+    model="anthropic/claude-sonnet-4-5-20250929",
+    embedding="openai/text-embedding-3-small",
+    memory_blocks=[
+        {"label": "human", "value": ""},
+        {"label": "persona", "value": "You are a helpful assistant."},
+    ],
+    enable_sleeptime=True,
+)
+
+# As conversations happen, the sleep-time agent
+# asynchronously processes and consolidates memories
+# into refined memory blocks
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>Sleep-time agents are experimental</strong>: The feature may be unstable and is subject to change [10]</li>
+<li><strong>Docker embedding requirement</strong>: Self-hosted deployments must explicitly specify embedding models, unlike the hosted API [7]</li>
+<li><strong>Context window constraints</strong>: Memory blocks consume context window space; very large blocks (&gt;50k characters) may degrade performance [5]</li>
+<li><strong>Shared memory concurrency</strong>: <code>memory_rethink</code> operations on shared blocks are unsafe under concurrent access (last-writer-wins) [6]</li>
+<li><strong>AgentFile secrets</strong>: Exported <code>.af</code> files null out secrets for security; re-configuration is needed after import [8]</li>
+<li><strong>Tool sandboxing</strong>: Docker deployments require E2B API key for custom tool sandboxing; TypeScript server tools also require E2B on Docker [13]</li>
+<li><strong>HTTPS requirement</strong>: The ADE requires HTTPS connections except for localhost access [7]</li>
+<li><strong>Code interpreter statefulness</strong>: Each code execution runs in a fresh environment without state retention between calls [14]</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<p>Letta evolved from the <strong>MemGPT</strong> research project (2023), which introduced OS-inspired virtual memory management for LLMs. The project rebranded to Letta and expanded into a full platform offering:</p>
+<ul>
+<li><strong>MemGPT era</strong>: Research prototype demonstrating self-editing memory and context management for LLMs</li>
+<li><strong>Letta Platform</strong>: Production-ready hosted API with managed infrastructure</li>
+<li><strong>Letta Code</strong>: Memory-first coding agent for terminal use (Node.js based)</li>
+<li><strong>Letta Code SDK</strong>: TypeScript SDK for building apps on top of stateful computer use agents</li>
+<li><strong>AgentFile (.af)</strong>: Open standard for portable agent serialization</li>
+<li><strong>Sleep-time compute</strong>: Experimental background memory consolidation (research paper: arxiv.org/abs/2504.13171)</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Letta Platform Landing Page - https://docs.letta.com/</li>
+<li>[2] Stateful Agents - https://docs.letta.com/guides/core-concepts/stateful-agents/</li>
+<li>[3] Memory Blocks - https://docs.letta.com/guides/core-concepts/memory/memory-blocks/</li>
+<li>[4] Archival Memory - https://docs.letta.com/guides/core-concepts/memory/archival-memory/</li>
+<li>[5] Context Hierarchy - https://docs.letta.com/guides/core-concepts/memory/context-hierarchy/</li>
+<li>[6] Shared Memory - https://docs.letta.com/guides/core-concepts/memory/shared-memory/</li>
+<li>[7] Docker Server Setup - https://docs.letta.com/guides/docker/</li>
+<li>[8] AgentFile (.af) - https://docs.letta.com/guides/core-concepts/agent-file/</li>
+<li>[9] Quickstart (API) - https://docs.letta.com/guides/build-with-letta/quickstart/</li>
+<li>[10] Sleep-Time Agents - https://docs.letta.com/guides/agents/architectures/sleeptime/</li>
+<li>[11] Models - https://docs.letta.com/guides/build-with-letta/models/</li>
+<li>[12] MCP Tools - https://docs.letta.com/guides/core-concepts/tools/mcp-tools/</li>
+<li>[13] Server Tools - https://docs.letta.com/guides/core-concepts/tools/server-tools/</li>
+<li>[14] Built-in Tools - https://docs.letta.com/guides/core-concepts/tools/builtin-tools/</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-2-application/memory-systems/zep.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-3-data/vector-databases/pgvector.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-2-application/memory-systems/zep.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-3-data/vector-databases/pgvector.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

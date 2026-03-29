@@ -1,0 +1,651 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Inferless - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-1-foundation/gpu-infrastructure/inferless.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="inferless"><a class="header" href="#inferless">Inferless</a></h1>
+<blockquote>
+<p>Serverless GPU inference platform for deploying ML models</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Inferless</td></tr>
+<tr><td>Group</td><td>GPU Infrastructure</td></tr>
+<tr><td>Type</td><td>API/Infra</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Docs</td><td><a href="https://docs.inferless.com/">docs.inferless.com</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Inferless is a serverless GPU inference platform that deploys custom machine learning models with minimal cold start latency. The platform abstracts away infrastructure management, GPU provisioning, and container orchestration so teams can focus on model development. Inferless supports importing models from HuggingFace, GitHub, GitLab, AWS S3, Google Cloud Storage (GCS), DockerHub, Dockerfiles, and direct file uploads. The billing model charges per second of actual compute usage rather than reserved capacity, with fractional GPU support so multiple models and workloads can share GPUs with automatic rebalancing and node draining [1][2].</p>
+<p>The platform supports PyTorch, TensorFlow, ONNX, and custom Python functions without framework restrictions. It provides a web dashboard, a Command-Line Interface (CLI), a Python client library, and REST API endpoints for managing deployments. Built-in Prometheus metrics and Grafana dashboards track GPU utilization and system performance. Auto-scaling handles traffic from zero to thousands of GPUs based on requests per second [1][3].</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<ul>
+<li><strong>Serverless GPU Inference</strong>: Models run on GPU-backed infrastructure without users managing servers, containers, or orchestration layers. Resources are provisioned on demand and released when idle, following a pay-per-second billing model [2].</li>
+<li><strong>Model Import</strong>: Inferless supports seven integration methods for importing models: HuggingFace, GitHub/GitLab custom code, file upload, AWS S3, Google Cloud Buckets, DockerHub, and Dockerfile-based deployments [4].</li>
+<li><strong>Autoscaling</strong>: The platform automatically scales endpoints from zero instances up to a configured maximum based on requests per second. Min scale defines workers kept continuously running; max scale sets the maximum concurrent workers allowed [5].</li>
+<li><strong>Shared and Dedicated GPU Instances</strong>: Shared instances allow fractional GPU access (partial GPU memory and vCPUs) at lower cost, while dedicated instances provide full GPU resources with higher memory and compute allocations [6].</li>
+<li><strong>NFS Volumes</strong>: NFS-like writable volumes enable simultaneous connections across multiple replicas for storing model parameters, archiving datasets centrally, and establishing shared caches [7].</li>
+<li><strong>Custom Runtimes</strong>: YAML-based configuration specifies CUDA version, Python packages, system packages, and shell commands for building custom container environments without complex application server code [8].</li>
+<li><strong>Dynamic Batching</strong>: Inference requests are combined server-side into batches to improve throughput. Configurable via <code>BATCH_SIZE</code> and <code>BATCH_WINDOW</code> parameters in the input schema [9].</li>
+<li><strong>Streaming Output</strong>: Server-Sent Events (SSE) enable one-way server-to-client communication for real-time data streaming during inference, with automatic reconnection after connection loss [10].</li>
+<li><strong>Secrets Manager</strong>: Centralized storage for passwords, API keys, and tokens with encryption at rest and in transit, access control, and automatic rotation support [11].</li>
+<li><strong>Remote Run</strong>: Execute code on remote GPU servers directly from a local machine using annotations and the <code>inferless remote-run</code> command, supporting T4, A10, and A100 GPUs [12].</li>
+</ul>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<p>Inferless is a managed cloud platform with no local installation required for the core service. Interaction happens through the web dashboard, the CLI, or the Python client library.</p>
+<p><strong>CLI Installation:</strong></p>
+<pre><code class="language-bash">pip install inferless-cli
+</code></pre>
+<p><strong>CLI Authentication:</strong></p>
+<pre><code class="language-bash"># Retrieve CLI keys from https://console.inferless.com/user/settings?current-tab=keys
+inferless login
+# Paste CLI keys when prompted
+</code></pre>
+<p><strong>Python Client Installation:</strong></p>
+<pre><code class="language-bash">pip install --upgrade inferless
+</code></pre>
+<p><strong>Quick Start Flow:</strong></p>
+<ol>
+<li>Sign up for an Inferless account through the web dashboard.</li>
+<li>Install the CLI with <code>pip install inferless-cli</code>.</li>
+<li>Authenticate with <code>inferless login</code>.</li>
+<li>Scaffold a demo project: <code>inferless scaffold --demo</code>.</li>
+<li>Initialize the model: <code>inferless init --name &lt;modelname&gt;</code>.</li>
+<li>Deploy to GPU: <code>inferless deploy --gpu T4</code>.</li>
+</ol>
+<p>The template repository at <a href="https://github.com/inferless/template">github.com/inferless/template</a> provides a reference implementation using the GPT Neo model with Pydantic request/response schemas [3].</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Inferless follows a serverless architecture pattern for GPU inference with these primary components:</p>
+<pre><code>Model Source              Inferless Platform              Client
+(HuggingFace,       --&gt;  [ Import &amp; Build Layer    ]
+ S3, GCS, GitHub,        [ Custom Runtime Builder   ]
+ DockerHub,              [ GPU Scheduling Engine    ]
+ Dockerfile,             [ Autoscaler (0..N GPUs)   ]  --&gt;  REST API / SSE
+ File Upload)            [ Dynamic Batcher          ]
+                         [ NFS Volume Storage       ]
+                         [ Secrets Manager          ]
+                         [ Prometheus + Grafana     ]
+</code></pre>
+<ul>
+<li><strong>Import and Build Layer</strong>: Fetches model artifacts from the configured source, builds the container with specified runtime dependencies, and prepares the model for deployment. Build progress is tracked with streaming logs via WebSockets [13].</li>
+<li><strong>Custom Runtime Builder</strong>: Constructs container images from YAML configuration specifying CUDA version (12.4.1, 12.1.1, or 11.8.0), system packages, Python packages, and shell commands. Supports runtime versioning with in-place updates [8][13].</li>
+<li><strong>GPU Scheduling Engine</strong>: Allocates GPU resources (T4, A10, A100) to inference requests. Supports both shared instances (fractional GPU) and dedicated instances (full GPU) [6].</li>
+<li><strong>Autoscaler</strong>: Monitors request traffic and scales instances between zero and the configured maximum. Integrates warm pools to minimize cold start delays during scaling events [5][13].</li>
+<li><strong>Dynamic Batcher</strong>: Combines concurrent inference requests into batches based on configurable batch size and time window, improving throughput for stateless models [9].</li>
+<li><strong>NFS Volume Storage</strong>: Persistent shared storage accessible across multiple replicas at <code>/var/nfs-share/&lt;volume-name&gt;</code>. Temporary storage available at <code>/tmp</code> (deleted when model stops) [7][14].</li>
+<li><strong>Monitoring Layer</strong>: Built-in Prometheus metrics and Grafana dashboards for GPU utilization, latency tracking, and system performance observability [1].</li>
+</ul>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>Per-Second Billing</strong>: Charges based on total seconds models are running in a healthy state, rounded up to the nearest second. Billing components include model weight loading time, inference duration, and eviction timeout (5 seconds to 60 minutes of warm status) [6].</li>
+<li><strong>Scale-to-Zero</strong>: Endpoints scale down to zero instances when idle, eliminating costs during periods of no traffic. Scale-down timing is configurable to balance cost savings against cold start latency [15].</li>
+<li><strong>Seven Integration Sources</strong>: HuggingFace, GitHub/GitLab, file upload, AWS S3, Google Cloud Buckets, DockerHub, and Dockerfile imports [4].</li>
+<li><strong>Container Concurrency</strong>: Configure 1 to 100 simultaneous requests per container, with sequential processing or batch processing modes [16].</li>
+<li><strong>Automatic Builds</strong>: Webhook-driven automatic rebuilds when model sources update, supporting GitHub branch triggers and HuggingFace repo update webhooks [17].</li>
+<li><strong>Version Management</strong>: Complete build history tracking with automatic version deployment. Models remain on their current version unless explicitly updated [18].</li>
+<li><strong>AWS SNS Alerts</strong>: Integration for notifications on non-200 HTTP responses and high inference latency (exceeding 20 seconds) [19].</li>
+<li><strong>AWS PrivateLink</strong>: Private endpoint connectivity for secure, non-public-internet traffic between AWS infrastructure and Inferless deployments [20].</li>
+<li><strong>Cold Start Optimization</strong>: Custom-built orchestration engine, advanced router, and proprietary storage infrastructure minimize cold start latency, with initialization times as low as 3 seconds [2].</li>
+<li><strong>Remote Run</strong>: Execute code on remote GPU servers from local machines using <code>inferless remote-run app.py -c config.yaml</code>, with automatic file transfer (up to 10MB) excluding <code>.git</code>, <code>*.pyc</code>, and <code>__pycache__</code> [12].</li>
+<li><strong>Cookbooks</strong>: Pre-built deployment recipes for common use cases including PDF Q&amp;A systems, voice chatbots, logo generators, ComfyUI API deployments, debugger agents, and MCP-based Google Maps agents [20].</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>ML Model Serving</strong>: Deploying trained models from HuggingFace, custom repositories, or cloud storage as production API endpoints with sub-second cold starts and automatic scaling [2].</li>
+<li><strong>Large Language Model (LLM) Inference</strong>: Hosting open-weight LLMs (Llama, Qwen, DeepSeek, Mistral, Gemma, Phi, Mixtral) with streaming SSE output and dynamic batching for throughput optimization [10][20].</li>
+<li><strong>Variable-Traffic Workloads</strong>: Applications with unpredictable or bursty inference demand that benefit from scale-to-zero and request-based autoscaling without idle GPU costs [5].</li>
+<li><strong>CI/CD Model Deployment</strong>: Automatic rebuilds triggered by GitHub pushes or HuggingFace webhooks, enabling continuous deployment pipelines without manual infrastructure management [17].</li>
+<li><strong>Multi-Model Management</strong>: Organizations deploying multiple models that need centralized endpoint management, shared NFS volumes for model weights, and unified monitoring dashboards [7].</li>
+<li><strong>Audio and Video Processing</strong>: Transient workloads using <code>/tmp</code> storage for intermediate files during audio/video inference pipelines, with NFS volumes for persistent output storage [14].</li>
+<li><strong>AI Agent Infrastructure</strong>: Serverless backend for AI agents requiring on-demand GPU compute, demonstrated in cookbooks for debugger agents and MCP-based tool agents [20].</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<p><strong>REST API Endpoint Pattern:</strong></p>
+<p>After deploying a model, Inferless provides a unique API endpoint accessible via the dashboard’s API tab. Authentication uses Workspace API keys managed through workspace settings.</p>
+<pre><code class="language-bash">curl -X POST "https://&lt;your-endpoint-url&gt;/v1/predict" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer &lt;workspace-api-key&gt;" \
+  -d '{
+    "input": {
+      "prompt": "Explain serverless inference in one sentence."
+    }
+  }'
+</code></pre>
+<p><strong>Python Client (Synchronous):</strong></p>
+<pre><code class="language-python">import inferless
+
+result = inferless.call(
+    url="https://&lt;your-endpoint-url&gt;",
+    workspace_key="&lt;workspace-api-key&gt;",
+    data={"prompt": "Hello, world!"}
+)
+</code></pre>
+<p><strong>Python Client (Asynchronous):</strong></p>
+<pre><code class="language-python">import inferless
+
+def on_complete(error, response):
+    if error:
+        print(f"Error: {error}")
+    else:
+        print(f"Result: {response}")
+
+inferless.call_async(
+    url="https://&lt;your-endpoint-url&gt;",
+    workspace_key="&lt;workspace-api-key&gt;",
+    data={"prompt": "Hello, world!"},
+    callback=on_complete
+)
+</code></pre>
+<p><strong>CLI Commands:</strong></p>
+<pre><code class="language-bash"># Scaffold a demo project
+inferless scaffold --demo
+
+# Initialize a model
+inferless init --name &lt;modelname&gt;
+
+# Deploy with GPU selection
+inferless deploy --gpu T4
+
+# Deploy with region and runtime
+inferless deploy --gpu t4 --region &lt;region&gt; --runtime &lt;runtime_name&gt;
+
+# Deploy with volume mount
+inferless deploy --gpu t4 --volume &lt;volume_name&gt; --volume-mount-path &lt;path&gt;
+
+# Remote run on GPU
+inferless remote-run app.py -c config.yaml
+
+# Volume management
+inferless volume create --name &lt;volume_name&gt;
+inferless volume cp --source &lt;local_path&gt; --destination &lt;remote_path&gt;
+inferless volume ls
+inferless volume rm
+inferless volume list
+inferless volume select --id &lt;volume_id&gt;
+
+# Runtime management
+inferless runtime list
+inferless runtime upload
+inferless runtime patch
+inferless runtime version-list
+</code></pre>
+<p><strong>Input Schema Definition (<code>input_schema.py</code>):</strong></p>
+<pre><code class="language-python">INPUT_SCHEMA = {
+    "prompt": {
+        "datatype": "STRING",
+        "required": True,
+        "shape": [1],
+        "example": ["There is a fine house in the forest"]
+    },
+    "num_steps": {
+        "datatype": "INT8",
+        "required": False,
+        "shape": [1],
+        "example": [50]
+    },
+}
+</code></pre>
+<p>Supported datatypes: STRING, BOOL, INT8, INT16, INT32, INT64, FP16, FP32, FP64, UINT8, UINT16, UINT32, UINT64, BYTES, BF16. Shape <code>[1]</code> returns a single variable; arrays greater than 1 return arrays; <code>-1</code> indicates variable length [21].</p>
+<p><strong>Output Format:</strong></p>
+<p>Outputs are returned as dictionaries from the <code>infer()</code> function without explicit schema configuration:</p>
+<pre><code class="language-python"># Simple output
+return {"label_1": 0.398, "label_2": 0.563}
+
+# Array output
+return {"generated_images_base64": [img_str1, img_str2]}
+
+# Dynamic keys (JSON stringified)
+return {"result": json.dumps({"label_x": 0.4554})}
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<p><strong>Runtime Configuration (<code>inferless_runtime_config.yaml</code>):</strong></p>
+<pre><code class="language-yaml">cuda_version: "12.4.1"  # Options: "12.4.1", "12.1.1", "11.8.0" (default: 12.1.1)
+system_packages:
+  - libssl-dev
+  - opencv
+  - ffmpeg
+python_packages:
+  - transformers==4.41.1
+  - torch==2.1.2
+  - numpy
+  - pandas
+run_commands:
+  - ln -sf /usr/lib/x86_64-linux-gnu/libcuda.so /usr/lib/libcuda.so
+</code></pre>
+<p><strong>Model App Structure (<code>app.py</code>):</strong></p>
+<pre><code class="language-python">class InferlessPythonModel:
+    def initialize(self):
+        """Load model weights and initialize pipeline (runs once on cold start)."""
+        from transformers import pipeline
+        self.generator = pipeline("text-generation", model="EleutherAI/gpt-neo-125M", device=0)
+
+    def infer(self, inputs):
+        """Run inference on input data (runs per request)."""
+        prompt = inputs["prompt"]
+        result = self.generator(prompt, max_length=100)
+        return {"generated_txt": result[0]["generated_text"]}
+
+    def finalize(self):
+        """Cleanup resources (runs on shutdown)."""
+        pass
+</code></pre>
+<p><strong>Dynamic Batching Configuration:</strong></p>
+<pre><code class="language-python"># In input_schema.py
+BATCH_SIZE = 4
+BATCH_WINDOW = 5000  # milliseconds
+
+INPUT_SCHEMA = {
+    "prompt": {
+        "datatype": "STRING",
+        "required": True,
+        "shape": [1],
+        "example": ["Hello"]
+    },
+}
+</code></pre>
+<p>With batching enabled, the <code>infer()</code> method receives a list of dictionaries and must return a list of dictionaries [9].</p>
+<p><strong>Streaming SSE Configuration:</strong></p>
+<pre><code class="language-python"># In input_schema.py
+IS_STREAMING_OUTPUT = True
+
+INPUT_SCHEMA = {
+    "prompt": {
+        "datatype": "STRING",
+        "required": True,
+        "shape": [1],
+        "example": ["Hello"]
+    },
+}
+</code></pre>
+<p>The <code>infer()</code> method receives a <code>stream_output_handler</code> parameter. Call <code>send_streamed_output()</code> for partial outputs and <code>finalise_streamed_output()</code> to close the stream. SSE inputs are limited to INT, STRING, and BOOLEAN datatypes with shape <code>[1]</code> [10].</p>
+<p><strong>Model Settings (Dashboard):</strong></p>
+<ul>
+<li><strong>Scale Down Timeout</strong>: Controls how quickly idle containers terminate (balance cost vs. cold start latency) [15].</li>
+<li><strong>Inference Timeout</strong>: Maximum execution duration in seconds for inference requests [15].</li>
+<li><strong>Container Concurrency</strong>: 1 to 100 simultaneous requests per container [16].</li>
+<li><strong>GPU Type</strong>: T4, A10, or A100 in shared or dedicated configurations [6].</li>
+<li><strong>Min/Max Replicas</strong>: Scaling boundaries for autoscaler [5].</li>
+</ul>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<ul>
+<li><strong>HuggingFace</strong>: Direct model import via model identifier with optional webhook-based automatic rebuilds on model updates. Supports Transformer, ONNX, and custom model types [4][17].</li>
+<li><strong>GitHub/GitLab</strong>: Deploy custom code from repositories with branch-specific automatic builds on push. Requires <code>app.py</code>, <code>input_schema.py</code>, and <code>inferless_runtime_config.yaml</code> [3][17].</li>
+<li><strong>AWS S3</strong>: Import model artifacts from S3 buckets using AWS credentials configured through the secrets manager [4].</li>
+<li><strong>Google Cloud Storage</strong>: Import from GCS buckets for teams using the Google Cloud ecosystem [4].</li>
+<li><strong>DockerHub</strong>: Deploy pre-built Docker containers directly from DockerHub registries [4].</li>
+<li><strong>Dockerfile</strong>: Build and deploy from Dockerfiles for full container customization [4].</li>
+<li><strong>AWS SNS</strong>: Alert integration for model health monitoring with notifications on HTTP errors and latency spikes [19].</li>
+<li><strong>AWS PrivateLink</strong>: Private endpoint connectivity for secure traffic between AWS infrastructure and Inferless [20].</li>
+<li><strong>Python Client</strong>: Synchronous and asynchronous API calls from Python applications using the <code>inferless</code> package with Workspace API key authentication [22].</li>
+<li><strong>REST API</strong>: Standard HTTP endpoints compatible with any programming language or HTTP client for direct inference calls [23].</li>
+<li><strong>Prometheus and Grafana</strong>: Built-in metrics export for GPU utilization and performance monitoring integration [1].</li>
+</ul>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p><strong>Deploying from HuggingFace via Dashboard:</strong></p>
+<ol>
+<li>Select “HuggingFace” from the workspace dashboard.</li>
+<li>Enter model name, type (Transformer), task (Text generation), and HuggingFace model identifier.</li>
+<li>Customize <code>app.py</code> and <code>input_schema.py</code> as needed.</li>
+<li>Select GPU type (T4/A10/A100), set min and max replicas.</li>
+<li>Configure runtime dependencies, volumes, and secrets.</li>
+<li>Review and submit. Monitor build progress (typically 5-10 minutes) [5].</li>
+</ol>
+<p><strong>Deploying from CLI:</strong></p>
+<pre><code class="language-bash"># Create a new project from template
+inferless scaffold --demo
+
+# Initialize with model name
+inferless init --name my-llm-model
+
+# Deploy on A10 GPU
+inferless deploy --gpu A10
+
+# Attach a volume for model weights
+inferless volume create --name model-weights
+inferless volume cp --source ./weights --destination /model-weights
+inferless deploy --gpu A10 --volume model-weights --volume-mount-path /var/nfs-share/model-weights
+</code></pre>
+<p><strong>Calling a Deployed Endpoint (Python):</strong></p>
+<pre><code class="language-python">import inferless
+
+# Synchronous call
+result = inferless.call(
+    url="https://your-endpoint.inferless.com",
+    workspace_key="your-workspace-api-key",
+    data={"prompt": "Explain serverless inference in one sentence."}
+)
+print(result)
+</code></pre>
+<p><strong>Streaming SSE Example (<code>app.py</code>):</strong></p>
+<pre><code class="language-python">class InferlessPythonModel:
+    def initialize(self):
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        self.tokenizer = AutoTokenizer.from_pretrained("model-name")
+        self.model = AutoModelForCausalLM.from_pretrained("model-name", device_map="cuda")
+
+    def infer(self, inputs, stream_output_handler):
+        prompt = inputs["prompt"]
+        # Generate tokens iteratively
+        for token in self.generate_stream(prompt):
+            stream_output_handler.send_streamed_output({"token": token})
+        stream_output_handler.finalise_streamed_output()
+
+    def finalize(self):
+        pass
+</code></pre>
+<p>Reference streaming template: <a href="https://github.com/inferless/inferless_template_streaming">github.com/inferless/inferless_template_streaming</a> [10].</p>
+<p><strong>Remote Run Example:</strong></p>
+<pre><code class="language-python">import inferless
+
+@inferless.method(gpu="T4")
+def generate(prompt):
+    from transformers import pipeline
+    generator = pipeline("text-generation", model="gpt2", device=0)
+    return generator(prompt, max_length=100)
+</code></pre>
+<pre><code class="language-bash">inferless remote-run app.py -c config.yaml
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>Closed Source</strong>: The platform is proprietary with no self-hosted option; all inference runs on Inferless-managed infrastructure [1].</li>
+<li><strong>Vendor Lock-In</strong>: Deployment configurations (<code>app.py</code>, <code>input_schema.py</code>, <code>inferless_runtime_config.yaml</code>) are specific to the Inferless platform and not portable to other serving solutions.</li>
+<li><strong>Cold Start Latency</strong>: Scale-to-zero introduces cold start delays when the first request arrives after a period of inactivity, though the platform optimizes for initialization times as low as 3 seconds [2].</li>
+<li><strong>GPU Selection</strong>: Limited to T4, A10, and A100 GPUs. No H100 or other GPU types are listed in the current pricing [6].</li>
+<li><strong>Python Version</strong>: Remote run supports only Python 3.10; other versions may face compatibility issues [12].</li>
+<li><strong>SSE Datatype Restrictions</strong>: Streaming output inputs are limited to INT, STRING, and BOOLEAN datatypes with shape <code>[1]</code>. Multiple inputs require JSON serialization as strings [10].</li>
+<li><strong>File Transfer Limit</strong>: Remote run file transfer is capped at 10MB per working directory [12].</li>
+<li><strong>Secret Scope</strong>: Secrets are user-level and can only be updated by the person who performed the model import [11].</li>
+<li><strong>Root Filesystem</strong>: The platform restricts root file system access. Persistent storage requires NFS volumes; temporary storage at <code>/tmp</code> is deleted when the model stops [14].</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<p>Notable platform updates through the changelog (2023-2025):</p>
+<ul>
+<li><strong>June 2025</strong>: Runtime version switching for deployed models, streaming build logs via WebSockets, improved autoscaler with warm pool integration for faster cold start recovery [13].</li>
+<li><strong>May 2025</strong>: Continued platform performance improvements and dashboard enhancements [20].</li>
+<li><strong>April 2025</strong>: CLI and dashboard updates [20].</li>
+<li><strong>March 2025</strong>: Feature releases and optimizations [20].</li>
+<li><strong>February 2025</strong>: Platform stability improvements [20].</li>
+<li><strong>January 2025</strong>: New year platform updates [20].</li>
+<li><strong>December 2024</strong>: End-of-year feature releases [20].</li>
+<li><strong>November 2024</strong>: Two update cycles with infrastructure improvements [20].</li>
+<li><strong>October 2024</strong>: Platform enhancements [20].</li>
+<li><strong>September 2024</strong>: Infrastructure updates [20].</li>
+<li><strong>July 2024</strong>: Mid-year feature releases [20].</li>
+<li><strong>June 2024</strong>: Two update cycles [20].</li>
+<li><strong>May 2024</strong>: Platform improvements [20].</li>
+<li><strong>April 2024</strong>: Two update cycles [20].</li>
+<li><strong>March 2024</strong>: Two update cycles [20].</li>
+<li><strong>February 2024</strong>: Two update cycles [20].</li>
+<li><strong>January 2024</strong>: Three update cycles [20].</li>
+<li><strong>December 2023</strong>: Three update cycles marking the initial public changelog [20].</li>
+</ul>
+<p>Refer to the <a href="https://docs.inferless.com/changelog/overview">Inferless Changelog</a> for complete details on each release.</p>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] What is Inferless - https://docs.inferless.com/introduction/what-is-inferless</li>
+<li>[2] Serverless GPUs for AI/ML Inference - https://www.inferless.com/serverless-gpu</li>
+<li>[3] Quickstart Guide - https://docs.inferless.com/introduction/quickstart</li>
+<li>[4] Integrations - https://docs.inferless.com/introduction/integrations</li>
+<li>[5] Deploy ML Models - https://docs.inferless.com/getting-started/deploy-ml</li>
+<li>[6] Pricing - https://www.inferless.com/pricing</li>
+<li>[7] Working with NFS Volumes - https://docs.inferless.com/concepts/working-with-nfs-volumes</li>
+<li>[8] Building Custom Images - https://docs.inferless.com/concepts/building-custom-images</li>
+<li>[9] Dynamic Batching - https://docs.inferless.com/concepts/dynamic-batching</li>
+<li>[10] Streaming with SSE - https://docs.inferless.com/concepts/streaming-with-sse</li>
+<li>[11] Managing Secrets - https://docs.inferless.com/concepts/managing-secrets-on-inferless</li>
+<li>[12] Remote Run - https://docs.inferless.com/concepts/remote-run</li>
+<li>[13] Changelog June 2025 - https://docs.inferless.com/changelog/June-2025/30th-June</li>
+<li>[14] Working with Files - https://docs.inferless.com/concepts/working-with-files</li>
+<li>[15] Model Settings - https://docs.inferless.com/api-reference/model-endpoint/configuring-the-model-settings</li>
+<li>[16] Processing Concurrent Requests - https://docs.inferless.com/concepts/processing-concurrent-requests</li>
+<li>[17] Automatic Builds - https://docs.inferless.com/concepts/setting-up-automatic-builds</li>
+<li>[18] Version Management - https://docs.inferless.com/api-reference/version-management</li>
+<li>[19] AWS SNS Alerts - https://docs.inferless.com/integrations/aws-sns/aws-sns</li>
+<li>[20] Inferless Documentation - https://docs.inferless.com/</li>
+<li>[21] Input/Output Schema - https://docs.inferless.com/concepts/configuring-the-input-output-schema</li>
+<li>[22] Python Client - https://docs.inferless.com/api-reference/model-endpoint/inferless-python-client</li>
+<li>[23] Model Endpoint - https://docs.inferless.com/api-reference/model-endpoint/model-endpoint</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-1-foundation/gpu-infrastructure/vast-ai.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-1-foundation/gpu-infrastructure/vertex-ai.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-1-foundation/gpu-infrastructure/vast-ai.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-1-foundation/gpu-infrastructure/vertex-ai.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

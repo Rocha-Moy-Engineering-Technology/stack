@@ -1,0 +1,177 @@
+[Header 1 ("vastai", [], []) [Str "Vast.ai"], BlockQuote [Para [Str "GPU marketplace for affordable on-demand cloud computing"]], Table ("", [], []) (Caption Nothing []) [(AlignDefault, ColWidthDefault), (AlignDefault, ColWidthDefault)] (TableHead ("", [], []) [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Field"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Value"]]]]) [(TableBody ("", [], []) (RowHeadColumns 0) [] [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Name"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Vast.ai"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Group"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "GPU Infrastructure"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Type"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "API/Infra"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Open Source"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "No"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "GitHub"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "N/A"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Stars"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "N/A"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Docs"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Link ("", [], []) [Str "docs.vast.ai"] ("https://docs.vast.ai/", "")]]]])] (TableFoot ("", [], []) []), Header 2 ("overview", ["unnumbered", "unlisted"], []) [Str "Overview"], Para [Str "Vast.ai is a decentralized GPU marketplace that connects compute providers -- ranging from hobbyists with spare GPUs to Tier-4 datacenters -- with users who need GPU resources for AI and machine learning workloads. The platform operates on a peer-to-peer marketplace model where providers list their hardware, set their own prices, and retain full pricing autonomy through dynamic, supply-and-demand-driven pricing. GPU instances can be launched in seconds through the web console, Command Line Interface (CLI), Python Software Development Kit (SDK), or REST API."], Para [Str "The platform offers two primary compute paradigms: dedicated GPU instances (Docker containers or Virtual Machines (VMs) with exclusive GPU access) and a serverless inference platform that auto-scales workers behind a managed endpoint. Vast.ai's stated mission is to democratize AI compute: \"compute powering AI is supplied by the people and for the people.\""], Header 2 ("core-concepts", ["unnumbered", "unlisted"], []) [Str "Core Concepts"], BulletList [[Plain [Strong [Str "GPU Marketplace"], Str ": A peer-to-peer compute network where providers list their hardware and set their own prices. Users browse available machines, compare specs and reliability ratings, and rent GPU time at market-driven rates. Prices fluctuate based on real-time supply and demand, creating competitive rates without static price quotes."]], [Plain [Strong [Str "Instances"], Str ": Containerized environments providing exclusive, never-shared GPU access for training, inference, and development. Each instance includes proportional CPU, RAM, and storage, runs a user-chosen Docker image, and bills by the second for actual usage. Instances come in three types: On-demand (guaranteed, fixed pricing), Reserved (up to 50% discount with commitment), and Interruptible (lowest cost, may be paused by higher-priority rentals)."]], [Plain [Strong [Str "Serverless Endpoints"], Str ": A managed inference platform that auto-scales GPU workers behind a single API endpoint. Users deploy a model (e.g., via vLLM), configure scaling parameters, and the platform handles worker provisioning, load balancing, and autoscaling based on benchmark-driven throughput metrics. Serverless supports mixed hardware -- a single endpoint can leverage diverse GPU types from consumer-grade to enterprise-class."]], [Plain [Strong [Str "Templates"], Str ": Configuration wrappers around Docker images that simplify instance deployment. Templates encapsulate the Docker image, environment variables, startup scripts, port configuration, and deployment settings. Vast.ai provides prebuilt templates (e.g., PyTorch, vLLM) built on base images that include CUDA, Node.js, and integrated Caddy proxy with TLS encryption and authentication."]], [Plain [Strong [Str "PyWorkers"], Str ": Custom Python worker scripts for serverless endpoints that act as HTTP proxy layers between the Vast routing system and a model server. PyWorkers handle request transformation, workload calculation, response streaming, and readiness detection through log pattern matching."]], [Plain [Strong [Str "Search Engine"], Str ": A hardware search and filtering system allowing users to query available machines by GPU model, VRAM, CPU cores, RAM, disk space, bandwidth, provider reliability score, geographic location, and price."]]], Header 2 ("installation", ["unnumbered", "unlisted"], []) [Str "Installation"], Header 3 ("cli-installation", ["unnumbered", "unlisted"], []) [Str "CLI Installation"], Para [Str "The ", Code ("", [], []) "vastai", Str " CLI is a self-contained Python script providing all functionality of the web console."], CodeBlock ("", ["bash"], []) "# Install from PyPI
+pip install vastai
+
+# Or install directly from GitHub
+wget https://raw.githubusercontent.com/vast-ai/vast-python/master/vast.py -O vast
+chmod +x vast
+", Header 3 ("authentication", ["unnumbered", "unlisted"], []) [Str "Authentication"], CodeBlock ("", ["bash"], []) "# Set API key (generated from https://cloud.vast.ai/cli/)
+vastai set api-key YOUR_API_KEY
+", Para [Str "The API key is saved in a hidden file in the home directory. Default keys grant full account access; restricted permissions can be configured with ", Code ("", [], []) "create api-key", Str " and a JSON permission structure."], Header 3 ("python-sdk-installation", ["unnumbered", "unlisted"], []) [Str "Python SDK Installation"], CodeBlock ("", ["bash"], []) "pip install vastai_sdk
+", CodeBlock ("", ["python"], []) "from vastai_sdk import VastAI
+
+# Initialize with explicit key
+vast_sdk = VastAI(api_key=\"YOUR_API_KEY\")
+
+# Or for serverless endpoints
+from vastai import Serverless
+client = Serverless()  # Uses VAST_API_KEY environment variable
+", Header 2 ("architecture", ["unnumbered", "unlisted"], []) [Str "Architecture"], Para [Str "Vast.ai follows a three-layer marketplace architecture:"], BulletList [[Plain [Strong [Str "Provider Layer"], Str ": GPU owners and datacenter operators register their machines, configure pricing and contract terms, and make hardware available to the network. Providers retain full control over pricing and availability."]], [Plain [Strong [Str "Marketplace Layer"], Str ": The central platform handles instance discovery, search and filtering, transaction management, reliability tracking, and billing. Dynamic pricing is determined by providers, not the platform -- Vast.ai adds no markup on top of host-set prices."]], [Plain [Strong [Str "Consumer Layer"], Str ": Users interact with the marketplace through four interfaces: the web console at cloud.vast.ai, the ", Code ("", [], []) "vastai", Str " CLI, the Python SDK (", Code ("", [], []) "vastai_sdk", Str "), or the REST API."]]], Header 3 ("instance-execution-environment", ["unnumbered", "unlisted"], []) [Str "Instance Execution Environment"], Para [Str "Instances are Linux Docker containers where templates control Docker creation parameters. The platform automatically configures resource constraints:"], BulletList [[Plain [Strong [Str "GPU"], Str ": Exclusive, never-shared access per instance. Stopped instances release GPU reservations."]], [Plain [Strong [Str "CPU and RAM"], Str ": Scale proportionally to GPU fraction on the host. CPU can burst above baseline when spare cycles exist, but RAM overages risk Out of Memory (OOM) termination during contention."]], [Plain [Strong [Str "Disk"], Str ": Static allocation set at creation time; cannot be modified after launch."]], [Plain [Strong [Str "Networking"], Str ": Instances lack unique public IPs. Each open internal port maps to a random external port on shared infrastructure, with a 64-port-per-instance limit. Docker ", Code ("", [], []) "EXPOSE", Str " commands automatically generate port mappings; custom ports use ", Code ("", [], []) "-p", Str " flag syntax. Identity port mappings (matching external and internal) require ports above 70000."]]], Para [Str "Three launch modes are supported: Entrypoint (runs the Docker image's default entrypoint), SSH (injects SSH setup scripts), and Jupyter (injects Jupyter notebook setup). SSH and Jupyter modes replace the original Docker entrypoint, so users should copy their entrypoint command into the onstart script."], Header 3 ("virtual-machine-instances", ["unnumbered", "unlisted"], []) [Str "Virtual Machine Instances"], Para [Str "For workloads requiring init managers (systemd), nested containerization, Docker-in-Docker, or kernel module loading, Vast.ai offers VM instances. Pre-configured Ubuntu 22.04 Server and Ubuntu Desktop images are available. VMs have slower creation and boot times, higher disk overhead, and more limited machine availability compared to Docker instances."], Header 3 ("serverless-architecture", ["unnumbered", "unlisted"], []) [Str "Serverless Architecture"], Para [Str "The serverless platform provisions GPU workers behind a managed endpoint with autoscaling:"], BulletList [[Plain [Strong [Str "Endpoint"], Str ": A named API entry point that routes requests to available workers."]], [Plain [Strong [Str "Workergroup"], Str ": A collection of GPU workers sharing the same template, model, and scaling configuration. Parameters include ", Code ("", [], []) "gpu_ram", Str ", ", Code ("", [], []) "search_params", Str ", ", Code ("", [], []) "template_hash", Str ", and ", Code ("", [], []) "launch_args", Str "."]], [Plain [Strong [Str "Autoscaler"], Str ": Benchmark-driven scaling that identifies optimal price-performance GPUs. Workers transition between states: Stopped (model loaded, ready to activate on-demand as cold workers), Loading (starting up and loading model into GPU memory), and Ready (active and handling requests)."]], [Plain [Strong [Str "Cold Multiplier"], Str ": A scaling factor that determines total capacity (cold plus warm workers) based on predicted load."]], [Plain [Strong [Str "Workers"], Str ": Individual GPU instances running the model server and PyWorker. The system tracks throughput per worker via benchmarks to estimate workload capacity."]]], Header 2 ("key-features", ["unnumbered", "unlisted"], []) [Str "Key Features"], BulletList [[Plain [Strong [Str "Per-Second Billing"], Str ": Charged by the second for actual GPU usage, with no hourly minimums. Storage charges continue while instances exist, even when stopped."]], [Plain [Strong [Str "Three Instance Types"], Str ": On-demand (guaranteed, highest priority), Reserved (up to 50% discount with pre-payment commitment), and Interruptible (lowest cost, may be paused, often 50% or more cheaper than on-demand)."]], [Plain [Strong [Str "Serverless Inference"], Str ": Deploy models behind auto-scaling endpoints with benchmark-driven GPU selection, mixed hardware support, and OpenAI-compatible API endpoints via vLLM templates."]], [Plain [Strong [Str "Custom PyWorkers"], Str ": Build custom worker scripts with configurable request parsing, workload calculation, response streaming, and log-based readiness detection. Deploy via Git repository with ", Code ("", [], []) "PYWORKER_REPO", Str " environment variable."]], [Plain [Strong [Str "Template System"], Str ": Prebuilt and custom templates built on Vast.ai base images (", Code ("", [], []) "vastai/base-image", Str ", ", Code ("", [], []) "vastai/pytorch", Str ") with CUDA, integrated Caddy proxy, automatic TLS, and authentication. Templates support onstart scripts, environment variables, and port configuration."]], [Plain [Strong [Str "Cloud Sync"], Str ": Transfer data between instances and cloud storage providers (Amazon S3, Google Drive, Dropbox, Backblaze) via GUI or ", Code ("", [], []) "vastai cloud copy", Str " CLI command, even when instances are stopped."]], [Plain [Strong [Str "Instance Portal"], Str ": Web interface for instances using Vast.ai base images, providing authenticated access to services and tunnel creation without direct port exposure."]], [Plain [Strong [Str "Team Management"], Str ": Create teams, invite members, assign roles with granular permissions, and transfer credits between personal accounts and teams."]], [Plain [Strong [Str "Multiple Access Methods"], Str ": Connect to instances via SSH, Jupyter notebooks, web portals, or custom entrypoints."]]], Header 2 ("use-cases", ["unnumbered", "unlisted"], []) [Str "Use Cases"], BulletList [[Plain [Strong [Str "Model Training"], Str ": Rent high-end GPUs (A100, H100) for training large models at marketplace rates significantly below major cloud providers. Use Reserved instances for multi-day training runs to save up to 50%."]], [Plain [Strong [Str "Inference at Scale"], Str ": Deploy serverless endpoints with auto-scaling workers for production inference. The platform handles GPU provisioning, load balancing, and scaling based on real-time demand."]], [Plain [Strong [Str "Batch Processing"], Str ": Run large batch jobs across multiple Interruptible instances at the lowest cost. Interruptible workloads handle pauses gracefully and resume automatically when priority is restored."]], [Plain [Strong [Str "Experimentation and Prototyping"], Str ": Quickly spin up On-demand GPU instances for short-lived experiments without long-term commitments. Per-second billing ensures minimal cost for brief sessions."]], [Plain [Strong [Str "Fine-Tuning"], Str ": Use mid-range GPU instances with sufficient VRAM to fine-tune pretrained models on custom datasets. Templates with PyTorch and CUDA pre-installed reduce setup time."]], [Plain [Strong [Str "Multi-Container Workloads"], Str ": Use VM instances for scenarios requiring Docker-in-Docker, Kubernetes, or systemd support that standard Docker containers cannot provide."]]], Header 2 ("api-reference", ["unnumbered", "unlisted"], []) [Str "API Reference"], Header 3 ("rest-api", ["unnumbered", "unlisted"], []) [Str "REST API"], Para [Str "The REST API is intended for advanced users; the CLI and Python SDK are recommended for most workflows. Authentication uses Bearer tokens with API keys generated from the web console."], Header 3 ("cli-commands", ["unnumbered", "unlisted"], []) [Str "CLI Commands"], CodeBlock ("", ["bash"], []) "# Search for available GPU offers
+vastai search offers [filter-parameters] -o [sort-options]
+# Example: vastai search offers 'reliability > 0.99 num_gpus>=4'
+
+# Create an instance from an offer
+vastai create instance [OFFER_ID] --image [IMAGE] --disk [GB] --ssh --direct
+
+# List running instances
+vastai show instances
+
+# Start / stop / destroy instances
+vastai start instance [ID]
+vastai stop instance [ID]
+vastai destroy instance [ID]
+
+# Data transfer between instances or cloud storage
+vastai copy [instance_id:]path [instance_id:]path
+vastai cloud copy [args]
+
+# SSH into an instance
+vastai ssh-url [ID]
+
+# Show underlying API call for any command
+vastai [command] --explain
+", Header 3 ("python-sdk", ["unnumbered", "unlisted"], []) [Str "Python SDK"], CodeBlock ("", ["python"], []) "from vastai_sdk import VastAI
+vast_sdk = VastAI(api_key=\"YOUR_API_KEY\")
+
+# Search for available offers
+offers = vast_sdk.search_offers(query=\"gpu_name=RTX_5090 rented=False rentable=True\")
+
+# Launch an instance
+vast_sdk.launch_instance(num_gpus=\"1\", gpu_name=\"RTX_3090\", image=\"pytorch/pytorch\")
+
+# Instance lifecycle
+vast_sdk.start_instance(id=12345)
+vast_sdk.stop_instance(id=12345)
+vast_sdk.reboot_instance(id=12345)
+vast_sdk.destroy_instance(id=12345)
+
+# View instance details and logs
+vast_sdk.show_instances()
+vast_sdk.logs(id=12345)
+
+# File operations
+vast_sdk.copy(src=\"path\", dst=\"path\", identity=\"file\")
+vast_sdk.cloud_copy()
+
+# SSH key management
+vast_sdk.create_ssh_key()
+vast_sdk.show_ssh_keys()
+vast_sdk.delete_ssh_key(id=1)
+", Header 3 ("serverless-sdk", ["unnumbered", "unlisted"], []) [Str "Serverless SDK"], CodeBlock ("", ["python"], []) "import asyncio
+from vastai import Serverless
+
+async def main():
+    client = Serverless()  # Uses VAST_API_KEY env var
+    endpoint = await client.get_endpoint(name=\"vLLM-Qwen3-8B\")
+
+    payload = {
+        \"model\": \"Qwen/Qwen3-8B\",
+        \"prompt\": \"Explain quantum computing in simple terms\",
+        \"max_tokens\": 100,
+        \"temperature\": 0.7,
+    }
+
+    result = await endpoint.request(\"/v1/completions\", payload, cost=100)
+    print(result[\"response\"][\"choices\"][0][\"text\"])
+    await client.close()
+
+asyncio.run(main())
+", Header 2 ("configuration", ["unnumbered", "unlisted"], []) [Str "Configuration"], Header 3 ("instance-configuration", ["unnumbered", "unlisted"], []) [Str "Instance Configuration"], Para [Str "Instance parameters are specified at launch time through the CLI, SDK, or web console:"], BulletList [[Plain [Strong [Str "GPU Type"], Str ": Specific GPU model (e.g., RTX 3090, RTX 4090, A100, H100)."]], [Plain [Strong [Str "GPU Count"], Str ": Number of GPUs per instance."]], [Plain [Strong [Str "RAM"], Str ": Minimum system RAM requirement."]], [Plain [Strong [Str "CPU Cores"], Str ": Minimum CPU core count."]], [Plain [Strong [Str "Disk Space"], Str ": Storage allocation (static, cannot be modified after creation)."]], [Plain [Strong [Str "Bandwidth"], Str ": Minimum network bandwidth."]], [Plain [Strong [Str "Template/Image"], Str ": Docker image or template hash for the instance environment."]], [Plain [Strong [Str "Launch Mode"], Str ": Entrypoint, SSH, or Jupyter."]]], Header 3 ("environment-variables", ["unnumbered", "unlisted"], []) [Str "Environment Variables"], Para [Str "Instances support custom environment variables via ", Code ("", [], []) "-e", Str " syntax. Predefined variables injected by the platform include: ", Code ("", [], []) "CONTAINER_API_KEY", Str ", ", Code ("", [], []) "CONTAINER_ID", Str ", ", Code ("", [], []) "GPU_COUNT", Str ", ", Code ("", [], []) "PUBLIC_IPADDR", Str ", ", Code ("", [], []) "SSH_PUBLIC_KEY", Str ", and port mapping variables (", Code ("", [], []) "VAST_TCP_PORT_X", Str ", ", Code ("", [], []) "VAST_UDP_PORT_X", Str "). UI control variables include ", Code ("", [], []) "OPEN_BUTTON_PORT", Str ", ", Code ("", [], []) "JUPYTER_PORT", Str ", ", Code ("", [], []) "JUPYTER_TOKEN", Str ", and ", Code ("", [], []) "DATA_DIRECTORY", Str "."], Header 3 ("serverless-endpoint-configuration", ["unnumbered", "unlisted"], []) [Str "Serverless Endpoint Configuration"], Para [Str "Endpoint-level parameters set during creation:"], BulletList [[Plain [Strong [Str "Endpoint Name"], Str ": Descriptive identifier for the endpoint."]], [Plain [Strong [Str "Cold Multiplier"], Str ": Scales total capacity based on predicted load (e.g., 3x)."]], [Plain [Strong [Str "Minimum Workers"], Str ": Pre-loaded instances for instant scaling."]], [Plain [Strong [Str "Maximum Workers"], Str ": Upper bound on GPU instances."]], [Plain [Strong [Str "Minimum Load"], Str ": Baseline tokens-per-second instantaneous capacity."]], [Plain [Strong [Str "Minimum Cold Load"], Str ": Baseline tokens-per-second total capacity."]], [Plain [Strong [Str "Target Utilization"], Str ": Resource usage target (e.g., 0.9 for 90%)."]]], Para [Str "Workergroup parameters include ", Code ("", [], []) "gpu_ram", Str " (VRAM in GB, default 24), ", Code ("", [], []) "search_params", Str " (hardware filtering criteria), ", Code ("", [], []) "template_hash", Str " or ", Code ("", [], []) "template_id", Str " (pre-configured deployment template), and ", Code ("", [], []) "launch_args", Str " (additional instance creation parameters)."], Header 3 ("pyworker-configuration", ["unnumbered", "unlisted"], []) [Str "PyWorker Configuration"], Para [Str "Custom PyWorker configuration in ", Code ("", [], []) "worker.py", Str ":"], CodeBlock ("", ["python"], []) "from vastai import Worker, WorkerConfig, HandlerConfig, LogActionConfig, BenchmarkConfig
+
+worker_config = WorkerConfig(
+    model_server_url=\"http://127.0.0.1\",
+    model_server_port=18000,
+    model_log_file=\"/var/log/portal/vllm.log\",
+    handlers=[
+        HandlerConfig(
+            route=\"/v1/completions\",
+            allow_parallel_requests=True,
+            max_queue_time=60.0,
+            workload_calculator=lambda p: float(p.get(\"max_tokens\", 0)),
+            benchmark_config=BenchmarkConfig(
+                generator=completions_benchmark_generator,
+                runs=8,
+                concurrency=10,
+            ),
+        ),
+    ],
+    log_action_config=LogActionConfig(
+        on_load=[\"Application startup complete.\"],
+        on_error=[\"RuntimeError: Engine\", \"Traceback (most recent call last):\"],
+    ),
+)
+
+Worker(worker_config).run()
+", Header 2 ("integration-patterns", ["unnumbered", "unlisted"], []) [Str "Integration Patterns"], Header 3 ("cli-scripting", ["unnumbered", "unlisted"], []) [Str "CLI Scripting"], CodeBlock ("", ["bash"], []) "#!/bin/bash
+# Find cheapest A100 offer and launch with PyTorch template
+OFFER_ID=$(vastai search offers --gpu-name A100 --order dph | head -1 | awk '{print $1}')
+vastai create instance $OFFER_ID --image pytorch/pytorch:latest --disk 64 --ssh --direct
+", Header 3 ("rest-api-integration", ["unnumbered", "unlisted"], []) [Str "REST API Integration"], CodeBlock ("", ["python"], []) "import requests
+
+API_KEY = \"your_api_key\"
+BASE_URL = \"https://console.vast.ai/api/v0\"
+headers = {\"Authorization\": f\"Bearer {API_KEY}\"}
+
+# Search for available offers
+response = requests.get(f\"{BASE_URL}/bundles/\", headers=headers)
+offers = response.json()
+", Header 3 ("serverless-deployment-via-git-repository", ["unnumbered", "unlisted"], []) [Str "Serverless Deployment via Git Repository"], Para [Str "Deploy custom PyWorkers by creating a Git repository with ", Code ("", [], []) "worker.py", Str " and ", Code ("", [], []) "requirements.txt", Str ", then setting the ", Code ("", [], []) "PYWORKER_REPO", Str " environment variable in the serverless configuration. The platform clones the repository, installs dependencies, starts the model server, and runs the PyWorker."], Header 3 ("cloud-storage-sync", ["unnumbered", "unlisted"], []) [Str "Cloud Storage Sync"], CodeBlock ("", ["bash"], []) "# Copy data from S3 to a stopped instance
+vastai cloud copy s3://bucket/data instance_id:/workspace/data
+
+# Copy between instances (same datacenter avoids bandwidth charges)
+vastai copy 12345:/output/ 67890:/input/
+", Header 3 ("ssh-automation", ["unnumbered", "unlisted"], []) [Str "SSH Automation"], CodeBlock ("", ["bash"], []) "# Get SSH connection details
+vastai ssh-url INSTANCE_ID
+
+# SCP for smaller transfers (under 1 GB recommended)
+scp -P PORT local_file.tar.gz root@IPADDR:/workspace/
+", Header 2 ("examples", ["unnumbered", "unlisted"], []) [Str "Examples"], Header 3 ("deploy-a-serverless-vllm-endpoint", ["unnumbered", "unlisted"], []) [Str "Deploy a Serverless vLLM Endpoint"], OrderedList (1, DefaultStyle, DefaultDelim) [[Plain [Str "Navigate to the Serverless Dashboard at cloud.vast.ai/serverless."]], [Plain [Str "Click \"Get Started\" and configure the endpoint with a name, cold multiplier of 3, minimum 5 workers, and maximum 16 workers."]], [Plain [Str "Select the \"vLLM (Serverless)\" template pre-configured with Qwen/Qwen3-8B."]], [Plain [Str "Click \"Create\" and wait 3-5 minutes for workers to initialize (download model, load into GPU memory, complete health checks)."]], [Plain [Str "Monitor worker states: Stopped (cold, ready to activate), Loading (starting), Ready (serving requests)."]]], Header 3 ("launch-a-training-instance-via-cli", ["unnumbered", "unlisted"], []) [Str "Launch a Training Instance via CLI"], CodeBlock ("", ["bash"], []) "# Search for A100 instances under $1/hr with high reliability
+vastai search offers --gpu-name A100 --dph 1.0 --order dph 'reliability > 0.95'
+
+# Create instance with 64 GB disk
+vastai create instance 12345 --image pytorch/pytorch:2.0-cuda11.8-cudnn8-devel --disk 64 --ssh
+
+# Monitor instance status
+vastai show instances
+
+# Stop instance (preserves data, stops GPU charges)
+vastai stop instance 12345
+
+# Destroy instance (stops all charges including storage)
+vastai destroy instance 12345
+", Header 3 ("reserved-instance-for-long-term-training", ["unnumbered", "unlisted"], []) [Str "Reserved Instance for Long-Term Training"], CodeBlock ("", ["bash"], []) "# Search for reservable H100 offers
+vastai search offers --gpu-name H100 --reservable
+
+# Create and convert to reserved for up to 50% savings
+vastai create instance 67890 --image nvidia/cuda:12.0-devel --reserve
+", Header 3 ("custom-pyworker-for-image-generation", ["unnumbered", "unlisted"], []) [Str "Custom PyWorker for Image Generation"], CodeBlock ("", ["python"], []) "from vastai import Worker, WorkerConfig, HandlerConfig, LogActionConfig, BenchmarkConfig
+
+worker_config = WorkerConfig(
+    model_server_url=\"http://127.0.0.1\",
+    model_server_port=8188,
+    model_log_file=\"/var/log/portal/comfyui.log\",
+    handlers=[
+        HandlerConfig(
+            route=\"/api/generate\",
+            allow_parallel_requests=False,
+            max_queue_time=120.0,
+            workload_calculator=lambda p: 1.0,
+        ),
+    ],
+    log_action_config=LogActionConfig(
+        on_load=[\"ComfyUI startup complete\"],
+        on_error=[\"RuntimeError\"],
+    ),
+)
+
+Worker(worker_config).run()
+", Header 2 ("limitations", ["unnumbered", "unlisted"], []) [Str "Limitations"], BulletList [[Plain [Strong [Str "Provider Variability"], Str ": Hardware reliability and network quality vary across providers. Reliability scores help mitigate risk, but interruptions can occur on lower-rated machines."]], [Plain [Strong [Str "No Guaranteed Uptime SLA"], Str ": Unlike traditional cloud providers, Vast.ai does not offer enterprise-grade Service Level Agreements (SLAs) on most instances. Interruptible instances may be paused at any time by higher-priority rentals."]], [Plain [Strong [Str "Data Locality"], Str ": Data must be transferred to and from instances. SCP over proxy SSH is recommended only for transfers under 1 GB; direct SSH connections or cloud sync are preferred for larger datasets."]], [Plain [Strong [Str "Static Disk Allocation"], Str ": Disk space is set at instance creation and cannot be modified afterward."]], [Plain [Strong [Str "Networking Constraints"], Str ": Instances share public IPs with port-based routing, limited to 64 ports per instance. No dedicated public IP assignment is available."]], [Plain [Strong [Str "VM Limitations"], Str ": VM instances have slower boot times, higher disk overhead, limited machine availability, restricted preconfigured templates, and no SSH key modification on running instances. VM copy operations only support complete VM-to-VM transfers."]], [Plain [Strong [Str "Closed Source Platform"], Str ": The marketplace platform is proprietary. The CLI and SDK are open source, but the core infrastructure is not."]], [Plain [Strong [Str "Pre-Payment Required"], Str ": Credits must be purchased before launching instances. When balance reaches zero, instances are stopped automatically. Without a saved payment method, instances and stored data are destroyed."]], [Plain [Strong [Str "Security Model"], Str ": Instances run on third-party hardware. Sensitive workloads require additional encryption and security measures beyond the platform's default Caddy proxy with TLS."]]], Header 2 ("changelog", ["unnumbered", "unlisted"], []) [Str "Changelog"], Para [Str "Vast.ai continuously updates its marketplace and tooling. Key platform capabilities as of the documentation crawl include serverless inference with benchmark-driven autoscaling, virtual machine instance support, the PyWorker custom worker framework, the Python SDK with async serverless client, cloud sync with S3 and Google Drive, team management with role-based access, and the Instance Portal web interface. Consult the official documentation and community Discord for the latest platform changes."], Header 2 ("citations", ["unnumbered", "unlisted"], []) [Str "Citations"], BulletList [[Plain [Str "[", Str "1", Str "]", Str " Welcome to Vast.ai - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/get-started"] ("https://docs.vast.ai/documentation/get-started", "")]], [Plain [Str "[", Str "2", Str "]", Str " Instances Overview - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/instances/overview"] ("https://docs.vast.ai/documentation/instances/overview", "")]], [Plain [Str "[", Str "3", Str "]", Str " Pricing - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/instances/pricing"] ("https://docs.vast.ai/documentation/instances/pricing", "")]], [Plain [Str "[", Str "4", Str "]", Str " Instance Types - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/instances/choosing/instance-types"] ("https://docs.vast.ai/documentation/instances/choosing/instance-types", "")]], [Plain [Str "[", Str "5", Str "]", Str " Docker Execution Environment - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/instances/docker-environment"] ("https://docs.vast.ai/documentation/instances/docker-environment", "")]], [Plain [Str "[", Str "6", Str "]", Str " Virtual Machines - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/instances/virtual-machines"] ("https://docs.vast.ai/documentation/instances/virtual-machines", "")]], [Plain [Str "[", Str "7", Str "]", Str " Data Movement - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/instances/storage/data-movement"] ("https://docs.vast.ai/documentation/instances/storage/data-movement", "")]], [Plain [Str "[", Str "8", Str "]", Str " Templates Introduction - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/templates/introduction"] ("https://docs.vast.ai/documentation/templates/introduction", "")]], [Plain [Str "[", Str "9", Str "]", Str " Serverless Overview - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/serverless"] ("https://docs.vast.ai/documentation/serverless", "")]], [Plain [Str "[", Str "10", Str "]", Str " Serverless Quickstart - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/serverless/quickstart"] ("https://docs.vast.ai/documentation/serverless/quickstart", "")]], [Plain [Str "[", Str "11", Str "]", Str " Creating Custom PyWorkers - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/serverless/creating-new-pyworkers"] ("https://docs.vast.ai/documentation/serverless/creating-new-pyworkers", "")]], [Plain [Str "[", Str "12", Str "]", Str " Workergroup Parameters - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/serverless/workergroup-parameters"] ("https://docs.vast.ai/documentation/serverless/workergroup-parameters", "")]], [Plain [Str "[", Str "13", Str "]", Str " CLI Getting Started - ", Link ("", [], []) [Str "https://docs.vast.ai/cli/get-started"] ("https://docs.vast.ai/cli/get-started", "")]], [Plain [Str "[", Str "14", Str "]", Str " Python SDK Quickstart - ", Link ("", [], []) [Str "https://docs.vast.ai/sdk/python/quickstart"] ("https://docs.vast.ai/sdk/python/quickstart", "")]], [Plain [Str "[", Str "15", Str "]", Str " API Reference - ", Link ("", [], []) [Str "https://docs.vast.ai/api-reference/introduction"] ("https://docs.vast.ai/api-reference/introduction", "")]], [Plain [Str "[", Str "16", Str "]", Str " Billing - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/reference/billing"] ("https://docs.vast.ai/documentation/reference/billing", "")]], [Plain [Str "[", Str "17", Str "]", Str " Keys - ", Link ("", [], []) [Str "https://docs.vast.ai/documentation/reference/keys"] ("https://docs.vast.ai/documentation/reference/keys", "")]]]]

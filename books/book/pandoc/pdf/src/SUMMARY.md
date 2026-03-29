@@ -4,7 +4,7 @@
 
 ---
 
-# Part I: Foundation Models and Infrastructure
+# Part I: Foundation and Infrastructure
 
 ## LLM Providers
 
@@ -12,29 +12,34 @@
 - [Gemini](part-1-foundation/llm-providers/gemini.md)
 - [Claude](part-1-foundation/llm-providers/claude.md)
 
-## Inference Serving
+## Inference Engines
 
-- [Max](part-1-foundation/inference-serving/max.md)
-- [vLLM](part-1-foundation/inference-serving/vllm.md)
-- [SGLang](part-1-foundation/inference-serving/sglang.md)
-- [KServe](part-1-foundation/inference-serving/kserve.md)
-- [Triton Inference Server](part-1-foundation/inference-serving/triton-inference-server.md)
-- [BentoML](part-1-foundation/inference-serving/bentoml.md)
-- [Ollama](part-1-foundation/inference-serving/ollama.md)
-- [LM Studio](part-1-foundation/inference-serving/lm-studio.md)
-- [Hugging Face Transformers](part-1-foundation/inference-serving/hugging-face-transformers.md)
+- [Max](part-1-foundation/inference-engines/max.md)
+- [vLLM](part-1-foundation/inference-engines/vllm.md)
+- [SGLang](part-1-foundation/inference-engines/sglang.md)
+- [KServe](part-1-foundation/inference-engines/kserve.md)
+- [Triton Inference Server](part-1-foundation/inference-engines/triton-inference-server.md)
+- [BentoML](part-1-foundation/inference-engines/bentoml.md)
+- [Ollama](part-1-foundation/inference-engines/ollama.md)
+- [LM Studio](part-1-foundation/inference-engines/lm-studio.md)
 
-## GPU Compute and Cloud Platforms
+## GPU Infrastructure
 
-- [Ray](part-1-foundation/gpu-compute/ray.md)
-- [Groq](part-1-foundation/gpu-compute/groq.md)
-- [Cerebras](part-1-foundation/gpu-compute/cerebras.md)
-- [Modal](part-1-foundation/gpu-compute/modal.md)
-- [RunPod](part-1-foundation/gpu-compute/runpod.md)
-- [Vast.ai](part-1-foundation/gpu-compute/vast-ai.md)
-- [Inferless](part-1-foundation/gpu-compute/inferless.md)
-- [Vertex AI](part-1-foundation/gpu-compute/vertex-ai.md)
-- [AWS Bedrock](part-1-foundation/gpu-compute/aws-bedrock.md)
+- [Ray](part-1-foundation/gpu-infrastructure/ray.md)
+- [Groq](part-1-foundation/gpu-infrastructure/groq.md)
+- [Cerebras](part-1-foundation/gpu-infrastructure/cerebras.md)
+- [Modal](part-1-foundation/gpu-infrastructure/modal.md)
+- [RunPod](part-1-foundation/gpu-infrastructure/runpod.md)
+- [Vast.ai](part-1-foundation/gpu-infrastructure/vast-ai.md)
+- [Inferless](part-1-foundation/gpu-infrastructure/inferless.md)
+- [Vertex AI](part-1-foundation/gpu-infrastructure/vertex-ai.md)
+- [AWS Bedrock](part-1-foundation/gpu-infrastructure/aws-bedrock.md)
+
+## Model Gateways
+
+- [LiteLLM](part-1-foundation/model-gateways/litellm.md)
+- [Portkey](part-1-foundation/model-gateways/portkey.md)
+- [ccapi](part-1-foundation/model-gateways/ccapi.md)
 
 ---
 
@@ -51,67 +56,84 @@
 - [smolagents](part-2-application/agent-frameworks/smolagents.md)
 - [Pydantic AI](part-2-application/agent-frameworks/pydantic-ai.md)
 
-## RAG and Knowledge Retrieval
+## RAG Frameworks
 
-- [Haystack](part-2-application/rag-knowledge/haystack.md)
-- [LlamaIndex](part-2-application/rag-knowledge/llamaindex.md)
-- [pgvector](part-2-application/rag-knowledge/pgvector.md)
-- [GraphRAG](part-2-application/rag-knowledge/graphrag.md)
-- [Pinecone](part-2-application/rag-knowledge/pinecone.md)
-- [Weaviate](part-2-application/rag-knowledge/weaviate.md)
+- [Haystack](part-2-application/rag-frameworks/haystack.md)
+- [LlamaIndex](part-2-application/rag-frameworks/llamaindex.md)
+- [GraphRAG](part-2-application/rag-frameworks/graphrag.md)
 
-## Structured Output and Prompt Engineering
+## Structured Generation
 
-- [DSPy](part-2-application/structured-output/dspy.md)
-- [Outlines](part-2-application/structured-output/outlines.md)
-- [Instructor](part-2-application/structured-output/instructor.md)
-- [BAML](part-2-application/structured-output/baml.md)
+- [DSPy](part-2-application/structured-generation/dspy.md)
+- [Outlines](part-2-application/structured-generation/outlines.md)
+- [Instructor](part-2-application/structured-generation/instructor.md)
+- [BAML](part-2-application/structured-generation/baml.md)
 
----
+## Memory Systems
 
-# Part III: Safety, Quality and Operations
-
-## Guardrails and Safety
-
-- [Guardrails AI](part-3-operations/guardrails-safety/guardrails-ai.md)
-- [NeMo Guardrails](part-3-operations/guardrails-safety/nemo-guardrails.md)
-- [OpenAI Moderation](part-3-operations/guardrails-safety/openai-moderation.md)
-- [Lakera](part-3-operations/guardrails-safety/lakera.md)
-
-## Evaluation and Testing
-
-- [Ragas](part-3-operations/evaluation-testing/ragas.md)
-- [DeepEval](part-3-operations/evaluation-testing/deepeval.md)
-- [OpenAI Evals](part-3-operations/evaluation-testing/openai-evals.md)
-- [promptfoo](part-3-operations/evaluation-testing/promptfoo.md)
-
-## Observability and LLM Ops
-
-- [LangSmith](part-3-operations/observability/langsmith.md)
-- [Arize Phoenix](part-3-operations/observability/arize-phoenix.md)
-- [Weights and Biases](part-3-operations/observability/weights-and-biases.md)
-- [Helicone](part-3-operations/observability/helicone.md)
-- [Langfuse](part-3-operations/observability/langfuse.md)
-
-## API Gateways and Model Routing
-
-- [LiteLLM](part-3-operations/api-gateways/litellm.md)
-- [Portkey](part-3-operations/api-gateways/portkey.md)
-- [ccapi](part-3-operations/api-gateways/ccapi.md)
+- [Mem0](part-2-application/memory-systems/mem0.md)
+- [Zep](part-2-application/memory-systems/zep.md)
+- [Letta](part-2-application/memory-systems/letta.md)
 
 ---
 
-# Part IV: Integration and Data
+# Part III: Data and Models
 
-## Workflow Orchestration and Automation
+## Vector Databases
 
-- [Temporal](part-4-integration/workflow-orchestration/temporal.md)
-- [Prefect](part-4-integration/workflow-orchestration/prefect.md)
-- [Airflow](part-4-integration/workflow-orchestration/airflow.md)
-- [n8n](part-4-integration/workflow-orchestration/n8n.md)
-- [Activepieces](part-4-integration/workflow-orchestration/activepieces.md)
-- [Node-RED](part-4-integration/workflow-orchestration/node-red.md)
+- [pgvector](part-3-data/vector-databases/pgvector.md)
+- [Pinecone](part-3-data/vector-databases/pinecone.md)
+- [Weaviate](part-3-data/vector-databases/weaviate.md)
+- [Qdrant](part-3-data/vector-databases/qdrant.md)
+- [Milvus](part-3-data/vector-databases/milvus.md)
 
-## Data Labeling
+## Data Pipelines
 
-- [Label Studio](part-4-integration/data-labeling/label-studio.md)
+- [Unstructured](part-3-data/data-pipelines/unstructured.md)
+- [Airbyte](part-3-data/data-pipelines/airbyte.md)
+
+## Fine-tuning
+
+- [Hugging Face Transformers](part-3-data/fine-tuning/hugging-face-transformers.md)
+- [PEFT](part-3-data/fine-tuning/peft.md)
+- [Unsloth](part-3-data/fine-tuning/unsloth.md)
+- [Axolotl](part-3-data/fine-tuning/axolotl.md)
+
+## Labeling
+
+- [Label Studio](part-3-data/labeling/label-studio.md)
+
+---
+
+# Part IV: Operations and Quality
+
+## Guardrails
+
+- [Guardrails AI](part-4-operations/guardrails/guardrails-ai.md)
+- [NeMo Guardrails](part-4-operations/guardrails/nemo-guardrails.md)
+- [OpenAI Moderation](part-4-operations/guardrails/openai-moderation.md)
+- [Lakera](part-4-operations/guardrails/lakera.md)
+
+## Evaluation
+
+- [Ragas](part-4-operations/evaluation/ragas.md)
+- [DeepEval](part-4-operations/evaluation/deepeval.md)
+- [OpenAI Evals](part-4-operations/evaluation/openai-evals.md)
+- [promptfoo](part-4-operations/evaluation/promptfoo.md)
+
+## Observability
+
+- [LangSmith](part-4-operations/observability/langsmith.md)
+- [Arize Phoenix](part-4-operations/observability/arize-phoenix.md)
+- [Weights and Biases](part-4-operations/observability/weights-and-biases.md)
+- [Helicone](part-4-operations/observability/helicone.md)
+- [Langfuse](part-4-operations/observability/langfuse.md)
+
+## Workflow Orchestration
+
+- [Temporal](part-4-operations/workflow-orchestration/temporal.md)
+- [Prefect](part-4-operations/workflow-orchestration/prefect.md)
+- [Airflow](part-4-operations/workflow-orchestration/airflow.md)
+- [n8n](part-4-operations/workflow-orchestration/n8n.md)
+- [Activepieces](part-4-operations/workflow-orchestration/activepieces.md)
+- [Node-RED](part-4-operations/workflow-orchestration/node-red.md)

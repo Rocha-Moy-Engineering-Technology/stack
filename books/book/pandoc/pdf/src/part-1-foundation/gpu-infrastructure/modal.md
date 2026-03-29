@@ -1,0 +1,178 @@
+[Header 1 ("modal", [], []) [Str "Modal"], BlockQuote [Para [Str "Serverless GPU compute platform for AI workloads with elastic scaling"]], Table ("", [], []) (Caption Nothing []) [(AlignDefault, ColWidthDefault), (AlignDefault, ColWidthDefault)] (TableHead ("", [], []) [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Field"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Value"]]]]) [(TableBody ("", [], []) (RowHeadColumns 0) [] [Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Name"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Modal"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Group"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "GPU Infrastructure"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Type"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "API/SDK/Infra"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Open Source"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "No"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "GitHub"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "N/A"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Stars"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "N/A"]]], Row ("", [], []) [Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Str "Docs"]], Cell ("", [], []) AlignDefault (RowSpan 0) (ColSpan 0) [Plain [Link ("", [], []) [Str "modal.com/docs"] ("https://modal.com/docs", "")]]]])] (TableFoot ("", [], []) []), Header 2 ("overview", ["unnumbered", "unlisted"], []) [Str "Overview"], Para [Str "Modal is a serverless cloud platform purpose-built for AI and compute-intensive workloads. It takes Python code, packages it into a container, and executes it in the cloud with automatic horizontal scaling. The platform follows a code-first approach that eliminates YAML configuration files entirely, offering sub-second cold starts, per-second billing, and multi-cloud infrastructure. Modal pools capacity across all major clouds, dynamically deciding where to run code based on the best available capacity, optimizing for both high GPU availability and low cost."], Para [Str "Modal targets engineers and researchers who need on-demand GPU access for inference, batch processing, training, fine-tuning, and sandboxed code execution without managing infrastructure, containers, or orchestration layers. All compute jobs are containerized and virtualized using gVisor (Google's sandboxing technology), with encryption in transit (TLS 1.3) and at rest. The platform is SOC 2 Type 2 certified and HIPAA-compliant on Enterprise plans."], Header 2 ("core-concepts", ["unnumbered", "unlisted"], []) [Str "Core Concepts"], BulletList [[Plain [Strong [Str "App"], Str ": Top-level container that groups one or more Functions for atomic deployment, acting as a shared namespace. Apps can be ephemeral (created via ", Code ("", [], []) "modal run", Str ", existing only during script execution) or deployed (persisting indefinitely via ", Code ("", [], []) "modal deploy", Str "). Functions within an App scale independently; if no active inputs exist, no containers run and no compute charges accrue."]], [Plain [Strong [Str "Function"], Str ": A Python function decorated with ", Code ("", [], []) "@app.function()", Str " that runs remotely in the cloud. Functions are the primary unit of execution and can be invoked synchronously, asynchronously, or mapped over inputs in parallel. Each Function scales up and down independently from other Functions in the same App."]], [Plain [Strong [Str "Image"], Str ": A container image definition specifying the runtime environment for functions. Images are built incrementally using a builder pattern with method chaining (e.g., ", Code ("", [], []) "modal.Image.debian_slim().pip_install(\"torch\")", Str "). Layers are cached for fast rebuilds, and each method call creates a cacheable layer. Images run on Debian Linux with gVisor sandboxing."]], [Plain [Strong [Str "Volume"], Str ": Persistent distributed filesystem that can be mounted into function containers. Volumes survive across invocations and deployments, suitable for model weights, datasets, and checkpoints. Volumes v2 (beta) offers unlimited file count, improved random access, concurrent writers to distinct files, and HIPAA-compliant data deletion."]], [Plain [Strong [Str "Secret"], Str ": Secure credential management injecting environment variables into containers at runtime. Secrets support creation via dashboard (with templates for common services), CLI, ", Code ("", [], []) ".env", Str " files, and programmatic dictionaries. Multiple Secrets can be combined per function."]], [Plain [Strong [Str "Sandbox"], Str ": Secure isolated containers for executing untrusted or agent-generated code with configurable resource limits, timeouts (up to 24 hours), networking, and file access. Sandboxes support named instances, tagging, snapshots, and can be referenced by ID for reuse."]], [Plain [Strong [Str "Notebook"], Str ": Cloud-hosted GPU-backed Jupyter environments with serverless pricing, real-time multi-user collaboration, AI-powered code completion (Claude Sonnet 4.6), and support for up to 8 NVIDIA A100s or H100s per kernel."]]], Header 2 ("installation", ["unnumbered", "unlisted"], []) [Str "Installation"], Para [Str "Modal requires Python 3.10 or later (Python 3.9 support was removed in v1.3.0; Python 3.14 is supported). Installation and authentication are handled through the CLI:"], CodeBlock ("", ["bash"], []) "pip install modal
+modal setup  # opens browser for authentication
+", Para [Str "The ", Code ("", [], []) "modal setup", Str " command creates a local token that authenticates all subsequent CLI and SDK operations. No additional configuration files are required."], Para [Str "Running a Modal app locally for testing:"], CodeBlock ("", ["bash"], []) "modal run my_app.py
+", Para [Str "Deploying a Modal app as a persistent service:"], CodeBlock ("", ["bash"], []) "modal deploy my_app.py
+", Para [Str "Development with live reloading:"], CodeBlock ("", ["bash"], []) "modal serve my_app.py  # ephemeral endpoint with hot reload
+", Header 2 ("architecture", ["unnumbered", "unlisted"], []) [Str "Architecture"], Para [Str "Modal operates on a serverless execution model. When a function is invoked, Modal performs the following sequence:"], OrderedList (1, DefaultStyle, DefaultDelim) [[Plain [Strong [Str "Image resolution"], Str ": The platform checks whether the specified container image exists in its cache. If not, it builds the image from the declarative definition using layer-based caching."]], [Plain [Strong [Str "Container scheduling"], Str ": A container is scheduled on available infrastructure matching the requested resources (CPU, memory, GPU type, region). Modal pools capacity across multiple clouds for optimal availability."]], [Plain [Strong [Str "Code injection"], Str ": The decorated function code is serialized and injected into the container at runtime."]], [Plain [Strong [Str "Execution"], Str ": The function runs inside the gVisor-sandboxed container with access to mounted volumes, secrets, cloud bucket mounts, and network resources."]], [Plain [Strong [Str "Scaling"], Str ": Additional containers are spawned automatically based on incoming request volume. Scaling is controlled by ", Code ("", [], []) "max_containers", Str ", ", Code ("", [], []) "min_containers", Str ", ", Code ("", [], []) "buffer_containers", Str ", and ", Code ("", [], []) "scaledown_window", Str " parameters."]], [Plain [Strong [Str "Teardown"], Str ": Idle containers are terminated after a configurable scaledown window (default 60 seconds, configurable from 2 seconds to 20 minutes). Billing stops immediately."]]], Para [Str "The platform abstracts away container registries, orchestration systems, load balancers, and GPU drivers. Users interact exclusively through Python decorators and the Modal SDK. All inputs and outputs traverse Modal's control plane in ", Code ("", [], []) "us-east-1", Str ", regardless of the specified execution region."], Header 3 ("container-lifecycle", ["unnumbered", "unlisted"], []) [Str "Container Lifecycle"], Para [Str "Containers are reused across multiple inputs. Lifecycle hooks enable initialization and cleanup:"], BulletList [[Plain [Strong [Code ("", [], []) "@modal.enter()"], Str ": One-time initialization when a container starts (loading model weights, importing packages)."]], [Plain [Strong [Code ("", [], []) "@modal.exit()"], Str ": One-time cleanup on shutdown (closing connections, saving state). Receives a 30-second grace period before forced termination. Also triggered on preemption events."]], [Plain [Strong [Code ("", [], []) "@modal.build()"], Str ": Runs during image build time for build-step logic."]]], Header 2 ("key-features", ["unnumbered", "unlisted"], []) [Str "Key Features"], BulletList [[Plain [Strong [Str "Sub-second cold starts"], Str ": Containers boot in approximately one second through aggressive image caching and snapshot-based initialization. Memory Snapshots capture container state after warm-up for even faster subsequent boots."]], [Plain [Strong [Str "Per-second billing"], Str ": Compute charges are measured per second of actual usage, with no minimum billing increments for idle time."]], [Plain [Strong [Str "Autoscaling"], Str ": Automatic container pool management with configurable ", Code ("", [], []) "max_containers", Str " (upper limit), ", Code ("", [], []) "min_containers", Str " (warm floor), ", Code ("", [], []) "buffer_containers", Str " (burst headroom), and ", Code ("", [], []) "scaledown_window", Str " (idle timeout). Dynamic updates via ", Code ("", [], []) "Function.update_autoscaler()", Str " without redeployment."]], [Plain [Strong [Str "Web endpoints"], Str ": Functions exposed as HTTP endpoints via ", Code ("", [], []) "@modal.fastapi_endpoint", Str " (FastAPI), ", Code ("", [], []) "@modal.asgi_app", Str " (ASGI), ", Code ("", [], []) "@modal.wsgi_app", Str " (WSGI), or ", Code ("", [], []) "@modal.web_server", Str " (custom). Request bodies up to 4 GiB, unlimited response sizes. WebSocket support via RFC 6455 with 2 MiB message limit."]], [Plain [Strong [Str "Streaming responses"], Str ": Server-sent events and streaming HTTP responses for real-time inference applications via dedicated streaming endpoint decorators."]], [Plain [Strong [Str "Volumes"], Str ": Persistent distributed filesystems with up to 2.5 GB/s bandwidth. Automatic background commits every few seconds. Volumes v2 supports unlimited files, concurrent writers, and hard-linking."]], [Plain [Strong [Str "Cloud bucket mounts"], Str ": Direct mounting of AWS S3, Google Cloud Storage, and Cloudflare R2 buckets into function containers using AWS Mountpoint technology. Supports read-only mode, key prefix filtering, and OIDC-based authentication."]], [Plain [Strong [Str "Scheduled jobs"], Str ": Functions triggered on cron schedules via ", Code ("", [], []) "modal.Cron(\"0 * * * *\")", Str " or periodic intervals via ", Code ("", [], []) "modal.Period(hours=5)", Str "."]], [Plain [Strong [Str "Secret management"], Str ": Secrets created via dashboard (with templates), CLI, ", Code ("", [], []) ".env", Str " files, or programmatic dicts. Environment variable injection at runtime with multiple-secret composition."]], [Plain [Strong [Str "Sandboxes"], Str ": Secure containers for untrusted code with configurable timeouts (up to 24 hours), named instances, tagging, directory snapshots, and reusable sandbox pools."]], [Plain [Strong [Str "Notebooks"], Str ": GPU-backed Jupyter environments with real-time collaboration, AI code completion, and serverless pricing. Automatic idle shutdown with configurable timeouts."]], [Plain [Strong [Str "GPU health monitoring"], Str ": Automated monitoring and workload migration away from degraded hardware."]], [Plain [Strong [Str "Preemption handling"], Str ": All functions are preemptible by default with graceful termination and automatic restart. Exit handlers execute within a grace period. Non-preemptible mode available for CPU-only functions at 3x cost multiplier."]], [Plain [Strong [Str "Multi-node clusters (beta)"], Str ": Distributed training across up to 64 H100 SXM GPUs with 3,200 Gbps RDMA networking (RoCE protocol), gang scheduling, and rank-based coordination."]], [Plain [Strong [Str "Cluster networking (i6pn)"], Str ": Private IPv6 networking between containers within the same workspace at 50+ Gbps bandwidth. Workspace-isolated subnets using ", Code ("", [], []) "fdaa::/16", Str " prefix."]], [Plain [Strong [Str "Region selection"], Str ": Geographic placement with regions including US, EU, UK, AP, CA, SA, ME, MX, AF with pricing multipliers (1.25x for US/EU/UK/AP, 2.5x for others)."]], [Plain [Strong [Str "JavaScript/Go SDKs (beta)"], Str ": Client SDKs for invoking Modal functions and managing Sandboxes from Node.js and Go applications."]], [Plain [Strong [Str "Integrations"], Str ": OIDC authentication, Datadog monitoring, OpenTelemetry tracing, Okta/SAML SSO, and Slack notifications."]]], Header 2 ("use-cases", ["unnumbered", "unlisted"], []) [Str "Use Cases"], BulletList [[Plain [Strong [Str "Real-time inference APIs"], Str ": Deploying model serving endpoints with automatic scaling, sub-second cold starts, and OpenAI-compatible API endpoints. Deploy vLLM, SGLang, or custom model servers with GPU acceleration."]], [Plain [Strong [Str "Batch inference"], Str ": Processing large datasets through ML models by mapping a function over thousands of inputs in parallel. Hard limits of 25,000 total inputs (running + pending) and 1 million pending async spawn jobs."]], [Plain [Strong [Str "Model training"], Str ": GPU-accelerated training jobs scaling from a single GPU to multi-GPU single-node configurations. Multi-node distributed training available in beta with RDMA networking."]], [Plain [Strong [Str "Fine-tuning"], Str ": Running fine-tuning jobs on large language models (LoRA, full fine-tuning) with configurable GPU types and memory. Examples include Flux diffusion model and LLM fine-tuning."]], [Plain [Strong [Str "Code sandboxing"], Str ": Executing AI-generated code, coding agents, and untrusted user code in isolated Sandboxes with resource limits, networking controls, and filesystem snapshots."]], [Plain [Strong [Str "Data preprocessing"], Str ": Running CPU or GPU-intensive data pipelines on demand, including parallel processing of Parquet files on S3 and dataset ingestion workflows."]], [Plain [Strong [Str "Scheduled ETL"], Str ": Periodic data extraction, transformation, and loading jobs triggered by cron schedules or interval-based periods."]], [Plain [Strong [Str "Interactive notebooks"], Str ": GPU-backed collaborative Jupyter environments for prototyping, research, and document processing with OCR."]], [Plain [Strong [Str "Media generation"], Str ": Image generation (Flux, Stable Diffusion), video generation (Wan2.1), music generation (ACE-Step), and speech transcription (Whisper, Kyutai STT)."]], [Plain [Strong [Str "Scientific computing"], Str ": Protein folding (Boltz-2, Chai-1, ESM3), molecular structure prediction, and other compute-intensive scientific workflows."]]], Header 2 ("api-reference", ["unnumbered", "unlisted"], []) [Str "API Reference"], Para [Strong [Str "App definition"], Str ":"], CodeBlock ("", ["python"], []) "import modal
+
+app = modal.App(\"my-app\")
+", Para [Strong [Str "Function decorator with GPU"], Str ":"], CodeBlock ("", ["python"], []) "@app.function(gpu=\"A100\", timeout=3600, memory=32768)
+def my_function(input_data):
+    return process(input_data)
+", Para [Strong [Str "Image builder"], Str " (recommended ", Code ("", [], []) "uv_pip_install", Str " for faster resolution):"], CodeBlock ("", ["python"], []) "image = (
+    modal.Image.debian_slim(python_version=\"3.11\")
+    .uv_pip_install([\"torch\", \"transformers\"])
+    .apt_install(\"ffmpeg\")
+    .env({\"CUDA_VISIBLE_DEVICES\": \"0\"})
+)
+
+@app.function(image=image, gpu=\"H100\")
+def inference(prompt):
+    pass
+", Para [Strong [Str "Class-based functions with lifecycle hooks"], Str ":"], CodeBlock ("", ["python"], []) "@app.cls(image=image, gpu=\"L40S\")
+class ModelServer:
+    @modal.enter()
+    def load_model(self):
+        from transformers import pipeline
+        self.pipe = pipeline(\"text-generation\", model=\"meta-llama/Llama-2-7b-hf\", device=\"cuda\")
+
+    @modal.fastapi_endpoint(method=\"POST\")
+    def generate(self, request: dict):
+        result = self.pipe(request[\"prompt\"], max_new_tokens=256)
+        return {\"output\": result[0][\"generated_text\"]}
+
+    @modal.exit()
+    def cleanup(self):
+        del self.pipe
+", Para [Strong [Str "Volume"], Str ":"], CodeBlock ("", ["python"], []) "volume = modal.Volume.from_name(\"my-volume\", create_if_missing=True)
+
+@app.function(volumes={\"/data\": volume})
+def write_data():
+    with open(\"/data/output.txt\", \"w\") as f:
+        f.write(\"result\")
+    volume.commit()
+", Para [Strong [Str "Parallel map"], Str ":"], CodeBlock ("", ["python"], []) "@app.function(gpu=\"T4\")
+def process_item(item):
+    return transform(item)
+
+@app.local_entrypoint()
+def main():
+    items = list(range(1000))
+    results = list(process_item.map(items))
+", Para [Strong [Str "Secrets"], Str ":"], CodeBlock ("", ["python"], []) "@app.function(secrets=[modal.Secret.from_name(\"my-api-key\")])
+def call_api():
+    import os
+    key = os.environ[\"API_KEY\"]
+", Para [Strong [Str "Scheduled function"], Str ":"], CodeBlock ("", ["python"], []) "@app.function(schedule=modal.Cron(\"0 */6 * * *\"))
+def periodic_job():
+    pass
+", Para [Strong [Str "Sandbox"], Str ":"], CodeBlock ("", ["python"], []) "sb = modal.Sandbox.create(
+    app=app,
+    image=image,
+    timeout=3600,
+    tags={\"project\": \"agent\"}
+)
+process = sb.exec(\"python\", \"script.py\")
+print(process.stdout.read())
+sb.detach()
+", Para [Strong [Str "Autoscaler configuration"], Str ":"], CodeBlock ("", ["python"], []) "@app.function(
+    gpu=\"H100\",
+    min_containers=2,
+    max_containers=100,
+    buffer_containers=5,
+    scaledown_window=120,
+)
+def inference(prompt):
+    pass
+", Para [Strong [Str "Cloud bucket mount"], Str ":"], CodeBlock ("", ["python"], []) "bucket = modal.CloudBucketMount(
+    bucket_name=\"my-bucket\",
+    secret=modal.Secret.from_name(\"aws-creds\"),
+    key_prefix=\"data/\",
+    read_only=True,
+)
+
+@app.function(volumes={\"/s3\": bucket})
+def process_data():
+    pass
+", Header 2 ("configuration", ["unnumbered", "unlisted"], []) [Str "Configuration"], Header 3 ("gpu-selection", ["unnumbered", "unlisted"], []) [Str "GPU Selection"], Para [Str "GPUs are requested through the ", Code ("", [], []) "gpu", Str " parameter on the function decorator. Available GPU types:"], BulletList [[Plain [Strong [Str "T4"], Str " (16 GB) -- Budget inference, up to 8 per container"]], [Plain [Strong [Str "L4"], Str " (24 GB) -- General purpose inference, up to 8 per container"]], [Plain [Strong [Str "A10"], Str " (24 GB) -- Balanced training/inference, up to 4 per container (96 GB max)"]], [Plain [Strong [Str "L40S"], Str " (48 GB) -- Recommended for inference (best cost/performance trade-off), up to 8 per container"]], [Plain [Strong [Str "A100"], Str " (40 GB) -- May auto-upgrade to 80 GB at no extra cost, up to 8 per container"]], [Plain [Strong [Str "A100-40GB"], Str " (40 GB) -- Specifically 40 GB variant"]], [Plain [Strong [Str "A100-80GB"], Str " (80 GB) -- Specifically 80 GB variant"]], [Plain [Strong [Str "RTX-PRO-6000"], Str " -- Professional GPU"]], [Plain [Strong [Str "H100"], Str " (80 GB SXM) -- High-end training, may auto-upgrade to H200 at no extra cost, up to 8 per container"]], [Plain [Strong [Str "H100!"], Str " (80 GB SXM) -- Reserved H100 (no auto-upgrade to H200)"]], [Plain [Strong [Str "H200"], Str " (141 GB HBM3e, 4.8 TB/s bandwidth) -- Large model training, up to 8 per container"]], [Plain [Strong [Str "B200"], Str " (192 GB) -- NVIDIA Blackwell architecture, up to 8 per container"]], [Plain [Strong [Str "B200+"], Str " (192 GB) -- Opt-in B200 or B300 (billed as B200, B300 requires CUDA 13.0+)"]]], Header 3 ("multi-gpu", ["unnumbered", "unlisted"], []) [Str "Multi-GPU"], Para [Str "Request multiple GPUs by appending a count: ", Code ("", [], []) "gpu=\"H100:8\"", Str " for 8x H100 (up to 1,536 GB total). Most GPU types support up to 8 GPUs per container; A10 supports up to 4. Requesting more than 2 GPUs typically increases wait times."], Header 3 ("gpu-fallbacks", ["unnumbered", "unlisted"], []) [Str "GPU Fallbacks"], Para [Str "Specify a prioritized list of GPU types for availability flexibility:"], CodeBlock ("", ["python"], []) "@app.function(gpu=[\"H100\", \"A100-40GB:2\"])
+def run_on_80gb():
+    pass
+", Header 3 ("resource-limits", ["unnumbered", "unlisted"], []) [Str "Resource Limits"], Para [Str "CPU, memory, and timeout are configured per function:"], CodeBlock ("", ["python"], []) "@app.function(cpu=4, memory=65536, timeout=7200, gpu=\"A100\")
+def heavy_job():
+    pass
+", Header 3 ("region-selection", ["unnumbered", "unlisted"], []) [Str "Region Selection"], Para [Str "Specify execution region with pricing multipliers:"], CodeBlock ("", ["python"], []) "@app.function(gpu=\"H100\", region=\"us-east\")  # 1.25x multiplier
+def us_inference():
+    pass
+", Para [Str "Available regions: ", Code ("", [], []) "us", Str ", ", Code ("", [], []) "eu", Str ", ", Code ("", [], []) "uk", Str ", ", Code ("", [], []) "ap", Str ", ", Code ("", [], []) "ca", Str ", ", Code ("", [], []) "sa", Str ", ", Code ("", [], []) "me", Str ", ", Code ("", [], []) "mx", Str ", ", Code ("", [], []) "af", Str ", plus sub-regions (e.g., ", Code ("", [], []) "us-east", Str ", ", Code ("", [], []) "eu-west", Str "). Broader regions improve availability and cold start times. US/EU/UK/AP incur 1.25x; CA/SA/ME/MX/AF incur 2.5x multiplier."], Header 3 ("non-preemptible-mode", ["unnumbered", "unlisted"], []) [Str "Non-Preemptible Mode"], Para [Str "CPU-only functions can opt out of preemption at 3x cost:"], CodeBlock ("", ["python"], []) "@app.function(cpu=4, nonpreemptible=True)  # GPU not supported
+def critical_job():
+    pass
+", Header 2 ("integration-patterns", ["unnumbered", "unlisted"], []) [Str "Integration Patterns"], Header 3 ("client-sdks", ["unnumbered", "unlisted"], []) [Str "Client SDKs"], Para [Str "Modal provides client SDKs in three languages:"], BulletList [[Plain [Strong [Str "Python"], Str " (primary): Full SDK for defining and invoking functions, building images, and managing all resources."]], [Plain [Strong [Str "JavaScript/TypeScript"], Str " (beta): Client SDK via npm for invoking Modal functions, running Sandboxes, and interacting with Modal resources from Node.js applications."]], [Plain [Strong [Str "Go"], Str " (beta): Client SDK via ", Code ("", [], []) "go get", Str " for invoking Modal functions and managing Sandboxes from Go services."]]], Header 3 ("observability-integrations", ["unnumbered", "unlisted"], []) [Str "Observability Integrations"], BulletList [[Plain [Strong [Str "Datadog"], Str ": Direct integration for monitoring Modal workloads."]], [Plain [Strong [Str "OpenTelemetry"], Str ": Connect to any OTel-compatible provider for distributed tracing."]], [Plain [Strong [Str "GPU Metrics"], Str ": Built-in GPU utilization, memory, and power draw monitoring via dashboard and ", Code ("", [], []) "nvidia-smi", Str "."]]], Header 3 ("authentication-and-sso", ["unnumbered", "unlisted"], []) [Str "Authentication and SSO"], BulletList [[Plain [Strong [Str "OIDC"], Str ": Authenticate with external services (AWS, GCP) using Modal-issued identity tokens, eliminating manual credential management."]], [Plain [Strong [Str "Okta SSO / Custom SAML SSO"], Str ": Enterprise single sign-on integration."]], [Plain [Strong [Str "Proxy Auth Tokens"], Str ": Authenticate web endpoint requests with ", Code ("", [], []) "Modal-Key", Str " and ", Code ("", [], []) "Modal-Secret", Str " headers."]]], Header 3 ("pipeline-chaining", ["unnumbered", "unlisted"], []) [Str "Pipeline Chaining"], Para [Str "Functions call other Modal functions directly, enabling multi-step pipelines where each stage runs on different hardware:"], CodeBlock ("", ["python"], []) "@app.function(gpu=\"A100\")
+def generate_embeddings(text):
+    return model.encode(text)
+
+@app.function(cpu=2)
+def store_results(embeddings):
+    database.insert(embeddings)
+
+@app.local_entrypoint()
+def pipeline(text):
+    embeddings = generate_embeddings.remote(text)
+    store_results.remote(embeddings)
+", Header 3 ("cicd-integration", ["unnumbered", "unlisted"], []) [Str "CI/CD Integration"], Para [Str "Continuous deployment via GitHub Actions or any CI system using ", Code ("", [], []) "modal deploy", Str ". Modal's ", Code ("", [], []) "modal token new", Str " command generates service user tokens for automated deployments without browser authentication."], Header 2 ("examples", ["unnumbered", "unlisted"], []) [Str "Examples"], Para [Strong [Str "OpenAI-compatible LLM serving with vLLM"], Str ":"], CodeBlock ("", ["python"], []) "import modal
+
+app = modal.App(\"vllm-inference\")
+
+image = (
+    modal.Image.debian_slim(python_version=\"3.11\")
+    .pip_install(\"vllm\")
+)
+
+@app.cls(image=image, gpu=\"B200:2\")
+class LLMServer:
+    @modal.enter()
+    def start_engine(self):
+        from vllm import LLM
+        self.llm = LLM(model=\"meta-llama/Llama-3.1-8B-Instruct\")
+
+    @modal.fastapi_endpoint(method=\"POST\")
+    def generate(self, request: dict):
+        from vllm import SamplingParams
+        params = SamplingParams(max_tokens=256)
+        outputs = self.llm.generate([request[\"prompt\"]], params)
+        return {\"text\": outputs[0].outputs[0].text}
+", Para [Strong [Str "Batch processing with parallel map and volumes"], Str ":"], CodeBlock ("", ["python"], []) "import modal
+
+app = modal.App(\"batch-processing\")
+volume = modal.Volume.from_name(\"results\", create_if_missing=True)
+
+@app.function(gpu=\"T4\", volumes={\"/output\": volume})
+def process_image(image_path: str):
+    result = run_inference(image_path)
+    with open(f\"/output/{image_path}.json\", \"w\") as f:
+        json.dump(result, f)
+    volume.commit()
+
+@app.local_entrypoint()
+def main():
+    image_paths = get_all_image_paths()
+    list(process_image.map(image_paths))
+", Para [Strong [Str "Sandbox for code execution agents"], Str ":"], CodeBlock ("", ["python"], []) "import modal
+
+app = modal.App(\"code-agent\")
+image = modal.Image.debian_slim().pip_install(\"numpy\", \"pandas\")
+
+@app.function()
+def execute_user_code(code: str):
+    sb = modal.Sandbox.create(
+        app=app,
+        image=image,
+        timeout=60,
+    )
+    process = sb.exec(\"python\", \"-c\", code)
+    stdout = process.stdout.read()
+    stderr = process.stderr.read()
+    sb.terminate()
+    return {\"stdout\": stdout, \"stderr\": stderr}
+", Para [Strong [Str "Multi-node distributed training (beta)"], Str ":"], CodeBlock ("", ["python"], []) "import modal
+
+app = modal.App(\"distributed-training\")
+
+@app.function(gpu=\"H100:8\")
+@modal.clustered(n_containers=4, rdma=True)  # 32 GPUs total
+def train_large_model():
+    import subprocess, sys
+    subprocess.run(
+        [\"torchrun\", \"--nproc_per_node=8\", \"train.py\"],
+        stdout=sys.stdout, stderr=sys.stderr, check=True,
+    )
+", Header 2 ("limitations", ["unnumbered", "unlisted"], []) [Str "Limitations"], BulletList [[Plain [Strong [Str "Closed source"], Str ": The platform is proprietary with no self-hosted deployment option. All workloads run on Modal-managed infrastructure."]], [Plain [Strong [Str "Vendor lock-in"], Str ": The decorator-based API is Modal-specific. Migrating to another platform requires rewriting the infrastructure layer."]], [Plain [Strong [Str "Multi-node training"], Str ": Distributed training across multiple nodes is in private beta with access requiring approval."]], [Plain [Strong [Str "Execution time limits"], Str ": Functions have maximum timeout constraints. Sandboxes support up to 24 hours."]], [Plain [Strong [Str "Cold start variability"], Str ": While containers boot in approximately one second, complex images with large dependencies or model loading in ", Code ("", [], []) "@modal.enter()", Str " may extend initialization time."]], [Plain [Strong [Str "Regional constraints"], Str ": All inputs and outputs traverse the control plane in ", Code ("", [], []) "us-east-1", Str " regardless of execution region. Cluster networking (i6pn) operates within single regions only."]], [Plain [Strong [Str "No raw VM access"], Str ": Users cannot SSH into containers or access underlying virtual machines directly."]], [Plain [Strong [Str "Scaling limits"], Str ": Hard limits of 2,000 pending inputs, 25,000 total inputs per function, 1,000 concurrent inputs per ", Code ("", [], []) ".map()", Str " call, and 200 web endpoint operations/second."]], [Plain [Strong [Str "Cloud bucket mount restrictions"], Str ": No append-mode file operations, arbitrary offset writes, file renaming, or parent directory auto-creation on mounted buckets."]], [Plain [Strong [Str "GPU preemption"], Str ": Non-preemptible mode is not available for GPU functions; only CPU-only functions can opt out of preemption."]], [Plain [Strong [Str "Python-first"], Str ": Defining Modal Functions remains exclusive to Python. JavaScript/TypeScript and Go SDKs (beta) support invocation and Sandbox management only."]]], Header 2 ("changelog", ["unnumbered", "unlisted"], []) [Str "Changelog"], Para [Str "Modal is a continuously deployed platform. The Python SDK receives frequent updates through PyPI. Recent highlights:"], BulletList [[Plain [Strong [Str "v1.3.5"], Str " (March 2026): ", Code ("", [], []) "modal changelog", Str " CLI, ", Code ("", [], []) "Secret.update()", Str " method, running input statistics."]], [Plain [Strong [Str "v1.3.4"], Str " (February 2026): Directory Snapshots for Sandboxes, ", Code ("", [], []) "Sandbox.detach()", Str ", 8x stdin throughput improvement."]], [Plain [Strong [Str "v1.3.3"], Str " (February 2026): Billing report API (GA), Queue/Dict ", Code ("", [], []) "from_id()", Str " methods, async usage warnings."]], [Plain [Strong [Str "v1.3.2"], Str " (January 2026): Dashboard URL methods, ", Code ("", [], []) "modal dashboard", Str " CLI, Sandbox log support."]], [Plain [Strong [Str "v1.3.1"], Str " (January 2026): Python 3.14t support, custom Sandbox domains, ", Code ("", [], []) "Literal", Str " type CLI annotations."]], [Plain [Strong [Str "v1.3.0"], Str " (December 2025): Python 3.14 support, Python 3.9 removed, exception handling migration, ", Code ("", [], []) "single_use_containers", Str " parameter."]], [Plain [Str "Notable platform additions in 2025-2026: B200/B300 GPU support, RTX-PRO-6000, Volumes v2, cloud bucket mounts, Modal Notebooks, multi-node training beta, RDMA networking, and JavaScript/Go SDKs."]]], Header 2 ("citations", ["unnumbered", "unlisted"], []) [Str "Citations"], BulletList [[Plain [Str "[", Str "1", Str "]", Str " ", Link ("", [], []) [Str "Modal Documentation - Introduction"] ("https://modal.com/docs/guide", "")]], [Plain [Str "[", Str "2", Str "]", Str " ", Link ("", [], []) [Str "Modal GPU Acceleration Guide"] ("https://modal.com/docs/guide/gpu", "")]], [Plain [Str "[", Str "3", Str "]", Str " ", Link ("", [], []) [Str "Modal Images Guide"] ("https://modal.com/docs/guide/images", "")]], [Plain [Str "[", Str "4", Str "]", Str " ", Link ("", [], []) [Str "Modal Scaling Out Guide"] ("https://modal.com/docs/guide/scale", "")]], [Plain [Str "[", Str "5", Str "]", Str " ", Link ("", [], []) [Str "Modal Volumes Guide"] ("https://modal.com/docs/guide/volumes", "")]], [Plain [Str "[", Str "6", Str "]", Str " ", Link ("", [], []) [Str "Modal Sandboxes Guide"] ("https://modal.com/docs/guide/sandboxes", "")]], [Plain [Str "[", Str "7", Str "]", Str " ", Link ("", [], []) [Str "Modal Web Endpoints Guide"] ("https://modal.com/docs/guide/webhooks", "")]], [Plain [Str "[", Str "8", Str "]", Str " ", Link ("", [], []) [Str "Modal Cold Start Performance"] ("https://modal.com/docs/guide/cold-start", "")]], [Plain [Str "[", Str "9", Str "]", Str " ", Link ("", [], []) [Str "Modal Secrets Guide"] ("https://modal.com/docs/guide/secrets", "")]], [Plain [Str "[", Str "10", Str "]", Str " ", Link ("", [], []) [Str "Modal Cloud Bucket Mounts"] ("https://modal.com/docs/guide/cloud-bucket-mounts", "")]], [Plain [Str "[", Str "11", Str "]", Str " ", Link ("", [], []) [Str "Modal Scheduling and Cron"] ("https://modal.com/docs/guide/cron", "")]], [Plain [Str "[", Str "12", Str "]", Str " ", Link ("", [], []) [Str "Modal Apps and Functions"] ("https://modal.com/docs/guide/apps", "")]], [Plain [Str "[", Str "13", Str "]", Str " ", Link ("", [], []) [Str "Modal Container Lifecycle Hooks"] ("https://modal.com/docs/guide/lifecycle-functions", "")]], [Plain [Str "[", Str "14", Str "]", Str " ", Link ("", [], []) [Str "Modal Region Selection"] ("https://modal.com/docs/guide/region-selection", "")]], [Plain [Str "[", Str "15", Str "]", Str " ", Link ("", [], []) [Str "Modal Notebooks Guide"] ("https://modal.com/docs/guide/notebooks", "")]], [Plain [Str "[", Str "16", Str "]", Str " ", Link ("", [], []) [Str "Modal Security and Privacy"] ("https://modal.com/docs/guide/security", "")]], [Plain [Str "[", Str "17", Str "]", Str " ", Link ("", [], []) [Str "Modal Multi-Node Clusters"] ("https://modal.com/docs/guide/multi-node-training", "")]], [Plain [Str "[", Str "18", Str "]", Str " ", Link ("", [], []) [Str "Modal Preemption Guide"] ("https://modal.com/docs/guide/preemption", "")]], [Plain [Str "[", Str "19", Str "]", Str " ", Link ("", [], []) [Str "Modal Cluster Networking"] ("https://modal.com/docs/guide/private-networking", "")]], [Plain [Str "[", Str "20", Str "]", Str " ", Link ("", [], []) [Str "Modal JavaScript/Go SDKs"] ("https://modal.com/docs/guide/sdk-javascript-go", "")]], [Plain [Str "[", Str "21", Str "]", Str " ", Link ("", [], []) [Str "Modal Changelog"] ("https://modal.com/docs/reference/changelog", "")]]]]

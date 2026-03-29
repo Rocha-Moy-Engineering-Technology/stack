@@ -1,0 +1,780 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Qdrant - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-3-data/vector-databases/qdrant.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="qdrant"><a class="header" href="#qdrant">Qdrant</a></h1>
+<blockquote>
+<p>Open-source AI-native vector database written in Rust for high-performance similarity search at scale</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Qdrant</td></tr>
+<tr><td>Group</td><td>Vector Databases</td></tr>
+<tr><td>Type</td><td>SDK/Infra</td></tr>
+<tr><td>Open Source</td><td>yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/qdrant/qdrant">qdrant/qdrant</a></td></tr>
+<tr><td>Stars</td><td>29275</td></tr>
+<tr><td>Docs</td><td><a href="https://qdrant.tech/documentation/">qdrant.tech/documentation</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Qdrant (pronounced “quadrant”) is an open-source vector database and semantic search engine written in Rust. It stores, indexes, and searches high-dimensional vector embeddings with associated metadata payloads, enabling similarity search that goes beyond keyword matching. Founded in 2021 and based in Berlin, Qdrant provides fast, scalable vector similarity search with convenient APIs [1].</p>
+<p>The platform converts unstructured data (text, images, audio) into dense vector embeddings using embedding models, mapping them into high-dimensional space where semantically similar items cluster together. Qdrant combines dense vectors for contextual understanding with sparse vectors for precise lexical keyword matching through hybrid retrieval [1].</p>
+<p>Qdrant offers four deployment options [1]:</p>
+<ul>
+<li><strong>Open Source (Self-Hosted)</strong>: Full control over data and deployment with Docker, Kubernetes, or binary</li>
+<li><strong>Qdrant Cloud (Managed)</strong>: Fully managed service with high availability and zero-downtime upgrades</li>
+<li><strong>Hybrid Cloud</strong>: Managed control plane with data remaining in the user’s infrastructure</li>
+<li><strong>Private Cloud</strong>: Fully isolated deployment on user’s own infrastructure</li>
+</ul>
+<p>Official client libraries are available for Python, JavaScript/TypeScript, Rust, Go, Java, and .NET, with both REST (port 6333) and gRPC (port 6334) API interfaces [5].</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="collections"><a class="header" href="#collections">Collections</a></h3>
+<p>A <strong>collection</strong> is a named set of points (vectors with payloads) among which you search. All vectors within a collection must share the same dimensionality and distance metric, though named vectors allow multiple vector types per point with independent configurations. Collections support four distance metrics: Dot product, Cosine similarity, Euclidean distance, and Manhattan distance [2].</p>
+<h3 id="points"><a class="header" href="#points">Points</a></h3>
+<p>A <strong>point</strong> is the central entity consisting of three components: an identifier (64-bit unsigned integer or UUID), a vector (dense, sparse, or multi-vector), and an optional payload (metadata). Points are the fundamental storage unit combining vector embeddings with arbitrary JSON metadata [3].</p>
+<h3 id="vectors"><a class="header" href="#vectors">Vectors</a></h3>
+<p>Qdrant supports multiple vector types [3]:</p>
+<ul>
+<li><strong>Dense vectors</strong>: Standard floating-point embeddings (Float32, Uint8) from neural network models</li>
+<li><strong>Sparse vectors</strong>: High-dimensional vectors with mostly zero values, represented as index-value pairs for keyword-based search (BM25-style)</li>
+<li><strong>Multi-vectors</strong>: Matrices from late-interaction models like ColBERT, where each document is represented as multiple vector chunks</li>
+<li><strong>Named vectors</strong>: Multiple independently configured vectors per point, enabling storage of different embedding types (e.g., image and text) in a single collection</li>
+</ul>
+<h3 id="payloads"><a class="header" href="#payloads">Payloads</a></h3>
+<p><strong>Payloads</strong> are arbitrary JSON metadata attached to points. Qdrant supports payload types including keyword (string), integer, float, bool, geo coordinates, datetime, text (full-text indexed), and UUID. Payload indexes extend the HNSW graph, enabling filtering criteria during the semantic search phase in a single-pass traversal rather than separate pre/post-filtering steps [1][4].</p>
+<h3 id="segments"><a class="header" href="#segments">Segments</a></h3>
+<p>Collections organize data into <strong>segments</strong>, each with independent vector storage, payload storage, indexes, and an ID mapper. Segments are either appendable (full CRUD) or non-appendable (read and delete only). Data integrity is maintained through a Write-Ahead Log (WAL) that orders operations sequentially before propagating to segments [8].</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="docker-primary-method"><a class="header" href="#docker-primary-method">Docker (Primary Method)</a></h3>
+<pre><code class="language-bash">docker pull qdrant/qdrant
+docker run -p 6333:6333 -p 6334:6334 \
+    -v "$(pwd)/qdrant_storage:/qdrant/storage:z" \
+    qdrant/qdrant
+</code></pre>
+<p>Access points: REST API at <code>http://localhost:6333</code>, Web UI at <code>http://localhost:6333/dashboard</code>, gRPC API at <code>localhost:6334</code> [9].</p>
+<h3 id="kubernetes-helm"><a class="header" href="#kubernetes-helm">Kubernetes (Helm)</a></h3>
+<pre><code class="language-bash">helm repo add qdrant https://qdrant.to/helm
+helm install qdrant qdrant/qdrant
+</code></pre>
+<h3 id="from-source-rust"><a class="header" href="#from-source-rust">From Source (Rust)</a></h3>
+<pre><code class="language-bash">cargo build --release --bin qdrant
+</code></pre>
+<h3 id="client-sdks"><a class="header" href="#client-sdks">Client SDKs</a></h3>
+<pre><code class="language-bash"># Python
+pip install qdrant-client[fastembed]
+
+# JavaScript/TypeScript
+npm install @qdrant/js-client-rest
+
+# Rust
+cargo add qdrant-client
+
+# Go
+go get github.com/qdrant/go-client
+
+# .NET
+dotnet add package Qdrant.Client
+</code></pre>
+<h3 id="client-initialization"><a class="header" href="#client-initialization">Client Initialization</a></h3>
+<pre><code class="language-python">from qdrant_client import QdrantClient
+
+# Local Docker instance
+client = QdrantClient(url="http://localhost:6333")
+
+# Qdrant Cloud
+client = QdrantClient(
+    url="https://your-cluster.cloud.qdrant.io",
+    api_key="your-api-key",
+)
+</code></pre>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Qdrant uses a client-server architecture with distributed clustering capabilities:</p>
+<pre><code>┌─────────────────────────────────────────────────┐
+│                Client SDKs                       │
+│  Python, JS/TS, Rust, Go, Java, .NET            │
+└──────────┬─────────────────┬────────────────────┘
+           │ REST :6333      │ gRPC :6334
+           v                 v
+┌─────────────────────────────────────────────────┐
+│              Qdrant Node(s)                      │
+│  ┌─────────────────────────────────────────┐    │
+│  │         Raft Consensus (Cluster)         │    │
+│  │    (topology + collection structure)     │    │
+│  └─────────────────────────────────────────┘    │
+│  ┌──────────────┐  ┌──────────────────────┐    │
+│  │  Collection   │  │  Collection          │    │
+│  │  ┌─────────┐  │  │  ┌─────────┐        │    │
+│  │  │ Shard 1 │  │  │  │ Shard 1 │        │    │
+│  │  │┌───────┐│  │  │  │┌───────┐│        │    │
+│  │  ││Segment││  │  │  ││Segment││        │    │
+│  │  ││ HNSW  ││  │  │  ││ HNSW  ││        │    │
+│  │  ││ WAL   ││  │  │  ││ WAL   ││        │    │
+│  │  │└───────┘│  │  │  │└───────┘│        │    │
+│  │  └─────────┘  │  │  └─────────┘        │    │
+│  │  ┌─────────┐  │  │  ┌─────────┐        │    │
+│  │  │ Shard 2 │  │  │  │ Shard 2 │        │    │
+│  │  └─────────┘  │  │  └─────────┘        │    │
+│  └──────────────┘  └──────────────────────┘    │
+│                                                  │
+│  ┌──────────────────────────────────────────┐   │
+│  │           Storage Engine (Rust)           │   │
+│  │  In-Memory / Memmap / On-Disk / RocksDB  │   │
+│  └──────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<p>In distributed mode, Qdrant uses <strong>Raft consensus</strong> for cluster topology and collection structure operations. Point operations (insert, search) bypass consensus for low overhead. Collections split into <strong>shards</strong> distributed across nodes via consistent hashing. <strong>Replication</strong> creates shard copies across nodes, with configurable write consistency factors and read consistency levels (all, majority, quorum) [6].</p>
+<h3 id="vector-storage-options"><a class="header" href="#vector-storage-options">Vector Storage Options</a></h3>
+<ul>
+<li><strong>In-Memory</strong>: All vectors in RAM for maximum speed; disk used only for persistence</li>
+<li><strong>Memmap</strong>: Memory-mapped files using page cache for near in-memory performance with lower RAM usage</li>
+<li><strong>On-Disk</strong>: Full disk-based storage for datasets exceeding available memory [8]</li>
+</ul>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>HNSW Index</strong>: Hierarchical Navigable Small World graph for fast approximate nearest neighbor search with configurable m, ef_construct, and ef parameters</li>
+<li><strong>Filterable HNSW</strong>: Payload indexes extend HNSW graph edges, enabling single-pass filtered vector search without separate pre/post-filtering</li>
+<li><strong>Hybrid Search</strong>: Combine dense and sparse vector queries with Reciprocal Rank Fusion (RRF) or Distribution-Based Score Fusion (DBSF) via the prefetch mechanism</li>
+<li><strong>Multi-Stage Search</strong>: Nested prefetch pipelines for re-scoring — retrieve candidates with compact vectors, then re-rank with full-precision or ColBERT multi-vectors</li>
+<li><strong>Quantization</strong>: Scalar (4x compression), Binary (up to 32x compression, 40x speedup), and Product quantization (up to 64x compression) with configurable rescoring and oversampling</li>
+<li><strong>Named Vectors</strong>: Store multiple independently configured vector types per point (e.g., image and text embeddings)</li>
+<li><strong>Sparse Vectors</strong>: Native sparse vector support with IDF modifier for keyword-based search</li>
+<li><strong>Rich Filtering</strong>: Boolean clauses (must, should, must_not), range, geo (bounding box, radius, polygon), full-text match, datetime, nested object filters</li>
+<li><strong>Distributed Clustering</strong>: Sharding with consistent hashing, replication, Raft consensus, and three shard transfer methods (stream_records, snapshot, wal_delta)</li>
+<li><strong>Collection Aliases</strong>: Zero-downtime model upgrades by atomically switching collection pointers</li>
+<li><strong>ACORN Search</strong>: Enhanced HNSW exploration for restrictive multi-filter queries via second-hop neighbor traversal</li>
+<li><strong>Grouping API</strong>: Aggregate search results by payload field to avoid redundant items</li>
+<li><strong>Batch Operations</strong>: Execute multiple operations (upsert, delete, update vectors, set payload) in a single request</li>
+<li><strong>Conditional Updates</strong>: Optimistic locking with version-based filters to prevent concurrent overwrites</li>
+<li><strong>FastEmbed</strong>: Built-in embedding generation library for client-side inference</li>
+<li><strong>Web UI Dashboard</strong>: Built-in web interface for collection management and query exploration</li>
+<li><strong>MCP Server</strong>: Model Context Protocol server for AI assistant integration</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Semantic Search</strong>: Find documents, products, or media by meaning rather than exact keywords using dense vector similarity</li>
+<li><strong>Retrieval-Augmented Generation (RAG)</strong>: Store document chunk embeddings and retrieve relevant context for LLM prompts with hybrid dense+sparse search</li>
+<li><strong>Recommendation Systems</strong>: Find similar items based on user behavior embeddings with payload-based filtering for business rules</li>
+<li><strong>Image and Video Search</strong>: Index visual embeddings for reverse image search and content-based retrieval</li>
+<li><strong>Anomaly Detection</strong>: Identify outliers by measuring vector distances from normal behavior patterns</li>
+<li><strong>Multi-Tenant Applications</strong>: Serve millions of users with payload-based partitioning or user-defined custom sharding for strict isolation</li>
+<li><strong>E-Commerce</strong>: Product search combining visual similarity, text descriptions, and metadata filtering (price, category, availability)</li>
+<li><strong>Content Deduplication</strong>: Detect near-duplicate documents or media using vector similarity thresholds</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<h3 id="collection-operations"><a class="header" href="#collection-operations">Collection Operations</a></h3>
+<pre><code class="language-python">from qdrant_client import QdrantClient, models
+
+client = QdrantClient(url="http://localhost:6333")
+
+# Create collection
+client.create_collection(
+    collection_name="my_collection",
+    vectors_config=models.VectorParams(size=768, distance=models.Distance.COSINE),
+)
+
+# Multi-vector collection
+client.create_collection(
+    collection_name="multi_vec",
+    vectors_config={
+        "image": models.VectorParams(size=512, distance=models.Distance.DOT),
+        "text": models.VectorParams(size=768, distance=models.Distance.COSINE),
+    },
+)
+
+# Check existence
+client.collection_exists("my_collection")
+
+# Get collection info
+client.get_collection("my_collection")
+</code></pre>
+<h3 id="upserting-points"><a class="header" href="#upserting-points">Upserting Points</a></h3>
+<pre><code class="language-python">client.upsert(
+    collection_name="my_collection",
+    wait=True,
+    points=[
+        models.PointStruct(
+            id=1,
+            vector=[0.05, 0.61, 0.76, 0.74],
+            payload={"city": "Berlin", "category": "travel"},
+        ),
+        models.PointStruct(
+            id=2,
+            vector=[0.19, 0.81, 0.75, 0.11],
+            payload={"city": "London", "category": "business"},
+        ),
+    ],
+)
+</code></pre>
+<h3 id="vector-search"><a class="header" href="#vector-search">Vector Search</a></h3>
+<pre><code class="language-python"># Basic search
+results = client.query_points(
+    collection_name="my_collection",
+    query=[0.2, 0.1, 0.9, 0.7],
+    limit=5,
+    with_payload=True,
+)
+
+# Filtered search
+results = client.query_points(
+    collection_name="my_collection",
+    query=[0.2, 0.1, 0.9, 0.7],
+    query_filter=models.Filter(
+        must=[
+            models.FieldCondition(
+                key="city",
+                match=models.MatchValue(value="London"),
+            )
+        ]
+    ),
+    limit=5,
+)
+
+# Search with parameters
+results = client.query_points(
+    collection_name="my_collection",
+    query=[0.2, 0.1, 0.9, 0.7],
+    search_params=models.SearchParams(hnsw_ef=128, exact=False),
+    limit=10,
+)
+</code></pre>
+<h3 id="hybrid-search-dense--sparse"><a class="header" href="#hybrid-search-dense--sparse">Hybrid Search (Dense + Sparse)</a></h3>
+<pre><code class="language-python">results = client.query_points(
+    collection_name="my_collection",
+    prefetch=[
+        models.Prefetch(
+            query=models.SparseVector(indices=[1, 42], values=[0.22, 0.8]),
+            using="sparse",
+            limit=20,
+        ),
+        models.Prefetch(
+            query=[0.01, 0.45, 0.67],
+            using="dense",
+            limit=20,
+        ),
+    ],
+    query=models.RrfQuery(rrf=models.Rrf(weights=[3.0, 1.0])),
+)
+</code></pre>
+<h3 id="payload-filtering"><a class="header" href="#payload-filtering">Payload Filtering</a></h3>
+<pre><code class="language-python"># Scroll with complex filter
+results = client.scroll(
+    collection_name="my_collection",
+    scroll_filter=models.Filter(
+        must=[
+            models.FieldCondition(key="city", match=models.MatchValue(value="Berlin")),
+        ],
+        must_not=[
+            models.FieldCondition(key="category", match=models.MatchValue(value="spam")),
+        ],
+    ),
+    limit=10,
+    with_payload=True,
+)
+
+# Range filter
+models.FieldCondition(key="price", range=models.Range(gte=100.0, lte=450.0))
+
+# Geo filter
+models.FieldCondition(
+    key="location",
+    geo_radius=models.GeoRadius(
+        center=models.GeoPoint(lon=13.403683, lat=52.520711),
+        radius=1000.0,
+    ),
+)
+</code></pre>
+<h3 id="delete-operations"><a class="header" href="#delete-operations">Delete Operations</a></h3>
+<pre><code class="language-python"># Delete by IDs
+client.delete(
+    collection_name="my_collection",
+    points_selector=models.PointIdsList(points=[0, 3, 100]),
+)
+
+# Delete by filter
+client.delete(
+    collection_name="my_collection",
+    points_selector=models.FilterSelector(
+        filter=models.Filter(
+            must=[models.FieldCondition(key="city", match=models.MatchValue(value="London"))]
+        )
+    ),
+)
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="collection-level-configuration"><a class="header" href="#collection-level-configuration">Collection-Level Configuration</a></h3>
+<pre><code class="language-python">client.create_collection(
+    collection_name="optimized",
+    vectors_config=models.VectorParams(
+        size=768,
+        distance=models.Distance.COSINE,
+        on_disk=True,  # Memmap storage
+    ),
+    hnsw_config=models.HnswConfigDiff(m=16, ef_construct=100),
+    optimizers_config=models.OptimizersConfigDiff(indexing_threshold=20000),
+    quantization_config=models.ScalarQuantization(
+        scalar=models.ScalarQuantizationConfig(
+            type=models.ScalarType.INT8,
+            quantile=0.99,
+            always_ram=True,
+        ),
+    ),
+)
+</code></pre>
+<h3 id="payload-index-configuration"><a class="header" href="#payload-index-configuration">Payload Index Configuration</a></h3>
+<pre><code class="language-python"># Keyword index
+client.create_payload_index(
+    collection_name="my_collection",
+    field_name="category",
+    field_schema=models.PayloadSchemaType.KEYWORD,
+)
+
+# Full-text index with tokenization
+client.create_payload_index(
+    collection_name="my_collection",
+    field_name="description",
+    field_schema=models.TextIndexParams(
+        type="text",
+        tokenizer=models.TokenizerType.WORD,
+        min_token_len=2,
+        max_token_len=15,
+        lowercase=True,
+    ),
+)
+
+# Tenant-optimized index
+client.create_payload_index(
+    collection_name="my_collection",
+    field_name="tenant_id",
+    field_schema=models.KeywordIndexParams(
+        type="keyword",
+        is_tenant=True,
+    ),
+)
+</code></pre>
+<h3 id="server-configuration-yaml"><a class="header" href="#server-configuration-yaml">Server Configuration (YAML)</a></h3>
+<p>Key <code>config.yaml</code> parameters:</p>
+<pre><code class="language-yaml">storage:
+  hnsw_index:
+    m: 16
+    ef_construct: 100
+    full_scan_threshold: 10000
+  on_disk_payload: false
+  performance:
+    max_search_threads: 0  # auto-detect
+
+service:
+  host: 0.0.0.0
+  http_port: 6333
+  grpc_port: 6334
+
+cluster:
+  enabled: false
+  p2p:
+    port: 6335
+</code></pre>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="fastembed-built-in-embeddings"><a class="header" href="#fastembed-built-in-embeddings">FastEmbed (Built-in Embeddings)</a></h3>
+<p>Qdrant maintains FastEmbed, a lightweight embedding generation library. Install with <code>pip install qdrant-client[fastembed]</code> for client-side inference without external API calls [1].</p>
+<h3 id="langchain-integration"><a class="header" href="#langchain-integration">LangChain Integration</a></h3>
+<p>Qdrant provides a native LangChain vector store for RAG pipelines, enabling document embedding storage and retrieval during LLM prompt construction.</p>
+<h3 id="llamaindex-integration"><a class="header" href="#llamaindex-integration">LlamaIndex Integration</a></h3>
+<p>LlamaIndex supports Qdrant as a vector store backend for document indexing and retrieval in RAG applications.</p>
+<h3 id="mcp-server"><a class="header" href="#mcp-server">MCP Server</a></h3>
+<p>Qdrant provides a Model Context Protocol server (<code>mcp-server-qdrant</code>) for connecting AI coding assistants and agents directly to Qdrant collections [1].</p>
+<h3 id="qdrant-edge"><a class="header" href="#qdrant-edge">Qdrant Edge</a></h3>
+<p>A lightweight deployment mode for edge computing environments with resource constraints [1].</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="rag-pipeline-with-hybrid-search"><a class="header" href="#rag-pipeline-with-hybrid-search">RAG Pipeline with Hybrid Search</a></h3>
+<pre><code class="language-python">from qdrant_client import QdrantClient, models
+
+client = QdrantClient(url="http://localhost:6333")
+
+# Create collection with dense + sparse vectors
+client.create_collection(
+    collection_name="rag_docs",
+    vectors_config={
+        "dense": models.VectorParams(size=768, distance=models.Distance.COSINE),
+    },
+    sparse_vectors_config={
+        "sparse": models.SparseVectorParams(),
+    },
+)
+
+# Insert document chunks
+client.upsert(
+    collection_name="rag_docs",
+    points=[
+        models.PointStruct(
+            id=1,
+            vector={
+                "dense": [0.1, 0.2, ...],  # from embedding model
+                "sparse": models.SparseVector(indices=[5, 10, 42], values=[0.5, 0.3, 0.8]),
+            },
+            payload={"text": "Document chunk content", "source": "docs/intro.md"},
+        ),
+    ],
+)
+
+# Hybrid search combining semantic + keyword
+results = client.query_points(
+    collection_name="rag_docs",
+    prefetch=[
+        models.Prefetch(query=[0.1, 0.2, ...], using="dense", limit=20),
+        models.Prefetch(
+            query=models.SparseVector(indices=[5, 42], values=[0.5, 0.8]),
+            using="sparse",
+            limit=20,
+        ),
+    ],
+    query=models.RrfQuery(rrf=models.Rrf()),
+    with_payload=True,
+    limit=5,
+)
+</code></pre>
+<h3 id="multi-tenant-collection"><a class="header" href="#multi-tenant-collection">Multi-Tenant Collection</a></h3>
+<pre><code class="language-python"># Create collection with tenant optimization
+client.create_collection(
+    collection_name="multi_tenant",
+    vectors_config=models.VectorParams(size=768, distance=models.Distance.COSINE),
+)
+
+# Create tenant-optimized index
+client.create_payload_index(
+    collection_name="multi_tenant",
+    field_name="tenant_id",
+    field_schema=models.KeywordIndexParams(type="keyword", is_tenant=True),
+)
+
+# Insert tenant-specific data
+client.upsert(
+    collection_name="multi_tenant",
+    points=[
+        models.PointStruct(
+            id=1,
+            vector=[0.1, 0.2, ...],
+            payload={"tenant_id": "company_a", "text": "Tenant A document"},
+        ),
+    ],
+)
+
+# Search scoped to tenant
+results = client.query_points(
+    collection_name="multi_tenant",
+    query=[0.1, 0.2, ...],
+    query_filter=models.Filter(
+        must=[models.FieldCondition(key="tenant_id", match=models.MatchValue(value="company_a"))]
+    ),
+    limit=10,
+)
+</code></pre>
+<h3 id="quantized-collection-for-large-scale-deployment"><a class="header" href="#quantized-collection-for-large-scale-deployment">Quantized Collection for Large-Scale Deployment</a></h3>
+<pre><code class="language-python"># Binary quantization for high-dimensional embeddings (32x compression)
+client.create_collection(
+    collection_name="large_scale",
+    vectors_config=models.VectorParams(
+        size=1536,
+        distance=models.Distance.COSINE,
+        on_disk=True,
+    ),
+    quantization_config=models.BinaryQuantization(
+        binary=models.BinaryQuantizationConfig(
+            always_ram=True,
+        ),
+    ),
+)
+
+# Search with rescoring for quality
+results = client.query_points(
+    collection_name="large_scale",
+    query=[0.1, 0.2, ...],
+    search_params=models.SearchParams(
+        quantization=models.QuantizationSearchParams(
+            rescore=True,
+            oversampling=2.0,
+        ),
+    ),
+    limit=10,
+)
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>No ACID transactions</strong>: Point operations bypass Raft consensus for performance; distributed atomicity is limited to single-point operations</li>
+<li><strong>Single distance metric per vector</strong>: All dense vectors within a collection (or named vector) must use the same distance metric and dimensionality</li>
+<li><strong>Sparse vector constraints</strong>: Sparse vectors support only dot-product distance and always use exact matching (no approximate indexing)</li>
+<li><strong>Two-node cluster limitations</strong>: Collection create/edit/delete operations fail when one node is offline since recovery requires &gt;50% of nodes healthy [6]</li>
+<li><strong>No built-in embedding</strong>: Qdrant stores and searches vectors but does not generate embeddings (FastEmbed is a separate client-side library); server-side inference is limited to Qdrant Cloud</li>
+<li><strong>Product quantization performance</strong>: PQ is slower than scalar quantization (non-SIMD-friendly) with significant accuracy loss (~0.7 accuracy) [7]</li>
+<li><strong>Memory requirements</strong>: In-memory HNSW indexes require substantial RAM for large datasets; memmap or on-disk storage must be explicitly configured</li>
+<li><strong>Default no authentication</strong>: Qdrant starts with no encryption or authentication by default; security must be explicitly configured [9]</li>
+<li><strong>Eventual consistency default</strong>: Distributed deployments prioritize availability and throughput; strong consistency requires explicit configuration of write ordering and read consistency levels [6]</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<ul>
+<li><strong>v1.17.0</strong>: RRF weighted fusion, update modes (insert_only, update_only), disable HNSW edges per field</li>
+<li><strong>v1.16.0</strong>: ACORN search algorithm, conditional updates with filters, collection metadata, ASCII folding in text indexes, full-text any matching</li>
+<li><strong>v1.15.0</strong>: 1.5-bit and 2-bit binary quantization, asymmetric quantization with query encoding</li>
+<li><strong>v1.13.0</strong>: Resharding (Cloud), has_vector filter condition</li>
+<li><strong>v1.11.0</strong>: Distribution-Based Score Fusion (DBSF), on-disk payload indexes, tenant/principal index types, UUID matching, grouping in hybrid queries</li>
+<li><strong>v1.10.0</strong>: Sparse vector IDF modifier</li>
+<li><strong>v1.9.0</strong>: Uint8 vector datatype support</li>
+<li><strong>v1.8.0</strong>: WAL delta shard transfer, datetime range filters, order-by payload scrolling, parameterized integer indexes</li>
+<li><strong>v1.7.0</strong>: Sparse vector support, user-defined custom sharding, snapshot shard transfer</li>
+<li><strong>v1.5.0</strong>: Binary quantization, batch update operations</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Overview - https://qdrant.tech/documentation/overview/</li>
+<li>[2] Collections - https://qdrant.tech/documentation/concepts/collections/</li>
+<li>[3] Points - https://qdrant.tech/documentation/concepts/points/</li>
+<li>[4] Filtering - https://qdrant.tech/documentation/concepts/filtering/</li>
+<li>[5] API &amp; SDKs - https://qdrant.tech/documentation/interfaces/</li>
+<li>[6] Distributed Deployment - https://qdrant.tech/documentation/guides/distributed_deployment/</li>
+<li>[7] Quantization - https://qdrant.tech/documentation/guides/quantization/</li>
+<li>[8] Storage - https://qdrant.tech/documentation/concepts/storage/</li>
+<li>[9] Quickstart - https://qdrant.tech/documentation/quickstart/</li>
+<li>[10] Search - https://qdrant.tech/documentation/concepts/search/</li>
+<li>[11] Hybrid Queries - https://qdrant.tech/documentation/concepts/hybrid-queries/</li>
+<li>[12] Indexing - https://qdrant.tech/documentation/concepts/indexing/</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-3-data/vector-databases/weaviate.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-3-data/vector-databases/milvus.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-3-data/vector-databases/weaviate.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-3-data/vector-databases/milvus.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

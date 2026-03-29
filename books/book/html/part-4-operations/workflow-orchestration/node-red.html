@@ -1,0 +1,624 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Node-RED - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-4-operations/workflow-orchestration/node-red.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="node-red"><a class="header" href="#node-red">Node-RED</a></h1>
+<blockquote>
+<p>Flow-based programming tool with browser-based visual editor and 5000+ nodes</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Workflow Orchestration &amp; Automation</td></tr>
+<tr><td>Type</td><td>UI</td></tr>
+<tr><td>Open Source</td><td>Yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/node-red/node-red">https://github.com/node-red/node-red</a></td></tr>
+<tr><td>Stars</td><td>22816</td></tr>
+<tr><td>Documentation</td><td><a href="https://nodered.org/docs/">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Node-RED is a low-code programming tool for building event-driven applications using a flow-based programming model. Created by Nick O’Leary and Dave Conway-Jones at IBM’s Emerging Technology Services group in early 2013, it was open-sourced in September 2013 and became a founding project of the JS Foundation in October 2016. When the Node.js Foundation and JS Foundation merged in 2019, Node-RED transitioned to the OpenJS Foundation, where it remains today. [1][2]</p>
+<p>The platform provides a browser-based visual editor for wiring together hardware devices, APIs, and online services. Flows are stored as JSON and can be version-controlled, shared, and imported across environments. Built on Node.js, Node-RED takes full advantage of its event-driven, non-blocking I/O model, making it well suited for running on low-cost hardware such as Raspberry Pi and BeagleBone boards as well as cloud infrastructure. [1]</p>
+<p>Node-RED’s ecosystem includes over 5,000 community-contributed nodes published to npm and listed in the Node-RED Flow Library. In 2021, co-creator Nick O’Leary established FlowFuse, Inc. to develop Node-RED into a secure, professional, and scalable platform for enterprise and industrial applications. [2]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<p><strong>Nodes</strong> are the fundamental building blocks of Node-RED. Each node has a well-defined purpose: it receives messages, performs processing, and passes messages to the next node. A node has at most one input port and zero or more output ports. Nodes are triggered by receiving a message from the preceding node or by an external event such as an HTTP request, a timer firing, or a hardware state change. [3]</p>
+<p><strong>Flows</strong> are the visual programs created in the editor workspace. Each flow is represented as a tab in the editor and consists of nodes connected by wires. A single tab may contain multiple disconnected groups of nodes, each forming an independent flow within the same workspace. [3]</p>
+<p><strong>Wires</strong> are the connections between nodes that define how messages travel through a flow. A wire connects an output port of one node to the input port of another, establishing the message routing path. [3]</p>
+<p><strong>Messages</strong> are JavaScript objects passed between nodes. By convention, messages contain a <code>payload</code> property holding the primary data, though any property can be set. Messages are referenced as <code>msg</code> within the editor and function nodes. A message object can carry arbitrary properties alongside payload, enabling metadata propagation through the flow. [3]</p>
+<p><strong>Context</strong> is a mechanism for storing data that persists between messages without requiring wire connections. Three scopes are available: Node context (visible only to the setting node), Flow context (accessible to all nodes on the same tab), and Global context (accessible across all nodes in the runtime). Context supports both in-memory storage (default) and persistent file-system storage. [3][5]</p>
+<p><strong>Configuration Nodes</strong> (config nodes) are specialized nodes that hold reusable configuration shared across multiple regular nodes. For example, an MQTT Broker config node stores connection details that multiple MQTT input and output nodes reference. Config nodes appear in a dedicated sidebar panel rather than in the workspace. [3]</p>
+<p><strong>Subflows</strong> are collections of nodes packaged as a single reusable node. They reduce visual complexity in large flows and enable component reuse across multiple locations. A subflow template defines the internal flow once, and subflow instances appear as single nodes in the workspace. [3]</p>
+<p><strong>Palette</strong> is the left-side panel in the editor listing all available nodes organized by category. Additional nodes can be installed via the command line (<code>npm install</code>) or through the built-in Palette Manager in the editor. [3]</p>
+<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
+<h3 id="local-installation-via-npm"><a class="header" href="#local-installation-via-npm">Local Installation via npm</a></h3>
+<p>Node-RED requires a supported version of Node.js. Install globally with npm:</p>
+<pre><code class="language-bash">sudo npm install -g --unsafe-perm node-red
+</code></pre>
+<p>On Windows, omit <code>sudo</code>:</p>
+<pre><code class="language-bash">npm install -g --unsafe-perm node-red
+</code></pre>
+<p>Start Node-RED:</p>
+<pre><code class="language-bash">node-red
+</code></pre>
+<p>The editor is available at <code>http://localhost:1880</code>. To change the default port:</p>
+<pre><code class="language-bash">node-red --port 3000
+</code></pre>
+<p>[4]</p>
+<h3 id="docker"><a class="header" href="#docker">Docker</a></h3>
+<p>Run Node-RED in a container with persistent data storage:</p>
+<pre><code class="language-bash">docker run -it -p 1880:1880 -v node_red_data:/data --name mynodered nodered/node-red
+</code></pre>
+<p>For background operation, replace <code>-it</code> with <code>-d</code>. Configure via environment variables:</p>
+<pre><code class="language-bash">docker run -d -p 1880:1880 \
+  -v node_red_data:/data \
+  -e FLOWS=my_flows.json \
+  -e TZ=America/New_York \
+  -e NODE_RED_ENABLE_SAFE_MODE=true \
+  --name mynodered nodered/node-red
+</code></pre>
+<p>Bind-mount a host directory for data persistence:</p>
+<pre><code class="language-bash">docker run -it -p 1880:1880 -v /home/pi/.node-red:/data --name mynodered nodered/node-red
+</code></pre>
+<p>[6]</p>
+<h3 id="raspberry-pi"><a class="header" href="#raspberry-pi">Raspberry Pi</a></h3>
+<p>Use the all-in-one install script designed for Raspberry Pi:</p>
+<pre><code class="language-bash">bash &lt;(curl -sL https://raw.githubusercontent.com/node-red/linux-installers/master/deb/update-nodejs-and-nodered)
+</code></pre>
+<p>This script installs Node.js, npm, and Node-RED with appropriate configurations for the Pi hardware. [4]</p>
+<h3 id="snap"><a class="header" href="#snap">Snap</a></h3>
+<p>On supported Linux distributions:</p>
+<pre><code class="language-bash">sudo snap install node-red
+</code></pre>
+<p>[4]</p>
+<h3 id="cloud-deployments"><a class="header" href="#cloud-deployments">Cloud Deployments</a></h3>
+<p>Node-RED supports deployment on AWS (Elastic Beanstalk or EC2), Microsoft Azure (Virtual Machines), and FlowFuse (multi-tenant managed platform for enterprise environments). [4]</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Node-RED’s architecture consists of three main layers:</p>
+<pre><code>Editor (Browser)       Browser-based visual flow editor
+    |
+Runtime (Node.js)      Flow execution engine, node lifecycle, message routing
+    |
+Storage (Pluggable)    Flow persistence, credential storage, library management
+</code></pre>
+<p><strong>Editor Layer</strong>: A single-page web application served by the runtime. The editor communicates with the runtime via the Admin API to deploy flows, manage nodes, and configure the runtime. The editor consists of the header (deploy button, main menu), the palette (left panel with available nodes), the workspace (central canvas for flow editing), and the sidebar (information, help, debug, config nodes, context data panels). [7]</p>
+<p><strong>Runtime Layer</strong>: The Node.js-based execution engine that loads flow definitions, instantiates nodes, manages message passing between nodes, and handles node lifecycle events (start, stop, deploy). The runtime exposes three APIs: the Admin API for remote administration, the Runtime API for embedding Node-RED in existing Node.js applications, and the Storage API as a pluggable persistence layer. [8]</p>
+<p><strong>Storage Layer</strong>: A pluggable system for persisting flow definitions, credentials, and library entries. The default implementation uses the local file system, storing flows as JSON files in the user directory (<code>~/.node-red/</code>). Custom storage plugins can redirect persistence to databases or cloud storage. [8]</p>
+<p><strong>Message Routing</strong>: Messages flow through wires between nodes. Each node processes the incoming <code>msg</code> object and either returns it (modified or unmodified) to pass downstream, returns <code>null</code> to stop the message, or uses <code>node.send()</code> for asynchronous dispatch. The runtime clones messages when a node sends to multiple outputs to prevent unintended side effects. [9]</p>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<p><strong>Visual Flow Editor</strong>: The browser-based editor provides drag-and-drop node placement, wire drawing between ports, node configuration dialogs, flow tab organization, grouping, search, and import/export of flows as JSON. The editor includes a built-in debug panel for inspecting messages at any point in a flow. [7]</p>
+<p><strong>Built-in Core Nodes</strong>: Node-RED ships with a set of essential nodes:</p>
+<ul>
+<li><strong>Inject</strong>: Triggers a flow manually (button click) or automatically at intervals using cron-style scheduling. Payloads can be strings, numbers, timestamps, or other data types</li>
+<li><strong>Debug</strong>: Displays messages in the Debug sidebar with structured inspection, timestamps, and source identification</li>
+<li><strong>Function</strong>: Executes custom JavaScript code on messages (detailed below)</li>
+<li><strong>Change</strong>: Modifies message properties without code using Set, Change (search/replace), Move, and Delete operations. Supports JSONata expressions</li>
+<li><strong>Switch</strong>: Routes messages to different outputs based on property evaluation rules. Rule types include Value comparison, Sequence matching, JSONata Expression, and Otherwise (default)</li>
+<li><strong>Template</strong>: Generates text output using Mustache templating syntax with access to message properties</li>
+<li><strong>HTTP In / HTTP Response</strong>: Creates HTTP endpoints within Node-RED for building REST APIs and webhooks</li>
+<li><strong>MQTT In / MQTT Out</strong>: Publish and subscribe to MQTT topics for IoT messaging</li>
+<li><strong>WebSocket</strong>: Bidirectional WebSocket communication</li>
+<li><strong>TCP / UDP</strong>: Raw network socket communication</li>
+<li><strong>Serial</strong>: Serial port communication for hardware integration</li>
+</ul>
+<p>[10]</p>
+<p><strong>Function Nodes</strong>: Execute custom JavaScript with full access to the message object, context stores, and Node.js modules:</p>
+<pre><code class="language-javascript">// Basic message transformation
+msg.payload = msg.payload.toUpperCase();
+return msg;
+</code></pre>
+<pre><code class="language-javascript">// Multiple outputs: route by topic
+if (msg.topic === "temperature") {
+    return [msg, null];
+} else {
+    return [null, msg];
+}
+</code></pre>
+<pre><code class="language-javascript">// Asynchronous operation with node.send
+const response = await fetch("https://api.example.com/data");
+const data = await response.json();
+msg.payload = data;
+node.send(msg);
+node.done();
+</code></pre>
+<p>Function nodes support On Start (initialization) and On Stop (cleanup) lifecycle hooks, and can import external npm modules when <code>functionExternalModules</code> is enabled in settings. [9]</p>
+<p><strong>Context Storage</strong>: Share state between nodes without message wiring:</p>
+<pre><code class="language-javascript">// Node-scoped context
+context.set("count", (context.get("count") || 0) + 1);
+
+// Flow-scoped context
+flow.set("sharedValue", msg.payload);
+let value = flow.get("sharedValue");
+
+// Global context
+global.set("config", { threshold: 42 });
+let config = global.get("config");
+</code></pre>
+<p>Context supports multiple simultaneous stores (memory and filesystem) with configurable defaults. [5]</p>
+<p><strong>Environment Variables</strong>: Reference environment variables in node properties using <code>${ENV_VAR}</code> syntax. Access in function nodes with <code>env.get("FOO")</code>, in JSONata expressions with <code>$env('ENV_VAR')</code>, and in template nodes with <code>{{env.COLOUR}}</code>. Environment variables can be defined at subflow instance, flow/group, or global level. Built-in variables (since version 2.2) include <code>NR_NODE_ID</code>, <code>NR_NODE_NAME</code>, <code>NR_FLOW_ID</code>, <code>NR_FLOW_NAME</code>, and others for runtime introspection. [11]</p>
+<p><strong>Custom Node Development</strong>: Extend Node-RED by creating custom nodes as npm packages. Each node consists of a JavaScript file (runtime logic), an HTML file (editor UI and configuration dialog), and a <code>package.json</code> for npm distribution. Published nodes are discoverable in the Node-RED Flow Library. [12]</p>
+<p><strong>Subflow Modules</strong>: Package subflows as installable npm modules, allowing complex reusable components to be distributed and versioned independently of the flows that use them. [12]</p>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<p><strong>IoT Data Collection and Processing</strong>: Connect sensors and devices via MQTT, serial, TCP, or WebSocket protocols. Process incoming telemetry data with transformation, filtering, and aggregation nodes before forwarding to databases or dashboards.</p>
+<p><strong>Home Automation</strong>: Integrate with home automation protocols (MQTT, HTTP, WebSocket) to build custom automation rules. Node-RED runs efficiently on Raspberry Pi hardware, making it a popular choice for local home automation controllers.</p>
+<p><strong>REST API Prototyping</strong>: Use HTTP In and HTTP Response nodes to rapidly prototype REST APIs without writing server code. Route requests through processing nodes and return structured JSON responses.</p>
+<p><strong>Industrial Automation</strong>: Monitor and control industrial equipment through serial, Modbus, and OPC-UA protocols. FlowFuse provides enterprise features for multi-tenant, multi-site industrial deployments.</p>
+<p><strong>Data Integration and ETL</strong>: Wire together disparate data sources (databases, APIs, file systems, message queues) to build extraction, transformation, and loading pipelines with visual debugging.</p>
+<p><strong>AI/ML Pipeline Integration</strong>: Connect to LLM APIs, machine learning inference endpoints, and data preprocessing services. Use function nodes for prompt construction and response parsing. Community nodes provide integrations with OpenAI, Hugging Face, and other AI services.</p>
+<p><strong>Alert and Notification Systems</strong>: Monitor data streams and trigger notifications via email, Slack, Telegram, SMS, or push notifications based on configurable threshold rules.</p>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="admin-api"><a class="header" href="#admin-api">Admin API</a></h3>
+<p>The Admin HTTP API enables remote runtime administration and is used by both the editor and the <code>node-red-admin</code> command-line tool: [8]</p>
+<p><strong>Authentication</strong>:</p>
+<ul>
+<li><code>GET /auth/login</code> – Get the active authentication scheme</li>
+<li><code>POST /auth/token</code> – Exchange credentials for an access token</li>
+<li><code>POST /auth/revoke</code> – Revoke an access token</li>
+</ul>
+<p><strong>Flows</strong>:</p>
+<ul>
+<li><code>GET /flows</code> – Get the active flow configuration</li>
+<li><code>POST /flows</code> – Set the active flow configuration (deploy)</li>
+<li><code>GET /flows/state</code> – Get the runtime state of active flows</li>
+<li><code>POST /flows/state</code> – Set the runtime state (start/stop)</li>
+<li><code>POST /flow</code> – Add a single flow to the active configuration</li>
+<li><code>GET /flow/:id</code> – Get an individual flow configuration</li>
+<li><code>PUT /flow/:id</code> – Update an individual flow configuration</li>
+<li><code>DELETE /flow/:id</code> – Delete an individual flow</li>
+</ul>
+<p><strong>Nodes</strong>:</p>
+<ul>
+<li><code>GET /nodes</code> – List all installed node modules</li>
+<li><code>POST /nodes</code> – Install a new node module</li>
+<li><code>GET /nodes/:module</code> – Get module information</li>
+<li><code>PUT /nodes/:module</code> – Enable or disable a module</li>
+<li><code>DELETE /nodes/:module</code> – Remove a node module</li>
+</ul>
+<p><strong>Settings and Diagnostics</strong>:</p>
+<ul>
+<li><code>GET /settings</code> – Get runtime settings</li>
+<li><code>GET /diagnostics</code> – Get runtime diagnostics</li>
+</ul>
+<h3 id="hooks-api"><a class="header" href="#hooks-api">Hooks API</a></h3>
+<p>The Hooks API provides insertion points for custom code at key runtime operations, enabling middleware-style processing during flow deployment, message routing, and node lifecycle events. [8]</p>
+<h3 id="storage-api"><a class="header" href="#storage-api">Storage API</a></h3>
+<p>A pluggable interface for configuring where the runtime stores flow definitions, credentials, and library entries. Custom implementations can replace the default filesystem storage with databases or cloud storage backends. [8]</p>
+<h3 id="context-store-api"><a class="header" href="#context-store-api">Context Store API</a></h3>
+<p>A pluggable interface for storing context data outside the default in-memory or filesystem stores. Enables integration with external databases or caches for context persistence. [8]</p>
+<h2 id="configuration-and-customization"><a class="header" href="#configuration-and-customization">Configuration and Customization</a></h2>
+<p>Node-RED is configured via <code>settings.js</code> located in the user directory (<code>~/.node-red/</code> by default). Key configuration options: [13]</p>
+<h3 id="server-settings"><a class="header" href="#server-settings">Server Settings</a></h3>
+<pre><code class="language-javascript">module.exports = {
+    uiPort: 1880,                    // Editor and API port (default: 1880)
+    uiHost: "0.0.0.0",              // Bind address (default: all IPv4 interfaces)
+    httpAdminRoot: "/admin",         // Editor URL path (default: /)
+    httpNodeRoot: "/api",            // HTTP node endpoint path (default: /)
+    httpStatic: "/home/user/public", // Serve static files from directory
+    userDir: "/home/user/.node-red", // User data directory
+    flowFile: "flows.json",          // Flow file name (default: flows_&lt;hostname&gt;.json)
+    nodesDir: "/home/user/.node-red/nodes", // Additional node search directory
+    disableEditor: false,            // Set true to disable the editor UI
+}
+</code></pre>
+<h3 id="security-configuration"><a class="header" href="#security-configuration">Security Configuration</a></h3>
+<pre><code class="language-javascript">module.exports = {
+    // HTTPS with TLS certificates
+    https: {
+        key: require("fs").readFileSync("privkey.pem"),
+        cert: require("fs").readFileSync("cert.pem"),
+    },
+
+    // User authentication with bcrypt-hashed passwords
+    adminAuth: {
+        type: "credentials",
+        users: [{
+            username: "admin",
+            password: "$2b$08$...",  // Generated via: node-red admin hash-pw
+            permissions: "*",        // Full access
+        }, {
+            username: "viewer",
+            password: "$2b$08$...",
+            permissions: "read",     // Read-only access
+        }],
+    },
+
+    // HTTP node route authentication
+    httpNodeAuth: { user: "user", pass: "$2b$08$..." },
+}
+</code></pre>
+<p>Passwords are hashed using bcrypt. Generate hashes with <code>node-red admin hash-pw</code>. Fine-grained permissions (<code>flows.read</code>, <code>flows.write</code>) are available since version 0.14. Passport-based OAuth/OpenID strategies (GitHub, Twitter) are supported for external authentication. [14]</p>
+<h3 id="node-configuration"><a class="header" href="#node-configuration">Node Configuration</a></h3>
+<pre><code class="language-javascript">module.exports = {
+    functionGlobalContext: {
+        os: require("os"),           // Expose modules to function nodes
+    },
+    functionExternalModules: true,   // Allow npm imports in function nodes
+    functionTimeout: 0,              // Function node timeout (0 = no timeout)
+    debugMaxLength: 1000,            // Max debug message length (chars)
+    mqttReconnectTime: 5000,         // MQTT reconnect delay (ms)
+    serialReconnectTime: 5000,       // Serial reconnect delay (ms)
+    socketReconnectTime: 10000,      // TCP reconnect delay (ms)
+}
+</code></pre>
+<h3 id="context-storage"><a class="header" href="#context-storage">Context Storage</a></h3>
+<pre><code class="language-javascript">module.exports = {
+    contextStorage: {
+        default: "memory",
+        memory: { module: "memory" },
+        file: {
+            module: "localfilesystem",
+            // Writes cached values to disk every 30 seconds
+        },
+    },
+}
+</code></pre>
+<h3 id="logging"><a class="header" href="#logging">Logging</a></h3>
+<p>Six log levels are available: <code>fatal</code>, <code>error</code>, <code>warn</code>, <code>info</code> (default), <code>debug</code>, <code>trace</code>. Custom logger modules can direct log events to databases or external logging services. [13]</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="iot-protocol-bridge"><a class="header" href="#iot-protocol-bridge">IoT Protocol Bridge</a></h3>
+<p>Use Node-RED as a protocol translation layer between IoT devices and cloud services. MQTT nodes subscribe to device topics, function nodes transform payloads, and HTTP request nodes forward data to REST APIs or cloud platforms:</p>
+<pre><code>[MQTT In] -&gt; [Function: Transform] -&gt; [HTTP Request: POST to API]
+</code></pre>
+<h3 id="webhook-processor"><a class="header" href="#webhook-processor">Webhook Processor</a></h3>
+<p>Create HTTP endpoints that receive webhook payloads, process them through transformation and routing logic, and trigger downstream actions:</p>
+<pre><code>[HTTP In: POST /webhook] -&gt; [Switch: Route by event type] -&gt; [Function: Process] -&gt; [HTTP Response]
+</code></pre>
+<h3 id="database-etl-pipeline"><a class="header" href="#database-etl-pipeline">Database ETL Pipeline</a></h3>
+<p>Connect to source databases, transform records, and load them into destination systems. Use inject nodes for scheduling and debug nodes for monitoring:</p>
+<pre><code>[Inject: Cron schedule] -&gt; [MySQL In: Query] -&gt; [Function: Transform] -&gt; [PostgreSQL: Insert]
+</code></pre>
+<h3 id="aiml-service-integration"><a class="header" href="#aiml-service-integration">AI/ML Service Integration</a></h3>
+<p>Call LLM APIs from within flows using HTTP request nodes or community AI nodes. Construct prompts in function nodes and parse structured responses:</p>
+<pre><code>[HTTP In: User query] -&gt; [Function: Build prompt] -&gt; [HTTP Request: LLM API] -&gt; [Function: Parse response] -&gt; [HTTP Response]
+</code></pre>
+<h3 id="dashboard-and-monitoring"><a class="header" href="#dashboard-and-monitoring">Dashboard and Monitoring</a></h3>
+<p>Combine data collection flows with Node-RED Dashboard nodes (community package <code>node-red-dashboard</code>) to build real-time monitoring interfaces with charts, gauges, and controls.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="http-api-endpoint"><a class="header" href="#http-api-endpoint">HTTP API Endpoint</a></h3>
+<p>Create a simple REST endpoint that returns sensor data:</p>
+<pre><code class="language-json">[
+    {
+        "id": "http-in",
+        "type": "http in",
+        "url": "/api/sensor",
+        "method": "get",
+        "wires": [["function"]]
+    },
+    {
+        "id": "function",
+        "type": "function",
+        "func": "msg.payload = { temperature: 22.5, humidity: 65, timestamp: Date.now() };\nreturn msg;",
+        "wires": [["http-response"]]
+    },
+    {
+        "id": "http-response",
+        "type": "http response",
+        "statusCode": 200,
+        "wires": []
+    }
+]
+</code></pre>
+<h3 id="function-node-with-context"><a class="header" href="#function-node-with-context">Function Node with Context</a></h3>
+<p>Track message count across invocations using node context:</p>
+<pre><code class="language-javascript">// Function node: Message counter
+let count = context.get("messageCount") || 0;
+count += 1;
+context.set("messageCount", count);
+
+msg.payload = {
+    originalPayload: msg.payload,
+    messageNumber: count,
+    processedAt: new Date().toISOString(),
+};
+return msg;
+</code></pre>
+<h3 id="mqtt-to-http-bridge"><a class="header" href="#mqtt-to-http-bridge">MQTT to HTTP Bridge</a></h3>
+<p>Forward MQTT messages to a REST API with payload transformation:</p>
+<pre><code class="language-javascript">// Function node: Transform MQTT payload for API
+let sensorData = JSON.parse(msg.payload);
+
+msg.url = "https://api.example.com/telemetry";
+msg.method = "POST";
+msg.headers = { "Content-Type": "application/json" };
+msg.payload = {
+    deviceId: msg.topic.split("/")[1],
+    temperature: sensorData.temp,
+    humidity: sensorData.hum,
+    timestamp: new Date().toISOString(),
+};
+return msg;
+</code></pre>
+<h3 id="switch-node-routing"><a class="header" href="#switch-node-routing">Switch Node Routing</a></h3>
+<p>Route messages based on temperature thresholds (configured in the Switch node):</p>
+<pre><code class="language-javascript">// Function node after Switch: High temperature alert
+msg.payload = {
+    alert: "HIGH_TEMPERATURE",
+    value: msg.payload.temperature,
+    message: "Temperature exceeded threshold: " + msg.payload.temperature + "C",
+};
+return msg;
+</code></pre>
+<h3 id="environment-variable-configuration"><a class="header" href="#environment-variable-configuration">Environment Variable Configuration</a></h3>
+<p>Use environment variables for configurable deployments:</p>
+<pre><code class="language-javascript">// Function node: Use environment variables
+let apiKey = env.get("API_KEY");
+let endpoint = env.get("API_ENDPOINT") || "https://api.default.com";
+
+msg.url = endpoint + "/data";
+msg.headers = {
+    "Authorization": "Bearer " + apiKey,
+    "Content-Type": "application/json",
+};
+return msg;
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<p><strong>Single-Threaded Execution</strong>: Node-RED runs on Node.js, which is single-threaded. CPU-intensive operations in function nodes block the entire runtime, including all other flows. Long-running computations should be offloaded to external services or worker processes.</p>
+<p><strong>Not Designed for High-Throughput</strong>: Node-RED is optimized for event-driven, low-to-moderate throughput workloads. Applications requiring sustained high message rates (tens of thousands per second) may encounter performance bottlenecks in the message routing layer.</p>
+<p><strong>JavaScript Only</strong>: Function nodes are limited to JavaScript. Developers requiring Python, Go, or other language runtimes must invoke external processes or services via HTTP, TCP, or exec nodes.</p>
+<p><strong>Editor Security by Default</strong>: The Node-RED editor is not secured by default and should not be exposed to untrusted networks without configuring <code>adminAuth</code> and HTTPS. Unsecured deployments risk unauthorized flow modification and credential exposure. [14]</p>
+<p><strong>Flow Complexity at Scale</strong>: While subflows and multiple tabs help organize large projects, very complex deployments with hundreds of flows can become difficult to navigate, debug, and maintain in the visual editor.</p>
+<p><strong>Limited Built-in Testing</strong>: Node-RED does not include a built-in unit testing framework for flows. The community <code>node-red-node-test-helper</code> package provides testing utilities, but flow testing requires additional setup compared to code-based workflow engines.</p>
+<p><strong>Version Control Challenges</strong>: Flows are stored as JSON files. While JSON can be version-controlled, diff and merge operations on flow files are less readable than on source code, making collaborative development with multiple contributors more complex.</p>
+<p><strong>Context Storage Durability</strong>: The default in-memory context store loses all data on restart. The file-system store writes cached values every 30 seconds by default, creating a window for data loss on unexpected shutdown. [5]</p>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>Node-RED 4.1</strong> (July 2025): Latest stable release with incremental improvements and bug fixes</li>
+<li><strong>Node-RED 4.0</strong> (June 2024): Major version release with modernization updates</li>
+<li><strong>Node-RED 3.1</strong> (September 2023): Added global-level environment variable settings via User Settings, built-in subflow environment variables (<code>NR_SUBFLOW_NAME</code>, <code>NR_SUBFLOW_ID</code>, <code>NR_SUBFLOW_PATH</code>), and Template node environment variable support</li>
+<li><strong>Node-RED 3.0</strong> (July 2022): Major version with Template node enhancements and platform modernization</li>
+<li><strong>Node-RED 2.2</strong>: Introduced built-in environment variables (<code>NR_NODE_ID</code>, <code>NR_NODE_NAME</code>, <code>NR_FLOW_ID</code>, <code>NR_FLOW_NAME</code>) for runtime introspection</li>
+<li><strong>Node-RED 2.1</strong>: Added flow-level and group-level environment variable definitions</li>
+<li><strong>Node-RED 5.0 Roadmap</strong>: Community modernization initiative focused on updating the Node-RED user experience, presented at Node-RED Con [15]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Node-RED Documentation - <a href="https://nodered.org/docs/">https://nodered.org/docs/</a></li>
+<li>[2] About Node-RED - <a href="https://nodered.org/about/">https://nodered.org/about/</a></li>
+<li>[3] Core Concepts - <a href="https://nodered.org/docs/user-guide/concepts">https://nodered.org/docs/user-guide/concepts</a></li>
+<li>[4] Getting Started - <a href="https://nodered.org/docs/getting-started/">https://nodered.org/docs/getting-started/</a></li>
+<li>[5] Working with Context - <a href="https://nodered.org/docs/user-guide/context">https://nodered.org/docs/user-guide/context</a></li>
+<li>[6] Running under Docker - <a href="https://nodered.org/docs/getting-started/docker">https://nodered.org/docs/getting-started/docker</a></li>
+<li>[7] Editor Guide - <a href="https://nodered.org/docs/user-guide/editor/">https://nodered.org/docs/user-guide/editor/</a></li>
+<li>[8] API Reference - <a href="https://nodered.org/docs/api/">https://nodered.org/docs/api/</a></li>
+<li>[9] Writing Functions - <a href="https://nodered.org/docs/user-guide/writing-functions">https://nodered.org/docs/user-guide/writing-functions</a></li>
+<li>[10] Node Guide - <a href="https://nodered.org/docs/user-guide/nodes">https://nodered.org/docs/user-guide/nodes</a></li>
+<li>[11] Environment Variables - <a href="https://nodered.org/docs/user-guide/environment-variables">https://nodered.org/docs/user-guide/environment-variables</a></li>
+<li>[12] Creating Nodes - <a href="https://nodered.org/docs/creating-nodes/">https://nodered.org/docs/creating-nodes/</a></li>
+<li>[13] Configuration - <a href="https://nodered.org/docs/user-guide/runtime/configuration">https://nodered.org/docs/user-guide/runtime/configuration</a></li>
+<li>[14] Securing Node-RED - <a href="https://nodered.org/docs/user-guide/runtime/securing-node-red">https://nodered.org/docs/user-guide/runtime/securing-node-red</a></li>
+<li>[15] Node-RED Blog - <a href="https://nodered.org/blog/">https://nodered.org/blog/</a></li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-4-operations/workflow-orchestration/activepieces.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-4-operations/workflow-orchestration/activepieces.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

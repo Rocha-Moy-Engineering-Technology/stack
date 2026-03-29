@@ -1,0 +1,680 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Guardrails AI - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-4-operations/guardrails/guardrails-ai.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="guardrails-ai"><a class="header" href="#guardrails-ai">Guardrails AI</a></h1>
+<blockquote>
+<p>Python framework for input/output validation guards on LLM applications</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Guardrails &amp; Safety</td></tr>
+<tr><td>Type</td><td>SDK</td></tr>
+<tr><td>Open Source</td><td>Yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/guardrails-ai/guardrails">https://github.com/guardrails-ai/guardrails</a></td></tr>
+<tr><td>Stars</td><td>6435</td></tr>
+<tr><td>Documentation</td><td><a href="https://guardrailsai.com/docs">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Guardrails AI is a Python framework for building reliable AI applications through input/output validation. It provides two primary capabilities: deploying Input/Output Guards that detect, quantify, and mitigate the presence of specific types of risks in Large Language Model (LLM) interactions, and generating structured data from LLM outputs that conform to predefined schemas.</p>
+<p>The framework takes a modular approach to LLM safety. Rather than providing a monolithic filtering system, Guardrails decomposes risk management into composable units called Validators. Each validator targets a specific risk category such as toxic language, personally identifiable information (PII) exposure, hallucinated content, or competitor mentions. Multiple validators combine into Guards, which wrap LLM calls and intercept both inputs and outputs to apply validation rules before data reaches the end user.</p>
+<p>Guardrails Hub serves as a centralized marketplace of pre-built validators contributed by the community and the Guardrails team. As of early 2025, the Guardrails Index benchmark compares the performance and latency of 24 guardrails across six common risk categories, providing an empirical basis for validator selection.</p>
+<p>The project is licensed under Apache 2.0 and supports Python 3.10 through 3.14. It is available as both an in-application library and a standalone server for centralized validation across multiple services.</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<p><strong>Guards</strong> are the primary interface for Guardrails. A Guard wraps an LLM call and applies one or more validators to the inputs, outputs, or both. Guards can operate in two modes: as a pass-through validator that checks LLM output after generation, or as an active participant that re-asks the LLM when validation fails. Each Guard maintains a call history for debugging and observability.</p>
+<p><strong>Validators</strong> are the atomic units of risk measurement. Each validator encodes a specific quality criterion and produces a binary outcome: a PassResult when the content meets the criterion (returning the value unchanged) or a FailResult when the content violates the criterion (triggering a configured on-fail action). Validators can be stateless pattern matchers, machine learning classifiers, or LLM-based evaluators depending on the risk category they target.</p>
+<p><strong>On-Fail Actions</strong> determine what happens when a validator produces a FailResult. Eight actions are available: REASK instructs the LLM to regenerate output with feedback about the failure; FIX programmatically corrects the output when a deterministic fix exists; FILTER removes the failing field from structured output while preserving valid fields; REFRAIN returns None when the output is unsafe for end users; NOOP logs the failure without corrective action; EXCEPTION raises an error immediately; FIX_REASK attempts a deterministic fix first and falls back to re-asking if validation still fails; and CUSTOM executes a user-defined handler function.</p>
+<p><strong>Guardrails Hub</strong> is the centralized repository of pre-built validators. Hub validators are installed via the CLI (<code>guardrails hub install</code>) or the in-code <code>install()</code> function. Validators in the Hub cover six primary risk categories: content safety, PII detection, toxic language, jailbreak detection, topic restriction, and output format validation.</p>
+<p><strong>Structured Data Generation</strong> uses Pydantic models to define the expected schema of LLM output. Guards enforce that LLM responses conform to the schema through either function calling (when the model supports it) or prompt optimization. Field-level validators can be attached to individual fields in the Pydantic model for granular control.</p>
+<p><strong>Validation Metadata</strong> provides runtime context to validators that need information unavailable at initialization time. This metadata is passed to <code>guard.validate()</code> or <code>guard()</code> calls, allowing validators like <code>ExtractedSummarySentencesMatch</code> to access dynamic information such as file paths or reference documents for comparison operations.</p>
+<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
+<p>Install the core package:</p>
+<pre><code class="language-bash">pip install guardrails-ai
+</code></pre>
+<p>Run initial configuration:</p>
+<pre><code class="language-bash">guardrails configure
+</code></pre>
+<p>Install validators from the Hub:</p>
+<pre><code class="language-bash">guardrails hub install hub://guardrails/regex_match
+guardrails hub install hub://guardrails/toxic_language
+guardrails hub install hub://guardrails/detect_pii
+guardrails hub install hub://guardrails/competitor_check
+</code></pre>
+<p>Install with optional provider dependencies:</p>
+<pre><code class="language-bash">pip install "guardrails-ai[anthropic]"
+pip install "guardrails-ai[api]"
+pip install "guardrails-ai[huggingface]"
+pip install "guardrails-ai[sql]"
+</code></pre>
+<p>The full set of optional extras includes: <code>anthropic</code>, <code>api</code>, <code>databricks</code>, <code>dev</code>, <code>docs</code>, <code>docs-build</code>, <code>huggingface</code>, <code>llama</code>, <code>manifest</code>, <code>sql</code>, <code>uv</code>, and <code>vectordb</code>.</p>
+<p>Python version requirements: 3.10 or higher, up to 3.14. Python versions below 3.10 are not supported.</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Guardrails operates as a middleware layer between application code and LLM providers. The architecture has three primary components:</p>
+<p><strong>Guard Layer.</strong> The Guard object orchestrates the validation pipeline. When invoked, it sends the request to the LLM, receives the response, and passes it through the configured validators. If any validator fails and the on-fail action requires re-asking, the Guard constructs a corrective prompt and sends it back to the LLM. This loop continues up to a configurable <code>num_reasks</code> limit.</p>
+<pre><code class="language-text">Application Code
+       |
+       v
+   Guard Object
+       |
+       +---&gt; LLM Provider (OpenAI, Anthropic, Cohere, HuggingFace)
+       |          |
+       |          v
+       +&lt;--- Raw LLM Response
+       |
+       v
+  Validator Pipeline
+       |
+       +---&gt; PassResult --&gt; Return validated output
+       |
+       +---&gt; FailResult --&gt; Apply on-fail action
+                |
+                +---&gt; REASK: Re-prompt LLM with error feedback
+                +---&gt; FIX: Apply deterministic correction
+                +---&gt; FILTER: Remove failing field
+                +---&gt; REFRAIN: Return None
+                +---&gt; EXCEPTION: Raise error
+</code></pre>
+<p><strong>Validator Pipeline.</strong> Validators execute sequentially on the LLM output. Each validator receives the current value and produces either a PassResult or FailResult. Multiple validators compose into a pipeline where the output of one validator feeds into the next. Validators can operate on the full response text or on individual fields within structured output.</p>
+<p><strong>Guardrails Server.</strong> For production deployments, Guardrails can run as a standalone Flask-based REST API server. The server exposes OpenAI-compatible endpoints, allowing any OpenAI SDK client to route through the Guardrails server for transparent validation. Guards are defined in a Python configuration file and loaded at server startup. The server architecture separates validation from application logic, enabling independent scaling of the validation layer.</p>
+<pre><code class="language-text">Client Application
+       |
+       v
+Guardrails Server (Flask/Gunicorn/Uvicorn)
+       |
+       +---&gt; /guards/{guardName}/openai/v1/chat/completions
+       |
+       v
+  Guard Pipeline --&gt; LLM Provider --&gt; Validators --&gt; Response
+</code></pre>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<p><strong>Input and Output Validation.</strong> Guards can validate both the input sent to an LLM and the output received. Input guards catch prompt injection attempts, off-topic queries, and policy violations before they reach the model. Output guards catch toxic content, PII leaks, hallucinations, and format violations before the response reaches the user.</p>
+<p><strong>Structured Output Generation.</strong> Guardrails converts free-form LLM text into structured data conforming to Pydantic models. Field-level validators provide granular control over individual attributes. When a field fails validation, the on-fail action applies to that specific field rather than the entire response.</p>
+<p><strong>Re-Ask Loop.</strong> When the REASK on-fail action is configured, Guardrails automatically constructs a corrective prompt that includes the original output and a description of the validation failure. The LLM is asked to regenerate its response to meet the specified criteria. The number of re-ask attempts is configurable via <code>num_reasks</code>.</p>
+<p><strong>Streaming Support.</strong> Guards can validate streaming LLM responses by processing chunks as they arrive. This allows real-time validation without waiting for the complete response, enabling responsive user experiences while still enforcing safety constraints.</p>
+<p><strong>Async Support.</strong> The <code>AsyncGuard</code> class provides async/await support for concurrent validation workflows. Async guards allow making concurrent calls to multiple LLMs and processing response chunks as they arrive, providing better performance in I/O-bound applications.</p>
+<p><strong>Call History.</strong> Guards maintain a history of all LLM calls and validation results. Starting with version 0.8.0, history is capped at 10 entries by default, configurable via the <code>history_max_length</code> parameter. This history is available for debugging, observability, and audit purposes.</p>
+<p><strong>OpenAI-Compatible Server.</strong> The Guardrails Server exposes endpoints compatible with the OpenAI Chat Completions API. Applications using the OpenAI SDK can route through the Guardrails Server by changing their <code>base_url</code>, gaining validation without code changes to the application layer.</p>
+<p><strong>Hub Ecosystem.</strong> The Guardrails Hub provides a growing collection of pre-built validators that can be installed and composed without writing custom validation logic. Hub validators cover categories including content safety, PII detection, toxic language, jailbreak prevention, format validation (JSON, SQL, regex), and business rule enforcement.</p>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<p><strong>Content Safety Enforcement.</strong> Filter toxic language, hate speech, and inappropriate content from LLM outputs using validators like <code>ToxicLanguage</code> (powered by the Detoxify multi-label classifier) and custom content policies. On-fail actions control whether unsafe content is removed, replaced, or causes an exception.</p>
+<p><strong>PII Protection.</strong> Detect and redact personally identifiable information such as names, email addresses, phone numbers, and social security numbers from LLM outputs using the <code>DetectPII</code> validator (powered by Microsoft Presidio). This is critical for applications handling user data subject to privacy regulations.</p>
+<p><strong>Competitor Mention Filtering.</strong> Prevent LLM responses from mentioning competitors using the <code>CompetitorCheck</code> validator. Configure a list of competitor names and the guard either removes mentions (FIX) or rejects the response entirely (EXCEPTION/REFRAIN).</p>
+<p><strong>Structured Data Extraction.</strong> Extract structured information from unstructured LLM text. Define a Pydantic model with the desired schema, attach field-level validators, and the guard ensures the LLM output conforms to the schema with all validation rules satisfied.</p>
+<p><strong>Prompt Injection Defense.</strong> Input guards detect and block prompt injection attempts before they reach the LLM. Validators identify common injection patterns, jailbreak attempts, and off-topic inputs that could cause the model to deviate from its intended behavior.</p>
+<p><strong>API Response Validation.</strong> Validate that LLM-generated API responses, SQL queries, or code snippets meet format and safety requirements before execution. Format validators ensure syntactic correctness while content validators prevent injection attacks in generated code.</p>
+<p><strong>Bias and Fairness Monitoring.</strong> Detect bias in LLM outputs across demographic categories using specialized validators. NOOP on-fail actions allow logging bias occurrences without blocking responses, enabling monitoring and analysis of bias patterns over time.</p>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="guard-class"><a class="header" href="#guard-class">Guard Class</a></h3>
+<p>The primary interface for validation. Core methods:</p>
+<p><strong><code>Guard()</code></strong> – Create a new Guard instance. Accepts optional <code>name</code> parameter for identification when using Guardrails Server.</p>
+<p><strong><code>guard.use(validator, **kwargs)</code></strong> – Add a single validator to the guard with configuration parameters and an <code>on_fail</code> action.</p>
+<p><strong><code>guard.use_many(*validators)</code></strong> – Add multiple validators to the guard simultaneously.</p>
+<p><strong><code>guard(model, messages, **kwargs)</code></strong> – Invoke the guard with an LLM call. Mirrors standard LLM SDK call signatures. Returns a <code>GuardResponse</code> containing the raw output, validated output, and validation status.</p>
+<p><strong><code>guard.parse(llm_output, num_reasks=0)</code></strong> – Validate pre-generated LLM output. With <code>num_reasks=0</code>, operates as a pure post-processor. With higher values, enables re-asking the LLM on failure.</p>
+<p><strong><code>guard.validate(value, metadata=None)</code></strong> – Validate a value against the guard’s validators without making an LLM call. Useful for validating cached or pre-fetched responses.</p>
+<p><strong><code>Guard.for_pydantic(output_class, prompt=None)</code></strong> – Create a guard configured for structured data generation using a Pydantic model.</p>
+<h3 id="guardresponse"><a class="header" href="#guardresponse">GuardResponse</a></h3>
+<p>Returned by guard invocations:</p>
+<ul>
+<li><code>raw_llm_output</code> – The unmodified LLM response text</li>
+<li><code>validated_output</code> – The output after validation and any corrections</li>
+<li><code>validation_passed</code> – Boolean indicating if all validators passed</li>
+<li><code>reask</code> – Information about any re-ask attempts</li>
+</ul>
+<h3 id="validation-results"><a class="header" href="#validation-results">Validation Results</a></h3>
+<p><strong><code>PassResult</code></strong> – Returned by validators when content meets criteria. Contains the validated value, which in most cases is the original value unchanged.</p>
+<p><strong><code>FailResult</code></strong> – Returned by validators when content violates criteria. Contains an <code>error_message</code> describing the failure and an optional <code>fix_value</code> for deterministic corrections.</p>
+<h3 id="onfailaction-enum"><a class="header" href="#onfailaction-enum">OnFailAction Enum</a></h3>
+<pre><code class="language-python">from guardrails import OnFailAction
+
+OnFailAction.REASK       # Re-ask LLM with failure feedback
+OnFailAction.FIX         # Apply deterministic fix_value
+OnFailAction.FILTER      # Remove failing field from structured output
+OnFailAction.REFRAIN     # Return None for unsafe content
+OnFailAction.NOOP        # Log failure, return original value
+OnFailAction.EXCEPTION   # Raise ValidationError
+OnFailAction.FIX_REASK   # Try FIX first, then REASK if still failing
+OnFailAction.CUSTOM      # Execute custom handler function
+</code></pre>
+<h2 id="configuration-and-customization"><a class="header" href="#configuration-and-customization">Configuration and Customization</a></h2>
+<h3 id="guard-configuration"><a class="header" href="#guard-configuration">Guard Configuration</a></h3>
+<p>Guards accept configuration at multiple levels:</p>
+<pre><code class="language-python">from guardrails import Guard, OnFailAction
+from guardrails.hub import ToxicLanguage, DetectPII, CompetitorCheck
+
+# Basic guard with a single validator
+guard = Guard(name="content-safety").use(
+    ToxicLanguage,
+    threshold=0.5,
+    validation_method="sentence",
+    on_fail=OnFailAction.REFRAIN,
+)
+
+# Guard with multiple validators
+guard = Guard(name="production-guard").use_many(
+    ToxicLanguage(threshold=0.5, on_fail=OnFailAction.REFRAIN),
+    DetectPII(on_fail=OnFailAction.FIX),
+    CompetitorCheck(
+        competitors=["Apple", "Microsoft", "Google"],
+        on_fail=OnFailAction.FIX,
+    ),
+)
+</code></pre>
+<h3 id="structured-output-with-pydantic"><a class="header" href="#structured-output-with-pydantic">Structured Output with Pydantic</a></h3>
+<pre><code class="language-python">from pydantic import BaseModel, Field
+from guardrails import Guard
+
+class UserProfile(BaseModel):
+    name: str = Field(description="The user's full name")
+    email: str = Field(description="The user's email address")
+    age: int = Field(description="The user's age in years", ge=0, le=150)
+
+guard = Guard.for_pydantic(output_class=UserProfile)
+</code></pre>
+<h3 id="custom-validators"><a class="header" href="#custom-validators">Custom Validators</a></h3>
+<p>Create validators using the class-based approach:</p>
+<pre><code class="language-python">from guardrails.validators import Validator, register_validator, PassResult, FailResult
+
+@register_validator(name="custom/word_count", data_type="string")
+class WordCount(Validator):
+    def __init__(self, min_words: int, max_words: int, on_fail=None, **kwargs):
+        super().__init__(on_fail=on_fail, min_words=min_words, max_words=max_words, **kwargs)
+        self.min_words = min_words
+        self.max_words = max_words
+
+    def _validate(self, value, metadata=None) -&gt; PassResult | FailResult:
+        word_count = len(value.split())
+        if self.min_words &lt;= word_count &lt;= self.max_words:
+            return PassResult()
+        return FailResult(
+            error_message=f"Expected {self.min_words}-{self.max_words} words, got {word_count}.",
+            fix_value=" ".join(value.split()[:self.max_words]),
+        )
+</code></pre>
+<h3 id="server-configuration"><a class="header" href="#server-configuration">Server Configuration</a></h3>
+<p>Define guards in a Python config file for the Guardrails Server:</p>
+<pre><code class="language-python"># config.py
+from guardrails import Guard, OnFailAction
+from guardrails.hub import ToxicLanguage, DetectPII
+
+content_guard = Guard(name="content-guard").use_many(
+    ToxicLanguage(threshold=0.5, on_fail=OnFailAction.REFRAIN),
+    DetectPII(on_fail=OnFailAction.FIX),
+)
+</code></pre>
+<p>Start the server:</p>
+<pre><code class="language-bash">guardrails start --config=./config.py
+</code></pre>
+<h3 id="environment-variables"><a class="header" href="#environment-variables">Environment Variables</a></h3>
+<ul>
+<li><code>GUARDRAILS_BASE_URL</code> – Base URL for the Guardrails Server (default: <code>http://localhost:8000</code>)</li>
+<li><code>GUARDRAILS_API_KEY</code> – API key for authenticating with the Guardrails Server</li>
+<li><code>OPENAI_API_KEY</code> – API key for the OpenAI provider when using OpenAI models</li>
+<li><code>ANTHROPIC_API_KEY</code> – API key for the Anthropic provider when using Claude models</li>
+</ul>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="direct-in-application-usage"><a class="header" href="#direct-in-application-usage">Direct In-Application Usage</a></h3>
+<p>The most common pattern wraps LLM calls directly in application code:</p>
+<pre><code class="language-python">from guardrails import Guard, OnFailAction
+from guardrails.hub import ToxicLanguage
+
+guard = Guard().use(
+    ToxicLanguage,
+    threshold=0.5,
+    on_fail=OnFailAction.EXCEPTION,
+)
+
+result = guard(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Summarize this article."}],
+)
+
+print(result.validated_output)
+</code></pre>
+<h3 id="openai-sdk-proxy"><a class="header" href="#openai-sdk-proxy">OpenAI SDK Proxy</a></h3>
+<p>Route existing OpenAI SDK calls through the Guardrails Server without changing application code:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+# Point the OpenAI client at the Guardrails Server
+client = OpenAI(
+    base_url="http://localhost:8000/guards/content-guard/openai/v1/",
+    api_key="your-api-key",
+)
+
+response = client.chat.completions.create(
+    model="gpt-4o",
+    messages=[{"role": "user", "content": "Hello, world!"}],
+)
+</code></pre>
+<h3 id="litellm-integration"><a class="header" href="#litellm-integration">LiteLLM Integration</a></h3>
+<p>Guardrails integrates with LiteLLM for multi-provider routing with validation:</p>
+<pre><code class="language-python">import litellm
+from guardrails import Guard, OnFailAction
+from guardrails.hub import ToxicLanguage
+
+guard = Guard().use(
+    ToxicLanguage,
+    threshold=0.5,
+    on_fail=OnFailAction.REFRAIN,
+)
+
+# Use LiteLLM model strings with Guardrails
+result = guard(
+    model="anthropic/claude-3-5-sonnet-latest",
+    messages=[{"role": "user", "content": "Explain quantum computing."}],
+)
+</code></pre>
+<h3 id="production-deployment-with-gunicorn"><a class="header" href="#production-deployment-with-gunicorn">Production Deployment with Gunicorn</a></h3>
+<p>Deploy the Guardrails Server behind a production Web Server Gateway Interface (WSGI) server:</p>
+<pre><code class="language-bash">gunicorn \
+    --bind 0.0.0.0:8000 \
+    --timeout=90 \
+    --workers=4 \
+    'guardrails_api.app:create_app(None, "config.py")'
+</code></pre>
+<p>Worker count recommendation: <code>(2 x num_cores) + 1</code> as a baseline. Adjust based on whether validators are CPU-bound (static validators) or I/O-bound (LLM-based validators).</p>
+<h3 id="docker-deployment"><a class="header" href="#docker-deployment">Docker Deployment</a></h3>
+<pre><code class="language-dockerfile">FROM python:3.12-slim
+
+RUN pip install guardrails-ai
+RUN guardrails configure
+
+COPY config.py /app/config.py
+WORKDIR /app
+
+CMD ["guardrails", "start", "--config=./config.py"]
+</code></pre>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="basic-output-validation"><a class="header" href="#basic-output-validation">Basic Output Validation</a></h3>
+<pre><code class="language-python">from guardrails import Guard, OnFailAction
+from guardrails.hub import RegexMatch
+
+# Validate phone number format
+guard = Guard().use(
+    RegexMatch,
+    regex=r"\(?\d{3}\)?-? *\d{3}-? *-?\d{4}",
+    on_fail=OnFailAction.EXCEPTION,
+)
+
+# This passes validation
+guard.validate("123-456-7890")
+
+# This raises an exception
+try:
+    guard.validate("not a phone number")
+except Exception as e:
+    print(f"Validation failed: {e}")
+</code></pre>
+<h3 id="multi-validator-guard"><a class="header" href="#multi-validator-guard">Multi-Validator Guard</a></h3>
+<pre><code class="language-python">from guardrails import Guard, OnFailAction
+from guardrails.hub import CompetitorCheck, ToxicLanguage
+
+guard = Guard().use_many(
+    CompetitorCheck(
+        competitors=["Apple", "Microsoft", "Google"],
+        on_fail=OnFailAction.FIX,
+    ),
+    ToxicLanguage(
+        threshold=0.5,
+        validation_method="sentence",
+        on_fail=OnFailAction.REFRAIN,
+    ),
+)
+
+result = guard(
+    model="gpt-4o",
+    messages=[{
+        "role": "user",
+        "content": "Compare our product to competitors in the market.",
+    }],
+)
+
+if result.validation_passed:
+    print(result.validated_output)
+else:
+    print("Response was filtered for safety.")
+</code></pre>
+<h3 id="structured-data-extraction-with-pydantic"><a class="header" href="#structured-data-extraction-with-pydantic">Structured Data Extraction with Pydantic</a></h3>
+<pre><code class="language-python">from pydantic import BaseModel, Field
+from guardrails import Guard
+
+class Pet(BaseModel):
+    name: str = Field(description="The pet's name")
+    species: str = Field(description="The pet's species")
+    age: int = Field(description="The pet's age in years")
+    favorite_toy: str = Field(description="The pet's favorite toy")
+
+guard = Guard.for_pydantic(
+    output_class=Pet,
+    prompt="Tell me about a golden retriever named Buddy.",
+)
+
+result = guard(
+    model="gpt-4o",
+    messages=[{
+        "role": "user",
+        "content": "Tell me about a golden retriever named Buddy.",
+    }],
+)
+
+pet = result.validated_output
+print(f"{pet['name']} is a {pet['species']}, age {pet['age']}")
+</code></pre>
+<h3 id="on-fail-action-comparison"><a class="header" href="#on-fail-action-comparison">On-Fail Action Comparison</a></h3>
+<p>The following demonstrates how different on-fail actions handle the same toxic input:</p>
+<pre><code class="language-python">from guardrails import Guard, OnFailAction
+from guardrails.hub import ToxicLanguage
+
+toxic_text = "damn you!"
+
+# FIX: Removes toxic portion, returns "you!"
+guard_fix = Guard().use(ToxicLanguage, threshold=0.5, on_fail=OnFailAction.FIX)
+result = guard_fix.validate(toxic_text)
+print(f"FIX: {result.validated_output}")
+
+# REFRAIN: Returns None
+guard_refrain = Guard().use(ToxicLanguage, threshold=0.5, on_fail=OnFailAction.REFRAIN)
+result = guard_refrain.validate(toxic_text)
+print(f"REFRAIN: {result.validated_output}")
+
+# NOOP: Returns original text unchanged, logs failure
+guard_noop = Guard().use(ToxicLanguage, threshold=0.5, on_fail=OnFailAction.NOOP)
+result = guard_noop.validate(toxic_text)
+print(f"NOOP: {result.validated_output}")
+
+# EXCEPTION: Raises an error
+guard_exc = Guard().use(ToxicLanguage, threshold=0.5, on_fail=OnFailAction.EXCEPTION)
+try:
+    guard_exc.validate(toxic_text)
+except Exception as e:
+    print(f"EXCEPTION: {e}")
+</code></pre>
+<h3 id="custom-on-fail-handler"><a class="header" href="#custom-on-fail-handler">Custom On-Fail Handler</a></h3>
+<pre><code class="language-python">from guardrails import Guard, OnFailAction
+from guardrails.hub import ToxicLanguage
+
+def custom_handler(value, fail_result):
+    """Log the failure and return a sanitized placeholder."""
+    print(f"Validation failed: {fail_result.error_message}")
+    return "[Content moderated]"
+
+guard = Guard().use(
+    ToxicLanguage,
+    threshold=0.5,
+    on_fail=OnFailAction.CUSTOM,
+    on_fail_handler=custom_handler,
+)
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<p><strong>Validator Latency.</strong> Machine learning-based validators (toxic language, PII detection) add measurable latency to each LLM call. Static validators (regex, format checks) are fast, but ML-based validators may take tens to hundreds of milliseconds per invocation. The Guardrails Index benchmark provides empirical latency data for planning purposes.</p>
+<p><strong>Re-Ask Cost.</strong> The REASK on-fail action triggers additional LLM calls, which increases both latency and token cost. Each re-ask is a full LLM invocation with the original prompt plus corrective feedback. Setting <code>num_reasks</code> too high can lead to significant cost amplification.</p>
+<p><strong>ML Validator Memory Footprint.</strong> Validators powered by machine learning models (such as ToxicLanguage using Detoxify) require loading model weights into memory. In server deployments, this memory cost multiplies with the number of worker processes. Multithreading via <code>--threads</code> reduces memory overhead compared to multiprocessing but may introduce race conditions in history manipulation.</p>
+<p><strong>Python Only for Core Framework.</strong> While a JavaScript client exists, the core validation framework and custom validator development require Python. Applications in other languages must interact through the Guardrails Server REST API.</p>
+<p><strong>Hub Dependency.</strong> Some Hub validators require network access to download model artifacts or contact external APIs. Deployments in air-gapped environments may need to pre-download all required validator models and dependencies.</p>
+<p><strong>False Positives and Negatives.</strong> ML-based validators are probabilistic. Threshold tuning is required per use case to balance false positive rates (blocking legitimate content) against false negative rates (allowing violating content through). The <code>threshold</code> parameter on validators like <code>ToxicLanguage</code> controls this trade-off.</p>
+<p><strong>Structured Output Reliability.</strong> Structured data generation depends on the LLM’s ability to produce output conforming to the Pydantic schema. Smaller or less capable models may require more re-ask attempts. Function calling support in the underlying model significantly improves structured output reliability.</p>
+<p><strong>Server Concurrency.</strong> The Flask-based Guardrails Server does not inherently support high-concurrency workloads. Production deployments should use Gunicorn or Uvicorn with appropriate worker configuration. Guard history manipulation is not thread-safe, requiring careful tuning of worker threads versus processes.</p>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>v0.9.0</strong> (February 2026) – Major release requiring migration from v0.8.x. Migration guide available at guardrailsai.com.</li>
+<li><strong>v0.8.0</strong> (February 2026) – Introduced <code>history_max_length</code> parameter capping Guard history to 10 entries by default. Limits memory consumption in long-running applications.</li>
+<li><strong>v0.8.1</strong> (February 2026) – Fixed custom validators failing without Hub API key. Resolved temperature handling issues. Removed previously deprecated methods (breaking change).</li>
+<li><strong>v0.7.0</strong> (November 2025) – Added LangChain 1.x support for framework interoperability.</li>
+<li><strong>v0.7.3</strong> (February 2026) – Added OpenAI 2.x SDK support.</li>
+<li><strong>v0.6.8</strong> (November 2025) – Added Python 3.13 support. Upgraded Click and Typer dependency versions.</li>
+<li><strong>v0.6.7</strong> (September 2025) – Replaced deprecated <code>pkg_resources</code> with modern packaging alternatives.</li>
+<li><strong>v0.5.0</strong> (July 2024) – Major milestone release establishing the Guard/Validator/Hub architecture.</li>
+<li><strong>v0.1.0</strong> (March 2023) – Initial public release.</li>
+</ul>
+<p>The project has been under active development since January 2023, with approximately 72 contributors and consistent release cadence averaging multiple minor releases per month.</p>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li><a href="https://github.com/guardrails-ai/guardrails">Guardrails AI GitHub Repository</a> – Source code, issues, and releases under Apache 2.0 license.</li>
+<li><a href="https://guardrailsai.com/docs">Guardrails AI Official Documentation</a> – Concepts, API reference, how-to guides, and deployment documentation.</li>
+<li><a href="https://guardrailsai.com/hub">Guardrails Hub</a> – Centralized repository of pre-built validators with documentation and installation instructions.</li>
+<li><a href="https://guardrailsai.com/">Guardrails Index</a> – Benchmark comparing performance and latency of 24 guardrails across six common risk categories (launched February 2025).</li>
+<li><a href="https://pypi.org/project/guardrails-ai/">guardrails-ai on PyPI</a> – Package distribution with version history and dependency information.</li>
+<li><a href="https://github.com/guardrails-ai/validator-template">Guardrails AI Validator Template</a> – Template repository for creating and submitting custom validators to the Hub.</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-3-data/labeling/label-studio.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-4-operations/guardrails/nemo-guardrails.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-3-data/labeling/label-studio.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-4-operations/guardrails/nemo-guardrails.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

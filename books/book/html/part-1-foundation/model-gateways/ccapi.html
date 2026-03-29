@@ -1,0 +1,670 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>ccapi - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-0b03b4b8.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-7ec69164.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-1-foundation/model-gateways/ccapi.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="ccapi"><a class="header" href="#ccapi">ccapi</a></h1>
+<blockquote>
+<p>Unified AI API gateway for 100+ models with OpenAI-compatible endpoint</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>ccapi</td></tr>
+<tr><td>Group</td><td>Model Gateways</td></tr>
+<tr><td>Type</td><td>API</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Docs</td><td><a href="https://ccapi.ai/">ccapi.ai</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>CCAPI is a multimodal AI API gateway that aggregates multiple providers under a single OpenAI-compatible endpoint. The platform routes requests to over 100 models across eight or more providers spanning five modalities: text, image, audio, music, and video. CCAPI’s core value proposition is migration simplicity – existing code targeting the OpenAI API can be redirected to CCAPI by changing only the base URL to <code>https://api.ccapi.ai/v1</code> and supplying a CCAPI API key. Smart routing automatically switches between providers on failure with approximately 120 milliseconds of failover latency, maintaining a reported 99.9% success rate. The service operates on a tiered subscription model with pay-per-use billing denominated in United States Dollars (USD), offering a free tier with a $0.50 signup bonus, paid Standard and Pro plans, and custom enterprise agreements. As of March 2026, the pricing catalog covers 48 model families across text (30), image (8), audio (2), and video (8). [1]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<ul>
+<li><strong>Unified Endpoint</strong>: A single OpenAI-compatible REST API base URL (<code>https://api.ccapi.ai/v1</code>) that fronts all supported providers and modalities. Developers interact with one API surface regardless of whether the underlying model is served by OpenAI, Anthropic, Google, DeepSeek, or another provider.</li>
+<li><strong>Smart Routing</strong>: An automatic failover mechanism that detects provider downtime or errors and reroutes requests to alternative providers. The failover occurs in approximately 120 milliseconds, which is transparent to the caller. Multiple retry layers sustain the 99.9% success rate target. Multi-channel failover routes requests across multiple upstream channels per provider for higher availability. [1]</li>
+<li><strong>Multimodal Support</strong>: CCAPI supports five modalities through dedicated endpoints – text (chat completions), image generation, audio (text-to-speech), music generation (via Suno), and video generation – all accessible under the same base URL and authentication scheme. [2]</li>
+<li><strong>Provider-Prefixed Model Identifiers</strong>: Models are referenced using a <code>provider/model</code> format (for example, <code>anthropic/claude-sonnet-4-6</code> or <code>bytedance/seedance-2</code>), which disambiguates models across providers and allows explicit routing to a specific backend.</li>
+<li><strong>Custom Providers</strong>: Users can configure additional OpenAI-compatible providers with their own API keys and endpoints, extending CCAPI beyond its built-in provider catalog.</li>
+<li><strong>Subscription Tiers</strong>: Four plans – Free, Standard ($15.83/month billed annually), Pro ($49.17/month billed annually), and Custom (negotiated) – each unlocking progressively deeper model discounts (up to 40%, 50%, 60%, and negotiated respectively), higher rate limits, and additional operational features. [3]</li>
+<li><strong>Pay-Per-Use Billing</strong>: No credit conversion. A $100 deposit equals $100 of usable balance, with real-time cost tracking via the usage dashboard.</li>
+<li><strong>OpenClaw Integration</strong>: CCAPI provides a dedicated integration path for OpenClaw (open-source AI agent framework with 191K+ GitHub stars), enabling agents to route all Large Language Model (LLM) calls through CCAPI by changing environment variables – no code changes required. [4]</li>
+</ul>
+<h2 id="installation-and-setup"><a class="header" href="#installation-and-setup">Installation and Setup</a></h2>
+<p>CCAPI is a hosted API service with no local installation required. Integration uses existing OpenAI-compatible Software Development Kits (SDKs).</p>
+<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
+<p>CCAPI uses bearer token authentication. API keys follow the <code>sk-ccapi-...</code> prefix convention and are obtained from the CCAPI dashboard. All requests must include the <code>Authorization: Bearer &lt;key&gt;</code> header.</p>
+<pre><code class="language-bash">export CCAPI_API_KEY="sk-ccapi-your-key-here"
+</code></pre>
+<h3 id="python-openai-sdk"><a class="header" href="#python-openai-sdk">Python (OpenAI SDK)</a></h3>
+<pre><code class="language-bash">pip install openai
+</code></pre>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+</code></pre>
+<h3 id="nodejs-openai-sdk"><a class="header" href="#nodejs-openai-sdk">Node.js (OpenAI SDK)</a></h3>
+<pre><code class="language-bash">npm install openai
+</code></pre>
+<pre><code class="language-javascript">import OpenAI from "openai";
+
+const client = new OpenAI({
+    baseURL: "https://api.ccapi.ai/v1",
+    apiKey: "sk-ccapi-...",
+});
+</code></pre>
+<h3 id="curl"><a class="header" href="#curl">cURL</a></h3>
+<pre><code class="language-bash">curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
+  -H "Authorization: Bearer $CCAPI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-4-6",
+    "messages": [{"role": "user", "content": "Hello"}]
+  }'
+</code></pre>
+<p>Any Hypertext Transfer Protocol (HTTP) client or SDK that speaks Representational State Transfer (REST) and supports the OpenAI chat completions format works with CCAPI by pointing to the <code>https://api.ccapi.ai/v1</code> base URL. [1] [2]</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>CCAPI’s architecture consists of three logical layers:</p>
+<ol>
+<li><strong>API Gateway Layer</strong>: An OpenAI-compatible REST API that accepts requests at <code>https://api.ccapi.ai/v1</code>. The gateway handles authentication (bearer tokens), request validation, rate management based on subscription tier, and response formatting. All modality endpoints (chat completions, image generation, audio, music, video generation) share the same gateway infrastructure and authentication scheme.</li>
+<li><strong>Smart Routing Layer</strong>: A routing and failover engine that sits between the gateway and upstream providers. When a request targets a specific provider-model pair, the routing layer forwards it to that provider. If the provider returns an error or is unreachable, the routing layer automatically retries with an alternative provider capable of serving an equivalent model, with failover latency of approximately 120 milliseconds. Multi-channel failover distributes requests across multiple upstream channels per provider for higher availability.</li>
+<li><strong>Provider Integration Layer</strong>: Connections to upstream AI providers (OpenAI, Anthropic, Google, DeepSeek, ByteDance, Kuaishou, Zhipu AI, MiniMax, Moonshot, Qwen, Suno, xAI/Grok, Midjourney) plus user-configured custom providers. Each integration translates between the unified CCAPI request format and the provider’s native API, handling authentication, request mapping, and response normalization.</li>
+</ol>
+<p>The system is monitored 24/7 with real-time tracking of latency, success rates, and provider health across all modalities.</p>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<ul>
+<li><strong>Chat Completions</strong>: Standard text generation via <code>/v1/chat/completions</code> supporting streaming (Server-Sent Events (SSE)), function/tool calling, JavaScript Object Notation (JSON) response mode, temperature and top-p sampling, stop sequences, and maximum token limits. [2]</li>
+<li><strong>Extended Thinking</strong>: A <code>thinking</code> parameter (<code>{"type": "enabled"}</code>) activates step-by-step reasoning mode on supported models, returning intermediate reasoning content alongside the final response. [2]</li>
+<li><strong>Vision and Image Input</strong>: Multimodal models accept image inputs within the messages array for Optical Character Recognition (OCR), image analysis, and visual question answering.</li>
+<li><strong>Image Generation</strong>: Endpoint at <code>/v1/images/generations</code> for generating images from text prompts. Supported providers include Midjourney, Google Gemini Image, and ByteDance Seedream. [2]</li>
+<li><strong>Audio (Text-to-Speech)</strong>: Endpoint at <code>/v1/audio/speech</code> for converting text to audio using available speech synthesis models.</li>
+<li><strong>Music Generation</strong>: Integration with Suno for AI music generation, including the Chirp model family, with operation-based pricing. [2] [3]</li>
+<li><strong>Video Generation</strong>: Endpoint at <code>/v1/video/generations</code> for generating video content. Supported models include Seedance 2.0 (ByteDance), Kling 3.0 Standard/Omni/Action Control (Kuaishou), Veo 3.1 Stream (Google), Sora 2/Sora 2 Pro/Sora 2 Lite (OpenAI), Midjourney Video, and Grok Video (xAI). Sora 2 supports flexible 4-second, 8-second, and 12-second runtimes. Kling 3.0 supports 4K resolution at 60 frames per second (fps) with multi-shot capability. Seedance 2.0 supports 2K resolution at 24 fps with audio sync. [2] [5]</li>
+<li><strong>Prompt Caching</strong>: Repeated prompt prefixes (such as system prompts reused across conversations) receive reduced pricing, lowering cost for high-volume applications with shared context. [3]</li>
+<li><strong>Function/Tool Calling</strong>: Tool definitions can be passed via the <code>tools</code> parameter with <code>tool_choice</code> controlling invocation behavior (<code>none</code>, <code>auto</code>, <code>required</code>).</li>
+<li><strong>File-to-URL API</strong>: Upload files and receive temporary Uniform Resource Locators (URLs) for multimodal AI models, with per-tier upload quotas, download limits, and 24-hour automatic file expiry. Available on Standard tier and above. [5]</li>
+<li><strong>Webhook Notifications</strong>: Asynchronous event notifications for completed operations, available on Standard tier and above. [3]</li>
+<li><strong>Usage Dashboard</strong>: Real-time monitoring of costs, latency metrics, success rates, and per-request breakdowns. Tracks spending per model and per provider. [1]</li>
+<li><strong>Custom Provider Configuration</strong>: Users can add any OpenAI-compatible provider with their own API keys, extending the gateway beyond the built-in provider catalog.</li>
+<li><strong>Team Collaboration</strong>: Standard tier includes 3 team seats, Pro includes 8, and Custom tier offers unlimited seats. [3]</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Provider Migration</strong>: Teams switching from one LLM provider to another can reroute by changing only the model identifier, with no SDK or integration code changes required. The OpenAI-compatible interface means the calling code remains identical.</li>
+<li><strong>High-Availability AI Applications</strong>: Production systems that cannot tolerate provider outages benefit from smart routing, which automatically fails over to alternative providers within 120 milliseconds.</li>
+<li><strong>Multimodal Pipelines</strong>: Applications that need text, image, audio, music, and video generation from a single integration point rather than maintaining separate SDKs and authentication for each provider.</li>
+<li><strong>Cost Optimization</strong>: Tiered subscription discounts (up to 60% off on the Pro plan for Anthropic Claude models) combined with pay-per-use pricing enable significant savings. For example, DeepSeek V3 at $0.27 per million input tokens can reduce costs by 97% compared to Claude Opus for equivalent workloads. [3] [4]</li>
+<li><strong>AI Agent Cost Reduction</strong>: OpenClaw users report monthly LLM costs of $623 to $3,600 with direct provider APIs. Routing through CCAPI to budget models (DeepSeek, GLM-5, MiniMax M2.5) can reduce costs to under $20 per month at 50 million tokens per day. [4]</li>
+<li><strong>Video Generation Access</strong>: Teams needing access to video generation models (Seedance 2.0, Kling 3.0, Veo 3.1, Sora 2, Midjourney, Grok Video) through a familiar OpenAI-compatible interface without managing direct integrations with each provider. [5]</li>
+<li><strong>Prototyping and Evaluation</strong>: Rapidly testing different models from different providers against the same prompts by changing only the model parameter, enabling quick comparison without provider-specific setup.</li>
+</ul>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="chat-completions"><a class="header" href="#chat-completions">Chat Completions</a></h3>
+<p><strong>Endpoint</strong>: <code>POST /v1/chat/completions</code></p>
+<p><strong>Parameters</strong>:</p>
+<ul>
+<li><code>model</code> (required): Model identifier in <code>provider/model</code> format (e.g., <code>anthropic/claude-sonnet-4-6</code>).</li>
+<li><code>messages</code> (required): Array of message objects with <code>role</code> (<code>system</code>, <code>user</code>, <code>assistant</code>, <code>tool</code>) and <code>content</code> fields.</li>
+<li><code>stream</code>: Boolean to enable SSE streaming of partial responses.</li>
+<li><code>temperature</code>: Sampling temperature, range <code>0.0</code> to <code>2.0</code>, default <code>1.0</code>.</li>
+<li><code>top_p</code>: Nucleus sampling threshold, range <code>0.0</code> to <code>1.0</code>, default <code>1.0</code>.</li>
+<li><code>max_tokens</code>: Maximum tokens in the generated response.</li>
+<li><code>stop</code>: String or array of stop sequences.</li>
+<li><code>tools</code>: Array of function/tool definitions for tool calling.</li>
+<li><code>tool_choice</code>: Control tool invocation (<code>none</code>, <code>auto</code>, <code>required</code>).</li>
+<li><code>response_format</code>: <code>{"type": "json_object"}</code> to enforce JSON output.</li>
+<li><code>thinking</code>: <code>{"type": "enabled"}</code> for extended reasoning mode.</li>
+</ul>
+<p><strong>Response</strong>: Chat completion object containing generated content, token usage statistics, and optional tool calls or reasoning content.</p>
+<p><strong>Error Codes</strong>:</p>
+<ul>
+<li><code>400</code>: Bad request (malformed parameters).</li>
+<li><code>402</code>: Insufficient account balance.</li>
+<li><code>500</code>: Server error.</li>
+</ul>
+<h3 id="image-generation"><a class="header" href="#image-generation">Image Generation</a></h3>
+<p><strong>Endpoint</strong>: <code>POST /v1/images/generations</code></p>
+<p>Supported providers: Midjourney, Google Gemini Image, ByteDance Seedream. [2]</p>
+<h3 id="audio-text-to-speech"><a class="header" href="#audio-text-to-speech">Audio (Text-to-Speech)</a></h3>
+<p><strong>Endpoint</strong>: <code>POST /v1/audio/speech</code></p>
+<h3 id="music-generation"><a class="header" href="#music-generation">Music Generation</a></h3>
+<p><strong>Provider</strong>: Suno (Chirp model family). Operation-based pricing with core music generation and advanced operations. [2] [3]</p>
+<h3 id="video-generation"><a class="header" href="#video-generation">Video Generation</a></h3>
+<p><strong>Endpoint</strong>: <code>POST /v1/video/generations</code></p>
+<p>Supported models include Seedance 2.0, Kling 3.0 (Standard/Omni/Action Control), Veo 3.1 Stream, Sora 2 (Classic/Flexible/Lite/Pro/Pro HD), Midjourney Video, and Grok Video. Video billing varies by model: per-second (Seedance, Veo 3.1 Stream, Sora 2 Flexible), per-video (Kling, Sora 2 Classic), or packaged by resolution and duration (Grok Video). [2] [5]</p>
+<h3 id="available-models-selected"><a class="header" href="#available-models-selected">Available Models (Selected)</a></h3>
+<p><strong>Text Generation</strong>:</p>
+<ul>
+<li><code>openai/gpt-5.2</code> – OpenAI GPT-5.2</li>
+<li><code>openai/gpt-5.4</code> – OpenAI GPT-5.4 (threshold pricing for different input context sizes)</li>
+<li><code>anthropic/claude-opus-4-6</code> – Anthropic Claude Opus 4.6, 200K context (Pro: $2.00/$10.00 per 1M tokens)</li>
+<li><code>anthropic/claude-sonnet-4-6</code> – Anthropic Claude Sonnet 4.6, 200K context (Pro: $1.20/$6.00 per 1M tokens)</li>
+<li><code>anthropic/claude-haiku-4-5</code> – Anthropic Claude Haiku 4.5, 200K context (Pro: $0.40/$2.00 per 1M tokens)</li>
+<li><code>google/gemini-2.5-pro</code> – Google Gemini 2.5 Pro (Pro: $1.25/$7.50 per 1M tokens)</li>
+<li><code>google/gemini-3</code> – Google Gemini 3</li>
+<li><code>openai/gpt-4o</code> – OpenAI GPT-4o (Pro: $1.25/$5.00 per 1M tokens)</li>
+<li><code>deepseek/deepseek-v4</code> – DeepSeek V4 ($0.27/$1.10 per 1M tokens)</li>
+<li><code>deepseek/deepseek-v3.2</code> – DeepSeek V3.2</li>
+<li><code>zhipu/glm-5</code> – Zhipu AI GLM-5 ($0.40/$1.80 per 1M tokens)</li>
+<li><code>minimax/minimax-m2-5</code> – MiniMax M2.5 ($0.21/$0.84 per 1M tokens)</li>
+<li><code>moonshot/kimi-k2.5</code> – Moonshot Kimi K2.5 ($0.55/$2.19 per 1M tokens)</li>
+<li><code>qwen/qwen3.5-plus</code> – Qwen 3.5 Plus (with prompt caching)</li>
+</ul>
+<p><strong>Video Generation</strong>:</p>
+<ul>
+<li><code>bytedance/seedance-2</code> – ByteDance Seedance 2.0 (2K, 4-15s, 24 fps, audio sync, $0.34/second)</li>
+<li><code>kuaishou/kling-3.0</code> – Kuaishou Kling 3.0 (4K, 3-15s, 60 fps, multi-shot, $0.39/video)</li>
+<li><code>google/veo-3.1</code> – Google Veo 3.1 Stream (runtime-based billing, Pro from $0.09/second)</li>
+<li><code>openai/sora-2</code> – OpenAI Sora 2 (flexible 4/8/12s runtimes, Pro from $0.06/second or per-video)</li>
+<li><code>midjourney/video</code> – Midjourney Video</li>
+<li><code>grok/video</code> – Grok Video (packaged by 480p/720p and 6/10/15s durations)</li>
+</ul>
+<p><strong>Image Generation</strong>:</p>
+<ul>
+<li>Midjourney, Google Gemini Image, ByteDance Seedream</li>
+</ul>
+<p><strong>Audio/Music</strong>:</p>
+<ul>
+<li>Suno (Chirp family, operation-based pricing, Pro: $0.07/call)</li>
+<li>Producer (audio generation)</li>
+</ul>
+<p>CCAPI advertises up to 60% savings compared to direct provider pricing on the Pro tier, with Anthropic Claude models receiving the deepest discounts. [1] [3]</p>
+<h2 id="configuration-and-customization"><a class="header" href="#configuration-and-customization">Configuration and Customization</a></h2>
+<h3 id="base-url-configuration"><a class="header" href="#base-url-configuration">Base URL Configuration</a></h3>
+<p>The single required configuration change for any OpenAI SDK-based application:</p>
+<pre><code class="language-python"># Python
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+</code></pre>
+<pre><code class="language-javascript">// Node.js
+const client = new OpenAI({
+    baseURL: "https://api.ccapi.ai/v1",
+    apiKey: "sk-ccapi-...",
+});
+</code></pre>
+<h3 id="subscription-tiers"><a class="header" href="#subscription-tiers">Subscription Tiers</a></h3>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Feature</th><th>Free</th><th>Standard</th><th>Pro</th><th>Custom</th></tr>
+</thead>
+<tbody>
+<tr><td>Price</td><td>$0</td><td>$15.83/mo (annual)</td><td>$49.17/mo (annual)</td><td>Negotiated</td></tr>
+<tr><td>API Discount</td><td>Up to 40%</td><td>Up to 50%</td><td>Up to 60%</td><td>Negotiated</td></tr>
+<tr><td>Models</td><td>Standard</td><td>All + Premium</td><td>All + Premium + Beta</td><td>All + Priority Access</td></tr>
+<tr><td>Rate Limit (RPM)</td><td>30</td><td>600</td><td>3,000</td><td>Custom</td></tr>
+<tr><td>Concurrency</td><td>2</td><td>10</td><td>30</td><td>Unlimited</td></tr>
+<tr><td>Team Seats</td><td>–</td><td>3</td><td>8</td><td>Unlimited</td></tr>
+<tr><td>File-to-URL API</td><td>–</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Webhooks</td><td>–</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Log Retention</td><td>24 hours</td><td>7 days</td><td>30 days</td><td>365 days</td></tr>
+<tr><td>Support</td><td>Community</td><td>Email</td><td>Priority Email</td><td>Dedicated Manager</td></tr>
+<tr><td>SLA</td><td>–</td><td>–</td><td>–</td><td>99.9%+</td></tr>
+<tr><td>Private Deployment</td><td>–</td><td>–</td><td>–</td><td>Available</td></tr>
+</tbody>
+</table>
+</div>
+<p>All plans include a $0.50 signup bonus and direct USD billing. Annual billing saves two months (Standard: $190/year, Pro: $590/year). [3]</p>
+<h3 id="model-selection"><a class="header" href="#model-selection">Model Selection</a></h3>
+<p>Models are selected via the <code>model</code> parameter using provider-prefixed identifiers:</p>
+<pre><code class="language-python"># Route to Anthropic Claude
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-4-6",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+
+# Route to DeepSeek for cost efficiency
+response = client.chat.completions.create(
+    model="deepseek/deepseek-v4",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+</code></pre>
+<h3 id="custom-providers"><a class="header" href="#custom-providers">Custom Providers</a></h3>
+<p>Users can configure additional OpenAI-compatible providers through the CCAPI dashboard, supplying their own API keys and endpoint URLs. This allows routing through CCAPI’s unified interface to providers not in the built-in catalog.</p>
+<h3 id="usage-dashboard"><a class="header" href="#usage-dashboard">Usage Dashboard</a></h3>
+<p>The dashboard provides real-time visibility into:</p>
+<ul>
+<li>Per-request cost breakdown</li>
+<li>Latency metrics per model and provider</li>
+<li>Success rate monitoring</li>
+<li>API key management</li>
+<li>Account balance tracking</li>
+</ul>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="drop-in-openai-replacement"><a class="header" href="#drop-in-openai-replacement">Drop-In OpenAI Replacement</a></h3>
+<p>The most common integration pattern requires changing only two values in existing OpenAI SDK code:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+# Before (direct OpenAI)
+# client = OpenAI(api_key="sk-openai-...")
+
+# After (via CCAPI)
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+
+# All existing code works unchanged
+response = client.chat.completions.create(
+    model="openai/gpt-5.2",
+    messages=[{"role": "user", "content": "Explain quantum computing."}]
+)
+</code></pre>
+<h3 id="multi-provider-switching"><a class="header" href="#multi-provider-switching">Multi-Provider Switching</a></h3>
+<p>A single client instance can target different providers by changing only the model parameter:</p>
+<pre><code class="language-python">models = [
+    "openai/gpt-5.2",
+    "anthropic/claude-sonnet-4-6",
+    "deepseek/deepseek-v4",
+    "zhipu/glm-5",
+    "minimax/minimax-m2-5",
+]
+for model in models:
+    response = client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": "Summarize this document."}]
+    )
+</code></pre>
+<h3 id="openclaw-agent-integration"><a class="header" href="#openclaw-agent-integration">OpenClaw Agent Integration</a></h3>
+<p>Connect OpenClaw to CCAPI by setting environment variables in the <code>.env</code> file:</p>
+<pre><code class="language-bash"># CCAPI Gateway Configuration
+OPENCLAW_API_KEY=sk-your-ccapi-api-key
+OPENCLAW_MODEL=deepseek/deepseek-chat
+OPENCLAW_BASE_URL=https://api.ccapi.ai/api/v1
+
+# Optional: fallback model
+OPENCLAW_FALLBACK_MODEL=openai/gpt-4o-mini
+</code></pre>
+<p>No code changes are required. OpenClaw treats CCAPI as a standard OpenAI endpoint. [4]</p>
+<h3 id="framework-integration"><a class="header" href="#framework-integration">Framework Integration</a></h3>
+<p>Any framework built on the OpenAI SDK (LangChain, LlamaIndex, CrewAI, and others) can route through CCAPI by configuring the base URL at the client level. No framework-specific adapters are needed.</p>
+<h3 id="resthttp-client-integration"><a class="header" href="#resthttp-client-integration">REST/HTTP Client Integration</a></h3>
+<p>Any language or framework with HTTP client capabilities can call CCAPI directly:</p>
+<pre><code class="language-bash">curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
+  -H "Authorization: Bearer sk-ccapi-..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-4-6",
+    "messages": [{"role": "user", "content": "Hello"}],
+    "stream": false
+  }'
+</code></pre>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="basic-chat-completion-python"><a class="header" href="#basic-chat-completion-python">Basic Chat Completion (Python)</a></h3>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+
+response = client.chat.completions.create(
+    model="anthropic/claude-sonnet-4-6",
+    messages=[{"role": "user", "content": "What is machine learning?"}]
+)
+print(response.choices[0].message.content)
+</code></pre>
+<h3 id="streaming-response-nodejs"><a class="header" href="#streaming-response-nodejs">Streaming Response (Node.js)</a></h3>
+<pre><code class="language-javascript">import OpenAI from "openai";
+
+const client = new OpenAI({
+    baseURL: "https://api.ccapi.ai/v1",
+    apiKey: "sk-ccapi-...",
+});
+
+const stream = await client.chat.completions.create({
+    model: "anthropic/claude-sonnet-4-6",
+    messages: [
+        { role: "system", content: "You are a helpful assistant." },
+        { role: "user", content: "Explain recursion step by step." },
+    ],
+    stream: true,
+});
+
+for await (const chunk of stream) {
+    const content = chunk.choices[0]?.delta?.content;
+    if (content) process.stdout.write(content);
+}
+</code></pre>
+<h3 id="tool-calling-python"><a class="header" href="#tool-calling-python">Tool Calling (Python)</a></h3>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+
+tools = [
+    {
+        "type": "function",
+        "function": {
+            "name": "get_weather",
+            "description": "Get current weather for a location",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "location": {"type": "string", "description": "City name"}
+                },
+                "required": ["location"]
+            }
+        }
+    }
+]
+
+response = client.chat.completions.create(
+    model="openai/gpt-5.2",
+    messages=[{"role": "user", "content": "What is the weather in Tokyo?"}],
+    tools=tools,
+    tool_choice="auto"
+)
+</code></pre>
+<h3 id="extended-thinking-curl"><a class="header" href="#extended-thinking-curl">Extended Thinking (cURL)</a></h3>
+<pre><code class="language-bash">curl -X POST "https://api.ccapi.ai/v1/chat/completions" \
+  -H "Authorization: Bearer sk-ccapi-..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "anthropic/claude-sonnet-4-6",
+    "messages": [{"role": "user", "content": "Solve this step by step: 23 * 47 + 19"}],
+    "thinking": {"type": "enabled"}
+  }'
+</code></pre>
+<h3 id="video-generation-curl"><a class="header" href="#video-generation-curl">Video Generation (cURL)</a></h3>
+<pre><code class="language-bash">curl -X POST "https://api.ccapi.ai/v1/video/generations" \
+  -H "Authorization: Bearer sk-ccapi-..." \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "bytedance/seedance-2",
+    "prompt": "A serene mountain lake at sunrise with mist rolling over the water"
+  }'
+</code></pre>
+<h3 id="json-mode-response-python"><a class="header" href="#json-mode-response-python">JSON Mode Response (Python)</a></h3>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://api.ccapi.ai/v1",
+    api_key="sk-ccapi-..."
+)
+
+response = client.chat.completions.create(
+    model="deepseek/deepseek-v4",
+    messages=[{"role": "user", "content": "List three programming languages with their use cases."}],
+    response_format={"type": "json_object"}
+)
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<ul>
+<li><strong>Closed-Source Service</strong>: CCAPI is a proprietary hosted service with no self-hosted or on-premises deployment option (except at the Custom tier with private deployment). All requests transit through CCAPI’s infrastructure, which introduces a dependency on their availability and data handling practices.</li>
+<li><strong>Provider-Dependent Features</strong>: Feature support (tool calling, vision, extended thinking, structured output) varies by upstream model and provider. Not all features are available across all models.</li>
+<li><strong>No Model Fine-Tuning</strong>: CCAPI is an inference routing layer, not a model training or fine-tuning platform. Fine-tuned models must be hosted by the upstream provider and accessed through CCAPI if that provider is supported.</li>
+<li><strong>Latency Overhead</strong>: Routing through an intermediary gateway adds network hops compared to calling a provider directly. While CCAPI reports sub-2-second latency, the additional hop may be noticeable for latency-sensitive applications where every millisecond matters.</li>
+<li><strong>Rate Limits</strong>: Rate limits are tier-dependent (30 Requests Per Minute (RPM) on Free, 600 on Standard, 3,000 on Pro). Throughput may be further constrained by the underlying provider’s rate limits. [3]</li>
+<li><strong>Model Availability Lag</strong>: New models released by providers may not be immediately available through CCAPI. There is an inherent delay between a provider launching a model and CCAPI integrating it, though the changelog shows rapid integration cadence.</li>
+<li><strong>Limited Documentation Depth</strong>: The API documentation (hosted on docs.ccapi.ai) primarily covers endpoint specifications per provider. Detailed guides for image, audio, music, and video endpoints are less extensive compared to the chat completions documentation. [2]</li>
+<li><strong>Vendor Lock-In Risk</strong>: While CCAPI uses an OpenAI-compatible interface (reducing switching cost), reliance on provider-prefixed model identifiers (<code>anthropic/claude-sonnet-4-6</code>) creates a CCAPI-specific naming convention that requires mapping if migrating to another gateway.</li>
+<li><strong>Data Privacy</strong>: All requests and responses pass through CCAPI’s servers. Organizations with strict data residency or privacy requirements should evaluate CCAPI’s data handling policies before routing sensitive workloads through the gateway.</li>
+<li><strong>Free Tier Constraints</strong>: The free tier has significant limitations: 30 RPM, 2 concurrent requests, 24-hour log retention, community-only support, and access limited to standard models. [3]</li>
+</ul>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>v1.8.0</strong> (March 9, 2026): Sora 2 flexible 4/8/12-second runtimes, Sora 2 Pro short-form resolution options, Grok Video packaged pricing by resolution and duration. [5]</li>
+<li><strong>v1.7.0</strong> (March 8, 2026): Kling 3.0 Standard/Omni/Action Control documentation, expanded Kling video request options, GPT-5.4 with threshold pricing for input context sizes. [5]</li>
+<li><strong>v1.6.0</strong> (March 5, 2026): Up to 50% off OpenAI and Google Gemini models, up to 60% off Anthropic Claude models with tiered discounts, multi-channel failover for OpenAI and Gemini text models, Sora 2 Lite and Sora 2 Pro HD, model ID resolution fixes. [5]</li>
+<li><strong>v1.5.0</strong> (February 22, 2026): File-to-URL API for multimodal file uploads with per-tier quotas and 24-hour automatic expiry. [5]</li>
+<li><strong>v1.4.0</strong> (February 20, 2026): Subscription plans (Free, Standard, Pro, Custom tiers), billing dashboard and usage tracking. [5]</li>
+<li><strong>v1.3.0</strong> (February 19, 2026): Google Veo 3.1 video generation, GPT-5.2 Codex, Qwen3.5-Plus with prompt caching, GLM-4.7, Kimi K2.5. [5]</li>
+<li><strong>v1.2.0</strong> (February 17, 2026): OpenAI Sora 2 video generation, redesigned models mega dropdown, mobile responsiveness improvements, auto-refund for failed video generation jobs. [5]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] CCAPI Official Website - https://ccapi.ai/</li>
+<li>[2] CCAPI API Documentation - https://docs.ccapi.ai/</li>
+<li>[3] CCAPI Pricing - https://ccapi.ai/pricing</li>
+<li>[4] CCAPI OpenClaw Integration - https://ccapi.ai/openclaw</li>
+<li>[5] CCAPI Changelog - https://ccapi.ai/changelog</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-1-foundation/model-gateways/portkey.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-2-application/agent-frameworks/langchain.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-1-foundation/model-gateways/portkey.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-2-application/agent-frameworks/langchain.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
