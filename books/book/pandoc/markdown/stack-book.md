@@ -7,6 +7,7 @@ title: AI/ML Stack Documentation
 ---
 
 - [AI/ML Stack Documentation](#book__pandoc__markdown__src__introduction.md__aiml-stack-documentation)
+- [Capabilities and Comparisons](#book__pandoc__markdown__src__capabilities.md__capabilities-and-comparisons)
 - [OpenAI](#book__pandoc__markdown__src__part-1-foundation__llm-providers__openai.md__openai)
 - [Gemini](#book__pandoc__markdown__src__part-1-foundation__llm-providers__gemini.md__gemini)
 - [Claude](#book__pandoc__markdown__src__part-1-foundation__llm-providers__claude.md__claude)
@@ -145,6 +146,160 @@ Each chapter follows a consistent structure:
 ## Source
 
 All content is derived from official documentation sites. Every claim is backed by a citation linking to the original source. The catalog source of truth is `stacks.csv` in the stack bundle.
+
+# Capabilities and Comparisons
+
+This chapter inverts the stack-by-stack perspective of the rest of this book. Instead of asking "what does LangChain do?", it asks "I need to build a RAG pipeline — which stacks serve that need, and how do they compare?" Each section below describes a functional capability, identifies every stack in this catalog that addresses it, and highlights where they overlap, diverge, and complement each other.
+
+## Accessing Large Language Models
+
+The most fundamental capability in the AI/ML stack is sending prompts to a large language model and receiving generated text. Three categories of tools address this need, and the choice between them shapes every downstream decision.
+
+**Hosted API providers** — OpenAI, Gemini, and Claude — offer the fastest path to production. Each exposes a chat completions or messages endpoint, handles scaling and hardware, and bills per token. OpenAI provides the broadest ecosystem with the Responses API, function calling, vision, embeddings, and a real-time speech-to-speech WebRTC API. Gemini differentiates with a 1M-token context window, native multimodal processing across text, images, video, and audio, and specialized capabilities like image generation via Imagen 4 and video via Veo 3.1. Claude offers extended thinking for step-by-step reasoning transparency, server-side tools (web search, code execution, memory), and the MCP connector for direct Model Context Protocol server integration.
+
+**Local inference engines** — Ollama, LM Studio, vLLM, SGLang, MAX, Triton Inference Server, BentoML, and KServe — let you run models on your own hardware. Ollama and LM Studio target developer workstations: Ollama provides a CLI and REST API for running quantized models locally, while LM Studio adds a desktop GUI with split-view chat and offline document RAG. For production serving, vLLM and SGLang lead in throughput — both use PagedAttention and continuous batching, but SGLang adds RadixAttention for automatic KV cache reuse and compressed finite state machines for 3x faster structured output generation. Triton Inference Server handles multi-framework concurrent serving on the same GPU with dynamic batching, while KServe adds Kubernetes-native autoscaling and scale-to-zero. BentoML provides a Python-native service definition pattern with decorators, and MAX uses custom Mojo-language operators for cross-vendor hardware optimization.
+
+**Model gateways** — LiteLLM, Portkey, and ccapi — sit between your application and the providers, offering a unified API across 100+ models. LiteLLM is open-source and focuses on a single Python function (`completion()`) that works identically across providers, with built-in cost tracking and retry/fallback logic. Portkey adds production routing features: weighted load balancing, conditional routing based on query rules, semantic caching, and a circuit breaker. ccapi is a closed-source unified endpoint that additionally supports image generation (Midjourney, Seedream), music generation (Suno), and video generation (Kling, Veo, Sora) through the same OpenAI-compatible interface.
+
+**Where they overlap:** All three categories ultimately produce text completions. Every hosted provider and most inference engines expose OpenAI-compatible endpoints, making them interchangeable behind a gateway. The key trade-off is control versus convenience: hosted APIs require zero infrastructure but offer no model customization; local engines give full control over quantization, batching, and hardware but require GPU expertise; gateways provide provider abstraction but add a network hop.
+
+## Building AI Agents
+
+An AI agent uses an LLM to reason about tasks, decide which tools to call, and iterate until a goal is achieved. Eight frameworks in this catalog address agent construction, each with a distinct philosophy.
+
+**LangChain** pioneered the space with its chain abstraction and LCEL (LangChain Expression Language) pipe operator for composing components declaratively. It provides the broadest integration ecosystem but carries complexity — the framework has many abstractions, and the learning curve is steep for production use. **LangGraph** extends LangChain with graph-based orchestration: agents are nodes in a directed graph with conditional edges, durable checkpoint-based persistence, and human-in-the-loop control (pause, inspect state, resume). LangGraph is specifically designed for stateful, multi-step agents that need to survive process restarts.
+
+**AutoGen** from Microsoft takes a conversational approach — agents are chat participants that exchange messages, with orchestration patterns like round-robin and selector routing. It supports distributed runtime via gRPC and sandboxed Docker-based code execution. **CrewAI** simplifies multi-agent design with role-based agents (each has a role, goal, and backstory) defined declaratively in YAML, supporting sequential, hierarchical, and hybrid process patterns.
+
+**ADK** (Google Agent Development Kit) provides the richest orchestration primitives: sequential, parallel, and loop workflow agents plus LLM-driven routing, with hierarchical agent trees where any agent can delegate to children. It integrates natively with Google's ecosystem and supports real-time audio/video streaming. **Semantic Kernel** from Microsoft targets enterprise environments with multi-language support (C#, Python, Java), a plugin architecture, and deep Azure/OpenAI integration with OpenTelemetry observability.
+
+**Pydantic AI** focuses on type safety — structured outputs are validated against Pydantic models with automatic retry on validation failure, and it integrates with durable execution platforms (Temporal, Prefect) for long-running agents. **smolagents** from HuggingFace takes the opposite approach: minimal code (~1,000 lines), code-first agents that write Python as their reasoning output, and broad tool compatibility (native, MCP, LangChain tools, HuggingFace Hub Spaces).
+
+**Where they overlap:** All eight frameworks support tool calling, multi-turn conversations, and model-agnostic backends. LangChain, LangGraph, ADK, AutoGen, and CrewAI all support MCP (Model Context Protocol) integration. The key differentiator is the orchestration model: LangGraph and ADK use explicit graphs, CrewAI uses role-based delegation, AutoGen uses conversational patterns, and smolagents uses code generation. For production durability, LangGraph and Pydantic AI (via Temporal/Prefect) lead; for rapid prototyping, smolagents and CrewAI are fastest to start.
+
+## Multi-Agent Systems
+
+Several frameworks explicitly support multiple agents collaborating on a task. **AutoGen** was built for this — agents are conversational participants with configurable routing. **CrewAI** models teams with role-based agents working in sequential or hierarchical processes. **ADK** uses hierarchical agent trees where parent agents delegate to children, with any agent usable as a tool by another agent. **LangGraph** composes multi-agent systems by embedding agent graphs as nodes in a parent graph. **Letta** enables shared memory blocks that multiple agents read and write simultaneously, allowing real-time collaboration through shared state rather than message passing. **smolagents** supports agent-as-tool patterns where one agent invokes another.
+
+The trade-off is between structured coordination (CrewAI, ADK) and emergent collaboration (AutoGen, Letta). Structured systems are more predictable but less flexible; conversational and memory-sharing systems adapt dynamically but are harder to debug.
+
+## Retrieval-Augmented Generation
+
+RAG grounds LLM responses in your own data by retrieving relevant documents before generation. This capability spans two layers: the retrieval pipeline and the vector storage.
+
+**RAG frameworks** orchestrate the full pipeline. **LlamaIndex** provides the most comprehensive data connector ecosystem (APIs, PDFs, SQL, CSV, web pages via LlamaHub), flexible indexing strategies (vector, keyword, tree, knowledge graph), and the full RAG pipeline from chunking through synthesis. **Haystack** emphasizes modularity — components have typed interfaces and are independently testable, pipelines serialize to YAML, and hybrid retrieval combines BM25 sparse and embedding-based dense search with configurable fusion. **GraphRAG** from Microsoft takes a fundamentally different approach: it builds a knowledge graph from documents using entity extraction and relationship detection, then uses hierarchical community summarization for cross-document reasoning that traditional vector-based RAG cannot achieve.
+
+**Vector databases** store and search the embeddings. **pgvector** is unique in colocating vectors with relational data inside PostgreSQL — you get ACID transactions, JOINs, and six distance metrics without a separate system. **Pinecone** is a fully managed service with integrated embedding (text in, results out) and hybrid search combining dense and sparse indexes. **Weaviate** differentiates with Weaviate Agents (Query, Transformation, Personalization agents) and integrated generative search that combines retrieval and generation in a single query. **Qdrant** is written in Rust for performance and offers filterable HNSW (payload indexes extend the HNSW graph for single-pass filtered search), nested prefetch pipelines for multi-stage re-scoring, and the ACORN algorithm for restrictive multi-filter queries. **Milvus** targets scale with GPU-accelerated indexes (CAGRA, GPU_IVF), DiskANN for billion-scale datasets exceeding memory, dynamic schema, and multi-tenancy at database, collection, and partition levels.
+
+**Where they overlap:** LlamaIndex, Haystack, and GraphRAG all produce retrieval pipelines that feed into LLMs, but they diverge on retrieval strategy — vector similarity (LlamaIndex, Haystack), hybrid sparse+dense (Haystack, Pinecone, Weaviate, Qdrant, Milvus), or graph-based (GraphRAG). All five vector databases support approximate nearest neighbor search and filtering, but differ on deployment model (managed vs. self-hosted), indexing algorithms, and ecosystem integration. pgvector wins on simplicity when you already use PostgreSQL; Pinecone wins on zero-ops managed experience; Qdrant and Milvus win on filtering performance at scale.
+
+## Structured and Validated Output
+
+Getting LLMs to produce typed, schema-conformant output is critical for production systems. Four dedicated tools and several built-in provider features address this.
+
+**Instructor** is the most pragmatic — it wraps any LLM client with Pydantic model validation and an automatic retry loop that feeds validation errors back to the model. It supports 23+ providers, streaming partial results, and custom validators including LLM-based semantic validation. **Outlines** takes a formal approach: it constrains generation at the token level using finite state machines compiled from JSON Schema, regex, or context-free grammars, guaranteeing valid output by construction rather than retry. **BAML** introduces a domain-specific language for defining LLM function signatures with typed inputs and outputs, including streaming with partial types and multi-modal input support. **DSPy** takes the most radical approach — instead of writing prompts, you declare typed signatures and let optimizers (MIPROv2, GEPA) automatically find the best prompt, few-shot examples, and configuration.
+
+**Built-in provider support** increasingly competes with these tools. OpenAI's structured outputs enforce JSON Schema at the API level with strict mode. Claude offers strict tool use for guaranteed schema validation. Groq, Cerebras, vLLM, and SGLang all support constrained decoding for JSON schema conformance.
+
+**Where they overlap:** Instructor, Outlines, BAML, and DSPy all produce validated structured data from LLMs, but differ fundamentally in approach. Instructor uses validation-and-retry (works with any provider, no token-level control). Outlines uses constrained decoding (guarantees validity but requires model access). BAML uses a custom DSL with type-safe code generation. DSPy optimizes the entire prompt automatically. For most applications, Instructor is the fastest to adopt; for latency-critical systems where retries are unacceptable, Outlines or provider-native structured outputs are preferred.
+
+## Tool Use and Function Calling
+
+Tool use enables LLMs to interact with external systems — databases, APIs, file systems, browsers. This capability is now supported across almost every layer of the stack.
+
+**At the provider level**, OpenAI, Gemini, and Claude all support function calling with JSON Schema tool definitions. OpenAI and Claude support parallel tool calls. Claude additionally offers server-side tools (web search, code execution) that run on Anthropic's infrastructure and the MCP connector for direct integration with MCP servers. Gemini provides four function calling modes (AUTO, ANY, NONE, VALIDATED) for fine-grained control.
+
+**Agent frameworks** build on provider-level tool use. LangChain, LangGraph, ADK, Pydantic AI, smolagents, AutoGen, and Semantic Kernel all support MCP tool integration. ADK provides the richest tool ecosystem: function tools, MCP tools, OpenAPI tools, LangChain tools, and agent-as-tool patterns. smolagents is uniquely tool-agnostic, accepting native tools, MCP servers, LangChain tools, and HuggingFace Hub Spaces interchangeably.
+
+**Local inference engines** increasingly support tool calling too. Ollama, vLLM, SGLang, and Groq all support function calling through the OpenAI-compatible API, making local models viable for agentic applications.
+
+**Model Context Protocol (MCP)** is emerging as the standard for tool integration, supported by Claude (native connector), ADK, LangChain, LangGraph, Pydantic AI, AutoGen, smolagents, Semantic Kernel, DSPy, Haystack, Portkey, Qdrant, and Letta.
+
+## Persistent Memory for AI
+
+Memory systems give agents context that persists across conversations and sessions. Three dedicated platforms address this, alongside built-in memory in several agent frameworks.
+
+**Mem0** provides automatic memory extraction — an LLM analyzes conversations and extracts facts into four layers (conversation, session, user, organizational) with conflict resolution when new information contradicts existing memories. It supports graph memory for relationship-aware recall and integrates with LangChain, CrewAI, AutoGen, LlamaIndex, and LangGraph. **Zep** builds temporal knowledge graphs where nodes are entities, edges are facts with temporal validity, and old facts are automatically invalidated when new information arrives. It assembles optimized context in sub-200ms and offers custom context templates. **Letta** takes the most agentic approach — agents self-modify their own memory blocks, with a four-tier context hierarchy (blocks, files, archival, external RAG), sleep-time compute where background agents asynchronously consolidate memories, and shared memory blocks for multi-agent collaboration.
+
+**Agent framework memory** provides simpler alternatives. LangGraph offers short-term (within session) and long-term (across sessions) memory tied to its checkpoint system. CrewAI has built-in short-term, long-term, and entity memory. These are tighter integrations but less sophisticated than dedicated memory platforms.
+
+**Where they overlap:** All three dedicated platforms extract and retrieve contextual information, but differ in architecture. Mem0 uses vector similarity search with optional graph relationships. Zep uses temporal knowledge graphs with fact invalidation. Letta uses agent-controlled memory with self-modification. For simple user preference tracking, Mem0 is fastest to integrate. For applications where facts change over time (support agents, CRM), Zep's temporal graphs are strongest. For autonomous agents that need to learn and self-improve, Letta's self-modifying memory is most capable.
+
+## Fine-tuning and Model Customization
+
+Fine-tuning adapts a pre-trained model to specialized tasks using your own data. Four tools in this catalog address different levels of the fine-tuning workflow.
+
+**Hugging Face Transformers** is the foundation — it provides model definitions, the Trainer class for training loops, and the pipeline API for inference across text, vision, audio, and video. Nearly every other fine-tuning tool builds on Transformers. **PEFT** (Parameter-Efficient Fine-Tuning) sits on top of Transformers and provides 15+ methods for training only a small fraction of model parameters — LoRA, DoRA, AdaLoRA, and 12 others — with adapter merging, hot-swapping, and mixed-adapter batches where different LoRA adapters serve different requests simultaneously. **Unsloth** optimizes the training itself: custom Triton kernels achieve 2x faster training with 70-90% less VRAM, supporting QLoRA, LoRA, and full fine-tuning for 500+ models, plus reinforcement learning methods (GRPO, PPO, RLHF) with up to 90% VRAM reduction. **Axolotl** wraps everything in YAML configuration — a single config file specifies model, dataset format (12+ supported), training method, hyperparameters, and integrations (DeepSpeed, FSDP, Flash Attention, experiment tracking).
+
+**Where they overlap:** The typical fine-tuning workflow uses all four together — Transformers for model loading, PEFT for parameter-efficient methods, Unsloth for training optimization, and Axolotl for configuration management. Alternatively, Unsloth alone can handle LoRA/QLoRA workflows end-to-end with its built-in optimizations. For hosted fine-tuning without managing GPUs, Vertex AI and AWS Bedrock both offer managed fine-tuning services, trading flexibility for convenience.
+
+## Data Preparation and Ingestion
+
+Before any RAG pipeline or fine-tuning job, raw documents must be converted into structured, machine-readable data. Two tools address data ingestion from different angles.
+
+**Unstructured** converts documents into LLM-ready data. It handles 25+ file formats (PDF, DOCX, PPTX, XLSX, HTML, Markdown, images, email), with layout detection using detectron2, OCR support via Tesseract and PaddleOCR, table extraction, and semantic chunking that respects document structure. It connects to 34 sources (S3, SharePoint, Confluence, Slack, GitHub) and 36 destinations (Pinecone, Qdrant, Weaviate, Milvus, PostgreSQL, Elasticsearch). **Airbyte** focuses on data replication across systems with 600+ connectors, change data capture for databases (PostgreSQL, MySQL, MongoDB, Oracle), incremental sync with state checkpointing, and automatic schema propagation. Where Unstructured transforms document formats, Airbyte replicates structured data between systems.
+
+**Label Studio** addresses the complementary problem of creating labeled training data. It supports multi-type annotation (text, images, audio, video, HTML, time series), 50+ configurable labeling templates, ML backend integration for pre-annotation, active learning for prioritization, and export to standard formats (COCO, YOLO, Pascal VOC, CoNLL, spaCy).
+
+## Evaluation and Testing
+
+Evaluating LLM application quality requires specialized metrics beyond traditional software testing. Four frameworks provide complementary approaches.
+
+**Ragas** specializes in RAG evaluation with metrics specifically designed for retrieval quality: Context Precision, Context Recall, Faithfulness (does the answer match the retrieved context?), and Response Relevancy. It also provides agent metrics (Tool Call Accuracy, Agent Goal Accuracy) and synthetic test data generation that builds knowledge graphs from documents to synthesize diverse query types. **DeepEval** offers the broadest metric coverage: 50+ metrics spanning RAG evaluation, agentic metrics (Task Completion, Tool Correctness, Step Efficiency), conversational metrics (Knowledge Retention, Role Adherence), safety detection (Bias, Toxicity, PII Leakage), and multimodal evaluation. It integrates with Pytest for regression testing and includes red-teaming via DeepTeam with 40+ vulnerability types.
+
+**promptfoo** takes a developer-tools approach — it is a CLI and configuration-driven framework for side-by-side comparison of prompts across providers, with deterministic assertions (exact match, regex, JSON validation, cost and latency thresholds), model-graded assertions (semantic similarity, factuality, context faithfulness), and built-in red teaming for penetration testing. **OpenAI Evals** provides deterministic string grading, statistical text similarity metrics (BLEU, ROUGE, METEOR), LLM-as-judge scoring with structured reasoning, and sandboxed Python grading with numpy/scipy/pandas available.
+
+**Where they overlap:** All four produce evaluation scores for LLM outputs, but serve different workflows. Ragas is purpose-built for RAG — if you are evaluating a retrieval pipeline, start here. DeepEval has the widest metric catalog and Pytest integration, making it natural for CI/CD. promptfoo excels at prompt comparison and iterative development with its side-by-side web viewer. OpenAI Evals integrates tightly with OpenAI's platform and dashboard. For comprehensive evaluation, teams often combine Ragas (RAG-specific metrics) with DeepEval or promptfoo (general metrics and CI integration).
+
+## Safety, Guardrails, and Content Moderation
+
+Protecting LLM applications from harmful inputs and outputs requires multiple layers of defense. Four tools provide complementary safety mechanisms.
+
+**Guardrails AI** validates LLM inputs and outputs against programmable rules, with a re-ask loop that automatically retries when validation fails. It enforces structured output via Pydantic schema and provides a hub ecosystem of pre-built validators for content safety, PII detection, toxicity, and jailbreak prevention. It also exposes an OpenAI-compatible server for drop-in integration. **NeMo Guardrails** from NVIDIA provides a programmable safety layer with Colang (a domain-specific language for defining conversational rails), jailbreak detection via heuristics and YARA patterns, sensitive data detection through Microsoft Presidio integration, fact-checking and hallucination detection, and topic restriction to keep conversations on-topic.
+
+**Lakera** operates as an API-based security service with real-time threat detection: prompt injection defense (direct and indirect, 100+ languages, daily model updates), content moderation across six categories, PII detection for eight entity types, and malicious link detection. **OpenAI Moderation** provides a focused classification API for 13 harm categories across text and images, with per-category confidence scores for custom threshold tuning.
+
+**Where they overlap:** Guardrails AI and NeMo Guardrails both provide programmable input/output validation, but Guardrails AI focuses on structured output enforcement while NeMo Guardrails focuses on conversational safety with Colang. Lakera and OpenAI Moderation both classify content, but Lakera adds prompt injection defense and is provider-agnostic while OpenAI Moderation is a simpler, focused content classifier. For defense-in-depth, production systems often layer these: Lakera or NeMo Guardrails for input filtering, Guardrails AI for output validation, and OpenAI Moderation for content classification.
+
+## Observability and Monitoring
+
+Understanding what LLM applications do in production — traces, costs, latencies, quality — requires specialized observability platforms. Five tools address this with varying scope.
+
+**LangSmith** from LangChain provides the tightest integration with the LangChain ecosystem: hierarchical trace trees with inputs, outputs, latency, and cost at every step, plus an evaluation framework with datasets, custom evaluators, and LLM-as-judge scoring. It includes a Prompt Hub for versioned prompt management, Agent Builder for no-code agent design, and annotation queues for human review. **Langfuse** is the leading open-source alternative with comparable features: an `@observe` decorator for automatic tracing, versioned prompt management with variable interpolation, LLM-as-judge evaluation templates, annotation queues, and cost/token dashboards aggregated by model, user, session, and time period.
+
+**Arize Phoenix** emphasizes OpenTelemetry-native instrumentation with nine span kinds (LLM, EMBEDDING, CHAIN, RETRIEVER, RERANKER, TOOL, AGENT, GUARDRAIL, EVALUATOR), a prompt playground for side-by-side model comparison, and versioned datasets with experiment tracking. **Helicone** differentiates as an API proxy — it logs requests via a simple URL swap (add `gateway.helicone.ai` to your base URL) and provides edge caching on Cloudflare, per-user rate limiting, automatic retries with exponential backoff, and session tracking for multi-step workflows. **Weights & Biases** is the broadest platform, covering experiment tracking, hyperparameter sweeps, artifact versioning with lineage graphs, a model registry, and interactive reports, with Weave adding LLM-specific tracing and evaluation.
+
+**Where they overlap:** LangSmith, Langfuse, Arize Phoenix, and Helicone all capture LLM request traces with cost and latency. LangSmith, Langfuse, and Arize Phoenix all offer prompt management and evaluation. The differentiator is integration and deployment model: LangSmith is best for LangChain/LangGraph applications, Langfuse for self-hosted open-source deployments, Arize Phoenix for OpenTelemetry-centric observability stacks, Helicone for zero-code proxy-based monitoring, and Weights & Biases for teams that also need ML experiment tracking beyond LLMs. LiteLLM integrates with most of these (Langfuse, Helicone, LangSmith, Arize) as an observability bridge.
+
+## API Management and Model Routing
+
+When applications use multiple LLM providers — for fallback, cost optimization, or capability matching — API gateways manage the routing. LiteLLM, Portkey, and ccapi address this at different levels.
+
+**LiteLLM** is open-source and developer-focused: a single `completion()` function works across 100+ providers with automatic exception mapping, retry and fallback logic, and five load balancing strategies (shuffle, usage-based, latency-based, least-busy, cost-based). It includes virtual keys with spend caps for multi-tenant deployments. **Portkey** adds enterprise routing features: fallback routing with sequential failover, weighted load balancing, conditional routing based on query rules, semantic caching, automatic retries with circuit breaker, and 20+ guardrail checks. Its OpenTelemetry-compliant observability captures 21+ analytics metrics. **ccapi** is a closed-source unified endpoint that uniquely supports non-text modalities (image generation, music, video) through the same OpenAI-compatible interface.
+
+**Where they overlap:** All three provide a unified API across multiple LLM providers with OpenAI-compatible endpoints. LiteLLM is the go-to for open-source teams that want maximum flexibility. Portkey suits enterprises needing production routing, caching, and guardrails. ccapi is for applications that need multi-modal generation (images, music, video) through a single API.
+
+## Workflow Orchestration
+
+Complex AI applications often require orchestrating multi-step processes — data pipelines, scheduled jobs, human approvals, and error recovery. Six tools span from developer-focused code to no-code visual builders.
+
+**Temporal** provides durable execution — workflows survive process crashes and resume from the exact failure point using a complete event history. It supports automatic retries with configurable backoff, activity heartbeating for long-running tasks, child workflows, durable timers lasting seconds to years, and workflow versioning for safe code deployments. **Prefect** offers Python-native orchestration with `@flow` and `@task` decorators, dynamic task mapping for parallel execution, caching with configurable policies, transactions with rollback hooks, and event-driven automations. **Airflow** from Apache is the most established, with dynamic DAG generation from Python code, rich scheduling (cron, timetable objects, data-aware scheduling via datasets), 80+ official provider packages, and multiple executor backends (Local, Celery, Kubernetes).
+
+**n8n** bridges code and no-code with a visual workflow builder plus inline JavaScript/Python Code Nodes, 400+ integrations, native LangChain integration for AI workflows, and enterprise features (Git sync, external secrets, RBAC, SAML/OIDC SSO). **Activepieces** targets no-code automation with 635+ integrations, native AI pieces for LLM calls as standard flow actions, human-in-the-loop approval gates, and an embedding SDK for white-labeling the flow builder in SaaS products. **Node-RED** is a flow-based programming tool with a browser-based visual editor, built-in nodes for MQTT, HTTP, WebSocket, TCP, and serial protocols, custom JavaScript function nodes, and a community ecosystem of 5,000+ installable node packages.
+
+**Where they overlap:** Temporal, Prefect, and Airflow all orchestrate code-defined workflows with scheduling, retries, and monitoring, but differ in execution model. Temporal provides the strongest durability guarantees (event-sourced state), Prefect offers the most Pythonic developer experience, and Airflow has the largest existing deployment base and provider ecosystem. n8n, Activepieces, and Node-RED all provide visual flow builders, but target different audiences: n8n for technical teams wanting visual+code hybrid, Activepieces for business automation with AI integration, and Node-RED for IoT and protocol-heavy environments.
+
+## GPU Compute and Infrastructure
+
+Running AI workloads requires GPU access, whether for inference, fine-tuning, or training. Nine tools in this catalog provide GPU compute at different abstraction levels.
+
+**Managed AI platforms** — Vertex AI and AWS Bedrock — provide the highest-level abstraction. Vertex AI offers Model Garden (200+ models), training pipelines (AutoML and custom), managed endpoints with autoscaling, and integrated experiment tracking. AWS Bedrock provides access to 100+ foundation models from multiple vendors through a single API, with Knowledge Bases for RAG, Guardrails for safety, and managed fine-tuning.
+
+**Specialized inference hardware** — Groq and Cerebras — offer extreme performance on custom silicon. Groq achieves fast inference on proprietary LPU (Language Processing Unit) hardware with streaming at 200 events/sec, structured outputs, and batch processing. Cerebras uses wafer-scale engine hardware, achieving ~3,000 tokens/sec for large models with a prompt caching and batch API.
+
+**GPU cloud platforms** — Ray, Modal, RunPod, Vast.ai, and Inferless — provide raw GPU access with varying levels of abstraction. Ray is a distributed compute framework for task parallelism, stateful actors, and auto-scaling, used as the foundation for many ML training and serving systems. Modal offers serverless GPU compute with sub-second cold starts, per-second billing, and a Python-native SDK — you write functions and Modal handles the containers and GPUs. RunPod provides container-based GPU deployment with FlashBoot (sub-200ms cold starts), managed multi-node clustering, and 30+ GPU SKUs. Vast.ai is a GPU marketplace offering the most affordable compute through interruptible instances and on-demand pricing. Inferless provides serverless GPU inference with scale-to-zero, per-second billing, and seven integration sources (HuggingFace, GitHub, Docker, S3, GCS).
+
+**Where they overlap:** All provide GPU compute, but the abstraction level varies dramatically. Vertex AI and Bedrock are full platforms — use them when you want managed everything and are committed to a cloud vendor. Groq and Cerebras are for inference speed above all else. Modal and Inferless suit serverless workloads where you want scale-to-zero. RunPod and Vast.ai offer the most direct GPU access at the best price points. Ray is the distributed compute layer that other tools often build on.
 
 # OpenAI
 

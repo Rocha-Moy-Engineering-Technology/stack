@@ -1,0 +1,317 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Capabilities and Comparisons - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-d9497b87.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-f9c23d6b.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/capabilities.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="capabilities-and-comparisons"><a class="header" href="#capabilities-and-comparisons">Capabilities and Comparisons</a></h1>
+<p>This chapter inverts the stack-by-stack perspective of the rest of this book. Instead of asking “what does LangChain do?”, it asks “I need to build a RAG pipeline — which stacks serve that need, and how do they compare?” Each section below describes a functional capability, identifies every stack in this catalog that addresses it, and highlights where they overlap, diverge, and complement each other.</p>
+<h2 id="accessing-large-language-models"><a class="header" href="#accessing-large-language-models">Accessing Large Language Models</a></h2>
+<p>The most fundamental capability in the AI/ML stack is sending prompts to a large language model and receiving generated text. Three categories of tools address this need, and the choice between them shapes every downstream decision.</p>
+<p><strong>Hosted API providers</strong> — OpenAI, Gemini, and Claude — offer the fastest path to production. Each exposes a chat completions or messages endpoint, handles scaling and hardware, and bills per token. OpenAI provides the broadest ecosystem with the Responses API, function calling, vision, embeddings, and a real-time speech-to-speech WebRTC API. Gemini differentiates with a 1M-token context window, native multimodal processing across text, images, video, and audio, and specialized capabilities like image generation via Imagen 4 and video via Veo 3.1. Claude offers extended thinking for step-by-step reasoning transparency, server-side tools (web search, code execution, memory), and the MCP connector for direct Model Context Protocol server integration.</p>
+<p><strong>Local inference engines</strong> — Ollama, LM Studio, vLLM, SGLang, MAX, Triton Inference Server, BentoML, and KServe — let you run models on your own hardware. Ollama and LM Studio target developer workstations: Ollama provides a CLI and REST API for running quantized models locally, while LM Studio adds a desktop GUI with split-view chat and offline document RAG. For production serving, vLLM and SGLang lead in throughput — both use PagedAttention and continuous batching, but SGLang adds RadixAttention for automatic KV cache reuse and compressed finite state machines for 3x faster structured output generation. Triton Inference Server handles multi-framework concurrent serving on the same GPU with dynamic batching, while KServe adds Kubernetes-native autoscaling and scale-to-zero. BentoML provides a Python-native service definition pattern with decorators, and MAX uses custom Mojo-language operators for cross-vendor hardware optimization.</p>
+<p><strong>Model gateways</strong> — LiteLLM, Portkey, and ccapi — sit between your application and the providers, offering a unified API across 100+ models. LiteLLM is open-source and focuses on a single Python function (<code>completion()</code>) that works identically across providers, with built-in cost tracking and retry/fallback logic. Portkey adds production routing features: weighted load balancing, conditional routing based on query rules, semantic caching, and a circuit breaker. ccapi is a closed-source unified endpoint that additionally supports image generation (Midjourney, Seedream), music generation (Suno), and video generation (Kling, Veo, Sora) through the same OpenAI-compatible interface.</p>
+<p><strong>Where they overlap:</strong> All three categories ultimately produce text completions. Every hosted provider and most inference engines expose OpenAI-compatible endpoints, making them interchangeable behind a gateway. The key trade-off is control versus convenience: hosted APIs require zero infrastructure but offer no model customization; local engines give full control over quantization, batching, and hardware but require GPU expertise; gateways provide provider abstraction but add a network hop.</p>
+<h2 id="building-ai-agents"><a class="header" href="#building-ai-agents">Building AI Agents</a></h2>
+<p>An AI agent uses an LLM to reason about tasks, decide which tools to call, and iterate until a goal is achieved. Eight frameworks in this catalog address agent construction, each with a distinct philosophy.</p>
+<p><strong>LangChain</strong> pioneered the space with its chain abstraction and LCEL (LangChain Expression Language) pipe operator for composing components declaratively. It provides the broadest integration ecosystem but carries complexity — the framework has many abstractions, and the learning curve is steep for production use. <strong>LangGraph</strong> extends LangChain with graph-based orchestration: agents are nodes in a directed graph with conditional edges, durable checkpoint-based persistence, and human-in-the-loop control (pause, inspect state, resume). LangGraph is specifically designed for stateful, multi-step agents that need to survive process restarts.</p>
+<p><strong>AutoGen</strong> from Microsoft takes a conversational approach — agents are chat participants that exchange messages, with orchestration patterns like round-robin and selector routing. It supports distributed runtime via gRPC and sandboxed Docker-based code execution. <strong>CrewAI</strong> simplifies multi-agent design with role-based agents (each has a role, goal, and backstory) defined declaratively in YAML, supporting sequential, hierarchical, and hybrid process patterns.</p>
+<p><strong>ADK</strong> (Google Agent Development Kit) provides the richest orchestration primitives: sequential, parallel, and loop workflow agents plus LLM-driven routing, with hierarchical agent trees where any agent can delegate to children. It integrates natively with Google’s ecosystem and supports real-time audio/video streaming. <strong>Semantic Kernel</strong> from Microsoft targets enterprise environments with multi-language support (C#, Python, Java), a plugin architecture, and deep Azure/OpenAI integration with OpenTelemetry observability.</p>
+<p><strong>Pydantic AI</strong> focuses on type safety — structured outputs are validated against Pydantic models with automatic retry on validation failure, and it integrates with durable execution platforms (Temporal, Prefect) for long-running agents. <strong>smolagents</strong> from HuggingFace takes the opposite approach: minimal code (~1,000 lines), code-first agents that write Python as their reasoning output, and broad tool compatibility (native, MCP, LangChain tools, HuggingFace Hub Spaces).</p>
+<p><strong>Where they overlap:</strong> All eight frameworks support tool calling, multi-turn conversations, and model-agnostic backends. LangChain, LangGraph, ADK, AutoGen, and CrewAI all support MCP (Model Context Protocol) integration. The key differentiator is the orchestration model: LangGraph and ADK use explicit graphs, CrewAI uses role-based delegation, AutoGen uses conversational patterns, and smolagents uses code generation. For production durability, LangGraph and Pydantic AI (via Temporal/Prefect) lead; for rapid prototyping, smolagents and CrewAI are fastest to start.</p>
+<h2 id="multi-agent-systems"><a class="header" href="#multi-agent-systems">Multi-Agent Systems</a></h2>
+<p>Several frameworks explicitly support multiple agents collaborating on a task. <strong>AutoGen</strong> was built for this — agents are conversational participants with configurable routing. <strong>CrewAI</strong> models teams with role-based agents working in sequential or hierarchical processes. <strong>ADK</strong> uses hierarchical agent trees where parent agents delegate to children, with any agent usable as a tool by another agent. <strong>LangGraph</strong> composes multi-agent systems by embedding agent graphs as nodes in a parent graph. <strong>Letta</strong> enables shared memory blocks that multiple agents read and write simultaneously, allowing real-time collaboration through shared state rather than message passing. <strong>smolagents</strong> supports agent-as-tool patterns where one agent invokes another.</p>
+<p>The trade-off is between structured coordination (CrewAI, ADK) and emergent collaboration (AutoGen, Letta). Structured systems are more predictable but less flexible; conversational and memory-sharing systems adapt dynamically but are harder to debug.</p>
+<h2 id="retrieval-augmented-generation"><a class="header" href="#retrieval-augmented-generation">Retrieval-Augmented Generation</a></h2>
+<p>RAG grounds LLM responses in your own data by retrieving relevant documents before generation. This capability spans two layers: the retrieval pipeline and the vector storage.</p>
+<p><strong>RAG frameworks</strong> orchestrate the full pipeline. <strong>LlamaIndex</strong> provides the most comprehensive data connector ecosystem (APIs, PDFs, SQL, CSV, web pages via LlamaHub), flexible indexing strategies (vector, keyword, tree, knowledge graph), and the full RAG pipeline from chunking through synthesis. <strong>Haystack</strong> emphasizes modularity — components have typed interfaces and are independently testable, pipelines serialize to YAML, and hybrid retrieval combines BM25 sparse and embedding-based dense search with configurable fusion. <strong>GraphRAG</strong> from Microsoft takes a fundamentally different approach: it builds a knowledge graph from documents using entity extraction and relationship detection, then uses hierarchical community summarization for cross-document reasoning that traditional vector-based RAG cannot achieve.</p>
+<p><strong>Vector databases</strong> store and search the embeddings. <strong>pgvector</strong> is unique in colocating vectors with relational data inside PostgreSQL — you get ACID transactions, JOINs, and six distance metrics without a separate system. <strong>Pinecone</strong> is a fully managed service with integrated embedding (text in, results out) and hybrid search combining dense and sparse indexes. <strong>Weaviate</strong> differentiates with Weaviate Agents (Query, Transformation, Personalization agents) and integrated generative search that combines retrieval and generation in a single query. <strong>Qdrant</strong> is written in Rust for performance and offers filterable HNSW (payload indexes extend the HNSW graph for single-pass filtered search), nested prefetch pipelines for multi-stage re-scoring, and the ACORN algorithm for restrictive multi-filter queries. <strong>Milvus</strong> targets scale with GPU-accelerated indexes (CAGRA, GPU_IVF), DiskANN for billion-scale datasets exceeding memory, dynamic schema, and multi-tenancy at database, collection, and partition levels.</p>
+<p><strong>Where they overlap:</strong> LlamaIndex, Haystack, and GraphRAG all produce retrieval pipelines that feed into LLMs, but they diverge on retrieval strategy — vector similarity (LlamaIndex, Haystack), hybrid sparse+dense (Haystack, Pinecone, Weaviate, Qdrant, Milvus), or graph-based (GraphRAG). All five vector databases support approximate nearest neighbor search and filtering, but differ on deployment model (managed vs. self-hosted), indexing algorithms, and ecosystem integration. pgvector wins on simplicity when you already use PostgreSQL; Pinecone wins on zero-ops managed experience; Qdrant and Milvus win on filtering performance at scale.</p>
+<h2 id="structured-and-validated-output"><a class="header" href="#structured-and-validated-output">Structured and Validated Output</a></h2>
+<p>Getting LLMs to produce typed, schema-conformant output is critical for production systems. Four dedicated tools and several built-in provider features address this.</p>
+<p><strong>Instructor</strong> is the most pragmatic — it wraps any LLM client with Pydantic model validation and an automatic retry loop that feeds validation errors back to the model. It supports 23+ providers, streaming partial results, and custom validators including LLM-based semantic validation. <strong>Outlines</strong> takes a formal approach: it constrains generation at the token level using finite state machines compiled from JSON Schema, regex, or context-free grammars, guaranteeing valid output by construction rather than retry. <strong>BAML</strong> introduces a domain-specific language for defining LLM function signatures with typed inputs and outputs, including streaming with partial types and multi-modal input support. <strong>DSPy</strong> takes the most radical approach — instead of writing prompts, you declare typed signatures and let optimizers (MIPROv2, GEPA) automatically find the best prompt, few-shot examples, and configuration.</p>
+<p><strong>Built-in provider support</strong> increasingly competes with these tools. OpenAI’s structured outputs enforce JSON Schema at the API level with strict mode. Claude offers strict tool use for guaranteed schema validation. Groq, Cerebras, vLLM, and SGLang all support constrained decoding for JSON schema conformance.</p>
+<p><strong>Where they overlap:</strong> Instructor, Outlines, BAML, and DSPy all produce validated structured data from LLMs, but differ fundamentally in approach. Instructor uses validation-and-retry (works with any provider, no token-level control). Outlines uses constrained decoding (guarantees validity but requires model access). BAML uses a custom DSL with type-safe code generation. DSPy optimizes the entire prompt automatically. For most applications, Instructor is the fastest to adopt; for latency-critical systems where retries are unacceptable, Outlines or provider-native structured outputs are preferred.</p>
+<h2 id="tool-use-and-function-calling"><a class="header" href="#tool-use-and-function-calling">Tool Use and Function Calling</a></h2>
+<p>Tool use enables LLMs to interact with external systems — databases, APIs, file systems, browsers. This capability is now supported across almost every layer of the stack.</p>
+<p><strong>At the provider level</strong>, OpenAI, Gemini, and Claude all support function calling with JSON Schema tool definitions. OpenAI and Claude support parallel tool calls. Claude additionally offers server-side tools (web search, code execution) that run on Anthropic’s infrastructure and the MCP connector for direct integration with MCP servers. Gemini provides four function calling modes (AUTO, ANY, NONE, VALIDATED) for fine-grained control.</p>
+<p><strong>Agent frameworks</strong> build on provider-level tool use. LangChain, LangGraph, ADK, Pydantic AI, smolagents, AutoGen, and Semantic Kernel all support MCP tool integration. ADK provides the richest tool ecosystem: function tools, MCP tools, OpenAPI tools, LangChain tools, and agent-as-tool patterns. smolagents is uniquely tool-agnostic, accepting native tools, MCP servers, LangChain tools, and HuggingFace Hub Spaces interchangeably.</p>
+<p><strong>Local inference engines</strong> increasingly support tool calling too. Ollama, vLLM, SGLang, and Groq all support function calling through the OpenAI-compatible API, making local models viable for agentic applications.</p>
+<p><strong>Model Context Protocol (MCP)</strong> is emerging as the standard for tool integration, supported by Claude (native connector), ADK, LangChain, LangGraph, Pydantic AI, AutoGen, smolagents, Semantic Kernel, DSPy, Haystack, Portkey, Qdrant, and Letta.</p>
+<h2 id="persistent-memory-for-ai"><a class="header" href="#persistent-memory-for-ai">Persistent Memory for AI</a></h2>
+<p>Memory systems give agents context that persists across conversations and sessions. Three dedicated platforms address this, alongside built-in memory in several agent frameworks.</p>
+<p><strong>Mem0</strong> provides automatic memory extraction — an LLM analyzes conversations and extracts facts into four layers (conversation, session, user, organizational) with conflict resolution when new information contradicts existing memories. It supports graph memory for relationship-aware recall and integrates with LangChain, CrewAI, AutoGen, LlamaIndex, and LangGraph. <strong>Zep</strong> builds temporal knowledge graphs where nodes are entities, edges are facts with temporal validity, and old facts are automatically invalidated when new information arrives. It assembles optimized context in sub-200ms and offers custom context templates. <strong>Letta</strong> takes the most agentic approach — agents self-modify their own memory blocks, with a four-tier context hierarchy (blocks, files, archival, external RAG), sleep-time compute where background agents asynchronously consolidate memories, and shared memory blocks for multi-agent collaboration.</p>
+<p><strong>Agent framework memory</strong> provides simpler alternatives. LangGraph offers short-term (within session) and long-term (across sessions) memory tied to its checkpoint system. CrewAI has built-in short-term, long-term, and entity memory. These are tighter integrations but less sophisticated than dedicated memory platforms.</p>
+<p><strong>Where they overlap:</strong> All three dedicated platforms extract and retrieve contextual information, but differ in architecture. Mem0 uses vector similarity search with optional graph relationships. Zep uses temporal knowledge graphs with fact invalidation. Letta uses agent-controlled memory with self-modification. For simple user preference tracking, Mem0 is fastest to integrate. For applications where facts change over time (support agents, CRM), Zep’s temporal graphs are strongest. For autonomous agents that need to learn and self-improve, Letta’s self-modifying memory is most capable.</p>
+<h2 id="fine-tuning-and-model-customization"><a class="header" href="#fine-tuning-and-model-customization">Fine-tuning and Model Customization</a></h2>
+<p>Fine-tuning adapts a pre-trained model to specialized tasks using your own data. Four tools in this catalog address different levels of the fine-tuning workflow.</p>
+<p><strong>Hugging Face Transformers</strong> is the foundation — it provides model definitions, the Trainer class for training loops, and the pipeline API for inference across text, vision, audio, and video. Nearly every other fine-tuning tool builds on Transformers. <strong>PEFT</strong> (Parameter-Efficient Fine-Tuning) sits on top of Transformers and provides 15+ methods for training only a small fraction of model parameters — LoRA, DoRA, AdaLoRA, and 12 others — with adapter merging, hot-swapping, and mixed-adapter batches where different LoRA adapters serve different requests simultaneously. <strong>Unsloth</strong> optimizes the training itself: custom Triton kernels achieve 2x faster training with 70-90% less VRAM, supporting QLoRA, LoRA, and full fine-tuning for 500+ models, plus reinforcement learning methods (GRPO, PPO, RLHF) with up to 90% VRAM reduction. <strong>Axolotl</strong> wraps everything in YAML configuration — a single config file specifies model, dataset format (12+ supported), training method, hyperparameters, and integrations (DeepSpeed, FSDP, Flash Attention, experiment tracking).</p>
+<p><strong>Where they overlap:</strong> The typical fine-tuning workflow uses all four together — Transformers for model loading, PEFT for parameter-efficient methods, Unsloth for training optimization, and Axolotl for configuration management. Alternatively, Unsloth alone can handle LoRA/QLoRA workflows end-to-end with its built-in optimizations. For hosted fine-tuning without managing GPUs, Vertex AI and AWS Bedrock both offer managed fine-tuning services, trading flexibility for convenience.</p>
+<h2 id="data-preparation-and-ingestion"><a class="header" href="#data-preparation-and-ingestion">Data Preparation and Ingestion</a></h2>
+<p>Before any RAG pipeline or fine-tuning job, raw documents must be converted into structured, machine-readable data. Two tools address data ingestion from different angles.</p>
+<p><strong>Unstructured</strong> converts documents into LLM-ready data. It handles 25+ file formats (PDF, DOCX, PPTX, XLSX, HTML, Markdown, images, email), with layout detection using detectron2, OCR support via Tesseract and PaddleOCR, table extraction, and semantic chunking that respects document structure. It connects to 34 sources (S3, SharePoint, Confluence, Slack, GitHub) and 36 destinations (Pinecone, Qdrant, Weaviate, Milvus, PostgreSQL, Elasticsearch). <strong>Airbyte</strong> focuses on data replication across systems with 600+ connectors, change data capture for databases (PostgreSQL, MySQL, MongoDB, Oracle), incremental sync with state checkpointing, and automatic schema propagation. Where Unstructured transforms document formats, Airbyte replicates structured data between systems.</p>
+<p><strong>Label Studio</strong> addresses the complementary problem of creating labeled training data. It supports multi-type annotation (text, images, audio, video, HTML, time series), 50+ configurable labeling templates, ML backend integration for pre-annotation, active learning for prioritization, and export to standard formats (COCO, YOLO, Pascal VOC, CoNLL, spaCy).</p>
+<h2 id="evaluation-and-testing"><a class="header" href="#evaluation-and-testing">Evaluation and Testing</a></h2>
+<p>Evaluating LLM application quality requires specialized metrics beyond traditional software testing. Four frameworks provide complementary approaches.</p>
+<p><strong>Ragas</strong> specializes in RAG evaluation with metrics specifically designed for retrieval quality: Context Precision, Context Recall, Faithfulness (does the answer match the retrieved context?), and Response Relevancy. It also provides agent metrics (Tool Call Accuracy, Agent Goal Accuracy) and synthetic test data generation that builds knowledge graphs from documents to synthesize diverse query types. <strong>DeepEval</strong> offers the broadest metric coverage: 50+ metrics spanning RAG evaluation, agentic metrics (Task Completion, Tool Correctness, Step Efficiency), conversational metrics (Knowledge Retention, Role Adherence), safety detection (Bias, Toxicity, PII Leakage), and multimodal evaluation. It integrates with Pytest for regression testing and includes red-teaming via DeepTeam with 40+ vulnerability types.</p>
+<p><strong>promptfoo</strong> takes a developer-tools approach — it is a CLI and configuration-driven framework for side-by-side comparison of prompts across providers, with deterministic assertions (exact match, regex, JSON validation, cost and latency thresholds), model-graded assertions (semantic similarity, factuality, context faithfulness), and built-in red teaming for penetration testing. <strong>OpenAI Evals</strong> provides deterministic string grading, statistical text similarity metrics (BLEU, ROUGE, METEOR), LLM-as-judge scoring with structured reasoning, and sandboxed Python grading with numpy/scipy/pandas available.</p>
+<p><strong>Where they overlap:</strong> All four produce evaluation scores for LLM outputs, but serve different workflows. Ragas is purpose-built for RAG — if you are evaluating a retrieval pipeline, start here. DeepEval has the widest metric catalog and Pytest integration, making it natural for CI/CD. promptfoo excels at prompt comparison and iterative development with its side-by-side web viewer. OpenAI Evals integrates tightly with OpenAI’s platform and dashboard. For comprehensive evaluation, teams often combine Ragas (RAG-specific metrics) with DeepEval or promptfoo (general metrics and CI integration).</p>
+<h2 id="safety-guardrails-and-content-moderation"><a class="header" href="#safety-guardrails-and-content-moderation">Safety, Guardrails, and Content Moderation</a></h2>
+<p>Protecting LLM applications from harmful inputs and outputs requires multiple layers of defense. Four tools provide complementary safety mechanisms.</p>
+<p><strong>Guardrails AI</strong> validates LLM inputs and outputs against programmable rules, with a re-ask loop that automatically retries when validation fails. It enforces structured output via Pydantic schema and provides a hub ecosystem of pre-built validators for content safety, PII detection, toxicity, and jailbreak prevention. It also exposes an OpenAI-compatible server for drop-in integration. <strong>NeMo Guardrails</strong> from NVIDIA provides a programmable safety layer with Colang (a domain-specific language for defining conversational rails), jailbreak detection via heuristics and YARA patterns, sensitive data detection through Microsoft Presidio integration, fact-checking and hallucination detection, and topic restriction to keep conversations on-topic.</p>
+<p><strong>Lakera</strong> operates as an API-based security service with real-time threat detection: prompt injection defense (direct and indirect, 100+ languages, daily model updates), content moderation across six categories, PII detection for eight entity types, and malicious link detection. <strong>OpenAI Moderation</strong> provides a focused classification API for 13 harm categories across text and images, with per-category confidence scores for custom threshold tuning.</p>
+<p><strong>Where they overlap:</strong> Guardrails AI and NeMo Guardrails both provide programmable input/output validation, but Guardrails AI focuses on structured output enforcement while NeMo Guardrails focuses on conversational safety with Colang. Lakera and OpenAI Moderation both classify content, but Lakera adds prompt injection defense and is provider-agnostic while OpenAI Moderation is a simpler, focused content classifier. For defense-in-depth, production systems often layer these: Lakera or NeMo Guardrails for input filtering, Guardrails AI for output validation, and OpenAI Moderation for content classification.</p>
+<h2 id="observability-and-monitoring"><a class="header" href="#observability-and-monitoring">Observability and Monitoring</a></h2>
+<p>Understanding what LLM applications do in production — traces, costs, latencies, quality — requires specialized observability platforms. Five tools address this with varying scope.</p>
+<p><strong>LangSmith</strong> from LangChain provides the tightest integration with the LangChain ecosystem: hierarchical trace trees with inputs, outputs, latency, and cost at every step, plus an evaluation framework with datasets, custom evaluators, and LLM-as-judge scoring. It includes a Prompt Hub for versioned prompt management, Agent Builder for no-code agent design, and annotation queues for human review. <strong>Langfuse</strong> is the leading open-source alternative with comparable features: an <code>@observe</code> decorator for automatic tracing, versioned prompt management with variable interpolation, LLM-as-judge evaluation templates, annotation queues, and cost/token dashboards aggregated by model, user, session, and time period.</p>
+<p><strong>Arize Phoenix</strong> emphasizes OpenTelemetry-native instrumentation with nine span kinds (LLM, EMBEDDING, CHAIN, RETRIEVER, RERANKER, TOOL, AGENT, GUARDRAIL, EVALUATOR), a prompt playground for side-by-side model comparison, and versioned datasets with experiment tracking. <strong>Helicone</strong> differentiates as an API proxy — it logs requests via a simple URL swap (add <code>gateway.helicone.ai</code> to your base URL) and provides edge caching on Cloudflare, per-user rate limiting, automatic retries with exponential backoff, and session tracking for multi-step workflows. <strong>Weights &amp; Biases</strong> is the broadest platform, covering experiment tracking, hyperparameter sweeps, artifact versioning with lineage graphs, a model registry, and interactive reports, with Weave adding LLM-specific tracing and evaluation.</p>
+<p><strong>Where they overlap:</strong> LangSmith, Langfuse, Arize Phoenix, and Helicone all capture LLM request traces with cost and latency. LangSmith, Langfuse, and Arize Phoenix all offer prompt management and evaluation. The differentiator is integration and deployment model: LangSmith is best for LangChain/LangGraph applications, Langfuse for self-hosted open-source deployments, Arize Phoenix for OpenTelemetry-centric observability stacks, Helicone for zero-code proxy-based monitoring, and Weights &amp; Biases for teams that also need ML experiment tracking beyond LLMs. LiteLLM integrates with most of these (Langfuse, Helicone, LangSmith, Arize) as an observability bridge.</p>
+<h2 id="api-management-and-model-routing"><a class="header" href="#api-management-and-model-routing">API Management and Model Routing</a></h2>
+<p>When applications use multiple LLM providers — for fallback, cost optimization, or capability matching — API gateways manage the routing. LiteLLM, Portkey, and ccapi address this at different levels.</p>
+<p><strong>LiteLLM</strong> is open-source and developer-focused: a single <code>completion()</code> function works across 100+ providers with automatic exception mapping, retry and fallback logic, and five load balancing strategies (shuffle, usage-based, latency-based, least-busy, cost-based). It includes virtual keys with spend caps for multi-tenant deployments. <strong>Portkey</strong> adds enterprise routing features: fallback routing with sequential failover, weighted load balancing, conditional routing based on query rules, semantic caching, automatic retries with circuit breaker, and 20+ guardrail checks. Its OpenTelemetry-compliant observability captures 21+ analytics metrics. <strong>ccapi</strong> is a closed-source unified endpoint that uniquely supports non-text modalities (image generation, music, video) through the same OpenAI-compatible interface.</p>
+<p><strong>Where they overlap:</strong> All three provide a unified API across multiple LLM providers with OpenAI-compatible endpoints. LiteLLM is the go-to for open-source teams that want maximum flexibility. Portkey suits enterprises needing production routing, caching, and guardrails. ccapi is for applications that need multi-modal generation (images, music, video) through a single API.</p>
+<h2 id="workflow-orchestration"><a class="header" href="#workflow-orchestration">Workflow Orchestration</a></h2>
+<p>Complex AI applications often require orchestrating multi-step processes — data pipelines, scheduled jobs, human approvals, and error recovery. Six tools span from developer-focused code to no-code visual builders.</p>
+<p><strong>Temporal</strong> provides durable execution — workflows survive process crashes and resume from the exact failure point using a complete event history. It supports automatic retries with configurable backoff, activity heartbeating for long-running tasks, child workflows, durable timers lasting seconds to years, and workflow versioning for safe code deployments. <strong>Prefect</strong> offers Python-native orchestration with <code>@flow</code> and <code>@task</code> decorators, dynamic task mapping for parallel execution, caching with configurable policies, transactions with rollback hooks, and event-driven automations. <strong>Airflow</strong> from Apache is the most established, with dynamic DAG generation from Python code, rich scheduling (cron, timetable objects, data-aware scheduling via datasets), 80+ official provider packages, and multiple executor backends (Local, Celery, Kubernetes).</p>
+<p><strong>n8n</strong> bridges code and no-code with a visual workflow builder plus inline JavaScript/Python Code Nodes, 400+ integrations, native LangChain integration for AI workflows, and enterprise features (Git sync, external secrets, RBAC, SAML/OIDC SSO). <strong>Activepieces</strong> targets no-code automation with 635+ integrations, native AI pieces for LLM calls as standard flow actions, human-in-the-loop approval gates, and an embedding SDK for white-labeling the flow builder in SaaS products. <strong>Node-RED</strong> is a flow-based programming tool with a browser-based visual editor, built-in nodes for MQTT, HTTP, WebSocket, TCP, and serial protocols, custom JavaScript function nodes, and a community ecosystem of 5,000+ installable node packages.</p>
+<p><strong>Where they overlap:</strong> Temporal, Prefect, and Airflow all orchestrate code-defined workflows with scheduling, retries, and monitoring, but differ in execution model. Temporal provides the strongest durability guarantees (event-sourced state), Prefect offers the most Pythonic developer experience, and Airflow has the largest existing deployment base and provider ecosystem. n8n, Activepieces, and Node-RED all provide visual flow builders, but target different audiences: n8n for technical teams wanting visual+code hybrid, Activepieces for business automation with AI integration, and Node-RED for IoT and protocol-heavy environments.</p>
+<h2 id="gpu-compute-and-infrastructure"><a class="header" href="#gpu-compute-and-infrastructure">GPU Compute and Infrastructure</a></h2>
+<p>Running AI workloads requires GPU access, whether for inference, fine-tuning, or training. Nine tools in this catalog provide GPU compute at different abstraction levels.</p>
+<p><strong>Managed AI platforms</strong> — Vertex AI and AWS Bedrock — provide the highest-level abstraction. Vertex AI offers Model Garden (200+ models), training pipelines (AutoML and custom), managed endpoints with autoscaling, and integrated experiment tracking. AWS Bedrock provides access to 100+ foundation models from multiple vendors through a single API, with Knowledge Bases for RAG, Guardrails for safety, and managed fine-tuning.</p>
+<p><strong>Specialized inference hardware</strong> — Groq and Cerebras — offer extreme performance on custom silicon. Groq achieves fast inference on proprietary LPU (Language Processing Unit) hardware with streaming at 200 events/sec, structured outputs, and batch processing. Cerebras uses wafer-scale engine hardware, achieving ~3,000 tokens/sec for large models with a prompt caching and batch API.</p>
+<p><strong>GPU cloud platforms</strong> — Ray, Modal, RunPod, Vast.ai, and Inferless — provide raw GPU access with varying levels of abstraction. Ray is a distributed compute framework for task parallelism, stateful actors, and auto-scaling, used as the foundation for many ML training and serving systems. Modal offers serverless GPU compute with sub-second cold starts, per-second billing, and a Python-native SDK — you write functions and Modal handles the containers and GPUs. RunPod provides container-based GPU deployment with FlashBoot (sub-200ms cold starts), managed multi-node clustering, and 30+ GPU SKUs. Vast.ai is a GPU marketplace offering the most affordable compute through interruptible instances and on-demand pricing. Inferless provides serverless GPU inference with scale-to-zero, per-second billing, and seven integration sources (HuggingFace, GitHub, Docker, S3, GCS).</p>
+<p><strong>Where they overlap:</strong> All provide GPU compute, but the abstraction level varies dramatically. Vertex AI and Bedrock are full platforms — use them when you want managed everything and are committed to a cloud vendor. Groq and Cerebras are for inference speed above all else. Modal and Inferless suit serverless workloads where you want scale-to-zero. RunPod and Vast.ai offer the most direct GPU access at the best price points. Ray is the distributed compute layer that other tools often build on.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="introduction.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="part-1-foundation/llm-providers/openai.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="introduction.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="part-1-foundation/llm-providers/openai.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
