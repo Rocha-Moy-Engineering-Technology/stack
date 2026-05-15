@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -194,7 +194,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/langchain-ai/langchain">langchain-ai/langchain</a></td></tr>
-<tr><td>Stars</td><td>127162</td></tr>
+<tr><td>Stars</td><td>136735</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.langchain.com/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -368,12 +368,84 @@ response = llm.invoke("What's the weather in San Francisco?")
 <li>[1] LangChain Documentation - https://docs.langchain.com/</li>
 <li>[2] LangChain Python - https://docs.langchain.com/oss/python/langchain/overview</li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>langchain, lcel, langchain expression language, chains, agents, retrievers, vector stores, document loaders, output parsers, prompt templates, runnables, chat models, tool calling, rag, retrieval-augmented generation, callbacks, memory, langsmith, langchain-core, langchain-community, provider packages, deep agents, conversation memory, agent executor, structured tools</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Compose an LLM chain using the pipe operator (LCEL)</li>
+<li>Build a tool-calling agent with <code>create_agent()</code></li>
+<li>Wrap a Python function as a tool with the <code>@tool</code> decorator</li>
+<li>Load PDFs, web pages, and CSVs through document loaders</li>
+<li>Build a RAG pipeline with FAISS or Chroma plus an embeddings model</li>
+<li>Swap LLM providers (OpenAI, Anthropic, Google) without changing business logic</li>
+<li>Stream tokens from chains and agents</li>
+<li>Parse LLM output into Pydantic models with output parsers</li>
+<li>Attach callback handlers for tracing and token counting</li>
+<li>Persist agent state across sessions</li>
+<li>Implement a multi-query or ensemble retriever</li>
+<li>Enable LangSmith tracing via environment variables</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I build a chain that goes prompt to model to parser?”</li>
+<li>“What is LCEL and how do I use the pipe operator?”</li>
+<li>“How do I add tools to an agent in LangChain?”</li>
+<li>“How do I load PDFs into a vector store for RAG?”</li>
+<li>“How do I switch from OpenAI to Anthropic without rewriting my app?”</li>
+<li>“How do I stream output from a LangChain agent?”</li>
+<li>“How do I parse LLM output into a Pydantic schema?”</li>
+<li>“What is the difference between langchain-core and langchain-community?”</li>
+<li>“How do I monitor my LangChain app in production?”</li>
+<li>“How do I migrate from legacy chains to LCEL?”</li>
+<li>“How do I make an agent ask for human approval before a tool call?”</li>
+<li>“What is the broadest framework for connecting LLMs to databases, APIs, and files?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Need to compose prompt, model, parser, and retriever steps declaratively without boilerplate</li>
+<li>Want a single integration ecosystem for vector stores, document loaders, and chat providers</li>
+<li>Existing app must support multiple LLM providers behind one interface</li>
+<li>Application needs streaming, batching, and async with minimal code changes</li>
+<li>Hard to debug what is happening at the LLM API level through multiple abstraction layers</li>
+<li>Code written against older LangChain versions broke after upgrades</li>
+<li>Package fragmentation across core, community, and provider packages causes dependency conflicts</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you need the broadest integration ecosystem (vector stores, document loaders, tool wrappers) across many providers, not just one</li>
+<li>Pick this over LangGraph when your workflow is mostly linear chains and tool-calling agents and you do not need stateful graph orchestration or checkpoint-based durability</li>
+<li>Pick this over CrewAI when you do not want a role/goal/backstory abstraction and prefer composable runnables with LCEL</li>
+<li>Pick this over AutoGen when you do not need a distributed event-driven multi-agent runtime</li>
+<li>Pick this over Pydantic AI when you need many third-party integrations more than strict end-to-end Pydantic typing</li>
+<li>Pick this over smolagents when you need a mature ecosystem with hundreds of community connectors instead of a minimal code-first core</li>
+<li>Pick this over Semantic Kernel when you are Python-first or TypeScript-first and do not require multi-language enterprise SDKs</li>
+<li>Pick this over ADK when you are not anchored to the Google/Gemini ecosystem and want broader provider neutrality</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>LCEL (LangChain Expression Language)</li>
+<li>Runnables</li>
+<li>Deep Agents</li>
+<li>LangGraph (extension for stateful graph orchestration)</li>
+<li>LangSmith (observability platform)</li>
+<li>Agent Server (deployment)</li>
+<li>AgentExecutor</li>
+<li>VectorStoreRetriever</li>
+<li>RAG pipeline</li>
+<li>Tool-augmented LLM</li>
+<li>Chain composition</li>
+<li>Provider package (langchain-openai, langchain-anthropic)</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../part-1-foundation/model-gateways/ccapi.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../part-2-application/overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
@@ -387,7 +459,7 @@ response = llm.invoke("What's the weather in San Francisco?")
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../part-1-foundation/model-gateways/ccapi.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../part-2-application/overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 

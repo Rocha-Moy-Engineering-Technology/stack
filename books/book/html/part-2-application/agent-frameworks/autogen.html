@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -194,7 +194,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/microsoft/autogen">microsoft/autogen</a></td></tr>
-<tr><td>Stars</td><td>54714</td></tr>
+<tr><td>Stars</td><td>58033</td></tr>
 <tr><td>Documentation</td><td><a href="https://microsoft.github.io/autogen/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -305,6 +305,75 @@ autogenstudio ui --port 8080 --appdir ./my_autogen_app
 <h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
 <ul>
 <li>[1] AutoGen Documentation - https://microsoft.github.io/autogen/stable/</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>autogen, microsoft autogen, assistantagent, teams, event-driven agents, conversational agents, grpc runtime, distributed agents, round-robin orchestration, selector orchestration, autogen studio, agentchat, core layer, extensions, docker code executor, mcpworkbench, openaiassistantagent, agent-to-agent conversation, multi-agent chat, message routing, termination condition</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Create an <code>AssistantAgent</code> wrapping an OpenAI-compatible chat model</li>
+<li>Compose a team with round-robin or selector-based routing</li>
+<li>Set termination conditions for multi-agent conversations</li>
+<li>Run agents across processes using the <code>GrpcWorkerAgentRuntime</code></li>
+<li>Execute LLM-generated code in a sandboxed <code>DockerCommandLineCodeExecutor</code></li>
+<li>Connect agents to an MCP server via <code>McpWorkbench</code></li>
+<li>Wrap the OpenAI Assistant API as an AutoGen agent</li>
+<li>Launch AutoGen Studio for no-code agent prototyping</li>
+<li>Register Python functions as agent tools</li>
+<li>Build distributed agentic microservices that scale independently</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I build multiple AI agents that talk to each other?”</li>
+<li>“How do I run agents on separate machines that communicate over the network?”</li>
+<li>“How do I prototype a multi-agent workflow without writing code?”</li>
+<li>“How do I let an agent execute Python code safely in Docker?”</li>
+<li>“How do I migrate from AutoGen 0.2 to the new architecture?”</li>
+<li>“How do I configure round-robin chat between two agents?”</li>
+<li>“How do I plug an MCP server into an AutoGen agent?”</li>
+<li>“How do I use the OpenAI Assistants API through AutoGen?”</li>
+<li>“How do I add a custom termination condition to a multi-agent conversation?”</li>
+<li>“How do I scale agents horizontally with gRPC?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Multi-agent collaboration needs event-driven messaging instead of synchronous function calls</li>
+<li>Agents must run as independent services across processes or machines</li>
+<li>AutoGen 0.2 code requires significant rewriting under the new event-driven architecture</li>
+<li>LLM-generated code execution needs sandboxing to protect the host</li>
+<li>Conversation flow between many agents is hard to debug without tracing routing decisions</li>
+<li>Community extensions have inconsistent maintenance and feature parity</li>
+<li>Need a visual no-code interface for prototyping multi-agent designs before writing Python</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you need conversational multi-agent systems with event-driven, gRPC-distributed runtime across processes or machines</li>
+<li>Pick this over LangChain when message-passing between multiple agents is the dominant pattern, not chain composition</li>
+<li>Pick this over LangGraph when you prefer conversational orchestration (round-robin, selector) over explicit graph state machines</li>
+<li>Pick this over CrewAI when you want conversational message routing rather than declarative role/goal/backstory crews</li>
+<li>Pick this over Pydantic AI when multi-agent coordination matters more than single-agent type safety</li>
+<li>Pick this over smolagents when you need distributed runtime and team patterns, not minimal single-agent code execution</li>
+<li>Pick this over Semantic Kernel when Python-based conversational multi-agent design fits better than .NET plugin orchestration</li>
+<li>Pick this over ADK when you want a Microsoft-origin distributed multi-agent runtime not tied to Google Vertex AI</li>
+<li>Pick this when AutoGen Studio’s no-code prototyping interface is part of the deliverable</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>AgentChat (Python framework layer)</li>
+<li>Core (event-driven runtime)</li>
+<li>Studio (no-code GUI)</li>
+<li>Extensions (modular packages)</li>
+<li>gRPC worker runtime</li>
+<li>Distributed agent runtime</li>
+<li>AssistantAgent</li>
+<li>Teams (orchestrated groups)</li>
+<li>Selector routing</li>
+<li>Round-robin chat</li>
+<li>Conversable agents (legacy naming from 0.2)</li>
+<li>AutoGen 0.4 (post-redesign generation)</li>
 </ul>
 
                     </main>

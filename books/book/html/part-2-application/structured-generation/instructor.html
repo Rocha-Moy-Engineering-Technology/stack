@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/instructor-ai/instructor">instructor-ai/instructor</a></td></tr>
-<tr><td>Stars</td><td>12,413</td></tr>
+<tr><td>Stars</td><td>12957</td></tr>
 <tr><td>Docs</td><td><a href="https://python.useinstructor.com/">python.useinstructor.com</a></td></tr>
 </tbody>
 </table>
@@ -628,6 +628,98 @@ except InstructorRetryException as e:
 <li>[15] <a href="https://python.useinstructor.com/concepts/models/">Instructor - Pydantic Models</a></li>
 <li>[16] <a href="https://python.useinstructor.com/concepts/multimodal/">Instructor - Multimodal Capabilities</a></li>
 <li>[17] <a href="https://github.com/instructor-ai/instructor">Instructor GitHub Repository</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Instructor</li>
+<li>Pydantic LLM</li>
+<li>structured outputs</li>
+<li>response_model</li>
+<li>automatic retries</li>
+<li>reask loop</li>
+<li>validation-and-retry</li>
+<li>client patching</li>
+<li>from_provider</li>
+<li>multi-provider</li>
+<li>LLM extraction</li>
+<li>TOOLS mode</li>
+<li>JSON_SCHEMA mode</li>
+<li>MD_JSON mode</li>
+<li>PARALLEL_TOOLS</li>
+<li>streaming partial</li>
+<li>create_partial</li>
+<li>create_iterable</li>
+<li>Tenacity retries</li>
+<li>Jinja templating</li>
+<li>hooks system</li>
+<li>llm_validator</li>
+<li>multimodal extraction</li>
+<li>InstructorRetryException</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define an LLM response schema as a Pydantic model</li>
+<li>Extract typed data from text with a single <code>client.create()</code> call</li>
+<li>Patch any LLM client with <code>instructor.from_provider("openai/gpt-4o")</code></li>
+<li>Stream partially-populated objects with <code>create_partial</code></li>
+<li>Yield an iterable of complete objects with <code>create_iterable</code></li>
+<li>Retry automatically on Pydantic validation failure</li>
+<li>Add custom field validators or LLM-based semantic validators</li>
+<li>Switch providers (OpenAI, Anthropic, Google, Ollama) without code changes</li>
+<li>Extract structured data from images, PDFs, and audio</li>
+<li>Register hooks on completion, response, error, parse-error events</li>
+<li>Wrap validation in Tenacity for exponential backoff</li>
+<li>Pass dynamic prompt context via Jinja templates</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I get a typed Python object out of an LLM call?</li>
+<li>How can I validate LLM JSON output against a Pydantic schema?</li>
+<li>I want the LLM to retry automatically when output is invalid</li>
+<li>How do I extract structured data from unstructured text?</li>
+<li>How can one library work across OpenAI, Anthropic, Gemini, and Ollama?</li>
+<li>How do I stream partial structured output as tokens arrive?</li>
+<li>How do I add semantic validation that the LLM itself runs?</li>
+<li>How do I extract a list of objects in one call?</li>
+<li>How do I parse invoice data from a PDF into a typed model?</li>
+<li>How do I add custom retry strategies with exponential backoff?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>LLM JSON output often fails to parse or violates schema constraints</li>
+<li>Manual prompt-and-parse loops are brittle and provider-specific</li>
+<li>Provider-native structured outputs don’t transfer across vendors</li>
+<li>Each validation-triggered retry is a full LLM call adding latency and cost</li>
+<li>Streaming validators can’t run on partial objects</li>
+<li>Deeply nested schemas confuse weaker models</li>
+<li>Validation guarantees structure, not factual correctness</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick Instructor when you want validation-and-retry with any LLM provider, no token-level control needed</li>
+<li>Pick Instructor when you already use Pydantic and want minimal code change to add structured outputs</li>
+<li>Pick Instructor when you need broad provider support (23+) including hosted APIs without model access</li>
+<li>Pick Outlines instead when retries are unacceptable — Outlines uses constrained decoding to guarantee validity at the token level but requires local model access</li>
+<li>Pick BAML instead when you want a typed DSL with code-generated clients across many languages</li>
+<li>Pick DSPy instead when you want optimizers to tune prompts and few-shot examples automatically against a metric</li>
+<li>Pick PydanticAI as the recommended agent-runtime complement when you need quality gates, shareable runs, and built-in observability</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Pydantic-validated outputs</li>
+<li>LLM JSON extraction</li>
+<li>self-correcting extraction</li>
+<li>patched OpenAI client</li>
+<li>structured LLM responses</li>
+<li>function-calling extraction</li>
+<li>LLM-as-extractor</li>
+<li>typed LLM outputs</li>
+<li>response schema validation</li>
+<li>Jason Liu library</li>
 </ul>
 
                     </main>

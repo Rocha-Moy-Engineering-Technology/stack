@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/huggingface/peft">huggingface/peft</a></td></tr>
-<tr><td>Stars</td><td>20720</td></tr>
+<tr><td>Stars</td><td>21114</td></tr>
 <tr><td>Docs</td><td><a href="https://huggingface.co/docs/peft/en/index">huggingface.co/docs/peft</a></td></tr>
 </tbody>
 </table>
@@ -510,12 +510,78 @@ initialize_lora_eva_weights(model, dataloader)
 <li>[7] Quantization Guide - https://huggingface.co/docs/peft/en/developer_guides/quantization</li>
 <li>[8] Installation - https://huggingface.co/docs/peft/en/install</li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>PEFT, parameter-efficient fine-tuning, LoRA, DoRA, AdaLoRA, LoHa, LoKr, OFT, BOFT, HRA, MiSS, X-LoRA, Llama-Adapter, Prompt Tuning, Prefix Tuning, P-Tuning, CPT, PiSSA, OLoRA, EVA, CorDA, LoftQ, aLoRA, rsLoRA, adapter swapping, adapter merging, merge_and_unload, mixed-adapter batches, QLoRA, bitsandbytes, GPTQ, AWQ, AQLM, HQQ, torchao, Diffusers LoRA, Arrow routing</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Wrap a base model with <code>get_peft_model(base, LoraConfig(...))</code></li>
+<li>Configure LoRA rank, alpha, target_modules, and <code>"all-linear"</code> selection</li>
+<li>Merge a trained adapter into the base model via <code>merge_and_unload()</code></li>
+<li>Swap multiple adapters at inference with <code>set_adapter</code> and <code>load_adapter</code></li>
+<li>Combine adapters with <code>add_weighted_adapter</code> using SVD, TIES, or DARE</li>
+<li>Set up QLoRA with <code>BitsAndBytesConfig</code> and <code>prepare_model_for_kbit_training</code></li>
+<li>Initialize LoRA with PiSSA, OLoRA, EVA, CorDA, or LoftQ</li>
+<li>Apply per-layer rank overrides via <code>rank_pattern</code> and <code>alpha_pattern</code></li>
+<li>Train LoRA adapters on Stable Diffusion / FLUX through Diffusers</li>
+<li>Run mixed-adapter batches at inference with <code>adapter_names</code> per sample</li>
+<li>Save and load adapters as small artifacts on the Hugging Face Hub</li>
+<li>Use DoRA to separate weight magnitude and direction for low-rank training</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I fine-tune a model by training only a small number of extra parameters?</li>
+<li>What is the difference between LoRA, DoRA, and AdaLoRA?</li>
+<li>How do I run QLoRA with 4-bit bitsandbytes quantization?</li>
+<li>How do I merge a LoRA adapter into the base model for zero-overhead inference?</li>
+<li>How do I swap between two trained adapters at inference time?</li>
+<li>How can I serve different LoRA adapters to different samples in the same batch?</li>
+<li>What initialization method should I use for LoRA — PiSSA, EVA, or LoftQ?</li>
+<li>How do I train a LoRA adapter for Stable Diffusion or FLUX?</li>
+<li>How do I save just the adapter weights instead of the full model?</li>
+<li>What soft prompting method (Prefix Tuning, P-Tuning, Prompt Tuning) should I use for classification?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Full fine-tuning requires too much GPU memory and storage per task</li>
+<li>Each task-specific full model costs hundreds of MB to GB; managing dozens is impractical</li>
+<li>LoRA’s vanilla initialization is slow to converge on some tasks</li>
+<li>Soft prompts are not human-readable and hard to debug</li>
+<li>Quantization backends differ in which PEFT methods they support for merging</li>
+<li>Composing multiple adapters into a routed mixture requires coordination across ranks and modules</li>
+<li>DoRA introduces inference overhead unless adapters are merged</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want library-level breadth of adapter methods (15+ PEFT methods including DoRA, OFT, LoHa, LoKr, X-LoRA) inside your own training code — Unsloth wins when you need speed/VRAM optimization, Axolotl wins when you want a YAML-driven training pipeline</li>
+<li>Pick this when you need adapter swapping, merging, or mixed-adapter batches at inference</li>
+<li>Pick this when you train across Transformers, Diffusers, and custom PyTorch with one library</li>
+<li>Pick this when you need fine-grained QLoRA configuration with multiple quantization backends (bitsandbytes, GPTQ, AWQ, AQLM, EETQ, HQQ, torchao)</li>
+<li>Pick this when you want advanced LoRA initialization (PiSSA, OLoRA, EVA, CorDA, LoftQ)</li>
+<li>Pick this when soft prompting methods (Prompt Tuning, Prefix Tuning, P-Tuning, CPT) are a requirement</li>
+<li>Pick this when you want first-class Hugging Face Hub adapter publishing and loading</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>huggingface/peft</li>
+<li>Parameter-Efficient Fine-Tuning, adapter tuning</li>
+<li>Low-Rank Adaptation, weight-decomposed adaptation</li>
+<li>QLoRA (Quantized LoRA), 4-bit fine-tuning</li>
+<li>Adapter hub, adapter merging, adapter swapping</li>
+<li>LoRA-FA, LoRA+ (specialized optimizers)</li>
+<li>TIES merging, DARE merging, SVD merging</li>
+<li>AutoPeftModelForCausalLM, PeftModel</li>
+<li>Soft prompts, virtual tokens, learnable embeddings</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../part-3-data/fine-tuning/hugging-face-transformers.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../part-3-data/data-pipelines/airbyte.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
@@ -529,7 +595,7 @@ initialize_lora_eva_weights(model, dataloader)
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../part-3-data/fine-tuning/hugging-face-transformers.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../part-3-data/data-pipelines/airbyte.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 

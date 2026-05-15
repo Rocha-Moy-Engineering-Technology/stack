@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Observability & LLM Ops |
+| Group | Observability |
 | Type | API/UI |
 | Open Source | Yes |
 | GitHub | [https://github.com/Helicone/helicone](https://github.com/Helicone/helicone) |
-| Stars | 5126 |
+| Stars | 5662 |
 | Documentation | [Official Docs](https://docs.helicone.ai/) |
 
 ## Overview
@@ -760,3 +760,99 @@ logger.enable_logging()
 - Helicone Gateway Integration: [https://docs.helicone.ai/getting-started/integration-method/gateway](https://docs.helicone.ai/getting-started/integration-method/gateway)
 - Helicone OpenLLMetry Integration: [https://docs.helicone.ai/getting-started/integration-method/openllmetry](https://docs.helicone.ai/getting-started/integration-method/openllmetry)
 - Helicone REST API Reference: [https://docs.helicone.ai/rest/request/post-v1requestquery](https://docs.helicone.ai/rest/request/post-v1requestquery)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Helicone
+- AI gateway
+- LLM proxy
+- OpenAI-compatible
+- base URL swap
+- header-driven configuration
+- edge caching
+- Cloudflare Workers
+- rate limiting
+- automatic retries
+- provider fallbacks
+- session tracking
+- user tracking
+- custom properties
+- prompt management
+- async logger
+- OpenLLMetry
+- BYOK
+- 100+ models
+- Y Combinator
+- Apache 2.0
+- SOC 2
+- GDPR
+- EU endpoint
+- request query API
+- ClickHouse
+- Supabase
+
+### Verb-Noun Tasks
+
+- Swap base URL to gateway.helicone.ai to start logging
+- Enable edge caching with a single header
+- Configure per-user rate limits via Helicone-RateLimit-Policy header
+- Track sessions with Helicone-Session-Id and Session-Path
+- Tag requests with custom Helicone-Property-* metadata
+- Add automatic retries with exponential backoff
+- Fall back to a secondary provider on failure
+- Query logged requests via the REST API
+- Forward analytics to PostHog
+- Hide sensitive request/response bodies via Omit headers
+- Use EU endpoint for GDPR compliance
+- Swap to async OpenLLMetry mode to keep Helicone off the critical path
+
+### User Intent Phrases
+
+- I want LLM observability without changing application code.
+- How do I add caching to LLM API calls to save money?
+- I need per-user rate limits for a SaaS product.
+- How do I track multi-step agent workflows as sessions?
+- I want fallback routing when an LLM provider is down.
+- How do I get unified logging across OpenAI, Anthropic, Groq, Bedrock?
+- I need an LLM proxy that supports BYOK with no markup.
+- How do I add prompt injection protection at the gateway level?
+- Show me how to filter LLM logs by cost or user via REST API.
+- I need GDPR-compliant LLM logging in the EU.
+
+### Problem Statements
+
+- Adding observability requires invasive SDK instrumentation everywhere.
+- LLM costs balloon when identical requests aren't cached.
+- We can't enforce per-user quotas without writing our own throttling layer.
+- Provider outages bring down our whole product.
+- Spread of providers (OpenAI, Anthropic, Groq) makes unified cost tracking hard.
+- Sensitive prompts must be excluded from logs for compliance.
+
+### When to Pick This
+
+- Pick this when you want zero-code observability via a single base URL swap.
+- Pick this over LangSmith/Langfuse/Phoenix when gateway features (caching, rate limits, fallbacks, retries) matter as much as logging.
+- Pick this over LiteLLM when you also want a hosted analytics dashboard and edge caching, not just a routing SDK.
+- Pick this over Portkey when you want open-source self-hosting (Apache 2.0) with the same proxy model.
+- Pick this over Weights & Biases when LLM proxy/gateway concerns dominate over experiment tracking.
+- Pick this when you need EU data residency for LLM logs.
+
+### Related Terms and Aliases
+
+- Helicone-Auth header
+- Helicone-Target-Url
+- ai-gateway.helicone.ai
+- oai.helicone.ai
+- gateway.helicone.ai
+- eu.api.helicone.ai
+- Jawn server
+- async logging (OpenLLMetry)
+- LLM API gateway
+- LLM cost dashboard
+- BYOK proxy
+- Hobby/Pro/Team/Enterprise tiers
+

@@ -1,0 +1,535 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Browserbase - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-2-application/browser-automation/browserbase.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="browserbase"><a class="header" href="#browserbase">Browserbase</a></h1>
+<blockquote>
+<p>Managed headless browser platform for agents that browse and interact with the web</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Browser Automation</td></tr>
+<tr><td>Type</td><td>API/SDK</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Documentation</td><td><a href="https://docs.browserbase.com/">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Browserbase is a hosted platform for running headless browsers at scale, targeted at AI agents that need to browse and interact with the web like humans. One API key gives an agent access to cloud-hosted Chromium browsers, integrated web search, page-fetch utilities, a sandbox runtime, and a multi-model gateway covering every major LLM provider. The product handles the operational overhead — proxy rotation, captcha solving, geographic distribution, session recording, fingerprinting — that a self-managed Playwright deployment would otherwise carry. [1]</p>
+<p>Browserbase is closely associated with <strong>Stagehand</strong>, an open-source agent framework purpose-built for browser control on top of Browserbase, that lets agents describe what to do in natural language (<code>page.act("click the login button")</code>) rather than writing CSS selectors. Stagehand can also run against any Chromium-compatible browser but is most commonly paired with Browserbase. [2]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="session"><a class="header" href="#session">Session</a></h3>
+<p>A Session is a single browser instance — Chromium running in Browserbase’s cloud. Sessions have a lifecycle: created via the API, connected to via CDP (Chrome DevTools Protocol) for Playwright/Puppeteer control, and torn down explicitly or by inactivity timeout. Each session has its own cookies, local storage, and viewport. [3]</p>
+<h3 id="connect-url"><a class="header" href="#connect-url">Connect URL</a></h3>
+<p>When a session is created, the API returns a <code>connectUrl</code> — a WebSocket URL that Playwright, Puppeteer, or the Chrome DevTools Protocol can connect to. From there, the SDK is the standard browser-automation SDK; Browserbase replaces the local Chromium process with a remote one. [3]</p>
+<h3 id="stagehand-companion-framework"><a class="header" href="#stagehand-companion-framework">Stagehand (companion framework)</a></h3>
+<p>Stagehand is the open-source layer on top of Playwright that adds AI-driven page interaction: <code>page.act("fill in the form")</code>, <code>page.extract({ schema })</code>, <code>page.observe()</code>. Stagehand uses an LLM to translate intent into Playwright actions, with retries and self-correction baked in. [2]</p>
+<h3 id="browser-api-and-runtime"><a class="header" href="#browser-api-and-runtime">Browser API and Runtime</a></h3>
+<p>The Browserbase Platform splits into several products:</p>
+<ul>
+<li><strong>Browser API</strong>: Create and control browser sessions programmatically.</li>
+<li><strong>Runtime</strong>: Deploy and run browser agents on Browserbase infrastructure, on schedule or on demand.</li>
+<li><strong>Search</strong>: Hosted web search optimized for agent consumption.</li>
+<li><strong>Fetch</strong>: Single-URL fetch with a managed browser (similar to Jina Reader).</li>
+<li><strong>Model Gateway</strong>: Unified access to frontier LLMs (Claude, OpenAI, Gemini, others) behind the same API key. [1]</li>
+</ul>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>A typical Browserbase exchange:</p>
+<ol>
+<li>Agent calls <code>bb.sessions.create()</code> via the Browserbase SDK.</li>
+<li>Browserbase provisions a Chromium browser in a managed VM; returns a session ID and a <code>connectUrl</code>.</li>
+<li>Agent’s Playwright/Puppeteer client connects to <code>connectUrl</code> over CDP.</li>
+<li>Agent drives the browser using standard Playwright APIs (<code>page.goto</code>, <code>page.click</code>, <code>page.screenshot</code>).</li>
+<li>Optional features kick in transparently: proxies for IP rotation, captcha solving, session recording.</li>
+<li>Agent closes the session or it auto-times out after the configured period. [3]</li>
+</ol>
+<p>The agent code itself can run anywhere — local dev machine, serverless function, agent framework like LangGraph — because the heavy lifting (the browser process) lives in Browserbase’s cloud.</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="browserbase-sdk-nodejs"><a class="header" href="#browserbase-sdk-nodejs">Browserbase SDK (Node.js)</a></h3>
+<pre><code class="language-bash">npm install @browserbasehq/sdk playwright-core
+</code></pre>
+<pre><code class="language-js">import Browserbase from "@browserbasehq/sdk";
+const bb = new Browserbase({ apiKey: process.env.BROWSERBASE_API_KEY });
+</code></pre>
+<h3 id="python-sdk"><a class="header" href="#python-sdk">Python SDK</a></h3>
+<pre><code class="language-bash">pip install browserbase playwright
+</code></pre>
+<p>API key and Project ID come from the dashboard at <code>browserbase.com/sessions</code>. [3]</p>
+<h3 id="stagehand-optional-for-ai-driven-control"><a class="header" href="#stagehand-optional-for-ai-driven-control">Stagehand (optional, for AI-driven control)</a></h3>
+<pre><code class="language-bash">npm install @browserbasehq/stagehand
+</code></pre>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<h3 id="cloud-browsers"><a class="header" href="#cloud-browsers">Cloud Browsers</a></h3>
+<p>Browserbase runs Chromium browsers in its cloud with managed scaling, persistent storage, and snapshotting. Concurrent sessions scale to many hundreds depending on plan tier. [1]</p>
+<h3 id="proxies-and-geographic-distribution"><a class="header" href="#proxies-and-geographic-distribution">Proxies and Geographic Distribution</a></h3>
+<p>Built-in proxy support with country/region targeting lets agents appear to originate from a specific geo. Residential proxies are available for sites that block datacenter IPs. [4]</p>
+<h3 id="captcha-solving"><a class="header" href="#captcha-solving">Captcha Solving</a></h3>
+<p>Integrated captcha-solving for common challenges (reCAPTCHA, hCaptcha) reduces hand-off requirements when an agent encounters a gate.</p>
+<h3 id="session-recording"><a class="header" href="#session-recording">Session Recording</a></h3>
+<p>Each session can be recorded as video plus a step-level event log, viewable in the dashboard. Critical for debugging long-running agent failures.</p>
+<h3 id="live-debugger"><a class="header" href="#live-debugger">Live Debugger</a></h3>
+<p><code>bb.sessions.debug(sessionId)</code> returns a debugger URL where a developer can watch the live browser session in real time — useful during agent development.</p>
+<h3 id="fingerprinting"><a class="header" href="#fingerprinting">Fingerprinting</a></h3>
+<p>Browserbase manages browser fingerprints (user agent, screen resolution, timezone, fonts) to reduce bot-detection signals.</p>
+<h3 id="storage-and-persistence"><a class="header" href="#storage-and-persistence">Storage and Persistence</a></h3>
+<p>Cookies and local storage can be persisted across sessions using browser contexts — so an agent can sign in once and reuse the auth on the next run.</p>
+<h3 id="search-api"><a class="header" href="#search-api">Search API</a></h3>
+<p>A dedicated <code>/v1/search</code> endpoint runs a web search and returns LLM-ready results, similar in shape to Jina Search. Useful when an agent needs to discover URLs to browse. [5]</p>
+<h3 id="model-gateway"><a class="header" href="#model-gateway">Model Gateway</a></h3>
+<p>Unified access to frontier LLMs (Claude, OpenAI, Gemini, Mistral, others) under the same API key, with shared billing and observability. Removes the need for separate per-provider API keys when building multi-model agents. [6]</p>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<h3 id="browser-agents"><a class="header" href="#browser-agents">Browser Agents</a></h3>
+<p>Pair an LLM (Claude, GPT-5) with Stagehand running on Browserbase. The LLM emits high-level intents (<code>click the cookie banner</code>, <code>extract product prices</code>), Stagehand translates each into Playwright calls, and Browserbase executes them in the cloud browser. [2]</p>
+<h3 id="web-automation-workflows"><a class="header" href="#web-automation-workflows">Web Automation Workflows</a></h3>
+<p>Automate logins, registrations, multi-step form submissions, and recurring web actions on schedule. Browserbase Runtime can host the agent code itself so the whole loop runs in the cloud. [4]</p>
+<h3 id="web-data-retrieval"><a class="header" href="#web-data-retrieval">Web Data Retrieval</a></h3>
+<p>Extract structured data from pages that require JavaScript rendering or interaction (infinite scroll, click-to-reveal). Combines well with Stagehand’s <code>page.extract({ schema })</code> for typed output.</p>
+<h3 id="end-to-end-testing"><a class="header" href="#end-to-end-testing">End-to-End Testing</a></h3>
+<p>Run cross-browser tests at scale without managing browser infrastructure. The Playwright/Puppeteer compatibility means existing test suites port directly.</p>
+<h3 id="customer-facing-browser-agents"><a class="header" href="#customer-facing-browser-agents">Customer-Facing Browser Agents</a></h3>
+<p>Embed a browser agent in a product that needs to act on the user’s behalf — e.g., a travel-booking assistant that fills out airline forms.</p>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="browserbase-sdk-sessions"><a class="header" href="#browserbase-sdk-sessions">Browserbase SDK (Sessions)</a></h3>
+<ul>
+<li><code>bb.sessions.create(options?)</code> — Create a new browser session, returns <code>{ id, connectUrl, ... }</code></li>
+<li><code>bb.sessions.retrieve(id)</code> — Get session metadata</li>
+<li><code>bb.sessions.list(filters?)</code> — List sessions</li>
+<li><code>bb.sessions.update(id, { status: "REQUEST_RELEASE" })</code> — Release a session</li>
+<li><code>bb.sessions.debug(id)</code> — Get live debugger URLs</li>
+</ul>
+<h3 id="session-options"><a class="header" href="#session-options">Session Options</a></h3>
+<ul>
+<li><code>projectId</code> — Required project association</li>
+<li><code>proxies</code> — Proxy configuration</li>
+<li><code>browserSettings</code> — Viewport, user agent, fingerprint overrides</li>
+<li><code>extensionId</code> — Inject a Chrome extension</li>
+<li><code>keepAlive</code> — Don’t auto-close on disconnect</li>
+</ul>
+<h3 id="search-api-1"><a class="header" href="#search-api-1">Search API</a></h3>
+<ul>
+<li><code>POST /v1/search</code> — Web search returning LLM-ready results [5]</li>
+</ul>
+<h3 id="fetch-api"><a class="header" href="#fetch-api">Fetch API</a></h3>
+<ul>
+<li><code>POST /v1/fetch</code> — Single-URL fetch via managed browser</li>
+</ul>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
+<p>Set <code>BROWSERBASE_API_KEY</code> and <code>BROWSERBASE_PROJECT_ID</code> environment variables.</p>
+<h3 id="proxies"><a class="header" href="#proxies">Proxies</a></h3>
+<p>Proxies are enabled per-session via the <code>proxies</code> option. Built-in proxies offer per-country targeting; you can also bring your own. [4]</p>
+<h3 id="browser-settings"><a class="header" href="#browser-settings">Browser Settings</a></h3>
+<p>Per-session overrides for viewport, user agent, locale, and fingerprint reduce bot-detection signals on sites that check these.</p>
+<h3 id="concurrency-limits"><a class="header" href="#concurrency-limits">Concurrency Limits</a></h3>
+<p>Plans cap concurrent sessions; production deployments often pool sessions or use the Runtime product for managed concurrency.</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="with-playwright"><a class="header" href="#with-playwright">With Playwright</a></h3>
+<p>Drop-in replacement for local Chromium: <code>chromium.connectOverCDP(session.connectUrl)</code> instead of <code>chromium.launch()</code>. Existing Playwright code runs unchanged.</p>
+<h3 id="with-puppeteer"><a class="header" href="#with-puppeteer">With Puppeteer</a></h3>
+<p>Same pattern: <code>puppeteer.connect({ browserWSEndpoint: session.connectUrl })</code>.</p>
+<h3 id="with-stagehand"><a class="header" href="#with-stagehand">With Stagehand</a></h3>
+<p>Stagehand wraps Playwright with AI-driven action helpers. The combo (Browserbase + Stagehand + Claude/GPT) is the canonical “browser agent” stack.</p>
+<h3 id="with-agent-frameworks-langgraph-crewai-openai-agents-sdk"><a class="header" href="#with-agent-frameworks-langgraph-crewai-openai-agents-sdk">With Agent Frameworks (LangGraph, CrewAI, OpenAI Agents SDK)</a></h3>
+<p>Expose Browserbase-driven Stagehand actions as agent tools; the agent reasons about the page and emits actions via the framework’s tool-call interface.</p>
+<h3 id="with-llm-providers-via-model-gateway"><a class="header" href="#with-llm-providers-via-model-gateway">With LLM Providers (via Model Gateway)</a></h3>
+<p>Use Browserbase’s Model Gateway to bill all LLM usage (Claude, OpenAI, Gemini) under one account, useful for projects that switch models frequently. [6]</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="playwright-quickstart-nodejs"><a class="header" href="#playwright-quickstart-nodejs">Playwright Quickstart (Node.js)</a></h3>
+<pre><code class="language-js">import Browserbase from "@browserbasehq/sdk";
+import { chromium } from "playwright-core";
+
+const bb = new Browserbase({ apiKey: process.env.BROWSERBASE_API_KEY });
+
+(async () =&gt; {
+  const session = await bb.sessions.create();
+  console.log(`Session created, id: ${session.id}`);
+
+  const browser = await chromium.connectOverCDP(session.connectUrl);
+  const defaultContext = browser.contexts()[0];
+  const page = defaultContext.pages()[0];
+
+  await page.goto("https://www.browserbase.com/", { waitUntil: "domcontentloaded" });
+
+  const debugUrls = await bb.sessions.debug(session.id);
+  console.log(`Live debug at: ${debugUrls.debuggerUrl}`);
+
+  await page.screenshot({ fullPage: true });
+
+  await page.close();
+  await browser.close();
+})();
+</code></pre>
+<h3 id="stagehand-with-ai-actions"><a class="header" href="#stagehand-with-ai-actions">Stagehand with AI Actions</a></h3>
+<pre><code class="language-js">import { Stagehand } from "@browserbasehq/stagehand";
+
+const stagehand = new Stagehand({ env: "BROWSERBASE" });
+await stagehand.init();
+await stagehand.page.goto("https://news.ycombinator.com");
+await stagehand.page.act("click the first story link");
+const data = await stagehand.page.extract({
+  instruction: "extract the article title and author",
+  schema: { title: "string", author: "string" },
+});
+console.log(data);
+await stagehand.close();
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<ul>
+<li><strong>Per-session cost</strong>: Sessions are billed by duration and concurrency tier. Bots that idle in a session burn budget.</li>
+<li><strong>Captcha solving is not 100%</strong>: Hard captchas (image grids, behavioral checks) still fail sometimes; build a human-handoff fallback.</li>
+<li><strong>Sites detecting cloud IPs</strong>: Some destinations block datacenter IPs; residential proxies help but add cost.</li>
+<li><strong>Stagehand is LLM-dependent</strong>: AI actions cost LLM tokens per step; latency = LLM round-trip + browser action. Batching actions matters.</li>
+<li><strong>Chrome-only</strong>: Browserbase runs Chromium; Firefox/WebKit are not first-class targets.</li>
+<li><strong>Closed-source service</strong>: For air-gapped or compliance-restricted environments, the open-source Playwright running on self-managed infra is the alternative.</li>
+</ul>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>Model Gateway</strong>: Unified LLM access (Claude, OpenAI, Gemini, etc.) under one API key</li>
+<li><strong>Runtime</strong>: Hosted agent execution on Browserbase infrastructure</li>
+<li><strong>Search and Fetch APIs</strong>: First-party LLM-ready web search and URL fetch</li>
+<li><strong>Stagehand integration</strong>: First-class support for AI-driven page actions</li>
+<li><strong>Session recording and live debugger</strong>: Built-in observability for browser agents [1]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Introducing Browserbase - <a href="https://docs.browserbase.com/welcome/introduction">https://docs.browserbase.com/welcome/introduction</a></li>
+<li>[2] Stagehand - <a href="https://docs.stagehand.dev/">https://docs.stagehand.dev/</a></li>
+<li>[3] Playwright Quickstart - <a href="https://docs.browserbase.com/welcome/quickstarts/playwright">https://docs.browserbase.com/welcome/quickstarts/playwright</a></li>
+<li>[4] Browser Automation Use Case - <a href="https://docs.browserbase.com/use-cases/automating-form-submissions">https://docs.browserbase.com/use-cases/automating-form-submissions</a></li>
+<li>[5] Search Platform - <a href="https://docs.browserbase.com/platform/search/overview">https://docs.browserbase.com/platform/search/overview</a></li>
+<li>[6] Model Gateway Platform - <a href="https://docs.browserbase.com/platform/model-gateway/overview">https://docs.browserbase.com/platform/model-gateway/overview</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Browserbase</li>
+<li>managed headless browser</li>
+<li>cloud Chromium</li>
+<li>Playwright remote</li>
+<li>Puppeteer remote</li>
+<li>CDP (Chrome DevTools Protocol)</li>
+<li>connectOverCDP</li>
+<li>Stagehand</li>
+<li>AI page actions</li>
+<li>page.act</li>
+<li>page.extract</li>
+<li>proxy rotation</li>
+<li>residential proxies</li>
+<li>captcha solving</li>
+<li>session recording</li>
+<li>live debugger</li>
+<li>fingerprint management</li>
+<li>session persistence</li>
+<li>Browserbase Runtime</li>
+<li>Search API</li>
+<li>Fetch API</li>
+<li>Model Gateway</li>
+<li>browser agent</li>
+<li>web automation at scale</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Spin up a cloud Chromium browser via API</li>
+<li>Connect Playwright or Puppeteer to a remote browser over CDP</li>
+<li>Drive a web page with natural-language intents via Stagehand</li>
+<li>Extract typed data from a page with <code>page.extract({ schema })</code></li>
+<li>Route browser traffic through country-targeted residential proxies</li>
+<li>Solve reCAPTCHA and hCaptcha challenges during automation</li>
+<li>Record a browser session as video plus a step-level event log</li>
+<li>Watch a live browser session via the Browserbase debugger URL</li>
+<li>Run web search via the hosted <code>/v1/search</code> endpoint</li>
+<li>Fetch and render a single URL with a managed browser</li>
+<li>Embed a browser agent inside a customer-facing product</li>
+<li>Pool concurrent sessions for high-throughput automation</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I run Playwright at scale without managing Chromium infrastructure?</li>
+<li>I need a headless browser my AI agent can drive in the cloud</li>
+<li>How can I bypass bot detection and captchas in web automation?</li>
+<li>How do I make an LLM click buttons and fill forms on a JavaScript-heavy site?</li>
+<li>I want the agent to describe actions in natural language, not CSS selectors</li>
+<li>How do I record and replay a long-running browser agent session?</li>
+<li>How do I rotate residential proxies per country for a scraping agent?</li>
+<li>How do I extract structured data from a page that requires interaction?</li>
+<li>What is the canonical “browser agent” stack?</li>
+<li>How do I let a travel-booking assistant fill out airline forms?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Self-managed Playwright deployments inherit proxy, captcha, and fingerprinting headaches</li>
+<li>Datacenter IPs get blocked; residential proxies are expensive and operationally complex</li>
+<li>Long browser sessions burn budget if they idle in a session</li>
+<li>CSS-selector automation breaks every time the site changes</li>
+<li>LLM-driven actions add token cost and round-trip latency per step</li>
+<li>Hard captchas still require human handoff</li>
+<li>Firefox/WebKit are not first-class targets; some sites require non-Chromium</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick Browserbase when your agent’s action surface is the web — pages, forms, clicks, scrapes — rather than arbitrary code</li>
+<li>Pick Browserbase + Stagehand when you want AI-driven page intent (<code>page.act</code>, <code>page.extract</code>) instead of brittle CSS selectors</li>
+<li>Pick Browserbase over self-hosted Playwright when you need managed proxies, captcha solving, fingerprinting, and session recording out of the box</li>
+<li>Pick E2B instead when the agent needs to write and execute Python/code, not drive a browser</li>
+<li>Pair with MCP by wrapping <code>page.act</code> or <code>page.extract</code> as MCP tools usable by any MCP host</li>
+<li>Pick self-hosted Playwright when compliance forbids closed-source managed services</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>cloud browser platform</li>
+<li>browser-as-a-service</li>
+<li>agentic web automation</li>
+<li>LLM-driven browser</li>
+<li>Playwright cloud</li>
+<li>Puppeteer cloud</li>
+<li>Chromium-as-a-service</li>
+<li>Stagehand framework</li>
+<li>web acting agent</li>
+<li>AI scraping browser</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-2-application/agent-runtimes-sandboxes/e2b.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-2-application/structured-generation/dspy.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-2-application/agent-runtimes-sandboxes/e2b.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-2-application/structured-generation/dspy.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

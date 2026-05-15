@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -191,11 +191,11 @@
 </thead>
 <tbody>
 <tr><td>Name</td><td>Outlines</td></tr>
-<tr><td>Group</td><td>Structured Output &amp; Prompt Engineering</td></tr>
+<tr><td>Group</td><td>Structured Generation</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/dottxt-ai/outlines">dottxt-ai/outlines</a></td></tr>
-<tr><td>Stars</td><td>13,449</td></tr>
+<tr><td>Stars</td><td>13838</td></tr>
 <tr><td>Docs</td><td><a href="https://dottxt-ai.github.io/outlines/">dottxt-ai.github.io/outlines</a></td></tr>
 <tr><td>License</td><td>Apache 2.0</td></tr>
 <tr><td>Language</td><td>Python</td></tr>
@@ -437,6 +437,91 @@ result = generator(f"Answer with citations based on: {context}\nQuestion: What r
 <h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
 <ul>
 <li>[1] <a href="https://dottxt-ai.github.io/outlines/latest/">Outlines Documentation</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Outlines</li>
+<li>constrained decoding</li>
+<li>token-level constraints</li>
+<li>finite-state machine</li>
+<li>FSM-guided decoding</li>
+<li>JSON Schema generation</li>
+<li>regex-constrained generation</li>
+<li>context-free grammar</li>
+<li>CFG support</li>
+<li>multiple-choice selection</li>
+<li>guaranteed valid output</li>
+<li>schema compilation</li>
+<li>Pydantic generator</li>
+<li>structured generation</li>
+<li>backend-agnostic</li>
+<li>vLLM constrained</li>
+<li>Transformers backend</li>
+<li>Ollama constrained</li>
+<li>one-time compilation</li>
+<li>dottxt-ai</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Constrain LLM output to a JSON Schema at the token level</li>
+<li>Generate text matching a regex pattern (dates, phone numbers, IDs)</li>
+<li>Restrict output to a fixed set of choices for classification</li>
+<li>Generate output conforming to a context-free grammar</li>
+<li>Compile a Pydantic model into an FSM once and reuse across calls</li>
+<li>Generate typed Python objects directly from a Pydantic class</li>
+<li>Run constrained generation locally via Transformers or vLLM</li>
+<li>Build a ReAct agent with guaranteed-valid action enums</li>
+<li>Extract named entities into a typed list of strings</li>
+<li>Produce structured citations alongside generated answers</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I guarantee an LLM produces valid JSON without retries?</li>
+<li>How can I constrain output to a regex pattern?</li>
+<li>I want generation that’s always schema-conformant by construction</li>
+<li>How do I make the model only choose from a fixed list of labels?</li>
+<li>How do I generate output following a formal grammar?</li>
+<li>How can I run constrained decoding on a local Mistral model?</li>
+<li>How do I avoid parse failures on LLM-generated JSON entirely?</li>
+<li>How do I get typed Pydantic instances back without parsing strings?</li>
+<li>How does FSM-guided decoding work?</li>
+<li>Can I use the same schema across OpenAI, vLLM, and Ollama?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Post-hoc parsing of LLM strings fails on malformed JSON</li>
+<li>Retry-based approaches add latency and cost per validation failure</li>
+<li>Free-form generation cannot guarantee schema conformance</li>
+<li>Schema compilation overhead adds latency on the first call</li>
+<li>Grammar support varies across backends (some API providers don’t expose it)</li>
+<li>Constrained generation guarantees structure, not semantic correctness</li>
+<li>Local backends (Transformers, vLLM) require GPU resources</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick Outlines when retries are unacceptable and you need guaranteed valid output at the token level</li>
+<li>Pick Outlines when you have local model access (Transformers, vLLM, Ollama) and want maximum throughput with constrained decoding</li>
+<li>Pick Outlines for latency-critical systems where validation-and-retry is too expensive</li>
+<li>Pick Outlines when output must match a regex or context-free grammar, not just a JSON schema</li>
+<li>Pick Instructor instead when you need broad hosted-provider support and don’t have token-level model access</li>
+<li>Pick BAML instead when you want a typed DSL plus code generation across multiple languages</li>
+<li>Pick DSPy instead when you want to optimize the prompt itself against a metric</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>guided generation</li>
+<li>structured generation library</li>
+<li>FSM-based decoding</li>
+<li>token-masking generation</li>
+<li>grammar-constrained LLM</li>
+<li>regex-constrained LLM</li>
+<li>JSON-Schema-constrained LLM</li>
+<li>dottxt outlines</li>
+<li>constrained sampling</li>
 </ul>
 
                     </main>

@@ -1,0 +1,738 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Modal - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-1-foundation/compute-gpu-infrastructure/modal.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="modal"><a class="header" href="#modal">Modal</a></h1>
+<blockquote>
+<p>Serverless GPU compute platform for AI workloads with elastic scaling</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Modal</td></tr>
+<tr><td>Group</td><td>Compute &amp; GPU Infrastructure</td></tr>
+<tr><td>Type</td><td>API/SDK/Infra</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Docs</td><td><a href="https://modal.com/docs">modal.com/docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Modal is a serverless cloud platform purpose-built for AI and compute-intensive workloads. It takes Python code, packages it into a container, and executes it in the cloud with automatic horizontal scaling. The platform follows a code-first approach that eliminates YAML configuration files entirely, offering sub-second cold starts, per-second billing, and multi-cloud infrastructure. Modal pools capacity across all major clouds, dynamically deciding where to run code based on the best available capacity, optimizing for both high GPU availability and low cost.</p>
+<p>Modal targets engineers and researchers who need on-demand GPU access for inference, batch processing, training, fine-tuning, and sandboxed code execution without managing infrastructure, containers, or orchestration layers. All compute jobs are containerized and virtualized using gVisor (Google’s sandboxing technology), with encryption in transit (TLS 1.3) and at rest. The platform is SOC 2 Type 2 certified and HIPAA-compliant on Enterprise plans.</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<ul>
+<li><strong>App</strong>: Top-level container that groups one or more Functions for atomic deployment, acting as a shared namespace. Apps can be ephemeral (created via <code>modal run</code>, existing only during script execution) or deployed (persisting indefinitely via <code>modal deploy</code>). Functions within an App scale independently; if no active inputs exist, no containers run and no compute charges accrue.</li>
+<li><strong>Function</strong>: A Python function decorated with <code>@app.function()</code> that runs remotely in the cloud. Functions are the primary unit of execution and can be invoked synchronously, asynchronously, or mapped over inputs in parallel. Each Function scales up and down independently from other Functions in the same App.</li>
+<li><strong>Image</strong>: A container image definition specifying the runtime environment for functions. Images are built incrementally using a builder pattern with method chaining (e.g., <code>modal.Image.debian_slim().pip_install("torch")</code>). Layers are cached for fast rebuilds, and each method call creates a cacheable layer. Images run on Debian Linux with gVisor sandboxing.</li>
+<li><strong>Volume</strong>: Persistent distributed filesystem that can be mounted into function containers. Volumes survive across invocations and deployments, suitable for model weights, datasets, and checkpoints. Volumes v2 (beta) offers unlimited file count, improved random access, concurrent writers to distinct files, and HIPAA-compliant data deletion.</li>
+<li><strong>Secret</strong>: Secure credential management injecting environment variables into containers at runtime. Secrets support creation via dashboard (with templates for common services), CLI, <code>.env</code> files, and programmatic dictionaries. Multiple Secrets can be combined per function.</li>
+<li><strong>Sandbox</strong>: Secure isolated containers for executing untrusted or agent-generated code with configurable resource limits, timeouts (up to 24 hours), networking, and file access. Sandboxes support named instances, tagging, snapshots, and can be referenced by ID for reuse.</li>
+<li><strong>Notebook</strong>: Cloud-hosted GPU-backed Jupyter environments with serverless pricing, real-time multi-user collaboration, AI-powered code completion (Claude Sonnet 4.6), and support for up to 8 NVIDIA A100s or H100s per kernel.</li>
+</ul>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Modal operates on a serverless execution model. When a function is invoked, Modal performs the following sequence:</p>
+<ol>
+<li><strong>Image resolution</strong>: The platform checks whether the specified container image exists in its cache. If not, it builds the image from the declarative definition using layer-based caching.</li>
+<li><strong>Container scheduling</strong>: A container is scheduled on available infrastructure matching the requested resources (CPU, memory, GPU type, region). Modal pools capacity across multiple clouds for optimal availability.</li>
+<li><strong>Code injection</strong>: The decorated function code is serialized and injected into the container at runtime.</li>
+<li><strong>Execution</strong>: The function runs inside the gVisor-sandboxed container with access to mounted volumes, secrets, cloud bucket mounts, and network resources.</li>
+<li><strong>Scaling</strong>: Additional containers are spawned automatically based on incoming request volume. Scaling is controlled by <code>max_containers</code>, <code>min_containers</code>, <code>buffer_containers</code>, and <code>scaledown_window</code> parameters.</li>
+<li><strong>Teardown</strong>: Idle containers are terminated after a configurable scaledown window (default 60 seconds, configurable from 2 seconds to 20 minutes). Billing stops immediately.</li>
+</ol>
+<p>The platform abstracts away container registries, orchestration systems, load balancers, and GPU drivers. Users interact exclusively through Python decorators and the Modal SDK. All inputs and outputs traverse Modal’s control plane in <code>us-east-1</code>, regardless of the specified execution region.</p>
+<h3 id="container-lifecycle"><a class="header" href="#container-lifecycle">Container Lifecycle</a></h3>
+<p>Containers are reused across multiple inputs. Lifecycle hooks enable initialization and cleanup:</p>
+<ul>
+<li><strong><code>@modal.enter()</code></strong>: One-time initialization when a container starts (loading model weights, importing packages).</li>
+<li><strong><code>@modal.exit()</code></strong>: One-time cleanup on shutdown (closing connections, saving state). Receives a 30-second grace period before forced termination. Also triggered on preemption events.</li>
+<li><strong><code>@modal.build()</code></strong>: Runs during image build time for build-step logic.</li>
+</ul>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>Sub-second cold starts</strong>: Containers boot in approximately one second through aggressive image caching and snapshot-based initialization. Memory Snapshots capture container state after warm-up for even faster subsequent boots.</li>
+<li><strong>Per-second billing</strong>: Compute charges are measured per second of actual usage, with no minimum billing increments for idle time.</li>
+<li><strong>Autoscaling</strong>: Automatic container pool management with configurable <code>max_containers</code> (upper limit), <code>min_containers</code> (warm floor), <code>buffer_containers</code> (burst headroom), and <code>scaledown_window</code> (idle timeout). Dynamic updates via <code>Function.update_autoscaler()</code> without redeployment.</li>
+<li><strong>Web endpoints</strong>: Functions exposed as HTTP endpoints via <code>@modal.fastapi_endpoint</code> (FastAPI), <code>@modal.asgi_app</code> (ASGI), <code>@modal.wsgi_app</code> (WSGI), or <code>@modal.web_server</code> (custom). Request bodies up to 4 GiB, unlimited response sizes. WebSocket support via RFC 6455 with 2 MiB message limit.</li>
+<li><strong>Streaming responses</strong>: Server-sent events and streaming HTTP responses for real-time inference applications via dedicated streaming endpoint decorators.</li>
+<li><strong>Volumes</strong>: Persistent distributed filesystems with up to 2.5 GB/s bandwidth. Automatic background commits every few seconds. Volumes v2 supports unlimited files, concurrent writers, and hard-linking.</li>
+<li><strong>Cloud bucket mounts</strong>: Direct mounting of AWS S3, Google Cloud Storage, and Cloudflare R2 buckets into function containers using AWS Mountpoint technology. Supports read-only mode, key prefix filtering, and OIDC-based authentication.</li>
+<li><strong>Scheduled jobs</strong>: Functions triggered on cron schedules via <code>modal.Cron("0 * * * *")</code> or periodic intervals via <code>modal.Period(hours=5)</code>.</li>
+<li><strong>Secret management</strong>: Secrets created via dashboard (with templates), CLI, <code>.env</code> files, or programmatic dicts. Environment variable injection at runtime with multiple-secret composition.</li>
+<li><strong>Sandboxes</strong>: Secure containers for untrusted code with configurable timeouts (up to 24 hours), named instances, tagging, directory snapshots, and reusable sandbox pools.</li>
+<li><strong>Notebooks</strong>: GPU-backed Jupyter environments with real-time collaboration, AI code completion, and serverless pricing. Automatic idle shutdown with configurable timeouts.</li>
+<li><strong>GPU health monitoring</strong>: Automated monitoring and workload migration away from degraded hardware.</li>
+<li><strong>Preemption handling</strong>: All functions are preemptible by default with graceful termination and automatic restart. Exit handlers execute within a grace period. Non-preemptible mode available for CPU-only functions at 3x cost multiplier.</li>
+<li><strong>Multi-node clusters (beta)</strong>: Distributed training across up to 64 H100 SXM GPUs with 3,200 Gbps RDMA networking (RoCE protocol), gang scheduling, and rank-based coordination.</li>
+<li><strong>Cluster networking (i6pn)</strong>: Private IPv6 networking between containers within the same workspace at 50+ Gbps bandwidth. Workspace-isolated subnets using <code>fdaa::/16</code> prefix.</li>
+<li><strong>Region selection</strong>: Geographic placement with regions including US, EU, UK, AP, CA, SA, ME, MX, AF with pricing multipliers (1.25x for US/EU/UK/AP, 2.5x for others).</li>
+<li><strong>JavaScript/Go SDKs (beta)</strong>: Client SDKs for invoking Modal functions and managing Sandboxes from Node.js and Go applications.</li>
+<li><strong>Integrations</strong>: OIDC authentication, Datadog monitoring, OpenTelemetry tracing, Okta/SAML SSO, and Slack notifications.</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Real-time inference APIs</strong>: Deploying model serving endpoints with automatic scaling, sub-second cold starts, and OpenAI-compatible API endpoints. Deploy vLLM, SGLang, or custom model servers with GPU acceleration.</li>
+<li><strong>Batch inference</strong>: Processing large datasets through ML models by mapping a function over thousands of inputs in parallel. Hard limits of 25,000 total inputs (running + pending) and 1 million pending async spawn jobs.</li>
+<li><strong>Model training</strong>: GPU-accelerated training jobs scaling from a single GPU to multi-GPU single-node configurations. Multi-node distributed training available in beta with RDMA networking.</li>
+<li><strong>Fine-tuning</strong>: Running fine-tuning jobs on large language models (LoRA, full fine-tuning) with configurable GPU types and memory. Examples include Flux diffusion model and LLM fine-tuning.</li>
+<li><strong>Code sandboxing</strong>: Executing AI-generated code, coding agents, and untrusted user code in isolated Sandboxes with resource limits, networking controls, and filesystem snapshots.</li>
+<li><strong>Data preprocessing</strong>: Running CPU or GPU-intensive data pipelines on demand, including parallel processing of Parquet files on S3 and dataset ingestion workflows.</li>
+<li><strong>Scheduled ETL</strong>: Periodic data extraction, transformation, and loading jobs triggered by cron schedules or interval-based periods.</li>
+<li><strong>Interactive notebooks</strong>: GPU-backed collaborative Jupyter environments for prototyping, research, and document processing with OCR.</li>
+<li><strong>Media generation</strong>: Image generation (Flux, Stable Diffusion), video generation (Wan2.1), music generation (ACE-Step), and speech transcription (Whisper, Kyutai STT).</li>
+<li><strong>Scientific computing</strong>: Protein folding (Boltz-2, Chai-1, ESM3), molecular structure prediction, and other compute-intensive scientific workflows.</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<p><strong>App definition</strong>:</p>
+<pre><code class="language-python">import modal
+
+app = modal.App("my-app")
+</code></pre>
+<p><strong>Function decorator with GPU</strong>:</p>
+<pre><code class="language-python">@app.function(gpu="A100", timeout=3600, memory=32768)
+def my_function(input_data):
+    return process(input_data)
+</code></pre>
+<p><strong>Image builder</strong> (recommended <code>uv_pip_install</code> for faster resolution):</p>
+<pre><code class="language-python">image = (
+    modal.Image.debian_slim(python_version="3.11")
+    .uv_pip_install(["torch", "transformers"])
+    .apt_install("ffmpeg")
+    .env({"CUDA_VISIBLE_DEVICES": "0"})
+)
+
+@app.function(image=image, gpu="H100")
+def inference(prompt):
+    pass
+</code></pre>
+<p><strong>Class-based functions with lifecycle hooks</strong>:</p>
+<pre><code class="language-python">@app.cls(image=image, gpu="L40S")
+class ModelServer:
+    @modal.enter()
+    def load_model(self):
+        from transformers import pipeline
+        self.pipe = pipeline("text-generation", model="meta-llama/Llama-2-7b-hf", device="cuda")
+
+    @modal.fastapi_endpoint(method="POST")
+    def generate(self, request: dict):
+        result = self.pipe(request["prompt"], max_new_tokens=256)
+        return {"output": result[0]["generated_text"]}
+
+    @modal.exit()
+    def cleanup(self):
+        del self.pipe
+</code></pre>
+<p><strong>Volume</strong>:</p>
+<pre><code class="language-python">volume = modal.Volume.from_name("my-volume", create_if_missing=True)
+
+@app.function(volumes={"/data": volume})
+def write_data():
+    with open("/data/output.txt", "w") as f:
+        f.write("result")
+    volume.commit()
+</code></pre>
+<p><strong>Parallel map</strong>:</p>
+<pre><code class="language-python">@app.function(gpu="T4")
+def process_item(item):
+    return transform(item)
+
+@app.local_entrypoint()
+def main():
+    items = list(range(1000))
+    results = list(process_item.map(items))
+</code></pre>
+<p><strong>Secrets</strong>:</p>
+<pre><code class="language-python">@app.function(secrets=[modal.Secret.from_name("my-api-key")])
+def call_api():
+    import os
+    key = os.environ["API_KEY"]
+</code></pre>
+<p><strong>Scheduled function</strong>:</p>
+<pre><code class="language-python">@app.function(schedule=modal.Cron("0 */6 * * *"))
+def periodic_job():
+    pass
+</code></pre>
+<p><strong>Sandbox</strong>:</p>
+<pre><code class="language-python">sb = modal.Sandbox.create(
+    app=app,
+    image=image,
+    timeout=3600,
+    tags={"project": "agent"}
+)
+process = sb.exec("python", "script.py")
+print(process.stdout.read())
+sb.detach()
+</code></pre>
+<p><strong>Autoscaler configuration</strong>:</p>
+<pre><code class="language-python">@app.function(
+    gpu="H100",
+    min_containers=2,
+    max_containers=100,
+    buffer_containers=5,
+    scaledown_window=120,
+)
+def inference(prompt):
+    pass
+</code></pre>
+<p><strong>Cloud bucket mount</strong>:</p>
+<pre><code class="language-python">bucket = modal.CloudBucketMount(
+    bucket_name="my-bucket",
+    secret=modal.Secret.from_name("aws-creds"),
+    key_prefix="data/",
+    read_only=True,
+)
+
+@app.function(volumes={"/s3": bucket})
+def process_data():
+    pass
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="gpu-selection"><a class="header" href="#gpu-selection">GPU Selection</a></h3>
+<p>GPUs are requested through the <code>gpu</code> parameter on the function decorator. Available GPU types:</p>
+<ul>
+<li><strong>T4</strong> (16 GB) – Budget inference, up to 8 per container</li>
+<li><strong>L4</strong> (24 GB) – General purpose inference, up to 8 per container</li>
+<li><strong>A10</strong> (24 GB) – Balanced training/inference, up to 4 per container (96 GB max)</li>
+<li><strong>L40S</strong> (48 GB) – Recommended for inference (best cost/performance trade-off), up to 8 per container</li>
+<li><strong>A100</strong> (40 GB) – May auto-upgrade to 80 GB at no extra cost, up to 8 per container</li>
+<li><strong>A100-40GB</strong> (40 GB) – Specifically 40 GB variant</li>
+<li><strong>A100-80GB</strong> (80 GB) – Specifically 80 GB variant</li>
+<li><strong>RTX-PRO-6000</strong> – Professional GPU</li>
+<li><strong>H100</strong> (80 GB SXM) – High-end training, may auto-upgrade to H200 at no extra cost, up to 8 per container</li>
+<li><strong>H100!</strong> (80 GB SXM) – Reserved H100 (no auto-upgrade to H200)</li>
+<li><strong>H200</strong> (141 GB HBM3e, 4.8 TB/s bandwidth) – Large model training, up to 8 per container</li>
+<li><strong>B200</strong> (192 GB) – NVIDIA Blackwell architecture, up to 8 per container</li>
+<li><strong>B200+</strong> (192 GB) – Opt-in B200 or B300 (billed as B200, B300 requires CUDA 13.0+)</li>
+</ul>
+<h3 id="multi-gpu"><a class="header" href="#multi-gpu">Multi-GPU</a></h3>
+<p>Request multiple GPUs by appending a count: <code>gpu="H100:8"</code> for 8x H100 (up to 1,536 GB total). Most GPU types support up to 8 GPUs per container; A10 supports up to 4. Requesting more than 2 GPUs typically increases wait times.</p>
+<h3 id="gpu-fallbacks"><a class="header" href="#gpu-fallbacks">GPU Fallbacks</a></h3>
+<p>Specify a prioritized list of GPU types for availability flexibility:</p>
+<pre><code class="language-python">@app.function(gpu=["H100", "A100-40GB:2"])
+def run_on_80gb():
+    pass
+</code></pre>
+<h3 id="resource-limits"><a class="header" href="#resource-limits">Resource Limits</a></h3>
+<p>CPU, memory, and timeout are configured per function:</p>
+<pre><code class="language-python">@app.function(cpu=4, memory=65536, timeout=7200, gpu="A100")
+def heavy_job():
+    pass
+</code></pre>
+<h3 id="region-selection"><a class="header" href="#region-selection">Region Selection</a></h3>
+<p>Specify execution region with pricing multipliers:</p>
+<pre><code class="language-python">@app.function(gpu="H100", region="us-east")  # 1.25x multiplier
+def us_inference():
+    pass
+</code></pre>
+<p>Available regions: <code>us</code>, <code>eu</code>, <code>uk</code>, <code>ap</code>, <code>ca</code>, <code>sa</code>, <code>me</code>, <code>mx</code>, <code>af</code>, plus sub-regions (e.g., <code>us-east</code>, <code>eu-west</code>). Broader regions improve availability and cold start times. US/EU/UK/AP incur 1.25x; CA/SA/ME/MX/AF incur 2.5x multiplier.</p>
+<h3 id="non-preemptible-mode"><a class="header" href="#non-preemptible-mode">Non-Preemptible Mode</a></h3>
+<p>CPU-only functions can opt out of preemption at 3x cost:</p>
+<pre><code class="language-python">@app.function(cpu=4, nonpreemptible=True)  # GPU not supported
+def critical_job():
+    pass
+</code></pre>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="client-sdks"><a class="header" href="#client-sdks">Client SDKs</a></h3>
+<p>Modal provides client SDKs in three languages:</p>
+<ul>
+<li><strong>Python</strong> (primary): Full SDK for defining and invoking functions, building images, and managing all resources.</li>
+<li><strong>JavaScript/TypeScript</strong> (beta): Client SDK via npm for invoking Modal functions, running Sandboxes, and interacting with Modal resources from Node.js applications.</li>
+<li><strong>Go</strong> (beta): Client SDK via <code>go get</code> for invoking Modal functions and managing Sandboxes from Go services.</li>
+</ul>
+<h3 id="observability-integrations"><a class="header" href="#observability-integrations">Observability Integrations</a></h3>
+<ul>
+<li><strong>Datadog</strong>: Direct integration for monitoring Modal workloads.</li>
+<li><strong>OpenTelemetry</strong>: Connect to any OTel-compatible provider for distributed tracing.</li>
+<li><strong>GPU Metrics</strong>: Built-in GPU utilization, memory, and power draw monitoring via dashboard and <code>nvidia-smi</code>.</li>
+</ul>
+<h3 id="authentication-and-sso"><a class="header" href="#authentication-and-sso">Authentication and SSO</a></h3>
+<ul>
+<li><strong>OIDC</strong>: Authenticate with external services (AWS, GCP) using Modal-issued identity tokens, eliminating manual credential management.</li>
+<li><strong>Okta SSO / Custom SAML SSO</strong>: Enterprise single sign-on integration.</li>
+<li><strong>Proxy Auth Tokens</strong>: Authenticate web endpoint requests with <code>Modal-Key</code> and <code>Modal-Secret</code> headers.</li>
+</ul>
+<h3 id="pipeline-chaining"><a class="header" href="#pipeline-chaining">Pipeline Chaining</a></h3>
+<p>Functions call other Modal functions directly, enabling multi-step pipelines where each stage runs on different hardware:</p>
+<pre><code class="language-python">@app.function(gpu="A100")
+def generate_embeddings(text):
+    return model.encode(text)
+
+@app.function(cpu=2)
+def store_results(embeddings):
+    database.insert(embeddings)
+
+@app.local_entrypoint()
+def pipeline(text):
+    embeddings = generate_embeddings.remote(text)
+    store_results.remote(embeddings)
+</code></pre>
+<h3 id="cicd-integration"><a class="header" href="#cicd-integration">CI/CD Integration</a></h3>
+<p>Continuous deployment via GitHub Actions or any CI system using <code>modal deploy</code>. Modal’s <code>modal token new</code> command generates service user tokens for automated deployments without browser authentication.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p><strong>OpenAI-compatible LLM serving with vLLM</strong>:</p>
+<pre><code class="language-python">import modal
+
+app = modal.App("vllm-inference")
+
+image = (
+    modal.Image.debian_slim(python_version="3.11")
+    .pip_install("vllm")
+)
+
+@app.cls(image=image, gpu="B200:2")
+class LLMServer:
+    @modal.enter()
+    def start_engine(self):
+        from vllm import LLM
+        self.llm = LLM(model="meta-llama/Llama-3.1-8B-Instruct")
+
+    @modal.fastapi_endpoint(method="POST")
+    def generate(self, request: dict):
+        from vllm import SamplingParams
+        params = SamplingParams(max_tokens=256)
+        outputs = self.llm.generate([request["prompt"]], params)
+        return {"text": outputs[0].outputs[0].text}
+</code></pre>
+<p><strong>Batch processing with parallel map and volumes</strong>:</p>
+<pre><code class="language-python">import modal
+
+app = modal.App("batch-processing")
+volume = modal.Volume.from_name("results", create_if_missing=True)
+
+@app.function(gpu="T4", volumes={"/output": volume})
+def process_image(image_path: str):
+    result = run_inference(image_path)
+    with open(f"/output/{image_path}.json", "w") as f:
+        json.dump(result, f)
+    volume.commit()
+
+@app.local_entrypoint()
+def main():
+    image_paths = get_all_image_paths()
+    list(process_image.map(image_paths))
+</code></pre>
+<p><strong>Sandbox for code execution agents</strong>:</p>
+<pre><code class="language-python">import modal
+
+app = modal.App("code-agent")
+image = modal.Image.debian_slim().pip_install("numpy", "pandas")
+
+@app.function()
+def execute_user_code(code: str):
+    sb = modal.Sandbox.create(
+        app=app,
+        image=image,
+        timeout=60,
+    )
+    process = sb.exec("python", "-c", code)
+    stdout = process.stdout.read()
+    stderr = process.stderr.read()
+    sb.terminate()
+    return {"stdout": stdout, "stderr": stderr}
+</code></pre>
+<p><strong>Multi-node distributed training (beta)</strong>:</p>
+<pre><code class="language-python">import modal
+
+app = modal.App("distributed-training")
+
+@app.function(gpu="H100:8")
+@modal.clustered(n_containers=4, rdma=True)  # 32 GPUs total
+def train_large_model():
+    import subprocess, sys
+    subprocess.run(
+        ["torchrun", "--nproc_per_node=8", "train.py"],
+        stdout=sys.stdout, stderr=sys.stderr, check=True,
+    )
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>Closed source</strong>: The platform is proprietary with no self-hosted deployment option. All workloads run on Modal-managed infrastructure.</li>
+<li><strong>Vendor lock-in</strong>: The decorator-based API is Modal-specific. Migrating to another platform requires rewriting the infrastructure layer.</li>
+<li><strong>Multi-node training</strong>: Distributed training across multiple nodes is in private beta with access requiring approval.</li>
+<li><strong>Execution time limits</strong>: Functions have maximum timeout constraints. Sandboxes support up to 24 hours.</li>
+<li><strong>Cold start variability</strong>: While containers boot in approximately one second, complex images with large dependencies or model loading in <code>@modal.enter()</code> may extend initialization time.</li>
+<li><strong>Regional constraints</strong>: All inputs and outputs traverse the control plane in <code>us-east-1</code> regardless of execution region. Cluster networking (i6pn) operates within single regions only.</li>
+<li><strong>No raw VM access</strong>: Users cannot SSH into containers or access underlying virtual machines directly.</li>
+<li><strong>Scaling limits</strong>: Hard limits of 2,000 pending inputs, 25,000 total inputs per function, 1,000 concurrent inputs per <code>.map()</code> call, and 200 web endpoint operations/second.</li>
+<li><strong>Cloud bucket mount restrictions</strong>: No append-mode file operations, arbitrary offset writes, file renaming, or parent directory auto-creation on mounted buckets.</li>
+<li><strong>GPU preemption</strong>: Non-preemptible mode is not available for GPU functions; only CPU-only functions can opt out of preemption.</li>
+<li><strong>Python-first</strong>: Defining Modal Functions remains exclusive to Python. JavaScript/TypeScript and Go SDKs (beta) support invocation and Sandbox management only.</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<p>Modal is a continuously deployed platform. The Python SDK receives frequent updates through PyPI. Recent highlights:</p>
+<ul>
+<li><strong>v1.3.5</strong> (March 2026): <code>modal changelog</code> CLI, <code>Secret.update()</code> method, running input statistics.</li>
+<li><strong>v1.3.4</strong> (February 2026): Directory Snapshots for Sandboxes, <code>Sandbox.detach()</code>, 8x stdin throughput improvement.</li>
+<li><strong>v1.3.3</strong> (February 2026): Billing report API (GA), Queue/Dict <code>from_id()</code> methods, async usage warnings.</li>
+<li><strong>v1.3.2</strong> (January 2026): Dashboard URL methods, <code>modal dashboard</code> CLI, Sandbox log support.</li>
+<li><strong>v1.3.1</strong> (January 2026): Python 3.14t support, custom Sandbox domains, <code>Literal</code> type CLI annotations.</li>
+<li><strong>v1.3.0</strong> (December 2025): Python 3.14 support, Python 3.9 removed, exception handling migration, <code>single_use_containers</code> parameter.</li>
+<li>Notable platform additions in 2025-2026: B200/B300 GPU support, RTX-PRO-6000, Volumes v2, cloud bucket mounts, Modal Notebooks, multi-node training beta, RDMA networking, and JavaScript/Go SDKs.</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] <a href="https://modal.com/docs/guide">Modal Documentation - Introduction</a></li>
+<li>[2] <a href="https://modal.com/docs/guide/gpu">Modal GPU Acceleration Guide</a></li>
+<li>[3] <a href="https://modal.com/docs/guide/images">Modal Images Guide</a></li>
+<li>[4] <a href="https://modal.com/docs/guide/scale">Modal Scaling Out Guide</a></li>
+<li>[5] <a href="https://modal.com/docs/guide/volumes">Modal Volumes Guide</a></li>
+<li>[6] <a href="https://modal.com/docs/guide/sandboxes">Modal Sandboxes Guide</a></li>
+<li>[7] <a href="https://modal.com/docs/guide/webhooks">Modal Web Endpoints Guide</a></li>
+<li>[8] <a href="https://modal.com/docs/guide/cold-start">Modal Cold Start Performance</a></li>
+<li>[9] <a href="https://modal.com/docs/guide/secrets">Modal Secrets Guide</a></li>
+<li>[10] <a href="https://modal.com/docs/guide/cloud-bucket-mounts">Modal Cloud Bucket Mounts</a></li>
+<li>[11] <a href="https://modal.com/docs/guide/cron">Modal Scheduling and Cron</a></li>
+<li>[12] <a href="https://modal.com/docs/guide/apps">Modal Apps and Functions</a></li>
+<li>[13] <a href="https://modal.com/docs/guide/lifecycle-functions">Modal Container Lifecycle Hooks</a></li>
+<li>[14] <a href="https://modal.com/docs/guide/region-selection">Modal Region Selection</a></li>
+<li>[15] <a href="https://modal.com/docs/guide/notebooks">Modal Notebooks Guide</a></li>
+<li>[16] <a href="https://modal.com/docs/guide/security">Modal Security and Privacy</a></li>
+<li>[17] <a href="https://modal.com/docs/guide/multi-node-training">Modal Multi-Node Clusters</a></li>
+<li>[18] <a href="https://modal.com/docs/guide/preemption">Modal Preemption Guide</a></li>
+<li>[19] <a href="https://modal.com/docs/guide/private-networking">Modal Cluster Networking</a></li>
+<li>[20] <a href="https://modal.com/docs/guide/sdk-javascript-go">Modal JavaScript/Go SDKs</a></li>
+<li>[21] <a href="https://modal.com/docs/reference/changelog">Modal Changelog</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>modal</li>
+<li>modal.com</li>
+<li>serverless gpu</li>
+<li>sub-second cold start</li>
+<li>per-second billing</li>
+<li>@app.function</li>
+<li>@modal.enter</li>
+<li>@modal.exit</li>
+<li>modal image builder</li>
+<li>modal volume</li>
+<li>modal sandbox</li>
+<li>modal notebook</li>
+<li>modal cluster</li>
+<li>multi-node training</li>
+<li>rdma</li>
+<li>i6pn networking</li>
+<li>h100</li>
+<li>h200</li>
+<li>b200</li>
+<li>a100</li>
+<li>l40s</li>
+<li>modal cron</li>
+<li>cloud bucket mount</li>
+<li>gvisor</li>
+<li>memory snapshots</li>
+<li>code-first deployment</li>
+<li>modal deploy</li>
+<li>modal run</li>
+<li>max_containers</li>
+<li>scaledown_window</li>
+<li>preemption</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Decorate a Python function to run on an H100 in the cloud</li>
+<li>Build a container image declaratively with <code>pip_install</code> chaining</li>
+<li>Persist model weights and datasets in a Modal Volume</li>
+<li>Run untrusted agent-generated code inside a Modal Sandbox</li>
+<li>Expose a function as a FastAPI HTTP endpoint</li>
+<li>Stream tokens from a vLLM-backed inference endpoint</li>
+<li>Schedule a cron job to run every 6 hours</li>
+<li>Mount S3, GCS, or R2 directly into a function container</li>
+<li>Map a function over thousands of inputs in parallel</li>
+<li>Configure autoscaling with min/max/buffer container limits</li>
+<li>Launch GPU-backed collaborative Jupyter notebooks</li>
+<li>Run multi-node distributed training across 64 H100s with RDMA</li>
+<li>Inject secrets and OIDC identity into a function</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I want to run a Python function on a GPU without managing servers.</li>
+<li>How do I deploy vLLM with autoscaling and sub-second cold starts?</li>
+<li>How do I sandbox AI-generated code safely with timeouts?</li>
+<li>How do I run a cron job on a GPU once a day?</li>
+<li>I want per-second billing — no idle charges when traffic stops.</li>
+<li>How do I share model weights across function invocations?</li>
+<li>How do I scale to thousands of parallel batch-inference workers?</li>
+<li>How do I run a GPU notebook with my team in real time?</li>
+<li>How do I serve an OpenAI-compatible endpoint from my own model?</li>
+<li>How do I expose a function as a webhook with FastAPI?</li>
+<li>I need 8x H100s with RDMA for a training run — can I rent that for an hour?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Provisioning Kubernetes and GPU drivers for a single inference service is too much overhead.</li>
+<li>My traffic is spiky and I waste money on idle reserved GPUs.</li>
+<li>I need to execute LLM-written code without risking my host.</li>
+<li>My pipeline mixes CPU preprocessing and GPU inference and current platforms make this awkward.</li>
+<li>I want a notebook with a real H100 and live collaboration.</li>
+<li>A cron job needs a GPU once a day and reserved capacity is overkill.</li>
+<li>I need cold starts under a second to keep latency tolerable.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want Python-decorator-level abstraction over GPUs (vs Ray’s actor model or RunPod/Vast’s container-and-VM model).</li>
+<li>Pick this when sub-second cold starts and per-second billing are the priority.</li>
+<li>Pick this when serverless scale-to-zero matters more than the cheapest hourly rate (vs Vast.ai’s marketplace pricing).</li>
+<li>Pick this when you need first-class Sandboxes for executing untrusted or agent-generated code.</li>
+<li>Pick this when GPU-backed collaborative Jupyter notebooks are part of the workflow.</li>
+<li>Pick this when SOC 2 Type 2 and HIPAA on Enterprise are required.</li>
+<li>Pick this when you want managed multi-node H100 clusters without operating Kubernetes.</li>
+<li>Pick this when you accept closed-source and Modal-specific decorators in exchange for zero infrastructure work.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>serverless ai platform</li>
+<li>function-as-a-service gpu</li>
+<li>python-native gpu compute</li>
+<li>managed gpu functions</li>
+<li>gpu autoscaling</li>
+<li>code sandbox service</li>
+<li>ai compute platform</li>
+<li>modal labs</li>
+<li>vllm hosting</li>
+<li>on-demand h100</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-1-foundation/compute-gpu-infrastructure/ray.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-1-foundation/compute-gpu-infrastructure/runpod.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-1-foundation/compute-gpu-infrastructure/ray.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-1-foundation/compute-gpu-infrastructure/runpod.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Data Labeling</td></tr>
+<tr><td>Group</td><td>Labeling</td></tr>
 <tr><td>Type</td><td>UI</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/HumanSignal/label-studio">https://github.com/HumanSignal/label-studio</a></td></tr>
-<tr><td>Stars</td><td>26488</td></tr>
+<tr><td>Stars</td><td>27315</td></tr>
 <tr><td>Documentation</td><td><a href="https://labelstud.io/guide/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -788,6 +788,71 @@ client.projects.import_predictions(
 <li>[9] <a href="https://github.com/HumanSignal/label-studio-ml-backend">Label Studio ML Backend Repository</a></li>
 <li>[10] <a href="https://github.com/HumanSignal/label-studio">Label Studio GitHub Repository</a></li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Label Studio, data labeling, data annotation, NER, named entity recognition, image segmentation, bounding boxes, polygon labels, audio transcription, video annotation, ML backend, active learning, pre-annotation, COCO export, YOLO export, Pascal VOC, CoNLL2003, labeling configuration, XML templates, Data Manager, HumanSignal, webhooks, S3 storage, GCS, Azure Blob, presigned URLs, SAM, GroundingDINO, JSON-MIN, Apache 2.0</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define a labeling interface with XML control and object tags</li>
+<li>Annotate images with bounding boxes, polygons, or pixel-level brush masks</li>
+<li>Run named entity recognition (NER) labeling with word-level granularity</li>
+<li>Connect an ML backend to generate pre-annotations for tasks</li>
+<li>Trigger model retraining when an annotation is submitted</li>
+<li>Sync source data from S3, GCS, or Azure Blob with presigned URLs</li>
+<li>Export annotations as COCO, YOLO, Pascal VOC, or CoNLL2003</li>
+<li>Import bulk predictions via the Python SDK or REST API</li>
+<li>Configure webhooks for ANNOTATION_CREATED and ANNOTATION_UPDATED events</li>
+<li>Build active learning loops by sorting tasks by model uncertainty</li>
+<li>Annotate PDFs and scanned documents in the OCR interface</li>
+<li>Run multi-annotator workflows for inter-annotator agreement</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I set up a web-based tool for labeling images with bounding boxes?</li>
+<li>How can I pre-annotate NER tasks with a spaCy or HuggingFace model?</li>
+<li>How do I export Label Studio annotations into COCO format for object detection?</li>
+<li>How do I sync labeling tasks from an S3 bucket without copying files?</li>
+<li>What XML configuration creates a sentiment classification annotation interface?</li>
+<li>How do I trigger model retraining automatically when new annotations are submitted?</li>
+<li>How can I connect Segment Anything (SAM) for interactive image segmentation?</li>
+<li>How do I configure JWT authentication and PostgreSQL for production?</li>
+<li>How do I import predictions in bulk from an existing model?</li>
+<li>How do I run an active learning loop with Label Studio?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Building a custom annotation UI for every project type wastes engineering time</li>
+<li>Pre-annotation with an existing model is hard to wire into a manual labeling workflow</li>
+<li>Annotation format conversion (to COCO, YOLO, Pascal VOC) is error-prone when done by hand</li>
+<li>Cloud storage data must stay isolated from the labeling server for security</li>
+<li>SQLite-backed labeling tools crumble under multi-user concurrent writes</li>
+<li>Active learning requires uncertainty-sorted task queues but most tools don’t expose them</li>
+<li>Multi-modal annotation (text + image + classification) usually needs custom tooling</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you need a configurable, multi-type (text, image, audio, video, time series, PDF) annotation tool with an open-source core</li>
+<li>Pick this when an ML backend integration for pre-annotation and active learning is required</li>
+<li>Pick this when export formats must include COCO, YOLO, Pascal VOC, CoNLL2003, or ASR_MANIFEST out of the box</li>
+<li>Pick this when you need interactive smart tools like SAM or GroundingDINO for real-time segmentation suggestions</li>
+<li>Pick this when cloud storage (S3, GCS, Azure) sync with presigned URLs is part of the workflow</li>
+<li>Pick this when webhooks must drive downstream pipelines on annotation events</li>
+<li>Pick this when the Community Edition’s feature set is sufficient and Enterprise RBAC/audit-log features are not required</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Label Studio Community Edition, Label Studio Enterprise</li>
+<li>HumanSignal (formerly Heartex)</li>
+<li>label-studio-sdk (Python), label-studio-ml-backend</li>
+<li>ML backend, pre-annotation, active learning</li>
+<li>Labeling configuration (XML), control tags, object tags</li>
+<li>Data Manager, saved views, tabs</li>
+<li>Smart tools (SAM, GroundingDINO)</li>
+<li>Annotation export, COCO/YOLO/VOC/CoNLL2003</li>
+</ul>
 
                     </main>
 
@@ -797,7 +862,7 @@ client.projects.import_predictions(
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../../part-4-operations/guardrails/guardrails-ai.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../part-4-operations/overview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -811,7 +876,7 @@ client.projects.import_predictions(
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../../part-4-operations/guardrails/guardrails-ai.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../part-4-operations/overview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

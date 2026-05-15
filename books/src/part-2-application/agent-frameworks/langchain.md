@@ -8,7 +8,7 @@
 | Type          | SDK                                                          |
 | Open Source   | Yes                                                          |
 | GitHub        | [langchain-ai/langchain](https://github.com/langchain-ai/langchain) |
-| Stars         | 127162                                                       |
+| Stars         | 136735                                                       |
 | Documentation | [Official Docs](https://docs.langchain.com/)                |
 
 ## Overview
@@ -266,3 +266,77 @@ response = llm.invoke("What's the weather in San Francisco?")
 
 - [1] LangChain Documentation - https://docs.langchain.com/
 - [2] LangChain Python - https://docs.langchain.com/oss/python/langchain/overview
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+langchain, lcel, langchain expression language, chains, agents, retrievers, vector stores, document loaders, output parsers, prompt templates, runnables, chat models, tool calling, rag, retrieval-augmented generation, callbacks, memory, langsmith, langchain-core, langchain-community, provider packages, deep agents, conversation memory, agent executor, structured tools
+
+### Verb-Noun Tasks
+
+- Compose an LLM chain using the pipe operator (LCEL)
+- Build a tool-calling agent with `create_agent()`
+- Wrap a Python function as a tool with the `@tool` decorator
+- Load PDFs, web pages, and CSVs through document loaders
+- Build a RAG pipeline with FAISS or Chroma plus an embeddings model
+- Swap LLM providers (OpenAI, Anthropic, Google) without changing business logic
+- Stream tokens from chains and agents
+- Parse LLM output into Pydantic models with output parsers
+- Attach callback handlers for tracing and token counting
+- Persist agent state across sessions
+- Implement a multi-query or ensemble retriever
+- Enable LangSmith tracing via environment variables
+
+### User Intent Phrases
+
+- "How do I build a chain that goes prompt to model to parser?"
+- "What is LCEL and how do I use the pipe operator?"
+- "How do I add tools to an agent in LangChain?"
+- "How do I load PDFs into a vector store for RAG?"
+- "How do I switch from OpenAI to Anthropic without rewriting my app?"
+- "How do I stream output from a LangChain agent?"
+- "How do I parse LLM output into a Pydantic schema?"
+- "What is the difference between langchain-core and langchain-community?"
+- "How do I monitor my LangChain app in production?"
+- "How do I migrate from legacy chains to LCEL?"
+- "How do I make an agent ask for human approval before a tool call?"
+- "What is the broadest framework for connecting LLMs to databases, APIs, and files?"
+
+### Problem Statements
+
+- Need to compose prompt, model, parser, and retriever steps declaratively without boilerplate
+- Want a single integration ecosystem for vector stores, document loaders, and chat providers
+- Existing app must support multiple LLM providers behind one interface
+- Application needs streaming, batching, and async with minimal code changes
+- Hard to debug what is happening at the LLM API level through multiple abstraction layers
+- Code written against older LangChain versions broke after upgrades
+- Package fragmentation across core, community, and provider packages causes dependency conflicts
+
+### When to Pick This
+
+- Pick this when you need the broadest integration ecosystem (vector stores, document loaders, tool wrappers) across many providers, not just one
+- Pick this over LangGraph when your workflow is mostly linear chains and tool-calling agents and you do not need stateful graph orchestration or checkpoint-based durability
+- Pick this over CrewAI when you do not want a role/goal/backstory abstraction and prefer composable runnables with LCEL
+- Pick this over AutoGen when you do not need a distributed event-driven multi-agent runtime
+- Pick this over Pydantic AI when you need many third-party integrations more than strict end-to-end Pydantic typing
+- Pick this over smolagents when you need a mature ecosystem with hundreds of community connectors instead of a minimal code-first core
+- Pick this over Semantic Kernel when you are Python-first or TypeScript-first and do not require multi-language enterprise SDKs
+- Pick this over ADK when you are not anchored to the Google/Gemini ecosystem and want broader provider neutrality
+
+### Related Terms and Aliases
+
+- LCEL (LangChain Expression Language)
+- Runnables
+- Deep Agents
+- LangGraph (extension for stateful graph orchestration)
+- LangSmith (observability platform)
+- Agent Server (deployment)
+- AgentExecutor
+- VectorStoreRetriever
+- RAG pipeline
+- Tool-augmented LLM
+- Chain composition
+- Provider package (langchain-openai, langchain-anthropic)

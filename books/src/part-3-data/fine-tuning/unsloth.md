@@ -9,7 +9,7 @@
 | Type | SDK |
 | Open Source | yes |
 | GitHub | [unslothai/unsloth](https://github.com/unslothai/unsloth) |
-| Stars | 53240 |
+| Stars | 64243 |
 | Docs | [unsloth.ai/docs](https://unsloth.ai/docs) |
 
 ## Overview
@@ -378,3 +378,70 @@ model = FastVisionModel.get_peft_model(
 - [6] System Requirements - https://unsloth.ai/docs/get-started/fine-tuning-for-beginners/unsloth-requirements
 - [7] Vision Fine-tuning - https://unsloth.ai/docs/basics/vision-fine-tuning
 - [8] Installation - https://unsloth.ai/docs/get-started/install
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Unsloth, FastLanguageModel, Triton kernels, 2x faster training, 70% less VRAM, QLoRA, LoRA, GRPO, RLVR, RLHF, PPO, GSPO, DR-GRPO, GGUF, Dynamic 2.0, Ollama export, llama.cpp, vLLM serving, LoRA hot-swap, Vision Fine-Tuning, FastVisionModel, gradient checkpointing, BitsAndBytes, embedding fine-tuning, TTS fine-tuning, MoE training, 500K context RL, rsLoRA
+
+### Verb-Noun Tasks
+
+- Load a 4-bit model with `FastLanguageModel.from_pretrained` for QLoRA training
+- Apply LoRA adapters with optimized Triton kernels via `get_peft_model`
+- Train with SFTTrainer using 70% less VRAM than standard implementations
+- Run GRPO reinforcement learning with custom reward functions
+- Fine-tune Vision-Language Models with selective vision/language layer control
+- Export trained models to GGUF for Ollama, llama.cpp, and LM Studio
+- Deploy a fine-tuned model via vLLM with LoRA hot-swapping
+- Train on 500K+ context length with Ultra Long Context RL
+- Fine-tune Mixture-of-Experts models 12x faster
+- Quantize models with Dynamic 2.0 per-layer calibration
+- Push fine-tuned models and GGUF artifacts to the Hugging Face Hub
+- Call `for_inference()` for 2x faster generation after training
+
+### User Intent Phrases
+
+- How do I fine-tune Llama 3.1 8B on a single 24GB GPU?
+- What is the fastest way to train a LoRA adapter with minimal VRAM?
+- How do I train a reasoning model with GRPO like DeepSeek-R1?
+- How do I export an Unsloth-trained model to GGUF for Ollama?
+- How do I fine-tune Qwen2-VL or Llama 3.2 Vision on a custom image dataset?
+- How can I run RL fine-tuning on 500K context windows without OOM?
+- How do I serve a fine-tuned model with vLLM and hot-swap LoRA adapters?
+- How do I get 2x faster inference after training without changing my code?
+- What VRAM do I need for QLoRA training of a 70B model?
+- Does Unsloth support AMD or Intel GPUs in addition to NVIDIA?
+
+### Problem Statements
+
+- Standard Hugging Face training pipelines run out of VRAM on consumer GPUs
+- Fine-tuning is too slow on a single GPU for iterative experimentation
+- GRPO and other RL methods require enormous VRAM with Flash Attention 2 alone
+- Exporting a fine-tuned model to a local-inference format (GGUF) is multi-step and error-prone
+- Switching between training and inference modes in PEFT/Transformers requires manual handling
+- Multi-tenant serving needs to swap LoRA adapters without reloading the base model
+- Per-layer quantization (mixing IQ1_S through Q5_1) is impractical to do by hand
+
+### When to Pick This
+
+- Pick this when raw training speed and VRAM efficiency are the top priority — Axolotl wins when YAML-driven config and recipe portability matter more, and PEFT wins when you need adapter-method breadth (DoRA, OFT, LoHa, X-LoRA) inside library code
+- Pick this when you need GRPO, PPO, or GSPO with 90% less VRAM than baseline
+- Pick this when your downstream target is Ollama / llama.cpp / LM Studio (GGUF export)
+- Pick this when you want zero accuracy loss (no approximation, only kernel-level optimization)
+- Pick this when you need 500K+ context length RL training
+- Pick this when LoRA hot-swapping behind vLLM is your serving pattern
+- Pick this when you train Vision, TTS, or embedding models and want a unified API
+
+### Related Terms and Aliases
+
+- unslothai/unsloth
+- FastLanguageModel, FastVisionModel
+- Triton kernel optimization, custom Triton kernels
+- Dynamic 2.0 GGUFs, intelligent per-layer quantization
+- Group Relative Policy Optimization (GRPO), DeepSeek-style RL
+- Ultra Long Context fine-tuning
+- 2x faster training, 70% less VRAM, 90% less VRAM (RL)
+- rsLoRA, rank-stabilized LoRA

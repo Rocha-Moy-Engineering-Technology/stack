@@ -8,7 +8,7 @@
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) |
-| Stars | 44446 |
+| Stars | 51401 |
 | Documentation | [Official Docs](https://docs.crewai.com/) |
 
 ## Overview
@@ -210,3 +210,74 @@ CrewAI has evolved from a simple multi-agent framework to a production-oriented 
 
 - [1] [CrewAI Documentation](https://docs.crewai.com/)
 - [2] [CrewAI Quickstart](https://docs.crewai.com/quickstart)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+crewai, crew, agent role, goal, backstory, task, process, sequential process, hierarchical process, manager agent, flow, role-based agents, yaml configuration, declarative agents, multi-agent collaboration, before_kickoff, after_kickoff, @agent decorator, @task decorator, @crew decorator, @listen, @router, @start, structured outputs, entity memory, knowledge bases, crewai enterprise
+
+### Verb-Noun Tasks
+
+- Define agents with a role, goal, and backstory in YAML
+- Compose tasks with description, expected output, and assigned agent
+- Assemble a crew with sequential or hierarchical process
+- Add a manager agent for hierarchical task delegation
+- Build a stateful resumable Flow with `@start`, `@listen`, `@router`
+- Validate agent output against a Pydantic schema
+- Hook into crew lifecycle with `@before_kickoff` and `@after_kickoff`
+- Equip agents with SerperDevTool, file tools, and code execution
+- Connect a crew to Gmail/Slack/Salesforce triggers via CrewAI Enterprise
+- Wire short-term, long-term, and entity memory into agents
+
+### User Intent Phrases
+
+- "How do I build a multi-agent team with different roles?"
+- "How do I orchestrate a researcher agent and a writer agent in sequence?"
+- "How do I define agents declaratively in YAML?"
+- "How do I make a manager agent delegate to specialists?"
+- "How do I build a content generation pipeline with multiple agents?"
+- "How do I add memory to my CrewAI agents?"
+- "How do I create a resumable workflow with CrewAI Flows?"
+- "How do I trigger a crew from Slack or Gmail?"
+- "How do I assign different LLMs to different agents in the same crew?"
+- "How do I enforce a structured output schema on an agent?"
+- "How do I add guardrails to a production crew?"
+
+### Problem Statements
+
+- Need to decompose a task into specialized agents with distinct roles and responsibilities
+- Want declarative YAML-driven agent and task definitions to avoid hand-wiring orchestration code
+- Hierarchical workflows need a routing manager but introduce extra latency and token cost
+- Multi-agent interactions are hard to debug without crew-level tracing
+- Memory subsystems add overhead for simple stateless flows
+- Enterprise integrations (triggers, RBAC, hosted monitoring) require the paid platform
+- Building a stateful resumable multi-step workflow on top of plain agents is too low-level
+
+### When to Pick This
+
+- Pick this when you want role-based multi-agent teams (role, goal, backstory) and declarative YAML configuration of agents and tasks
+- Pick this over LangChain when team composition and sequential/hierarchical task flow matter more than chain composition
+- Pick this over LangGraph when you prefer declarative role-based abstractions to explicit graph topology
+- Pick this over AutoGen when you want structured sequential/hierarchical processes rather than conversational message-passing patterns
+- Pick this over Pydantic AI when team coordination matters more than single-agent type safety
+- Pick this over smolagents when you need crew-level orchestration, lifecycle hooks, and YAML configs instead of a minimalist core
+- Pick this over Semantic Kernel when role-based crews fit better than .NET-style plugin orchestration
+- Pick this over ADK when you want a Python-only multi-agent framework with simple roles rather than a hierarchical agent tree tied to Google's ecosystem
+
+### Related Terms and Aliases
+
+- Crew (team of agents)
+- Role-based agent design
+- Sequential / hierarchical / hybrid process
+- Manager agent
+- Flow (`@start`, `@listen`, `@router`)
+- ReAct loop (tool use pattern)
+- Entity memory
+- Knowledge base integration
+- CrewAI Enterprise (hosted platform)
+- Lifecycle hooks (`@before_kickoff`, `@after_kickoff`)
+- Multi-agent system
+- Declarative agent configuration

@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Data Labeling |
+| Group | Labeling |
 | Type | UI |
 | Open Source | Yes |
 | GitHub | [https://github.com/HumanSignal/label-studio](https://github.com/HumanSignal/label-studio) |
-| Stars | 26488 |
+| Stars | 27315 |
 | Documentation | [Official Docs](https://labelstud.io/guide/) |
 
 ## Overview
@@ -726,3 +726,70 @@ Label Studio is under active development with frequent releases. Key milestones 
 - [8] [Label Studio API Reference](https://api.labelstud.io/api-reference/)
 - [9] [Label Studio ML Backend Repository](https://github.com/HumanSignal/label-studio-ml-backend)
 - [10] [Label Studio GitHub Repository](https://github.com/HumanSignal/label-studio)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Label Studio, data labeling, data annotation, NER, named entity recognition, image segmentation, bounding boxes, polygon labels, audio transcription, video annotation, ML backend, active learning, pre-annotation, COCO export, YOLO export, Pascal VOC, CoNLL2003, labeling configuration, XML templates, Data Manager, HumanSignal, webhooks, S3 storage, GCS, Azure Blob, presigned URLs, SAM, GroundingDINO, JSON-MIN, Apache 2.0
+
+### Verb-Noun Tasks
+
+- Define a labeling interface with XML control and object tags
+- Annotate images with bounding boxes, polygons, or pixel-level brush masks
+- Run named entity recognition (NER) labeling with word-level granularity
+- Connect an ML backend to generate pre-annotations for tasks
+- Trigger model retraining when an annotation is submitted
+- Sync source data from S3, GCS, or Azure Blob with presigned URLs
+- Export annotations as COCO, YOLO, Pascal VOC, or CoNLL2003
+- Import bulk predictions via the Python SDK or REST API
+- Configure webhooks for ANNOTATION_CREATED and ANNOTATION_UPDATED events
+- Build active learning loops by sorting tasks by model uncertainty
+- Annotate PDFs and scanned documents in the OCR interface
+- Run multi-annotator workflows for inter-annotator agreement
+
+### User Intent Phrases
+
+- How do I set up a web-based tool for labeling images with bounding boxes?
+- How can I pre-annotate NER tasks with a spaCy or HuggingFace model?
+- How do I export Label Studio annotations into COCO format for object detection?
+- How do I sync labeling tasks from an S3 bucket without copying files?
+- What XML configuration creates a sentiment classification annotation interface?
+- How do I trigger model retraining automatically when new annotations are submitted?
+- How can I connect Segment Anything (SAM) for interactive image segmentation?
+- How do I configure JWT authentication and PostgreSQL for production?
+- How do I import predictions in bulk from an existing model?
+- How do I run an active learning loop with Label Studio?
+
+### Problem Statements
+
+- Building a custom annotation UI for every project type wastes engineering time
+- Pre-annotation with an existing model is hard to wire into a manual labeling workflow
+- Annotation format conversion (to COCO, YOLO, Pascal VOC) is error-prone when done by hand
+- Cloud storage data must stay isolated from the labeling server for security
+- SQLite-backed labeling tools crumble under multi-user concurrent writes
+- Active learning requires uncertainty-sorted task queues but most tools don't expose them
+- Multi-modal annotation (text + image + classification) usually needs custom tooling
+
+### When to Pick This
+
+- Pick this when you need a configurable, multi-type (text, image, audio, video, time series, PDF) annotation tool with an open-source core
+- Pick this when an ML backend integration for pre-annotation and active learning is required
+- Pick this when export formats must include COCO, YOLO, Pascal VOC, CoNLL2003, or ASR_MANIFEST out of the box
+- Pick this when you need interactive smart tools like SAM or GroundingDINO for real-time segmentation suggestions
+- Pick this when cloud storage (S3, GCS, Azure) sync with presigned URLs is part of the workflow
+- Pick this when webhooks must drive downstream pipelines on annotation events
+- Pick this when the Community Edition's feature set is sufficient and Enterprise RBAC/audit-log features are not required
+
+### Related Terms and Aliases
+
+- Label Studio Community Edition, Label Studio Enterprise
+- HumanSignal (formerly Heartex)
+- label-studio-sdk (Python), label-studio-ml-backend
+- ML backend, pre-annotation, active learning
+- Labeling configuration (XML), control tags, object tags
+- Data Manager, saved views, tabs
+- Smart tools (SAM, GroundingDINO)
+- Annotation export, COCO/YOLO/VOC/CoNLL2003

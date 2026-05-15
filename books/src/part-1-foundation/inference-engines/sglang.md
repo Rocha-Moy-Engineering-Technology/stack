@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Inference Serving |
+| Group | Inference Engines |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/sgl-project/sglang](https://github.com/sgl-project/sglang) |
-| Stars | 23652 |
+| Stars | 27804 |
 | Documentation | [Official Docs](https://docs.sglang.io/) |
 
 ## Overview
@@ -255,3 +255,66 @@ curl -X POST http://localhost:30000/v1/completions \
 
 - [1] SGLang Documentation - <https://docs.sglang.io/>
 - [2] SGLang GitHub Repository - <https://github.com/sgl-project/sglang>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+SGLang, RadixAttention, radix tree KV cache, prefix caching, zero-overhead scheduler, prefill-decode disaggregation, chunked prefill, compressed FSM, structured outputs, speculative decoding, FlashInfer, torch.compile, tensor parallelism, expert parallelism, multi-LoRA, FP4, FP8, AWQ, GPTQ, DeepSeek MLA, RL rollout backend, verl, AReaL, slime, OpenAI-compatible server, MoE serving
+
+### Verb-Noun Tasks
+
+- Launch an SGLang server with `python -m sglang.launch_server`
+- Enable RadixAttention to automatically cache shared prefixes
+- Generate JSON with compressed-FSM constrained decoding at 3x speed
+- Distribute a DeepSeek MoE model with expert parallelism across GPUs
+- Disaggregate prefill and decode stages for long-context workloads
+- Serve as the rollout backend for verl, AReaL, or slime RL training
+- Activate torch.compile for ~1.5x execution speedup
+- Run speculative decoding with `--speculative-algorithm`
+- Batch multiple LoRA adapters concurrently
+- Process long prompts in chunks via `--chunked-prefill-size`
+- Run diffusion model inference (WAN video, Qwen image)
+
+### User Intent Phrases
+
+- "How do I get faster JSON-schema output from open-weight LLMs?"
+- "What's the best inference engine for reinforcement learning rollouts?"
+- "How do I cache shared system prompts across many requests?"
+- "I need to serve DeepSeek-V3 across 96+ GPUs"
+- "How do I disaggregate prefill and decode for long context?"
+- "What inference engine has the fastest structured-output decoding?"
+- "How do I run xAI/AMD/NVIDIA-grade LLM serving on my cluster?"
+- "I want torch.compile speedups for production LLM serving"
+- "How do I do multi-LoRA batching with prefix caching together?"
+
+### Problem Statements
+
+- JSON-mode decoding is slow because every token gets schema-checked one at a time
+- Prefix sharing across requests is left on the table by naive batched inference
+- Long-context prefill blocks the GPU and stalls decode for other requests
+- RL post-training needs fast inference rollouts, not just one-shot serving
+- MoE expert routing imbalances utilization without expert parallelism
+- Default CPU scheduling stalls the GPU between micro-batches
+
+### When to Pick This
+
+- Pick this when structured-output (JSON-schema/regex/CFG) throughput matters most
+- Pick this over vLLM when RadixAttention's prefix caching dominates the workload
+- Pick this for RL post-training rollout serving (verl, AReaL, slime, Tunix, Miles)
+- Pick this when prefill-decode disaggregation unlocks long-context throughput
+- Pick this for DeepSeek-style MoE models needing expert parallelism
+- Pick this over Triton Inference Server when LLM-specific optimizations dominate
+- Skip this when broadest hardware/model coverage matters more — use vLLM instead
+
+### Related Terms and Aliases
+
+- SGLang project, sgl-project
+- "Structured generation language", "structured outputs engine"
+- Radix tree caching, prefix tree caching
+- Compressed finite state machine decoding
+- MLA, Multi-head Latent Attention (DeepSeek)
+- Alternative to vLLM, TGI, TensorRT-LLM, lmdeploy
+- RL inference backend, rollout server

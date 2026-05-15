@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Guardrails &amp; Safety</td></tr>
+<tr><td>Group</td><td>Guardrails</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/NVIDIA/NeMo-Guardrails">https://github.com/NVIDIA/NeMo-Guardrails</a></td></tr>
-<tr><td>Stars</td><td>5683</td></tr>
+<tr><td>Stars</td><td>6123</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.nvidia.com/nemo-guardrails/index.html">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -698,6 +698,102 @@ flow main
 <li>[3] Rebedea, T., et al. “NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails.” EMNLP 2023 System Demonstrations. https://aclanthology.org/2023.emnlp-demo.40/</li>
 <li>[4] Colang Language Reference - https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/docs/colang-2</li>
 <li>[5] LangChain RunnableRails Integration - https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/docs/user-guides/langchain/runnable-rails.md</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>NeMo Guardrails</li>
+<li>NVIDIA</li>
+<li>Colang</li>
+<li>programmable rails</li>
+<li>input rails</li>
+<li>output rails</li>
+<li>dialog rails</li>
+<li>retrieval rails</li>
+<li>execution rails</li>
+<li>jailbreak detection</li>
+<li>YARA pattern</li>
+<li>Presidio PII</li>
+<li>fact checking</li>
+<li>hallucination detection</li>
+<li>topic restriction</li>
+<li>self check facts</li>
+<li>RunnableRails</li>
+<li>LangChain integration</li>
+<li>FastAPI server</li>
+<li>Colang 1.0</li>
+<li>Colang 2.0</li>
+<li>LLMRails</li>
+<li>RailsConfig</li>
+<li>GenerationOptions</li>
+<li>conversational AI safety</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define a conversational flow in Colang</li>
+<li>Reject user inputs that attempt prompt injection</li>
+<li>Restrict the bot to approved topics</li>
+<li>Mask PII in user input, output, and retrieved chunks</li>
+<li>Fact-check generated answers against retrieved context</li>
+<li>Wrap a LangChain chain with RunnableRails</li>
+<li>Launch the FastAPI guardrails server</li>
+<li>Register a custom Python action for a flow</li>
+<li>Toggle specific rails per request with GenerationOptions</li>
+<li>Detect jailbreak attempts via YARA patterns</li>
+<li>Compose a multi-stage rail pipeline for a chatbot</li>
+<li>Stream guardrailed responses synchronously and asynchronously</li>
+<li>Evaluate guardrail effectiveness with the CLI evaluator</li>
+<li>Enforce role-based access through custom actions</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I build a conversational safety layer with NVIDIA’s guardrails toolkit?</li>
+<li>I want to define dialogue rules in a DSL instead of code.</li>
+<li>How can I block off-topic questions in a customer service bot?</li>
+<li>Show me a LangChain chain wrapped with NeMo Guardrails.</li>
+<li>How do I add jailbreak detection to my LLM pipeline?</li>
+<li>Mask Social Security Numbers in both input and output messages.</li>
+<li>I need self-check facts and hallucination detection on bot responses.</li>
+<li>How do I run NeMo Guardrails as an OpenAI-compatible HTTP server?</li>
+<li>Can I selectively disable some rails for a specific request?</li>
+<li>What’s the difference between Colang 1.0 and Colang 2.0?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Chatbot drifts into topics outside its approved scope.</li>
+<li>Prompt injection attempts bypass system instructions.</li>
+<li>Bot reveals PII in responses or in retrieved RAG chunks.</li>
+<li>Generated answers hallucinate facts not present in the knowledge base.</li>
+<li>No standardized way to express conversational guardrails declaratively.</li>
+<li>Each rail adds latency and extra LLM calls in long pipelines.</li>
+<li>Composing safety checks across input, retrieval, and output stages is ad hoc.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when conversational dialogue safety with declarative flows is the primary requirement.</li>
+<li>Pick this over Guardrails AI when you need Colang-based intent/flow modeling rather than Pydantic validator pipelines.</li>
+<li>Pick this over Lakera when you want an open-source, self-hosted, NVIDIA-backed framework rather than a paid API.</li>
+<li>Pick this over OpenAI Moderation when you need topic restriction, fact-checking, RAG retrieval rails, and dialog management beyond harm classification.</li>
+<li>Pick this when LangChain integration via a Runnable is a hard requirement.</li>
+<li>Pick this when you need fine-grained, per-stage rails covering input, dialog, retrieval, execution, and output.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>NVIDIA NeMo Guardrails</li>
+<li>Colang DSL</li>
+<li>conversational guardrails</li>
+<li>programmable safety rails</li>
+<li>dialogue rail framework</li>
+<li>LLM dialog management</li>
+<li>RAG safety filtering</li>
+<li>self-check rails</li>
+<li>input/output rails</li>
+<li>Microsoft Presidio integration</li>
+<li>LangChain RunnableRails</li>
+<li>topic adherence</li>
 </ul>
 
                     </main>

@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Guardrails & Safety |
+| Group | Guardrails |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/NVIDIA/NeMo-Guardrails](https://github.com/NVIDIA/NeMo-Guardrails) |
-| Stars | 5683 |
+| Stars | 6123 |
 | Documentation | [Official Docs](https://docs.nvidia.com/nemo-guardrails/index.html) |
 
 ## Overview
@@ -640,3 +640,99 @@ flow main
 - [3] Rebedea, T., et al. "NeMo Guardrails: A Toolkit for Controllable and Safe LLM Applications with Programmable Rails." EMNLP 2023 System Demonstrations. https://aclanthology.org/2023.emnlp-demo.40/
 - [4] Colang Language Reference - https://github.com/NVIDIA/NeMo-Guardrails/tree/develop/docs/colang-2
 - [5] LangChain RunnableRails Integration - https://github.com/NVIDIA/NeMo-Guardrails/blob/develop/docs/user-guides/langchain/runnable-rails.md
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- NeMo Guardrails
+- NVIDIA
+- Colang
+- programmable rails
+- input rails
+- output rails
+- dialog rails
+- retrieval rails
+- execution rails
+- jailbreak detection
+- YARA pattern
+- Presidio PII
+- fact checking
+- hallucination detection
+- topic restriction
+- self check facts
+- RunnableRails
+- LangChain integration
+- FastAPI server
+- Colang 1.0
+- Colang 2.0
+- LLMRails
+- RailsConfig
+- GenerationOptions
+- conversational AI safety
+
+### Verb-Noun Tasks
+
+- Define a conversational flow in Colang
+- Reject user inputs that attempt prompt injection
+- Restrict the bot to approved topics
+- Mask PII in user input, output, and retrieved chunks
+- Fact-check generated answers against retrieved context
+- Wrap a LangChain chain with RunnableRails
+- Launch the FastAPI guardrails server
+- Register a custom Python action for a flow
+- Toggle specific rails per request with GenerationOptions
+- Detect jailbreak attempts via YARA patterns
+- Compose a multi-stage rail pipeline for a chatbot
+- Stream guardrailed responses synchronously and asynchronously
+- Evaluate guardrail effectiveness with the CLI evaluator
+- Enforce role-based access through custom actions
+
+### User Intent Phrases
+
+- How do I build a conversational safety layer with NVIDIA's guardrails toolkit?
+- I want to define dialogue rules in a DSL instead of code.
+- How can I block off-topic questions in a customer service bot?
+- Show me a LangChain chain wrapped with NeMo Guardrails.
+- How do I add jailbreak detection to my LLM pipeline?
+- Mask Social Security Numbers in both input and output messages.
+- I need self-check facts and hallucination detection on bot responses.
+- How do I run NeMo Guardrails as an OpenAI-compatible HTTP server?
+- Can I selectively disable some rails for a specific request?
+- What's the difference between Colang 1.0 and Colang 2.0?
+
+### Problem Statements
+
+- Chatbot drifts into topics outside its approved scope.
+- Prompt injection attempts bypass system instructions.
+- Bot reveals PII in responses or in retrieved RAG chunks.
+- Generated answers hallucinate facts not present in the knowledge base.
+- No standardized way to express conversational guardrails declaratively.
+- Each rail adds latency and extra LLM calls in long pipelines.
+- Composing safety checks across input, retrieval, and output stages is ad hoc.
+
+### When to Pick This
+
+- Pick this when conversational dialogue safety with declarative flows is the primary requirement.
+- Pick this over Guardrails AI when you need Colang-based intent/flow modeling rather than Pydantic validator pipelines.
+- Pick this over Lakera when you want an open-source, self-hosted, NVIDIA-backed framework rather than a paid API.
+- Pick this over OpenAI Moderation when you need topic restriction, fact-checking, RAG retrieval rails, and dialog management beyond harm classification.
+- Pick this when LangChain integration via a Runnable is a hard requirement.
+- Pick this when you need fine-grained, per-stage rails covering input, dialog, retrieval, execution, and output.
+
+### Related Terms and Aliases
+
+- NVIDIA NeMo Guardrails
+- Colang DSL
+- conversational guardrails
+- programmable safety rails
+- dialogue rail framework
+- LLM dialog management
+- RAG safety filtering
+- self-check rails
+- input/output rails
+- Microsoft Presidio integration
+- LangChain RunnableRails
+- topic adherence

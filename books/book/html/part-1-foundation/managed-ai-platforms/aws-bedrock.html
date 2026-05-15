@@ -1,0 +1,574 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>AWS Bedrock - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-1-foundation/managed-ai-platforms/aws-bedrock.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="aws-bedrock"><a class="header" href="#aws-bedrock">AWS Bedrock</a></h1>
+<blockquote>
+<p>AWS managed service for foundation model access from multiple vendors via single API</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Managed AI Platforms</td></tr>
+<tr><td>Type</td><td>API/SDK/Infra</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Documentation</td><td><a href="https://docs.aws.amazon.com/bedrock/">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Amazon Bedrock is a fully managed service that provides secure, enterprise-grade access to over 100 foundation models from leading AI companies through a single API. It enables organizations to build and scale generative AI applications without managing infrastructure, offering model inference, customization, retrieval-augmented generation (RAG), agentic workflows, and safety guardrails as integrated capabilities.</p>
+<p>Bedrock abstracts away the complexity of hosting and serving large language models. Users select from a catalog of models spanning multiple providers – including Amazon, Anthropic, OpenAI, DeepSeek, Moonshot AI, MiniMax, GLM, Qwen, and NVIDIA – and interact with them through unified APIs. The service handles provisioning, scaling, and security, allowing teams to focus on application logic rather than infrastructure management.</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<ul>
+<li><strong>Foundation Models</strong>: Pre-trained large language models available through the Bedrock model catalog, spanning text generation, code generation, and multimodal tasks.</li>
+<li><strong>Model Inference</strong>: Submitting prompts to a selected model and receiving generated responses via API calls.</li>
+<li><strong>Model Customization</strong>: Fine-tuning foundation models on proprietary data to improve performance for domain-specific tasks.</li>
+<li><strong>Knowledge Bases</strong>: Managed RAG infrastructure that integrates proprietary data sources so models can ground responses in organizational knowledge.</li>
+<li><strong>Agents</strong>: Agentic application framework enabling models to plan, invoke tools, and execute multi-step workflows autonomously.</li>
+<li><strong>Guardrails</strong>: Configurable safety and compliance controls that filter model inputs and outputs according to organizational policies.</li>
+<li><strong>Prompt Caching</strong>: Server-side caching mechanism (1-hour duration for Claude models) that reduces latency and cost for repeated or similar prompts.</li>
+</ul>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Bedrock operates as a managed API layer between client applications and foundation model infrastructure. The architecture consists of three tiers:</p>
+<ol>
+<li><strong>Client Tier</strong>: Applications interact with Bedrock through the <code>bedrock-runtime</code> API endpoint using boto3, the OpenAI-compatible endpoint, or the AWS CLI.</li>
+<li><strong>Service Tier</strong>: Bedrock routes requests to the appropriate model provider, applies guardrails, manages prompt caching, and orchestrates agent workflows.</li>
+<li><strong>Model Tier</strong>: Foundation models from multiple providers run on AWS-managed GPU infrastructure, isolated per customer with no cross-tenant data exposure.</li>
+</ol>
+<p>All data remains within the customer’s AWS account and selected region. Model providers do not receive access to customer data, and customer inputs are not used to train or improve third-party models.</p>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<ul>
+<li><strong>100+ Foundation Models</strong>: Single API access to models from Amazon (Nova 2 Pro), Anthropic (Claude Opus 4.6), OpenAI (GPT-OSS-20B), DeepSeek (V3.2), Moonshot AI (Kimi K2.5), MiniMax (M2.1), GLM (4.7, 4.7 Flash), Qwen (3 Coder Next), and NVIDIA (Nemotron 3 Nano).</li>
+<li><strong>Multiple API Formats</strong>: Converse API (recommended), Invoke API (Bedrock-native), Chat Completions API (OpenAI-compatible), and Responses API (OpenAI-compatible).</li>
+<li><strong>Knowledge Bases for RAG</strong>: Managed vector storage and retrieval pipeline for grounding model responses in proprietary documents.</li>
+<li><strong>Agentic Applications</strong>: Built-in agent framework with tool calling, multi-step planning, and external system integration.</li>
+<li><strong>Guardrails</strong>: Content filtering, topic restrictions, personally identifiable information (PII) redaction, and custom policy enforcement.</li>
+<li><strong>Server-Side Tools</strong>: Tool execution via OpenAI-compatible endpoints, reducing client-side orchestration complexity.</li>
+<li><strong>Prompt Caching</strong>: 1-hour server-side cache for Claude models, lowering latency and cost on repeated prompt patterns.</li>
+<li><strong>NVIDIA Nemotron 3 Nano</strong>: 256k context window with native tool calling support.</li>
+<li><strong>Open-Weight Models</strong>: Six open-weight models available (DeepSeek V3.2, MiniMax M2.1, GLM 4.7, GLM 4.7 Flash, Kimi K2.5, Qwen3 Coder Next).</li>
+<li><strong>Model Customization</strong>: Fine-tuning and continued pre-training on proprietary datasets.</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Enterprise Chat and Assistants</strong>: Deploy conversational AI powered by best-in-class models with organizational data grounding through Knowledge Bases.</li>
+<li><strong>Code Generation and Review</strong>: Use code-specialized models (Qwen3 Coder Next, Claude Opus 4.6) for automated code generation, explanation, and review.</li>
+<li><strong>Document Processing</strong>: Extract, summarize, and transform information from large document corpora using long-context models.</li>
+<li><strong>Agentic Workflows</strong>: Build autonomous agents that plan multi-step tasks, invoke external APIs, query databases, and produce structured outputs.</li>
+<li><strong>Content Moderation</strong>: Apply Guardrails to filter harmful or non-compliant content in user-facing applications.</li>
+<li><strong>RAG Applications</strong>: Combine Knowledge Bases with foundation models to answer questions grounded in proprietary enterprise data.</li>
+</ul>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="converse-api-recommended"><a class="header" href="#converse-api-recommended">Converse API (Recommended)</a></h3>
+<p>The Converse API provides a unified interface across all Bedrock models with consistent request and response formats.</p>
+<pre><code class="language-python">import boto3
+
+client = boto3.client('bedrock-runtime', region_name='us-east-1')
+response = client.converse(
+    modelId='anthropic.claude-opus-4-6-v1',
+    messages=[
+        {
+            'role': 'user',
+            'content': [{'text': 'Hello'}]
+        }
+    ]
+)
+print(response['output']['message']['content'][0]['text'])
+</code></pre>
+<h3 id="invoke-api-bedrock-native"><a class="header" href="#invoke-api-bedrock-native">Invoke API (Bedrock-Native)</a></h3>
+<p>The Invoke API provides direct model invocation with provider-specific request body formats.</p>
+<pre><code class="language-python">import json
+import boto3
+
+client = boto3.client('bedrock-runtime', region_name='us-east-1')
+response = client.invoke_model(
+    modelId='anthropic.claude-opus-4-6-v1',
+    body=json.dumps({
+        'anthropic_version': 'bedrock-2023-05-31',
+        'messages': [{'role': 'user', 'content': 'Hello'}],
+        'max_tokens': 1024
+    })
+)
+result = json.loads(response['body'].read())
+print(result['content'][0]['text'])
+</code></pre>
+<h3 id="chat-completions-api-openai-compatible"><a class="header" href="#chat-completions-api-openai-compatible">Chat Completions API (OpenAI-Compatible)</a></h3>
+<p>The OpenAI-compatible endpoint allows existing OpenAI SDK integrations to target Bedrock models with minimal code changes.</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI()
+response = client.chat.completions.create(
+    model="openai.gpt-oss-120b",
+    messages=[{"role": "user", "content": "Hello"}]
+)
+print(response.choices[0].message.content)
+</code></pre>
+<h3 id="responses-api-openai-compatible"><a class="header" href="#responses-api-openai-compatible">Responses API (OpenAI-Compatible)</a></h3>
+<p>The Responses API provides an OpenAI-compatible endpoint supporting server-side tool execution and structured responses.</p>
+<h2 id="configuration-and-customization"><a class="header" href="#configuration-and-customization">Configuration and Customization</a></h2>
+<h3 id="iam-permissions"><a class="header" href="#iam-permissions">IAM Permissions</a></h3>
+<p>Bedrock requires IAM policies granting access to specific actions and model resources:</p>
+<pre><code class="language-json">{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:Converse",
+                "bedrock:ListFoundationModels"
+            ],
+            "Resource": "arn:aws:bedrock:us-east-1::foundation-model/*"
+        }
+    ]
+}
+</code></pre>
+<h3 id="region-selection"><a class="header" href="#region-selection">Region Selection</a></h3>
+<p>Bedrock availability and model catalogs vary by AWS region. US East (N. Virginia, <code>us-east-1</code>) and US West (Oregon, <code>us-west-2</code>) offer the broadest model selection.</p>
+<h3 id="model-access"><a class="header" href="#model-access">Model Access</a></h3>
+<p>Foundation models must be explicitly enabled in the Bedrock console before they can be invoked via API. Navigate to <strong>Model access</strong> in the Bedrock console and request access to desired models.</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="direct-api-integration"><a class="header" href="#direct-api-integration">Direct API Integration</a></h3>
+<p>The simplest pattern: application code calls Bedrock APIs directly using boto3 or the OpenAI-compatible endpoint.</p>
+<pre><code class="language-python">import boto3
+
+client = boto3.client('bedrock-runtime', region_name='us-east-1')
+response = client.converse(
+    modelId='amazon.nova-2-pro-v1',
+    messages=[{'role': 'user', 'content': [{'text': 'Summarize this document.'}]}]
+)
+</code></pre>
+<h3 id="rag-with-knowledge-bases"><a class="header" href="#rag-with-knowledge-bases">RAG with Knowledge Bases</a></h3>
+<p>Combine document ingestion, vector search, and model inference through Bedrock Knowledge Bases:</p>
+<pre><code class="language-python">import boto3
+
+agent_client = boto3.client('bedrock-agent-runtime', region_name='us-east-1')
+response = agent_client.retrieve_and_generate(
+    input={'text': 'What is our refund policy?'},
+    retrieveAndGenerateConfiguration={
+        'type': 'KNOWLEDGE_BASE',
+        'knowledgeBaseConfiguration': {
+            'knowledgeBaseId': 'YOUR_KB_ID',
+            'modelArn': 'arn:aws:bedrock:us-east-1::foundation-model/anthropic.claude-opus-4-6-v1'
+        }
+    }
+)
+</code></pre>
+<h3 id="openai-sdk-migration"><a class="header" href="#openai-sdk-migration">OpenAI SDK Migration</a></h3>
+<p>Existing applications using the OpenAI SDK can target Bedrock by configuring the base URL and authentication:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI(
+    base_url="https://bedrock-runtime.us-east-1.amazonaws.com/openai/v1",
+)
+</code></pre>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="multi-turn-conversation"><a class="header" href="#multi-turn-conversation">Multi-Turn Conversation</a></h3>
+<pre><code class="language-python">import boto3
+
+client = boto3.client('bedrock-runtime', region_name='us-east-1')
+
+messages = []
+messages.append({'role': 'user', 'content': [{'text': 'What is machine learning?'}]})
+
+response = client.converse(
+    modelId='anthropic.claude-opus-4-6-v1',
+    messages=messages
+)
+
+assistant_message = response['output']['message']
+messages.append(assistant_message)
+
+messages.append({'role': 'user', 'content': [{'text': 'Give me a concrete example.'}]})
+
+response = client.converse(
+    modelId='anthropic.claude-opus-4-6-v1',
+    messages=messages
+)
+print(response['output']['message']['content'][0]['text'])
+</code></pre>
+<h3 id="streaming-response"><a class="header" href="#streaming-response">Streaming Response</a></h3>
+<pre><code class="language-python">import boto3
+
+client = boto3.client('bedrock-runtime', region_name='us-east-1')
+response = client.converse_stream(
+    modelId='anthropic.claude-opus-4-6-v1',
+    messages=[{'role': 'user', 'content': [{'text': 'Write a short essay on AI safety.'}]}]
+)
+
+for event in response['stream']:
+    if 'contentBlockDelta' in event:
+        print(event['contentBlockDelta']['delta']['text'], end='')
+</code></pre>
+<h3 id="system-prompt-with-temperature"><a class="header" href="#system-prompt-with-temperature">System Prompt with Temperature</a></h3>
+<pre><code class="language-python">import boto3
+
+client = boto3.client('bedrock-runtime', region_name='us-east-1')
+response = client.converse(
+    modelId='anthropic.claude-opus-4-6-v1',
+    system=[{'text': 'You are a helpful coding assistant. Respond with code examples.'}],
+    messages=[{'role': 'user', 'content': [{'text': 'Write a Python function to parse CSV files.'}]}],
+    inferenceConfig={'temperature': 0.2, 'maxTokens': 2048}
+)
+print(response['output']['message']['content'][0]['text'])
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<ul>
+<li><strong>Regional Availability</strong>: Not all models are available in every AWS region. Model catalogs vary by region.</li>
+<li><strong>Model Access Approval</strong>: Foundation models require explicit access requests before use; approval is not instant for all models.</li>
+<li><strong>Vendor Lock-In</strong>: While the OpenAI-compatible API reduces switching cost, Knowledge Bases, Agents, and Guardrails are AWS-specific services.</li>
+<li><strong>Prompt Caching Scope</strong>: 1-hour caching is currently limited to Claude models; other providers may have different or no caching behavior.</li>
+<li><strong>Rate Limits</strong>: Throughput quotas are per-account and per-model; high-volume applications may require provisioned throughput.</li>
+<li><strong>Customization Constraints</strong>: Fine-tuning is available only for a subset of models, not the full catalog.</li>
+<li><strong>Closed Source</strong>: The service itself is proprietary; no self-hosting option exists.</li>
+</ul>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>2025 Q4</strong>: Added six open-weight models (DeepSeek V3.2, MiniMax M2.1, GLM 4.7, GLM 4.7 Flash, Kimi K2.5, Qwen3 Coder Next).</li>
+<li><strong>2025 Q3</strong>: NVIDIA Nemotron 3 Nano added with 256k context and native tool calling.</li>
+<li><strong>2025 Q2</strong>: OpenAI-compatible Chat Completions and Responses APIs launched.</li>
+<li><strong>2025 Q1</strong>: Amazon Nova 2 Pro model family released.</li>
+<li><strong>2024</strong>: Guardrails general availability, Knowledge Bases general availability, Agents general availability, prompt caching for Claude models.</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] AWS Bedrock Documentation - https://docs.aws.amazon.com/bedrock/</li>
+<li>[2] AWS Bedrock User Guide - https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>aws bedrock</li>
+<li>amazon bedrock</li>
+<li>bedrock-runtime</li>
+<li>foundation models</li>
+<li>model catalog</li>
+<li>converse api</li>
+<li>invoke_model</li>
+<li>chat completions api</li>
+<li>responses api</li>
+<li>knowledge bases</li>
+<li>bedrock agents</li>
+<li>guardrails</li>
+<li>prompt caching</li>
+<li>claude on bedrock</li>
+<li>amazon nova</li>
+<li>deepseek on bedrock</li>
+<li>nemotron</li>
+<li>kimi on bedrock</li>
+<li>glm on bedrock</li>
+<li>qwen on bedrock</li>
+<li>minimax on bedrock</li>
+<li>bedrock fine-tuning</li>
+<li>provisioned throughput</li>
+<li>iam bedrock policy</li>
+<li>region us-east-1</li>
+<li>bedrock-agent-runtime</li>
+<li>retrieve_and_generate</li>
+<li>open-weight models on aws</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Call <code>converse()</code> to chat across multiple model providers</li>
+<li>Use <code>invoke_model</code> for provider-native request bodies</li>
+<li>Migrate an OpenAI SDK app to Bedrock by swapping the base URL</li>
+<li>Stream responses with <code>converse_stream</code></li>
+<li>Build a RAG pipeline using Bedrock Knowledge Bases</li>
+<li>Wire up multi-step Bedrock Agents with tool calling</li>
+<li>Apply Guardrails to filter inputs and outputs</li>
+<li>Enable prompt caching for repeated Claude prompt prefixes</li>
+<li>Request model access in the Bedrock console</li>
+<li>Fine-tune a foundation model on proprietary data</li>
+<li>Configure IAM policies for <code>bedrock:InvokeModel</code> and <code>bedrock:Converse</code></li>
+<li>Run <code>retrieve_and_generate</code> for grounded RAG answers</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I call Claude or DeepSeek through AWS?</li>
+<li>I want one API for 100+ foundation models without managing GPUs.</li>
+<li>How do I build RAG on AWS with managed vector storage?</li>
+<li>How do I configure content filters on LLM inputs and outputs?</li>
+<li>How do I fine-tune a foundation model on private data within my AWS account?</li>
+<li>How do I get prompt caching with Claude on AWS?</li>
+<li>How do I migrate from the OpenAI SDK to Bedrock with minimal code changes?</li>
+<li>How do I build a multi-step agent on AWS that calls my internal APIs?</li>
+<li>How do I grant IAM access to specific Bedrock models?</li>
+<li>Where do I request model access for Anthropic on Bedrock?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Our data, identity, and billing are on AWS and we need LLM access without leaving the account boundary.</li>
+<li>We need regulated workloads where customer data never leaves our AWS region.</li>
+<li>We need managed RAG with no operational vector-database work.</li>
+<li>We want a unified API surface across providers without managing keys per vendor.</li>
+<li>We need content moderation as a built-in product, not a third-party integration.</li>
+<li>We need provisioned throughput for predictable inference latency at scale.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when your data, identity, and billing are already on AWS (vs Vertex AI when you are on GCP).</li>
+<li>Pick this when you need managed Knowledge Bases and Agents as first-class AWS services (vs assembling RAG yourself on Modal/RunPod).</li>
+<li>Pick this when Guardrails, PII redaction, and topic restriction must run inside the same managed surface.</li>
+<li>Pick this when access to Anthropic Claude alongside Amazon Nova, DeepSeek, Kimi, GLM, MiniMax, Qwen, and Nemotron through one API matters.</li>
+<li>Pick this when an OpenAI-compatible endpoint reduces migration cost from existing OpenAI apps.</li>
+<li>Pick this when provisioned throughput and per-account model isolation are required for compliance.</li>
+<li>Pick this when fine-tuning on a subset of models inside the same AWS account is part of the workflow.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>aws gen ai</li>
+<li>managed foundation models</li>
+<li>aws llm api</li>
+<li>bedrock knowledge base</li>
+<li>bedrock guardrails</li>
+<li>bedrock agents</li>
+<li>aws ai platform</li>
+<li>enterprise llm gateway aws</li>
+<li>amazon nova</li>
+<li>aws prompt caching</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-1-foundation/managed-ai-platforms/vertex-ai.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-2-application/overview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-1-foundation/managed-ai-platforms/vertex-ai.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-2-application/overview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

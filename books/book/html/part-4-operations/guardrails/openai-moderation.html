@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,7 +190,7 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Guardrails &amp; Safety</td></tr>
+<tr><td>Group</td><td>Guardrails</td></tr>
 <tr><td>Type</td><td>API</td></tr>
 <tr><td>Open Source</td><td>No</td></tr>
 <tr><td>GitHub</td><td>N/A</td></tr>
@@ -652,6 +652,97 @@ async function moderationMiddleware(req, res, next) {
 <h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
 <ul>
 <li>[1] Moderation Guide - <a href="https://developers.openai.com/api/docs/guides/moderation">https://developers.openai.com/api/docs/guides/moderation</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>OpenAI Moderation</li>
+<li>omni-moderation-latest</li>
+<li>text-moderation-latest</li>
+<li>content moderation API</li>
+<li>harm categories</li>
+<li>harassment</li>
+<li>hate</li>
+<li>self-harm</li>
+<li>sexual</li>
+<li>violence</li>
+<li>illicit</li>
+<li>multimodal moderation</li>
+<li>image moderation</li>
+<li>category scores</li>
+<li>flagged</li>
+<li>free API</li>
+<li>category_applied_input_types</li>
+<li>base64 image</li>
+<li>threshold tuning</li>
+<li>13 categories</li>
+<li>moderation endpoint</li>
+<li>safety classifier</li>
+<li>content safety filter</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Classify user-generated text for harmful content</li>
+<li>Moderate model-generated output before delivery</li>
+<li>Screen images via URL or base64 data URI</li>
+<li>Combine text and image in a single moderation request</li>
+<li>Tune custom thresholds per category using category_scores</li>
+<li>Pin a dated moderation snapshot for stable scores</li>
+<li>Batch-moderate a list of messages</li>
+<li>Add a moderation middleware in an Express server</li>
+<li>Route flagged content to a human review queue</li>
+<li>Use moderation as a layer in a multi-guardrail pipeline</li>
+<li>Detect sexual/minors content in user text</li>
+<li>Distinguish text-only versus image-applicable categories</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I check if user content violates OpenAI’s policy?</li>
+<li>I need a free safety classifier for chat messages.</li>
+<li>How do I moderate images for violence or sexual content?</li>
+<li>Show me OpenAI’s harassment and self-harm classifier.</li>
+<li>Can I set custom thresholds per harm category?</li>
+<li>How do I combine OpenAI Moderation with Guardrails AI or NeMo Guardrails?</li>
+<li>Pre-screen user input before sending to gpt-4o.</li>
+<li>Post-screen the LLM response before showing it to the user.</li>
+<li>What categories does the omni moderation model cover?</li>
+<li>How do I send a base64-encoded image to the moderation endpoint?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>User-generated content includes hate, harassment, or self-harm.</li>
+<li>Model outputs occasionally produce violent or sexual content.</li>
+<li>No free, simple safety classifier for chat applications.</li>
+<li>Need image safety screening, not just text classification.</li>
+<li>Pass/fail moderation is too coarse for nuanced platform policies.</li>
+<li>Moderation scores shift when model snapshots update.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want a free, focused harm-category classifier for text and images.</li>
+<li>Pick this over Guardrails AI when all you need is harm classification, not structured-output enforcement or re-ask loops.</li>
+<li>Pick this over NeMo Guardrails when you do not need Colang flows, RAG retrieval rails, or dialog management.</li>
+<li>Pick this over Lakera when prompt-injection defense, PII detection, and provider-agnostic screening are not required and cost is a constraint.</li>
+<li>Pick this as one layer in a defense-in-depth stack alongside other guardrails.</li>
+<li>Pick this when image moderation via the same endpoint is a hard requirement.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>OpenAI moderation endpoint</li>
+<li>/v1/moderations</li>
+<li>omni-moderation</li>
+<li>text-moderation-007</li>
+<li>harm classification API</li>
+<li>content policy filter</li>
+<li>safety classifier</li>
+<li>image content moderation</li>
+<li>multimodal safety</li>
+<li>CSAM detection (sexual/minors)</li>
+<li>harassment classifier</li>
+<li>free content safety API</li>
 </ul>
 
                     </main>

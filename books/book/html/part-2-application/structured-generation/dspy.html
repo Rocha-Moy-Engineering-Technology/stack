@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/stanfordnlp/dspy">stanfordnlp/dspy</a></td></tr>
-<tr><td>Stars</td><td>32,331</td></tr>
+<tr><td>Stars</td><td>34420</td></tr>
 <tr><td>Docs</td><td><a href="https://dspy.ai/">dspy.ai</a></td></tr>
 <tr><td>License</td><td>MIT</td></tr>
 </tbody>
@@ -783,12 +783,108 @@ print(f"Score: {result.score}")
 <li>[21] <a href="https://dspy.ai/tutorials/async/">DSPy Async</a></li>
 <li>[22] <a href="https://dspy.ai/api/primitives/Example/">DSPy Example API</a></li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>DSPy</li>
+<li>Stanford NLP</li>
+<li>programming not prompting</li>
+<li>declarative LM programming</li>
+<li>signatures</li>
+<li>modules</li>
+<li>Predict</li>
+<li>ChainOfThought</li>
+<li>ReAct</li>
+<li>CodeAct</li>
+<li>ProgramOfThought</li>
+<li>BestOfN</li>
+<li>Refine</li>
+<li>adapters</li>
+<li>ChatAdapter</li>
+<li>JSONAdapter</li>
+<li>optimizers</li>
+<li>MIPROv2</li>
+<li>GEPA</li>
+<li>BootstrapFewShot</li>
+<li>BetterTogether</li>
+<li>typed input/output</li>
+<li>LiteLLM</li>
+<li>compile programs</li>
+<li>dspy.Assert</li>
+<li>dspy.Suggest</li>
+<li>few-shot bootstrapping</li>
+<li>prompt optimization</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Declare a typed signature like <code>"question -&gt; answer"</code> instead of writing prompts</li>
+<li>Compose modules (Predict, ChainOfThought, ReAct) into an LM program</li>
+<li>Compile a program with MIPROv2 to optimize instructions and few-shot examples</li>
+<li>Run GEPA reflective prompt evolution against a metric and Pareto frontier</li>
+<li>Swap LMs without changing program logic via <code>dspy.configure(lm=...)</code></li>
+<li>Build a ReAct agent that calls tools or MCP servers</li>
+<li>Generate executable Python via CodeAct in a sandboxed interpreter</li>
+<li>Stream tokens or intermediate fields via <code>dspy.streamify</code></li>
+<li>Evaluate a program on a dev set with a metric function</li>
+<li>Save and load compiled programs as JSON or full programs</li>
+<li>Build a multi-hop RAG pipeline with end-to-end optimization</li>
+<li>Enforce runtime constraints with <code>dspy.Assert</code> and <code>dspy.Suggest</code></li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I stop hand-writing prompts and let optimizers tune them?</li>
+<li>How can I declare what the model should compute, not how?</li>
+<li>How do I automatically find the best prompt and few-shot examples?</li>
+<li>How do I build multi-hop question answering with retrieval?</li>
+<li>How can I swap from GPT-4o to Claude without rewriting prompts?</li>
+<li>How do I get measurable accuracy improvements through compilation?</li>
+<li>How do I build a ReAct agent that uses MCP tools?</li>
+<li>How do I optimize a full RAG pipeline end-to-end?</li>
+<li>How can I treat LLM programs like PyTorch modules?</li>
+<li>How do I deploy a compiled DSPy program behind FastAPI or MLflow?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Manual prompt iteration is slow, brittle, and untransferable across models</li>
+<li>Compilation requires many LM calls over the training set, incurring cost and time</li>
+<li>Optimizers need 20-200+ labeled examples; cold start has no data</li>
+<li>Compiled programs are harder to inspect and debug than hand-written prompts</li>
+<li>Optimized prompts may transfer poorly between LMs</li>
+<li>Backward compatibility across DSPy versions is not yet guaranteed</li>
+<li>Async mixing and CodeAct tool restrictions add complexity</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick DSPy when you want programmatic optimization of prompts and few-shot examples against a measurable metric</li>
+<li>Pick DSPy when you have a labeled evaluation set (20-200+ examples) and care about systematic accuracy gains</li>
+<li>Pick DSPy when you want to compose LM calls like PyTorch modules and swap inference strategies (CoT vs PoT vs ReAct)</li>
+<li>Pick DSPy when you need provider-agnostic abstractions via LiteLLM across many LMs</li>
+<li>Pick Instructor instead when you just want Pydantic validation-and-retry without an optimizer or compilation step</li>
+<li>Pick Outlines instead when you need token-level constrained decoding for guaranteed-valid output</li>
+<li>Pick BAML instead when you want a typed DSL with cross-language code generation rather than Python-only programmatic optimization</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Stanford DSPy</li>
+<li>declarative prompting</li>
+<li>prompt compiler</li>
+<li>LM programming framework</li>
+<li>programmatic prompt optimization</li>
+<li>signature-and-module framework</li>
+<li>Demonstrate-Search-Predict</li>
+<li>automated prompt engineering</li>
+<li>few-shot bootstrapping framework</li>
+<li>ReAct framework</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../part-2-application/rag-frameworks/graphrag.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../part-2-application/browser-automation/browserbase.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
@@ -802,7 +898,7 @@ print(f"Score: {result.score}")
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../part-2-application/rag-frameworks/graphrag.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../part-2-application/browser-automation/browserbase.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 

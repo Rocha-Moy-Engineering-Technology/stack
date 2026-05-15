@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -191,7 +191,7 @@
 </thead>
 <tbody>
 <tr><td>Name</td><td>Pinecone</td></tr>
-<tr><td>Group</td><td>RAG &amp; Knowledge Retrieval</td></tr>
+<tr><td>Group</td><td>Vector Databases</td></tr>
 <tr><td>Type</td><td>API/Infra</td></tr>
 <tr><td>Open Source</td><td>No</td></tr>
 <tr><td>GitHub</td><td>N/A</td></tr>
@@ -480,6 +480,68 @@ results = index.query(
 <h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
 <ul>
 <li>[1] <a href="https://docs.pinecone.io/">Pinecone Documentation</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Pinecone, managed vector database, serverless index, pod-based index, dense index, sparse index, hybrid search, namespaces, multitenancy, metadata filtering, integrated embedding, reranking, upsert, top_k, cosine, euclidean, dotproduct, ServerlessSpec, upsert_records, semantic search, lexical search, fully managed, AWS, GCP, Azure</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Create a serverless index with <code>ServerlessSpec</code></li>
+<li>Upsert vectors with IDs and metadata</li>
+<li>Query with <code>top_k</code> and a metadata filter</li>
+<li>Send raw text via integrated embedding (<code>upsert_records</code>)</li>
+<li>Partition tenants via namespaces</li>
+<li>Combine dense and sparse vectors in a hybrid query</li>
+<li>Rerank initial retrieval results with a cross-encoder</li>
+<li>Bulk-import vectors from cloud storage</li>
+<li>Scope queries to a single namespace for multitenant isolation</li>
+<li>Use Pinecone as a LangChain or LlamaIndex vector store</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I run a vector database without managing infrastructure?</li>
+<li>How do I scale a vector index automatically based on traffic?</li>
+<li>How do I isolate per-tenant data inside one index?</li>
+<li>How do I send raw text and get back search results in one call?</li>
+<li>How do I combine semantic and keyword search in a single query?</li>
+<li>How do I add reranking after my initial retrieval?</li>
+<li>How do I query Pinecone from LangChain or LlamaIndex?</li>
+<li>How do I filter vector search by category, date, or source?</li>
+<li>How do I keep low-latency guarantees with pod-based deployment?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Running and scaling a vector database is operationally expensive</li>
+<li>Building an embedding pipeline plus a vector store is two integrations</li>
+<li>Multitenant data isolation usually requires one index per tenant</li>
+<li>Vector results alone miss exact-keyword matches</li>
+<li>Initial top-k retrieval is not precise enough for RAG</li>
+<li>Self-hosted vector DBs require GPU/HNSW tuning expertise</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want zero-ops, fully managed vector search and accept managed-cloud-only</li>
+<li>Pick this over Weaviate / Qdrant / Milvus / pgvector when you do not want to manage infrastructure at all</li>
+<li>Pick this when integrated embedding (text in, results out) eliminates the need for a separate embedding service</li>
+<li>Pick this when serverless auto-scaling and usage-based billing fit your traffic shape</li>
+<li>Pick this when namespaces give you multitenancy without per-tenant indexes</li>
+<li>Skip this when you need self-hosting, air-gapped deployment, or strict data-sovereignty controls</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Managed vector DB</li>
+<li>Serverless vector index</li>
+<li>Pod-based index</li>
+<li>Vector store</li>
+<li>Namespace (Pinecone)</li>
+<li>Integrated embedding</li>
+<li>Hybrid search (dense + sparse)</li>
+<li>Pinecone Assistant</li>
+<li>ServerlessSpec</li>
+<li>Cross-encoder reranker</li>
 </ul>
 
                     </main>

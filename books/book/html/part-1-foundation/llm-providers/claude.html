@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -456,6 +456,70 @@ response = client.messages.create(
 <li>[4] Tool Use Overview - <a href="https://platform.claude.com/docs/en/build-with-claude/tool-use/overview">https://platform.claude.com/docs/en/build-with-claude/tool-use/overview</a></li>
 <li>[5] Claude Developer Platform - <a href="https://platform.claude.com/docs/en/home">https://platform.claude.com/docs/en/home</a></li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Claude, Anthropic, Claude Opus, Claude Sonnet, Claude Haiku, Opus 4.6, Sonnet 4.6, Haiku 4.5, Messages API, tool use, strict tool use, extended thinking, adaptive thinking, prompt caching, 1M context, compaction, computer use, code execution, web search tool, web fetch, memory tool, MCP connector, agent skills, batch processing, Files API, citations, parallel tool calls</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Call the Claude Messages API with Python or TypeScript</li>
+<li>Pass a list of tool definitions for function calling</li>
+<li>Enable extended thinking for visible chain-of-thought</li>
+<li>Connect to a remote MCP server directly from Messages API</li>
+<li>Use computer use to control a desktop via screenshots and mouse/keyboard</li>
+<li>Run code in Anthropic’s managed sandbox via the code execution tool</li>
+<li>Invoke web search and web fetch as server-side tools</li>
+<li>Cache a long system prompt for 5 minutes or 1 hour</li>
+<li>Batch-process large workloads at 50% cost reduction</li>
+<li>Stream content blocks with Server-Sent Events</li>
+<li>Generate grounded responses with per-claim citations</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“I want to use Claude in my Python app”</li>
+<li>“How do I do function calling with Claude?”</li>
+<li>“What’s the difference between Opus, Sonnet, and Haiku?”</li>
+<li>“I need an LLM that can use a computer like a human”</li>
+<li>“How do I see Claude’s reasoning before the final answer?”</li>
+<li>“I want to cache a long system prompt to reduce cost”</li>
+<li>“How do I connect Claude directly to an MCP server?”</li>
+<li>“What’s the cheapest Claude tier for high-volume work?”</li>
+<li>“Should I use the Messages API or AWS Bedrock for Claude?”</li>
+<li>“How do I get citations grounded in my source documents?”</li>
+<li>“I need a 1M-token context window from Claude”</li>
+<li>“How do I run agents that take actions in a sandbox?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Need an LLM with strong reasoning transparency for high-stakes decisions</li>
+<li>Manual prompt-engineering for tool selection is unreliable at scale</li>
+<li>Long-running conversations exceed the context window before completing</li>
+<li>Need to deploy in a regulated environment that demands strict tool-input validation</li>
+<li>Existing agents can’t operate on a GUI; they only handle APIs</li>
+<li>Auditing LLM outputs against source documents is manual and error-prone</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when reasoning quality and instruction-following matter most (Opus is consistently top-ranked on coding/agent benchmarks)</li>
+<li>Pick this when you need extended thinking with visible chain-of-thought for transparency</li>
+<li>Pick this when computer use (mouse/keyboard automation through screenshots) is required</li>
+<li>Pick this when MCP-native integration shortens your tool-integration story</li>
+<li>Pick this when prompt caching’s 5-min and 1-hour durations match your workload</li>
+<li>Pick this when citations and grounding are first-class for compliance or factuality requirements</li>
+<li>Pick this when you want to access the same models via your existing cloud account (AWS Bedrock, GCP Vertex AI, Azure AI)</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Anthropic Claude, Anthropic API</li>
+<li>“Anthropic’s LLM”</li>
+<li>Claude 4.6, Claude 4.5, Claude 4</li>
+<li>Sonnet 4.5 / Sonnet 4.6 (variant names you may see in other docs)</li>
+<li>Bedrock Claude, Vertex AI Claude, Azure AI Claude (multi-platform deployments)</li>
+<li>Claude Code (Anthropic’s CLI; uses the same models but is a separate product)</li>
+<li>“Anthropic Messages API” = the official name for <code>POST /v1/messages</code></li>
+</ul>
 
                     </main>
 
@@ -465,7 +529,7 @@ response = client.messages.create(
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../../part-1-foundation/inference-engines/max.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../part-1-foundation/hosted-inference-apis/groq.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -479,7 +543,7 @@ response = client.messages.create(
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../../part-1-foundation/inference-engines/max.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../part-1-foundation/hosted-inference-apis/groq.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

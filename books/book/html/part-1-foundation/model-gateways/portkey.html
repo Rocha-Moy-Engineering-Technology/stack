@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>API Gateways &amp; Model Routing</td></tr>
+<tr><td>Group</td><td>Model Gateways</td></tr>
 <tr><td>Type</td><td>API/SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/Portkey-AI/gateway">Portkey-AI/gateway</a></td></tr>
-<tr><td>Stars</td><td>10675</td></tr>
+<tr><td>Stars</td><td>11719</td></tr>
 <tr><td>Documentation</td><td><a href="https://portkey.ai/docs/introduction/what-is-portkey">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -634,6 +634,112 @@ response = portkey.with_options(
 <li>[7] Config Object Schema - <a href="https://portkey.ai/docs/api-reference/inference-api/config-object">https://portkey.ai/docs/api-reference/inference-api/config-object</a></li>
 <li>[8] Supported LLM Providers - <a href="https://portkey.ai/docs/integrations/llms">https://portkey.ai/docs/integrations/llms</a></li>
 <li>[9] GitHub Repository - <a href="https://github.com/Portkey-AI/gateway">https://github.com/Portkey-AI/gateway</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>portkey</li>
+<li>portkey gateway</li>
+<li>ai gateway</li>
+<li>llm gateway</li>
+<li>edge proxy</li>
+<li>gateway configs</li>
+<li>model catalog</li>
+<li>virtual keys</li>
+<li>targets</li>
+<li>strategy modes</li>
+<li>fallback routing</li>
+<li>loadbalance</li>
+<li>conditional routing</li>
+<li>semantic cache</li>
+<li>simple cache</li>
+<li>circuit breaker</li>
+<li>input guardrails</li>
+<li>output guardrails</li>
+<li>250+ providers</li>
+<li>openai-compatible</li>
+<li>x-portkey-config</li>
+<li>x-portkey-virtual-key</li>
+<li>request_timeout</li>
+<li>cb_config</li>
+<li>otel observability</li>
+<li>21+ metrics</li>
+<li>mcp on gateway</li>
+<li>aporia</li>
+<li>sydelabs</li>
+<li>pillar security</li>
+<li>iso 27001</li>
+<li>soc 2</li>
+<li>gdpr</li>
+<li>hipaa</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Configure fallback routing across multiple LLM providers</li>
+<li>Weighted-load-balance traffic across API keys</li>
+<li>Apply conditional routing based on request metadata</li>
+<li>Cache LLM responses semantically or by exact match</li>
+<li>Trip a circuit breaker on a failing provider</li>
+<li>Enforce input and output guardrails before/after the model</li>
+<li>Store provider credentials in the Model Catalog instead of env vars</li>
+<li>Issue scoped virtual keys with budgets and allow-lists</li>
+<li>Stream OpenTelemetry traces to a dashboard</li>
+<li>Tag requests with custom metadata for trace grouping</li>
+<li>Add Aporia, SydeLabs, or Pillar Security as third-party guardrails</li>
+<li>Route requests through globally distributed edge workers</li>
+<li>Inject <code>x-portkey-config</code> headers into existing OpenAI SDK clients</li>
+<li>Forward requests to a custom self-hosted endpoint as a target</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I add automatic fallback to Anthropic when OpenAI fails?</li>
+<li>I want a managed gateway that runs on edge workers near my users.</li>
+<li>How do I cache prompts that are semantically similar?</li>
+<li>How do I block prompt injection at the gateway layer?</li>
+<li>Can I route different users to different models based on metadata?</li>
+<li>How do I issue rate-limited API keys to my customers?</li>
+<li>I need HIPAA and SOC 2 certifications for my LLM traffic.</li>
+<li>How do I get OpenTelemetry-compliant tracing across all my LLM calls?</li>
+<li>How do I A/B test two models with weighted traffic splits?</li>
+<li>How do I forward through Portkey to a private vLLM endpoint?</li>
+<li>Can I temporarily disable a provider that keeps failing?</li>
+<li>How do I tag every LLM request with a user_id for observability?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Provider outages cascade into our application with no buffer.</li>
+<li>We have no central place to enforce safety checks across all LLM calls.</li>
+<li>We cannot answer “how much did each customer spend on LLMs?” today.</li>
+<li>Our team keeps duplicating retry, fallback, and cache logic per service.</li>
+<li>Compliance auditors want full request logs we currently do not have.</li>
+<li>Rate limits from a single API key are throttling production.</li>
+<li>We need to roll out a new model gradually, not flip a switch.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want a managed, enterprise-grade gateway with edge deployment (vs LiteLLM’s self-hosted SDK-first model).</li>
+<li>Pick this when you need a circuit breaker and conditional routing rules out of the box.</li>
+<li>Pick this when guardrails, third-party scanners, and Model Catalog credential vaulting matter more than open-source extensibility.</li>
+<li>Pick this when you require ISO 27001, SOC 2, GDPR, or HIPAA attestations.</li>
+<li>Pick this when OpenTelemetry-native observability with 21+ analytics metrics is required.</li>
+<li>Pick this when you need text and embeddings routing but not music/video generation (vs ccapi).</li>
+<li>Pick this when you need a no-code dashboard for non-engineering stakeholders.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>ai control plane</li>
+<li>llm api gateway</li>
+<li>prompt firewall</li>
+<li>ai proxy</li>
+<li>semantic caching layer</li>
+<li>llm routing service</li>
+<li>ai observability platform</li>
+<li>prompt observability</li>
+<li>portkey edge gateway</li>
+<li>portkey-ai/gateway</li>
 </ul>
 
                     </main>

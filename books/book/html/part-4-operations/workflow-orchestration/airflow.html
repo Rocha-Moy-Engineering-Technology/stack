@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Workflow Orchestration &amp; Automation</td></tr>
+<tr><td>Group</td><td>Workflow Orchestration</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/apache/airflow">https://github.com/apache/airflow</a></td></tr>
-<tr><td>Stars</td><td>44357</td></tr>
+<tr><td>Stars</td><td>45414</td></tr>
 <tr><td>Documentation</td><td><a href="https://airflow.apache.org/docs/apache-airflow/stable/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -641,6 +641,104 @@ with DAG(
 <li><a href="https://airflow.apache.org/docs/apache-airflow/2.10.5/release_notes.html">Airflow 2.10.5 Release Notes</a></li>
 <li><a href="https://airflow.apache.org/announcements/">Apache Airflow Announcements</a></li>
 <li><a href="https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html">Airflow REST API Reference</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Apache Airflow</li>
+<li>DAG</li>
+<li>directed acyclic graph</li>
+<li>workflows as code</li>
+<li>scheduler</li>
+<li>executor</li>
+<li>worker</li>
+<li>triggerer</li>
+<li>DAG processor</li>
+<li>TaskFlow API</li>
+<li>@task decorator</li>
+<li>XCom</li>
+<li>operator</li>
+<li>sensor</li>
+<li>hook</li>
+<li>connection</li>
+<li>variable</li>
+<li>pool</li>
+<li>dataset</li>
+<li>asset</li>
+<li>Jinja templating</li>
+<li>CeleryExecutor</li>
+<li>KubernetesExecutor</li>
+<li>LocalExecutor</li>
+<li>Edge Executor</li>
+<li>batch ETL</li>
+<li>backfill</li>
+<li>catchup</li>
+<li>provider packages</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define DAGs as Python files with <code>@dag</code> and <code>@task</code> decorators</li>
+<li>Schedule pipelines with cron, presets, or timetable objects</li>
+<li>Backfill historical date ranges with selective task reruns</li>
+<li>Pass data between tasks via XCom or TaskFlow return values</li>
+<li>Branch DAGs conditionally with <code>@task.branch</code></li>
+<li>Run tasks in Kubernetes pods with KubernetesPodOperator</li>
+<li>Generate DAGs dynamically from a config table</li>
+<li>Trigger DAGs on dataset/asset updates rather than time</li>
+<li>Store credentials in Connections and reference by <code>conn_id</code></li>
+<li>Defer long-waits to the triggerer with deferrable operators</li>
+<li>Query DAG state via the REST API v2</li>
+<li>Mix multiple executors within a single deployment</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I need a batch ETL orchestrator with rich scheduling.</li>
+<li>How do I backfill a pipeline for historical dates?</li>
+<li>I want to generate one DAG per customer from a config table.</li>
+<li>How do I integrate Airflow with Kubernetes?</li>
+<li>I need data-aware scheduling triggered by upstream pipelines.</li>
+<li>How do I pass data between tasks with TaskFlow?</li>
+<li>I want to write workflows as code, not YAML or visual flows.</li>
+<li>What is the difference between LocalExecutor, CeleryExecutor, and KubernetesExecutor?</li>
+<li>How do I trigger a DAG from the REST API?</li>
+<li>Show me how to chain BashOperator tasks.</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Cron + scripts have no dependency tracking, retry, or backfill.</li>
+<li>We need a mature web UI for inspecting pipeline runs.</li>
+<li>Different teams run different ETL flavors and want one orchestrator.</li>
+<li>We need provider integrations for AWS, GCP, Azure, Postgres, Kafka.</li>
+<li>Pipelines must be version-controlled like code.</li>
+<li>We need data lineage and selective task reruns.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this for finite, batch-oriented workflows with clear start/end and complex DAG dependencies.</li>
+<li>Pick this over Prefect when you want the largest existing deployment base and 80+ provider packages.</li>
+<li>Pick this over Temporal when scheduling, backfill, and time-based ETL — not durable long-running per-instance workflows — are the priority.</li>
+<li>Pick this over n8n/Activepieces/Node-RED when you want code-first DAGs, not visual builders.</li>
+<li>Avoid this for streaming, continuously running, or event-driven-only workloads (use Kafka/Flink + Airflow rather than Airflow alone).</li>
+<li>Pick this when you already operate Kubernetes and want per-task pod isolation via KubernetesExecutor.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Apache Airflow 3.0</li>
+<li>Task SDK (airflow.sdk)</li>
+<li>AIP-72 Task Execution API</li>
+<li>AIP-69 Edge Executor</li>
+<li>AIP-74/AIP-75 Assets</li>
+<li>AIP-78 scheduler-managed backfills</li>
+<li>airflow.cfg</li>
+<li>AIRFLOW__* env-var pattern</li>
+<li>airflow dags trigger</li>
+<li>airflow.providers.*</li>
+<li>workflow scheduler</li>
+<li>DAG runs</li>
+<li>task instances</li>
 </ul>
 
                     </main>

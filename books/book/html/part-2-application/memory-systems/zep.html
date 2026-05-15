@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -529,6 +529,98 @@ system_prompt = f"You are a support agent.\n\n{ctx.context}"
 <li>[1] Welcome to Zep - https://help.getzep.com/overview</li>
 <li>[2] Key Concepts - https://help.getzep.com/concepts</li>
 <li>[3] Quick Start Guide - https://help.getzep.com/quick-start-guide</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Zep</li>
+<li>context engineering</li>
+<li>temporal knowledge graph</li>
+<li>Graphiti</li>
+<li>fact invalidation</li>
+<li>temporal validity</li>
+<li>user graph</li>
+<li>thread</li>
+<li>context block</li>
+<li>context template</li>
+<li>Graph RAG</li>
+<li>semantic + full-text + BFS search</li>
+<li>sub-200ms context retrieval</li>
+<li>high recall over precision</li>
+<li>automatic fact extraction</li>
+<li>JSON business data ingestion</li>
+<li>agentic tools</li>
+<li>HIPAA compliance</li>
+<li>RFC3339 timestamps</li>
+<li>user summary</li>
+<li>entity-relationship edges</li>
+<li>AutoGen integration</li>
+<li>LangGraph integration</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Build a temporal knowledge graph of facts about a user</li>
+<li>Invalidate old facts automatically when new ones supersede them</li>
+<li>Ingest chat messages, JSON business events, or text documents into a graph</li>
+<li>Retrieve a sub-200ms context block of user summary + relevant facts</li>
+<li>Define a custom context template with <code>%{user_summary}</code>, <code>%{edges}</code>, <code>%{entities}</code> variables</li>
+<li>Track fact validity dates and present them to the LLM</li>
+<li>Add agentic tools so an agent can query its own user graph</li>
+<li>Ingest purchase history or song-play events into a personalization graph</li>
+<li>Backfill existing users and conversations in bulk</li>
+<li>Integrate Zep memory with LangGraph, AutoGen, or CrewAI</li>
+<li>Connect Zep to AI coding assistants via the MCP server</li>
+<li>Build HIPAA-compliant medical AI memory</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I track when a user fact became true or invalid?</li>
+<li>How can I build personalized AI with temporal awareness?</li>
+<li>How do I retrieve user context in under 200ms?</li>
+<li>How do I ingest business events (purchases, plays) into agent memory?</li>
+<li>What is a temporal knowledge graph for AI personalization?</li>
+<li>How does Zep differ from a vector memory layer?</li>
+<li>How do I customize the structure of retrieved context?</li>
+<li>I need HIPAA-compliant memory for a medical AI assistant</li>
+<li>How do I migrate from Mem0 to Zep?</li>
+<li>How do agents directly query user knowledge graphs?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Vector memory cannot represent how facts change over time</li>
+<li>Old preferences silently mix with new ones, polluting context</li>
+<li>Hand-rolling graph extraction, invalidation, and search is heavy</li>
+<li>Closed-source: no self-hosted deployment option (only the underlying Graphiti is OSS)</li>
+<li>High-recall bias may return less-relevant results alongside relevant ones</li>
+<li>Missing RFC3339 timestamps or user names degrade graph quality</li>
+<li>Data ingestion is asynchronous; recent data isn’t immediately in context blocks</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick Zep when your application has facts that change over time (support agents, CRM, e-commerce preferences, healthcare)</li>
+<li>Pick Zep when you need a temporal knowledge graph with automatic fact invalidation tracking valid-from / invalid-from dates</li>
+<li>Pick Zep when sub-200ms personalized context assembly is a requirement</li>
+<li>Pick Zep when you need HIPAA, RBAC, and audit logging out of the box</li>
+<li>Pick Mem0 instead when you want a simpler memory layer with vector + optional graph, and self-hosted OSS deployment</li>
+<li>Pick Letta instead when you want agents that autonomously self-modify their own memory blocks (stateful agent OS)</li>
+<li>Pick Graphiti (the underlying OSS framework) directly if you want self-hosted temporal knowledge graphs without the managed service</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>context engineering platform</li>
+<li>temporal graph memory</li>
+<li>Graphiti graph framework</li>
+<li>fact invalidation</li>
+<li>valid-from / invalid-from edges</li>
+<li>agent personalization layer</li>
+<li>Graph RAG</li>
+<li>knowledge graph memory</li>
+<li>temporal entity graph</li>
+<li>getzep</li>
+<li>MemGPT alternative for temporal facts</li>
 </ul>
 
                     </main>

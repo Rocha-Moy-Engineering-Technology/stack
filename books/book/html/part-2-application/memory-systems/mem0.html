@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>API/SDK</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/mem0ai/mem0">mem0ai/mem0</a></td></tr>
-<tr><td>Stars</td><td>48695</td></tr>
+<tr><td>Stars</td><td>55709</td></tr>
 <tr><td>Docs</td><td><a href="https://docs.mem0.ai/introduction">docs.mem0.ai</a></td></tr>
 </tbody>
 </table>
@@ -509,6 +509,95 @@ results = client.search(
 <li>[7] Search Memory - https://docs.mem0.ai/core-concepts/memory-operations/search</li>
 <li>[8] Integrations - https://docs.mem0.ai/integrations</li>
 <li>[9] Configuration - https://docs.mem0.ai/open-source/configuration</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Mem0</li>
+<li>universal memory layer</li>
+<li>self-improving memory</li>
+<li>automatic memory extraction</li>
+<li>conflict resolution</li>
+<li>four memory layers</li>
+<li>conversation memory</li>
+<li>session memory</li>
+<li>user memory</li>
+<li>organizational memory</li>
+<li>graph memory</li>
+<li>semantic search</li>
+<li>vector + graph</li>
+<li>Qdrant backend</li>
+<li>Neo4j graph store</li>
+<li>pgvector option</li>
+<li>reranker</li>
+<li>enable_graph</li>
+<li>MCP server</li>
+<li>OpenMemory</li>
+<li>multi-framework integrations</li>
+<li>user_id scoped memory</li>
+<li>SOC 2 Type II</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Add a memory from a conversation with <code>client.add(messages, user_id=...)</code></li>
+<li>Extract facts automatically from chat history via LLM</li>
+<li>Resolve conflicts when new facts contradict existing memories</li>
+<li>Search memories semantically by natural-language query</li>
+<li>Enable graph memory to capture entity relationships</li>
+<li>Filter memories with JSON logical filters (AND/OR, comparison operators)</li>
+<li>Promote conversation-layer facts to session, user, or org memory</li>
+<li>Add a reranker (Cohere, Zero Entropy) for retrieval precision</li>
+<li>Self-host Mem0 with Qdrant + Neo4j + OpenAI embeddings</li>
+<li>Integrate Mem0 with LangChain, CrewAI, AutoGen, LangGraph, LlamaIndex</li>
+<li>Expose Mem0 to any AI client via its MCP server</li>
+<li>Build voice agents with persistent memory (LiveKit, ElevenLabs, Pipecat)</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I give my LLM app persistent memory across sessions?</li>
+<li>How can my agent remember user preferences automatically?</li>
+<li>What handles conflict when a user updates their preference?</li>
+<li>How do I add a memory layer between my chat app and the LLM?</li>
+<li>How can I get entity relationships, not just vector similarity?</li>
+<li>How do I scope memories per user, session, and organization?</li>
+<li>How do I let multiple agents share organizational context?</li>
+<li>How do I self-host a memory backend with Qdrant?</li>
+<li>How do I integrate persistent memory into a LangGraph or CrewAI agent?</li>
+<li>What is the simplest API for adding memory to an LLM application?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>LLM apps are stateless and forget context across sessions</li>
+<li>Manual fact extraction and conflict resolution is brittle</li>
+<li>Vector search alone misses entity relationships</li>
+<li>Default OSS config requires OpenAI; alternatives need explicit setup</li>
+<li>Graph-enabled adds are asynchronous; recent memories may not be retrievable immediately</li>
+<li>Mixing <code>infer=True</code> and <code>infer=False</code> for identical content creates duplicates</li>
+<li>Date filtering only available on Platform, not OSS</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick Mem0 when you want a turnkey memory layer with automatic extraction, conflict resolution, and broad framework integrations</li>
+<li>Pick Mem0 for simple user preference tracking — fastest to integrate among dedicated memory platforms</li>
+<li>Pick Mem0 when you want both vector similarity AND optional graph relationships in one API</li>
+<li>Pick Mem0 OSS when you need self-hosted control with no vendor lock-in</li>
+<li>Pick Letta instead when agents should self-modify their own memory blocks (stateful agent OS, four-tier context hierarchy with sleep-time compute)</li>
+<li>Pick Zep instead when facts change over time and you need temporal knowledge graphs with fact invalidation (support agents, CRM)</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>universal AI memory</li>
+<li>persistent agent memory</li>
+<li>LLM long-term memory</li>
+<li>conversation memory layer</li>
+<li>OpenMemory</li>
+<li>memory-as-a-service</li>
+<li>vector + graph memory</li>
+<li>agent recall layer</li>
+<li>memory client SDK</li>
 </ul>
 
                     </main>

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Observability &amp; LLM Ops</td></tr>
+<tr><td>Group</td><td>Observability</td></tr>
 <tr><td>Type</td><td>SDK/UI</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/Arize-AI/phoenix">Arize-AI/phoenix</a></td></tr>
-<tr><td>Stars</td><td>8628</td></tr>
+<tr><td>Stars</td><td>9673</td></tr>
 <tr><td>Documentation</td><td><a href="https://arize.com/docs/phoenix">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -748,6 +748,99 @@ def handle_message(session_id: str, user_id: str, message: str) -&gt; str:
 <li>[6] Prompt Management - <a href="https://arize.com/docs/phoenix/prompt-engineering/overview-prompts/prompt-management">https://arize.com/docs/phoenix/prompt-engineering/overview-prompts/prompt-management</a></li>
 <li>[7] Self-Hosting Configuration - <a href="https://arize.com/docs/phoenix/self-hosting/configuration">https://arize.com/docs/phoenix/self-hosting/configuration</a></li>
 <li>[8] Python Client SDK - <a href="https://arize.com/docs/phoenix/sdk-api-reference/python/arize-phoenix-client">https://arize.com/docs/phoenix/sdk-api-reference/python/arize-phoenix-client</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Arize Phoenix</li>
+<li>AI observability</li>
+<li>OpenTelemetry</li>
+<li>OpenInference</li>
+<li>OTLP</li>
+<li>distributed tracing</li>
+<li>span kinds</li>
+<li>LLM span</li>
+<li>EMBEDDING span</li>
+<li>RETRIEVER span</li>
+<li>RERANKER span</li>
+<li>AGENT span</li>
+<li>GUARDRAIL span</li>
+<li>EVALUATOR span</li>
+<li>self-hosted</li>
+<li>SQLite</li>
+<li>PostgreSQL</li>
+<li>prompt playground</li>
+<li>prompt versioning</li>
+<li>experiments</li>
+<li>datasets</li>
+<li>annotations</li>
+<li>evaluators</li>
+<li>create_classifier</li>
+<li>span replay</li>
+<li>arize-phoenix-otel</li>
+<li>Arize AX</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Stand up a Phoenix server locally with <code>phoenix serve</code></li>
+<li>Send OTLP traces over HTTP or gRPC from any language</li>
+<li>Auto-instrument OpenAI, LangChain, LlamaIndex, CrewAI, DSPy</li>
+<li>Decorate functions with <code>@tracer.chain</code>, <code>@tracer.tool</code>, <code>@tracer.agent</code></li>
+<li>Create LLM-as-judge classifiers with <code>create_classifier</code></li>
+<li>Run experiments comparing prompt versions</li>
+<li>Replay production spans against new prompts in the Playground</li>
+<li>Store datasets in versioned form for benchmarks</li>
+<li>Annotate spans with human ground-truth labels</li>
+<li>Configure PostgreSQL backend for production deployments</li>
+<li>Export traces from Ragas/Deepeval as annotations</li>
+<li>Suppress tracing for sensitive operations</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I want OpenTelemetry-native LLM observability.</li>
+<li>How do I trace a RAG pipeline with retriever and reranker spans?</li>
+<li>I need to debug an agent’s tool-call loop.</li>
+<li>How do I run experiments to compare prompt versions?</li>
+<li>I want a Prompt Playground that can replay real production spans.</li>
+<li>How do I self-host an open-source observability platform with SQLite or Postgres?</li>
+<li>I want to send traces from CrewAI / DSPy / Haystack to one dashboard.</li>
+<li>How do I build LLM-as-judge evaluators in Python?</li>
+<li>I need nine span kinds including AGENT, GUARDRAIL, and EVALUATOR.</li>
+<li>What’s the difference between Phoenix and Arize AX?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Generic OpenTelemetry tools don’t understand LLM semantics.</li>
+<li>Agents loop infinitely or call wrong tools and we can’t see why.</li>
+<li>RAG retrieval quality is invisible without per-step relevance scores.</li>
+<li>Prompt iterations break in production with no replay capability.</li>
+<li>SQLite is fine for dev but won’t scale; we need PostgreSQL.</li>
+<li>Auto-instrumentation misses our custom business logic.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when your observability stack is already OpenTelemetry/OTLP-centric and you want LLM-aware spans on top.</li>
+<li>Pick this over LangSmith when you want fully open-source, self-hostable, and framework-agnostic.</li>
+<li>Pick this over Langfuse when you want OpenInference semantic conventions and span-kind richness (AGENT, GUARDRAIL, EVALUATOR).</li>
+<li>Pick this over Helicone when you need full tracing/evals/experiments (not gateway logging).</li>
+<li>Pick this over Weights &amp; Biases when LLM observability — not ML experiments — is the focus.</li>
+<li>Pick this when you want span replay against real production data in a Prompt Playground.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>arize-phoenix-otel</li>
+<li>arize-phoenix-client</li>
+<li>arize-phoenix-evals</li>
+<li>OpenInference instrumentation</li>
+<li>nine span kinds</li>
+<li>Arize AX (commercial counterpart)</li>
+<li>phoenix serve</li>
+<li>~/.phoenix/ working directory</li>
+<li>using_attributes context manager</li>
+<li>LLMInstrumentor classes</li>
 </ul>
 
                     </main>

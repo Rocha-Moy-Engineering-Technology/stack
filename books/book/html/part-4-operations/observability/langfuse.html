@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Observability &amp; LLM Ops</td></tr>
+<tr><td>Group</td><td>Observability</td></tr>
 <tr><td>Type</td><td>API/SDK/UI</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/langfuse/langfuse">https://github.com/langfuse/langfuse</a></td></tr>
-<tr><td>Stars</td><td>22154</td></tr>
+<tr><td>Stars</td><td>27209</td></tr>
 <tr><td>Documentation</td><td><a href="https://langfuse.com/docs">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -700,6 +700,101 @@ curl -X POST \
 <li>[6] Prompt Management - <a href="https://langfuse.com/docs/prompts/get-started">https://langfuse.com/docs/prompts/get-started</a></li>
 <li>[7] Datasets Overview - <a href="https://langfuse.com/docs/datasets/overview">https://langfuse.com/docs/datasets/overview</a></li>
 <li>[8] Self-Hosting Guide - <a href="https://langfuse.com/docs/deployment/self-host">https://langfuse.com/docs/deployment/self-host</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>llm observability</li>
+<li>open source observability</li>
+<li>prompt management</li>
+<li>tracing</li>
+<li>spans</li>
+<li>generations</li>
+<li>sessions</li>
+<li>scores</li>
+<li>datasets</li>
+<li>experiments</li>
+<li>llm-as-a-judge</li>
+<li>evaluation</li>
+<li>annotation queues</li>
+<li>cost tracking</li>
+<li>token usage</li>
+<li>OpenTelemetry</li>
+<li>@observe decorator</li>
+<li>self-hosted</li>
+<li>MIT license</li>
+<li>ClickHouse</li>
+<li>PostgreSQL</li>
+<li>Langfuse</li>
+<li>prompt versioning</li>
+<li>LLM Playground</li>
+<li>multi-turn conversations</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Trace a RAG pipeline end-to-end with nested observations</li>
+<li>Capture token usage and cost for every LLM call</li>
+<li>Version and deploy prompts via production labels</li>
+<li>Run LLM-as-a-judge evaluations on production traces</li>
+<li>Build datasets from real production traces</li>
+<li>Group multi-turn traces into sessions per user</li>
+<li>Compare model performance across experiments</li>
+<li>Self-host an open-source LLM observability stack</li>
+<li>Instrument OpenAI calls with a drop-in wrapper</li>
+<li>Send OpenTelemetry traces from any framework to Langfuse</li>
+<li>Annotate traces manually with human reviewers</li>
+<li>Track prompt performance across versions</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I debug a RAG pipeline that returns wrong answers?</li>
+<li>I need open-source observability for my LLM application.</li>
+<li>How can I version and A/B test prompts without redeploying code?</li>
+<li>I want to track token cost per user and per session.</li>
+<li>Show me an alternative to LangSmith that I can self-host.</li>
+<li>How do I run LLM-as-a-judge evaluations on my traces?</li>
+<li>I want to build evaluation datasets from production logs.</li>
+<li>How do I monitor LLM quality continuously in production?</li>
+<li>I need OpenTelemetry-native LLM tracing.</li>
+<li>How can I capture inputs and outputs of every LLM call automatically?</li>
+<li>I want to compare GPT-4o vs GPT-4o-mini using experiments.</li>
+<li>How do I annotate traces with human feedback?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>General-purpose observability tools lack LLM-specific concepts (tokens, prompts, generations).</li>
+<li>Prompts are buried in code and require redeploys to change.</li>
+<li>We have no idea which prompt version performs best in production.</li>
+<li>Evaluating LLM quality at scale requires automated judges.</li>
+<li>Multi-turn agent workflows are opaque without session grouping.</li>
+<li>LLM costs are surging and we cannot attribute them per user or feature.</li>
+<li>SaaS observability vendors require sending sensitive prompts off-premise.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want a fully open-source, self-hostable LLM observability stack under MIT license.</li>
+<li>Pick this over LangSmith when you need on-prem data residency or want to avoid vendor lock-in.</li>
+<li>Pick this over Arize Phoenix when you need integrated prompt management and experiments as first-class features (not only tracing).</li>
+<li>Pick this over Helicone when you need full evaluation, dataset, and annotation workflows beyond gateway-style request logging.</li>
+<li>Pick this over Weights &amp; Biases when LLM observability — not ML experiment tracking — is the primary need.</li>
+<li>Pick this when your application already uses OpenTelemetry and you want LLM-aware semantic conventions on top.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>LLM ops platform</li>
+<li>LLM application monitoring</li>
+<li>generation observation</li>
+<li>trace tree</li>
+<li>prompt hub</li>
+<li>experiment runner</li>
+<li>LFM (Langfuse managed)</li>
+<li>@observe Python decorator</li>
+<li>LangfuseSpanProcessor</li>
+<li>OTLP exporter</li>
+<li>Langfuse Cloud (EU/US)</li>
 </ul>
 
                     </main>

@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Observability & LLM Ops |
+| Group | Observability |
 | Type | API/SDK/UI |
 | Open Source | No |
 | GitHub | N/A |
@@ -523,3 +523,102 @@ with wandb.init(project="registry-demo") as run:
 - [5] W&B Sweeps Guide - https://docs.wandb.ai/models/sweeps/walkthrough
 - [6] W&B Artifacts Guide - https://docs.wandb.ai/guides/artifacts
 - [7] W&B Registry Guide - https://docs.wandb.ai/models/registry
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Weights & Biases
+- W&B
+- wandb
+- experiment tracking
+- hyperparameter sweeps
+- Bayesian optimization
+- artifact versioning
+- model registry
+- reports
+- W&B Models
+- W&B Weave
+- W&B Inference
+- W&B Training
+- @weave.op
+- runs
+- projects
+- config
+- metrics
+- artifacts
+- PyTorch
+- TensorFlow
+- Keras
+- Hugging Face
+- PyTorch Lightning
+- lineage
+- offline mode
+- WandbCallback
+
+### Verb-Noun Tasks
+
+- Initialize a run with `wandb.init()`
+- Log scalars, images, audio, video, tables, and histograms
+- Sweep hyperparameters with Bayesian optimization
+- Track datasets and models as versioned artifacts
+- Promote models through the registry with aliases and tags
+- Create collaborative reports with embedded live charts
+- Trace LLM calls automatically with `@weave.op`
+- Build evaluation suites with weave Scorers
+- Distribute sweep agents across multiple machines
+- Run experiments in offline mode and sync later
+- Visualize parallel coordinates and parameter importance
+- Configure alerts when metrics cross thresholds
+
+### User Intent Phrases
+
+- I need ML experiment tracking with hyperparameter sweeps.
+- How do I version datasets and models with lineage?
+- I want a model registry for organizational governance.
+- How do I add LLM observability alongside my ML training?
+- I need to share experiment results as interactive reports.
+- How do I run Bayesian hyperparameter optimization?
+- I want to compare hundreds of PyTorch runs side-by-side.
+- How do I track GPU utilization automatically?
+- I want serverless RL post-training for LLMs.
+- How do I trace OpenAI/Anthropic/Cohere calls automatically with Weave?
+
+### Problem Statements
+
+- Hyperparameter tuning by hand is unscalable.
+- We lose track of which dataset produced which model.
+- Reproducibility breaks when configs and runs aren't tied together.
+- Model promotion lacks audit trails and governance.
+- Separate tools for ML training and LLM tracing fragment our workflow.
+- Sharing results across teams requires manual screenshots and notebooks.
+
+### When to Pick This
+
+- Pick this when your team does traditional ML/deep learning training (PyTorch, TF, Keras) alongside LLM work.
+- Pick this over LangSmith/Langfuse/Arize Phoenix when ML experiment tracking is the primary need and LLM observability is secondary.
+- Pick this over Helicone when you need a hyperparameter sweep controller and artifact registry, not API proxy logging.
+- Pick this when you need a unified system of record across training, evaluation, deployment, and LLM tracing.
+- Pick this when artifact lineage and model registry governance matter for compliance.
+- Pick this when serverless RL post-training (W&B Training preview) fits the roadmap.
+
+### Related Terms and Aliases
+
+- wandb SDK
+- W&B Models
+- W&B Weave
+- W&B Inference
+- W&B Training
+- WandbCallback
+- WandbLogger
+- model registry
+- artifact lineage
+- Weave Ops / Weave Calls
+- ML experiment tracker
+- hyperparameter sweep controller
+- Bayesian search
+- Hyperband early termination
+- @weave.op decorator
+

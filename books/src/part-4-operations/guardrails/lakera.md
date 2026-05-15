@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Guardrails & Safety |
+| Group | Guardrails |
 | Type | API |
 | Open Source | No |
 | GitHub | N/A |
@@ -463,3 +463,97 @@ The response includes git revision, build timestamp, model version, and semantic
 - [13] Data Leakage Prevention - <https://docs.lakera.ai/docs/data-leakage-prevention>
 - [14] Lakera Red - <https://docs.lakera.ai/red>
 - [15] Changelog - <https://docs.lakera.ai/changelog>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Lakera Guard
+- Lakera Red
+- AI security platform
+- prompt injection defense
+- jailbreak detection
+- content moderation
+- PII detection
+- malicious link detection
+- policy
+- project
+- sensitivity levels
+- OWASP paranoia
+- breakdown
+- payload
+- flagged
+- managed guardrail
+- custom guardrail
+- self-hosted Guard
+- multi-region SaaS
+- Gandalf
+- Triton Inference Server
+- Kubernetes Helm
+- red teaming
+- AI gateway
+- LiteLLM Lakera
+
+### Verb-Noun Tasks
+
+- Screen user input for prompt injection before calling the LLM
+- Screen LLM output for PII leakage and policy violations
+- Configure a policy with L1 through L4 sensitivity levels
+- Create a project and assign a custom policy via the Platform API
+- Add a custom guardrail in natural language or regex
+- Mask PII entities returned in the payload field
+- Deploy Lakera Guard as a self-hosted container on Kubernetes
+- Run a red-team assessment against an agentic LLM application
+- Integrate Lakera Guard into a LiteLLM proxy or Kong gateway
+- Screen each step of a multi-agent workflow including tool responses
+- Tune false-positive vs false-negative rates via sensitivity
+- Detect malicious links injected into LLM outputs
+
+### User Intent Phrases
+
+- How do I block prompt injection attacks in production LLM apps?
+- I need a managed API that detects jailbreaks across 100+ languages.
+- Show me how to mask PII in LLM input/output via an API.
+- What's the best commercial guardrail for enterprise AI security?
+- How do I self-host an LLM security service in an air-gapped environment?
+- Run a red-team penetration test on my chatbot.
+- How can I screen each tool response in my agent workflow for attacks?
+- Centralize LLM security across multiple apps using projects and policies.
+- Set per-app sensitivity with OWASP-aligned paranoia levels.
+- Detect competitor mentions with a custom guardrail.
+
+### Problem Statements
+
+- Prompt injection bypasses my system prompt and exfiltrates instructions.
+- Users embed PII (SSNs, credit cards, emails) in prompts going to third-party LLMs.
+- Indirect prompt injection through tool responses corrupts agent behavior.
+- No way to centralize security policies across many AI applications.
+- Open-source guardrails miss novel jailbreaks; threat models go stale.
+- Need daily-updated detection without retraining or shipping models myself.
+- Compliance requires audit logs of every screened interaction.
+
+### When to Pick This
+
+- Pick this when you want a commercial, daily-updated, multi-language prompt-injection and jailbreak detector with SLAs.
+- Pick this over Guardrails AI and NeMo Guardrails when threat intelligence freshness and enterprise red-teaming matter more than open source.
+- Pick this over OpenAI Moderation when you need prompt-injection defense, PII detection, malicious link detection, and provider-agnostic screening, not just harm-category classification.
+- Pick this when self-hosted, air-gapped, OCI-runnable deployment with Kubernetes Helm is a hard requirement.
+- Pick this when you need OWASP-aligned sensitivity levels (L1-L4) to tune false positives by environment.
+- Pick this when offensive red-teaming as a service (Lakera Red) is part of the procurement scope.
+
+### Related Terms and Aliases
+
+- Lakera AI
+- Lakera Guard API
+- AI firewall
+- LLM security gateway
+- prompt injection firewall
+- indirect prompt injection defense
+- PII guard
+- Gandalf adversarial dataset
+- managed AI security
+- Kong AI Lakera plugin
+- AI red teaming service
+- LLM threat intelligence

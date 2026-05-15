@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Inference Serving</td></tr>
+<tr><td>Group</td><td>Inference Engines</td></tr>
 <tr><td>Type</td><td>SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/kserve/kserve">https://github.com/kserve/kserve</a></td></tr>
-<tr><td>Stars</td><td>5125</td></tr>
+<tr><td>Stars</td><td>5472</td></tr>
 <tr><td>Documentation</td><td><a href="https://kserve.github.io/website/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -389,6 +389,67 @@ spec:
 <h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
 <ul>
 <li>[1] KServe Documentation - <a href="https://kserve.github.io/kserve/">https://kserve.github.io/kserve/</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>KServe, Kubernetes, CNCF, InferenceService, InferenceGraph, ServingRuntime, ClusterServingRuntime, predictor, transformer, explainer, Knative, Istio, Kourier, ModelMesh, scale-to-zero, canary deployment, request-based autoscaling, V2 inference protocol, OpenAI-compatible, vLLM runtime, Triton runtime, TorchServe runtime, KV cache offloading, KFServing, multi-model serving, Kubeflow</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Deploy a model with an <code>InferenceService</code> Custom Resource Definition</li>
+<li>Compose multi-model pipelines with <code>InferenceGraph</code></li>
+<li>Define a reusable <code>ServingRuntime</code> for a custom container</li>
+<li>Roll out a new model version with <code>canaryTrafficPercent</code></li>
+<li>Scale model pods to zero when idle via Knative</li>
+<li>Serve an LLM under KServe with a vLLM runtime backend</li>
+<li>Apply Istio/Envoy mTLS and traffic policies to model endpoints</li>
+<li>Wire up pre/post-processing through a Transformer component</li>
+<li>Pull model artifacts from S3, GCS, or Azure Blob storage</li>
+<li>Pack many small models onto shared GPUs with ModelMesh</li>
+<li>Add outlier and data-drift detection to a production endpoint</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I deploy ML models on Kubernetes?”</li>
+<li>“I need scale-to-zero serving for an infrequently used model”</li>
+<li>“How do I do canary releases for a new model version?”</li>
+<li>“What’s the CNCF-blessed Kubernetes ML serving platform?”</li>
+<li>“How do I serve TensorFlow, PyTorch, and sklearn models with one API?”</li>
+<li>“I want OpenAI-compatible LLM serving on my own cluster”</li>
+<li>“How do I pack hundreds of small models onto shared GPUs?”</li>
+<li>“How do I add data drift detection to a deployed model?”</li>
+<li>“How do I integrate KServe with Kubeflow?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Manual Kubernetes Deployments + Services for every model are repetitive and brittle</li>
+<li>Different teams use different frameworks (TF, PyTorch, ONNX) with no common deploy story</li>
+<li>Idle models still pay for GPU/CPU pods 24/7 without scale-to-zero</li>
+<li>Canary rollouts require hand-written Istio VirtualServices and traffic-splitting glue</li>
+<li>Production observability (drift, outliers, payload logs) needs to be bolt-on for every model</li>
+<li>High-density multi-model deployments waste GPU memory without intelligent placement</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when Kubernetes is already the platform of record</li>
+<li>Pick this over Triton/BentoML/vLLM standalone when scale-to-zero, canary, and ingress matter</li>
+<li>Pick this for enterprise ML platforms serving many teams and many frameworks</li>
+<li>Pick this when InferenceGraph pipelines (ensembles, routers, multi-armed bandits) are required</li>
+<li>Pick this when ModelMesh’s high-density multi-model serving is needed</li>
+<li>Pick this when CNCF-aligned governance and Kubeflow integration are prerequisites</li>
+<li>Skip this when you don’t have Kubernetes or want a single-host inference server</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>KFServing (former name), KServe v1/v2</li>
+<li>“Kubernetes model serving”, “K8s ML serving”</li>
+<li>CRD-based model deployment</li>
+<li>ModelMesh, Multi-Model Serving (MMS)</li>
+<li>KServe V2 protocol = Open Inference Protocol (OIP)</li>
+<li>Alternative to Seldon Core, BentoML Yatai, Triton standalone, SageMaker endpoints</li>
+<li>Knative-backed serverless serving</li>
 </ul>
 
                     </main>

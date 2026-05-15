@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/Unstructured-IO/unstructured">Unstructured-IO/unstructured</a></td></tr>
-<tr><td>Stars</td><td>14118</td></tr>
+<tr><td>Stars</td><td>14708</td></tr>
 <tr><td>Docs</td><td><a href="https://docs.unstructured.io/open-source/ingestion/overview">docs.unstructured.io</a></td></tr>
 </tbody>
 </table>
@@ -485,6 +485,70 @@ for element in elements:
 <li>[7] Embedding - https://docs.unstructured.io/open-source/core-functionality/embedding</li>
 <li>[8] Source Connectors - https://docs.unstructured.io/open-source/ingestion/source-connectors/overview</li>
 <li>[9] Destination Connectors - https://docs.unstructured.io/open-source/ingestion/destination-connectors/overview</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>document parsing, PDF extraction, document ingestion, OCR, Tesseract, PaddleOCR, detectron2, layout detection, partitioning, semantic chunking, by_title chunking, RAG preparation, hi_res strategy, ocr_only strategy, document elements, Title, NarrativeText, table extraction, email parsing, EML, MSG, ingestion pipeline, source connectors, destination connectors, libmagic, unstructured-io, LLM-ready data</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Partition PDFs into typed elements (Title, NarrativeText, Table, ListItem)</li>
+<li>Extract tables from PDFs as HTML via <code>text_as_html</code> metadata</li>
+<li>Run OCR on scanned documents in multiple languages with ISO 639-3 codes</li>
+<li>Chunk partitioned elements by title for vector-database ingestion</li>
+<li>Process emails (EML, MSG) and extract headers plus attachments</li>
+<li>Ingest documents from SharePoint, Confluence, S3, or Google Drive</li>
+<li>Push processed chunks into Pinecone, Qdrant, Weaviate, or Milvus</li>
+<li>Convert DOCX, PPTX, XLSX, HTML, and Markdown to a uniform element schema</li>
+<li>Clean extracted text with bullet, dash, and non-ASCII normalization</li>
+<li>Run hi_res layout detection with detectron2_onnx for structured documents</li>
+<li>Build an end-to-end ETL ingestion pipeline with 11 stages</li>
+<li>Use <code>partition_via_api</code> for remote processing without local dependencies</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I convert a PDF into chunks ready for a RAG pipeline?</li>
+<li>How do I extract tables from a scanned PDF as HTML?</li>
+<li>What is the best way to OCR multi-language scanned documents?</li>
+<li>How do I ingest documents from Confluence or SharePoint into a vector database?</li>
+<li>How do I parse <code>.eml</code> files with attachments in Python?</li>
+<li>How do I preserve section boundaries when chunking documents for retrieval?</li>
+<li>How do I extract structured elements from PowerPoint and Excel files?</li>
+<li>How do I build a document ingestion pipeline that writes to Pinecone?</li>
+<li>What system dependencies does Unstructured need (libmagic, poppler, tesseract)?</li>
+<li>How do I run document parsing without installing all the heavy ML models?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Raw PDFs and Office documents are unusable directly by LLMs without parsing</li>
+<li>OCR on multi-column or scanned PDFs often produces jumbled text</li>
+<li>Tables in PDFs lose their structure when extracted as flat text</li>
+<li>Chunking by character count breaks across section and title boundaries, hurting retrieval quality</li>
+<li>Ingesting documents from dozens of SaaS sources requires bespoke connectors per system</li>
+<li>Heavy system dependencies (libmagic, poppler, tesseract, LibreOffice, pandoc) complicate deployment</li>
+<li>Metadata (page numbers, coordinates, element types) is easily lost during ad-hoc parsing</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you need to parse documents (PDFs, DOCX, scanned images, emails) into LLM-ready chunks — Airbyte is the right choice for replicating structured data between systems</li>
+<li>Pick this when document structure (titles, tables, page boundaries) must survive chunking</li>
+<li>Pick this when you need OCR plus layout detection in the same pipeline</li>
+<li>Pick this when your RAG inputs come from enterprise content sources (SharePoint, Confluence, Slack, GitHub) rather than databases</li>
+<li>Pick this when you want one library that handles 25+ file formats with a single <code>partition()</code> call</li>
+<li>Pick this when you already use a vector database (Pinecone, Qdrant, Weaviate, Milvus) and need a write-ready connector</li>
+<li>Pick this when the open-source library suffices and you don’t need the per-page-billed managed API</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Unstructured.io, unstructured-io/unstructured</li>
+<li>Document ETL, document ingestion, document AI</li>
+<li>Partitioning, semantic chunking, hi_res, ocr_only, fast strategy</li>
+<li>Document elements, NarrativeText, Title, ListItem, Table</li>
+<li>Layout-aware parsing, detectron2_onnx</li>
+<li>LLM-ready data, RAG preprocessing</li>
+<li>partition_pdf, partition_html, partition_email, partition_via_api</li>
 </ul>
 
                     </main>

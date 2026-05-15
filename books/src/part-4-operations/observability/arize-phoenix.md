@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Observability & LLM Ops |
+| Group | Observability |
 | Type | SDK/UI |
 | Open Source | Yes |
 | GitHub | [Arize-AI/phoenix](https://github.com/Arize-AI/phoenix) |
-| Stars | 8628 |
+| Stars | 9673 |
 | Documentation | [Official Docs](https://arize.com/docs/phoenix) |
 
 ## Overview
@@ -684,3 +684,97 @@ def handle_message(session_id: str, user_id: str, message: str) -> str:
 - [6] Prompt Management - <https://arize.com/docs/phoenix/prompt-engineering/overview-prompts/prompt-management>
 - [7] Self-Hosting Configuration - <https://arize.com/docs/phoenix/self-hosting/configuration>
 - [8] Python Client SDK - <https://arize.com/docs/phoenix/sdk-api-reference/python/arize-phoenix-client>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Arize Phoenix
+- AI observability
+- OpenTelemetry
+- OpenInference
+- OTLP
+- distributed tracing
+- span kinds
+- LLM span
+- EMBEDDING span
+- RETRIEVER span
+- RERANKER span
+- AGENT span
+- GUARDRAIL span
+- EVALUATOR span
+- self-hosted
+- SQLite
+- PostgreSQL
+- prompt playground
+- prompt versioning
+- experiments
+- datasets
+- annotations
+- evaluators
+- create_classifier
+- span replay
+- arize-phoenix-otel
+- Arize AX
+
+### Verb-Noun Tasks
+
+- Stand up a Phoenix server locally with `phoenix serve`
+- Send OTLP traces over HTTP or gRPC from any language
+- Auto-instrument OpenAI, LangChain, LlamaIndex, CrewAI, DSPy
+- Decorate functions with `@tracer.chain`, `@tracer.tool`, `@tracer.agent`
+- Create LLM-as-judge classifiers with `create_classifier`
+- Run experiments comparing prompt versions
+- Replay production spans against new prompts in the Playground
+- Store datasets in versioned form for benchmarks
+- Annotate spans with human ground-truth labels
+- Configure PostgreSQL backend for production deployments
+- Export traces from Ragas/Deepeval as annotations
+- Suppress tracing for sensitive operations
+
+### User Intent Phrases
+
+- I want OpenTelemetry-native LLM observability.
+- How do I trace a RAG pipeline with retriever and reranker spans?
+- I need to debug an agent's tool-call loop.
+- How do I run experiments to compare prompt versions?
+- I want a Prompt Playground that can replay real production spans.
+- How do I self-host an open-source observability platform with SQLite or Postgres?
+- I want to send traces from CrewAI / DSPy / Haystack to one dashboard.
+- How do I build LLM-as-judge evaluators in Python?
+- I need nine span kinds including AGENT, GUARDRAIL, and EVALUATOR.
+- What's the difference between Phoenix and Arize AX?
+
+### Problem Statements
+
+- Generic OpenTelemetry tools don't understand LLM semantics.
+- Agents loop infinitely or call wrong tools and we can't see why.
+- RAG retrieval quality is invisible without per-step relevance scores.
+- Prompt iterations break in production with no replay capability.
+- SQLite is fine for dev but won't scale; we need PostgreSQL.
+- Auto-instrumentation misses our custom business logic.
+
+### When to Pick This
+
+- Pick this when your observability stack is already OpenTelemetry/OTLP-centric and you want LLM-aware spans on top.
+- Pick this over LangSmith when you want fully open-source, self-hostable, and framework-agnostic.
+- Pick this over Langfuse when you want OpenInference semantic conventions and span-kind richness (AGENT, GUARDRAIL, EVALUATOR).
+- Pick this over Helicone when you need full tracing/evals/experiments (not gateway logging).
+- Pick this over Weights & Biases when LLM observability — not ML experiments — is the focus.
+- Pick this when you want span replay against real production data in a Prompt Playground.
+
+### Related Terms and Aliases
+
+- arize-phoenix-otel
+- arize-phoenix-client
+- arize-phoenix-evals
+- OpenInference instrumentation
+- nine span kinds
+- Arize AX (commercial counterpart)
+- phoenix serve
+- ~/.phoenix/ working directory
+- using_attributes context manager
+- LLMInstrumentor classes
+

@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | API Gateways & Model Routing |
+| Group | Model Gateways |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [BerriAI/litellm](https://github.com/BerriAI/litellm) |
-| Stars | 36571 |
+| Stars | 46980 |
 | Documentation | [Official Docs](https://docs.litellm.ai/docs/) |
 
 ## Overview
@@ -508,3 +508,101 @@ for chunk in response:
 - [6] Exception Mapping - <https://docs.litellm.ai/docs/exception_mapping>
 - [7] Observability Callbacks - <https://docs.litellm.ai/docs/observability/callbacks>
 - [8] Proxy Configuration - <https://docs.litellm.ai/docs/proxy/configs>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- litellm
+- BerriAI
+- llm gateway
+- model gateway
+- unified llm api
+- openai-compatible proxy
+- completion()
+- provider prefix
+- router
+- virtual keys
+- spend tracking
+- fallback routing
+- exception mapping
+- cost-based routing
+- latency-based routing
+- usage-based routing
+- least-busy routing
+- simple-shuffle
+- cooldown
+- multi-tenant llm
+- master key
+- proxy server
+- credential list
+- wildcard model
+- langfuse callback
+- helicone callback
+- drop_params
+- 100+ providers
+
+### Verb-Noun Tasks
+
+- Call OpenAI, Anthropic, Azure, and Vertex AI through one `completion()` function
+- Map provider exceptions to OpenAI exception types
+- Configure retry-and-fallback chains across multiple providers
+- Issue virtual API keys with per-key budgets and rate limits
+- Route traffic across deployments using cost, latency, or usage strategies
+- Track per-team and per-user spend in PostgreSQL
+- Push request telemetry to Langfuse, Helicone, LangSmith, or Arize
+- Deploy a centralized LLM gateway behind an OpenAI-compatible URL
+- Define credential lists and reference them across model entries
+- Cool down failing deployments automatically
+- Override per-token pricing for a custom deployment
+- Run the proxy in Docker or Kubernetes with Helm
+
+### User Intent Phrases
+
+- How do I call Anthropic and OpenAI with the same code?
+- I want one Python function that works across every LLM provider.
+- How do I add automatic failover when OpenAI is down?
+- How do I give each team in my company a separate LLM budget?
+- How do I issue API keys with spend caps?
+- I need to centralize LLM credentials so apps never see raw provider keys.
+- How do I track LLM costs per user?
+- Can I route the cheapest available model automatically?
+- How do I add Langfuse tracing to every LLM call without changing my agent code?
+- How do I run an OpenAI-compatible gateway in front of 10 different providers?
+- How do I load-balance across multiple Azure OpenAI deployments?
+- I want exponential backoff and retries that work the same way across providers.
+
+### Problem Statements
+
+- Each LLM provider has a different SDK and error model and my code is full of branches.
+- A single provider outage takes down my product.
+- Engineers are leaking provider API keys into repos because there is no central gateway.
+- I cannot tell which team is spending how much on LLM tokens.
+- I have multiple Azure deployments and no way to load-balance them.
+- I am paying for premium models when a cheaper one would have answered.
+- Observability tools require per-provider integration work I keep redoing.
+
+### When to Pick This
+
+- Pick this when you want an open-source, developer-driven gateway with a Python SDK you can embed (vs Portkey's managed-first model).
+- Pick this when you need cost-based, latency-based, and usage-based routing strategies out of the box.
+- Pick this when you want virtual keys with PostgreSQL-backed spend tracking you self-host.
+- Pick this when most of your stack is Python and a single in-process function is preferable to a network hop.
+- Pick this when you need text generation, embeddings, and image generation, but not music or video (vs ccapi).
+- Pick this when you want declarative observability callbacks instead of building each integration yourself.
+- Pick this when 100+ providers and broad community coverage matter more than enterprise routing primitives.
+
+### Related Terms and Aliases
+
+- llm proxy
+- llm router
+- multi-provider sdk
+- model abstraction layer
+- openai shim
+- llm cost tracking
+- llm spend management
+- failover gateway
+- llm load balancer
+- BerriAI proxy

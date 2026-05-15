@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Evaluation &amp; Testing</td></tr>
+<tr><td>Group</td><td>Evaluation</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/openai/evals">https://github.com/openai/evals</a></td></tr>
-<tr><td>Stars</td><td>17876</td></tr>
+<tr><td>Stars</td><td>18461</td></tr>
 <tr><td>Documentation</td><td><a href="https://developers.openai.com/api/docs/guides/evals">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -633,6 +633,99 @@ def grade(sample, item):
 <li>[4] <a href="https://platform.openai.com/docs/api-reference/graders">OpenAI Graders API Reference</a></li>
 <li>[5] <a href="https://github.com/openai/evals">OpenAI Evals GitHub Repository</a></li>
 <li>[6] <a href="https://developers.openai.com/api/reference/resources/evals/methods/create">Create Eval API Reference</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>OpenAI Evals</li>
+<li>Evals API</li>
+<li>eval run</li>
+<li>string check grader</li>
+<li>text similarity grader</li>
+<li>score model grader</li>
+<li>python grader</li>
+<li>multi-grader</li>
+<li>data source config</li>
+<li>testing criteria</li>
+<li>JSONL test data</li>
+<li>BLEU</li>
+<li>ROUGE</li>
+<li>METEOR</li>
+<li>cosine similarity</li>
+<li>fuzzy_match</li>
+<li>LLM-as-judge</li>
+<li>template syntax</li>
+<li>{{item.*}}</li>
+<li>{{sample.*}}</li>
+<li>webhook</li>
+<li>eval.run.succeeded</li>
+<li>Weights &amp; Biases</li>
+<li>sandboxed Python</li>
+<li>platform.openai.com/evaluations</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Create an eval with a data source config and testing criteria</li>
+<li>Upload JSONL test data as a file with purpose evals</li>
+<li>Run an eval against a specific OpenAI model and prompt template</li>
+<li>Grade outputs with exact string match</li>
+<li>Compute BLEU, ROUGE, METEOR, or cosine similarity scores</li>
+<li>Score open-ended responses with an LLM-as-judge</li>
+<li>Write a custom Python grader in a sandboxed environment</li>
+<li>Combine multiple graders with a weighted expression</li>
+<li>Subscribe to webhook events for eval completion</li>
+<li>Compare gpt-4.1, gpt-4o, and gpt-4o-mini on the same eval</li>
+<li>Gate a CI/CD deployment on an eval pass-rate threshold</li>
+<li>Validate tool-calling outputs with multi-grader</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I create an evaluation suite using OpenAI’s Evals API?</li>
+<li>Test classification accuracy against labeled JSONL data.</li>
+<li>Score summaries with ROUGE-L through the OpenAI platform.</li>
+<li>Use an LLM as judge with a structured scoring rubric.</li>
+<li>Run custom Python grading in OpenAI’s sandbox.</li>
+<li>Compare OpenAI model versions on the same test set.</li>
+<li>Get a webhook when my eval run completes.</li>
+<li>Visualize results on platform.openai.com/evaluations.</li>
+<li>Combine string match and similarity scoring with weights.</li>
+<li>Embed OpenAI Evals into a CI pipeline with quality gates.</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>No reference evaluation framework tightly integrated with OpenAI’s platform.</li>
+<li>Need both deterministic and LLM-graded scoring in a single run.</li>
+<li>Polling for run completion blocks pipelines.</li>
+<li>Cannot compare OpenAI model snapshots on identical inputs.</li>
+<li>Custom grading logic requires a safe execution environment.</li>
+<li>Hard to mix exact-match field checks with text-similarity scoring.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you are evaluating OpenAI models and want a managed, dashboard-backed evals service.</li>
+<li>Pick this over Promptfoo when you want OpenAI’s hosted execution, webhooks, and platform dashboard rather than local CLI + YAML.</li>
+<li>Pick this over DeepEval and Ragas when you do not need multi-provider support and prefer OpenAI’s reference grader set (string_check, text_similarity, score_model, python, multi).</li>
+<li>Pick this when sandboxed Python grading with numpy/scipy/pandas/scikit-learn is required.</li>
+<li>Pick this when webhook-driven async eval automation fits your deployment pipeline.</li>
+<li>Pick this when integration with Weights &amp; Biases via the open-source library is part of the workflow.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>openai/evals</li>
+<li>/v1/evals</li>
+<li>/v1/evals/{id}/runs</li>
+<li>evals registry</li>
+<li>BDD for LLMs</li>
+<li>LLM benchmark framework</li>
+<li>score model grading</li>
+<li>text similarity grading</li>
+<li>multi-grader composition</li>
+<li>OpenAI eval dashboard</li>
+<li>platform.openai.com evaluations</li>
+<li>sandboxed grader</li>
 </ul>
 
                     </main>

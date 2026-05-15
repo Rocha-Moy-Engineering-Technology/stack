@@ -17,7 +17,7 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 ### group
 
 - Type: string (enum)
-- Constraints: MUST be one of the 16 defined group labels (see Group Labels section)
+- Constraints: MUST be one of the 22 defined group labels (see Group Labels section)
 - Example: `Agent Frameworks`, `Inference Engines`
 
 ### type
@@ -59,33 +59,53 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 ### open_source_alternative
 
 - Type: string or `N/A`
-- Constraints: `N/A` if entry is open source; otherwise set to the most popular/influential open-source alternative. If the alternative exists in stacks.csv, use the exact `name` value from stacks.csv; otherwise it may be an external product name. External alternatives SHOULD be recorded in `alternative_stack.csv`.
+- Constraints: `N/A` if entry is open source AND no open-source competitor is meaningful; otherwise set to the most popular/influential open-source alternative. Closed-source entries SHOULD populate this field with the closest open-source counterpart when one exists. If the alternative exists in stacks.csv, use the exact `name` value from stacks.csv; otherwise it may be an external product name. External alternatives SHOULD be recorded in `alternative_stack.csv`.
 - Example: `LiteLLM`, `N/A`
 
 ### commercial_alternative
 
 - Type: string or `N/A`
-- Constraints: `N/A` if entry is not open source; if entry is open source, set to the most popular/influential commercial competitor. If the alternative exists in stacks.csv, use the exact `name` value from stacks.csv; otherwise it may be an external product name. External alternatives SHOULD be recorded in `alternative_stack.csv`.
-- Example: `Vertex AI`, `Groq`, `N/A`
+- Constraints: set to the most popular/influential commercial competitor when one exists. Open-source entries populate this field with their commercial competitor. Closed-source entries MAY populate this field with another closed-source competitor when no peer is open-source (e.g., LLM provider rows reference each other). Use `N/A` only when no meaningful commercial competitor exists. If the alternative exists in stacks.csv, use the exact `name` value from stacks.csv; otherwise it may be an external product name. External alternatives SHOULD be recorded in `alternative_stack.csv`.
+- Example: `Vertex AI`, `Groq`, `Claude`, `N/A`
 
 ## Group Labels
 
+Groups are organized into four parts. The part assignment determines the chapter's directory under `bundles/stack/books/src/`.
+
+### Part I — Foundation & Infrastructure
+
 - **LLM Providers** - Hosted large language model APIs (OpenAI, Gemini, Claude)
-- **Agent Frameworks** - Libraries for building autonomous AI agents and multi-agent systems
-- **RAG Frameworks** - Retrieval-Augmented Generation (RAG) frameworks and knowledge graph tools
-- **Structured Generation** - Tools for constraining LLM outputs and structured data extraction
+- **Hosted Inference APIs** - Vendor-hosted inference services on custom silicon or shared accelerators (Groq, Cerebras)
+- **Inference Engines** - Self-hosted serving frameworks and model libraries for production inference (vLLM, Triton, BentoML, Hugging Face Transformers)
+- **Local Model Runtimes** - Developer-focused desktop and CLI tools for running models locally (Ollama, LM Studio)
 - **Model Gateways** - Unified API proxies and routing layers across multiple LLM providers
+- **Compute & GPU Infrastructure** - Serverless GPU platforms and distributed compute frameworks (Ray, Modal, RunPod)
+- **Managed AI Platforms** - Cloud vendor end-to-end ML/GenAI platforms covering training, serving, and orchestration (Vertex AI, AWS Bedrock)
+
+### Part II — Application Development
+
+- **Agent Frameworks** - Libraries for building autonomous AI agents and multi-agent systems
+- **Agent Protocols** - Open standards for connecting agents to tools, data, and other agents (MCP, A2A)
+- **Agent Runtimes & Sandboxes** - Isolated execution environments for agent code, tools, and data manipulation
+- **Browser Automation** - Headless browser platforms and SDKs for web-acting agents
+- **Structured Generation** - Tools for constraining LLM outputs and structured data extraction
+- **Memory Systems** - Persistent memory and context management for AI agents and assistants
+
+### Part III — Data & Models
+
+- **RAG Frameworks** - Retrieval-Augmented Generation (RAG) frameworks and knowledge graph tools
+- **Embeddings & Reranking** - Hosted and open-source embedding and reranking model providers
 - **Vector Databases** - Vector similarity search engines and embedding storage systems
-- **Inference Engines** - Engines and platforms for hosting and serving model inference
-- **GPU Infrastructure** - Cloud GPU providers, managed AI platforms, and distributed compute
-- **Workflow Orchestration** - Pipeline scheduling, workflow engines, and no-code automation
-- **Observability** - Tracing, monitoring, experiment tracking, and prompt management platforms
-- **Evaluation** - Frameworks for evaluating and benchmarking LLM application quality
-- **Guardrails** - Input/output validation, content moderation, and LLM security
 - **Data Pipelines** - ETL/ingestion tools for document parsing, chunking, embedding, and data integration
 - **Fine-tuning** - Libraries for parameter-efficient fine-tuning and model training
-- **Memory Systems** - Persistent memory and context management for AI agents and assistants
 - **Labeling** - Tools for annotating and labeling training data
+
+### Part IV — Operations & Quality
+
+- **Guardrails** - Input/output validation, content moderation, and LLM security
+- **Evaluation** - Frameworks for evaluating and benchmarking LLM application quality
+- **Observability** - Tracing, monitoring, experiment tracking, and prompt management platforms
+- **Workflow Orchestration** - Pipeline scheduling, workflow engines, and no-code automation
 
 ## Type Classifications
 

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Observability &amp; LLM Ops</td></tr>
+<tr><td>Group</td><td>Observability</td></tr>
 <tr><td>Type</td><td>API/UI</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/Helicone/helicone">https://github.com/Helicone/helicone</a></td></tr>
-<tr><td>Stars</td><td>5126</td></tr>
+<tr><td>Stars</td><td>5662</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.helicone.ai/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -807,6 +807,101 @@ logger.enable_logging()
 <li>Helicone Gateway Integration: <a href="https://docs.helicone.ai/getting-started/integration-method/gateway">https://docs.helicone.ai/getting-started/integration-method/gateway</a></li>
 <li>Helicone OpenLLMetry Integration: <a href="https://docs.helicone.ai/getting-started/integration-method/openllmetry">https://docs.helicone.ai/getting-started/integration-method/openllmetry</a></li>
 <li>Helicone REST API Reference: <a href="https://docs.helicone.ai/rest/request/post-v1requestquery">https://docs.helicone.ai/rest/request/post-v1requestquery</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Helicone</li>
+<li>AI gateway</li>
+<li>LLM proxy</li>
+<li>OpenAI-compatible</li>
+<li>base URL swap</li>
+<li>header-driven configuration</li>
+<li>edge caching</li>
+<li>Cloudflare Workers</li>
+<li>rate limiting</li>
+<li>automatic retries</li>
+<li>provider fallbacks</li>
+<li>session tracking</li>
+<li>user tracking</li>
+<li>custom properties</li>
+<li>prompt management</li>
+<li>async logger</li>
+<li>OpenLLMetry</li>
+<li>BYOK</li>
+<li>100+ models</li>
+<li>Y Combinator</li>
+<li>Apache 2.0</li>
+<li>SOC 2</li>
+<li>GDPR</li>
+<li>EU endpoint</li>
+<li>request query API</li>
+<li>ClickHouse</li>
+<li>Supabase</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Swap base URL to gateway.helicone.ai to start logging</li>
+<li>Enable edge caching with a single header</li>
+<li>Configure per-user rate limits via Helicone-RateLimit-Policy header</li>
+<li>Track sessions with Helicone-Session-Id and Session-Path</li>
+<li>Tag requests with custom Helicone-Property-* metadata</li>
+<li>Add automatic retries with exponential backoff</li>
+<li>Fall back to a secondary provider on failure</li>
+<li>Query logged requests via the REST API</li>
+<li>Forward analytics to PostHog</li>
+<li>Hide sensitive request/response bodies via Omit headers</li>
+<li>Use EU endpoint for GDPR compliance</li>
+<li>Swap to async OpenLLMetry mode to keep Helicone off the critical path</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I want LLM observability without changing application code.</li>
+<li>How do I add caching to LLM API calls to save money?</li>
+<li>I need per-user rate limits for a SaaS product.</li>
+<li>How do I track multi-step agent workflows as sessions?</li>
+<li>I want fallback routing when an LLM provider is down.</li>
+<li>How do I get unified logging across OpenAI, Anthropic, Groq, Bedrock?</li>
+<li>I need an LLM proxy that supports BYOK with no markup.</li>
+<li>How do I add prompt injection protection at the gateway level?</li>
+<li>Show me how to filter LLM logs by cost or user via REST API.</li>
+<li>I need GDPR-compliant LLM logging in the EU.</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Adding observability requires invasive SDK instrumentation everywhere.</li>
+<li>LLM costs balloon when identical requests aren’t cached.</li>
+<li>We can’t enforce per-user quotas without writing our own throttling layer.</li>
+<li>Provider outages bring down our whole product.</li>
+<li>Spread of providers (OpenAI, Anthropic, Groq) makes unified cost tracking hard.</li>
+<li>Sensitive prompts must be excluded from logs for compliance.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want zero-code observability via a single base URL swap.</li>
+<li>Pick this over LangSmith/Langfuse/Phoenix when gateway features (caching, rate limits, fallbacks, retries) matter as much as logging.</li>
+<li>Pick this over LiteLLM when you also want a hosted analytics dashboard and edge caching, not just a routing SDK.</li>
+<li>Pick this over Portkey when you want open-source self-hosting (Apache 2.0) with the same proxy model.</li>
+<li>Pick this over Weights &amp; Biases when LLM proxy/gateway concerns dominate over experiment tracking.</li>
+<li>Pick this when you need EU data residency for LLM logs.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Helicone-Auth header</li>
+<li>Helicone-Target-Url</li>
+<li>ai-gateway.helicone.ai</li>
+<li>oai.helicone.ai</li>
+<li>gateway.helicone.ai</li>
+<li>eu.api.helicone.ai</li>
+<li>Jawn server</li>
+<li>async logging (OpenLLMetry)</li>
+<li>LLM API gateway</li>
+<li>LLM cost dashboard</li>
+<li>BYOK proxy</li>
+<li>Hobby/Pro/Team/Enterprise tiers</li>
 </ul>
 
                     </main>

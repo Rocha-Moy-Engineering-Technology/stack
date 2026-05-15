@@ -3,12 +3,12 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Weights and Biases - AI/ML Stack Documentation</title>
+        <title>Weights &amp; Biases - AI/ML Stack Documentation</title>
 
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,7 +190,7 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Observability &amp; LLM Ops</td></tr>
+<tr><td>Group</td><td>Observability</td></tr>
 <tr><td>Type</td><td>API/SDK/UI</td></tr>
 <tr><td>Open Source</td><td>No</td></tr>
 <tr><td>GitHub</td><td>N/A</td></tr>
@@ -599,6 +599,104 @@ with wandb.init(project="registry-demo") as run:
 <li>[5] W&amp;B Sweeps Guide - https://docs.wandb.ai/models/sweeps/walkthrough</li>
 <li>[6] W&amp;B Artifacts Guide - https://docs.wandb.ai/guides/artifacts</li>
 <li>[7] W&amp;B Registry Guide - https://docs.wandb.ai/models/registry</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Weights &amp; Biases</li>
+<li>W&amp;B</li>
+<li>wandb</li>
+<li>experiment tracking</li>
+<li>hyperparameter sweeps</li>
+<li>Bayesian optimization</li>
+<li>artifact versioning</li>
+<li>model registry</li>
+<li>reports</li>
+<li>W&amp;B Models</li>
+<li>W&amp;B Weave</li>
+<li>W&amp;B Inference</li>
+<li>W&amp;B Training</li>
+<li>@weave.op</li>
+<li>runs</li>
+<li>projects</li>
+<li>config</li>
+<li>metrics</li>
+<li>artifacts</li>
+<li>PyTorch</li>
+<li>TensorFlow</li>
+<li>Keras</li>
+<li>Hugging Face</li>
+<li>PyTorch Lightning</li>
+<li>lineage</li>
+<li>offline mode</li>
+<li>WandbCallback</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Initialize a run with <code>wandb.init()</code></li>
+<li>Log scalars, images, audio, video, tables, and histograms</li>
+<li>Sweep hyperparameters with Bayesian optimization</li>
+<li>Track datasets and models as versioned artifacts</li>
+<li>Promote models through the registry with aliases and tags</li>
+<li>Create collaborative reports with embedded live charts</li>
+<li>Trace LLM calls automatically with <code>@weave.op</code></li>
+<li>Build evaluation suites with weave Scorers</li>
+<li>Distribute sweep agents across multiple machines</li>
+<li>Run experiments in offline mode and sync later</li>
+<li>Visualize parallel coordinates and parameter importance</li>
+<li>Configure alerts when metrics cross thresholds</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I need ML experiment tracking with hyperparameter sweeps.</li>
+<li>How do I version datasets and models with lineage?</li>
+<li>I want a model registry for organizational governance.</li>
+<li>How do I add LLM observability alongside my ML training?</li>
+<li>I need to share experiment results as interactive reports.</li>
+<li>How do I run Bayesian hyperparameter optimization?</li>
+<li>I want to compare hundreds of PyTorch runs side-by-side.</li>
+<li>How do I track GPU utilization automatically?</li>
+<li>I want serverless RL post-training for LLMs.</li>
+<li>How do I trace OpenAI/Anthropic/Cohere calls automatically with Weave?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Hyperparameter tuning by hand is unscalable.</li>
+<li>We lose track of which dataset produced which model.</li>
+<li>Reproducibility breaks when configs and runs aren’t tied together.</li>
+<li>Model promotion lacks audit trails and governance.</li>
+<li>Separate tools for ML training and LLM tracing fragment our workflow.</li>
+<li>Sharing results across teams requires manual screenshots and notebooks.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when your team does traditional ML/deep learning training (PyTorch, TF, Keras) alongside LLM work.</li>
+<li>Pick this over LangSmith/Langfuse/Arize Phoenix when ML experiment tracking is the primary need and LLM observability is secondary.</li>
+<li>Pick this over Helicone when you need a hyperparameter sweep controller and artifact registry, not API proxy logging.</li>
+<li>Pick this when you need a unified system of record across training, evaluation, deployment, and LLM tracing.</li>
+<li>Pick this when artifact lineage and model registry governance matter for compliance.</li>
+<li>Pick this when serverless RL post-training (W&amp;B Training preview) fits the roadmap.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>wandb SDK</li>
+<li>W&amp;B Models</li>
+<li>W&amp;B Weave</li>
+<li>W&amp;B Inference</li>
+<li>W&amp;B Training</li>
+<li>WandbCallback</li>
+<li>WandbLogger</li>
+<li>model registry</li>
+<li>artifact lineage</li>
+<li>Weave Ops / Weave Calls</li>
+<li>ML experiment tracker</li>
+<li>hyperparameter sweep controller</li>
+<li>Bayesian search</li>
+<li>Hyperband early termination</li>
+<li>@weave.op decorator</li>
 </ul>
 
                     </main>

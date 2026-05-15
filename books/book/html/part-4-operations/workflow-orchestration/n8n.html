@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Workflow Orchestration &amp; Automation</td></tr>
+<tr><td>Group</td><td>Workflow Orchestration</td></tr>
 <tr><td>Type</td><td>API/SDK/UI</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/n8n-io/n8n">https://github.com/n8n-io/n8n</a></td></tr>
-<tr><td>Stars</td><td>175811</td></tr>
+<tr><td>Stars</td><td>187836</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.n8n.io/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -672,6 +672,105 @@ n8n start
 <li><a href="https://docs.n8n.io/integrations/">n8n Integrations Library</a></li>
 <li><a href="https://docs.n8n.io/advanced-ai/">n8n AI and LangChain Documentation</a></li>
 <li><a href="https://docs.n8n.io/hosting/configuration/">n8n Configuration Reference</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>n8n</li>
+<li>nodemation</li>
+<li>visual workflow builder</li>
+<li>low-code</li>
+<li>fair-code</li>
+<li>Sustainable Use License</li>
+<li>nodes</li>
+<li>triggers</li>
+<li>actions</li>
+<li>core nodes</li>
+<li>cluster nodes</li>
+<li>Code node</li>
+<li>JavaScript</li>
+<li>Python</li>
+<li>400+ integrations</li>
+<li>credentials</li>
+<li>expressions</li>
+<li>JMESPath</li>
+<li>AI Agent node</li>
+<li>LangChain integration</li>
+<li>queue mode</li>
+<li>Redis</li>
+<li>task runners</li>
+<li>webhook trigger</li>
+<li>schedule trigger</li>
+<li>self-hosted</li>
+<li>Vue.js editor</li>
+<li>RBAC</li>
+<li>SAML/OIDC SSO</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Drag-and-drop nodes to build automation flows</li>
+<li>Trigger workflows via webhook, schedule, or manual run</li>
+<li>Write custom JavaScript or Python in Code nodes</li>
+<li>Map data between nodes with <code>{{ }}</code> expressions and JMESPath</li>
+<li>Integrate with 400+ services (Slack, GitHub, Sheets, Salesforce, etc.)</li>
+<li>Build AI agents with LangChain cluster nodes</li>
+<li>Scale horizontally with Redis-backed queue mode</li>
+<li>Sync workflows to Git for version control</li>
+<li>Promote workflows across dev/staging/prod environments</li>
+<li>Manage secrets via external vaults (Vault, AWS, Azure)</li>
+<li>Enforce RBAC and enterprise SSO</li>
+<li>Expose Prometheus metrics for monitoring</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I want a visual workflow builder that lets me drop into code when I need to.</li>
+<li>How do I automate Slack notifications when a GitHub issue is opened?</li>
+<li>I need to bridge no-code and JavaScript/Python in the same flow.</li>
+<li>How do I run AI agents inside a visual builder?</li>
+<li>I want to self-host an n8n instance on Kubernetes or Cloud Run.</li>
+<li>How do I scale n8n horizontally with worker instances?</li>
+<li>I need a Zapier alternative I can host myself.</li>
+<li>How do I version-control my workflows in Git?</li>
+<li>I want LangChain agents integrated into business automation flows.</li>
+<li>How do I expose webhook endpoints for third-party services?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Pure code orchestrators are overkill for simple business automations.</li>
+<li>Pure no-code tools hit walls when transformations get complex.</li>
+<li>Zapier/Make charge per execution and we want flat-rate self-hosting.</li>
+<li>AI agents are siloed from the rest of business workflows.</li>
+<li>Manual data entry between SaaS tools wastes hours.</li>
+<li>Webhook bridges and CRM syncs need quick iteration with debugging.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when your team is technical but wants visual workflow building with code escape hatches.</li>
+<li>Pick this over Activepieces when you want a larger ecosystem (400+ integrations) and embedded JS/Python Code nodes with LangChain cluster nodes.</li>
+<li>Pick this over Node-RED when business automation and SaaS integrations — not IoT protocols — are the primary use case.</li>
+<li>Pick this over Airflow/Prefect/Temporal when you want a visual+code hybrid, not code-first orchestration.</li>
+<li>Pick this over fully no-code tools (Zapier, Make) when you need self-hosting and the Code node escape hatch.</li>
+<li>Pick this when fair-code self-hosting is acceptable (note: Sustainable Use License, not OSI-approved).</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>n8n.io</li>
+<li>n8n-nodes-base</li>
+<li>N8N_RUNNERS_ENABLED</li>
+<li>N8N_ENCRYPTION_KEY</li>
+<li>EXECUTIONS_MODE=queue</li>
+<li>Bull queue (Redis)</li>
+<li>workflow automation</li>
+<li>iPaaS alternative</li>
+<li>Zapier alternative</li>
+<li>Make alternative</li>
+<li>LangChain cluster node</li>
+<li>AI Agent / Chain / Memory / Tool nodes</li>
+<li>Execute Workflow node</li>
+<li>community nodes</li>
 </ul>
 
                     </main>

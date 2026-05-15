@@ -414,3 +414,95 @@ system_prompt = f"You are a support agent.\n\n{ctx.context}"
 - [1] Welcome to Zep - https://help.getzep.com/overview
 - [2] Key Concepts - https://help.getzep.com/concepts
 - [3] Quick Start Guide - https://help.getzep.com/quick-start-guide
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Zep
+- context engineering
+- temporal knowledge graph
+- Graphiti
+- fact invalidation
+- temporal validity
+- user graph
+- thread
+- context block
+- context template
+- Graph RAG
+- semantic + full-text + BFS search
+- sub-200ms context retrieval
+- high recall over precision
+- automatic fact extraction
+- JSON business data ingestion
+- agentic tools
+- HIPAA compliance
+- RFC3339 timestamps
+- user summary
+- entity-relationship edges
+- AutoGen integration
+- LangGraph integration
+
+### Verb-Noun Tasks
+
+- Build a temporal knowledge graph of facts about a user
+- Invalidate old facts automatically when new ones supersede them
+- Ingest chat messages, JSON business events, or text documents into a graph
+- Retrieve a sub-200ms context block of user summary + relevant facts
+- Define a custom context template with `%{user_summary}`, `%{edges}`, `%{entities}` variables
+- Track fact validity dates and present them to the LLM
+- Add agentic tools so an agent can query its own user graph
+- Ingest purchase history or song-play events into a personalization graph
+- Backfill existing users and conversations in bulk
+- Integrate Zep memory with LangGraph, AutoGen, or CrewAI
+- Connect Zep to AI coding assistants via the MCP server
+- Build HIPAA-compliant medical AI memory
+
+### User Intent Phrases
+
+- How do I track when a user fact became true or invalid?
+- How can I build personalized AI with temporal awareness?
+- How do I retrieve user context in under 200ms?
+- How do I ingest business events (purchases, plays) into agent memory?
+- What is a temporal knowledge graph for AI personalization?
+- How does Zep differ from a vector memory layer?
+- How do I customize the structure of retrieved context?
+- I need HIPAA-compliant memory for a medical AI assistant
+- How do I migrate from Mem0 to Zep?
+- How do agents directly query user knowledge graphs?
+
+### Problem Statements
+
+- Vector memory cannot represent how facts change over time
+- Old preferences silently mix with new ones, polluting context
+- Hand-rolling graph extraction, invalidation, and search is heavy
+- Closed-source: no self-hosted deployment option (only the underlying Graphiti is OSS)
+- High-recall bias may return less-relevant results alongside relevant ones
+- Missing RFC3339 timestamps or user names degrade graph quality
+- Data ingestion is asynchronous; recent data isn't immediately in context blocks
+
+### When to Pick This
+
+- Pick Zep when your application has facts that change over time (support agents, CRM, e-commerce preferences, healthcare)
+- Pick Zep when you need a temporal knowledge graph with automatic fact invalidation tracking valid-from / invalid-from dates
+- Pick Zep when sub-200ms personalized context assembly is a requirement
+- Pick Zep when you need HIPAA, RBAC, and audit logging out of the box
+- Pick Mem0 instead when you want a simpler memory layer with vector + optional graph, and self-hosted OSS deployment
+- Pick Letta instead when you want agents that autonomously self-modify their own memory blocks (stateful agent OS)
+- Pick Graphiti (the underlying OSS framework) directly if you want self-hosted temporal knowledge graphs without the managed service
+
+### Related Terms and Aliases
+
+- context engineering platform
+- temporal graph memory
+- Graphiti graph framework
+- fact invalidation
+- valid-from / invalid-from edges
+- agent personalization layer
+- Graph RAG
+- knowledge graph memory
+- temporal entity graph
+- getzep
+- MemGPT alternative for temporal facts

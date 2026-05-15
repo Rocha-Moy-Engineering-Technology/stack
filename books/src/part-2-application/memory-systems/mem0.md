@@ -9,7 +9,7 @@
 | Type | API/SDK |
 | Open Source | yes |
 | GitHub | [mem0ai/mem0](https://github.com/mem0ai/mem0) |
-| Stars | 48695 |
+| Stars | 55709 |
 | Docs | [docs.mem0.ai](https://docs.mem0.ai/introduction) |
 
 ## Overview
@@ -379,3 +379,92 @@ results = client.search(
 - [7] Search Memory - https://docs.mem0.ai/core-concepts/memory-operations/search
 - [8] Integrations - https://docs.mem0.ai/integrations
 - [9] Configuration - https://docs.mem0.ai/open-source/configuration
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Mem0
+- universal memory layer
+- self-improving memory
+- automatic memory extraction
+- conflict resolution
+- four memory layers
+- conversation memory
+- session memory
+- user memory
+- organizational memory
+- graph memory
+- semantic search
+- vector + graph
+- Qdrant backend
+- Neo4j graph store
+- pgvector option
+- reranker
+- enable_graph
+- MCP server
+- OpenMemory
+- multi-framework integrations
+- user_id scoped memory
+- SOC 2 Type II
+
+### Verb-Noun Tasks
+
+- Add a memory from a conversation with `client.add(messages, user_id=...)`
+- Extract facts automatically from chat history via LLM
+- Resolve conflicts when new facts contradict existing memories
+- Search memories semantically by natural-language query
+- Enable graph memory to capture entity relationships
+- Filter memories with JSON logical filters (AND/OR, comparison operators)
+- Promote conversation-layer facts to session, user, or org memory
+- Add a reranker (Cohere, Zero Entropy) for retrieval precision
+- Self-host Mem0 with Qdrant + Neo4j + OpenAI embeddings
+- Integrate Mem0 with LangChain, CrewAI, AutoGen, LangGraph, LlamaIndex
+- Expose Mem0 to any AI client via its MCP server
+- Build voice agents with persistent memory (LiveKit, ElevenLabs, Pipecat)
+
+### User Intent Phrases
+
+- How do I give my LLM app persistent memory across sessions?
+- How can my agent remember user preferences automatically?
+- What handles conflict when a user updates their preference?
+- How do I add a memory layer between my chat app and the LLM?
+- How can I get entity relationships, not just vector similarity?
+- How do I scope memories per user, session, and organization?
+- How do I let multiple agents share organizational context?
+- How do I self-host a memory backend with Qdrant?
+- How do I integrate persistent memory into a LangGraph or CrewAI agent?
+- What is the simplest API for adding memory to an LLM application?
+
+### Problem Statements
+
+- LLM apps are stateless and forget context across sessions
+- Manual fact extraction and conflict resolution is brittle
+- Vector search alone misses entity relationships
+- Default OSS config requires OpenAI; alternatives need explicit setup
+- Graph-enabled adds are asynchronous; recent memories may not be retrievable immediately
+- Mixing `infer=True` and `infer=False` for identical content creates duplicates
+- Date filtering only available on Platform, not OSS
+
+### When to Pick This
+
+- Pick Mem0 when you want a turnkey memory layer with automatic extraction, conflict resolution, and broad framework integrations
+- Pick Mem0 for simple user preference tracking — fastest to integrate among dedicated memory platforms
+- Pick Mem0 when you want both vector similarity AND optional graph relationships in one API
+- Pick Mem0 OSS when you need self-hosted control with no vendor lock-in
+- Pick Letta instead when agents should self-modify their own memory blocks (stateful agent OS, four-tier context hierarchy with sleep-time compute)
+- Pick Zep instead when facts change over time and you need temporal knowledge graphs with fact invalidation (support agents, CRM)
+
+### Related Terms and Aliases
+
+- universal AI memory
+- persistent agent memory
+- LLM long-term memory
+- conversation memory layer
+- OpenMemory
+- memory-as-a-service
+- vector + graph memory
+- agent recall layer
+- memory client SDK

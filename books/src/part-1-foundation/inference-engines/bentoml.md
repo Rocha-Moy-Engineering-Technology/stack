@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Inference Serving |
+| Group | Inference Engines |
 | Type | SDK/Infra |
 | Open Source | Yes |
 | GitHub | [https://github.com/bentoml/BentoML](https://github.com/bentoml/BentoML) |
-| Stars | 8462 |
+| Stars | 8645 |
 | Documentation | [Official Docs](https://docs.bentoml.com/) |
 
 ## Overview
@@ -288,3 +288,66 @@ curl -X POST http://localhost:3000/summarize \
 
 - [1] BentoML Documentation - <https://docs.bentoml.com/>
 - [2] BentoML Quickstart - <https://docs.bentoml.com/en/latest/get-started/quickstart.html>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+BentoML, Bento, @bentoml.service, @bentoml.api, Runner, adaptive batching, model composition, async task queues, BentoCloud, bentofile.yaml, bentoml serve, bentoml build, bentoml containerize, SyncHTTPClient, AsyncHTTPClient, WebSocket inference, streaming inference, Python inference framework, model packaging, model serving, vLLM integration, OpenAPI auto-docs, Gateways
+
+### Verb-Noun Tasks
+
+- Define a service with `@bentoml.service` and `@bentoml.api` decorators
+- Load the model in the service `__init__` constructor
+- Serve locally with `bentoml serve` on port 3000
+- Build a portable Bento with `bentoml build`
+- Containerize a Bento with `bentoml containerize`
+- Set resources with `@bentoml.service(resources={"gpu": 1})`
+- Configure traffic with `timeout` and `max_concurrency`
+- Compose multiple models into one inference pipeline
+- Stream tokens or send WebSocket responses
+- Offload long jobs to async task queues
+- Deploy to BentoCloud for managed autoscaling
+- Call the service from Python with `SyncHTTPClient`
+
+### User Intent Phrases
+
+- "How do I turn a Python model into a REST API?"
+- "What's the most Pythonic way to serve ML models?"
+- "How do I get adaptive batching without writing batching code?"
+- "How do I package a model and its dependencies for deployment?"
+- "How do I serve a HuggingFace pipeline behind an HTTP endpoint?"
+- "What's a developer-friendly alternative to Triton for Python teams?"
+- "How do I auto-generate OpenAPI docs from my inference service?"
+- "How do I deploy a multi-model RAG pipeline as one service?"
+- "How do I run a Stable Diffusion endpoint with GPU autoscaling?"
+
+### Problem Statements
+
+- Wrapping models in Flask/FastAPI re-invents batching, packaging, and observability
+- Manual Docker builds for ML services drift between dev and prod
+- Multi-model pipelines need glue code for in-process composition
+- Long-running inference jobs (image gen, batch) need queues, not blocking HTTP
+- Production-grade metrics, tracing, and logging are boilerplate to add
+- Teams without Kubernetes expertise still need autoscaling and rolling deploys
+
+### When to Pick This
+
+- Pick this when teams are Python-first and want decorator-based service definitions
+- Pick this over Triton when developer ergonomics matter more than raw multi-framework breadth
+- Pick this over raw vLLM when packaging, deployment, and observability are bundled
+- Pick this when model composition (embeddings + classifier, RAG) lives in one service
+- Pick this when adaptive batching should be automatic, not hand-tuned
+- Pick this when BentoCloud's managed autoscaling is a desired option
+- Skip this when you need non-Python service definitions or maximum raw throughput
+
+### Related Terms and Aliases
+
+- BentoML, Bento, BentoCloud, Yatai (legacy)
+- "Python model serving framework"
+- "ML in production framework"
+- Bento (the packaging unit) vs BentoML (the framework)
+- Alternative to Cog (Replicate), Modal, Truss (Baseten), MLflow Models, Ray Serve
+- Service-first model deployment, decorator-based serving

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,13 +190,12 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>Name</strong></td><td>Semantic Kernel</td></tr>
-<tr><td><strong>Group</strong></td><td>Agent Frameworks</td></tr>
-<tr><td><strong>Type</strong></td><td>SDK</td></tr>
-<tr><td><strong>Open Source</strong></td><td>Yes</td></tr>
-<tr><td><strong>GitHub</strong></td><td><a href="https://github.com/microsoft/semantic-kernel">microsoft/semantic-kernel</a></td></tr>
-<tr><td><strong>Stars</strong></td><td>27,283</td></tr>
-<tr><td><strong>Docs</strong></td><td><a href="https://learn.microsoft.com/en-us/semantic-kernel/">Official Docs</a></td></tr>
+<tr><td>Group</td><td>Agent Frameworks</td></tr>
+<tr><td>Type</td><td>SDK</td></tr>
+<tr><td>Open Source</td><td>Yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/microsoft/semantic-kernel">microsoft/semantic-kernel</a></td></tr>
+<tr><td>Stars</td><td>27904</td></tr>
+<tr><td>Documentation</td><td><a href="https://learn.microsoft.com/en-us/semantic-kernel/">Official Docs</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -431,6 +430,76 @@ Console.WriteLine(result);
 <ul>
 <li>[1] <a href="https://learn.microsoft.com/en-us/semantic-kernel/">Semantic Kernel Documentation</a></li>
 <li>[2] <a href="https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel">Semantic Kernel Kernel Concept</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>semantic kernel, microsoft semantic kernel, c# llm sdk, dotnet ai, java llm sdk, kernel, kernel function, plugin, ai connector, azure openai, function choice behavior, openapi plugin, m365 copilot plugin, hipaa soc2 gdpr, opentelemetry, dependency injection, service provider, filters and hooks, prompt templates, process framework, mcp server from kernel functions, multi-language sdk, enterprise middleware, non-breaking changes</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Build a <code>Kernel</code> and register an Azure OpenAI chat completion service</li>
+<li>Expose existing C# or Python code as a kernel function with <code>@kernel_function</code></li>
+<li>Import a REST API as a plugin from its OpenAPI specification</li>
+<li>Register multiple AI services and select between them per request</li>
+<li>Configure <code>FunctionChoiceBehavior.Auto()</code> for automatic function calling</li>
+<li>Add pre/post invocation filters for content moderation and telemetry</li>
+<li>Emit OpenTelemetry traces for every prompt and function call</li>
+<li>Expose kernel functions as an MCP server over SSE or stdio</li>
+<li>Use the same SDK across C#, Python, and Java teams</li>
+<li>Compose a Process Framework state machine across plugins</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I add AI to my existing C# or .NET application?”</li>
+<li>“How do I integrate Azure OpenAI with dependency injection?”</li>
+<li>“How do I expose existing business code as AI-callable functions?”</li>
+<li>“How do I make my REST APIs callable by an LLM?”</li>
+<li>“How do I build an enterprise AI assistant with HIPAA/SOC 2/GDPR compliance?”</li>
+<li>“How do I swap between OpenAI, Azure OpenAI, Anthropic, and Google in .NET?”</li>
+<li>“How do I add content moderation filters to every LLM call?”</li>
+<li>“How do I trace LLM calls with OpenTelemetry?”</li>
+<li>“How do I turn my kernel functions into an MCP server?”</li>
+<li>“How do I build a Microsoft 365 Copilot plugin?”</li>
+<li>“How do I write the same agent code in C# and Python?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Need to add AI to a large existing .NET / Java / Python codebase without rewriting business logic</li>
+<li>Enterprise compliance (HIPAA, SOC 2, GDPR) is required and rapid breaking framework changes are unacceptable</li>
+<li>Multiple teams use different languages and need a consistent SDK across them</li>
+<li>Existing REST APIs (and Microsoft 365 Copilot plugins) must be reusable by AI agents</li>
+<li>Need fine-grained content moderation and observability hooks at every step of the pipeline</li>
+<li>C# feature parity vs Python and Java lags and creates surprises</li>
+<li>Plugin discovery overflows the model’s function-calling context window when many plugins are registered</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you are in a .NET / Java / multi-language enterprise environment and need first-class C#, Python, and Java SDKs with the same abstractions</li>
+<li>Pick this over LangChain when .NET / Java parity, DI patterns, and enterprise compliance matter more than the broadest Python ecosystem</li>
+<li>Pick this over LangGraph when plugin-based function orchestration fits better than graph state machines</li>
+<li>Pick this over CrewAI when you want a kernel-and-plugins architecture instead of role-based crews</li>
+<li>Pick this over AutoGen when you want single-kernel plugin orchestration rather than multi-agent conversations (both are Microsoft, but this is the enterprise app-integration SDK)</li>
+<li>Pick this over Pydantic AI when multi-language SDKs, OpenTelemetry, and Azure-centric deployment matter more than Pydantic-typed Python agents</li>
+<li>Pick this over smolagents when enterprise middleware with filters, hooks, and compliance is required, not minimal code-first agents</li>
+<li>Pick this over ADK when your stack is anchored to Microsoft/Azure rather than Google/Vertex AI</li>
+<li>Pick this when OpenAPI-as-plugin and Microsoft 365 Copilot plugin compatibility are deliverables</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Kernel (DI container + pipeline)</li>
+<li>Kernel function (<code>@kernel_function</code>, <code>[KernelFunction]</code>)</li>
+<li>Plugin (group of functions)</li>
+<li>AI connector (provider abstraction)</li>
+<li>Function Choice Behavior (Auto / Required / None)</li>
+<li>Pre/post invocation filters</li>
+<li>Process Framework (state-machine workflows)</li>
+<li>OpenAPI plugin</li>
+<li>Microsoft 365 Copilot plugin format</li>
+<li>MCP server creation from kernel functions</li>
+<li>Enterprise AI middleware</li>
+<li>Multi-language SDK (C#, Python, Java)</li>
 </ul>
 
                     </main>

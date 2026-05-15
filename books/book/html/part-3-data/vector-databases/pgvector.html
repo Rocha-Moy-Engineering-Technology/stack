@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/pgvector/pgvector">pgvector/pgvector</a></td></tr>
-<tr><td>Stars</td><td>20,187</td></tr>
+<tr><td>Stars</td><td>21284</td></tr>
 <tr><td>Docs</td><td><a href="https://github.com/pgvector/pgvector">github.com/pgvector/pgvector</a></td></tr>
 </tbody>
 </table>
@@ -683,12 +683,78 @@ CREATE INDEX ON items_cat_2 USING hnsw (embedding vector_cosine_ops);
 <li>[4] pgvector HNSW implementation (hnswutils.c) - https://github.com/pgvector/pgvector/blob/master/src/hnswutils.c</li>
 <li>[5] pgvector GitHub API metadata - https://api.github.com/repos/pgvector/pgvector</li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>pgvector, PostgreSQL extension, vector similarity search, vector(n), halfvec, sparsevec, bit, HNSW, IVFFlat, L2 distance, cosine distance, inner product, L1 distance, Hamming distance, Jaccard distance, ACID transactions, JOIN, WAL replication, iterative scans, binary_quantize, hnsw.ef_search, ivfflat.probes, vector_cosine_ops, halfvec_cosine_ops, RDS, Supabase, Azure Database for PostgreSQL, Cloud SQL, Heroku Postgres</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Install the extension with <code>CREATE EXTENSION vector</code></li>
+<li>Create a <code>vector(1536)</code> column on an existing table</li>
+<li>Query nearest neighbors with <code>&lt;-&gt;</code>, <code>&lt;=&gt;</code>, <code>&lt;#&gt;</code>, <code>&lt;+&gt;</code>, <code>&lt;~&gt;</code>, <code>&lt;%&gt;</code></li>
+<li>Build an HNSW index with <code>vector_cosine_ops</code></li>
+<li>Build an IVFFlat index with chosen <code>lists</code></li>
+<li>Tune <code>hnsw.ef_search</code> and <code>ivfflat.probes</code> per session</li>
+<li>Enable iterative scans for filtered queries (<code>strict_order</code>)</li>
+<li>Use <code>halfvec</code> for half-precision storage (up to 4,000 indexed dims)</li>
+<li>Use <code>sparsevec</code> for TF-IDF / BM25-style sparse vectors</li>
+<li>Convert dense vectors to binary with <code>binary_quantize</code></li>
+<li>Combine <code>tsvector</code> full-text and vector search via RRF</li>
+<li>Build subvector or partial indexes for filtered RAG</li>
+<li>Parallelize index builds with <code>max_parallel_maintenance_workers</code></li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I add vector search to my existing PostgreSQL database?</li>
+<li>How do I join embeddings with relational metadata in one query?</li>
+<li>How do I do hybrid full-text + vector search inside Postgres?</li>
+<li>Do I get ACID transactions with my embedding inserts?</li>
+<li>Can I run vector search on Amazon RDS or Supabase?</li>
+<li>How do I pick between HNSW and IVFFlat for my dataset?</li>
+<li>How much memory does an HNSW index need?</li>
+<li>How do I quantize vectors for storage efficiency?</li>
+<li>How do I scale beyond a single PostgreSQL node?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Adding a separate vector database doubles my infrastructure and synchronization cost</li>
+<li>I lose ACID transactions when vectors live outside my main database</li>
+<li>I cannot JOIN vector results with my relational data efficiently</li>
+<li>Filtered vector search is slow without iterative scans</li>
+<li>HNSW indexes consume large amounts of RAM</li>
+<li>Single-node PostgreSQL caps at hundreds of millions of vectors</li>
+<li>High-dimensional embeddings exceed the indexed limit (2,000 dims for <code>vector</code>)</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you already run PostgreSQL and want vectors next to relational data with ACID, JOINs, and WAL replication</li>
+<li>Pick this over Pinecone when you want self-hosted, transactional, and no extra infrastructure</li>
+<li>Pick this over Weaviate / Qdrant / Milvus when single-node Postgres scale is sufficient and operational simplicity wins</li>
+<li>Pick this when managed PostgreSQL (RDS, Cloud SQL, Azure, Supabase, Heroku) is already in your stack</li>
+<li>Pick this when six distance metrics, partial indexes, and SQL-native hybrid (RRF) fit your application</li>
+<li>Skip this when you need billion-scale distributed vector search; reach for Milvus or Qdrant instead</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>pgvector extension</li>
+<li>pgvector-python</li>
+<li>vector(n) / halfvec / sparsevec / bit</li>
+<li>HNSW / IVFFlat</li>
+<li>Iterative index scan</li>
+<li>Distance operators (<code>&lt;-&gt;</code>, <code>&lt;=&gt;</code>, <code>&lt;#&gt;</code>, <code>&lt;+&gt;</code>, <code>&lt;~&gt;</code>, <code>&lt;%&gt;</code>)</li>
+<li>vector_cosine_ops</li>
+<li>binary_quantize / Hamming</li>
+<li>Postgres-native vector search</li>
+<li>RDS pgvector / Supabase pgvector / Cloud SQL pgvector</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../part-2-application/memory-systems/letta.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../part-3-data/embeddings-reranking/jina-ai.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
@@ -702,7 +768,7 @@ CREATE INDEX ON items_cat_2 USING hnsw (embedding vector_cosine_ops);
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../part-2-application/memory-systems/letta.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../part-3-data/embeddings-reranking/jina-ai.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 

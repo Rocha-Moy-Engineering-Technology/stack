@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/axolotl-ai-cloud/axolotl">axolotl-ai-cloud/axolotl</a></td></tr>
-<tr><td>Stars</td><td>11393</td></tr>
+<tr><td>Stars</td><td>11903</td></tr>
 <tr><td>Docs</td><td><a href="https://docs.axolotl.ai/">docs.axolotl.ai</a></td></tr>
 </tbody>
 </table>
@@ -559,6 +559,71 @@ output_dir: ./outputs/70b-qlora
 <li>[7] RLHF Guide - https://docs.axolotl.ai/docs/rlhf.html</li>
 <li>[8] Multipack - https://docs.axolotl.ai/docs/multipack.html</li>
 <li>[9] FSDP + QLoRA - https://docs.axolotl.ai/docs/fsdp_qlora.html</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>YAML configuration, LLM fine-tuning, LoRA, QLoRA, full fine-tuning, post-training, DPO, IPO, KTO, ORPO, GRPO, GDPO, SimPO, RLHF, sample packing, multipack, Flash Attention, FSDP, DeepSpeed, chat_template, alpaca, sharegpt, Vision-Language Model, VLM, Modal cloud, axolotl CLI, hyperparameter sweep, Jinja2 templates, Llama, Mistral, Qwen, Gemma, Phi</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Fine-tune Llama or Mistral with LoRA using a single YAML config</li>
+<li>Train a chat model on multi-turn conversations using chat_template formatting</li>
+<li>Run DPO preference alignment on chosen/rejected pairs with TRL</li>
+<li>Train 70B models on consumer GPUs using FSDP + QLoRA</li>
+<li>Pack multiple sequences per batch with multipack and Flash Attention</li>
+<li>Merge a trained LoRA adapter into the base model with <code>axolotl merge-lora</code></li>
+<li>Resume training from a checkpoint after interruption</li>
+<li>Run hyperparameter sweeps with YAML sweep configs</li>
+<li>Execute remote GPU training on Modal with <code>--cloud</code></li>
+<li>Fine-tune Vision-Language Models on image-text datasets</li>
+<li>Evaluate trained models with the LM evaluation harness</li>
+<li>Run GRPO with vLLM trajectory generation and custom reward functions</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I fine-tune Llama 3 with LoRA using YAML instead of writing PyTorch code?</li>
+<li>What is the easiest way to run DPO on a preference dataset?</li>
+<li>How do I train a 70B model with only two 24GB consumer GPUs?</li>
+<li>How do I configure FSDP and DeepSpeed ZeRO-3 for distributed fine-tuning?</li>
+<li>How do I use chat_template with chatml or qwen3 conversation formatting?</li>
+<li>How do I run a hyperparameter sweep over learning rate and LoRA rank?</li>
+<li>How can I launch axolotl training remotely on a Modal GPU?</li>
+<li>How do I fine-tune a Vision-Language Model on a custom image-text dataset?</li>
+<li>How do I switch from full fine-tuning to QLoRA via a YAML flag?</li>
+<li>How do I integrate Weights &amp; Biases logging with axolotl?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Writing training scripts in raw PyTorch + Trainer is verbose and error-prone</li>
+<li>Switching between LoRA, QLoRA, DPO, and ORPO requires rewriting training code each time</li>
+<li>Distributed training with FSDP or DeepSpeed has a steep configuration learning curve</li>
+<li>Multi-GPU 70B fine-tuning is impossible without combining quantization, sharding, and adapters</li>
+<li>Dataset format inconsistency across alpaca/sharegpt/chatml causes silent training bugs</li>
+<li>Reproducing a peer’s fine-tuning recipe requires hunting through scripts and notebooks</li>
+<li>Sample padding wastes GPU time when sequence lengths vary wildly</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want a single YAML config to control model, dataset, hyperparameters, and infrastructure — Unsloth wins when raw speed and VRAM efficiency are the top priority, and PEFT wins when you need library-level control inside Python code</li>
+<li>Pick this when you need full SFT plus DPO/ORPO/KTO/GRPO in one framework</li>
+<li>Pick this when you want native FSDP + QLoRA for very large models on commodity GPUs</li>
+<li>Pick this when you want to run identical recipes across Llama, Mistral, Mixtral, Qwen, Gemma, Phi, Falcon families</li>
+<li>Pick this when reproducibility via version-controlled YAML is more important than ad-hoc notebook training</li>
+<li>Pick this when you need cloud GPU execution via Modal with a single CLI flag</li>
+<li>Pick this when sample packing with Flash Attention’s cu_seqlens matters for throughput</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>axolotl-ai-cloud/axolotl</li>
+<li>Post-training framework, LLM fine-tuning framework</li>
+<li>YAML-driven training, declarative training config</li>
+<li>TRL wrapper, Hugging Face Trainer wrapper</li>
+<li>Multipack, sample packing, block-diagonal attention</li>
+<li>FSDP+QLoRA, ZeRO-3 offload</li>
+<li>Chat template, ShareGPT (deprecated), Jinja2 conversation formatting</li>
+<li>Direct Preference Optimization, Group Relative Policy Optimization</li>
 </ul>
 
                     </main>

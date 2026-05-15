@@ -337,3 +337,74 @@ response = client.chat.completions.create(
 - [10] Realtime API Guide - <https://developers.openai.com/api/docs/guides/realtime>
 - [11] Models - <https://developers.openai.com/api/docs/models>
 - [12] Quickstart - <https://developers.openai.com/api/docs/quickstart>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+OpenAI, GPT-5, GPT-5.2, GPT-4.1, GPT-4o, Responses API, Chat Completions API, function calling, tool use, structured outputs, JSON Schema, vision, embeddings, text-embedding-3-small, text-embedding-3-large, Whisper, TTS, Realtime API, WebRTC, Sora, GPT Image, fine-tuning, batch API, vector stores, file search, AgentKit, Agents SDK, ChatKit, Agent Builder, Moderation API, evals, prompt caching, streaming, parallel tool calls
+
+### Verb-Noun Tasks
+
+- Call a hosted frontier LLM via the Responses API
+- Generate text completions in Python or TypeScript
+- Invoke function calls with strict JSON-Schema validation
+- Stream model output token-by-token via Server-Sent Events
+- Analyze images alongside text in a single request
+- Generate embeddings for semantic search
+- Transcribe audio to text with Whisper
+- Generate speech audio from text
+- Build a real-time voice agent over WebRTC or WebSocket
+- Generate images with GPT Image
+- Generate video with Sora
+- Fine-tune a base model on custom training data
+- Run bulk asynchronous inference via the Batch API
+- Build a file-search retrieval pipeline with Vector Stores
+- Author and orchestrate agents with AgentKit and the Agents SDK
+
+### User Intent Phrases
+
+- "I want to call GPT-5 from Python"
+- "How do I use function calling with OpenAI?"
+- "What's the difference between the Responses API and Chat Completions?"
+- "I need structured JSON output from an LLM"
+- "How do I stream tokens from OpenAI in my web app?"
+- "What's the cheapest OpenAI model for high-volume embedding?"
+- "I want to build a voice assistant with OpenAI"
+- "How do I send an image to GPT-5 for analysis?"
+- "What's the best way to do RAG with OpenAI's vector stores?"
+- "I need to fine-tune GPT on my own data"
+- "How do I process a million prompts with OpenAI?"
+- "Should I use OpenAI or Claude for my application?"
+- "Where do I find OpenAI rate-limit information?"
+- "How do I add parallel tool calling to my agent?"
+
+### Problem Statements
+
+- Need a hosted LLM with the broadest ecosystem and longest production track record
+- Want vision, audio, and text in a single multimodal API
+- Manual JSON parsing of LLM outputs keeps breaking on edge cases
+- Latency-sensitive voice product can't tolerate STT → LLM → TTS pipeline overhead
+- Bulk classification or extraction job is too expensive at per-request prices
+- Building an agent and want first-party tools (file search, code execution, memory) without a separate framework
+
+### When to Pick This
+
+- Pick this when you want the most mature SDKs, broadest model lineup, and tightest ecosystem fit (LangChain, LlamaIndex, every vector DB integration ships an OpenAI adapter)
+- Pick this when you need multimodal in one provider (text + image + audio + video) rather than stitching providers together
+- Pick this when you need real-time speech-to-speech with WebRTC (Realtime API is unique among major providers)
+- Pick this when Structured Outputs with strict JSON-Schema enforcement is a hard requirement
+- Pick this when you want first-party agent tooling (AgentKit, Vector Stores, Code Interpreter equivalents) rather than assembling them yourself
+- Pick this when the Batch API's 50% discount on async workloads is material to your cost model
+
+### Related Terms and Aliases
+
+- ChatGPT API (informal name for the developer API)
+- GPT API, OpenAI API, OAI
+- Azure OpenAI Service (Microsoft-hosted variant of the same models)
+- "OpenAI Platform"
+- Frontier LLM, foundation model, hosted LLM provider
+- Function calling = tool use = tool calling
+- AgentKit (the umbrella for Agents SDK + Agent Builder + ChatKit)

@@ -1,0 +1,774 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Ray - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-1-foundation/compute-gpu-infrastructure/ray.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="ray"><a class="header" href="#ray">Ray</a></h1>
+<blockquote>
+<p>Distributed AI compute framework for ML training/serving/data processing</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Compute &amp; GPU Infrastructure</td></tr>
+<tr><td>Type</td><td>SDK/Infra</td></tr>
+<tr><td>Open Source</td><td>Yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/ray-project/ray">ray-project/ray</a></td></tr>
+<tr><td>Stars</td><td>42538</td></tr>
+<tr><td>Documentation</td><td><a href="https://docs.ray.io/en/latest/">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Ray is an open-source unified framework for scaling AI and Python applications from a laptop to a cluster. It provides both high-level libraries for common ML tasks (training, tuning, serving, data processing, reinforcement learning) and low-level primitives for general-purpose distributed computing. Ray abstracts away the complexity of cluster management, task scheduling, and fault tolerance, allowing developers to parallelize existing Python code with minimal changes. The framework is used extensively in production environments by organizations such as Ant Group, Uber, and Riot Games for distributed training, hyperparameter optimization, batch inference, Large Language Model (LLM) serving, and online model serving. The current stable release is Ray 2.54.0 (February 2025).</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<ul>
+<li>
+<p><strong>Ray Core</strong> provides the foundational distributed computing primitives. Tasks are stateless remote function calls decorated with <code>@ray.remote</code> that execute asynchronously on cluster workers. Actors are stateful distributed objects, also decorated with <code>@ray.remote</code>, that maintain state across method invocations and run on dedicated worker processes. Objects are immutable data units stored in Ray’s distributed object store, referenced by Object References (ObjectRefs), with automatic spilling to disk when memory is exhausted.</p>
+</li>
+<li>
+<p><strong>Ray Data</strong> is a distributed data processing library built on Ray Core for scalable data ingestion, preprocessing, and batch inference pipelines. It provides a streaming execution model that processes data in windows rather than materializing entire datasets in memory, making it suitable for large-scale ETL and feature engineering workflows.</p>
+</li>
+<li>
+<p><strong>Ray Train</strong> provides distributed training capabilities across multiple ML frameworks including PyTorch, XGBoost, JAX, and TensorFlow. It handles data parallelism, model checkpointing, and fault tolerance, allowing training jobs to resume from checkpoints after node failures.</p>
+</li>
+<li>
+<p><strong>Ray Tune</strong> is a hyperparameter tuning library that supports search space definitions, Population-Based Training (PBT), trial scheduling, and early stopping. It integrates with external optimization libraries such as Optuna and BayesOpt for advanced search algorithms.</p>
+</li>
+<li>
+<p><strong>Ray Serve</strong> is a model serving framework with FastAPI integration, multi-model composition through deployment graphs, dynamic request batching, autoscaling based on load, and gRPC support. It enables building inference services that combine multiple models and business logic in a single application.</p>
+</li>
+<li>
+<p><strong>Ray RLlib</strong> is a reinforcement learning library with pre-configured algorithms (Proximal Policy Optimization (PPO), Soft Actor Critic (SAC), Deep Q-Network (DQN), Asynchronous PPO (APPO), IMPALA, DreamerV3, and others), native Multi-Agent Reinforcement Learning (MARL) support with independent, collaborative, and adversarial training modes, offline RL and behavior cloning integration with Ray Data, and extensible custom RL module definitions via the RLModule API.</p>
+</li>
+<li>
+<p><strong>Placement Groups</strong> atomically reserve resource groups across multiple nodes using locality strategies: PACK (co-locate on same/nearby nodes) or SPREAD (distribute across distinct nodes). They enable gang-scheduling of actors and tasks that must be provisioned together.</p>
+</li>
+<li>
+<p><strong>Runtime Environments</strong> allow per-task or per-actor dependency isolation by specifying Python packages, local files, environment variables, and working directories that are dynamically deployed to target workers.</p>
+</li>
+</ul>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Ray clusters consist of a head node and zero or more worker nodes.</p>
+<ul>
+<li>
+<p><strong>Head node</strong> runs the Global Control Store (GCS), which is a centralized metadata service that tracks cluster state, actor locations, and object directory information. The head node also hosts the Ray Dashboard and the autoscaler.</p>
+</li>
+<li>
+<p><strong>Worker nodes</strong> each run a Raylet process that handles local task scheduling, resource management, and object store operations. The Raylet consists of a task scheduler and a node manager.</p>
+</li>
+<li>
+<p><strong>Object store</strong> is a shared-memory (plasma-based) system on each node that enables zero-copy data sharing between tasks and actors on the same node. Objects are transferred between nodes via direct peer-to-peer communication when remote access is needed.</p>
+</li>
+<li>
+<p><strong>Dashboard</strong> provides a web-based interface for monitoring cluster health, viewing task and actor states, inspecting logs, and profiling workloads.</p>
+</li>
+<li>
+<p><strong>Autoscaler</strong> runs on the head node (or as a Kubernetes sidecar with KubeRay) and reacts to task and actor resource requests rather than physical utilization metrics, automatically adjusting worker node counts based on workload demands.</p>
+</li>
+<li>
+<p><strong>Ray Jobs</strong> are applications submitted via the Ray Jobs API, CLI, or REST endpoint. Each job runs as a collection of tasks, objects, and actors originating from a single Python driver script.</p>
+</li>
+<li>
+<p><strong>Ray Direct Transport (RDT)</strong> provides direct point-to-point communication between Ray nodes, bypassing the central GCS for improved data transfer efficiency.</p>
+</li>
+</ul>
+<p>The scheduling model is distributed: each Raylet can schedule tasks locally or forward them to other nodes based on resource availability. This avoids a single-point bottleneck for task dispatch.</p>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li>
+<p><strong>Task parallelism</strong> with <code>@ray.remote</code> decorator converts Python functions into distributed tasks that execute asynchronously across the cluster and return futures (ObjectRefs).</p>
+</li>
+<li>
+<p><strong>Stateful actors</strong> maintain persistent state across invocations and support concurrent method calls with configurable concurrency limits.</p>
+</li>
+<li>
+<p><strong>Automatic object spilling</strong> moves objects from the in-memory object store to local disk or external storage when memory pressure is detected.</p>
+</li>
+<li>
+<p><strong>Fault tolerance</strong> operates at both the node level (GCS fault tolerance, actor reconstruction) and the application level (task retries, checkpoint-based recovery in Ray Train). RLlib provides fault tolerance for unstable environments including spot machine support.</p>
+</li>
+<li>
+<p><strong>Utilization-based autoscaling</strong> (new default in 2.54) dynamically adds or removes cluster nodes based on pending resource demands, supported on Kubernetes via KubeRay and on cloud VMs via the cluster launcher.</p>
+</li>
+<li>
+<p><strong>Resource isolation</strong> through cgroup v2 support enables CPU and memory limits per task or actor.</p>
+</li>
+<li>
+<p><strong>Fractional GPU serving</strong> allows multiple models or tasks to share GPU resources, reducing costs in production serving environments.</p>
+</li>
+<li>
+<p><strong>Token-based authentication</strong> secures multi-tenant cluster access.</p>
+</li>
+<li>
+<p><strong>Namespace isolation</strong> provides logical separation of actors and named resources within a shared cluster.</p>
+</li>
+<li>
+<p><strong>Cross-language support</strong> includes a Java API for interoperating with JVM-based systems.</p>
+</li>
+<li>
+<p><strong>Ray Compiled Graph (beta)</strong> optimizes Directed Acyclic Graph (DAG) execution by pre-compiling task graphs for reduced scheduling overhead, with profiling, communication/computation overlapping, and API-level performance enhancements for GPU-intensive workloads.</p>
+</li>
+<li>
+<p><strong>Queue-based autoscaling</strong> (2.54) for Ray Serve TaskConsumer deployments with Redis and RabbitMQ integration, plus deployment-level autoscaling observability with structured JSON logging.</p>
+</li>
+<li>
+<p><strong>Observability</strong> through Ray Dashboard for web-based cluster visualization, Ray Distributed Debugger, State API/CLI for cluster queries, Prometheus metrics collection, structured logging, profiling support (py-spy), distributed tracing, and a Ray Event Export Infrastructure for streaming system events to external platforms.</p>
+</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li>
+<p><strong>Distributed model training</strong> across multiple GPUs and nodes using Ray Train with PyTorch, XGBoost, or JAX, including automatic checkpointing and fault recovery.</p>
+</li>
+<li>
+<p><strong>Hyperparameter optimization</strong> using Ray Tune to run parallel trials with early stopping, Population-Based Training, and integration with search libraries like Optuna.</p>
+</li>
+<li>
+<p><strong>Online model serving</strong> with Ray Serve for deploying inference endpoints that compose multiple models, apply dynamic batching, and autoscale based on request volume.</p>
+</li>
+<li>
+<p><strong>Batch inference</strong> using Ray Data to process large datasets through ML models in a streaming fashion without materializing entire datasets in memory.</p>
+</li>
+<li>
+<p><strong>Data preprocessing</strong> pipelines that chain transformations, feature engineering, and data validation steps across a cluster using Ray Data.</p>
+</li>
+<li>
+<p><strong>Reinforcement learning</strong> experiments using RLlib with built-in algorithm implementations and multi-agent environment support.</p>
+</li>
+<li>
+<p><strong>LLM serving and generative AI</strong> using Ray Serve with response streaming for chatbot interactions, prompt preprocessing, vector database lookups, and response validation integrated as Python components. Ray Data provides large-scale data ingestion for fine-tuning workflows.</p>
+</li>
+<li>
+<p><strong>General-purpose distributed computing</strong> for parallelizing CPU-bound or I/O-bound Python workloads that do not involve ML, with distributed implementations of Python’s <code>multiprocessing.Pool</code> and Scikit-learn’s joblib interface.</p>
+</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<p><strong>Ray Core:</strong></p>
+<pre><code class="language-python">import ray
+
+ray.init()                              # Initialize local cluster or connect to existing
+ray.shutdown()                          # Disconnect from the cluster
+
+@ray.remote                             # Decorator for remote functions (tasks) and classes (actors)
+ray.get(object_ref)                     # Block and retrieve the value of an ObjectRef
+ray.put(value)                          # Store a value in the object store, returns ObjectRef
+ray.wait(object_refs, num_returns=1)    # Wait for a subset of futures to complete
+</code></pre>
+<p><strong>Tasks:</strong></p>
+<pre><code class="language-python">@ray.remote
+def my_function(x):
+    return x * x
+
+future = my_function.remote(42)         # Non-blocking remote invocation
+result = ray.get(future)                # Blocking retrieval
+</code></pre>
+<p><strong>Actors:</strong></p>
+<pre><code class="language-python">@ray.remote
+class Counter:
+    def __init__(self):
+        self.count = 0
+
+    def increment(self):
+        self.count += 1
+        return self.count
+
+counter = Counter.remote()              # Instantiate remote actor
+future = counter.increment.remote()     # Non-blocking method call
+value = ray.get(future)                 # Blocking retrieval
+</code></pre>
+<p><strong>Ray Data:</strong></p>
+<pre><code class="language-python">import ray.data
+
+ds = ray.data.read_parquet("s3://bucket/path")  # Also: read_csv, read_json, read_text, read_images
+ds = ds.map(transform_fn)                        # Per-row transformation
+ds = ds.map_batches(batch_fn)                    # Batch transformation (NumPy/Pandas)
+ds = ds.filter(filter_fn)                        # Row filtering
+ds.summary()                                     # Quick dataset inspection (new in 2.53)
+</code></pre>
+<p><strong>Ray Train:</strong></p>
+<pre><code class="language-python">from ray.train.torch import TorchTrainer
+from ray.train import ScalingConfig
+
+trainer = TorchTrainer(
+    train_loop_per_worker,
+    scaling_config=ScalingConfig(num_workers=4, use_gpu=True),
+)
+result = trainer.fit()
+</code></pre>
+<p><strong>Ray Tune:</strong></p>
+<pre><code class="language-python">from ray import tune
+
+tuner = tune.Tuner(
+    trainable,
+    param_space={
+        "lr": tune.loguniform(1e-4, 1e-1),    # Continuous log-uniform range
+        "batch_size": tune.choice([16, 32, 64]),# Discrete options
+        "layers": tune.grid_search([1, 2, 4]), # Exhaustive grid
+    },
+)
+results = tuner.fit()
+best = results.get_best_result(metric="loss", mode="min")
+</code></pre>
+<p><strong>Ray Serve:</strong></p>
+<pre><code class="language-python">from ray import serve
+
+@serve.deployment
+class MyModel:
+    def __call__(self, request):
+        return {"result": "prediction"}
+
+app = MyModel.bind()
+serve.run(app)
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<p><strong>Cluster configuration</strong> is managed through YAML files for the cluster launcher or through KubeRay Custom Resource Definitions (CRDs) for Kubernetes deployments.</p>
+<p><strong>Resource specification</strong> on tasks and actors controls scheduling:</p>
+<pre><code class="language-python">@ray.remote(num_cpus=2, num_gpus=1, memory=4 * 1024 * 1024 * 1024)
+def gpu_task():
+    pass
+</code></pre>
+<p><strong>Custom resources</strong> can be defined for specialized hardware:</p>
+<pre><code class="language-python">ray.init(resources={"TPU": 4})
+
+@ray.remote(resources={"TPU": 1})
+def tpu_task():
+    pass
+</code></pre>
+<p><strong>Runtime environment</strong> specification allows per-task or per-actor dependency isolation:</p>
+<pre><code class="language-python">@ray.remote(runtime_env={"pip": ["numpy==1.24.0"], "env_vars": {"KEY": "value"}})
+def isolated_task():
+    pass
+</code></pre>
+<p><strong>Ray Serve configuration</strong> supports YAML-based deployment definitions for production environments, specifying replicas, autoscaling policies, resource limits, and health check intervals.</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<ul>
+<li>
+<p><strong>Kubernetes</strong> via KubeRay operator with three CRDs: RayCluster for long-running clusters, RayJob for batch job submission, and RayService for serving workloads with zero-downtime upgrades.</p>
+</li>
+<li>
+<p><strong>Cloud VMs</strong> via the Ray cluster launcher supporting AWS EC2, Google Cloud Platform (GCP) Compute Engine, Azure Virtual Machines, and VMware vSphere.</p>
+</li>
+<li>
+<p><strong>ML frameworks</strong> through Ray Train adapters for PyTorch (TorchTrainer), XGBoost (XGBoostTrainer), LightGBM (LightGBMTrainer), TensorFlow (TensorflowTrainer), and JAX.</p>
+</li>
+<li>
+<p><strong>Hyperparameter search</strong> integrations with Optuna, BayesOpt, HyperOpt, BOHB, Nevergrad, and Ax through Ray Tune’s search algorithm interface, with schedulers including ASHA/HyperBand and Population-Based Training (PBT).</p>
+</li>
+<li>
+<p><strong>FastAPI</strong> integration in Ray Serve allows defining HTTP endpoints with standard FastAPI decorators while leveraging Ray’s distributed serving infrastructure.</p>
+</li>
+<li>
+<p><strong>Prometheus and Grafana</strong> metrics export for cluster and application-level monitoring, with integration into the Kubernetes observability ecosystem via KubeRay.</p>
+</li>
+<li>
+<p><strong>Spark</strong> interoperability through RayDP (Ray on Spark) for running Ray workloads within existing Spark infrastructure.</p>
+</li>
+<li>
+<p><strong>Dask on Ray</strong> allows Dask workflows to execute on Ray clusters via the <code>RayDaskCallback</code> interface.</p>
+</li>
+<li>
+<p><strong>Modin (Pandas on Ray)</strong> provides a drop-in Pandas replacement that distributes DataFrame operations across Ray workers.</p>
+</li>
+<li>
+<p><strong>Data sources</strong> including Parquet, Lance, CSV, JSON, images, audio, video, Apache Kafka (native in 2.54), and Apache Iceberg with schema evolution, upsert, and overwrite capabilities.</p>
+</li>
+<li>
+<p><strong>LLM frameworks</strong> including vLLM for large language model serving, Hugging Face Transformers for training and inference, and DeepSpeed for distributed training acceleration.</p>
+</li>
+</ul>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<p><strong>Scaling a Python function across a cluster:</strong></p>
+<pre><code class="language-python">import ray
+
+ray.init()
+
+@ray.remote
+def compute(x):
+    return x ** 2
+
+futures = [compute.remote(i) for i in range(1000)]
+results = ray.get(futures)
+</code></pre>
+<p><strong>Distributed training with PyTorch:</strong></p>
+<pre><code class="language-python">import ray.train
+from ray.train.torch import TorchTrainer
+from ray.train import ScalingConfig
+
+def train_loop(config):
+    model = ray.train.torch.prepare_model(MyModel())
+    dataloader = ray.train.torch.prepare_data_loader(train_dl)
+    for epoch in range(config["epochs"]):
+        for batch in dataloader:
+            loss = train_step(model, batch)
+        ray.train.report({"loss": loss.item()})
+
+trainer = TorchTrainer(
+    train_loop,
+    train_loop_config={"epochs": 10},
+    scaling_config=ScalingConfig(num_workers=4, use_gpu=True),
+)
+result = trainer.fit()
+</code></pre>
+<p><strong>Serving a model with Ray Serve and FastAPI:</strong></p>
+<pre><code class="language-python">from ray import serve
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@serve.deployment
+@serve.ingress(app)
+class ModelServer:
+    def __init__(self):
+        self.model = load_model()
+
+    @app.post("/predict")
+    async def predict(self, request):
+        data = await request.json()
+        return {"prediction": self.model(data["input"])}
+
+serve.run(ModelServer.bind(), route_prefix="/")
+</code></pre>
+<p><strong>Multi-model composition with deployment handles:</strong></p>
+<pre><code class="language-python">from ray import serve
+from ray.serve.handle import DeploymentHandle
+
+@serve.deployment
+class Preprocessor:
+    def process(self, data):
+        return normalize(data)
+
+@serve.deployment
+class Classifier:
+    def classify(self, features):
+        return self.model.predict(features)
+
+@serve.deployment
+class Pipeline:
+    def __init__(self, preprocessor: DeploymentHandle, classifier: DeploymentHandle):
+        self._preprocessor = preprocessor
+        self._classifier = classifier
+
+    async def __call__(self, request):
+        features = await self._preprocessor.process.remote(request.data)
+        return await self._classifier.classify.remote(features)
+
+app = Pipeline.bind(Preprocessor.bind(), Classifier.bind())
+serve.run(app)
+</code></pre>
+<p><strong>Reinforcement learning with RLlib:</strong></p>
+<pre><code class="language-python">from ray.rllib.algorithms.ppo import PPOConfig
+
+config = PPOConfig().environment("CartPole-v1").env_runners(num_env_runners=4)
+algo = config.build()
+
+for _ in range(10):
+    result = algo.train()
+    print(f"reward: {result['env_runners']['episode_reward_mean']}")
+
+algo.evaluate()
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li>
+<p><strong>Shared memory requirement:</strong> Ray’s object store relies on <code>/dev/shm</code> for inter-process communication. Docker containers require <code>--shm-size</code> configuration, and systems with small shared memory partitions may encounter object store errors.</p>
+</li>
+<li>
+<p><strong>Head node as single point of failure:</strong> While GCS fault tolerance exists, head node recovery adds latency and the cluster is unavailable during failover. Production deployments should plan for head node resilience.</p>
+</li>
+<li>
+<p><strong>Python-centric:</strong> Although Java support exists, the primary development experience and most libraries (Train, Tune, Serve, Data, RLlib) are Python-only. Cross-language interoperability has limitations.</p>
+</li>
+<li>
+<p><strong>Serialization overhead:</strong> All data passed between tasks and actors is serialized. Large objects benefit from the object store, but frequent small-message communication patterns can incur overhead.</p>
+</li>
+<li>
+<p><strong>Complexity of multi-library stacks:</strong> Combining Ray Data, Train, Tune, and Serve in a single application introduces configuration complexity around resource allocation, scheduling priorities, and memory management.</p>
+</li>
+<li>
+<p><strong>Windows support is beta:</strong> Full production support is limited to Linux and macOS. Windows users may encounter missing features or stability issues.</p>
+</li>
+<li>
+<p><strong>Cluster startup latency:</strong> Autoscaling new nodes, especially on cloud VMs, introduces minutes-level delays before new capacity is available for task scheduling.</p>
+</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<p><strong>Ray 2.54.0 (February 2025):</strong></p>
+<ul>
+<li>Ray Data: new checkpointing support, expanded compute expressions (list operations, fixed-size arrays, trigonometric functions), native Apache Kafka datasource, Apache Iceberg schema evolution with upsert and overwrite capabilities, utilization-based cluster autoscaler enabled by default</li>
+<li>Ray Serve: queue-based autoscaling for TaskConsumer deployments with Redis/RabbitMQ integration, deployment-level autoscaling observability with structured JSON logging, batching with multiplexing for multi-model serving, O(1) pending-request lookups for replica routing, expanded operational metrics</li>
+<li>Deprecation: Pydantic v1 support planned for removal in Ray 2.56</li>
+</ul>
+<p><strong>Ray 2.53.0 (December 2024):</strong></p>
+<ul>
+<li>Bounded Kafka reading for Ray Data</li>
+<li><code>Dataset.summary()</code> API for quick dataset inspection</li>
+<li>Improved Iceberg support</li>
+</ul>
+<p><strong>Ongoing developments:</strong> Ray Compiled Graph for optimized DAG execution (beta), cgroup v2 support for resource isolation, expanded Python 3.13 support (beta), continued improvements to Ray Data’s streaming execution model, and maturing KubeRay operator with stable CRDs for RayCluster, RayJob, and RayService.</p>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Ray Documentation - https://docs.ray.io/en/latest/</li>
+<li>[2] Ray GitHub - https://github.com/ray-project/ray</li>
+<li>[3] Ray Getting Started - https://docs.ray.io/en/latest/ray-overview/getting-started.html</li>
+<li>[4] Ray Installation - https://docs.ray.io/en/latest/ray-overview/installation.html</li>
+<li>[5] Ray Core Key Concepts - https://docs.ray.io/en/latest/ray-core/key-concepts.html</li>
+<li>[6] Ray Core Walkthrough - https://docs.ray.io/en/latest/ray-core/walkthrough.html</li>
+<li>[7] Ray Data Overview - https://docs.ray.io/en/latest/data/data.html</li>
+<li>[8] Ray Train Overview - https://docs.ray.io/en/latest/train/train.html</li>
+<li>[9] Ray Tune Overview - https://docs.ray.io/en/latest/tune/index.html</li>
+<li>[10] Ray Serve Overview - https://docs.ray.io/en/latest/serve/index.html</li>
+<li>[11] Ray RLlib Overview - https://docs.ray.io/en/latest/rllib/index.html</li>
+<li>[12] Ray Clusters - https://docs.ray.io/en/latest/cluster/getting-started.html</li>
+<li>[13] Ray Cluster Key Concepts - https://docs.ray.io/en/latest/cluster/key-concepts.html</li>
+<li>[14] Ray Observability - https://docs.ray.io/en/latest/ray-observability/index.html</li>
+<li>[15] Ray More Libraries - https://docs.ray.io/en/latest/ray-more-libs/index.html</li>
+<li>[16] Ray Use Cases - https://docs.ray.io/en/latest/ray-overview/use-cases.html</li>
+<li>[17] Ray 2.54.0 Release - https://github.com/ray-project/ray/releases</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>ray</li>
+<li>ray-project</li>
+<li>distributed python</li>
+<li>ray core</li>
+<li>ray data</li>
+<li>ray train</li>
+<li>ray tune</li>
+<li>ray serve</li>
+<li>ray rllib</li>
+<li>kuberay</li>
+<li>actors</li>
+<li>tasks</li>
+<li>objectref</li>
+<li>object store</li>
+<li>gcs</li>
+<li>raylet</li>
+<li>placement groups</li>
+<li>runtime environments</li>
+<li>autoscaler</li>
+<li>fractional gpu</li>
+<li>ray cluster launcher</li>
+<li>ray jobs</li>
+<li>ray dashboard</li>
+<li>ray compiled graph</li>
+<li>ppo</li>
+<li>sac</li>
+<li>dqn</li>
+<li>population-based training</li>
+<li>multi-agent rl</li>
+<li>distributed training</li>
+<li>hyperparameter tuning</li>
+<li>multiplexing</li>
+<li>modin</li>
+<li>dask on ray</li>
+<li>raydp</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Decorate a Python function with <code>@ray.remote</code> to run it across a cluster</li>
+<li>Define a stateful actor with <code>@ray.remote class</code></li>
+<li>Scale PyTorch or XGBoost training across many GPUs with Ray Train</li>
+<li>Run thousands of hyperparameter trials in parallel with Ray Tune</li>
+<li>Serve a multi-model FastAPI app with Ray Serve deployment graphs</li>
+<li>Stream-process Parquet, Kafka, or Iceberg with Ray Data</li>
+<li>Reserve gang-scheduled resources with placement groups</li>
+<li>Isolate per-task dependencies via runtime environments</li>
+<li>Train reinforcement-learning agents with RLlib (PPO, SAC, DQN, IMPALA)</li>
+<li>Deploy a Ray cluster on Kubernetes via KubeRay CRDs</li>
+<li>Autoscale workers based on pending resource demand</li>
+<li>Share GPUs across multiple inference replicas with fractional GPU</li>
+<li>Run distributed Python without rewriting from scratch</li>
+<li>Export Prometheus metrics from a Ray cluster</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I distribute a Python function across many machines without managing servers?</li>
+<li>What is the fastest way to scale PyTorch training to 4 GPUs?</li>
+<li>How do I run hyperparameter search with early stopping in parallel?</li>
+<li>How do I serve multiple models behind one FastAPI app?</li>
+<li>How do I build a streaming batch-inference pipeline over terabytes of data?</li>
+<li>How do I run reinforcement learning on a cluster?</li>
+<li>Can I run Ray on Kubernetes?</li>
+<li>How do I autoscale workers when there is a backlog of tasks?</li>
+<li>How do I share one GPU between two model replicas?</li>
+<li>How do I use Ray with Hugging Face and vLLM for LLM serving?</li>
+<li>How do I read from Apache Iceberg into a distributed dataset?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>A single Python process cannot keep up with my training or inference workload.</li>
+<li>I have idle GPUs across many nodes and no way to use them as one pool.</li>
+<li>Hyperparameter tuning is serial and takes weeks.</li>
+<li>My inference service needs to compose preprocessing, model, and postprocessing steps.</li>
+<li>Spark is overkill for ML-style workloads with heavy in-memory state.</li>
+<li>I want fault-tolerant training that resumes from the last checkpoint after a node dies.</li>
+<li>I need both batch inference and online serving in the same framework.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you need a general-purpose distributed-compute framework, not just GPU rentals (vs RunPod/Vast.ai).</li>
+<li>Pick this when you bring the workload and own the cluster (vs Modal’s serverless-functions abstraction).</li>
+<li>Pick this when you need integrated training, tuning, serving, and data processing in a single SDK.</li>
+<li>Pick this when stateful actors and an in-memory object store fit your workload better than stateless functions.</li>
+<li>Pick this when reinforcement learning with multi-agent training is a primary requirement (RLlib).</li>
+<li>Pick this when Kubernetes is the deployment target and you want KubeRay’s RayCluster/RayJob/RayService CRDs.</li>
+<li>Pick this when you want to share fractional GPUs across many replicas.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>distributed compute framework</li>
+<li>python actor model</li>
+<li>ray actors</li>
+<li>kuberay</li>
+<li>ray on k8s</li>
+<li>ray on aws</li>
+<li>ray on gcp</li>
+<li>ray cluster</li>
+<li>ml orchestration framework</li>
+<li>model serving framework</li>
+<li>distributed hyperparameter search</li>
+<li>rl library</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-1-foundation/model-gateways/ccapi.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-1-foundation/compute-gpu-infrastructure/modal.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-1-foundation/model-gateways/ccapi.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-1-foundation/compute-gpu-infrastructure/modal.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

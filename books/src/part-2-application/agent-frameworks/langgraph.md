@@ -8,7 +8,7 @@
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) |
-| Stars | 24935 |
+| Stars | 32049 |
 | Documentation | [Official Docs](https://docs.langchain.com/oss/python/langgraph/overview) |
 
 ## Overview
@@ -247,3 +247,75 @@ LangGraph is under active development as part of the LangChain ecosystem. Key ev
 ## Citations
 
 - [1] [LangGraph Documentation](https://docs.langchain.com/oss/python/langgraph/overview)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+langgraph, stategraph, nodes, edges, conditional edges, checkpoint, checkpointer, durable execution, human-in-the-loop, interrupt, resume, thread_id, memorysaver, sqlitesaver, postgressaver, channels, state schema, graph orchestration, supervisor agent, multi-agent graph, long-running agent, agent server, persistence, short-term memory, long-term memory, stateful workflow
+
+### Verb-Noun Tasks
+
+- Define an agent as a directed graph of nodes and edges
+- Add conditional edges that branch on agent state
+- Compile a graph with a PostgreSQL or SQLite checkpointer
+- Resume agent execution from the most recent checkpoint after a failure
+- Pause an agent for human review with `interrupt_before`
+- Persist conversation threads using a `thread_id`
+- Compose multiple agent graphs into a supervisor hierarchy
+- Stream graph execution events as nodes fire
+- Maintain short-term session memory and long-term cross-session memory
+- Swap checkpointing backends between in-memory, SQLite, and PostgreSQL
+
+### User Intent Phrases
+
+- "How do I build a stateful agent that survives process restarts?"
+- "How do I pause an agent and have a human approve the next step?"
+- "What is the difference between LangChain and LangGraph?"
+- "How do I add conditional branching to my agent workflow?"
+- "How do I checkpoint agent state to a database?"
+- "How do I build a supervisor agent that delegates to sub-agents?"
+- "How do I resume an agent from where it crashed yesterday?"
+- "How do I model an agent loop with retries and conditional routing?"
+- "How do I run a long-running research agent that takes hours?"
+- "How do I deploy a stateful agent in production?"
+- "How do I structure shared state that flows through multiple nodes?"
+- "What is a StateGraph and when do I need one?"
+
+### Problem Statements
+
+- Agents fail mid-execution and have to restart from scratch instead of resuming from the last checkpoint
+- Workflows need cycles, branching, and retries that linear chains cannot express
+- Need human oversight at specific decision points for regulated or high-stakes actions
+- Agent state must persist across sessions, process restarts, and infrastructure disruptions
+- State serialization requirements break when nodes hold open connections or non-serializable objects
+- Simple linear agents are buried under unnecessary graph abstraction overhead
+- Multi-agent supervision is hard to model with plain function calls
+
+### When to Pick This
+
+- Pick this when your agent needs durable execution: checkpoints, recovery, and resumption across process restarts
+- Pick this over LangChain when your workflow has cycles, conditional branches, or human approval gates rather than a linear pipe
+- Pick this over CrewAI when you want explicit graph topology and fine-grained state control, not role/goal/backstory declarations
+- Pick this over AutoGen when you want structured graph orchestration with typed state instead of conversational message passing between agents
+- Pick this over Pydantic AI when graph topology matters more than end-to-end Pydantic output typing
+- Pick this over smolagents when you need stateful long-running workflows, not minimal code-first single-shot agents
+- Pick this over Semantic Kernel when Python/TypeScript and graph semantics fit better than .NET plugin orchestration
+- Pick this over ADK when you want vendor-neutral graph orchestration instead of Google ecosystem integration
+
+### Related Terms and Aliases
+
+- StateGraph
+- Checkpoint / Checkpointer
+- MemorySaver, SqliteSaver, PostgresSaver
+- Conditional edges
+- Interrupt / resume
+- Human-in-the-loop (HITL)
+- Supervisor pattern
+- Agent Server
+- Durable execution (alternative to Temporal/Prefect for agents)
+- Multi-agent orchestration
+- Thread (conversation thread)
+- LangChain ecosystem extension

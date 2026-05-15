@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Inference Serving</td></tr>
+<tr><td>Group</td><td>Inference Engines</td></tr>
 <tr><td>Type</td><td>SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/bentoml/BentoML">https://github.com/bentoml/BentoML</a></td></tr>
-<tr><td>Stars</td><td>8462</td></tr>
+<tr><td>Stars</td><td>8645</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.bentoml.com/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -404,6 +404,67 @@ curl -X POST http://localhost:3000/summarize \
 <li>[1] BentoML Documentation - <a href="https://docs.bentoml.com/">https://docs.bentoml.com/</a></li>
 <li>[2] BentoML Quickstart - <a href="https://docs.bentoml.com/en/latest/get-started/quickstart.html">https://docs.bentoml.com/en/latest/get-started/quickstart.html</a></li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>BentoML, Bento, @bentoml.service, @bentoml.api, Runner, adaptive batching, model composition, async task queues, BentoCloud, bentofile.yaml, bentoml serve, bentoml build, bentoml containerize, SyncHTTPClient, AsyncHTTPClient, WebSocket inference, streaming inference, Python inference framework, model packaging, model serving, vLLM integration, OpenAPI auto-docs, Gateways</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define a service with <code>@bentoml.service</code> and <code>@bentoml.api</code> decorators</li>
+<li>Load the model in the service <code>__init__</code> constructor</li>
+<li>Serve locally with <code>bentoml serve</code> on port 3000</li>
+<li>Build a portable Bento with <code>bentoml build</code></li>
+<li>Containerize a Bento with <code>bentoml containerize</code></li>
+<li>Set resources with <code>@bentoml.service(resources={"gpu": 1})</code></li>
+<li>Configure traffic with <code>timeout</code> and <code>max_concurrency</code></li>
+<li>Compose multiple models into one inference pipeline</li>
+<li>Stream tokens or send WebSocket responses</li>
+<li>Offload long jobs to async task queues</li>
+<li>Deploy to BentoCloud for managed autoscaling</li>
+<li>Call the service from Python with <code>SyncHTTPClient</code></li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I turn a Python model into a REST API?”</li>
+<li>“What’s the most Pythonic way to serve ML models?”</li>
+<li>“How do I get adaptive batching without writing batching code?”</li>
+<li>“How do I package a model and its dependencies for deployment?”</li>
+<li>“How do I serve a HuggingFace pipeline behind an HTTP endpoint?”</li>
+<li>“What’s a developer-friendly alternative to Triton for Python teams?”</li>
+<li>“How do I auto-generate OpenAPI docs from my inference service?”</li>
+<li>“How do I deploy a multi-model RAG pipeline as one service?”</li>
+<li>“How do I run a Stable Diffusion endpoint with GPU autoscaling?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Wrapping models in Flask/FastAPI re-invents batching, packaging, and observability</li>
+<li>Manual Docker builds for ML services drift between dev and prod</li>
+<li>Multi-model pipelines need glue code for in-process composition</li>
+<li>Long-running inference jobs (image gen, batch) need queues, not blocking HTTP</li>
+<li>Production-grade metrics, tracing, and logging are boilerplate to add</li>
+<li>Teams without Kubernetes expertise still need autoscaling and rolling deploys</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when teams are Python-first and want decorator-based service definitions</li>
+<li>Pick this over Triton when developer ergonomics matter more than raw multi-framework breadth</li>
+<li>Pick this over raw vLLM when packaging, deployment, and observability are bundled</li>
+<li>Pick this when model composition (embeddings + classifier, RAG) lives in one service</li>
+<li>Pick this when adaptive batching should be automatic, not hand-tuned</li>
+<li>Pick this when BentoCloud’s managed autoscaling is a desired option</li>
+<li>Skip this when you need non-Python service definitions or maximum raw throughput</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>BentoML, Bento, BentoCloud, Yatai (legacy)</li>
+<li>“Python model serving framework”</li>
+<li>“ML in production framework”</li>
+<li>Bento (the packaging unit) vs BentoML (the framework)</li>
+<li>Alternative to Cog (Replicate), Modal, Truss (Baseten), MLflow Models, Ray Serve</li>
+<li>Service-first model deployment, decorator-based serving</li>
+</ul>
 
                     </main>
 
@@ -413,7 +474,7 @@ curl -X POST http://localhost:3000/summarize \
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../../part-1-foundation/inference-engines/ollama.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../part-1-foundation/inference-engines/hugging-face-transformers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -427,7 +488,7 @@ curl -X POST http://localhost:3000/summarize \
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../../part-1-foundation/inference-engines/ollama.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../part-1-foundation/inference-engines/hugging-face-transformers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

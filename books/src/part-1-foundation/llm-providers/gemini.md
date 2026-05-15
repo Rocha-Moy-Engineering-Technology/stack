@@ -297,3 +297,72 @@ response = client.models.generate_content(
 - [3] Text Generation Guide - <https://ai.google.dev/gemini-api/docs/text-generation>
 - [4] Function Calling Guide - <https://ai.google.dev/gemini-api/docs/function-calling>
 - [5] Quickstart - <https://ai.google.dev/gemini-api/docs/quickstart>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Gemini, Gemini 3.1 Pro, Gemini 3 Pro, Gemini 3 Flash, Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, Google AI, Google AI Studio, Google GenAI SDK, generateContent, 1M context window, native multimodal, vision, video understanding, audio understanding, document processing, function calling, AUTO ANY NONE VALIDATED, code execution, grounding with Google Search, Imagen, Nano Banana, Veo, Lyria, structured outputs, ThinkingConfig, context caching, file search
+
+### Verb-Noun Tasks
+
+- Call Gemini via the generateContent endpoint
+- Process a 1M-token context in a single request
+- Analyze a video file directly without pre-extracting frames
+- Reason over a 1,000-page PDF
+- Transcribe and reason about audio in a single multimodal prompt
+- Generate images with Nano Banana / Imagen
+- Generate video with Veo 3.1
+- Generate music with Lyria
+- Configure function calling modes (AUTO, ANY, NONE, VALIDATED)
+- Ground responses in fresh web data via Google Search
+- Enable Code Execution for the model to run Python on your behalf
+- Tune thinking depth with ThinkingConfig (low / medium / high)
+- Cache a long system prefix with Context Caching
+- Stream responses with Server-Sent Events
+
+### User Intent Phrases
+
+- "I need a model with a 1M-token context window"
+- "How do I send a video to an LLM for analysis?"
+- "What's the cheapest way to do long-context RAG?"
+- "I want Google Search results inside my LLM response"
+- "How do I generate images with Google's API?"
+- "I want native video generation, not just text-to-video via a separate API"
+- "How do I cache a long system prompt to avoid re-paying for it?"
+- "I need to do speech recognition and reasoning in one model call"
+- "Which LLM provider has the strongest multimodal coverage?"
+- "How do I enable Code Execution mode in Gemini?"
+- "Should I use Gemini 3 Pro or Gemini 2.5 Flash for cost-sensitive workloads?"
+- "How do I tune thinking depth in Gemini?"
+
+### Problem Statements
+
+- 200K context isn't enough for our document set
+- Stitching together separate models for text + vision + audio + video creates integration overhead
+- Need fresh web facts inside model responses without building a separate search-then-prompt pipeline
+- Long system prompts are too expensive to send on every request
+- Video and PDF processing pipelines (frame extraction → model → reassemble) are brittle
+
+### When to Pick This
+
+- Pick this when you need 1M+ tokens of context in a single request
+- Pick this when native video, audio, or PDF input is required and you don't want to pre-process the media
+- Pick this when grounding responses in fresh Google Search results is a product requirement
+- Pick this when you need integrated image (Nano Banana / Imagen), video (Veo), or music (Lyria) generation alongside text from one provider
+- Pick this when you're already on Google Cloud (Vertex AI gives the same models with IAM, VPC, regional endpoints)
+- Pick this when Context Caching makes a repeated-prefix workload economically viable
+- Pick this when you want a single SDK across Python, JavaScript, Go, Java, and C#
+
+### Related Terms and Aliases
+
+- Google Gemini, Google AI, Google AI Studio, Google GenAI
+- Vertex AI Gemini (Google Cloud–hosted variant of the same models)
+- PaLM (predecessor; deprecated)
+- Bard (consumer chat product; not the API)
+- generateContent API
+- "Google's LLM"
+- Nano Banana = Gemini's image-generation model name
+- Veo = video generation; Lyria = music generation

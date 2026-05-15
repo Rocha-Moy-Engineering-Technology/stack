@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes (Apache 2.0)</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/BoundaryML/baml">BoundaryML/baml</a></td></tr>
-<tr><td>Stars</td><td>7,642</td></tr>
+<tr><td>Stars</td><td>8223</td></tr>
 <tr><td>Docs</td><td><a href="https://docs.boundaryml.com/">docs.boundaryml.com</a></td></tr>
 </tbody>
 </table>
@@ -474,6 +474,98 @@ const results = await Promise.all([
 <li>[23] BAML Examples. BoundaryML. Available at: <a href="https://docs.boundaryml.com/examples">https://docs.boundaryml.com/examples</a></li>
 <li>[24] AI Agents Need a New Syntax. BoundaryML Blog. Available at: <a href="https://boundaryml.com/blog/ai-agents-need-new-syntax">https://boundaryml.com/blog/ai-agents-need-new-syntax</a></li>
 <li>[25] BAML Changelog. BoundaryML. Available at: <a href="https://github.com/BoundaryML/baml/releases">https://github.com/BoundaryML/baml/releases</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>BAML</li>
+<li>BoundaryML</li>
+<li>domain-specific language</li>
+<li>DSL for LLMs</li>
+<li>baml_src</li>
+<li>baml_client</li>
+<li>schema-aligned parsing</li>
+<li>SAP algorithm</li>
+<li>type-safe LLM functions</li>
+<li>code generation</li>
+<li>generated client library</li>
+<li>multi-language (Python/TS/Go/Ruby/Rust/Java/C#/Elixir)</li>
+<li>Jinja templates</li>
+<li>VSCode playground</li>
+<li>TypeBuilder</li>
+<li>dynamic types</li>
+<li>Collector token tracking</li>
+<li>ClientRegistry</li>
+<li>streaming with partial types</li>
+<li>@stream.done</li>
+<li>@check and @assert</li>
+<li>GEPA optimizer</li>
+<li>baml generate</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define an LLM function signature in a <code>.baml</code> DSL file</li>
+<li>Generate a fully typed <code>baml_client/</code> library via <code>baml generate</code></li>
+<li>Declare typed input/output schemas with <code>class</code> and <code>enum</code></li>
+<li>Configure 25+ LLM providers with <code>client&lt;llm&gt;</code> blocks</li>
+<li>Stream partially-populated typed objects from an LLM</li>
+<li>Run native tests with <code>@@assert</code> and <code>@@check</code> validations</li>
+<li>Track tokens, timing, and raw HTTP via Collector</li>
+<li>Modify types at runtime with TypeBuilder</li>
+<li>Build fallback and round-robin client strategies</li>
+<li>Serve BAML functions as a REST API with <code>baml serve</code></li>
+<li>Run BAML functions from React/Next.js with auto-generated hooks</li>
+<li>Optimize prompts automatically with the GEPA algorithm</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I write LLM prompts in a typed language instead of strings?</li>
+<li>How can one definition generate clients in Python, TypeScript, Go, Rust?</li>
+<li>I want to test my prompts in the editor like regular code</li>
+<li>How do I get type-safe LLM functions with compile-time checks?</li>
+<li>How can I switch LLM providers without changing application code?</li>
+<li>How do I stream typed objects with partial completion states?</li>
+<li>How do I add fallback or round-robin between multiple LLM providers?</li>
+<li>How do I expose my LLM functions as REST endpoints?</li>
+<li>How do I track token usage and cost per function call?</li>
+<li>How can I optimize prompts automatically across accuracy and cost?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>String-based prompts are brittle and untyped</li>
+<li>Function-calling APIs vary by provider — abstraction is hard</li>
+<li>Provider-native function calling tops out around 87.5% accuracy on real workloads</li>
+<li>JSON Schema descriptions are token-heavy and expensive to send each call</li>
+<li>Regenerating generated client code adds a build step</li>
+<li>Provider-specific optimizations may be hidden behind the DSL</li>
+<li>PDF inputs require base64 (no URL handling yet)</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick BAML when you want a typed DSL for LLM functions with code-generated clients across many languages</li>
+<li>Pick BAML when Schema-Aligned Parsing (~92-93% accuracy) matters more than provider-native function calling (~87.5%)</li>
+<li>Pick BAML when 80%-fewer-tokens schema descriptions improve cost</li>
+<li>Pick BAML when teams want prompt-as-code with editor playground, native tests, and version control</li>
+<li>Pick BAML when targeting multiple languages from one schema (Python + TypeScript + Go + Ruby + Rust + Java + C# + Elixir)</li>
+<li>Pick Instructor instead when you live in Python and want Pydantic-driven validation-and-retry with minimal new tooling</li>
+<li>Pick Outlines instead when you need token-level constrained decoding guarantees</li>
+<li>Pick DSPy instead when you want optimizers to tune prompts automatically against a metric</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Basically a Made-up Language</li>
+<li>BoundaryML</li>
+<li>LLM DSL</li>
+<li>generated LLM client</li>
+<li>schema-aligned parsing</li>
+<li>typed LLM functions</li>
+<li>Postel’s law for LLMs</li>
+<li>Boundary Cloud</li>
+<li>prompt-as-code</li>
+<li>JSX for LLMs</li>
 </ul>
 
                     </main>

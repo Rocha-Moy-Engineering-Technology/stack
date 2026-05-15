@@ -8,7 +8,7 @@
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [microsoft/autogen](https://github.com/microsoft/autogen) |
-| Stars | 54714 |
+| Stars | 58033 |
 | Documentation | [Official Docs](https://microsoft.github.io/autogen/) |
 
 ## Overview
@@ -162,3 +162,74 @@ autogenstudio ui --port 8080 --appdir ./my_autogen_app
 ## Citations
 
 - [1] AutoGen Documentation - https://microsoft.github.io/autogen/stable/
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+autogen, microsoft autogen, assistantagent, teams, event-driven agents, conversational agents, grpc runtime, distributed agents, round-robin orchestration, selector orchestration, autogen studio, agentchat, core layer, extensions, docker code executor, mcpworkbench, openaiassistantagent, agent-to-agent conversation, multi-agent chat, message routing, termination condition
+
+### Verb-Noun Tasks
+
+- Create an `AssistantAgent` wrapping an OpenAI-compatible chat model
+- Compose a team with round-robin or selector-based routing
+- Set termination conditions for multi-agent conversations
+- Run agents across processes using the `GrpcWorkerAgentRuntime`
+- Execute LLM-generated code in a sandboxed `DockerCommandLineCodeExecutor`
+- Connect agents to an MCP server via `McpWorkbench`
+- Wrap the OpenAI Assistant API as an AutoGen agent
+- Launch AutoGen Studio for no-code agent prototyping
+- Register Python functions as agent tools
+- Build distributed agentic microservices that scale independently
+
+### User Intent Phrases
+
+- "How do I build multiple AI agents that talk to each other?"
+- "How do I run agents on separate machines that communicate over the network?"
+- "How do I prototype a multi-agent workflow without writing code?"
+- "How do I let an agent execute Python code safely in Docker?"
+- "How do I migrate from AutoGen 0.2 to the new architecture?"
+- "How do I configure round-robin chat between two agents?"
+- "How do I plug an MCP server into an AutoGen agent?"
+- "How do I use the OpenAI Assistants API through AutoGen?"
+- "How do I add a custom termination condition to a multi-agent conversation?"
+- "How do I scale agents horizontally with gRPC?"
+
+### Problem Statements
+
+- Multi-agent collaboration needs event-driven messaging instead of synchronous function calls
+- Agents must run as independent services across processes or machines
+- AutoGen 0.2 code requires significant rewriting under the new event-driven architecture
+- LLM-generated code execution needs sandboxing to protect the host
+- Conversation flow between many agents is hard to debug without tracing routing decisions
+- Community extensions have inconsistent maintenance and feature parity
+- Need a visual no-code interface for prototyping multi-agent designs before writing Python
+
+### When to Pick This
+
+- Pick this when you need conversational multi-agent systems with event-driven, gRPC-distributed runtime across processes or machines
+- Pick this over LangChain when message-passing between multiple agents is the dominant pattern, not chain composition
+- Pick this over LangGraph when you prefer conversational orchestration (round-robin, selector) over explicit graph state machines
+- Pick this over CrewAI when you want conversational message routing rather than declarative role/goal/backstory crews
+- Pick this over Pydantic AI when multi-agent coordination matters more than single-agent type safety
+- Pick this over smolagents when you need distributed runtime and team patterns, not minimal single-agent code execution
+- Pick this over Semantic Kernel when Python-based conversational multi-agent design fits better than .NET plugin orchestration
+- Pick this over ADK when you want a Microsoft-origin distributed multi-agent runtime not tied to Google Vertex AI
+- Pick this when AutoGen Studio's no-code prototyping interface is part of the deliverable
+
+### Related Terms and Aliases
+
+- AgentChat (Python framework layer)
+- Core (event-driven runtime)
+- Studio (no-code GUI)
+- Extensions (modular packages)
+- gRPC worker runtime
+- Distributed agent runtime
+- AssistantAgent
+- Teams (orchestrated groups)
+- Selector routing
+- Round-robin chat
+- Conversable agents (legacy naming from 0.2)
+- AutoGen 0.4 (post-redesign generation)

@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Evaluation & Testing |
+| Group | Evaluation |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/confident-ai/deepeval](https://github.com/confident-ai/deepeval) |
-| Stars | 13756 |
+| Stars | 15392 |
 | Documentation | [Official Docs](https://deepeval.com/docs/getting-started) |
 
 ## Overview
@@ -461,3 +461,99 @@ dataset.save_as(file_type="json", directory="./eval-datasets")
 - [2] DeepEval GitHub Repository - https://github.com/confident-ai/deepeval
 - [3] DeepTeam Red-Teaming Documentation - https://www.trydeepteam.com/docs/red-teaming-introduction
 - [4] Confident AI Platform - https://app.confident-ai.com
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- DeepEval
+- Confident AI
+- Pytest for LLMs
+- LLMTestCase
+- ConversationalTestCase
+- MLLMTestCase
+- Golden
+- EvaluationDataset
+- G-Eval
+- DAG metric
+- Answer Relevancy
+- Faithfulness
+- Contextual Precision
+- Contextual Recall
+- Hallucination Metric
+- Bias
+- Toxicity
+- PII Leakage
+- Tool Correctness
+- Task Completion
+- Step Efficiency
+- DeepTeam
+- red teaming
+- @observe decorator
+- Synthesizer
+
+### Verb-Noun Tasks
+
+- Write a Pytest-style assertion on an LLM output
+- Define a custom G-Eval criterion in natural language
+- Evaluate a RAG pipeline with Answer Relevancy and Faithfulness
+- Score agent tool selection with ToolCorrectnessMetric
+- Trace components with @observe and score each span
+- Generate Goldens from documents with the Synthesizer
+- Apply seven evolution techniques to expand a dataset
+- Run a red-team scan with DeepTeam vulnerabilities and attacks
+- Compare two model versions with regression testing
+- Push and pull datasets from Confident AI cloud
+- Evaluate multimodal outputs with MLLMTestCase
+- Score multi-turn conversations for Knowledge Retention
+- Run async evaluations with a_measure
+- Integrate evaluation into CI with deepeval test run
+
+### User Intent Phrases
+
+- I want unit tests for my LLM outputs that fail like Pytest.
+- How do I evaluate RAG retrieval and generation separately?
+- Run a red-team scan for prompt injection on my chatbot.
+- Score whether my agent called the right tools with the right arguments.
+- Generate a synthetic evaluation dataset from my PDFs.
+- Add evaluation to CI/CD using Pytest parametrize.
+- Detect bias, toxicity, and PII leakage in model outputs.
+- Use Claude as the judge model in DeepEval.
+- Evaluate individual pipeline components instead of end-to-end only.
+- Compare prompt versions side by side with regression dashboards.
+
+### Problem Statements
+
+- LLM regressions slip into production without automated tests.
+- Subjective "vibe checks" are not repeatable across releases.
+- No standard pattern for testing agent tool-calling behavior.
+- Red-team coverage is ad hoc and hard to track over time.
+- Component-level quality issues are invisible in end-to-end tests.
+- Multimodal outputs (image + text) lack scoring frameworks.
+- Bootstrapping eval datasets manually is slow and incomplete.
+
+### When to Pick This
+
+- Pick this when you want Pytest-native LLM evaluation with parametrized test cases and CI integration.
+- Pick this over Ragas when the broadest metric catalog (50+ metrics, agentic, conversational, multimodal, safety) and red-teaming matter more than RAG-first synthetic data.
+- Pick this over Promptfoo when Python and Pytest are your native ecosystem rather than Node.js and YAML.
+- Pick this over OpenAI Evals when you need framework-agnostic evaluation across any model and any provider, not just OpenAI.
+- Pick this when red-teaming with DeepTeam (40+ vulnerabilities, 10+ attack methods) is part of the pipeline.
+- Pick this when component-level tracing via @observe is needed alongside end-to-end scoring.
+
+### Related Terms and Aliases
+
+- Pytest for LLM outputs
+- LLM unit testing
+- Confident AI DeepEval
+- G-Eval criteria
+- DeepTeam red teaming
+- LLM regression testing
+- agent evaluation framework
+- conversational evaluation
+- multimodal LLM evaluation
+- LLM-as-judge metrics
+- synthetic dataset generator
+- LLM CI/CD gating

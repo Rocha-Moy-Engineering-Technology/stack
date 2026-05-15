@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/milvus-io/milvus">milvus-io/milvus</a></td></tr>
-<tr><td>Stars</td><td>43127</td></tr>
+<tr><td>Stars</td><td>44292</td></tr>
 <tr><td>Docs</td><td><a href="https://milvus.io/docs">milvus.io/docs</a></td></tr>
 </tbody>
 </table>
@@ -572,6 +572,75 @@ results = client.search(
 <li>[1] What is Milvus - https://milvus.io/docs/overview.md</li>
 <li>[2] Quickstart - https://milvus.io/docs/quickstart.md</li>
 <li>[3] Integrations - https://milvus.io/docs/integrations_overview.md</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Milvus, cloud-native vector database, Milvus Lite, Milvus Standalone, Milvus Distributed, Zilliz Cloud, collections, partitions, partition keys, dynamic schema, FLAT, IVF_FLAT, IVF_PQ, HNSW, SCANN, DiskANN, GPU_CAGRA, GPU_IVF, billion-scale, hot/cold tiering, mmap, multi-tenancy, RBAC, hybrid search, BM25, sparse vectors, binary vectors, multi-vector, consistency levels, etcd, Pulsar, Kafka, MinIO, PyMilvus, Attu</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Create a collection with auto-generated IDs</li>
+<li>Configure GPU CAGRA or DiskANN for scale</li>
+<li>Search billion-vector datasets with DiskANN beyond memory</li>
+<li>Use partition keys for automatic multi-tenant routing</li>
+<li>Mix dense, sparse, and binary vector types per collection</li>
+<li>Run hybrid search across multiple vector fields with weighted fusion</li>
+<li>Run full-text BM25 search with sparse vectors</li>
+<li>Tier hot/cold storage automatically</li>
+<li>Enable mmap to load data beyond available RAM</li>
+<li>Set consistency level (Strong / Bounded / Session / Eventually)</li>
+<li>Stream changes via CDC to downstream systems</li>
+<li>Manage collections through Attu GUI</li>
+<li>Deploy via Milvus Operator on Kubernetes</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I run vector search on billions of vectors?</li>
+<li>Which vector index works when data exceeds RAM (DiskANN)?</li>
+<li>How do I use GPU acceleration for vector search?</li>
+<li>How do I isolate millions of tenants in one collection?</li>
+<li>How do I add full-text BM25 search alongside vector search?</li>
+<li>How do I trade data freshness for query throughput?</li>
+<li>How do I prototype locally with <code>MilvusClient("file.db")</code>?</li>
+<li>How do I scale from a single-machine deployment to Kubernetes?</li>
+<li>How do I monitor and debug a Milvus cluster?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>HNSW indexes do not fit in RAM at billion scale</li>
+<li>Single-machine vector DBs cannot scale horizontally</li>
+<li>Mixed-modality and full-text search require separate systems</li>
+<li>Multi-tenancy at millions of tenants is hard with collection-per-tenant</li>
+<li>GPU acceleration is missing from most open-source vector DBs</li>
+<li>Coordinated distributed deployments need a robust metadata + storage stack</li>
+<li>Standalone deployments cannot scale without re-deployment</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you need billion-scale vectors with DiskANN, GPU CAGRA, or GPU_IVF acceleration</li>
+<li>Pick this over Pinecone when self-hosting on Kubernetes and full architectural control matter</li>
+<li>Pick this over Qdrant when GPU-accelerated indexes and disk-based billion-scale search beat Rust-based filter performance</li>
+<li>Pick this over Weaviate when raw scale, dynamic schema, and multi-tier (database / collection / partition / partition-key) tenancy matter most</li>
+<li>Pick this over pgvector when single-node PostgreSQL limits become a bottleneck</li>
+<li>Pick this when Pulsar/Kafka log-broker semantics and object-storage (S3/MinIO/GCS) decoupling fit your operational model</li>
+<li>Use Milvus Lite only for local prototyping (~1M vectors); not for production</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Zilliz Cloud (managed Milvus)</li>
+<li>PyMilvus</li>
+<li>DiskANN</li>
+<li>GPU CAGRA / GPU_IVF / GPU_BRUTE_FORCE</li>
+<li>Partition key (auto-routing)</li>
+<li>Dynamic schema</li>
+<li>Hybrid search / Multi-vector search</li>
+<li>Attu GUI</li>
+<li>Birdwatcher CLI</li>
+<li>Milvus Backup</li>
+<li>Milvus CDC</li>
+<li>Mmap file management</li>
 </ul>
 
                     </main>

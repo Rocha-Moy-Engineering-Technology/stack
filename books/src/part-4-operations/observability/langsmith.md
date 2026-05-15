@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Observability & LLM Ops |
+| Group | Observability |
 | Type | API/SDK/UI |
 | Open Source | No |
 | GitHub | N/A |
@@ -428,3 +428,98 @@ LangSmith has evolved from a tracing-focused companion to LangChain into a compr
 - [4] [LangSmith Trace with OpenAI](https://docs.langchain.com/langsmith/trace-openai)
 - [5] [LangSmith Prompt Management](https://docs.langchain.com/langsmith/manage-prompts-programmatically)
 - [6] [LangSmith Upload Experiments API](https://docs.langchain.com/langsmith/upload-existing-experiments)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- LangSmith
+- LangChain observability
+- LangGraph tracing
+- traces
+- runs
+- projects
+- datasets
+- experiments
+- evaluators
+- llm-as-judge
+- prompt hub
+- annotation queues
+- feedback
+- @traceable
+- wrap_openai
+- studio
+- agent builder
+- automation rules
+- managed cloud
+- self-hosted
+- HIPAA
+- SOC 2
+- GDPR
+- regression testing
+- agent observability
+
+### Verb-Noun Tasks
+
+- Trace a LangChain chain or LangGraph agent automatically
+- Wrap an OpenAI client for zero-friction tracing
+- Decorate any Python function with @traceable
+- Run evaluation experiments against a golden dataset
+- Compare experiment results across models or prompts
+- Manage versioned prompts in the Prompt Hub
+- Build agents visually with Agent Builder
+- Route production traces to annotation queues
+- Configure online LLM-as-judge automation rules
+- Aggregate token cost by project and model
+- Deploy stateful agents via Agent Server
+- Set the LANGSMITH_PROJECT environment variable to organize traces
+
+### User Intent Phrases
+
+- I'm already using LangChain — what's the easiest way to add observability?
+- How do I trace LangGraph agents end-to-end?
+- I need a commercial LLM observability platform with SOC 2 and HIPAA.
+- How do I run regression tests on my LLM app before deploying changes?
+- I want to compare GPT-4o vs Claude side-by-side on the same dataset.
+- How do I instrument an OpenAI client to send traces automatically?
+- Where can I manage prompt versions collaboratively across my team?
+- I want a no-code agent builder backed by tracing.
+- How do I trigger LLM-as-judge evaluators on production traffic automatically?
+- I need to route flagged traces to human annotators.
+- What's the LangChain team's official observability product?
+
+### Problem Statements
+
+- LangChain apps emit complex execution graphs that are hard to debug without tracing.
+- Prompt iterations are scattered across notebooks and PRs.
+- We cannot tell whether a code change regressed answer quality.
+- Production LLM failures have no audit trail.
+- Closed-source platforms create vendor lock-in we must weigh against managed convenience.
+- Self-hosting observability adds infra burden we want to avoid.
+
+### When to Pick This
+
+- Pick this when your stack is LangChain/LangGraph-heavy and you want zero-instrumentation tracing.
+- Pick this over Langfuse when you want a fully managed commercial platform with HIPAA/SOC 2 out of the box.
+- Pick this over Arize Phoenix when you prefer one closed-source platform combining tracing, evals, prompts, and Studio.
+- Pick this over Helicone when you need an evaluation framework with datasets, experiments, and feedback (not only API proxy logging).
+- Pick this over Weights & Biases when LLM agent debugging — not ML experiment tracking — is the priority.
+- Pick this when you need a no-code Agent Builder or Studio for non-engineers.
+
+### Related Terms and Aliases
+
+- LangChain observability
+- LCEL tracing
+- Prompt Hub
+- LangSmith Studio
+- LangSmith Agent Builder
+- LangSmith Agent Server
+- LANGSMITH_TRACING
+- LANGSMITH_API_KEY
+- smith.langchain.com
+- openevals
+- LLM evaluation framework
+- automation rules
+

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,8 +195,8 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/google/adk-python">google/adk-python</a></td></tr>
-<tr><td>Stars</td><td>17911</td></tr>
-<tr><td>Documentation</td><td><a href="https://google.github.io/adk-docs/">Official Docs</a></td></tr>
+<tr><td>Stars</td><td>19635</td></tr>
+<tr><td>Documentation</td><td><a href="https://adk.dev/">Official Docs</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -430,6 +430,79 @@ router = Agent(
 <h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
 <ul>
 <li>[1] <a href="https://google.github.io/adk-docs/">ADK Documentation</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>adk, agent development kit, google adk, gemini agents, vertex ai agent engine, llmagent, sequentialagent, parallelagent, loopagent, baseagent, workflow agents, agent-as-tool, sub-agents, hierarchical agents, runner, sessionservice, in-memory session, database session, vertex ai session, callbacks, before_tool_callback, openapi tool, mcptoolset, langchain tool integration, google search tool, code execution tool, bidirectional streaming, audio video streaming, cloud run deployment, adk cli, multi-language sdk</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Build an <code>LlmAgent</code> (alias <code>Agent</code>) with Gemini, instructions, and tools</li>
+<li>Compose <code>SequentialAgent</code>, <code>ParallelAgent</code>, and <code>LoopAgent</code> workflows</li>
+<li>Wire a hierarchical tree where a router agent delegates to specialist sub-agents</li>
+<li>Use an entire agent as a tool inside another agent</li>
+<li>Generate tools from an OpenAPI specification with <code>OpenAPIToolset</code></li>
+<li>Load tools from any MCP server via <code>MCPToolset.from_server()</code></li>
+<li>Wrap a LangChain tool for use inside an ADK agent</li>
+<li>Hook into lifecycle with <code>before_tool_callback</code> / <code>after_model_callback</code></li>
+<li>Stream bidirectional audio and video for real-time multimodal interactions</li>
+<li>Deploy an agent to Vertex AI Agent Engine, Cloud Run, or Docker via <code>adk deploy</code></li>
+<li>Run <code>adk web</code>, <code>adk api_server</code>, or <code>adk eval</code> from the CLI</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I build a Gemini-powered agent?”</li>
+<li>“How do I deploy an agent on Vertex AI Agent Engine?”</li>
+<li>“How do I orchestrate sequential, parallel, and loop sub-agents?”</li>
+<li>“How do I let a router agent delegate to specialist agents?”</li>
+<li>“How do I use an agent as a tool inside another agent?”</li>
+<li>“How do I add Google Search and code execution tools to an agent?”</li>
+<li>“How do I generate tools from an OpenAPI spec?”</li>
+<li>“How do I stream audio and video bidirectionally with an agent?”</li>
+<li>“How do I use MCP tools in a Google ADK agent?”</li>
+<li>“How do I evaluate agent quality with <code>adk eval</code>?”</li>
+<li>“How do I build an agent in TypeScript, Go, or Java with Google’s framework?”</li>
+<li>“How do I persist agent sessions in Vertex AI?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Need first-class Gemini integration and Vertex AI deployment in one framework</li>
+<li>Multi-agent hierarchies must combine deterministic workflow agents with LLM-driven routing</li>
+<li>Many tool sources (function tools, OpenAPI, MCP, LangChain, Google Search) must coexist in one agent</li>
+<li>Non-Gemini models work but require extra configuration and may miss features</li>
+<li>Python SDK is most mature; TypeScript/Go/Java lag behind</li>
+<li>Multi-agent hierarchies with dynamic routing are hard to debug across levels</li>
+<li>Cross-session and cross-agent-tree state sharing needs external infrastructure</li>
+<li>Real-time audio/video streaming for multimodal agents is hard to wire by hand</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you are building agents on Gemini and deploying to Vertex AI Agent Engine, Cloud Run, or the broader Google Cloud stack</li>
+<li>Pick this over LangChain when you want the richest workflow-agent primitives (Sequential, Parallel, Loop) plus LLM-driven routing in one framework</li>
+<li>Pick this over LangGraph when hierarchical agent trees and agent-as-tool patterns fit better than explicit StateGraph topology</li>
+<li>Pick this over CrewAI when you need both deterministic workflow orchestration AND LLM-driven delegation in the same tree</li>
+<li>Pick this over AutoGen when you want hierarchical tree-based delegation rather than conversational message-passing</li>
+<li>Pick this over Pydantic AI when multi-agent hierarchies and bidirectional audio/video streaming matter more than Pydantic typing</li>
+<li>Pick this over smolagents when you need the richest tool ecosystem (Function, MCP, OpenAPI, LangChain, agent-as-tool) and managed deployment</li>
+<li>Pick this over Semantic Kernel when your stack is anchored to Google/Gemini rather than Microsoft/Azure</li>
+<li>Pick this when multi-language SDKs (Python, TypeScript, Go, Java) for the same agent framework are required and Google-centric</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Google ADK / google-adk-python</li>
+<li>LlmAgent (aliased as <code>Agent</code>)</li>
+<li>Workflow agents (SequentialAgent, ParallelAgent, LoopAgent)</li>
+<li>Agent-as-tool pattern</li>
+<li>Sub-agents (hierarchical delegation)</li>
+<li>Runner / InMemoryRunner</li>
+<li>SessionService (in-memory, database, Vertex AI)</li>
+<li>MCPToolset</li>
+<li>OpenAPIToolset</li>
+<li>Vertex AI Agent Engine</li>
+<li><code>adk</code> CLI (run, web, api_server, eval, deploy)</li>
+<li>Bidirectional streaming (audio/video)</li>
 </ul>
 
                     </main>

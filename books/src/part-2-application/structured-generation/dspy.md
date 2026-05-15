@@ -9,7 +9,7 @@
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [stanfordnlp/dspy](https://github.com/stanfordnlp/dspy) |
-| Stars | 32,331 |
+| Stars | 34420 |
 | Docs | [dspy.ai](https://dspy.ai/) |
 | License | MIT |
 
@@ -697,3 +697,99 @@ print(f"Score: {result.score}")
 - [20] [DSPy MCP Integration](https://dspy.ai/tutorials/mcp/)
 - [21] [DSPy Async](https://dspy.ai/tutorials/async/)
 - [22] [DSPy Example API](https://dspy.ai/api/primitives/Example/)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- DSPy
+- Stanford NLP
+- programming not prompting
+- declarative LM programming
+- signatures
+- modules
+- Predict
+- ChainOfThought
+- ReAct
+- CodeAct
+- ProgramOfThought
+- BestOfN
+- Refine
+- adapters
+- ChatAdapter
+- JSONAdapter
+- optimizers
+- MIPROv2
+- GEPA
+- BootstrapFewShot
+- BetterTogether
+- typed input/output
+- LiteLLM
+- compile programs
+- dspy.Assert
+- dspy.Suggest
+- few-shot bootstrapping
+- prompt optimization
+
+### Verb-Noun Tasks
+
+- Declare a typed signature like `"question -> answer"` instead of writing prompts
+- Compose modules (Predict, ChainOfThought, ReAct) into an LM program
+- Compile a program with MIPROv2 to optimize instructions and few-shot examples
+- Run GEPA reflective prompt evolution against a metric and Pareto frontier
+- Swap LMs without changing program logic via `dspy.configure(lm=...)`
+- Build a ReAct agent that calls tools or MCP servers
+- Generate executable Python via CodeAct in a sandboxed interpreter
+- Stream tokens or intermediate fields via `dspy.streamify`
+- Evaluate a program on a dev set with a metric function
+- Save and load compiled programs as JSON or full programs
+- Build a multi-hop RAG pipeline with end-to-end optimization
+- Enforce runtime constraints with `dspy.Assert` and `dspy.Suggest`
+
+### User Intent Phrases
+
+- How do I stop hand-writing prompts and let optimizers tune them?
+- How can I declare what the model should compute, not how?
+- How do I automatically find the best prompt and few-shot examples?
+- How do I build multi-hop question answering with retrieval?
+- How can I swap from GPT-4o to Claude without rewriting prompts?
+- How do I get measurable accuracy improvements through compilation?
+- How do I build a ReAct agent that uses MCP tools?
+- How do I optimize a full RAG pipeline end-to-end?
+- How can I treat LLM programs like PyTorch modules?
+- How do I deploy a compiled DSPy program behind FastAPI or MLflow?
+
+### Problem Statements
+
+- Manual prompt iteration is slow, brittle, and untransferable across models
+- Compilation requires many LM calls over the training set, incurring cost and time
+- Optimizers need 20-200+ labeled examples; cold start has no data
+- Compiled programs are harder to inspect and debug than hand-written prompts
+- Optimized prompts may transfer poorly between LMs
+- Backward compatibility across DSPy versions is not yet guaranteed
+- Async mixing and CodeAct tool restrictions add complexity
+
+### When to Pick This
+
+- Pick DSPy when you want programmatic optimization of prompts and few-shot examples against a measurable metric
+- Pick DSPy when you have a labeled evaluation set (20-200+ examples) and care about systematic accuracy gains
+- Pick DSPy when you want to compose LM calls like PyTorch modules and swap inference strategies (CoT vs PoT vs ReAct)
+- Pick DSPy when you need provider-agnostic abstractions via LiteLLM across many LMs
+- Pick Instructor instead when you just want Pydantic validation-and-retry without an optimizer or compilation step
+- Pick Outlines instead when you need token-level constrained decoding for guaranteed-valid output
+- Pick BAML instead when you want a typed DSL with cross-language code generation rather than Python-only programmatic optimization
+
+### Related Terms and Aliases
+
+- Stanford DSPy
+- declarative prompting
+- prompt compiler
+- LM programming framework
+- programmatic prompt optimization
+- signature-and-module framework
+- Demonstrate-Search-Predict
+- automated prompt engineering
+- few-shot bootstrapping framework
+- ReAct framework

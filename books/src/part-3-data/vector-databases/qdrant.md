@@ -9,7 +9,7 @@
 | Type | SDK/Infra |
 | Open Source | yes |
 | GitHub | [qdrant/qdrant](https://github.com/qdrant/qdrant) |
-| Stars | 29275 |
+| Stars | 31313 |
 | Docs | [qdrant.tech/documentation](https://qdrant.tech/documentation/) |
 
 ## Overview
@@ -558,3 +558,72 @@ results = client.query_points(
 - [10] Search - https://qdrant.tech/documentation/concepts/search/
 - [11] Hybrid Queries - https://qdrant.tech/documentation/concepts/hybrid-queries/
 - [12] Indexing - https://qdrant.tech/documentation/concepts/indexing/
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Qdrant, Rust, vector database, collections, points, payload, payload index, filterable HNSW, ACORN, multi-vector, ColBERT, sparse vectors, dense vectors, named vectors, hybrid search, RRF, DBSF, prefetch, multi-stage search, scalar quantization, binary quantization, product quantization, FastEmbed, MCP server, Raft consensus, sharding, replication, REST 6333, gRPC 6334, hybrid cloud, private cloud
+
+### Verb-Noun Tasks
+
+- Create a collection with `VectorParams` (size, distance)
+- Upsert points with vectors and JSON payloads
+- Query with `query_points` and filters
+- Build a payload index for single-pass filtered HNSW search
+- Run hybrid search via `prefetch` with RRF or DBSF fusion
+- Re-rank with ColBERT multi-vectors in a nested prefetch
+- Apply binary quantization for 32x compression
+- Configure rescoring and oversampling for quantized search
+- Use ACORN for restrictive multi-filter queries
+- Use FastEmbed for client-side inference
+- Run `mcp-server-qdrant` for AI assistant integration
+- Shard collections via consistent hashing across a Raft cluster
+
+### User Intent Phrases
+
+- How do I do filtered vector search without the post-filter penalty?
+- How do I run hybrid dense + sparse search with RRF fusion?
+- How do I add a ColBERT multi-vector reranking stage?
+- How do I compress vectors 32x with binary quantization?
+- How do I self-host a high-performance vector database in Rust?
+- How do I expose my collection to an AI assistant via MCP?
+- How do I isolate tenants with payload indexes?
+- How do I configure HNSW parameters (m, ef_construct, ef)?
+- How do I run nested prefetch pipelines for multi-stage retrieval?
+
+### Problem Statements
+
+- Filtered HNSW search degrades when filters are restrictive
+- Combining dense and sparse search requires manual fusion logic
+- Multi-stage re-scoring with full-precision vectors is hard to express
+- Self-hosted vector DBs in Java/Go can be slower than expected
+- Multi-tenant workloads need data-level isolation without per-tenant collections
+- Connecting AI assistants to vector data is glue work
+- Default deployments lack auth and encryption
+
+### When to Pick This
+
+- Pick this when restrictive metadata filtering with single-pass HNSW (payload-indexed) matters at scale
+- Pick this over Pinecone when self-hosting in Rust with high performance and full control is required
+- Pick this over Weaviate when nested prefetch pipelines and ColBERT multi-vector re-scoring fit your retrieval shape
+- Pick this over Milvus when Rust performance + filterable HNSW + ACORN matter more than billion-scale GPU-accelerated indexes
+- Pick this over pgvector when you have no existing PostgreSQL footprint and want a purpose-built engine
+- Pick this when MCP-server integration with AI coding assistants is on your roadmap
+
+### Related Terms and Aliases
+
+- Qdrant Cloud / Hybrid Cloud / Private Cloud / Edge
+- qdrant-client (Python)
+- FastEmbed
+- Filterable HNSW
+- ACORN algorithm
+- RRF / DBSF fusion
+- Multi-vector (ColBERT)
+- Payload (metadata)
+- Prefetch
+- mcp-server-qdrant
+- WAL (write-ahead log)
+- Raft consensus

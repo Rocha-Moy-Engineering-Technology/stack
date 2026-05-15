@@ -325,3 +325,69 @@ response = client.messages.create(
 - [3] Features Overview - <https://platform.claude.com/docs/en/build-with-claude/overview>
 - [4] Tool Use Overview - <https://platform.claude.com/docs/en/build-with-claude/tool-use/overview>
 - [5] Claude Developer Platform - <https://platform.claude.com/docs/en/home>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Claude, Anthropic, Claude Opus, Claude Sonnet, Claude Haiku, Opus 4.6, Sonnet 4.6, Haiku 4.5, Messages API, tool use, strict tool use, extended thinking, adaptive thinking, prompt caching, 1M context, compaction, computer use, code execution, web search tool, web fetch, memory tool, MCP connector, agent skills, batch processing, Files API, citations, parallel tool calls
+
+### Verb-Noun Tasks
+
+- Call the Claude Messages API with Python or TypeScript
+- Pass a list of tool definitions for function calling
+- Enable extended thinking for visible chain-of-thought
+- Connect to a remote MCP server directly from Messages API
+- Use computer use to control a desktop via screenshots and mouse/keyboard
+- Run code in Anthropic's managed sandbox via the code execution tool
+- Invoke web search and web fetch as server-side tools
+- Cache a long system prompt for 5 minutes or 1 hour
+- Batch-process large workloads at 50% cost reduction
+- Stream content blocks with Server-Sent Events
+- Generate grounded responses with per-claim citations
+
+### User Intent Phrases
+
+- "I want to use Claude in my Python app"
+- "How do I do function calling with Claude?"
+- "What's the difference between Opus, Sonnet, and Haiku?"
+- "I need an LLM that can use a computer like a human"
+- "How do I see Claude's reasoning before the final answer?"
+- "I want to cache a long system prompt to reduce cost"
+- "How do I connect Claude directly to an MCP server?"
+- "What's the cheapest Claude tier for high-volume work?"
+- "Should I use the Messages API or AWS Bedrock for Claude?"
+- "How do I get citations grounded in my source documents?"
+- "I need a 1M-token context window from Claude"
+- "How do I run agents that take actions in a sandbox?"
+
+### Problem Statements
+
+- Need an LLM with strong reasoning transparency for high-stakes decisions
+- Manual prompt-engineering for tool selection is unreliable at scale
+- Long-running conversations exceed the context window before completing
+- Need to deploy in a regulated environment that demands strict tool-input validation
+- Existing agents can't operate on a GUI; they only handle APIs
+- Auditing LLM outputs against source documents is manual and error-prone
+
+### When to Pick This
+
+- Pick this when reasoning quality and instruction-following matter most (Opus is consistently top-ranked on coding/agent benchmarks)
+- Pick this when you need extended thinking with visible chain-of-thought for transparency
+- Pick this when computer use (mouse/keyboard automation through screenshots) is required
+- Pick this when MCP-native integration shortens your tool-integration story
+- Pick this when prompt caching's 5-min and 1-hour durations match your workload
+- Pick this when citations and grounding are first-class for compliance or factuality requirements
+- Pick this when you want to access the same models via your existing cloud account (AWS Bedrock, GCP Vertex AI, Azure AI)
+
+### Related Terms and Aliases
+
+- Anthropic Claude, Anthropic API
+- "Anthropic's LLM"
+- Claude 4.6, Claude 4.5, Claude 4
+- Sonnet 4.5 / Sonnet 4.6 (variant names you may see in other docs)
+- Bedrock Claude, Vertex AI Claude, Azure AI Claude (multi-platform deployments)
+- Claude Code (Anthropic's CLI; uses the same models but is a separate product)
+- "Anthropic Messages API" = the official name for `POST /v1/messages`

@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Inference Serving |
+| Group | Inference Engines |
 | Type | SDK/Infra |
 | Open Source | Yes |
 | GitHub | [https://github.com/kserve/kserve](https://github.com/kserve/kserve) |
-| Stars | 5125 |
+| Stars | 5472 |
 | Documentation | [Official Docs](https://kserve.github.io/website/) |
 
 ## Overview
@@ -270,3 +270,66 @@ spec:
 ## Citations
 
 - [1] KServe Documentation - <https://kserve.github.io/kserve/>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+KServe, Kubernetes, CNCF, InferenceService, InferenceGraph, ServingRuntime, ClusterServingRuntime, predictor, transformer, explainer, Knative, Istio, Kourier, ModelMesh, scale-to-zero, canary deployment, request-based autoscaling, V2 inference protocol, OpenAI-compatible, vLLM runtime, Triton runtime, TorchServe runtime, KV cache offloading, KFServing, multi-model serving, Kubeflow
+
+### Verb-Noun Tasks
+
+- Deploy a model with an `InferenceService` Custom Resource Definition
+- Compose multi-model pipelines with `InferenceGraph`
+- Define a reusable `ServingRuntime` for a custom container
+- Roll out a new model version with `canaryTrafficPercent`
+- Scale model pods to zero when idle via Knative
+- Serve an LLM under KServe with a vLLM runtime backend
+- Apply Istio/Envoy mTLS and traffic policies to model endpoints
+- Wire up pre/post-processing through a Transformer component
+- Pull model artifacts from S3, GCS, or Azure Blob storage
+- Pack many small models onto shared GPUs with ModelMesh
+- Add outlier and data-drift detection to a production endpoint
+
+### User Intent Phrases
+
+- "How do I deploy ML models on Kubernetes?"
+- "I need scale-to-zero serving for an infrequently used model"
+- "How do I do canary releases for a new model version?"
+- "What's the CNCF-blessed Kubernetes ML serving platform?"
+- "How do I serve TensorFlow, PyTorch, and sklearn models with one API?"
+- "I want OpenAI-compatible LLM serving on my own cluster"
+- "How do I pack hundreds of small models onto shared GPUs?"
+- "How do I add data drift detection to a deployed model?"
+- "How do I integrate KServe with Kubeflow?"
+
+### Problem Statements
+
+- Manual Kubernetes Deployments + Services for every model are repetitive and brittle
+- Different teams use different frameworks (TF, PyTorch, ONNX) with no common deploy story
+- Idle models still pay for GPU/CPU pods 24/7 without scale-to-zero
+- Canary rollouts require hand-written Istio VirtualServices and traffic-splitting glue
+- Production observability (drift, outliers, payload logs) needs to be bolt-on for every model
+- High-density multi-model deployments waste GPU memory without intelligent placement
+
+### When to Pick This
+
+- Pick this when Kubernetes is already the platform of record
+- Pick this over Triton/BentoML/vLLM standalone when scale-to-zero, canary, and ingress matter
+- Pick this for enterprise ML platforms serving many teams and many frameworks
+- Pick this when InferenceGraph pipelines (ensembles, routers, multi-armed bandits) are required
+- Pick this when ModelMesh's high-density multi-model serving is needed
+- Pick this when CNCF-aligned governance and Kubeflow integration are prerequisites
+- Skip this when you don't have Kubernetes or want a single-host inference server
+
+### Related Terms and Aliases
+
+- KFServing (former name), KServe v1/v2
+- "Kubernetes model serving", "K8s ML serving"
+- CRD-based model deployment
+- ModelMesh, Multi-Model Serving (MMS)
+- KServe V2 protocol = Open Inference Protocol (OIP)
+- Alternative to Seldon Core, BentoML Yatai, Triton standalone, SageMaker endpoints
+- Knative-backed serverless serving

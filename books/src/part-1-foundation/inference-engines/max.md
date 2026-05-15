@@ -4,12 +4,12 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Inference Serving |
+| Group | Inference Engines |
 | Type | SDK/Infra |
 | Open Source | Yes |
 | GitHub | [https://github.com/modular/modular](https://github.com/modular/modular) |
-| Stars | 25622 |
-| Documentation | [Official Docs](https://docs.modular.com/max/) |
+| Stars | 26140 |
+| Documentation | [Official Docs](https://docs.modular.com/max/intro) |
 
 ## Overview
 
@@ -274,3 +274,64 @@ response = client.chat.completions.create(
 
 - [1] MAX Platform Documentation - <https://docs.modular.com/max/>
 - [2] MAX Get Started Guide - <https://docs.modular.com/max/get-started>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+MAX, Modular MAX, MAX Graph, MAX Serve, MAX Benchmark, Mammoth, Mojo, Mojo language, OpenAI-compatible endpoint, cross-vendor GPU, NVIDIA B200, NVIDIA H200, NVIDIA H100, AMD MI355X, AMD MI325X, AMD MI300X, hardware abstraction, custom GPU kernels, continuous batching, paged attention, HuggingFace models, multimodal serving, model compilation
+
+### Verb-Noun Tasks
+
+- Start a server with `max serve --model <hf_id>`
+- Connect with the OpenAI SDK at `http://localhost:8000/v1`
+- Benchmark a model with `max benchmark --backend modular`
+- Compare MAX throughput vs vLLM via `--backend vllm`
+- Pass images alongside text with `image_url` content parts
+- Tune GPU memory with `--device-memory-utilization`
+- Allow custom-code models with `--trust-remote-code`
+- Write custom operators or GPU kernels in Mojo
+- Deploy across mixed NVIDIA + AMD GPU fleets with Mammoth
+- Compile a model graph for hardware-specific kernels via MAX Graph
+
+### User Intent Phrases
+
+- "How do I serve LLMs on AMD GPUs?"
+- "What inference engine works on both NVIDIA and AMD?"
+- "How do I write custom GPU kernels in a Python-like language?"
+- "What is Modular's Mojo language?"
+- "How do I get OpenAI-compatible serving on MI300X?"
+- "How do I benchmark vLLM vs MAX on the same model?"
+- "How do I deploy a model across heterogeneous GPU clusters?"
+- "What inference platform abstracts away NVIDIA vs AMD differences?"
+- "How do I run Gemma 3 27B locally with OpenAI API compatibility?"
+
+### Problem Statements
+
+- Most inference engines are NVIDIA-only; AMD GPU paths are second-class
+- Writing CUDA kernels locks code to one vendor
+- Mixed-fleet (NVIDIA + AMD) deployments need framework duplication
+- Custom GPU kernels traditionally require C++/CUDA expertise
+- Heterogeneous cloud GPU clusters lack a unified deployment plane
+- Performance comparisons between inference backends are hard without a common benchmark tool
+
+### When to Pick This
+
+- Pick this when AMD MI300X/MI325X/MI355X is a first-class deployment target
+- Pick this over vLLM/SGLang when cross-vendor portability matters more than peak NVIDIA tuning
+- Pick this when custom operators or specialized kernels need to be authored
+- Pick this when Mammoth's heterogeneous cluster deployment is needed
+- Pick this when MAX Graph compile-time optimizations beat hand-tuned kernels for your model
+- Skip this when only NVIDIA H100/B200 is in scope and vLLM/SGLang already work
+- Skip this if Linux/WSL is not available
+
+### Related Terms and Aliases
+
+- Modular MAX, Modular Inc., Modular AI Platform
+- Mojo (the language), MAX Engine (older naming)
+- "Cross-vendor inference", "vendor-agnostic GPU serving"
+- Mammoth = MAX's cluster deployment engine
+- Alternative to vLLM, SGLang, TGI, TensorRT-LLM, ROCm-only inference stacks
+- MAX Graph = MAX's compilation/optimization framework

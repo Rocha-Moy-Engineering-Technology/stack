@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Inference Serving</td></tr>
+<tr><td>Group</td><td>Inference Engines</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/sgl-project/sglang">https://github.com/sgl-project/sglang</a></td></tr>
-<tr><td>Stars</td><td>23652</td></tr>
+<tr><td>Stars</td><td>27804</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.sglang.io/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -380,6 +380,67 @@ print(response.choices[0].message.content)
 <ul>
 <li>[1] SGLang Documentation - <a href="https://docs.sglang.io/">https://docs.sglang.io/</a></li>
 <li>[2] SGLang GitHub Repository - <a href="https://github.com/sgl-project/sglang">https://github.com/sgl-project/sglang</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>SGLang, RadixAttention, radix tree KV cache, prefix caching, zero-overhead scheduler, prefill-decode disaggregation, chunked prefill, compressed FSM, structured outputs, speculative decoding, FlashInfer, torch.compile, tensor parallelism, expert parallelism, multi-LoRA, FP4, FP8, AWQ, GPTQ, DeepSeek MLA, RL rollout backend, verl, AReaL, slime, OpenAI-compatible server, MoE serving</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Launch an SGLang server with <code>python -m sglang.launch_server</code></li>
+<li>Enable RadixAttention to automatically cache shared prefixes</li>
+<li>Generate JSON with compressed-FSM constrained decoding at 3x speed</li>
+<li>Distribute a DeepSeek MoE model with expert parallelism across GPUs</li>
+<li>Disaggregate prefill and decode stages for long-context workloads</li>
+<li>Serve as the rollout backend for verl, AReaL, or slime RL training</li>
+<li>Activate torch.compile for ~1.5x execution speedup</li>
+<li>Run speculative decoding with <code>--speculative-algorithm</code></li>
+<li>Batch multiple LoRA adapters concurrently</li>
+<li>Process long prompts in chunks via <code>--chunked-prefill-size</code></li>
+<li>Run diffusion model inference (WAN video, Qwen image)</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I get faster JSON-schema output from open-weight LLMs?”</li>
+<li>“What’s the best inference engine for reinforcement learning rollouts?”</li>
+<li>“How do I cache shared system prompts across many requests?”</li>
+<li>“I need to serve DeepSeek-V3 across 96+ GPUs”</li>
+<li>“How do I disaggregate prefill and decode for long context?”</li>
+<li>“What inference engine has the fastest structured-output decoding?”</li>
+<li>“How do I run xAI/AMD/NVIDIA-grade LLM serving on my cluster?”</li>
+<li>“I want torch.compile speedups for production LLM serving”</li>
+<li>“How do I do multi-LoRA batching with prefix caching together?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>JSON-mode decoding is slow because every token gets schema-checked one at a time</li>
+<li>Prefix sharing across requests is left on the table by naive batched inference</li>
+<li>Long-context prefill blocks the GPU and stalls decode for other requests</li>
+<li>RL post-training needs fast inference rollouts, not just one-shot serving</li>
+<li>MoE expert routing imbalances utilization without expert parallelism</li>
+<li>Default CPU scheduling stalls the GPU between micro-batches</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when structured-output (JSON-schema/regex/CFG) throughput matters most</li>
+<li>Pick this over vLLM when RadixAttention’s prefix caching dominates the workload</li>
+<li>Pick this for RL post-training rollout serving (verl, AReaL, slime, Tunix, Miles)</li>
+<li>Pick this when prefill-decode disaggregation unlocks long-context throughput</li>
+<li>Pick this for DeepSeek-style MoE models needing expert parallelism</li>
+<li>Pick this over Triton Inference Server when LLM-specific optimizations dominate</li>
+<li>Skip this when broadest hardware/model coverage matters more — use vLLM instead</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>SGLang project, sgl-project</li>
+<li>“Structured generation language”, “structured outputs engine”</li>
+<li>Radix tree caching, prefix tree caching</li>
+<li>Compressed finite state machine decoding</li>
+<li>MLA, Multi-head Latent Attention (DeepSeek)</li>
+<li>Alternative to vLLM, TGI, TensorRT-LLM, lmdeploy</li>
+<li>RL inference backend, rollout server</li>
 </ul>
 
                     </main>

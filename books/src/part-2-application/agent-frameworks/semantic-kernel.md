@@ -2,15 +2,14 @@
 
 > Enterprise-grade, lightweight SDK for integrating Large Language Models (LLMs) into conventional applications across C#, Python, and Java, providing modular plugin architecture and AI service orchestration.
 
-| Field          | Value                                                                 |
-|----------------|-----------------------------------------------------------------------|
-| **Name**       | Semantic Kernel                                                       |
-| **Group**      | Agent Frameworks                                                      |
-| **Type**       | SDK                                                                   |
-| **Open Source** | Yes                                                                  |
-| **GitHub**     | [microsoft/semantic-kernel](https://github.com/microsoft/semantic-kernel) |
-| **Stars**      | 27,283                                                                |
-| **Docs**       | [Official Docs](https://learn.microsoft.com/en-us/semantic-kernel/)   |
+| Field | Value |
+|-------|-------|
+| Group | Agent Frameworks |
+| Type | SDK |
+| Open Source | Yes |
+| GitHub | [microsoft/semantic-kernel](https://github.com/microsoft/semantic-kernel) |
+| Stars | 27904 |
+| Documentation | [Official Docs](https://learn.microsoft.com/en-us/semantic-kernel/) |
 
 ## Overview
 
@@ -288,3 +287,75 @@ Console.WriteLine(result);
 
 - [1] [Semantic Kernel Documentation](https://learn.microsoft.com/en-us/semantic-kernel/)
 - [2] [Semantic Kernel Kernel Concept](https://learn.microsoft.com/en-us/semantic-kernel/concepts/kernel)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+semantic kernel, microsoft semantic kernel, c# llm sdk, dotnet ai, java llm sdk, kernel, kernel function, plugin, ai connector, azure openai, function choice behavior, openapi plugin, m365 copilot plugin, hipaa soc2 gdpr, opentelemetry, dependency injection, service provider, filters and hooks, prompt templates, process framework, mcp server from kernel functions, multi-language sdk, enterprise middleware, non-breaking changes
+
+### Verb-Noun Tasks
+
+- Build a `Kernel` and register an Azure OpenAI chat completion service
+- Expose existing C# or Python code as a kernel function with `@kernel_function`
+- Import a REST API as a plugin from its OpenAPI specification
+- Register multiple AI services and select between them per request
+- Configure `FunctionChoiceBehavior.Auto()` for automatic function calling
+- Add pre/post invocation filters for content moderation and telemetry
+- Emit OpenTelemetry traces for every prompt and function call
+- Expose kernel functions as an MCP server over SSE or stdio
+- Use the same SDK across C#, Python, and Java teams
+- Compose a Process Framework state machine across plugins
+
+### User Intent Phrases
+
+- "How do I add AI to my existing C# or .NET application?"
+- "How do I integrate Azure OpenAI with dependency injection?"
+- "How do I expose existing business code as AI-callable functions?"
+- "How do I make my REST APIs callable by an LLM?"
+- "How do I build an enterprise AI assistant with HIPAA/SOC 2/GDPR compliance?"
+- "How do I swap between OpenAI, Azure OpenAI, Anthropic, and Google in .NET?"
+- "How do I add content moderation filters to every LLM call?"
+- "How do I trace LLM calls with OpenTelemetry?"
+- "How do I turn my kernel functions into an MCP server?"
+- "How do I build a Microsoft 365 Copilot plugin?"
+- "How do I write the same agent code in C# and Python?"
+
+### Problem Statements
+
+- Need to add AI to a large existing .NET / Java / Python codebase without rewriting business logic
+- Enterprise compliance (HIPAA, SOC 2, GDPR) is required and rapid breaking framework changes are unacceptable
+- Multiple teams use different languages and need a consistent SDK across them
+- Existing REST APIs (and Microsoft 365 Copilot plugins) must be reusable by AI agents
+- Need fine-grained content moderation and observability hooks at every step of the pipeline
+- C# feature parity vs Python and Java lags and creates surprises
+- Plugin discovery overflows the model's function-calling context window when many plugins are registered
+
+### When to Pick This
+
+- Pick this when you are in a .NET / Java / multi-language enterprise environment and need first-class C#, Python, and Java SDKs with the same abstractions
+- Pick this over LangChain when .NET / Java parity, DI patterns, and enterprise compliance matter more than the broadest Python ecosystem
+- Pick this over LangGraph when plugin-based function orchestration fits better than graph state machines
+- Pick this over CrewAI when you want a kernel-and-plugins architecture instead of role-based crews
+- Pick this over AutoGen when you want single-kernel plugin orchestration rather than multi-agent conversations (both are Microsoft, but this is the enterprise app-integration SDK)
+- Pick this over Pydantic AI when multi-language SDKs, OpenTelemetry, and Azure-centric deployment matter more than Pydantic-typed Python agents
+- Pick this over smolagents when enterprise middleware with filters, hooks, and compliance is required, not minimal code-first agents
+- Pick this over ADK when your stack is anchored to Microsoft/Azure rather than Google/Vertex AI
+- Pick this when OpenAPI-as-plugin and Microsoft 365 Copilot plugin compatibility are deliverables
+
+### Related Terms and Aliases
+
+- Kernel (DI container + pipeline)
+- Kernel function (`@kernel_function`, `[KernelFunction]`)
+- Plugin (group of functions)
+- AI connector (provider abstraction)
+- Function Choice Behavior (Auto / Required / None)
+- Pre/post invocation filters
+- Process Framework (state-machine workflows)
+- OpenAPI plugin
+- Microsoft 365 Copilot plugin format
+- MCP server creation from kernel functions
+- Enterprise AI middleware
+- Multi-language SDK (C#, Python, Java)

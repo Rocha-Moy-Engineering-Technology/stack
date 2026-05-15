@@ -1,0 +1,762 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Groq - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-1-foundation/hosted-inference-apis/groq.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="groq"><a class="header" href="#groq">Groq</a></h1>
+<blockquote>
+<p>Hosted API for fast LLM inference on custom LPU hardware</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Groq</td></tr>
+<tr><td>Group</td><td>Hosted Inference APIs</td></tr>
+<tr><td>Type</td><td>API/Infra</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Docs</td><td><a href="https://console.groq.com/docs/overview">console.groq.com/docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Groq is an inference platform built on custom Language Processing Unit (LPU) hardware, designed to deliver fast Large Language Model (LLM) inference through an OpenAI-compatible API. Unlike GPU-based inference providers, Groq uses purpose-built Application-Specific Integrated Circuit (ASIC) silicon optimized for sequential token generation, producing deterministic low-latency inference. The platform exposes a REST API at <code>https://api.groq.com/openai/v1</code> and provides official Software Development Kits (SDKs) for Python and JavaScript/TypeScript. Groq hosts a curated set of open-weight models spanning text generation, reasoning, speech-to-text, text-to-speech, vision, and content moderation. The platform also offers agentic AI systems (Compound and Compound Mini) with built-in tool orchestration, a Responses API for advanced agentic workflows, and Model Context Protocol (MCP) support for connecting to external tool servers. [1]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<ul>
+<li><strong>Language Processing Unit (LPU)</strong>: Groq’s custom ASIC hardware architecture, purpose-built for sequential inference workloads rather than the parallel matrix operations GPUs are optimized for. The LPU architecture delivers deterministic, low-latency token generation. Models reside in LPU memory continuously, eliminating cold-start latency.</li>
+<li><strong>OpenAI-Compatible API</strong>: Groq’s API follows the OpenAI chat completions interface, meaning existing code targeting the OpenAI SDK can be redirected to Groq by changing the base URL and API key with minimal modification. Known incompatibilities include lack of support for <code>logprobs</code>, <code>logit_bias</code>, <code>top_logprobs</code>, <code>messages[].name</code>, and the N parameter (must equal 1). A temperature value of 0 is converted to <code>1e-8</code>. [12]</li>
+<li><strong>Service Tiers</strong>: Groq offers three processing tiers – Performance Tier with dedicated compute resources and guaranteed availability, Flex Processing for cost-optimized high-throughput workloads with 10x higher rate limits but no availability guarantee, and Batch Processing for asynchronous bulk inference at 50% lower cost with 24-hour to 7-day completion windows. [6][8]</li>
+<li><strong>Prompt Caching</strong>: Groq automatically caches prompt prefixes from recent requests. When a subsequent request shares the same prefix, cached computation is reused, reducing both latency and cost by 50% for cached token portions. Cached tokens do not count toward rate limits. Caches expire after 2 hours without use. Minimum cacheable prompt length varies by model (128 to 1024 tokens). [7]</li>
+<li><strong>Groq Compound</strong>: Agentic AI systems (Compound and Compound Mini) with built-in tools including web search, code execution, Wolfram Alpha integration, and parallel browser automation (up to 10 pages simultaneously). These handle tool orchestration autonomously in a single API call. [14]</li>
+<li><strong>Responses API (Beta)</strong>: An OpenAI-compatible Responses API supporting text and image inputs, function calling, built-in tools, MCP integration, structured outputs, and reasoning. Does not yet support stateful conversations (<code>previous_response_id</code> is unavailable). [10]</li>
+<li><strong>Model Context Protocol (MCP)</strong>: Server-side remote tool calling via MCP servers. Groq discovers tools from MCP servers, passes definitions to the model, executes tool calls, and returns results – all within a single API request. [11]</li>
+<li><strong>LoRA Inference</strong>: Enterprise-only support for Low-Rank Adaptation (LoRA) adapters, allowing serving fine-tuned model variants without hosting separate full model copies. Adapters must be trained externally and uploaded to Groq. Currently limited to <code>llama-3.1-8b-instant</code> base model. [9]</li>
+</ul>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Groq’s architecture consists of three layers:</p>
+<ol>
+<li><strong>Hardware Layer</strong>: Custom LPU chips arranged in GroqRack systems. Each LPU handles inference deterministically, meaning the same input produces identical timing characteristics across runs. This contrasts with GPU inference, where batching and scheduling introduce variable latency.</li>
+<li><strong>API Gateway Layer</strong>: An OpenAI-compatible REST API that routes requests to model-specific inference endpoints. The gateway handles authentication, rate limiting, prompt caching, service tier selection, and MCP tool orchestration.</li>
+<li><strong>Model Serving Layer</strong>: Pre-loaded open-weight models served directly from LPU memory. Models are not loaded on-demand; they reside in hardware memory continuously, eliminating cold-start latency. Inference speeds range from 200 to 1,000+ tokens per second depending on model size.</li>
+</ol>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>Text Generation (Chat Completions)</strong>: Standard chat completions endpoint supporting streaming, asynchronous calls, stop sequences, temperature control (0.0 to 2.0, default 0.5), top-p sampling, and max completion tokens. [2]</li>
+<li><strong>Reasoning</strong>: Dedicated reasoning capabilities via GPT-OSS models (with <code>include_reasoning</code> parameter and <code>low</code>/<code>medium</code>/<code>high</code> effort levels) and Qwen3-32B (with <code>reasoning_format</code> parameter supporting <code>parsed</code>, <code>raw</code>, or <code>hidden</code> modes). Recommended temperature 0.5-0.7. Cannot use <code>raw</code> format with JSON mode or tool use. [4]</li>
+<li><strong>Speech-to-Text</strong>: Transcription and translation via Whisper model variants. Supports FLAC, MP3, MP4, MPEG, MPGA, M4A, OGG, WAV, and WebM formats. File size limits: 25 MB (free tier), 100 MB (dev tier). Audio is downsampled to 16KHz mono. Response formats include JSON, verbose_json (with timestamps and quality metadata), and plain text. [5]</li>
+<li><strong>Text-to-Speech</strong>: Audio generation via Orpheus models (<code>canopylabs/orpheus-v1-english</code> and <code>canopylabs/orpheus-arabic-saudi</code>) with vocal direction controls (e.g., <code>[cheerful]</code> tags). Output defaults to WAV format. [13]</li>
+<li><strong>Vision</strong>: Image analysis through multimodal models (Llama 4 Scout 17B). Supports URL-based images (up to 20 MB) and base64-encoded images (up to 4 MB). Maximum 5 images per request, 33 megapixel resolution ceiling. Includes Optical Character Recognition (OCR) capabilities. [3]</li>
+<li><strong>Tool Use</strong>: Function calling support with three patterns – built-in tools (web search, code execution, browser automation, Wolfram Alpha) executed on Groq infrastructure; remote MCP tools via third-party servers; and local tool calling with custom function definitions. Supports parallel tool calls on most models. [15]</li>
+<li><strong>Structured Outputs</strong>: Two modes – Strict mode (<code>strict: true</code>) with constrained decoding guaranteeing 100% schema adherence (GPT-OSS models only), and Best-effort mode (<code>strict: false</code>) available across more models with retry-based validation. Also supports basic JSON Object Mode for models without full structured output support. [16]</li>
+<li><strong>Content Moderation</strong>: GPT-OSS-Safeguard 20B for bring-your-own-policy trust and safety workflows with reasoning explanations. Llama Prompt Guard 2 (22M and 86M parameter variants) for prompt injection detection. Llama Guard 4 12B for multimodal content moderation using MLCommons Taxonomy. [17]</li>
+<li><strong>Batch Processing</strong>: Asynchronous batch API supporting chat completions, audio transcription, and audio translation. Up to 50,000 requests per file, 200 MB maximum. 50% cost discount versus synchronous pricing. Completion windows from 24 hours to 7 days. Results retained for 30 days. [8]</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Low-Latency Chatbots</strong>: Applications requiring sub-second response times for interactive conversation, where Groq’s LPU latency advantage over GPU inference is most pronounced. At 300-1,000+ tokens per second, multi-turn conversations feel instantaneous.</li>
+<li><strong>Agentic Workflows</strong>: Tool-augmented agents that combine text generation with function calling (web search, code execution, MCP tools). Fast inference reduces end-to-end agent loop time – a typical multi-tool workflow requiring 3-5 inference calls completes in seconds rather than minutes.</li>
+<li><strong>Real-Time Speech Processing</strong>: Transcription pipelines using Whisper models at 189-216x real-time speed factor for live audio streams or recorded media.</li>
+<li><strong>High-Throughput Document Processing</strong>: Batch processing tier for summarization, extraction, or classification across large document corpora at 50% reduced cost.</li>
+<li><strong>Content Moderation Pipelines</strong>: Automated safety screening with custom policies using GPT-OSS-Safeguard, prompt injection detection via Llama Prompt Guard, or multimodal content analysis with Llama Guard 4.</li>
+<li><strong>Structured Data Extraction</strong>: Vision OCR combined with structured outputs for extracting typed data from documents and images with guaranteed schema compliance.</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<h3 id="endpoints"><a class="header" href="#endpoints">Endpoints</a></h3>
+<p><strong>Chat Completions</strong>: <code>POST /openai/v1/chat/completions</code> – Creates a model response for a chat conversation. [2]</p>
+<p><strong>Responses (Beta)</strong>: <code>POST /openai/v1/responses</code> – Advanced API for agentic workflows with built-in tool support and MCP integration. [10]</p>
+<p><strong>Transcription</strong>: <code>POST /openai/v1/audio/transcriptions</code> – Transcribes audio into the input language. [5]</p>
+<p><strong>Translation</strong>: <code>POST /openai/v1/audio/translations</code> – Translates audio into English. [5]</p>
+<p><strong>Speech</strong>: <code>POST /openai/v1/audio/speech</code> – Generates audio from input text. [13]</p>
+<p><strong>Models</strong>: <code>GET /openai/v1/models</code> – Lists available models. <code>GET /openai/v1/models/{model}</code> – Retrieves model details.</p>
+<p><strong>Batches</strong>: <code>POST /openai/v1/batches</code> – Creates a batch job. <code>GET /openai/v1/batches/{batch_id}</code> – Retrieves batch status. <code>POST /openai/v1/batches/{batch_id}/cancel</code> – Cancels a batch. [8]</p>
+<p><strong>Files</strong>: <code>POST /openai/v1/files</code> – Uploads a file (100 MB max, JSONL). <code>GET /openai/v1/files</code> – Lists files. <code>GET /openai/v1/files/{file_id}/content</code> – Downloads file content.</p>
+<p><strong>Fine-Tuning (Beta)</strong>: <code>POST /v1/fine_tunings</code> – Registers a LoRA adapter. <code>GET /v1/fine_tunings</code> – Lists adapters. Enterprise only. [9]</p>
+<h3 id="chat-completions-parameters"><a class="header" href="#chat-completions-parameters">Chat Completions Parameters</a></h3>
+<ul>
+<li><code>messages</code> (required): Array of message objects with <code>role</code> (system, user, assistant, tool) and <code>content</code> fields.</li>
+<li><code>model</code> (required): Model identifier string (e.g., <code>llama-3.3-70b-versatile</code>).</li>
+<li><code>temperature</code>: Sampling temperature, default <code>0.5</code>. Range <code>0.0</code> to <code>2.0</code>.</li>
+<li><code>max_completion_tokens</code>: Maximum tokens in the generated response.</li>
+<li><code>top_p</code>: Nucleus sampling threshold.</li>
+<li><code>stop</code>: String or array of strings where the model stops generating.</li>
+<li><code>stream</code>: Boolean to enable Server-Sent Events (SSE) streaming of partial responses.</li>
+<li><code>tools</code>: Array of tool definitions in JSON Schema format for function calling.</li>
+<li><code>response_format</code>: Structured output specification (<code>json_schema</code> or <code>json_object</code>).</li>
+<li><code>service_tier</code>: Processing tier selection (<code>flex</code> for high-throughput).</li>
+</ul>
+<h3 id="available-models"><a class="header" href="#available-models">Available Models</a></h3>
+<p><strong>Text Generation (Production)</strong>:</p>
+<ul>
+<li><code>llama-3.1-8b-instant</code> – 8B parameter Llama 3.1, 131,072 context window, 560 tps, $0.05/$0.08 per million tokens</li>
+<li><code>llama-3.3-70b-versatile</code> – 70B parameter Llama 3.3, 131,072 context window, 280 tps, $0.59/$0.79 per million tokens</li>
+<li><code>openai/gpt-oss-20b</code> – 20B parameter GPT-OSS, 131,072 context window, 1,000 tps, $0.075/$0.30 per million tokens</li>
+<li><code>openai/gpt-oss-120b</code> – 120B parameter GPT-OSS, 131,072 context window, 500+ tps</li>
+<li><code>openai/gpt-oss-safeguard-20b</code> – 20B parameter safety model, 131,072 context window, ~1,000 tps</li>
+</ul>
+<p><strong>Agentic Systems</strong>:</p>
+<ul>
+<li><code>groq/compound</code> – Agentic AI with built-in tools, 131,072 context, 8,192 max completion, ~450 tps</li>
+<li><code>groq/compound-mini</code> – Lightweight agentic AI, 131,072 context, 8,192 max completion, ~450 tps</li>
+</ul>
+<p><strong>Speech-to-Text</strong>:</p>
+<ul>
+<li><code>whisper-large-v3</code> – Full Whisper v3, $0.111/hour, 10.3% word error rate, 189x real-time, supports translation</li>
+<li><code>whisper-large-v3-turbo</code> – Optimized Whisper v3, $0.04/hour, 12% word error rate, 216x real-time</li>
+</ul>
+<p><strong>Text-to-Speech</strong>:</p>
+<ul>
+<li><code>canopylabs/orpheus-v1-english</code> – Expressive English TTS with vocal direction controls</li>
+<li><code>canopylabs/orpheus-arabic-saudi</code> – Saudi Arabic dialect synthesis</li>
+</ul>
+<p><strong>Safety</strong>:</p>
+<ul>
+<li><code>llama-guard-4-12b</code> – Multimodal content moderation, 128K context</li>
+<li><code>meta-llama/llama-prompt-guard-2-86m</code> – Prompt injection detection (86M params)</li>
+<li><code>meta-llama/llama-prompt-guard-2-22m</code> – Prompt injection detection (22M params)</li>
+</ul>
+<p><strong>Preview Models</strong> (evaluation only, may be discontinued without notice):</p>
+<ul>
+<li><code>meta-llama/llama-4-scout-17b-16e-instruct</code> – 17B x 16 expert MoE, 750 tps, vision support</li>
+<li><code>moonshotai/kimi-k2-instruct-0905</code> – 262,144 context, 200 tps, $1.00/$3.00 per million tokens</li>
+<li><code>qwen/qwen3-32b</code> – 128K context, 400 tps, reasoning support, $0.29/$0.59 per million tokens</li>
+</ul>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="client-configuration-python"><a class="header" href="#client-configuration-python">Client Configuration (Python)</a></h3>
+<pre><code class="language-python">from groq import Groq
+
+# Reads GROQ_API_KEY from environment automatically
+client = Groq()
+
+# Explicit configuration
+client = Groq(
+    api_key="gsk_your_api_key_here",
+    base_url="https://api.groq.com/openai/v1"
+)
+
+# Async client
+from groq import AsyncGroq
+async_client = AsyncGroq()
+</code></pre>
+<h3 id="client-configuration-javascripttypescript"><a class="header" href="#client-configuration-javascripttypescript">Client Configuration (JavaScript/TypeScript)</a></h3>
+<pre><code class="language-typescript">import Groq from "groq-sdk";
+
+// Reads GROQ_API_KEY from environment automatically
+const client = new Groq();
+
+// Explicit configuration
+const client = new Groq({
+    apiKey: "gsk_your_api_key_here"
+});
+</code></pre>
+<h3 id="environment-variables"><a class="header" href="#environment-variables">Environment Variables</a></h3>
+<ul>
+<li><code>GROQ_API_KEY</code>: Required. API key for authentication obtained from <code>https://console.groq.com</code>.</li>
+</ul>
+<h3 id="rate-limits"><a class="header" href="#rate-limits">Rate Limits</a></h3>
+<p>Rate limits are enforced at the organization level across six dimensions: requests per minute (RPM), requests per day (RPD), tokens per minute (TPM), tokens per day (TPD), audio seconds per hour (ASH), and audio seconds per day (ASD). The API returns HTTP 429 when any limit is exceeded, with <code>retry-after</code> and <code>x-ratelimit-remaining-*</code> headers. Cached tokens do not count toward rate limits. [6]</p>
+<p><strong>Free tier examples</strong>:</p>
+<ul>
+<li><code>llama-3.1-8b-instant</code>: 30 RPM, 14,400 RPD, 6,000 TPM, 500,000 TPD</li>
+<li><code>llama-3.3-70b-versatile</code>: 30 RPM, 1,000 RPD, 12,000 TPM, 100,000 TPD</li>
+<li><code>whisper-large-v3</code>: 20 RPM, 2,000 RPD</li>
+</ul>
+<p>Higher limits are available on the Developer plan and for enterprise workloads.</p>
+<h3 id="inference-metrics"><a class="header" href="#inference-metrics">Inference Metrics</a></h3>
+<p>To include detailed performance metrics in API responses, set the header <code>Groq-Beta: inference-metrics</code>. Response metadata includes completion time, prompt processing time, queue time, and total request duration. [10]</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="openai-sdk-compatibility"><a class="header" href="#openai-sdk-compatibility">OpenAI SDK Compatibility</a></h3>
+<p>Groq can be used as a drop-in replacement with the OpenAI Python SDK by overriding the base URL:</p>
+<pre><code class="language-python">from openai import OpenAI
+
+client = OpenAI(
+    api_key="gsk_your_api_key_here",
+    base_url="https://api.groq.com/openai/v1"
+)
+
+response = client.chat.completions.create(
+    messages=[{"role": "user", "content": "Hello"}],
+    model="llama-3.3-70b-versatile"
+)
+</code></pre>
+<p>Unsupported OpenAI parameters: <code>logprobs</code>, <code>logit_bias</code>, <code>top_logprobs</code>, <code>messages[].name</code>, N &gt; 1, and <code>vtt</code>/<code>srt</code> text completion formats. [12]</p>
+<h3 id="restcurl"><a class="header" href="#restcurl">REST/curl</a></h3>
+<pre><code class="language-bash">curl -X POST "https://api.groq.com/openai/v1/chat/completions" \
+  -H "Authorization: Bearer $GROQ_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "messages": [{"role": "user", "content": "Hello"}],
+    "model": "llama-3.3-70b-versatile"
+  }'
+</code></pre>
+<h3 id="flex-processing"><a class="header" href="#flex-processing">Flex Processing</a></h3>
+<p>Add <code>"service_tier": "flex"</code> to the request body for 10x higher rate limits (paid plans only). Requests may fail with HTTP 498 when capacity is unavailable; implement jittered backoff and retries. [6]</p>
+<h3 id="prompt-caching-optimization"><a class="header" href="#prompt-caching-optimization">Prompt Caching Optimization</a></h3>
+<p>Place static content (system prompts, tool definitions, few-shot examples) at the beginning of messages and dynamic content (user queries, session data) at the end to maximize cache hit rate. Monitor cache performance via the <code>prompt_tokens_details.cached_tokens</code> field in API responses. [7]</p>
+<h3 id="remote-mcp-integration"><a class="header" href="#remote-mcp-integration">Remote MCP Integration</a></h3>
+<pre><code class="language-javascript">const response = await client.responses.create({
+    model: "openai/gpt-oss-120b",
+    input: "What models are trending on Huggingface?",
+    tools: [{
+        type: "mcp",
+        server_label: "Huggingface",
+        server_url: "https://huggingface.co/mcp",
+        require_approval: "never"
+    }]
+});
+</code></pre>
+<p>Multiple MCP servers can be combined in a single request. Only connect to trusted servers, as MCP servers have access to all data in the model’s context including messages, system prompts, and conversation history. [11]</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="basic-chat-completion"><a class="header" href="#basic-chat-completion">Basic Chat Completion</a></h3>
+<pre><code class="language-python">from groq import Groq
+
+client = Groq()
+chat_completion = client.chat.completions.create(
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Explain the importance of fast language models"}
+    ],
+    model="llama-3.3-70b-versatile"
+)
+print(chat_completion.choices[0].message.content)
+</code></pre>
+<h3 id="streaming-response"><a class="header" href="#streaming-response">Streaming Response</a></h3>
+<pre><code class="language-python">from groq import Groq
+
+client = Groq()
+stream = client.chat.completions.create(
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "Explain quantum computing in simple terms."}
+    ],
+    model="llama-3.3-70b-versatile",
+    temperature=0.5,
+    max_completion_tokens=1024,
+    top_p=1,
+    stream=True
+)
+for chunk in stream:
+    content = chunk.choices[0].delta.content
+    if content:
+        print(content, end="")
+</code></pre>
+<h3 id="async-chat-completion"><a class="header" href="#async-chat-completion">Async Chat Completion</a></h3>
+<pre><code class="language-python">import asyncio
+from groq import AsyncGroq
+
+async def main():
+    client = AsyncGroq()
+    chat_completion = await client.chat.completions.create(
+        messages=[
+            {"role": "user", "content": "Explain the importance of fast language models"}
+        ],
+        model="llama-3.3-70b-versatile"
+    )
+    print(chat_completion.choices[0].message.content)
+
+asyncio.run(main())
+</code></pre>
+<h3 id="structured-output-with-json-schema-strict-mode"><a class="header" href="#structured-output-with-json-schema-strict-mode">Structured Output with JSON Schema (Strict Mode)</a></h3>
+<pre><code class="language-python">from groq import Groq
+
+client = Groq()
+response = client.chat.completions.create(
+    messages=[{"role": "user", "content": "List three programming languages with their use cases."}],
+    model="openai/gpt-oss-20b",
+    response_format={
+        "type": "json_schema",
+        "json_schema": {
+            "name": "languages",
+            "strict": True,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "languages": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "name": {"type": "string"},
+                                "use_case": {"type": "string"}
+                            },
+                            "required": ["name", "use_case"],
+                            "additionalProperties": False
+                        }
+                    }
+                },
+                "required": ["languages"],
+                "additionalProperties": False
+            }
+        }
+    }
+)
+</code></pre>
+<h3 id="tool-use-function-calling"><a class="header" href="#tool-use-function-calling">Tool Use (Function Calling)</a></h3>
+<pre><code class="language-python">from groq import Groq
+import json
+
+client = Groq()
+
+tools = [{
+    "type": "function",
+    "function": {
+        "name": "get_weather",
+        "description": "Get current weather for a location",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "location": {"type": "string", "description": "City and state"},
+                "unit": {"type": "string", "enum": ["celsius", "fahrenheit"]}
+            },
+            "required": ["location"]
+        }
+    }
+}]
+
+response = client.chat.completions.create(
+    messages=[{"role": "user", "content": "What's the weather in San Francisco?"}],
+    model="llama-3.3-70b-versatile",
+    tools=tools,
+    tool_choice="auto"
+)
+
+# Handle tool call
+tool_call = response.choices[0].message.tool_calls[0]
+# Execute function, then send result back
+follow_up = client.chat.completions.create(
+    messages=[
+        {"role": "user", "content": "What's the weather in San Francisco?"},
+        response.choices[0].message,
+        {
+            "role": "tool",
+            "tool_call_id": tool_call.id,
+            "content": json.dumps({"temperature": 72, "condition": "sunny"})
+        }
+    ],
+    model="llama-3.3-70b-versatile",
+    tools=tools
+)
+</code></pre>
+<h3 id="speech-to-text-transcription"><a class="header" href="#speech-to-text-transcription">Speech-to-Text Transcription</a></h3>
+<pre><code class="language-python">from groq import Groq
+
+client = Groq()
+with open("audio.mp3", "rb") as audio_file:
+    transcription = client.audio.transcriptions.create(
+        file=audio_file,
+        model="whisper-large-v3-turbo",
+        response_format="verbose_json",
+        timestamp_granularities=["word", "segment"]
+    )
+print(transcription.text)
+</code></pre>
+<h3 id="reasoning-with-gpt-oss"><a class="header" href="#reasoning-with-gpt-oss">Reasoning with GPT-OSS</a></h3>
+<pre><code class="language-python">from groq import Groq
+
+client = Groq()
+response = client.chat.completions.create(
+    messages=[{"role": "user", "content": "Solve this step by step: If a train travels 120km in 2 hours, then slows to cover 80km in 2 more hours, what is the average speed for the entire trip?"}],
+    model="openai/gpt-oss-20b",
+    reasoning_effort="high",
+    include_reasoning=True,
+    temperature=0.6
+)
+</code></pre>
+<h3 id="batch-processing"><a class="header" href="#batch-processing">Batch Processing</a></h3>
+<pre><code class="language-python">from groq import Groq
+
+client = Groq()
+
+# Step 1: Upload JSONL file
+with open("batch_requests.jsonl", "rb") as f:
+    file = client.files.create(file=f, purpose="batch")
+
+# Step 2: Create batch
+batch = client.batches.create(
+    input_file_id=file.id,
+    endpoint="/v1/chat/completions",
+    completion_window="24h"
+)
+
+# Step 3: Poll for completion
+import time
+while batch.status not in ("completed", "failed", "expired"):
+    time.sleep(30)
+    batch = client.batches.retrieve(batch.id)
+
+# Step 4: Download results
+if batch.output_file_id:
+    content = client.files.content(batch.output_file_id)
+</code></pre>
+<h3 id="javascript-streaming"><a class="header" href="#javascript-streaming">JavaScript Streaming</a></h3>
+<pre><code class="language-javascript">import Groq from "groq-sdk";
+
+const client = new Groq();
+
+const stream = await client.chat.completions.create({
+    messages: [
+        {role: "system", content: "You are a helpful assistant."},
+        {role: "user", content: "Explain the importance of fast language models"}
+    ],
+    model: "llama-3.3-70b-versatile",
+    temperature: 0.5,
+    max_completion_tokens: 1024,
+    stream: true
+});
+
+for await (const chunk of stream) {
+    process.stdout.write(chunk.choices[0]?.delta?.content || "");
+}
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>Model Selection</strong>: Groq hosts a curated subset of open-weight models. Custom model uploads or arbitrary model hosting is not supported outside of enterprise-only LoRA adapters.</li>
+<li><strong>Closed-Source Hardware</strong>: The LPU architecture is proprietary. There is no self-hosted or on-premises deployment option; all inference runs on Groq’s managed infrastructure.</li>
+<li><strong>Rate Limits</strong>: Each tier has distinct rate limits. Free tier limits are restrictive (e.g., 30 RPM, 1,000 RPD for 70B models). Higher limits require paid plans. Flex tier provides 10x limits but without availability guarantees.</li>
+<li><strong>Context Window Constraints</strong>: Maximum context windows vary by model, with most production models at 131,072 tokens. Context windows are fixed per model and cannot be extended.</li>
+<li><strong>No Fine-Tuning Service</strong>: Groq does not offer a fine-tuning API. LoRA adapters must be trained externally, are enterprise-only, and currently support only <code>llama-3.1-8b-instant</code> as a base model with ranks limited to 8, 16, 32, or 64.</li>
+<li><strong>Responses API Limitations</strong>: The beta Responses API does not yet support stateful conversations (<code>previous_response_id</code>), <code>store</code>, <code>truncation</code>, or <code>prompt_cache_key</code>.</li>
+<li><strong>Structured Outputs Constraints</strong>: Strict mode (guaranteed schema adherence) is available only on GPT-OSS models. Streaming and tool use are unsupported with structured outputs.</li>
+<li><strong>OpenAI SDK Gaps</strong>: Several OpenAI parameters are unsupported: <code>logprobs</code>, <code>logit_bias</code>, <code>top_logprobs</code>, <code>messages[].name</code>, N &gt; 1, and <code>vtt</code>/<code>srt</code> formats.</li>
+<li><strong>Reasoning Restrictions</strong>: Cannot use <code>raw</code> reasoning format when JSON mode or tool use are enabled. System prompts should be avoided with reasoning models.</li>
+<li><strong>Regional Availability</strong>: Infrastructure is concentrated in specific data center regions. LoRA inference is not available for regional/sovereign endpoints.</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<ul>
+<li><strong>December 2025</strong>: MCP Connectors (Beta) for Google Workspace (Gmail, Calendar, Drive) with OAuth 2.0 authentication. [14]</li>
+<li><strong>October 2025</strong>: GPT-OSS-Safeguard 20B safety model with bring-your-own-policy content moderation at ~1,000 tps. Prompt caching extended to GPT-OSS 120B. SDK updates: Python v0.33.0, TypeScript v0.34.0. [14]</li>
+<li><strong>September 2025</strong>: Remote MCP support (Beta) for external tool servers. Groq Compound and Compound Mini reach General Availability with web search, code execution, Wolfram Alpha, and parallel browser automation. Kimi K2 Instruct with 256K context. Prompt caching launched for GPT-OSS 20B and Kimi K2. [14]</li>
+<li><strong>August 2025</strong>: GPT-OSS 20B (1,000+ tps) and GPT-OSS 120B (500+ tps) launched. Responses API (Beta) introduced. Automatic prompt caching feature launched. [14]</li>
+<li><strong>July 2025</strong>: Structured Outputs with JSON Schema support. Kimi 2 Instruct (1T parameter MoE). [14]</li>
+<li><strong>June 2025</strong>: Qwen3-32B with reasoning support and 128K context. SDK reasoning field additions. [14]</li>
+<li><strong>May 2025</strong>: Llama Prompt Guard 2 (22M/86M) for prompt injection detection. Llama Guard 4 12B multimodal moderation. Compound Beta search settings with domain filtering. [14]</li>
+<li><strong>April 2025</strong>: Llama 4 Scout and Maverick models with vision support. Compound Beta and Compound Beta Mini agentic systems. Gemma-7b-it and Mixtral-8x7b-32768 deprecated. [14]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Groq Documentation Overview - https://console.groq.com/docs/overview</li>
+<li>[2] Groq Text Chat API - https://console.groq.com/docs/text-chat</li>
+<li>[3] Groq Vision - https://console.groq.com/docs/vision</li>
+<li>[4] Groq Reasoning - https://console.groq.com/docs/reasoning</li>
+<li>[5] Groq Speech-to-Text - https://console.groq.com/docs/speech-to-text</li>
+<li>[6] Groq Rate Limits - https://console.groq.com/docs/rate-limits</li>
+<li>[7] Groq Prompt Caching - https://console.groq.com/docs/prompt-caching</li>
+<li>[8] Groq Batch Processing - https://console.groq.com/docs/batch</li>
+<li>[9] Groq LoRA Inference - https://console.groq.com/docs/lora</li>
+<li>[10] Groq Responses API - https://console.groq.com/docs/responses-api</li>
+<li>[11] Groq MCP Support - https://console.groq.com/docs/mcp</li>
+<li>[12] Groq OpenAI Compatibility - https://console.groq.com/docs/openai</li>
+<li>[13] Groq Text-to-Speech - https://console.groq.com/docs/text-to-speech</li>
+<li>[14] Groq Changelog - https://console.groq.com/docs/changelog</li>
+<li>[15] Groq Tool Use - https://console.groq.com/docs/tool-use</li>
+<li>[16] Groq Structured Outputs - https://console.groq.com/docs/structured-outputs</li>
+<li>[17] Groq Content Moderation - https://console.groq.com/docs/content-moderation</li>
+<li>[18] Groq API Reference - https://console.groq.com/docs/api-reference</li>
+<li>[19] Groq Flex Processing - https://console.groq.com/docs/flex-processing</li>
+<li>[20] Groq Error Codes - https://console.groq.com/docs/errors</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Groq, LPU, Language Processing Unit, GroqRack, hosted inference API, OpenAI-compatible, Llama 3.1, Llama 3.3, GPT-OSS, Whisper, Orpheus TTS, Llama Guard, Groq Compound, Compound Mini, Responses API, MCP, Model Context Protocol, prompt caching, flex processing, batch processing, LoRA adapter, structured outputs, function calling, reasoning effort, vision OCR, content moderation, fast inference, deterministic latency</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Call the Groq chat completions API with the Python or TypeScript SDK</li>
+<li>Redirect OpenAI SDK requests to <code>https://api.groq.com/openai/v1</code></li>
+<li>Stream tokens from Llama 3.3 70B at 280+ tokens/sec</li>
+<li>Transcribe audio with whisper-large-v3-turbo at 216x real-time</li>
+<li>Synthesize speech with Orpheus models and <code>[cheerful]</code> vocal direction tags</li>
+<li>Run agentic workflows with Groq Compound’s built-in web search and code execution</li>
+<li>Connect remote MCP servers via the Responses API</li>
+<li>Enforce JSON schemas in strict mode on GPT-OSS models</li>
+<li>Submit batch jobs at 50% discount with 24h-7d completion windows</li>
+<li>Activate <code>service_tier=flex</code> for 10x rate-limit headroom</li>
+<li>Run prompt-injection detection with Llama Prompt Guard 2</li>
+<li>Moderate multimodal content with Llama Guard 4 12B</li>
+<li>Place static content first to maximize prompt cache hit rate</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“I want the lowest-latency hosted LLM API”</li>
+<li>“How do I run Llama 3.3 70B at production speed?”</li>
+<li>“What’s the fastest Whisper transcription endpoint?”</li>
+<li>“I need an OpenAI-compatible API on custom ASIC silicon”</li>
+<li>“How do I use MCP tools through a hosted inference API?”</li>
+<li>“How do I do agentic workflows with built-in web search?”</li>
+<li>“I need cheap batch inference with a 24-hour window”</li>
+<li>“How do I detect prompt injection attacks on user input?”</li>
+<li>“Where can I get hosted text-to-speech with emotion controls?”</li>
+<li>“How do I serve LoRA-fine-tuned Llama variants without managing GPUs?”</li>
+<li>“What’s the difference between Groq’s LPU and a GPU?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>GPU-based chat completions have variable, unpredictable latency</li>
+<li>Real-time voice agents need sub-second total response time</li>
+<li>Multi-tool agent loops are too slow when each call takes seconds</li>
+<li>Self-hosting Whisper for live transcription pipelines is operationally heavy</li>
+<li>Free-tier rate limits on OpenAI throttle high-throughput experimentation</li>
+<li>Repeated system prompts inflate prompt-token costs across requests</li>
+<li>Prompt injection and unsafe content need lightweight detection layers</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when deterministic low-latency token generation is paramount</li>
+<li>Pick this over Cerebras when you need Whisper STT, Orpheus TTS, and vision in one API</li>
+<li>Pick this when agentic workflows benefit from built-in tools (Compound) with no orchestration code</li>
+<li>Pick this when remote MCP connectors are part of your tool strategy</li>
+<li>Pick this when speech pipelines need 189-216x real-time transcription</li>
+<li>Pick this when content moderation (Llama Guard, Prompt Guard) sits in the same stack</li>
+<li>Pick this over self-hosted vLLM when you don’t want to operate GPU clusters</li>
+<li>Skip this when you need open weights, on-prem deployment, or custom model uploads</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Groq Cloud, Groq Inc., Groq API</li>
+<li>LPU, Language Processing Unit, GroqChip</li>
+<li>“Fast Llama API”, “fast inference API”</li>
+<li>Compound, Compound Mini (Groq agentic systems)</li>
+<li>Whisper Turbo, Whisper v3</li>
+<li>Alternative to Cerebras, Together AI, Fireworks AI, SambaNova, Replicate</li>
+<li>ASIC inference, deterministic inference</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-1-foundation/llm-providers/claude.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-1-foundation/hosted-inference-apis/cerebras.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-1-foundation/llm-providers/claude.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-1-foundation/hosted-inference-apis/cerebras.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Guardrails & Safety |
+| Group | Guardrails |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/guardrails-ai/guardrails](https://github.com/guardrails-ai/guardrails) |
-| Stars | 6435 |
+| Stars | 6862 |
 | Documentation | [Official Docs](https://guardrailsai.com/docs) |
 
 ## Overview
@@ -532,3 +532,99 @@ The project has been under active development since January 2023, with approxima
 - [Guardrails Index](https://guardrailsai.com/) -- Benchmark comparing performance and latency of 24 guardrails across six common risk categories (launched February 2025).
 - [guardrails-ai on PyPI](https://pypi.org/project/guardrails-ai/) -- Package distribution with version history and dependency information.
 - [Guardrails AI Validator Template](https://github.com/guardrails-ai/validator-template) -- Template repository for creating and submitting custom validators to the Hub.
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- guardrails ai
+- validator library
+- input output validation
+- guards
+- pydantic
+- on-fail action
+- reask
+- structured output
+- PII detection
+- toxic language
+- hallucination
+- competitor check
+- guardrails hub
+- re-ask loop
+- streaming validation
+- OpenAI-compatible server
+- Detoxify
+- Microsoft Presidio
+- LiteLLM integration
+- Apache 2.0
+- LLM middleware
+- jailbreak prevention
+- regex validator
+- async guard
+- FailResult
+
+### Verb-Noun Tasks
+
+- Wrap an LLM call with input and output validators
+- Block toxic language in LLM responses
+- Mask PII in LLM outputs with Presidio
+- Enforce a Pydantic schema on LLM output
+- Re-ask the LLM when validation fails
+- Filter competitor mentions from generated text
+- Validate streaming LLM chunks in real time
+- Deploy a centralized guardrails server behind Gunicorn
+- Proxy OpenAI SDK calls through the Guardrails Server
+- Write a custom validator with register_validator
+- Install validators from the Guardrails Hub
+- Combine multiple validators into a single guard
+- Validate generated SQL or JSON before execution
+- Log failures with a NOOP on-fail action
+
+### User Intent Phrases
+
+- How do I add output validation to my OpenAI API calls in Python?
+- I need to redact emails and phone numbers from LLM responses.
+- My LLM keeps mentioning competitors and I want to filter those out.
+- How can I get the LLM to retry when its output fails schema validation?
+- Is there a drop-in OpenAI-compatible proxy that enforces content rules?
+- How do I extract structured data from an LLM with field-level validators?
+- Show me how to block toxic content using Detoxify in Python.
+- I want a re-ask loop that fixes invalid JSON automatically.
+- Can I run guardrails on streaming responses?
+- How do I create my own validator and register it with Guardrails?
+
+### Problem Statements
+
+- LLMs return free-form text instead of conforming JSON schemas.
+- Toxic or unsafe content leaks into user-facing responses.
+- PII appears in LLM outputs and violates privacy compliance.
+- Generated text mentions competitors against brand policy.
+- No deterministic way to retry the model when validation fails.
+- Validation logic is duplicated across services with no shared layer.
+- Probabilistic ML validators produce false positives at default thresholds.
+
+### When to Pick This
+
+- Pick this when you want a Python-first validator library with a re-ask loop and a hub of pre-built validators.
+- Pick this over NeMo Guardrails when output structure and Pydantic schema enforcement matter more than Colang dialogue flows.
+- Pick this over Lakera when you need open-source, self-hosted validation rather than a commercial API.
+- Pick this over OpenAI Moderation when you need PII redaction, competitor filtering, and structured-output enforcement beyond harm-category classification.
+- Pick this when you want to expose validation as an OpenAI-compatible HTTP server and route existing SDK clients through it.
+- Pick this when on-fail actions (FIX, REFRAIN, FILTER, REASK) and per-field validation are central requirements.
+
+### Related Terms and Aliases
+
+- Guardrails
+- guardrails-ai
+- LLM output validation
+- LLM input validation
+- Pydantic guardrails
+- structured output enforcement
+- re-ask pattern
+- content safety library
+- LLM middleware
+- prompt injection defense
+- jailbreak detection
+- hallucination filter

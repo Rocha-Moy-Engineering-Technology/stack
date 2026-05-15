@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/unslothai/unsloth">unslothai/unsloth</a></td></tr>
-<tr><td>Stars</td><td>53240</td></tr>
+<tr><td>Stars</td><td>64243</td></tr>
 <tr><td>Docs</td><td><a href="https://unsloth.ai/docs">unsloth.ai/docs</a></td></tr>
 </tbody>
 </table>
@@ -516,6 +516,71 @@ model = FastVisionModel.get_peft_model(
 <li>[6] System Requirements - https://unsloth.ai/docs/get-started/fine-tuning-for-beginners/unsloth-requirements</li>
 <li>[7] Vision Fine-tuning - https://unsloth.ai/docs/basics/vision-fine-tuning</li>
 <li>[8] Installation - https://unsloth.ai/docs/get-started/install</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Unsloth, FastLanguageModel, Triton kernels, 2x faster training, 70% less VRAM, QLoRA, LoRA, GRPO, RLVR, RLHF, PPO, GSPO, DR-GRPO, GGUF, Dynamic 2.0, Ollama export, llama.cpp, vLLM serving, LoRA hot-swap, Vision Fine-Tuning, FastVisionModel, gradient checkpointing, BitsAndBytes, embedding fine-tuning, TTS fine-tuning, MoE training, 500K context RL, rsLoRA</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Load a 4-bit model with <code>FastLanguageModel.from_pretrained</code> for QLoRA training</li>
+<li>Apply LoRA adapters with optimized Triton kernels via <code>get_peft_model</code></li>
+<li>Train with SFTTrainer using 70% less VRAM than standard implementations</li>
+<li>Run GRPO reinforcement learning with custom reward functions</li>
+<li>Fine-tune Vision-Language Models with selective vision/language layer control</li>
+<li>Export trained models to GGUF for Ollama, llama.cpp, and LM Studio</li>
+<li>Deploy a fine-tuned model via vLLM with LoRA hot-swapping</li>
+<li>Train on 500K+ context length with Ultra Long Context RL</li>
+<li>Fine-tune Mixture-of-Experts models 12x faster</li>
+<li>Quantize models with Dynamic 2.0 per-layer calibration</li>
+<li>Push fine-tuned models and GGUF artifacts to the Hugging Face Hub</li>
+<li>Call <code>for_inference()</code> for 2x faster generation after training</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I fine-tune Llama 3.1 8B on a single 24GB GPU?</li>
+<li>What is the fastest way to train a LoRA adapter with minimal VRAM?</li>
+<li>How do I train a reasoning model with GRPO like DeepSeek-R1?</li>
+<li>How do I export an Unsloth-trained model to GGUF for Ollama?</li>
+<li>How do I fine-tune Qwen2-VL or Llama 3.2 Vision on a custom image dataset?</li>
+<li>How can I run RL fine-tuning on 500K context windows without OOM?</li>
+<li>How do I serve a fine-tuned model with vLLM and hot-swap LoRA adapters?</li>
+<li>How do I get 2x faster inference after training without changing my code?</li>
+<li>What VRAM do I need for QLoRA training of a 70B model?</li>
+<li>Does Unsloth support AMD or Intel GPUs in addition to NVIDIA?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Standard Hugging Face training pipelines run out of VRAM on consumer GPUs</li>
+<li>Fine-tuning is too slow on a single GPU for iterative experimentation</li>
+<li>GRPO and other RL methods require enormous VRAM with Flash Attention 2 alone</li>
+<li>Exporting a fine-tuned model to a local-inference format (GGUF) is multi-step and error-prone</li>
+<li>Switching between training and inference modes in PEFT/Transformers requires manual handling</li>
+<li>Multi-tenant serving needs to swap LoRA adapters without reloading the base model</li>
+<li>Per-layer quantization (mixing IQ1_S through Q5_1) is impractical to do by hand</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when raw training speed and VRAM efficiency are the top priority — Axolotl wins when YAML-driven config and recipe portability matter more, and PEFT wins when you need adapter-method breadth (DoRA, OFT, LoHa, X-LoRA) inside library code</li>
+<li>Pick this when you need GRPO, PPO, or GSPO with 90% less VRAM than baseline</li>
+<li>Pick this when your downstream target is Ollama / llama.cpp / LM Studio (GGUF export)</li>
+<li>Pick this when you want zero accuracy loss (no approximation, only kernel-level optimization)</li>
+<li>Pick this when you need 500K+ context length RL training</li>
+<li>Pick this when LoRA hot-swapping behind vLLM is your serving pattern</li>
+<li>Pick this when you train Vision, TTS, or embedding models and want a unified API</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>unslothai/unsloth</li>
+<li>FastLanguageModel, FastVisionModel</li>
+<li>Triton kernel optimization, custom Triton kernels</li>
+<li>Dynamic 2.0 GGUFs, intelligent per-layer quantization</li>
+<li>Group Relative Policy Optimization (GRPO), DeepSeek-style RL</li>
+<li>Ultra Long Context fine-tuning</li>
+<li>2x faster training, 70% less VRAM, 90% less VRAM (RL)</li>
+<li>rsLoRA, rank-stabilized LoRA</li>
 </ul>
 
                     </main>

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -445,12 +445,81 @@ for event in response:
 <li>[11] Models - <a href="https://developers.openai.com/api/docs/models">https://developers.openai.com/api/docs/models</a></li>
 <li>[12] Quickstart - <a href="https://developers.openai.com/api/docs/quickstart">https://developers.openai.com/api/docs/quickstart</a></li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>OpenAI, GPT-5, GPT-5.2, GPT-4.1, GPT-4o, Responses API, Chat Completions API, function calling, tool use, structured outputs, JSON Schema, vision, embeddings, text-embedding-3-small, text-embedding-3-large, Whisper, TTS, Realtime API, WebRTC, Sora, GPT Image, fine-tuning, batch API, vector stores, file search, AgentKit, Agents SDK, ChatKit, Agent Builder, Moderation API, evals, prompt caching, streaming, parallel tool calls</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Call a hosted frontier LLM via the Responses API</li>
+<li>Generate text completions in Python or TypeScript</li>
+<li>Invoke function calls with strict JSON-Schema validation</li>
+<li>Stream model output token-by-token via Server-Sent Events</li>
+<li>Analyze images alongside text in a single request</li>
+<li>Generate embeddings for semantic search</li>
+<li>Transcribe audio to text with Whisper</li>
+<li>Generate speech audio from text</li>
+<li>Build a real-time voice agent over WebRTC or WebSocket</li>
+<li>Generate images with GPT Image</li>
+<li>Generate video with Sora</li>
+<li>Fine-tune a base model on custom training data</li>
+<li>Run bulk asynchronous inference via the Batch API</li>
+<li>Build a file-search retrieval pipeline with Vector Stores</li>
+<li>Author and orchestrate agents with AgentKit and the Agents SDK</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“I want to call GPT-5 from Python”</li>
+<li>“How do I use function calling with OpenAI?”</li>
+<li>“What’s the difference between the Responses API and Chat Completions?”</li>
+<li>“I need structured JSON output from an LLM”</li>
+<li>“How do I stream tokens from OpenAI in my web app?”</li>
+<li>“What’s the cheapest OpenAI model for high-volume embedding?”</li>
+<li>“I want to build a voice assistant with OpenAI”</li>
+<li>“How do I send an image to GPT-5 for analysis?”</li>
+<li>“What’s the best way to do RAG with OpenAI’s vector stores?”</li>
+<li>“I need to fine-tune GPT on my own data”</li>
+<li>“How do I process a million prompts with OpenAI?”</li>
+<li>“Should I use OpenAI or Claude for my application?”</li>
+<li>“Where do I find OpenAI rate-limit information?”</li>
+<li>“How do I add parallel tool calling to my agent?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Need a hosted LLM with the broadest ecosystem and longest production track record</li>
+<li>Want vision, audio, and text in a single multimodal API</li>
+<li>Manual JSON parsing of LLM outputs keeps breaking on edge cases</li>
+<li>Latency-sensitive voice product can’t tolerate STT → LLM → TTS pipeline overhead</li>
+<li>Bulk classification or extraction job is too expensive at per-request prices</li>
+<li>Building an agent and want first-party tools (file search, code execution, memory) without a separate framework</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want the most mature SDKs, broadest model lineup, and tightest ecosystem fit (LangChain, LlamaIndex, every vector DB integration ships an OpenAI adapter)</li>
+<li>Pick this when you need multimodal in one provider (text + image + audio + video) rather than stitching providers together</li>
+<li>Pick this when you need real-time speech-to-speech with WebRTC (Realtime API is unique among major providers)</li>
+<li>Pick this when Structured Outputs with strict JSON-Schema enforcement is a hard requirement</li>
+<li>Pick this when you want first-party agent tooling (AgentKit, Vector Stores, Code Interpreter equivalents) rather than assembling them yourself</li>
+<li>Pick this when the Batch API’s 50% discount on async workloads is material to your cost model</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>ChatGPT API (informal name for the developer API)</li>
+<li>GPT API, OpenAI API, OAI</li>
+<li>Azure OpenAI Service (Microsoft-hosted variant of the same models)</li>
+<li>“OpenAI Platform”</li>
+<li>Frontier LLM, foundation model, hosted LLM provider</li>
+<li>Function calling = tool use = tool calling</li>
+<li>AgentKit (the umbrella for Agents SDK + Agent Builder + ChatKit)</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../capabilities.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../part-1-foundation/overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
@@ -464,7 +533,7 @@ for event in response:
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../capabilities.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../part-1-foundation/overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 

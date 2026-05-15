@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Workflow Orchestration & Automation |
+| Group | Workflow Orchestration |
 | Type | API/UI |
 | Open Source | Yes |
 | GitHub | [https://github.com/activepieces/activepieces](https://github.com/activepieces/activepieces) |
-| Stars | 20928 |
+| Stars | 22189 |
 | Documentation | [Official Docs](https://www.activepieces.com/docs/) |
 
 ## Overview
@@ -339,3 +339,100 @@ Activepieces is under active development with frequent releases. The platform ha
 - [5] [Activepieces Embedding SDK](https://www.activepieces.com/docs/embedding/overview)
 - [6] [Activepieces Piece Development](https://www.activepieces.com/docs/developers/building-pieces/overview)
 - [7] [Activepieces REST API Reference](https://www.activepieces.com/docs/developers/api-reference)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Activepieces
+- no-code automation
+- open-source
+- 635+ integrations
+- pieces
+- flows
+- triggers
+- actions
+- connections
+- projects
+- flow runs
+- visual flow builder
+- TypeScript pieces
+- npm packages
+- Embedding SDK
+- white-label
+- JWT
+- AI pieces
+- human-in-the-loop approvals
+- MCP server support
+- Git Sync
+- project releases
+- multi-tenancy
+- RBAC
+- SSO
+- audit logging
+- PostgreSQL
+- Redis
+
+### Verb-Noun Tasks
+
+- Build flows with one trigger and many actions
+- Install pieces from npm or write custom TypeScript pieces
+- Trigger flows via webhook or polling
+- Embed the flow builder into a SaaS app via JWT
+- Promote flows across environments via Git Sync and project releases
+- Pause flows for human approval before continuing
+- Call LLMs as standard flow actions (AI pieces)
+- Configure multi-tenant projects with RBAC
+- Develop custom pieces locally with hot reloading
+- Expose REST API for flow management in CI/CD
+- Use audit logging for compliance
+- Integrate with HashiCorp Vault / AWS Secrets
+
+### User Intent Phrases
+
+- I want an open-source no-code automation platform I can self-host.
+- How do I embed a flow builder into my SaaS product as a white-label feature?
+- I need to write custom integration pieces in TypeScript.
+- How do I add LLM calls as standard automation steps?
+- I want approval gates in my business workflows.
+- How do I version-control flows with Git?
+- I need multi-tenant automation with isolated projects.
+- What's an open alternative to Zapier with extensible pieces?
+- How do I install community pieces from npm?
+- I want MCP server support for AI agents in automations.
+
+### Problem Statements
+
+- Closed no-code platforms can't be embedded into our SaaS product.
+- Zapier/Make charge per task and don't allow custom code integrations.
+- We need approval workflows for sensitive operations.
+- Existing flow tools lack first-class AI/LLM steps.
+- Multi-tenant white-labeling requires building from scratch elsewhere.
+- Compliance demands audit logs and Git-tracked flow versions.
+
+### When to Pick This
+
+- Pick this when you want a fully open-source no-code automation platform with a permissive license.
+- Pick this over n8n when you specifically need a white-label Embedding SDK to embed the flow builder in your SaaS product (paid edition).
+- Pick this over Zapier/Make when self-hosting and custom TypeScript pieces are mandatory.
+- Pick this over Node-RED when business SaaS automation — not IoT protocols — is the use case.
+- Pick this over Airflow/Prefect/Temporal when no-code visual building and 635+ business integrations matter more than code-first orchestration.
+- Pick this when human-in-the-loop approval gates and Git Sync project releases align with your release process.
+
+### Related Terms and Aliases
+
+- activepieces.com
+- pieces ecosystem
+- @activepieces/pieces-framework
+- createPiece / createAction / createTrigger
+- AP_DB_TYPE / AP_REDIS_TYPE / AP_ENCRYPTION_KEY
+- Embedding SDK (JWT)
+- project releases
+- piece npm package
+- workflow automation
+- iPaaS
+- white-label automation
+- MCP-server piece support
+

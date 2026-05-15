@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>API/SDK</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/letta-ai/letta">letta-ai/letta</a></td></tr>
-<tr><td>Stars</td><td>21392</td></tr>
+<tr><td>Stars</td><td>22716</td></tr>
 <tr><td>Docs</td><td><a href="https://docs.letta.com/">docs.letta.com</a></td></tr>
 </tbody>
 </table>
@@ -570,6 +570,101 @@ response = client.agents.messages.create(
 <li>[13] Server Tools - https://docs.letta.com/guides/core-concepts/tools/server-tools/</li>
 <li>[14] Built-in Tools - https://docs.letta.com/guides/core-concepts/tools/builtin-tools/</li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Letta</li>
+<li>MemGPT</li>
+<li>stateful agents</li>
+<li>self-modifying memory</li>
+<li>memory blocks</li>
+<li>archival memory</li>
+<li>context hierarchy</li>
+<li>four-tier context</li>
+<li>sleep-time agents</li>
+<li>sleep-time compute</li>
+<li>shared memory blocks</li>
+<li>agent operating system</li>
+<li>pgvector storage</li>
+<li>PostgreSQL backend</li>
+<li>AgentFile (.af)</li>
+<li>Agent Development Environment</li>
+<li>ADE</li>
+<li>Letta Code</li>
+<li>archival_memory_search</li>
+<li>archival_memory_insert</li>
+<li>memory_rethink</li>
+<li>memory_replace</li>
+<li>memory_insert</li>
+<li>runs and steps</li>
+<li>BYOK</li>
+<li>RBAC</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Create a stateful agent with persistent memory blocks</li>
+<li>Let an agent self-modify its memory via <code>memory_rethink</code> / <code>memory_replace</code> / <code>memory_insert</code></li>
+<li>Insert facts into archival memory with optional tags</li>
+<li>Search archival memory semantically with <code>archival_memory_search</code></li>
+<li>Share memory blocks across multiple agents for real-time coordination</li>
+<li>Enable sleep-time agents for background memory consolidation</li>
+<li>Export and import full agent state as a <code>.af</code> AgentFile</li>
+<li>Hot-swap LLM providers per-agent (OpenAI, Anthropic, Bedrock, Ollama)</li>
+<li>Build supervisor/worker patterns via shared task-board blocks</li>
+<li>Run Letta self-hosted on Docker with pgvector</li>
+<li>Open files (up to 5MB) inside the agent’s context with <code>open</code>/<code>close</code>/<code>grep</code>/<code>semantic_search</code></li>
+<li>Manage agents through the web-based Agent Development Environment</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I build agents that remember everything across sessions?</li>
+<li>How can an agent edit its own memory autonomously?</li>
+<li>I want an agent that learns and self-improves over time</li>
+<li>How do I share memory between multiple agents?</li>
+<li>How can background agents consolidate memories asynchronously?</li>
+<li>What is the modern descendant of MemGPT?</li>
+<li>How do I package an entire agent (memory, tools, prompts) into one file?</li>
+<li>How do I build a coding agent that remembers my codebase across sessions?</li>
+<li>How do I run a stateful agent platform self-hosted?</li>
+<li>How does Letta differ from a simple vector memory layer?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>LLM apps treat each interaction as isolated; agents don’t grow</li>
+<li>Vector-only memory layers cannot represent self-modifying state and reasoning traces</li>
+<li>Context window limits force ad-hoc retrieval architectures</li>
+<li>Sleep-time agents are experimental and may be unstable</li>
+<li>Memory blocks consume context window space; very large blocks degrade performance</li>
+<li>Concurrent <code>memory_rethink</code> on shared blocks is unsafe (last-writer-wins)</li>
+<li>Docker deployments must explicitly specify embedding models (hosted handles automatically)</li>
+<li>ADE requires HTTPS except localhost</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick Letta when agents need to autonomously read, write, and reorganize their own memory (true stateful agent OS, not just a memory layer)</li>
+<li>Pick Letta when you want a four-tier context hierarchy (blocks, files, archival, external RAG) with sleep-time background consolidation</li>
+<li>Pick Letta when multi-agent coordination should happen via shared memory blocks rather than message passing</li>
+<li>Pick Letta when you want to serialize and ship a complete agent (memory + tools + prompts) as a portable <code>.af</code> file</li>
+<li>Pick Mem0 instead when you need a simple memory layer with broad framework integrations and turnkey extraction</li>
+<li>Pick Zep instead when facts change over time and you need temporal knowledge graphs with fact invalidation</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>MemGPT descendant</li>
+<li>stateful agent platform</li>
+<li>agent OS</li>
+<li>self-editing memory</li>
+<li>LLM virtual memory</li>
+<li>agent paging</li>
+<li>memory-first coding agent</li>
+<li>Letta Code</li>
+<li>AgentFile standard</li>
+<li>sleep-time compute</li>
+<li>arxiv 2504.13171</li>
+</ul>
 
                     </main>
 
@@ -579,7 +674,7 @@ response = client.agents.messages.create(
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../../part-3-data/vector-databases/pgvector.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../part-3-data/overview.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -593,7 +688,7 @@ response = client.agents.messages.create(
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../../part-3-data/vector-databases/pgvector.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../part-3-data/overview.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

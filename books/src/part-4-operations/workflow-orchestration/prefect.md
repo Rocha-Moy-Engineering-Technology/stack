@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Workflow Orchestration & Automation |
+| Group | Workflow Orchestration |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/PrefectHQ/prefect](https://github.com/PrefectHQ/prefect) |
-| Stars | 21652 |
+| Stars | 22402 |
 | Documentation | [Official Docs](https://docs.prefect.io/) |
 
 ## Overview
@@ -665,3 +665,102 @@ def configurable_pipeline():
 - Prefect Cloud Documentation -- [https://docs.prefect.io/v3/manage/cloud](https://docs.prefect.io/v3/manage/cloud)
 - Prefect REST API Reference -- [https://docs.prefect.io/v3/api-ref/rest-api](https://docs.prefect.io/v3/api-ref/rest-api)
 - Prefect Community Slack -- [https://prefect.io/slack](https://prefect.io/slack)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Prefect
+- @flow
+- @task
+- Python-native orchestration
+- flow run
+- task run
+- states
+- deployments
+- work pools
+- workers
+- blocks
+- variables
+- transactions
+- events
+- automations
+- task mapping
+- cache policies
+- ThreadPoolTaskRunner
+- DaskTaskRunner
+- RayTaskRunner
+- Prefect Cloud
+- self-hosted
+- hybrid execution
+- push work pools
+- subflows
+- async/await
+
+### Verb-Noun Tasks
+
+- Turn Python functions into orchestrated flows with `@flow` / `@task`
+- Map a task across an iterable for parallel execution
+- Configure cache policies (INPUTS, TASK_SOURCE, RUN_ID, FLOW_PARAMETERS)
+- Wrap tasks in transactions with `on_rollback` hooks
+- Emit custom events and trigger automations
+- Deploy flows to Docker, Kubernetes, or serverless (ECS, GCR)
+- Use Dask or Ray runners for distributed execution
+- Store credentials and config in Blocks
+- Schedule deployments with cron via prefect.yaml
+- Pause flows for human approval and resume from paused state
+- Call subflows for hierarchical workflow composition
+- Run flows on Prefect Cloud or self-hosted server
+
+### User Intent Phrases
+
+- I want Python-native workflow orchestration without YAML or DSL.
+- How do I add retries and caching to my Python functions?
+- I need dynamic task mapping for hyperparameter sweeps.
+- How do I run flows on Kubernetes without managing a worker?
+- I want event-driven automations that react to flow states.
+- How do I roll back side effects when a flow fails?
+- I need human-in-the-loop approval gates in my pipeline.
+- How do I integrate Dask or Ray with my orchestration layer?
+- What's a modern alternative to Airflow that uses regular Python?
+- How do I run flows hybrid — metadata in the cloud, code on-prem?
+
+### Problem Statements
+
+- Airflow DAGs feel boilerplate-heavy compared to plain Python.
+- We need dynamic task creation at runtime, not static DAGs.
+- Side effects in pipelines need rollback semantics.
+- We want full type hints and async/await, not declarative quirks.
+- Hybrid execution is needed so code never leaves our infrastructure.
+- Caching should be configurable per task, not global.
+
+### When to Pick This
+
+- Pick this when you want the most Pythonic developer experience for workflow orchestration.
+- Pick this over Airflow when you need dynamic task creation, async-native flows, and lighter ceremony.
+- Pick this over Temporal when Python-only workflows with state persistence are enough and you don't need cross-language durable execution.
+- Pick this over n8n/Activepieces/Node-RED when you want code-first, not visual builders.
+- Pick this when transactions with rollback hooks are required for safe pipelines.
+- Pick this when push work pools (serverless on ECS/GCR) eliminate the need for persistent workers.
+
+### Related Terms and Aliases
+
+- prefect.io
+- Prefect 3.0
+- Prefect Cloud
+- Prefect Server
+- flow.serve()
+- flow.deploy()
+- prefect.yaml
+- work pool
+- push pool
+- hybrid execution
+- @flow decorator
+- @task decorator
+- emit_event
+- transaction()
+- Pythonic workflow framework
+- DAG-free orchestration
+

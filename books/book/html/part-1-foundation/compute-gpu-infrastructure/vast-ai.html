@@ -1,0 +1,674 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Vast.ai - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-1-foundation/compute-gpu-infrastructure/vast-ai.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="vastai"><a class="header" href="#vastai">Vast.ai</a></h1>
+<blockquote>
+<p>GPU marketplace for affordable on-demand cloud computing</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Name</td><td>Vast.ai</td></tr>
+<tr><td>Group</td><td>Compute &amp; GPU Infrastructure</td></tr>
+<tr><td>Type</td><td>API/Infra</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Docs</td><td><a href="https://docs.vast.ai/">docs.vast.ai</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Vast.ai is a decentralized GPU marketplace that connects compute providers – ranging from hobbyists with spare GPUs to Tier-4 datacenters – with users who need GPU resources for AI and machine learning workloads. The platform operates on a peer-to-peer marketplace model where providers list their hardware, set their own prices, and retain full pricing autonomy through dynamic, supply-and-demand-driven pricing. GPU instances can be launched in seconds through the web console, Command Line Interface (CLI), Python Software Development Kit (SDK), or REST API.</p>
+<p>The platform offers two primary compute paradigms: dedicated GPU instances (Docker containers or Virtual Machines (VMs) with exclusive GPU access) and a serverless inference platform that auto-scales workers behind a managed endpoint. Vast.ai’s stated mission is to democratize AI compute: “compute powering AI is supplied by the people and for the people.”</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<ul>
+<li><strong>GPU Marketplace</strong>: A peer-to-peer compute network where providers list their hardware and set their own prices. Users browse available machines, compare specs and reliability ratings, and rent GPU time at market-driven rates. Prices fluctuate based on real-time supply and demand, creating competitive rates without static price quotes.</li>
+<li><strong>Instances</strong>: Containerized environments providing exclusive, never-shared GPU access for training, inference, and development. Each instance includes proportional CPU, RAM, and storage, runs a user-chosen Docker image, and bills by the second for actual usage. Instances come in three types: On-demand (guaranteed, fixed pricing), Reserved (up to 50% discount with commitment), and Interruptible (lowest cost, may be paused by higher-priority rentals).</li>
+<li><strong>Serverless Endpoints</strong>: A managed inference platform that auto-scales GPU workers behind a single API endpoint. Users deploy a model (e.g., via vLLM), configure scaling parameters, and the platform handles worker provisioning, load balancing, and autoscaling based on benchmark-driven throughput metrics. Serverless supports mixed hardware – a single endpoint can leverage diverse GPU types from consumer-grade to enterprise-class.</li>
+<li><strong>Templates</strong>: Configuration wrappers around Docker images that simplify instance deployment. Templates encapsulate the Docker image, environment variables, startup scripts, port configuration, and deployment settings. Vast.ai provides prebuilt templates (e.g., PyTorch, vLLM) built on base images that include CUDA, Node.js, and integrated Caddy proxy with TLS encryption and authentication.</li>
+<li><strong>PyWorkers</strong>: Custom Python worker scripts for serverless endpoints that act as HTTP proxy layers between the Vast routing system and a model server. PyWorkers handle request transformation, workload calculation, response streaming, and readiness detection through log pattern matching.</li>
+<li><strong>Search Engine</strong>: A hardware search and filtering system allowing users to query available machines by GPU model, VRAM, CPU cores, RAM, disk space, bandwidth, provider reliability score, geographic location, and price.</li>
+</ul>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Vast.ai follows a three-layer marketplace architecture:</p>
+<ul>
+<li><strong>Provider Layer</strong>: GPU owners and datacenter operators register their machines, configure pricing and contract terms, and make hardware available to the network. Providers retain full control over pricing and availability.</li>
+<li><strong>Marketplace Layer</strong>: The central platform handles instance discovery, search and filtering, transaction management, reliability tracking, and billing. Dynamic pricing is determined by providers, not the platform – Vast.ai adds no markup on top of host-set prices.</li>
+<li><strong>Consumer Layer</strong>: Users interact with the marketplace through four interfaces: the web console at cloud.vast.ai, the <code>vastai</code> CLI, the Python SDK (<code>vastai_sdk</code>), or the REST API.</li>
+</ul>
+<h3 id="instance-execution-environment"><a class="header" href="#instance-execution-environment">Instance Execution Environment</a></h3>
+<p>Instances are Linux Docker containers where templates control Docker creation parameters. The platform automatically configures resource constraints:</p>
+<ul>
+<li><strong>GPU</strong>: Exclusive, never-shared access per instance. Stopped instances release GPU reservations.</li>
+<li><strong>CPU and RAM</strong>: Scale proportionally to GPU fraction on the host. CPU can burst above baseline when spare cycles exist, but RAM overages risk Out of Memory (OOM) termination during contention.</li>
+<li><strong>Disk</strong>: Static allocation set at creation time; cannot be modified after launch.</li>
+<li><strong>Networking</strong>: Instances lack unique public IPs. Each open internal port maps to a random external port on shared infrastructure, with a 64-port-per-instance limit. Docker <code>EXPOSE</code> commands automatically generate port mappings; custom ports use <code>-p</code> flag syntax. Identity port mappings (matching external and internal) require ports above 70000.</li>
+</ul>
+<p>Three launch modes are supported: Entrypoint (runs the Docker image’s default entrypoint), SSH (injects SSH setup scripts), and Jupyter (injects Jupyter notebook setup). SSH and Jupyter modes replace the original Docker entrypoint, so users should copy their entrypoint command into the onstart script.</p>
+<h3 id="virtual-machine-instances"><a class="header" href="#virtual-machine-instances">Virtual Machine Instances</a></h3>
+<p>For workloads requiring init managers (systemd), nested containerization, Docker-in-Docker, or kernel module loading, Vast.ai offers VM instances. Pre-configured Ubuntu 22.04 Server and Ubuntu Desktop images are available. VMs have slower creation and boot times, higher disk overhead, and more limited machine availability compared to Docker instances.</p>
+<h3 id="serverless-architecture"><a class="header" href="#serverless-architecture">Serverless Architecture</a></h3>
+<p>The serverless platform provisions GPU workers behind a managed endpoint with autoscaling:</p>
+<ul>
+<li><strong>Endpoint</strong>: A named API entry point that routes requests to available workers.</li>
+<li><strong>Workergroup</strong>: A collection of GPU workers sharing the same template, model, and scaling configuration. Parameters include <code>gpu_ram</code>, <code>search_params</code>, <code>template_hash</code>, and <code>launch_args</code>.</li>
+<li><strong>Autoscaler</strong>: Benchmark-driven scaling that identifies optimal price-performance GPUs. Workers transition between states: Stopped (model loaded, ready to activate on-demand as cold workers), Loading (starting up and loading model into GPU memory), and Ready (active and handling requests).</li>
+<li><strong>Cold Multiplier</strong>: A scaling factor that determines total capacity (cold plus warm workers) based on predicted load.</li>
+<li><strong>Workers</strong>: Individual GPU instances running the model server and PyWorker. The system tracks throughput per worker via benchmarks to estimate workload capacity.</li>
+</ul>
+<h2 id="key-features"><a class="header" href="#key-features">Key Features</a></h2>
+<ul>
+<li><strong>Per-Second Billing</strong>: Charged by the second for actual GPU usage, with no hourly minimums. Storage charges continue while instances exist, even when stopped.</li>
+<li><strong>Three Instance Types</strong>: On-demand (guaranteed, highest priority), Reserved (up to 50% discount with pre-payment commitment), and Interruptible (lowest cost, may be paused, often 50% or more cheaper than on-demand).</li>
+<li><strong>Serverless Inference</strong>: Deploy models behind auto-scaling endpoints with benchmark-driven GPU selection, mixed hardware support, and OpenAI-compatible API endpoints via vLLM templates.</li>
+<li><strong>Custom PyWorkers</strong>: Build custom worker scripts with configurable request parsing, workload calculation, response streaming, and log-based readiness detection. Deploy via Git repository with <code>PYWORKER_REPO</code> environment variable.</li>
+<li><strong>Template System</strong>: Prebuilt and custom templates built on Vast.ai base images (<code>vastai/base-image</code>, <code>vastai/pytorch</code>) with CUDA, integrated Caddy proxy, automatic TLS, and authentication. Templates support onstart scripts, environment variables, and port configuration.</li>
+<li><strong>Cloud Sync</strong>: Transfer data between instances and cloud storage providers (Amazon S3, Google Drive, Dropbox, Backblaze) via GUI or <code>vastai cloud copy</code> CLI command, even when instances are stopped.</li>
+<li><strong>Instance Portal</strong>: Web interface for instances using Vast.ai base images, providing authenticated access to services and tunnel creation without direct port exposure.</li>
+<li><strong>Team Management</strong>: Create teams, invite members, assign roles with granular permissions, and transfer credits between personal accounts and teams.</li>
+<li><strong>Multiple Access Methods</strong>: Connect to instances via SSH, Jupyter notebooks, web portals, or custom entrypoints.</li>
+</ul>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<ul>
+<li><strong>Model Training</strong>: Rent high-end GPUs (A100, H100) for training large models at marketplace rates significantly below major cloud providers. Use Reserved instances for multi-day training runs to save up to 50%.</li>
+<li><strong>Inference at Scale</strong>: Deploy serverless endpoints with auto-scaling workers for production inference. The platform handles GPU provisioning, load balancing, and scaling based on real-time demand.</li>
+<li><strong>Batch Processing</strong>: Run large batch jobs across multiple Interruptible instances at the lowest cost. Interruptible workloads handle pauses gracefully and resume automatically when priority is restored.</li>
+<li><strong>Experimentation and Prototyping</strong>: Quickly spin up On-demand GPU instances for short-lived experiments without long-term commitments. Per-second billing ensures minimal cost for brief sessions.</li>
+<li><strong>Fine-Tuning</strong>: Use mid-range GPU instances with sufficient VRAM to fine-tune pretrained models on custom datasets. Templates with PyTorch and CUDA pre-installed reduce setup time.</li>
+<li><strong>Multi-Container Workloads</strong>: Use VM instances for scenarios requiring Docker-in-Docker, Kubernetes, or systemd support that standard Docker containers cannot provide.</li>
+</ul>
+<h2 id="api-reference"><a class="header" href="#api-reference">API Reference</a></h2>
+<h3 id="rest-api"><a class="header" href="#rest-api">REST API</a></h3>
+<p>The REST API is intended for advanced users; the CLI and Python SDK are recommended for most workflows. Authentication uses Bearer tokens with API keys generated from the web console.</p>
+<h3 id="cli-commands"><a class="header" href="#cli-commands">CLI Commands</a></h3>
+<pre><code class="language-bash"># Search for available GPU offers
+vastai search offers [filter-parameters] -o [sort-options]
+# Example: vastai search offers 'reliability &gt; 0.99 num_gpus&gt;=4'
+
+# Create an instance from an offer
+vastai create instance [OFFER_ID] --image [IMAGE] --disk [GB] --ssh --direct
+
+# List running instances
+vastai show instances
+
+# Start / stop / destroy instances
+vastai start instance [ID]
+vastai stop instance [ID]
+vastai destroy instance [ID]
+
+# Data transfer between instances or cloud storage
+vastai copy [instance_id:]path [instance_id:]path
+vastai cloud copy [args]
+
+# SSH into an instance
+vastai ssh-url [ID]
+
+# Show underlying API call for any command
+vastai [command] --explain
+</code></pre>
+<h3 id="python-sdk"><a class="header" href="#python-sdk">Python SDK</a></h3>
+<pre><code class="language-python">from vastai_sdk import VastAI
+vast_sdk = VastAI(api_key="YOUR_API_KEY")
+
+# Search for available offers
+offers = vast_sdk.search_offers(query="gpu_name=RTX_5090 rented=False rentable=True")
+
+# Launch an instance
+vast_sdk.launch_instance(num_gpus="1", gpu_name="RTX_3090", image="pytorch/pytorch")
+
+# Instance lifecycle
+vast_sdk.start_instance(id=12345)
+vast_sdk.stop_instance(id=12345)
+vast_sdk.reboot_instance(id=12345)
+vast_sdk.destroy_instance(id=12345)
+
+# View instance details and logs
+vast_sdk.show_instances()
+vast_sdk.logs(id=12345)
+
+# File operations
+vast_sdk.copy(src="path", dst="path", identity="file")
+vast_sdk.cloud_copy()
+
+# SSH key management
+vast_sdk.create_ssh_key()
+vast_sdk.show_ssh_keys()
+vast_sdk.delete_ssh_key(id=1)
+</code></pre>
+<h3 id="serverless-sdk"><a class="header" href="#serverless-sdk">Serverless SDK</a></h3>
+<pre><code class="language-python">import asyncio
+from vastai import Serverless
+
+async def main():
+    client = Serverless()  # Uses VAST_API_KEY env var
+    endpoint = await client.get_endpoint(name="vLLM-Qwen3-8B")
+
+    payload = {
+        "model": "Qwen/Qwen3-8B",
+        "prompt": "Explain quantum computing in simple terms",
+        "max_tokens": 100,
+        "temperature": 0.7,
+    }
+
+    result = await endpoint.request("/v1/completions", payload, cost=100)
+    print(result["response"]["choices"][0]["text"])
+    await client.close()
+
+asyncio.run(main())
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="instance-configuration"><a class="header" href="#instance-configuration">Instance Configuration</a></h3>
+<p>Instance parameters are specified at launch time through the CLI, SDK, or web console:</p>
+<ul>
+<li><strong>GPU Type</strong>: Specific GPU model (e.g., RTX 3090, RTX 4090, A100, H100).</li>
+<li><strong>GPU Count</strong>: Number of GPUs per instance.</li>
+<li><strong>RAM</strong>: Minimum system RAM requirement.</li>
+<li><strong>CPU Cores</strong>: Minimum CPU core count.</li>
+<li><strong>Disk Space</strong>: Storage allocation (static, cannot be modified after creation).</li>
+<li><strong>Bandwidth</strong>: Minimum network bandwidth.</li>
+<li><strong>Template/Image</strong>: Docker image or template hash for the instance environment.</li>
+<li><strong>Launch Mode</strong>: Entrypoint, SSH, or Jupyter.</li>
+</ul>
+<h3 id="environment-variables"><a class="header" href="#environment-variables">Environment Variables</a></h3>
+<p>Instances support custom environment variables via <code>-e</code> syntax. Predefined variables injected by the platform include: <code>CONTAINER_API_KEY</code>, <code>CONTAINER_ID</code>, <code>GPU_COUNT</code>, <code>PUBLIC_IPADDR</code>, <code>SSH_PUBLIC_KEY</code>, and port mapping variables (<code>VAST_TCP_PORT_X</code>, <code>VAST_UDP_PORT_X</code>). UI control variables include <code>OPEN_BUTTON_PORT</code>, <code>JUPYTER_PORT</code>, <code>JUPYTER_TOKEN</code>, and <code>DATA_DIRECTORY</code>.</p>
+<h3 id="serverless-endpoint-configuration"><a class="header" href="#serverless-endpoint-configuration">Serverless Endpoint Configuration</a></h3>
+<p>Endpoint-level parameters set during creation:</p>
+<ul>
+<li><strong>Endpoint Name</strong>: Descriptive identifier for the endpoint.</li>
+<li><strong>Cold Multiplier</strong>: Scales total capacity based on predicted load (e.g., 3x).</li>
+<li><strong>Minimum Workers</strong>: Pre-loaded instances for instant scaling.</li>
+<li><strong>Maximum Workers</strong>: Upper bound on GPU instances.</li>
+<li><strong>Minimum Load</strong>: Baseline tokens-per-second instantaneous capacity.</li>
+<li><strong>Minimum Cold Load</strong>: Baseline tokens-per-second total capacity.</li>
+<li><strong>Target Utilization</strong>: Resource usage target (e.g., 0.9 for 90%).</li>
+</ul>
+<p>Workergroup parameters include <code>gpu_ram</code> (VRAM in GB, default 24), <code>search_params</code> (hardware filtering criteria), <code>template_hash</code> or <code>template_id</code> (pre-configured deployment template), and <code>launch_args</code> (additional instance creation parameters).</p>
+<h3 id="pyworker-configuration"><a class="header" href="#pyworker-configuration">PyWorker Configuration</a></h3>
+<p>Custom PyWorker configuration in <code>worker.py</code>:</p>
+<pre><code class="language-python">from vastai import Worker, WorkerConfig, HandlerConfig, LogActionConfig, BenchmarkConfig
+
+worker_config = WorkerConfig(
+    model_server_url="http://127.0.0.1",
+    model_server_port=18000,
+    model_log_file="/var/log/portal/vllm.log",
+    handlers=[
+        HandlerConfig(
+            route="/v1/completions",
+            allow_parallel_requests=True,
+            max_queue_time=60.0,
+            workload_calculator=lambda p: float(p.get("max_tokens", 0)),
+            benchmark_config=BenchmarkConfig(
+                generator=completions_benchmark_generator,
+                runs=8,
+                concurrency=10,
+            ),
+        ),
+    ],
+    log_action_config=LogActionConfig(
+        on_load=["Application startup complete."],
+        on_error=["RuntimeError: Engine", "Traceback (most recent call last):"],
+    ),
+)
+
+Worker(worker_config).run()
+</code></pre>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="cli-scripting"><a class="header" href="#cli-scripting">CLI Scripting</a></h3>
+<pre><code class="language-bash">#!/bin/bash
+# Find cheapest A100 offer and launch with PyTorch template
+OFFER_ID=$(vastai search offers --gpu-name A100 --order dph | head -1 | awk '{print $1}')
+vastai create instance $OFFER_ID --image pytorch/pytorch:latest --disk 64 --ssh --direct
+</code></pre>
+<h3 id="rest-api-integration"><a class="header" href="#rest-api-integration">REST API Integration</a></h3>
+<pre><code class="language-python">import requests
+
+API_KEY = "your_api_key"
+BASE_URL = "https://console.vast.ai/api/v0"
+headers = {"Authorization": f"Bearer {API_KEY}"}
+
+# Search for available offers
+response = requests.get(f"{BASE_URL}/bundles/", headers=headers)
+offers = response.json()
+</code></pre>
+<h3 id="serverless-deployment-via-git-repository"><a class="header" href="#serverless-deployment-via-git-repository">Serverless Deployment via Git Repository</a></h3>
+<p>Deploy custom PyWorkers by creating a Git repository with <code>worker.py</code> and <code>requirements.txt</code>, then setting the <code>PYWORKER_REPO</code> environment variable in the serverless configuration. The platform clones the repository, installs dependencies, starts the model server, and runs the PyWorker.</p>
+<h3 id="cloud-storage-sync"><a class="header" href="#cloud-storage-sync">Cloud Storage Sync</a></h3>
+<pre><code class="language-bash"># Copy data from S3 to a stopped instance
+vastai cloud copy s3://bucket/data instance_id:/workspace/data
+
+# Copy between instances (same datacenter avoids bandwidth charges)
+vastai copy 12345:/output/ 67890:/input/
+</code></pre>
+<h3 id="ssh-automation"><a class="header" href="#ssh-automation">SSH Automation</a></h3>
+<pre><code class="language-bash"># Get SSH connection details
+vastai ssh-url INSTANCE_ID
+
+# SCP for smaller transfers (under 1 GB recommended)
+scp -P PORT local_file.tar.gz root@IPADDR:/workspace/
+</code></pre>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="deploy-a-serverless-vllm-endpoint"><a class="header" href="#deploy-a-serverless-vllm-endpoint">Deploy a Serverless vLLM Endpoint</a></h3>
+<ol>
+<li>Navigate to the Serverless Dashboard at cloud.vast.ai/serverless.</li>
+<li>Click “Get Started” and configure the endpoint with a name, cold multiplier of 3, minimum 5 workers, and maximum 16 workers.</li>
+<li>Select the “vLLM (Serverless)” template pre-configured with Qwen/Qwen3-8B.</li>
+<li>Click “Create” and wait 3-5 minutes for workers to initialize (download model, load into GPU memory, complete health checks).</li>
+<li>Monitor worker states: Stopped (cold, ready to activate), Loading (starting), Ready (serving requests).</li>
+</ol>
+<h3 id="launch-a-training-instance-via-cli"><a class="header" href="#launch-a-training-instance-via-cli">Launch a Training Instance via CLI</a></h3>
+<pre><code class="language-bash"># Search for A100 instances under $1/hr with high reliability
+vastai search offers --gpu-name A100 --dph 1.0 --order dph 'reliability &gt; 0.95'
+
+# Create instance with 64 GB disk
+vastai create instance 12345 --image pytorch/pytorch:2.0-cuda11.8-cudnn8-devel --disk 64 --ssh
+
+# Monitor instance status
+vastai show instances
+
+# Stop instance (preserves data, stops GPU charges)
+vastai stop instance 12345
+
+# Destroy instance (stops all charges including storage)
+vastai destroy instance 12345
+</code></pre>
+<h3 id="reserved-instance-for-long-term-training"><a class="header" href="#reserved-instance-for-long-term-training">Reserved Instance for Long-Term Training</a></h3>
+<pre><code class="language-bash"># Search for reservable H100 offers
+vastai search offers --gpu-name H100 --reservable
+
+# Create and convert to reserved for up to 50% savings
+vastai create instance 67890 --image nvidia/cuda:12.0-devel --reserve
+</code></pre>
+<h3 id="custom-pyworker-for-image-generation"><a class="header" href="#custom-pyworker-for-image-generation">Custom PyWorker for Image Generation</a></h3>
+<pre><code class="language-python">from vastai import Worker, WorkerConfig, HandlerConfig, LogActionConfig, BenchmarkConfig
+
+worker_config = WorkerConfig(
+    model_server_url="http://127.0.0.1",
+    model_server_port=8188,
+    model_log_file="/var/log/portal/comfyui.log",
+    handlers=[
+        HandlerConfig(
+            route="/api/generate",
+            allow_parallel_requests=False,
+            max_queue_time=120.0,
+            workload_calculator=lambda p: 1.0,
+        ),
+    ],
+    log_action_config=LogActionConfig(
+        on_load=["ComfyUI startup complete"],
+        on_error=["RuntimeError"],
+    ),
+)
+
+Worker(worker_config).run()
+</code></pre>
+<h2 id="limitations"><a class="header" href="#limitations">Limitations</a></h2>
+<ul>
+<li><strong>Provider Variability</strong>: Hardware reliability and network quality vary across providers. Reliability scores help mitigate risk, but interruptions can occur on lower-rated machines.</li>
+<li><strong>No Guaranteed Uptime SLA</strong>: Unlike traditional cloud providers, Vast.ai does not offer enterprise-grade Service Level Agreements (SLAs) on most instances. Interruptible instances may be paused at any time by higher-priority rentals.</li>
+<li><strong>Data Locality</strong>: Data must be transferred to and from instances. SCP over proxy SSH is recommended only for transfers under 1 GB; direct SSH connections or cloud sync are preferred for larger datasets.</li>
+<li><strong>Static Disk Allocation</strong>: Disk space is set at instance creation and cannot be modified afterward.</li>
+<li><strong>Networking Constraints</strong>: Instances share public IPs with port-based routing, limited to 64 ports per instance. No dedicated public IP assignment is available.</li>
+<li><strong>VM Limitations</strong>: VM instances have slower boot times, higher disk overhead, limited machine availability, restricted preconfigured templates, and no SSH key modification on running instances. VM copy operations only support complete VM-to-VM transfers.</li>
+<li><strong>Closed Source Platform</strong>: The marketplace platform is proprietary. The CLI and SDK are open source, but the core infrastructure is not.</li>
+<li><strong>Pre-Payment Required</strong>: Credits must be purchased before launching instances. When balance reaches zero, instances are stopped automatically. Without a saved payment method, instances and stored data are destroyed.</li>
+<li><strong>Security Model</strong>: Instances run on third-party hardware. Sensitive workloads require additional encryption and security measures beyond the platform’s default Caddy proxy with TLS.</li>
+</ul>
+<h2 id="changelog"><a class="header" href="#changelog">Changelog</a></h2>
+<p>Vast.ai continuously updates its marketplace and tooling. Key platform capabilities as of the documentation crawl include serverless inference with benchmark-driven autoscaling, virtual machine instance support, the PyWorker custom worker framework, the Python SDK with async serverless client, cloud sync with S3 and Google Drive, team management with role-based access, and the Instance Portal web interface. Consult the official documentation and community Discord for the latest platform changes.</p>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Welcome to Vast.ai - <a href="https://docs.vast.ai/documentation/get-started">https://docs.vast.ai/documentation/get-started</a></li>
+<li>[2] Instances Overview - <a href="https://docs.vast.ai/documentation/instances/overview">https://docs.vast.ai/documentation/instances/overview</a></li>
+<li>[3] Pricing - <a href="https://docs.vast.ai/documentation/instances/pricing">https://docs.vast.ai/documentation/instances/pricing</a></li>
+<li>[4] Instance Types - <a href="https://docs.vast.ai/documentation/instances/choosing/instance-types">https://docs.vast.ai/documentation/instances/choosing/instance-types</a></li>
+<li>[5] Docker Execution Environment - <a href="https://docs.vast.ai/documentation/instances/docker-environment">https://docs.vast.ai/documentation/instances/docker-environment</a></li>
+<li>[6] Virtual Machines - <a href="https://docs.vast.ai/documentation/instances/virtual-machines">https://docs.vast.ai/documentation/instances/virtual-machines</a></li>
+<li>[7] Data Movement - <a href="https://docs.vast.ai/documentation/instances/storage/data-movement">https://docs.vast.ai/documentation/instances/storage/data-movement</a></li>
+<li>[8] Templates Introduction - <a href="https://docs.vast.ai/documentation/templates/introduction">https://docs.vast.ai/documentation/templates/introduction</a></li>
+<li>[9] Serverless Overview - <a href="https://docs.vast.ai/documentation/serverless">https://docs.vast.ai/documentation/serverless</a></li>
+<li>[10] Serverless Quickstart - <a href="https://docs.vast.ai/documentation/serverless/quickstart">https://docs.vast.ai/documentation/serverless/quickstart</a></li>
+<li>[11] Creating Custom PyWorkers - <a href="https://docs.vast.ai/documentation/serverless/creating-new-pyworkers">https://docs.vast.ai/documentation/serverless/creating-new-pyworkers</a></li>
+<li>[12] Workergroup Parameters - <a href="https://docs.vast.ai/documentation/serverless/workergroup-parameters">https://docs.vast.ai/documentation/serverless/workergroup-parameters</a></li>
+<li>[13] CLI Getting Started - <a href="https://docs.vast.ai/cli/get-started">https://docs.vast.ai/cli/get-started</a></li>
+<li>[14] Python SDK Quickstart - <a href="https://docs.vast.ai/sdk/python/quickstart">https://docs.vast.ai/sdk/python/quickstart</a></li>
+<li>[15] API Reference - <a href="https://docs.vast.ai/api-reference/introduction">https://docs.vast.ai/api-reference/introduction</a></li>
+<li>[16] Billing - <a href="https://docs.vast.ai/documentation/reference/billing">https://docs.vast.ai/documentation/reference/billing</a></li>
+<li>[17] Keys - <a href="https://docs.vast.ai/documentation/reference/keys">https://docs.vast.ai/documentation/reference/keys</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>vast.ai</li>
+<li>vastai</li>
+<li>gpu marketplace</li>
+<li>peer-to-peer gpu</li>
+<li>decentralized compute</li>
+<li>interruptible instance</li>
+<li>on-demand instance</li>
+<li>reserved instance</li>
+<li>spot gpu</li>
+<li>pyworker</li>
+<li>workergroup</li>
+<li>cold multiplier</li>
+<li>benchmark-driven autoscaling</li>
+<li>vast cli</li>
+<li>vastai_sdk</li>
+<li>vastai serverless</li>
+<li>instance portal</li>
+<li>cloud sync</li>
+<li>search offers</li>
+<li>reliability score</li>
+<li>consumer-grade gpu</li>
+<li>rtx 3090</li>
+<li>rtx 4090</li>
+<li>a100 marketplace</li>
+<li>h100 marketplace</li>
+<li>caddy proxy</li>
+<li>per-second billing</li>
+<li>community gpu cloud</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Search the marketplace for the cheapest A100 or H100 by hour</li>
+<li>Filter offers by reliability score, location, and bandwidth</li>
+<li>Launch a Docker-based GPU instance with <code>vastai create instance</code></li>
+<li>Run a VM instance for systemd, Docker-in-Docker, or kernel modules</li>
+<li>Deploy a serverless vLLM endpoint with benchmark-driven autoscaling</li>
+<li>Build a custom PyWorker as an HTTP proxy in front of a model server</li>
+<li>Mount cloud storage with <code>vastai cloud copy</code> to S3 or Google Drive</li>
+<li>Reserve a GPU for multi-day training at up to 50% discount</li>
+<li>Run an Interruptible instance for batch jobs at the lowest cost</li>
+<li>SSH into a marketplace instance via the proxy port</li>
+<li>Configure a workergroup with <code>gpu_ram</code>, <code>search_params</code>, and <code>template_hash</code></li>
+<li>Track per-second spend and credit balance through the dashboard</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>Where can I get the cheapest H100 by the hour?</li>
+<li>I want to rent a GPU from a hobbyist provider, not a hyperscaler.</li>
+<li>How do I run a spot-interruptible training job to save money?</li>
+<li>How do I deploy vLLM behind an autoscaling endpoint without managing servers?</li>
+<li>How do I write a custom PyWorker for a non-vLLM model server?</li>
+<li>I need a GPU that can run Docker-in-Docker — how do I get a VM instance?</li>
+<li>How do I copy data from S3 onto a Vast.ai instance?</li>
+<li>How do I reserve an A100 for two weeks at a discount?</li>
+<li>Can I use consumer RTX 4090s for inference behind one endpoint?</li>
+<li>How do I filter offers by reliability score?</li>
+<li>How do I attach a Jupyter notebook to a Vast.ai instance?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Major cloud providers are too expensive for sustained training runs.</li>
+<li>I need GPU access but I do not want to commit to a contract.</li>
+<li>I can tolerate occasional interruptions in exchange for the lowest possible price.</li>
+<li>I want autoscaling inference across mixed GPU types, not one homogeneous SKU.</li>
+<li>My workload is too niche for managed inference services.</li>
+<li>I need to run heterogeneous community-provided GPUs behind a single API.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when the cheapest per-hour GPU price is the dominant criterion (vs RunPod’s Secure Cloud or Modal’s managed serverless).</li>
+<li>Pick this when Interruptible/spot pricing is acceptable for batch jobs.</li>
+<li>Pick this when serverless endpoints over mixed consumer-grade GPUs are useful (vs RunPod’s enterprise-class fleet).</li>
+<li>Pick this when you need a true marketplace where providers — not the platform — set prices.</li>
+<li>Pick this when you accept lower SLAs and variable reliability in exchange for cost.</li>
+<li>Pick this when VM instances with systemd, Docker-in-Docker, or kernel-module loading are required.</li>
+<li>Pick this when bring-your-own PyWorker for a non-standard model server matters.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>decentralized gpu cloud</li>
+<li>peer-to-peer compute</li>
+<li>gpu rental marketplace</li>
+<li>spot gpu market</li>
+<li>cheap gpu cloud</li>
+<li>community gpu network</li>
+<li>crowdsourced compute</li>
+<li>interruptible compute</li>
+<li>benchmark autoscaler</li>
+<li>vast serverless</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-1-foundation/compute-gpu-infrastructure/runpod.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-1-foundation/compute-gpu-infrastructure/inferless.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-1-foundation/compute-gpu-infrastructure/runpod.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-1-foundation/compute-gpu-infrastructure/inferless.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

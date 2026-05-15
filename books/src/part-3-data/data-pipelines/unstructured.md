@@ -9,7 +9,7 @@
 | Type | SDK |
 | Open Source | yes |
 | GitHub | [Unstructured-IO/unstructured](https://github.com/Unstructured-IO/unstructured) |
-| Stars | 14118 |
+| Stars | 14708 |
 | Docs | [docs.unstructured.io](https://docs.unstructured.io/open-source/ingestion/overview) |
 
 ## Overview
@@ -353,3 +353,69 @@ for element in elements:
 - [7] Embedding - https://docs.unstructured.io/open-source/core-functionality/embedding
 - [8] Source Connectors - https://docs.unstructured.io/open-source/ingestion/source-connectors/overview
 - [9] Destination Connectors - https://docs.unstructured.io/open-source/ingestion/destination-connectors/overview
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+document parsing, PDF extraction, document ingestion, OCR, Tesseract, PaddleOCR, detectron2, layout detection, partitioning, semantic chunking, by_title chunking, RAG preparation, hi_res strategy, ocr_only strategy, document elements, Title, NarrativeText, table extraction, email parsing, EML, MSG, ingestion pipeline, source connectors, destination connectors, libmagic, unstructured-io, LLM-ready data
+
+### Verb-Noun Tasks
+
+- Partition PDFs into typed elements (Title, NarrativeText, Table, ListItem)
+- Extract tables from PDFs as HTML via `text_as_html` metadata
+- Run OCR on scanned documents in multiple languages with ISO 639-3 codes
+- Chunk partitioned elements by title for vector-database ingestion
+- Process emails (EML, MSG) and extract headers plus attachments
+- Ingest documents from SharePoint, Confluence, S3, or Google Drive
+- Push processed chunks into Pinecone, Qdrant, Weaviate, or Milvus
+- Convert DOCX, PPTX, XLSX, HTML, and Markdown to a uniform element schema
+- Clean extracted text with bullet, dash, and non-ASCII normalization
+- Run hi_res layout detection with detectron2_onnx for structured documents
+- Build an end-to-end ETL ingestion pipeline with 11 stages
+- Use `partition_via_api` for remote processing without local dependencies
+
+### User Intent Phrases
+
+- How do I convert a PDF into chunks ready for a RAG pipeline?
+- How do I extract tables from a scanned PDF as HTML?
+- What is the best way to OCR multi-language scanned documents?
+- How do I ingest documents from Confluence or SharePoint into a vector database?
+- How do I parse `.eml` files with attachments in Python?
+- How do I preserve section boundaries when chunking documents for retrieval?
+- How do I extract structured elements from PowerPoint and Excel files?
+- How do I build a document ingestion pipeline that writes to Pinecone?
+- What system dependencies does Unstructured need (libmagic, poppler, tesseract)?
+- How do I run document parsing without installing all the heavy ML models?
+
+### Problem Statements
+
+- Raw PDFs and Office documents are unusable directly by LLMs without parsing
+- OCR on multi-column or scanned PDFs often produces jumbled text
+- Tables in PDFs lose their structure when extracted as flat text
+- Chunking by character count breaks across section and title boundaries, hurting retrieval quality
+- Ingesting documents from dozens of SaaS sources requires bespoke connectors per system
+- Heavy system dependencies (libmagic, poppler, tesseract, LibreOffice, pandoc) complicate deployment
+- Metadata (page numbers, coordinates, element types) is easily lost during ad-hoc parsing
+
+### When to Pick This
+
+- Pick this when you need to parse documents (PDFs, DOCX, scanned images, emails) into LLM-ready chunks — Airbyte is the right choice for replicating structured data between systems
+- Pick this when document structure (titles, tables, page boundaries) must survive chunking
+- Pick this when you need OCR plus layout detection in the same pipeline
+- Pick this when your RAG inputs come from enterprise content sources (SharePoint, Confluence, Slack, GitHub) rather than databases
+- Pick this when you want one library that handles 25+ file formats with a single `partition()` call
+- Pick this when you already use a vector database (Pinecone, Qdrant, Weaviate, Milvus) and need a write-ready connector
+- Pick this when the open-source library suffices and you don't need the per-page-billed managed API
+
+### Related Terms and Aliases
+
+- Unstructured.io, unstructured-io/unstructured
+- Document ETL, document ingestion, document AI
+- Partitioning, semantic chunking, hi_res, ocr_only, fast strategy
+- Document elements, NarrativeText, Title, ListItem, Table
+- Layout-aware parsing, detectron2_onnx
+- LLM-ready data, RAG preprocessing
+- partition_pdf, partition_html, partition_email, partition_via_api

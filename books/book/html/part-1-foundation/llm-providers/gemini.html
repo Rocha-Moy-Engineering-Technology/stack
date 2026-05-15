@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -416,6 +416,73 @@ response = client.models.generate_content(
 <li>[3] Text Generation Guide - <a href="https://ai.google.dev/gemini-api/docs/text-generation">https://ai.google.dev/gemini-api/docs/text-generation</a></li>
 <li>[4] Function Calling Guide - <a href="https://ai.google.dev/gemini-api/docs/function-calling">https://ai.google.dev/gemini-api/docs/function-calling</a></li>
 <li>[5] Quickstart - <a href="https://ai.google.dev/gemini-api/docs/quickstart">https://ai.google.dev/gemini-api/docs/quickstart</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Gemini, Gemini 3.1 Pro, Gemini 3 Pro, Gemini 3 Flash, Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, Google AI, Google AI Studio, Google GenAI SDK, generateContent, 1M context window, native multimodal, vision, video understanding, audio understanding, document processing, function calling, AUTO ANY NONE VALIDATED, code execution, grounding with Google Search, Imagen, Nano Banana, Veo, Lyria, structured outputs, ThinkingConfig, context caching, file search</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Call Gemini via the generateContent endpoint</li>
+<li>Process a 1M-token context in a single request</li>
+<li>Analyze a video file directly without pre-extracting frames</li>
+<li>Reason over a 1,000-page PDF</li>
+<li>Transcribe and reason about audio in a single multimodal prompt</li>
+<li>Generate images with Nano Banana / Imagen</li>
+<li>Generate video with Veo 3.1</li>
+<li>Generate music with Lyria</li>
+<li>Configure function calling modes (AUTO, ANY, NONE, VALIDATED)</li>
+<li>Ground responses in fresh web data via Google Search</li>
+<li>Enable Code Execution for the model to run Python on your behalf</li>
+<li>Tune thinking depth with ThinkingConfig (low / medium / high)</li>
+<li>Cache a long system prefix with Context Caching</li>
+<li>Stream responses with Server-Sent Events</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“I need a model with a 1M-token context window”</li>
+<li>“How do I send a video to an LLM for analysis?”</li>
+<li>“What’s the cheapest way to do long-context RAG?”</li>
+<li>“I want Google Search results inside my LLM response”</li>
+<li>“How do I generate images with Google’s API?”</li>
+<li>“I want native video generation, not just text-to-video via a separate API”</li>
+<li>“How do I cache a long system prompt to avoid re-paying for it?”</li>
+<li>“I need to do speech recognition and reasoning in one model call”</li>
+<li>“Which LLM provider has the strongest multimodal coverage?”</li>
+<li>“How do I enable Code Execution mode in Gemini?”</li>
+<li>“Should I use Gemini 3 Pro or Gemini 2.5 Flash for cost-sensitive workloads?”</li>
+<li>“How do I tune thinking depth in Gemini?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>200K context isn’t enough for our document set</li>
+<li>Stitching together separate models for text + vision + audio + video creates integration overhead</li>
+<li>Need fresh web facts inside model responses without building a separate search-then-prompt pipeline</li>
+<li>Long system prompts are too expensive to send on every request</li>
+<li>Video and PDF processing pipelines (frame extraction → model → reassemble) are brittle</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you need 1M+ tokens of context in a single request</li>
+<li>Pick this when native video, audio, or PDF input is required and you don’t want to pre-process the media</li>
+<li>Pick this when grounding responses in fresh Google Search results is a product requirement</li>
+<li>Pick this when you need integrated image (Nano Banana / Imagen), video (Veo), or music (Lyria) generation alongside text from one provider</li>
+<li>Pick this when you’re already on Google Cloud (Vertex AI gives the same models with IAM, VPC, regional endpoints)</li>
+<li>Pick this when Context Caching makes a repeated-prefix workload economically viable</li>
+<li>Pick this when you want a single SDK across Python, JavaScript, Go, Java, and C#</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Google Gemini, Google AI, Google AI Studio, Google GenAI</li>
+<li>Vertex AI Gemini (Google Cloud–hosted variant of the same models)</li>
+<li>PaLM (predecessor; deprecated)</li>
+<li>Bard (consumer chat product; not the API)</li>
+<li>generateContent API</li>
+<li>“Google’s LLM”</li>
+<li>Nano Banana = Gemini’s image-generation model name</li>
+<li>Veo = video generation; Lyria = music generation</li>
 </ul>
 
                     </main>

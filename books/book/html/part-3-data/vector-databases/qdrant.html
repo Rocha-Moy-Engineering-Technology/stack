@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/qdrant/qdrant">qdrant/qdrant</a></td></tr>
-<tr><td>Stars</td><td>29275</td></tr>
+<tr><td>Stars</td><td>31313</td></tr>
 <tr><td>Docs</td><td><a href="https://qdrant.tech/documentation/">qdrant.tech/documentation</a></td></tr>
 </tbody>
 </table>
@@ -676,6 +676,73 @@ results = client.query_points(
 <li>[10] Search - https://qdrant.tech/documentation/concepts/search/</li>
 <li>[11] Hybrid Queries - https://qdrant.tech/documentation/concepts/hybrid-queries/</li>
 <li>[12] Indexing - https://qdrant.tech/documentation/concepts/indexing/</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Qdrant, Rust, vector database, collections, points, payload, payload index, filterable HNSW, ACORN, multi-vector, ColBERT, sparse vectors, dense vectors, named vectors, hybrid search, RRF, DBSF, prefetch, multi-stage search, scalar quantization, binary quantization, product quantization, FastEmbed, MCP server, Raft consensus, sharding, replication, REST 6333, gRPC 6334, hybrid cloud, private cloud</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Create a collection with <code>VectorParams</code> (size, distance)</li>
+<li>Upsert points with vectors and JSON payloads</li>
+<li>Query with <code>query_points</code> and filters</li>
+<li>Build a payload index for single-pass filtered HNSW search</li>
+<li>Run hybrid search via <code>prefetch</code> with RRF or DBSF fusion</li>
+<li>Re-rank with ColBERT multi-vectors in a nested prefetch</li>
+<li>Apply binary quantization for 32x compression</li>
+<li>Configure rescoring and oversampling for quantized search</li>
+<li>Use ACORN for restrictive multi-filter queries</li>
+<li>Use FastEmbed for client-side inference</li>
+<li>Run <code>mcp-server-qdrant</code> for AI assistant integration</li>
+<li>Shard collections via consistent hashing across a Raft cluster</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I do filtered vector search without the post-filter penalty?</li>
+<li>How do I run hybrid dense + sparse search with RRF fusion?</li>
+<li>How do I add a ColBERT multi-vector reranking stage?</li>
+<li>How do I compress vectors 32x with binary quantization?</li>
+<li>How do I self-host a high-performance vector database in Rust?</li>
+<li>How do I expose my collection to an AI assistant via MCP?</li>
+<li>How do I isolate tenants with payload indexes?</li>
+<li>How do I configure HNSW parameters (m, ef_construct, ef)?</li>
+<li>How do I run nested prefetch pipelines for multi-stage retrieval?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Filtered HNSW search degrades when filters are restrictive</li>
+<li>Combining dense and sparse search requires manual fusion logic</li>
+<li>Multi-stage re-scoring with full-precision vectors is hard to express</li>
+<li>Self-hosted vector DBs in Java/Go can be slower than expected</li>
+<li>Multi-tenant workloads need data-level isolation without per-tenant collections</li>
+<li>Connecting AI assistants to vector data is glue work</li>
+<li>Default deployments lack auth and encryption</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when restrictive metadata filtering with single-pass HNSW (payload-indexed) matters at scale</li>
+<li>Pick this over Pinecone when self-hosting in Rust with high performance and full control is required</li>
+<li>Pick this over Weaviate when nested prefetch pipelines and ColBERT multi-vector re-scoring fit your retrieval shape</li>
+<li>Pick this over Milvus when Rust performance + filterable HNSW + ACORN matter more than billion-scale GPU-accelerated indexes</li>
+<li>Pick this over pgvector when you have no existing PostgreSQL footprint and want a purpose-built engine</li>
+<li>Pick this when MCP-server integration with AI coding assistants is on your roadmap</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Qdrant Cloud / Hybrid Cloud / Private Cloud / Edge</li>
+<li>qdrant-client (Python)</li>
+<li>FastEmbed</li>
+<li>Filterable HNSW</li>
+<li>ACORN algorithm</li>
+<li>RRF / DBSF fusion</li>
+<li>Multi-vector (ColBERT)</li>
+<li>Payload (metadata)</li>
+<li>Prefetch</li>
+<li>mcp-server-qdrant</li>
+<li>WAL (write-ahead log)</li>
+<li>Raft consensus</li>
 </ul>
 
                     </main>

@@ -1,7 +1,7 @@
 [book]
 title = "AI/ML Stack Documentation"
 authors = ["Head of AI Agent"]
-description = "Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups"
+description = "Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts"
 language = "en"
 src = "src"
 

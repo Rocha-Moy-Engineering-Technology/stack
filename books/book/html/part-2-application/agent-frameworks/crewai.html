@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -194,7 +194,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/crewAIInc/crewAI">https://github.com/crewAIInc/crewAI</a></td></tr>
-<tr><td>Stars</td><td>44446</td></tr>
+<tr><td>Stars</td><td>51401</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.crewai.com/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -366,6 +366,75 @@ class ResearchFlow(Flow[ResearchState]):
 <ul>
 <li>[1] <a href="https://docs.crewai.com/">CrewAI Documentation</a></li>
 <li>[2] <a href="https://docs.crewai.com/quickstart">CrewAI Quickstart</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>crewai, crew, agent role, goal, backstory, task, process, sequential process, hierarchical process, manager agent, flow, role-based agents, yaml configuration, declarative agents, multi-agent collaboration, before_kickoff, after_kickoff, @agent decorator, @task decorator, @crew decorator, @listen, @router, @start, structured outputs, entity memory, knowledge bases, crewai enterprise</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define agents with a role, goal, and backstory in YAML</li>
+<li>Compose tasks with description, expected output, and assigned agent</li>
+<li>Assemble a crew with sequential or hierarchical process</li>
+<li>Add a manager agent for hierarchical task delegation</li>
+<li>Build a stateful resumable Flow with <code>@start</code>, <code>@listen</code>, <code>@router</code></li>
+<li>Validate agent output against a Pydantic schema</li>
+<li>Hook into crew lifecycle with <code>@before_kickoff</code> and <code>@after_kickoff</code></li>
+<li>Equip agents with SerperDevTool, file tools, and code execution</li>
+<li>Connect a crew to Gmail/Slack/Salesforce triggers via CrewAI Enterprise</li>
+<li>Wire short-term, long-term, and entity memory into agents</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I build a multi-agent team with different roles?”</li>
+<li>“How do I orchestrate a researcher agent and a writer agent in sequence?”</li>
+<li>“How do I define agents declaratively in YAML?”</li>
+<li>“How do I make a manager agent delegate to specialists?”</li>
+<li>“How do I build a content generation pipeline with multiple agents?”</li>
+<li>“How do I add memory to my CrewAI agents?”</li>
+<li>“How do I create a resumable workflow with CrewAI Flows?”</li>
+<li>“How do I trigger a crew from Slack or Gmail?”</li>
+<li>“How do I assign different LLMs to different agents in the same crew?”</li>
+<li>“How do I enforce a structured output schema on an agent?”</li>
+<li>“How do I add guardrails to a production crew?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Need to decompose a task into specialized agents with distinct roles and responsibilities</li>
+<li>Want declarative YAML-driven agent and task definitions to avoid hand-wiring orchestration code</li>
+<li>Hierarchical workflows need a routing manager but introduce extra latency and token cost</li>
+<li>Multi-agent interactions are hard to debug without crew-level tracing</li>
+<li>Memory subsystems add overhead for simple stateless flows</li>
+<li>Enterprise integrations (triggers, RBAC, hosted monitoring) require the paid platform</li>
+<li>Building a stateful resumable multi-step workflow on top of plain agents is too low-level</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want role-based multi-agent teams (role, goal, backstory) and declarative YAML configuration of agents and tasks</li>
+<li>Pick this over LangChain when team composition and sequential/hierarchical task flow matter more than chain composition</li>
+<li>Pick this over LangGraph when you prefer declarative role-based abstractions to explicit graph topology</li>
+<li>Pick this over AutoGen when you want structured sequential/hierarchical processes rather than conversational message-passing patterns</li>
+<li>Pick this over Pydantic AI when team coordination matters more than single-agent type safety</li>
+<li>Pick this over smolagents when you need crew-level orchestration, lifecycle hooks, and YAML configs instead of a minimalist core</li>
+<li>Pick this over Semantic Kernel when role-based crews fit better than .NET-style plugin orchestration</li>
+<li>Pick this over ADK when you want a Python-only multi-agent framework with simple roles rather than a hierarchical agent tree tied to Google’s ecosystem</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Crew (team of agents)</li>
+<li>Role-based agent design</li>
+<li>Sequential / hierarchical / hybrid process</li>
+<li>Manager agent</li>
+<li>Flow (<code>@start</code>, <code>@listen</code>, <code>@router</code>)</li>
+<li>ReAct loop (tool use pattern)</li>
+<li>Entity memory</li>
+<li>Knowledge base integration</li>
+<li>CrewAI Enterprise (hosted platform)</li>
+<li>Lifecycle hooks (<code>@before_kickoff</code>, <code>@after_kickoff</code>)</li>
+<li>Multi-agent system</li>
+<li>Declarative agent configuration</li>
 </ul>
 
                     </main>

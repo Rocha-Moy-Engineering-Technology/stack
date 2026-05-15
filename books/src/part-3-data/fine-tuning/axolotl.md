@@ -9,7 +9,7 @@
 | Type | SDK |
 | Open Source | yes |
 | GitHub | [axolotl-ai-cloud/axolotl](https://github.com/axolotl-ai-cloud/axolotl) |
-| Stars | 11393 |
+| Stars | 11903 |
 | Docs | [docs.axolotl.ai](https://docs.axolotl.ai/) |
 
 ## Overview
@@ -450,3 +450,70 @@ output_dir: ./outputs/70b-qlora
 - [7] RLHF Guide - https://docs.axolotl.ai/docs/rlhf.html
 - [8] Multipack - https://docs.axolotl.ai/docs/multipack.html
 - [9] FSDP + QLoRA - https://docs.axolotl.ai/docs/fsdp_qlora.html
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+YAML configuration, LLM fine-tuning, LoRA, QLoRA, full fine-tuning, post-training, DPO, IPO, KTO, ORPO, GRPO, GDPO, SimPO, RLHF, sample packing, multipack, Flash Attention, FSDP, DeepSpeed, chat_template, alpaca, sharegpt, Vision-Language Model, VLM, Modal cloud, axolotl CLI, hyperparameter sweep, Jinja2 templates, Llama, Mistral, Qwen, Gemma, Phi
+
+### Verb-Noun Tasks
+
+- Fine-tune Llama or Mistral with LoRA using a single YAML config
+- Train a chat model on multi-turn conversations using chat_template formatting
+- Run DPO preference alignment on chosen/rejected pairs with TRL
+- Train 70B models on consumer GPUs using FSDP + QLoRA
+- Pack multiple sequences per batch with multipack and Flash Attention
+- Merge a trained LoRA adapter into the base model with `axolotl merge-lora`
+- Resume training from a checkpoint after interruption
+- Run hyperparameter sweeps with YAML sweep configs
+- Execute remote GPU training on Modal with `--cloud`
+- Fine-tune Vision-Language Models on image-text datasets
+- Evaluate trained models with the LM evaluation harness
+- Run GRPO with vLLM trajectory generation and custom reward functions
+
+### User Intent Phrases
+
+- How do I fine-tune Llama 3 with LoRA using YAML instead of writing PyTorch code?
+- What is the easiest way to run DPO on a preference dataset?
+- How do I train a 70B model with only two 24GB consumer GPUs?
+- How do I configure FSDP and DeepSpeed ZeRO-3 for distributed fine-tuning?
+- How do I use chat_template with chatml or qwen3 conversation formatting?
+- How do I run a hyperparameter sweep over learning rate and LoRA rank?
+- How can I launch axolotl training remotely on a Modal GPU?
+- How do I fine-tune a Vision-Language Model on a custom image-text dataset?
+- How do I switch from full fine-tuning to QLoRA via a YAML flag?
+- How do I integrate Weights & Biases logging with axolotl?
+
+### Problem Statements
+
+- Writing training scripts in raw PyTorch + Trainer is verbose and error-prone
+- Switching between LoRA, QLoRA, DPO, and ORPO requires rewriting training code each time
+- Distributed training with FSDP or DeepSpeed has a steep configuration learning curve
+- Multi-GPU 70B fine-tuning is impossible without combining quantization, sharding, and adapters
+- Dataset format inconsistency across alpaca/sharegpt/chatml causes silent training bugs
+- Reproducing a peer's fine-tuning recipe requires hunting through scripts and notebooks
+- Sample padding wastes GPU time when sequence lengths vary wildly
+
+### When to Pick This
+
+- Pick this when you want a single YAML config to control model, dataset, hyperparameters, and infrastructure — Unsloth wins when raw speed and VRAM efficiency are the top priority, and PEFT wins when you need library-level control inside Python code
+- Pick this when you need full SFT plus DPO/ORPO/KTO/GRPO in one framework
+- Pick this when you want native FSDP + QLoRA for very large models on commodity GPUs
+- Pick this when you want to run identical recipes across Llama, Mistral, Mixtral, Qwen, Gemma, Phi, Falcon families
+- Pick this when reproducibility via version-controlled YAML is more important than ad-hoc notebook training
+- Pick this when you need cloud GPU execution via Modal with a single CLI flag
+- Pick this when sample packing with Flash Attention's cu_seqlens matters for throughput
+
+### Related Terms and Aliases
+
+- axolotl-ai-cloud/axolotl
+- Post-training framework, LLM fine-tuning framework
+- YAML-driven training, declarative training config
+- TRL wrapper, Hugging Face Trainer wrapper
+- Multipack, sample packing, block-diagonal attention
+- FSDP+QLoRA, ZeRO-3 offload
+- Chat template, ShareGPT (deprecated), Jinja2 conversation formatting
+- Direct Preference Optimization, Group Relative Policy Optimization

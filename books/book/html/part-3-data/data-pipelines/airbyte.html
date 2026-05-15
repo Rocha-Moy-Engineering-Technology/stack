@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,7 +195,7 @@
 <tr><td>Type</td><td>API/SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/airbytehq/airbyte">airbytehq/airbyte</a></td></tr>
-<tr><td>Stars</td><td>20819</td></tr>
+<tr><td>Stars</td><td>21256</td></tr>
 <tr><td>Docs</td><td><a href="https://docs.airbyte.com/">docs.airbyte.com</a></td></tr>
 </tbody>
 </table>
@@ -458,6 +458,72 @@ curl --request POST \
 <li>[12] API Documentation - https://docs.airbyte.com/api-documentation/</li>
 <li>[13] Connector Development - https://docs.airbyte.com/connector-development/</li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>ELT, ETL, data integration, data pipelines, connectors, CDC, change data capture, incremental sync, PyAirbyte, data replication, Airbyte Protocol, Airbyte Cloud, Self-Managed Enterprise, Connector Builder, Low-Code CDK, data warehouse, data lake, reverse ETL, sources, destinations, streams, sync modes, typing and deduping, Destinations V2, Temporal scheduling, Terraform provider, schema propagation, namespace, dbt transformation, data activation</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Replicate PostgreSQL/MySQL/MongoDB databases via CDC to Snowflake or BigQuery</li>
+<li>Load Salesforce, HubSpot, and Stripe data into a data warehouse</li>
+<li>Configure incremental Append + Deduped sync with primary-key deduplication</li>
+<li>Build a custom HTTP API source connector with the Low-Code CDK</li>
+<li>Trigger Airbyte syncs from Apache Airflow, Dagster, or Prefect</li>
+<li>Extract data into Python with PyAirbyte for RAG preparation</li>
+<li>Deploy Airbyte on Kubernetes with Helm and external Postgres</li>
+<li>Manage sources, destinations, and connections via the REST API</li>
+<li>Provision Airbyte resources as infrastructure-as-code with Terraform</li>
+<li>Schedule syncs with CRON expressions or manual triggering</li>
+<li>Run post-load dbt transformations on synced data</li>
+<li>Handle source schema changes with automatic propagation</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I sync a PostgreSQL database to BigQuery using change data capture?</li>
+<li>What is the fastest way to consolidate SaaS data into Snowflake?</li>
+<li>How can I build a custom Airbyte connector for a REST API without writing Python?</li>
+<li>How do I run Airbyte locally for prototyping a data pipeline?</li>
+<li>What sync mode should I use to incrementally load new records and deduplicate?</li>
+<li>How do I use PyAirbyte to pull GitHub data into a Jupyter notebook for ML?</li>
+<li>How do I deploy Airbyte to a Kubernetes cluster in production?</li>
+<li>How can I trigger an Airbyte connection from Airflow on a schedule?</li>
+<li>How do I manage Airbyte sources and destinations with Terraform?</li>
+<li>What are the differences between Self-Managed Core, Enterprise, and Airbyte Cloud?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Hundreds of SaaS tools each ship data in different shapes, with no unified way to consolidate them</li>
+<li>Hand-rolling database replication with CDC requires deep expertise in transaction logs</li>
+<li>Schema drift in source systems silently breaks downstream pipelines</li>
+<li>Adding a new SaaS source to an existing warehouse takes weeks of bespoke engineering</li>
+<li>Real-time replication is not always required, but resumable, checkpointed batch syncs are</li>
+<li>Custom connector code is hard to maintain across upgrades and dependency changes</li>
+<li>Pipeline configurations live in disparate places and are hard to version-control</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you need to move structured data between systems (databases, APIs, SaaS, warehouses) rather than parse documents — Unstructured is the right choice for PDFs, DOCX, and unstructured files</li>
+<li>Pick this when you want 600+ pre-built connectors instead of writing custom extractors</li>
+<li>Pick this when you need log-based CDC from PostgreSQL/MySQL/MongoDB into a warehouse</li>
+<li>Pick this when you want infrastructure-as-code pipeline management via Terraform</li>
+<li>Pick this when you need to combine ELT into a warehouse with reverse-ETL data activation back to operational tools</li>
+<li>Pick this when batch/scheduled replication is acceptable and continuous streaming is not required</li>
+<li>Pick this when you want a no-code UI plus REST API plus SDKs in the same platform</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>ELT platform, ETL platform, data integration platform</li>
+<li>Open-source Fivetran alternative</li>
+<li>Connector Development Kit (CDK), Low-Code CDK, Python CDK</li>
+<li>PyAirbyte (embedded Python library)</li>
+<li>Change Data Capture (CDC), log-based replication</li>
+<li>Destinations V2, Direct-Load Tables</li>
+<li>Reverse ETL, data activation</li>
+<li>Airbyte Protocol (JSON-RPC over STDIN/STDOUT)</li>
+<li>Honchopkin / Honcho — n/a; uses Temporal for scheduling</li>
+</ul>
 
                     </main>
 
@@ -467,7 +533,7 @@ curl --request POST \
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../../part-3-data/fine-tuning/hugging-face-transformers.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../part-3-data/fine-tuning/peft.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -481,7 +547,7 @@ curl --request POST \
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../../part-3-data/fine-tuning/hugging-face-transformers.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../part-3-data/fine-tuning/peft.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

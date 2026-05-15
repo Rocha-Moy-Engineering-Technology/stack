@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,12 +190,12 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Inference Serving</td></tr>
+<tr><td>Group</td><td>Inference Engines</td></tr>
 <tr><td>Type</td><td>SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/modular/modular">https://github.com/modular/modular</a></td></tr>
-<tr><td>Stars</td><td>25622</td></tr>
-<tr><td>Documentation</td><td><a href="https://docs.modular.com/max/">Official Docs</a></td></tr>
+<tr><td>Stars</td><td>26140</td></tr>
+<tr><td>Documentation</td><td><a href="https://docs.modular.com/max/intro">Official Docs</a></td></tr>
 </tbody>
 </table>
 </div>
@@ -396,12 +396,71 @@ print(response.choices[0].message.content)
 <li>[1] MAX Platform Documentation - <a href="https://docs.modular.com/max/">https://docs.modular.com/max/</a></li>
 <li>[2] MAX Get Started Guide - <a href="https://docs.modular.com/max/get-started">https://docs.modular.com/max/get-started</a></li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>MAX, Modular MAX, MAX Graph, MAX Serve, MAX Benchmark, Mammoth, Mojo, Mojo language, OpenAI-compatible endpoint, cross-vendor GPU, NVIDIA B200, NVIDIA H200, NVIDIA H100, AMD MI355X, AMD MI325X, AMD MI300X, hardware abstraction, custom GPU kernels, continuous batching, paged attention, HuggingFace models, multimodal serving, model compilation</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Start a server with <code>max serve --model &lt;hf_id&gt;</code></li>
+<li>Connect with the OpenAI SDK at <code>http://localhost:8000/v1</code></li>
+<li>Benchmark a model with <code>max benchmark --backend modular</code></li>
+<li>Compare MAX throughput vs vLLM via <code>--backend vllm</code></li>
+<li>Pass images alongside text with <code>image_url</code> content parts</li>
+<li>Tune GPU memory with <code>--device-memory-utilization</code></li>
+<li>Allow custom-code models with <code>--trust-remote-code</code></li>
+<li>Write custom operators or GPU kernels in Mojo</li>
+<li>Deploy across mixed NVIDIA + AMD GPU fleets with Mammoth</li>
+<li>Compile a model graph for hardware-specific kernels via MAX Graph</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I serve LLMs on AMD GPUs?”</li>
+<li>“What inference engine works on both NVIDIA and AMD?”</li>
+<li>“How do I write custom GPU kernels in a Python-like language?”</li>
+<li>“What is Modular’s Mojo language?”</li>
+<li>“How do I get OpenAI-compatible serving on MI300X?”</li>
+<li>“How do I benchmark vLLM vs MAX on the same model?”</li>
+<li>“How do I deploy a model across heterogeneous GPU clusters?”</li>
+<li>“What inference platform abstracts away NVIDIA vs AMD differences?”</li>
+<li>“How do I run Gemma 3 27B locally with OpenAI API compatibility?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Most inference engines are NVIDIA-only; AMD GPU paths are second-class</li>
+<li>Writing CUDA kernels locks code to one vendor</li>
+<li>Mixed-fleet (NVIDIA + AMD) deployments need framework duplication</li>
+<li>Custom GPU kernels traditionally require C++/CUDA expertise</li>
+<li>Heterogeneous cloud GPU clusters lack a unified deployment plane</li>
+<li>Performance comparisons between inference backends are hard without a common benchmark tool</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when AMD MI300X/MI325X/MI355X is a first-class deployment target</li>
+<li>Pick this over vLLM/SGLang when cross-vendor portability matters more than peak NVIDIA tuning</li>
+<li>Pick this when custom operators or specialized kernels need to be authored</li>
+<li>Pick this when Mammoth’s heterogeneous cluster deployment is needed</li>
+<li>Pick this when MAX Graph compile-time optimizations beat hand-tuned kernels for your model</li>
+<li>Skip this when only NVIDIA H100/B200 is in scope and vLLM/SGLang already work</li>
+<li>Skip this if Linux/WSL is not available</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Modular MAX, Modular Inc., Modular AI Platform</li>
+<li>Mojo (the language), MAX Engine (older naming)</li>
+<li>“Cross-vendor inference”, “vendor-agnostic GPU serving”</li>
+<li>Mammoth = MAX’s cluster deployment engine</li>
+<li>Alternative to vLLM, SGLang, TGI, TensorRT-LLM, ROCm-only inference stacks</li>
+<li>MAX Graph = MAX’s compilation/optimization framework</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../part-1-foundation/llm-providers/claude.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../part-1-foundation/hosted-inference-apis/cerebras.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
@@ -415,7 +474,7 @@ print(response.choices[0].message.content)
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../part-1-foundation/llm-providers/claude.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../part-1-foundation/hosted-inference-apis/cerebras.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Workflow Orchestration &amp; Automation</td></tr>
+<tr><td>Group</td><td>Workflow Orchestration</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/temporalio/temporal">https://github.com/temporalio/temporal</a></td></tr>
-<tr><td>Stars</td><td>18451</td></tr>
+<tr><td>Stars</td><td>20256</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.temporal.io/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -670,6 +670,104 @@ async def test_workflow_replay():
 <li><a href="https://docs.temporal.io/self-hosted-guide/deployment">Temporal Self-Hosted Deployment Guide</a></li>
 <li><a href="https://docs.temporal.io/develop/typescript/converters-and-encryption">Temporal Converters and Encryption</a></li>
 <li><a href="https://temporal.io/cloud">Temporal Cloud</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Temporal</li>
+<li>durable execution</li>
+<li>crash-proof workflows</li>
+<li>workflow</li>
+<li>activity</li>
+<li>worker</li>
+<li>task queue</li>
+<li>namespace</li>
+<li>event history</li>
+<li>signal</li>
+<li>query</li>
+<li>update</li>
+<li>retry policy</li>
+<li>heartbeat</li>
+<li>continue-as-new</li>
+<li>durable timer</li>
+<li>child workflow</li>
+<li>saga pattern</li>
+<li>workflow replay</li>
+<li>determinism</li>
+<li>versioning</li>
+<li>multi-language SDK</li>
+<li>Go SDK</li>
+<li>Python SDK</li>
+<li>TypeScript SDK</li>
+<li>Temporal Cloud</li>
+<li>Cadence</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define workflows with <code>@workflow.defn</code> and activities with <code>@activity.defn</code></li>
+<li>Execute activities with retry policies and timeouts</li>
+<li>Send signals to running workflows</li>
+<li>Query workflow state synchronously</li>
+<li>Update workflow state with validation</li>
+<li>Sleep durable timers from seconds to years</li>
+<li>Continue-As-New to bound event history</li>
+<li>Implement saga compensation on partial failures</li>
+<li>Test workflows with time skipping</li>
+<li>Replay event histories to validate determinism</li>
+<li>Encrypt payloads with custom Data Converters</li>
+<li>Spawn child workflows for hierarchical decomposition</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I need workflows that survive process crashes and resume exactly where they left off.</li>
+<li>How do I implement a saga with compensating actions?</li>
+<li>I want durable timers that last days or years.</li>
+<li>How do I orchestrate microservices reliably without writing retry boilerplate?</li>
+<li>I need human-in-the-loop approval gates that wait for signals.</li>
+<li>How do I write reliable order fulfillment or payment workflows?</li>
+<li>What’s a polyglot durable execution platform (Go, Java, Python, TypeScript, .NET, Ruby, PHP)?</li>
+<li>How do I version workflow code without breaking in-flight executions?</li>
+<li>I want to replay production workflows for debugging.</li>
+<li>How do I test long-running workflows quickly with time skipping?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Distributed transactions break when processes crash mid-flight.</li>
+<li>Retry logic and state recovery boilerplate is duplicated across services.</li>
+<li>Cron + queues + state machines is fragile compared to a unified abstraction.</li>
+<li>Long-running business processes (subscriptions, onboarding) span days or months.</li>
+<li>Microservice choreography is invisible; orchestration is explicit but lacks tooling.</li>
+<li>Cross-language teams need one workflow engine that supports all their stacks.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when business processes must be crash-proof and resumable across hours, days, or years.</li>
+<li>Pick this over Airflow/Prefect when each workflow instance needs durable per-instance state (orders, onboardings, payments), not scheduled batch DAGs.</li>
+<li>Pick this over n8n/Activepieces/Node-RED when code-first durability and multi-language SDKs matter.</li>
+<li>Pick this when saga patterns with explicit compensation are required.</li>
+<li>Pick this when teams use Go, Java, .NET, or Ruby in addition to Python/TypeScript.</li>
+<li>Avoid this when workflows are short, schedule-driven batch ETL — Airflow or Prefect are simpler.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Temporal Technologies</li>
+<li>Uber Cadence (predecessor)</li>
+<li>temporal.io</li>
+<li>Workflow Execution</li>
+<li>Event History</li>
+<li>Workflow Task / Activity Task</li>
+<li>workflow.execute_activity</li>
+<li>workflow.sleep</li>
+<li>workflow.continue_as_new</li>
+<li>@workflow.signal / @workflow.query / @workflow.update</li>
+<li>Frontend / History / Matching / Worker Service</li>
+<li>saga orchestration</li>
+<li>durable function</li>
+<li>workflow-as-code</li>
+<li>Temporal Web UI</li>
 </ul>
 
                     </main>

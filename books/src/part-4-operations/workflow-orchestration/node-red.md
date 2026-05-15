@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Workflow Orchestration & Automation |
+| Group | Workflow Orchestration |
 | Type | UI |
 | Open Source | Yes |
 | GitHub | [https://github.com/node-red/node-red](https://github.com/node-red/node-red) |
-| Stars | 22816 |
+| Stars | 23130 |
 | Documentation | [Official Docs](https://nodered.org/docs/) |
 
 ## Overview
@@ -456,3 +456,102 @@ return msg;
 - [13] Configuration - <https://nodered.org/docs/user-guide/runtime/configuration>
 - [14] Securing Node-RED - <https://nodered.org/docs/user-guide/runtime/securing-node-red>
 - [15] Node-RED Blog - <https://nodered.org/blog/>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Node-RED
+- flow-based programming
+- visual editor
+- IoT
+- MQTT
+- Modbus
+- OPC-UA
+- serial
+- WebSocket
+- TCP/UDP
+- HTTP In / HTTP Response
+- nodes
+- flows
+- wires
+- messages
+- payload
+- context
+- subflows
+- function node
+- JavaScript
+- npm
+- 5000+ community nodes
+- Raspberry Pi
+- OpenJS Foundation
+- FlowFuse
+- IBM
+- low-code
+
+### Verb-Noun Tasks
+
+- Wire nodes together on a browser-based canvas
+- Subscribe to MQTT topics and transform payloads
+- Build HTTP endpoints with HTTP In / HTTP Response nodes
+- Write custom JavaScript in Function nodes
+- Persist state with node, flow, and global context
+- Schedule flows with Inject nodes (cron expressions)
+- Route messages by topic or value with Switch nodes
+- Render text with Template nodes (Mustache)
+- Install community nodes from npm or Palette Manager
+- Bridge IoT devices to cloud REST APIs
+- Build subflow modules as installable npm packages
+- Secure the editor with adminAuth and HTTPS
+
+### User Intent Phrases
+
+- I want a visual programming tool for IoT and home automation.
+- How do I bridge MQTT devices to a REST API?
+- I need to run a low-code automation tool on a Raspberry Pi.
+- How do I create REST endpoints without writing server code?
+- I want flow-based programming for hardware integration.
+- How do I integrate Modbus / OPC-UA / serial protocols visually?
+- What's a long-lived community tool for industrial automation?
+- How do I store state between flow messages?
+- I need to use environment variables inside function nodes.
+- How do I secure the Node-RED editor for production?
+
+### Problem Statements
+
+- IoT devices and industrial equipment use protocols (MQTT, Modbus, serial) that mainstream automation tools don't support.
+- We need a low-resource visual tool that runs on a Raspberry Pi.
+- Wiring sensors to cloud REST APIs by hand is tedious.
+- We want visual debugging of message flow at every step.
+- Custom hardware integrations need a flexible JavaScript escape hatch.
+- Home automation builders need a free, hackable platform.
+
+### When to Pick This
+
+- Pick this for IoT, hardware, home automation, and protocol-heavy environments where MQTT/Modbus/OPC-UA/serial matter.
+- Pick this over n8n when protocol breadth (MQTT, TCP/UDP, serial, WebSocket) outweighs SaaS integration breadth.
+- Pick this over Activepieces when low-resource hardware (Raspberry Pi) and event-driven IoT are the focus.
+- Pick this over Airflow/Prefect/Temporal when visual, event-driven, low-throughput flows fit better than code-first DAGs.
+- Pick this when you want the largest community-node ecosystem (5,000+ npm packages).
+- Avoid this for high-throughput message routing (tens of thousands per second) or CPU-intensive operations — Node-RED is single-threaded.
+
+### Related Terms and Aliases
+
+- nodered.org
+- FlowFuse (enterprise Node-RED)
+- IBM Emerging Technology Services (origin)
+- OpenJS Foundation
+- node-red-dashboard
+- Palette Manager
+- Inject / Debug / Function / Change / Switch / Template nodes
+- MQTT In / MQTT Out
+- HTTP In / HTTP Response
+- ~/.node-red/
+- settings.js
+- adminAuth
+- httpNodeAuth
+- flow-based programming (FBP)
+- low-code IoT tool
+

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Evaluation &amp; Testing</td></tr>
+<tr><td>Group</td><td>Evaluation</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/promptfoo/promptfoo">https://github.com/promptfoo/promptfoo</a></td></tr>
-<tr><td>Stars</td><td>10600</td></tr>
+<tr><td>Stars</td><td>21253</td></tr>
 <tr><td>Documentation</td><td><a href="https://www.promptfoo.dev/docs/intro/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -668,6 +668,102 @@ redteam:
 <li>[8] <a href="https://www.promptfoo.dev/docs/red-team/">promptfoo Documentation - Red Teaming</a></li>
 <li>[9] <a href="https://www.promptfoo.dev/docs/integrations/ci-cd/">promptfoo Documentation - CI/CD Integration</a></li>
 <li>[10] <a href="https://github.com/promptfoo/promptfoo">promptfoo GitHub Repository</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>promptfoo</li>
+<li>prompt comparison</li>
+<li>side-by-side evaluation</li>
+<li>YAML configuration</li>
+<li>Node.js library</li>
+<li>CLI evaluator</li>
+<li>deterministic assertions</li>
+<li>model-graded assertions</li>
+<li>llm-rubric</li>
+<li>context-faithfulness</li>
+<li>semantic similarity</li>
+<li>regex assertion</li>
+<li>JSON validation</li>
+<li>cost threshold</li>
+<li>latency threshold</li>
+<li>red teaming</li>
+<li>penetration testing</li>
+<li>web viewer</li>
+<li>70+ providers</li>
+<li>Nunjucks templating</li>
+<li>scenarios</li>
+<li>defaultTest</li>
+<li>GitHub Actions</li>
+<li>assertion sets</li>
+<li>promptfooconfig.yaml</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Compare multiple prompts across multiple models</li>
+<li>Define test cases declaratively in YAML</li>
+<li>Assert exact match, contains, regex, JSON schema, or refusal</li>
+<li>Score outputs using LLM-graded rubrics</li>
+<li>Enforce cost and latency budgets per test</li>
+<li>Cache LLM responses between evaluation runs</li>
+<li>Launch the local web viewer for matrix-style comparison</li>
+<li>Run a red-team scan against a target provider</li>
+<li>Integrate evaluation into GitHub Actions for PR gating</li>
+<li>Load test data from CSV, JSON, or Google Sheets</li>
+<li>Generate synthetic test cases via promptfoo generate dataset</li>
+<li>Wrap a custom backend with a JavaScript or Python provider</li>
+<li>Apply weighted assertions and assertion sets</li>
+<li>Evaluate RAG with context-faithfulness and answer-relevance</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I run side-by-side prompt comparisons across providers?</li>
+<li>I need a CLI that runs LLM evals with YAML configuration.</li>
+<li>Add LLM evaluation to my GitHub Actions workflow.</li>
+<li>How do I red-team a chatbot for prompt injection and PII leakage?</li>
+<li>Test the same prompt against OpenAI, Anthropic, and Mistral.</li>
+<li>Enforce a maximum cost per LLM call in tests.</li>
+<li>Define a custom assertion in Python that runs locally.</li>
+<li>View results in a browser as a pass/fail matrix.</li>
+<li>How do I generate test cases automatically from a prompt?</li>
+<li>Compare gpt-4o-mini vs gpt-4o on the same suite.</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>No deterministic harness for comparing prompt variants across models.</li>
+<li>Prompt changes silently regress quality with no automated detection.</li>
+<li>Eval costs explode without local caching of LLM responses.</li>
+<li>Switching models requires re-validating an entire test suite.</li>
+<li>Security testing for prompt injection is manual and inconsistent.</li>
+<li>Cost and latency budgets are not enforced as part of QA.</li>
+<li>Team has no shared, reproducible view of LLM test results.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want a CLI-first, YAML-driven, side-by-side prompt comparison harness with a local web viewer.</li>
+<li>Pick this over Ragas when prompt comparison and CI gating across many providers matter more than RAG-specific metrics.</li>
+<li>Pick this over DeepEval when Node.js + YAML + CLI is preferred over Python + Pytest.</li>
+<li>Pick this over OpenAI Evals when provider-agnostic evaluation across 70+ providers and local execution are requirements.</li>
+<li>Pick this when integrated red-teaming with plugins (jailbreak, prompt-injection, PII, hijacking) is part of the workflow.</li>
+<li>Pick this when cost and latency thresholds must be first-class assertion types alongside quality.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>prompt eval CLI</li>
+<li>LLM test harness</li>
+<li>prompt regression suite</li>
+<li>prompt A/B testing</li>
+<li>YAML LLM tests</li>
+<li>promptfoo redteam</li>
+<li>llm-rubric grader</li>
+<li>assertion-based LLM testing</li>
+<li>LLM CI/CD gate</li>
+<li>prompt engineering toolkit</li>
+<li>side-by-side LLM viewer</li>
+<li>node-based LLM evaluator</li>
 </ul>
 
                     </main>

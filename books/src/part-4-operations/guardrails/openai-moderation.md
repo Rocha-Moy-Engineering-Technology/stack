@@ -4,7 +4,7 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Guardrails & Safety |
+| Group | Guardrails |
 | Type | API |
 | Open Source | No |
 | GitHub | N/A |
@@ -540,3 +540,94 @@ curl https://api.openai.com/v1/moderations \
 ## Citations
 
 - [1] Moderation Guide - <https://developers.openai.com/api/docs/guides/moderation>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- OpenAI Moderation
+- omni-moderation-latest
+- text-moderation-latest
+- content moderation API
+- harm categories
+- harassment
+- hate
+- self-harm
+- sexual
+- violence
+- illicit
+- multimodal moderation
+- image moderation
+- category scores
+- flagged
+- free API
+- category_applied_input_types
+- base64 image
+- threshold tuning
+- 13 categories
+- moderation endpoint
+- safety classifier
+- content safety filter
+
+### Verb-Noun Tasks
+
+- Classify user-generated text for harmful content
+- Moderate model-generated output before delivery
+- Screen images via URL or base64 data URI
+- Combine text and image in a single moderation request
+- Tune custom thresholds per category using category_scores
+- Pin a dated moderation snapshot for stable scores
+- Batch-moderate a list of messages
+- Add a moderation middleware in an Express server
+- Route flagged content to a human review queue
+- Use moderation as a layer in a multi-guardrail pipeline
+- Detect sexual/minors content in user text
+- Distinguish text-only versus image-applicable categories
+
+### User Intent Phrases
+
+- How do I check if user content violates OpenAI's policy?
+- I need a free safety classifier for chat messages.
+- How do I moderate images for violence or sexual content?
+- Show me OpenAI's harassment and self-harm classifier.
+- Can I set custom thresholds per harm category?
+- How do I combine OpenAI Moderation with Guardrails AI or NeMo Guardrails?
+- Pre-screen user input before sending to gpt-4o.
+- Post-screen the LLM response before showing it to the user.
+- What categories does the omni moderation model cover?
+- How do I send a base64-encoded image to the moderation endpoint?
+
+### Problem Statements
+
+- User-generated content includes hate, harassment, or self-harm.
+- Model outputs occasionally produce violent or sexual content.
+- No free, simple safety classifier for chat applications.
+- Need image safety screening, not just text classification.
+- Pass/fail moderation is too coarse for nuanced platform policies.
+- Moderation scores shift when model snapshots update.
+
+### When to Pick This
+
+- Pick this when you want a free, focused harm-category classifier for text and images.
+- Pick this over Guardrails AI when all you need is harm classification, not structured-output enforcement or re-ask loops.
+- Pick this over NeMo Guardrails when you do not need Colang flows, RAG retrieval rails, or dialog management.
+- Pick this over Lakera when prompt-injection defense, PII detection, and provider-agnostic screening are not required and cost is a constraint.
+- Pick this as one layer in a defense-in-depth stack alongside other guardrails.
+- Pick this when image moderation via the same endpoint is a hard requirement.
+
+### Related Terms and Aliases
+
+- OpenAI moderation endpoint
+- /v1/moderations
+- omni-moderation
+- text-moderation-007
+- harm classification API
+- content policy filter
+- safety classifier
+- image content moderation
+- multimodal safety
+- CSAM detection (sexual/minors)
+- harassment classifier
+- free content safety API

@@ -5,7 +5,7 @@
 | Field | Value |
 |-------|-------|
 | Name | Pinecone |
-| Group | RAG & Knowledge Retrieval |
+| Group | Vector Databases |
 | Type | API/Infra |
 | Open Source | No |
 | GitHub | N/A |
@@ -343,3 +343,67 @@ results = index.query(
 ## Citations
 
 - [1] [Pinecone Documentation](https://docs.pinecone.io/)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Pinecone, managed vector database, serverless index, pod-based index, dense index, sparse index, hybrid search, namespaces, multitenancy, metadata filtering, integrated embedding, reranking, upsert, top_k, cosine, euclidean, dotproduct, ServerlessSpec, upsert_records, semantic search, lexical search, fully managed, AWS, GCP, Azure
+
+### Verb-Noun Tasks
+
+- Create a serverless index with `ServerlessSpec`
+- Upsert vectors with IDs and metadata
+- Query with `top_k` and a metadata filter
+- Send raw text via integrated embedding (`upsert_records`)
+- Partition tenants via namespaces
+- Combine dense and sparse vectors in a hybrid query
+- Rerank initial retrieval results with a cross-encoder
+- Bulk-import vectors from cloud storage
+- Scope queries to a single namespace for multitenant isolation
+- Use Pinecone as a LangChain or LlamaIndex vector store
+
+### User Intent Phrases
+
+- How do I run a vector database without managing infrastructure?
+- How do I scale a vector index automatically based on traffic?
+- How do I isolate per-tenant data inside one index?
+- How do I send raw text and get back search results in one call?
+- How do I combine semantic and keyword search in a single query?
+- How do I add reranking after my initial retrieval?
+- How do I query Pinecone from LangChain or LlamaIndex?
+- How do I filter vector search by category, date, or source?
+- How do I keep low-latency guarantees with pod-based deployment?
+
+### Problem Statements
+
+- Running and scaling a vector database is operationally expensive
+- Building an embedding pipeline plus a vector store is two integrations
+- Multitenant data isolation usually requires one index per tenant
+- Vector results alone miss exact-keyword matches
+- Initial top-k retrieval is not precise enough for RAG
+- Self-hosted vector DBs require GPU/HNSW tuning expertise
+
+### When to Pick This
+
+- Pick this when you want zero-ops, fully managed vector search and accept managed-cloud-only
+- Pick this over Weaviate / Qdrant / Milvus / pgvector when you do not want to manage infrastructure at all
+- Pick this when integrated embedding (text in, results out) eliminates the need for a separate embedding service
+- Pick this when serverless auto-scaling and usage-based billing fit your traffic shape
+- Pick this when namespaces give you multitenancy without per-tenant indexes
+- Skip this when you need self-hosting, air-gapped deployment, or strict data-sovereignty controls
+
+### Related Terms and Aliases
+
+- Managed vector DB
+- Serverless vector index
+- Pod-based index
+- Vector store
+- Namespace (Pinecone)
+- Integrated embedding
+- Hybrid search (dense + sparse)
+- Pinecone Assistant
+- ServerlessSpec
+- Cross-encoder reranker

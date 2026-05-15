@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Workflow Orchestration &amp; Automation</td></tr>
+<tr><td>Group</td><td>Workflow Orchestration</td></tr>
 <tr><td>Type</td><td>UI</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/node-red/node-red">https://github.com/node-red/node-red</a></td></tr>
-<tr><td>Stars</td><td>22816</td></tr>
+<tr><td>Stars</td><td>23130</td></tr>
 <tr><td>Documentation</td><td><a href="https://nodered.org/docs/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -526,6 +526,104 @@ return msg;
 <li>[13] Configuration - <a href="https://nodered.org/docs/user-guide/runtime/configuration">https://nodered.org/docs/user-guide/runtime/configuration</a></li>
 <li>[14] Securing Node-RED - <a href="https://nodered.org/docs/user-guide/runtime/securing-node-red">https://nodered.org/docs/user-guide/runtime/securing-node-red</a></li>
 <li>[15] Node-RED Blog - <a href="https://nodered.org/blog/">https://nodered.org/blog/</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Node-RED</li>
+<li>flow-based programming</li>
+<li>visual editor</li>
+<li>IoT</li>
+<li>MQTT</li>
+<li>Modbus</li>
+<li>OPC-UA</li>
+<li>serial</li>
+<li>WebSocket</li>
+<li>TCP/UDP</li>
+<li>HTTP In / HTTP Response</li>
+<li>nodes</li>
+<li>flows</li>
+<li>wires</li>
+<li>messages</li>
+<li>payload</li>
+<li>context</li>
+<li>subflows</li>
+<li>function node</li>
+<li>JavaScript</li>
+<li>npm</li>
+<li>5000+ community nodes</li>
+<li>Raspberry Pi</li>
+<li>OpenJS Foundation</li>
+<li>FlowFuse</li>
+<li>IBM</li>
+<li>low-code</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Wire nodes together on a browser-based canvas</li>
+<li>Subscribe to MQTT topics and transform payloads</li>
+<li>Build HTTP endpoints with HTTP In / HTTP Response nodes</li>
+<li>Write custom JavaScript in Function nodes</li>
+<li>Persist state with node, flow, and global context</li>
+<li>Schedule flows with Inject nodes (cron expressions)</li>
+<li>Route messages by topic or value with Switch nodes</li>
+<li>Render text with Template nodes (Mustache)</li>
+<li>Install community nodes from npm or Palette Manager</li>
+<li>Bridge IoT devices to cloud REST APIs</li>
+<li>Build subflow modules as installable npm packages</li>
+<li>Secure the editor with adminAuth and HTTPS</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I want a visual programming tool for IoT and home automation.</li>
+<li>How do I bridge MQTT devices to a REST API?</li>
+<li>I need to run a low-code automation tool on a Raspberry Pi.</li>
+<li>How do I create REST endpoints without writing server code?</li>
+<li>I want flow-based programming for hardware integration.</li>
+<li>How do I integrate Modbus / OPC-UA / serial protocols visually?</li>
+<li>What’s a long-lived community tool for industrial automation?</li>
+<li>How do I store state between flow messages?</li>
+<li>I need to use environment variables inside function nodes.</li>
+<li>How do I secure the Node-RED editor for production?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>IoT devices and industrial equipment use protocols (MQTT, Modbus, serial) that mainstream automation tools don’t support.</li>
+<li>We need a low-resource visual tool that runs on a Raspberry Pi.</li>
+<li>Wiring sensors to cloud REST APIs by hand is tedious.</li>
+<li>We want visual debugging of message flow at every step.</li>
+<li>Custom hardware integrations need a flexible JavaScript escape hatch.</li>
+<li>Home automation builders need a free, hackable platform.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this for IoT, hardware, home automation, and protocol-heavy environments where MQTT/Modbus/OPC-UA/serial matter.</li>
+<li>Pick this over n8n when protocol breadth (MQTT, TCP/UDP, serial, WebSocket) outweighs SaaS integration breadth.</li>
+<li>Pick this over Activepieces when low-resource hardware (Raspberry Pi) and event-driven IoT are the focus.</li>
+<li>Pick this over Airflow/Prefect/Temporal when visual, event-driven, low-throughput flows fit better than code-first DAGs.</li>
+<li>Pick this when you want the largest community-node ecosystem (5,000+ npm packages).</li>
+<li>Avoid this for high-throughput message routing (tens of thousands per second) or CPU-intensive operations — Node-RED is single-threaded.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>nodered.org</li>
+<li>FlowFuse (enterprise Node-RED)</li>
+<li>IBM Emerging Technology Services (origin)</li>
+<li>OpenJS Foundation</li>
+<li>node-red-dashboard</li>
+<li>Palette Manager</li>
+<li>Inject / Debug / Function / Change / Switch / Template nodes</li>
+<li>MQTT In / MQTT Out</li>
+<li>HTTP In / HTTP Response</li>
+<li>~/.node-red/</li>
+<li>settings.js</li>
+<li>adminAuth</li>
+<li>httpNodeAuth</li>
+<li>flow-based programming (FBP)</li>
+<li>low-code IoT tool</li>
 </ul>
 
                     </main>

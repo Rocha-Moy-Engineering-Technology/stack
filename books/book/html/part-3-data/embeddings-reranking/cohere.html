@@ -1,0 +1,491 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Cohere - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-3-data/embeddings-reranking/cohere.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="cohere"><a class="header" href="#cohere">Cohere</a></h1>
+<blockquote>
+<p>Hosted embedding/reranking/generation models with multilingual support</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Embeddings &amp; Reranking</td></tr>
+<tr><td>Type</td><td>API/SDK</td></tr>
+<tr><td>Open Source</td><td>No</td></tr>
+<tr><td>GitHub</td><td>N/A</td></tr>
+<tr><td>Stars</td><td>N/A</td></tr>
+<tr><td>Documentation</td><td><a href="https://docs.cohere.com/">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>Cohere offers hosted models across three product lines that matter for AI applications: the <strong>Command</strong> family (text generation and chat), <strong>Embed</strong> (text embeddings), and <strong>Rerank</strong> (relevance scoring for search). While Cohere does run LLMs (Command A, Command R+, Command R7B, vision and reasoning variants), it is most differentiated in the embeddings-and-reranking layer — Cohere’s Rerank API is the de-facto reference reranker in many RAG pipelines and integrates with most vector databases out of the box. [1][2]</p>
+<p>Cohere positions itself as an enterprise AI platform with on-platform deployments via AWS Bedrock and Azure AI Foundry alongside the direct Cohere API. The full SDK is available in Python, TypeScript, Go, and Java. [2]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="command-generation"><a class="header" href="#command-generation">Command (Generation)</a></h3>
+<p>The Command family powers text generation and chat. Highlights from the current lineup:</p>
+<ul>
+<li><strong>command-a-03-2025</strong>: flagship model excelling at tool use, agents, RAG, and multilingual use cases; 256K context, 8K max output. Optimized for high throughput on two-GPU deployments. [3]</li>
+<li><strong>command-a-reasoning-08-2025</strong>: first Cohere reasoning model, “thinks” before generating; 256K context, 32K max output, 23-language coverage. [3]</li>
+<li><strong>command-a-vision-07-2025</strong>: multimodal variant for charts, diagrams, OCR, table understanding, document Q&amp;A; 128K context. [3]</li>
+<li><strong>command-a-translate-08-2025</strong>: state-of-the-art machine translation across 23 languages. [3]</li>
+<li><strong>command-r-plus-08-2024</strong>, <strong>command-r-08-2024</strong>: previous-generation Command R+ / R models, still widely deployed; both support tool use and RAG. [3]</li>
+<li><strong>command-r7b-12-2024</strong>: small, fast model for RAG, tool use, agent loops with multi-step reasoning; 128K context. [3]</li>
+</ul>
+<h3 id="embed-embeddings"><a class="header" href="#embed-embeddings">Embed (Embeddings)</a></h3>
+<p>Cohere’s <code>embed</code> endpoint converts text (and, for some models, images) into dense vectors for similarity search and RAG. Cohere differentiates Embed by:</p>
+<ul>
+<li><strong>Multilingual coverage</strong> across 100+ languages in a single embedding space</li>
+<li><strong>Compression-friendly variants</strong> with configurable embedding sizes</li>
+<li><strong>Image-text embeddings</strong> for multimodal search</li>
+</ul>
+<p>The current generation is the Embed v4 family; consult the models page for the live list. [1][2]</p>
+<h3 id="rerank"><a class="header" href="#rerank">Rerank</a></h3>
+<p>The <code>rerank</code> endpoint scores a query against a list of candidate documents and returns relevance scores. Use it after a fast initial retrieval (BM25 or embedding-based) to refine the top-N candidates. Rerank is Cohere’s most adopted model in RAG pipelines and is integrated natively in LlamaIndex, Haystack, LangChain, Pinecone, Qdrant, Weaviate, and others. [1]</p>
+<h3 id="aya-multilingual"><a class="header" href="#aya-multilingual">Aya (Multilingual)</a></h3>
+<p>The Aya family expands multilingual coverage. <strong>Aya Expanse</strong> covers 23 languages; <strong>Aya Vision</strong> is multimodal (image + text in any of those languages). [3]</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>Cohere’s APIs are stateless HTTP endpoints with API-key auth. The primary endpoints are:</p>
+<ul>
+<li><code>POST /v1/chat</code> — Generation, chat, and tool use (Command models)</li>
+<li><code>POST /v1/embed</code> — Text embeddings</li>
+<li><code>POST /v1/rerank</code> — Reranking</li>
+<li><code>POST /v1/classify</code> — Few-shot text classification</li>
+<li><code>POST /v1/tokenize</code>, <code>/v1/detokenize</code> — Tokenization helpers</li>
+</ul>
+<p>Models are also accessible via AWS Bedrock and Azure AI Foundry with platform-specific model IDs. [2]</p>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<h3 id="tool-use-function-calling"><a class="header" href="#tool-use-function-calling">Tool Use (Function Calling)</a></h3>
+<p>Command models support tool use: pass a list of tool definitions with JSON schemas to <code>/v1/chat</code>, and the model returns either a final assistant message or a <code>tool_calls</code> array. Execute the tools, return results in the next message, and the model completes its response. Tool use is central to Cohere’s agent positioning. [4]</p>
+<h3 id="rag-mode"><a class="header" href="#rag-mode">RAG Mode</a></h3>
+<p>The <code>/v1/chat</code> endpoint supports a <code>documents</code> parameter where you pass retrieved chunks directly with the user’s query. The model is trained to ground its response in the supplied documents and emit per-claim citations pointing back to specific chunks. This is a structured alternative to dropping retrieved content into the prompt manually. [4]</p>
+<h3 id="reranking"><a class="header" href="#reranking">Reranking</a></h3>
+<p>The Rerank API takes a query and a list of candidate documents (or a list of structured records with a <code>rank_fields</code> selector) and returns relevance scores. The reranker is model-agnostic about how candidates were retrieved — it works with BM25 hits, Cohere embeddings, or any other source.</p>
+<h3 id="embedding-input_type-parameter"><a class="header" href="#embedding-input_type-parameter">Embedding <code>input_type</code> Parameter</a></h3>
+<p>The embed endpoint accepts an <code>input_type</code> parameter (<code>search_document</code>, <code>search_query</code>, <code>classification</code>, <code>clustering</code>) so embeddings are tuned for the intended downstream task. Using the correct type at embed-time measurably improves retrieval quality.</p>
+<h3 id="embed-jobs-bulk"><a class="header" href="#embed-jobs-bulk">Embed Jobs (Bulk)</a></h3>
+<p>For large corpora, the Embed Jobs API runs asynchronous batch embedding jobs against files in cloud storage rather than streaming through the synchronous endpoint. Useful for indexing pipelines that embed millions of documents. [5]</p>
+<h3 id="citations-and-grounding"><a class="header" href="#citations-and-grounding">Citations and Grounding</a></h3>
+<p>In RAG mode, the chat response includes structured citations mapping spans of the assistant message back to the supplied documents. This is what makes Cohere’s grounded responses verifiable for enterprise use cases like compliance Q&amp;A. [4]</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="python"><a class="header" href="#python">Python</a></h3>
+<pre><code class="language-bash">pip install cohere
+</code></pre>
+<pre><code class="language-python">import cohere
+co = cohere.ClientV2()   # reads COHERE_API_KEY from env
+</code></pre>
+<h3 id="typescript"><a class="header" href="#typescript">TypeScript</a></h3>
+<pre><code class="language-bash">npm install cohere-ai
+</code></pre>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<h3 id="enterprise-rag"><a class="header" href="#enterprise-rag">Enterprise RAG</a></h3>
+<p>The canonical Cohere stack: Embed for indexing, Rerank for refinement, Command (with <code>documents</code> parameter) for grounded generation with citations. Each layer is a single API call with sensible defaults.</p>
+<h3 id="search-quality-upgrade"><a class="header" href="#search-quality-upgrade">Search Quality Upgrade</a></h3>
+<p>Drop Rerank into an existing keyword-search system (Elasticsearch, OpenSearch, Vespa, Postgres FTS) as a relevance pass. Cohere is one of the most-cited integrations in vector-DB and search-engine RAG tutorials.</p>
+<h3 id="multilingual-customer-support"><a class="header" href="#multilingual-customer-support">Multilingual Customer Support</a></h3>
+<p>Aya Expanse and Command-A-Translate enable single-stack customer-support assistants that handle queries across 23+ languages without separate per-language models.</p>
+<h3 id="tool-using-agents"><a class="header" href="#tool-using-agents">Tool-Using Agents</a></h3>
+<p>Command-A and Command-R+ are strong on tool use; combined with the citations/grounding behavior in RAG mode, they suit agent loops that mix retrieval and tool calls.</p>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="v1chat--generation-and-chat"><a class="header" href="#v1chat--generation-and-chat">/v1/chat — Generation and Chat</a></h3>
+<pre><code class="language-python">response = co.chat(
+    model="command-a-03-2025",
+    messages=[{"role": "user", "content": "What does a reranker do?"}],
+    tools=[...],          # optional, function-calling
+    documents=[...],      # optional, RAG mode with grounded citations
+)
+</code></pre>
+<h3 id="v1embed--embeddings"><a class="header" href="#v1embed--embeddings">/v1/embed — Embeddings</a></h3>
+<pre><code class="language-python">response = co.embed(
+    texts=["one", "two"],
+    model="embed-v4.0",
+    input_type="search_document",   # or "search_query"
+    embedding_types=["float"],
+)
+</code></pre>
+<h3 id="v1rerank--reranking"><a class="header" href="#v1rerank--reranking">/v1/rerank — Reranking</a></h3>
+<pre><code class="language-python">response = co.rerank(
+    query="what is a reranker",
+    documents=["a is...", "b is..."],
+    model="rerank-v3.5",
+    top_n=3,
+)
+</code></pre>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="model-selection"><a class="header" href="#model-selection">Model Selection</a></h3>
+<ul>
+<li><strong>Generation</strong>: start with <code>command-r-08-2024</code> for cost-balanced general use; move to <code>command-a-03-2025</code> for the strongest tool-use/RAG performance; <code>command-a-reasoning-08-2025</code> when you need explicit chain-of-thought.</li>
+<li><strong>Embeddings</strong>: <code>embed-v4.0</code> for general English/multilingual; <code>embed-multilingual-v3.0</code> for budget-sensitive multilingual; check the live models page for current naming.</li>
+<li><strong>Reranking</strong>: <code>rerank-v3.5</code> is the current default.</li>
+</ul>
+<h3 id="cloud-deployments"><a class="header" href="#cloud-deployments">Cloud Deployments</a></h3>
+<p>Cohere is available on AWS Bedrock and Azure AI Foundry. Both expose the same model lineup with platform-specific model IDs and IAM-integrated auth, useful for organizations that need data residency or single-vendor billing. [2]</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="with-vector-databases-pinecone-qdrant-weaviate-pgvector-milvus"><a class="header" href="#with-vector-databases-pinecone-qdrant-weaviate-pgvector-milvus">With Vector Databases (Pinecone, Qdrant, Weaviate, pgvector, Milvus)</a></h3>
+<p>All major vector DBs ship Cohere as a first-class embedding option in their quickstart guides.</p>
+<h3 id="with-rag-frameworks-llamaindex-haystack-langchain"><a class="header" href="#with-rag-frameworks-llamaindex-haystack-langchain">With RAG Frameworks (LlamaIndex, Haystack, LangChain)</a></h3>
+<p>Cohere’s Embed and Rerank classes are pre-built integrations in every major RAG framework, often with <code>cohere.embed</code> / <code>cohere.rerank</code> modules.</p>
+<h3 id="with-hosted-llms-claude-openai-gemini"><a class="header" href="#with-hosted-llms-claude-openai-gemini">With Hosted LLMs (Claude, OpenAI, Gemini)</a></h3>
+<p>It’s common to use Cohere Embed + Rerank for retrieval while delegating final generation to another LLM provider — Cohere’s reranker is provider-agnostic.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="rag-with-citations"><a class="header" href="#rag-with-citations">RAG with Citations</a></h3>
+<pre><code class="language-python">import cohere
+co = cohere.ClientV2()
+
+# Retrieved chunks (output of vector search + rerank)
+chunks = [
+    {"id": "doc-1", "text": "Cohere offers Embed, Rerank, and Command models."},
+    {"id": "doc-2", "text": "Rerank scores relevance between a query and candidate documents."},
+]
+
+response = co.chat(
+    model="command-a-03-2025",
+    messages=[{"role": "user", "content": "What is Cohere's Rerank used for?"}],
+    documents=chunks,
+)
+
+print(response.message.content)
+for citation in response.message.citations or []:
+    print("cite:", citation.start, citation.end, citation.sources)
+</code></pre>
+<h3 id="rerank-after-bm25-retrieval"><a class="header" href="#rerank-after-bm25-retrieval">Rerank After BM25 Retrieval</a></h3>
+<pre><code class="language-python">candidates = bm25_search(query, top_n=100)  # external
+top = co.rerank(
+    query=query,
+    documents=[c["text"] for c in candidates],
+    model="rerank-v3.5",
+    top_n=10,
+).results
+for r in top:
+    print(r.relevance_score, candidates[r.index]["id"])
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<ul>
+<li><strong>Closed-source models</strong>: No open-weights variant for Command, Embed, or Rerank. The Aya open-weights research models are released separately.</li>
+<li><strong>Rate limits</strong>: Per-key request and token limits apply; production deployments often use Bedrock or Azure for higher quotas.</li>
+<li><strong><code>input_type</code> matters</strong>: Same caveat as Voyage — pass <code>search_document</code> vs <code>search_query</code> correctly or retrieval quality degrades.</li>
+<li><strong>RAG-mode <code>documents</code> shape</strong>: For citations to align, supply each retrieved chunk as a discrete object with a stable <code>id</code>. Passing a single concatenated document loses citation granularity.</li>
+<li><strong>Model lifecycle</strong>: Cohere snapshots model versions in their IDs (<code>command-a-03-2025</code>); previous-generation IDs are deprecated on a published timeline — pin versions and watch release notes.</li>
+</ul>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>Command A reasoning (08-2025)</strong>: First reasoning model with 256K context, 32K max output, 23-language coverage</li>
+<li><strong>Command A Vision (07-2025)</strong>: Multimodal Command for charts/diagrams/OCR/document Q&amp;A</li>
+<li><strong>Command A Translate (08-2025)</strong>: SOTA machine translation across 23 languages</li>
+<li><strong>Command A (03-2025)</strong>: 256K context, 150% higher throughput than Command R+</li>
+<li><strong>Rerank v3.5</strong>: Current default reranker</li>
+<li><strong>Aya Expanse / Aya Vision</strong>: Open-weights multilingual research models from Cohere Labs [3]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] Cohere Documentation - <a href="https://docs.cohere.com/">https://docs.cohere.com/</a></li>
+<li>[2] Models Overview - <a href="https://docs.cohere.com/docs/models">https://docs.cohere.com/docs/models</a></li>
+<li>[3] Command Models - <a href="https://docs.cohere.com/docs/command-a">https://docs.cohere.com/docs/command-a</a></li>
+<li>[4] Chat API Reference - <a href="https://docs.cohere.com/reference/chat">https://docs.cohere.com/reference/chat</a></li>
+<li>[5] Embed Jobs API - <a href="https://docs.cohere.com/docs/embed-jobs-api">https://docs.cohere.com/docs/embed-jobs-api</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Cohere, Command, Embed, Rerank, command-a-03-2025, command-a-reasoning, command-a-vision, command-a-translate, command-r-plus, command-r7b, embed-v4, rerank-v3.5, Aya Expanse, Aya Vision, multilingual, 100+ languages, RAG mode, grounded citations, tool use, function calling, AWS Bedrock, Azure AI Foundry, search_document, search_query, Embed Jobs, classify, tokenize</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Embed documents with <code>embed-v4.0</code> and <code>input_type=search_document</code></li>
+<li>Embed a query with <code>input_type=search_query</code></li>
+<li>Rerank candidate documents with <code>rerank-v3.5</code></li>
+<li>Generate grounded responses with the <code>documents</code> parameter</li>
+<li>Emit per-claim citations in RAG mode</li>
+<li>Use tool calling with Command A or Command R+</li>
+<li>Translate across 23 languages with Command A Translate</li>
+<li>Run async batch embedding via the Embed Jobs API</li>
+<li>Deploy Cohere via AWS Bedrock or Azure AI Foundry</li>
+<li>Classify text with few-shot examples</li>
+<li>Build a multilingual customer-support assistant</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I add a reranker to my existing search system?</li>
+<li>How do I produce LLM answers with verifiable per-claim citations?</li>
+<li>Which model is best for multilingual RAG across 100+ languages?</li>
+<li>How do I drop a reranker on top of Elasticsearch BM25 results?</li>
+<li>How do I deploy Cohere through AWS Bedrock for data residency?</li>
+<li>How do I batch-embed millions of documents asynchronously?</li>
+<li>How do I build a tool-using agent with grounded citations?</li>
+<li>Which <code>input_type</code> should I use for retrieval queries vs documents?</li>
+<li>How do I get a single API for Embed + Rerank + grounded chat?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>My LLM answers lack verifiable citations for compliance</li>
+<li>Search quality drops on multilingual or paraphrased queries</li>
+<li>I need a reranker that drops into LangChain/LlamaIndex without custom glue</li>
+<li>Embedding millions of documents through a sync API is too slow</li>
+<li>I want enterprise deployment via AWS Bedrock or Azure</li>
+<li>My current LLM does not support tool use plus grounded RAG citations</li>
+<li>I cannot get per-claim citations from a raw chat API</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when grounded generation with structured per-claim citations is a first-class requirement (compliance, regulated industries)</li>
+<li>Pick this over Voyage when you also want generation (Command) and reranking under one vendor with citations</li>
+<li>Pick this over Jina AI when enterprise deployments (Bedrock, Azure AI Foundry) and Rerank-as-de-facto-reference matter more than web-to-LLM APIs</li>
+<li>Pick this when Rerank is the most-recommended drop-in across vector DBs and RAG frameworks (LlamaIndex, Haystack, LangChain, Pinecone, Qdrant, Weaviate)</li>
+<li>Pick this when 23-language coverage (Aya Expanse, Command A Translate) is needed in a single stack</li>
+<li>Pick this when you need a hosted RAG-mode chat endpoint, not just an embedding+reranker pair</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Cohere AI</li>
+<li>Cohere API</li>
+<li>Command R+</li>
+<li>Rerank API</li>
+<li>de-facto reference reranker</li>
+<li>Grounded generation</li>
+<li>RAG mode</li>
+<li>Embed v4</li>
+<li>Aya (multilingual)</li>
+<li>ClientV2 (Python SDK)</li>
+<li>Bedrock Cohere</li>
+<li>Azure AI Foundry Cohere</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-3-data/embeddings-reranking/voyage-ai.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-3-data/embeddings-reranking/jina-ai.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-3-data/embeddings-reranking/voyage-ai.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-3-data/embeddings-reranking/jina-ai.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

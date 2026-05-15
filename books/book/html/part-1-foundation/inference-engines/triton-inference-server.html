@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Inference Serving</td></tr>
+<tr><td>Group</td><td>Inference Engines</td></tr>
 <tr><td>Type</td><td>SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/triton-inference-server/server">https://github.com/triton-inference-server/server</a></td></tr>
-<tr><td>Stars</td><td>10377</td></tr>
+<tr><td>Stars</td><td>10660</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.nvidia.com/deeplearning/triton-inference-server/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -411,6 +411,68 @@ output = result.as_numpy("output")
 <ul>
 <li>[1] Triton Inference Server Documentation - <a href="https://docs.nvidia.com/deeplearning/triton-inference-server/">https://docs.nvidia.com/deeplearning/triton-inference-server/</a></li>
 <li>[2] Triton Inference Server GitHub - <a href="https://github.com/triton-inference-server/server">https://github.com/triton-inference-server/server</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Triton Inference Server, NVIDIA Triton, tritonserver, TensorRT, ONNX Runtime, LibTorch, OpenVINO backend, RAPIDS FIL, Python backend, dynamic batching, sequence batching, model ensembles, Business Logic Scripting, BLS, decoupled models, repository agents, model repository, config.pbtxt, KServe V2 protocol, multi-framework serving, GPU inference, multi-model concurrency, tritonclient</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Lay out a <code>model_repository/</code> with versioned subfolders and <code>config.pbtxt</code></li>
+<li>Serve TensorRT, PyTorch, ONNX, and Python models concurrently on one GPU</li>
+<li>Configure dynamic batching with preferred batch size and queue delay</li>
+<li>Stand up an HTTP and gRPC inference endpoint with <code>tritonserver</code></li>
+<li>Compose preprocessing → inference → postprocessing as a model ensemble</li>
+<li>Orchestrate multi-model workflows with Business Logic Scripting</li>
+<li>Manage model versions via <code>version_policy</code> and explicit load/unload</li>
+<li>Stream multiple responses with decoupled models</li>
+<li>Hook repository agents for auth/decryption during model load</li>
+<li>Scrape Prometheus metrics for GPU and per-model latency</li>
+<li>Run Triton as a KServe <code>ServingRuntime</code></li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I serve multiple ML frameworks on the same GPU?”</li>
+<li>“What’s NVIDIA’s standard inference server?”</li>
+<li>“How do I deploy a TensorRT model in production?”</li>
+<li>“How do I batch many small inference requests automatically?”</li>
+<li>“I need preprocessing and postprocessing baked into the inference call”</li>
+<li>“How do I serve multiple model versions for A/B tests?”</li>
+<li>“How do I run ONNX, PyTorch, and Python models behind one endpoint?”</li>
+<li>“What inference server has the deepest NVIDIA GPU integration?”</li>
+<li>“How do I get Prometheus metrics out of my inference server?”</li>
+<li>“How do I run inference at the edge with an in-process C API?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Multiple ML frameworks (TF, PyTorch, ONNX, sklearn) all need a uniform serving API</li>
+<li>Per-model microservices waste GPU memory by holding it idle between requests</li>
+<li>Manual batching code in front of a model is fragile and underperforms</li>
+<li>Stateful sequence models lose context when batched naively</li>
+<li>Preprocessing as a separate service adds network hops and latency</li>
+<li>Embedded/edge deployments can’t afford a network call per inference</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when many models from many frameworks must share GPUs</li>
+<li>Pick this over vLLM/SGLang when the workload spans CV, NLP, and tabular ML (not just LLMs)</li>
+<li>Pick this when TensorRT optimization is the performance ceiling</li>
+<li>Pick this when ensembles or BLS keep pre/post-processing in-process</li>
+<li>Pick this when embedded/edge deployment via the in-process C/Java API is required</li>
+<li>Pick this as the runtime backend for KServe on NVIDIA hardware</li>
+<li>Skip this when only LLMs are served — vLLM/SGLang are more LLM-specific</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>TensorRT Inference Server (former name), tritonserver</li>
+<li>NVIDIA Inference Server, NGC Triton container</li>
+<li>KServe V2 / Open Inference Protocol (OIP)</li>
+<li>Triton backend framework, Triton Python backend</li>
+<li>“Multi-framework model server”, “GPU model server”</li>
+<li>Alternative to TorchServe, TensorFlow Serving, BentoML, MLflow Serving</li>
+<li>Not to be confused with OpenAI Triton (GPU kernel DSL)</li>
 </ul>
 
                     </main>

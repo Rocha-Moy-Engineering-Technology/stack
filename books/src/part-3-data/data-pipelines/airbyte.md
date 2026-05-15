@@ -9,7 +9,7 @@
 | Type | API/SDK/Infra |
 | Open Source | yes |
 | GitHub | [airbytehq/airbyte](https://github.com/airbytehq/airbyte) |
-| Stars | 20819 |
+| Stars | 21256 |
 | Docs | [docs.airbyte.com](https://docs.airbyte.com/) |
 
 ## Overview
@@ -322,3 +322,71 @@ curl --request POST \
 - [11] Airbyte Protocol - https://docs.airbyte.com/understanding-airbyte/airbyte-protocol/
 - [12] API Documentation - https://docs.airbyte.com/api-documentation/
 - [13] Connector Development - https://docs.airbyte.com/connector-development/
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+ELT, ETL, data integration, data pipelines, connectors, CDC, change data capture, incremental sync, PyAirbyte, data replication, Airbyte Protocol, Airbyte Cloud, Self-Managed Enterprise, Connector Builder, Low-Code CDK, data warehouse, data lake, reverse ETL, sources, destinations, streams, sync modes, typing and deduping, Destinations V2, Temporal scheduling, Terraform provider, schema propagation, namespace, dbt transformation, data activation
+
+### Verb-Noun Tasks
+
+- Replicate PostgreSQL/MySQL/MongoDB databases via CDC to Snowflake or BigQuery
+- Load Salesforce, HubSpot, and Stripe data into a data warehouse
+- Configure incremental Append + Deduped sync with primary-key deduplication
+- Build a custom HTTP API source connector with the Low-Code CDK
+- Trigger Airbyte syncs from Apache Airflow, Dagster, or Prefect
+- Extract data into Python with PyAirbyte for RAG preparation
+- Deploy Airbyte on Kubernetes with Helm and external Postgres
+- Manage sources, destinations, and connections via the REST API
+- Provision Airbyte resources as infrastructure-as-code with Terraform
+- Schedule syncs with CRON expressions or manual triggering
+- Run post-load dbt transformations on synced data
+- Handle source schema changes with automatic propagation
+
+### User Intent Phrases
+
+- How do I sync a PostgreSQL database to BigQuery using change data capture?
+- What is the fastest way to consolidate SaaS data into Snowflake?
+- How can I build a custom Airbyte connector for a REST API without writing Python?
+- How do I run Airbyte locally for prototyping a data pipeline?
+- What sync mode should I use to incrementally load new records and deduplicate?
+- How do I use PyAirbyte to pull GitHub data into a Jupyter notebook for ML?
+- How do I deploy Airbyte to a Kubernetes cluster in production?
+- How can I trigger an Airbyte connection from Airflow on a schedule?
+- How do I manage Airbyte sources and destinations with Terraform?
+- What are the differences between Self-Managed Core, Enterprise, and Airbyte Cloud?
+
+### Problem Statements
+
+- Hundreds of SaaS tools each ship data in different shapes, with no unified way to consolidate them
+- Hand-rolling database replication with CDC requires deep expertise in transaction logs
+- Schema drift in source systems silently breaks downstream pipelines
+- Adding a new SaaS source to an existing warehouse takes weeks of bespoke engineering
+- Real-time replication is not always required, but resumable, checkpointed batch syncs are
+- Custom connector code is hard to maintain across upgrades and dependency changes
+- Pipeline configurations live in disparate places and are hard to version-control
+
+### When to Pick This
+
+- Pick this when you need to move structured data between systems (databases, APIs, SaaS, warehouses) rather than parse documents — Unstructured is the right choice for PDFs, DOCX, and unstructured files
+- Pick this when you want 600+ pre-built connectors instead of writing custom extractors
+- Pick this when you need log-based CDC from PostgreSQL/MySQL/MongoDB into a warehouse
+- Pick this when you want infrastructure-as-code pipeline management via Terraform
+- Pick this when you need to combine ELT into a warehouse with reverse-ETL data activation back to operational tools
+- Pick this when batch/scheduled replication is acceptable and continuous streaming is not required
+- Pick this when you want a no-code UI plus REST API plus SDKs in the same platform
+
+### Related Terms and Aliases
+
+- ELT platform, ETL platform, data integration platform
+- Open-source Fivetran alternative
+- Connector Development Kit (CDK), Low-Code CDK, Python CDK
+- PyAirbyte (embedded Python library)
+- Change Data Capture (CDC), log-based replication
+- Destinations V2, Direct-Load Tables
+- Reverse ETL, data activation
+- Airbyte Protocol (JSON-RPC over STDIN/STDOUT)
+- Honchopkin / Honcho — n/a; uses Temporal for scheduling

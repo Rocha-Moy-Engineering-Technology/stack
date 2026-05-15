@@ -7,11 +7,18 @@
 
 # Part I: Foundation and Infrastructure
 
+- [Part I Overview](part-1-foundation/overview.md)
+
 ## LLM Providers
 
 - [OpenAI](part-1-foundation/llm-providers/openai.md)
 - [Gemini](part-1-foundation/llm-providers/gemini.md)
 - [Claude](part-1-foundation/llm-providers/claude.md)
+
+## Hosted Inference APIs
+
+- [Groq](part-1-foundation/hosted-inference-apis/groq.md)
+- [Cerebras](part-1-foundation/hosted-inference-apis/cerebras.md)
 
 ## Inference Engines
 
@@ -21,20 +28,12 @@
 - [KServe](part-1-foundation/inference-engines/kserve.md)
 - [Triton Inference Server](part-1-foundation/inference-engines/triton-inference-server.md)
 - [BentoML](part-1-foundation/inference-engines/bentoml.md)
-- [Ollama](part-1-foundation/inference-engines/ollama.md)
-- [LM Studio](part-1-foundation/inference-engines/lm-studio.md)
+- [Hugging Face Transformers](part-1-foundation/inference-engines/hugging-face-transformers.md)
 
-## GPU Infrastructure
+## Local Model Runtimes
 
-- [Ray](part-1-foundation/gpu-infrastructure/ray.md)
-- [Groq](part-1-foundation/gpu-infrastructure/groq.md)
-- [Cerebras](part-1-foundation/gpu-infrastructure/cerebras.md)
-- [Modal](part-1-foundation/gpu-infrastructure/modal.md)
-- [RunPod](part-1-foundation/gpu-infrastructure/runpod.md)
-- [Vast.ai](part-1-foundation/gpu-infrastructure/vast-ai.md)
-- [Inferless](part-1-foundation/gpu-infrastructure/inferless.md)
-- [Vertex AI](part-1-foundation/gpu-infrastructure/vertex-ai.md)
-- [AWS Bedrock](part-1-foundation/gpu-infrastructure/aws-bedrock.md)
+- [Ollama](part-1-foundation/local-model-runtimes/ollama.md)
+- [LM Studio](part-1-foundation/local-model-runtimes/lm-studio.md)
 
 ## Model Gateways
 
@@ -42,9 +41,24 @@
 - [Portkey](part-1-foundation/model-gateways/portkey.md)
 - [ccapi](part-1-foundation/model-gateways/ccapi.md)
 
+## Compute & GPU Infrastructure
+
+- [Ray](part-1-foundation/compute-gpu-infrastructure/ray.md)
+- [Modal](part-1-foundation/compute-gpu-infrastructure/modal.md)
+- [RunPod](part-1-foundation/compute-gpu-infrastructure/runpod.md)
+- [Vast.ai](part-1-foundation/compute-gpu-infrastructure/vast-ai.md)
+- [Inferless](part-1-foundation/compute-gpu-infrastructure/inferless.md)
+
+## Managed AI Platforms
+
+- [Vertex AI](part-1-foundation/managed-ai-platforms/vertex-ai.md)
+- [AWS Bedrock](part-1-foundation/managed-ai-platforms/aws-bedrock.md)
+
 ---
 
 # Part II: Application Development
+
+- [Part II Overview](part-2-application/overview.md)
 
 ## Agent Frameworks
 
@@ -57,11 +71,18 @@
 - [smolagents](part-2-application/agent-frameworks/smolagents.md)
 - [Pydantic AI](part-2-application/agent-frameworks/pydantic-ai.md)
 
-## RAG Frameworks
+## Agent Protocols
 
-- [Haystack](part-2-application/rag-frameworks/haystack.md)
-- [LlamaIndex](part-2-application/rag-frameworks/llamaindex.md)
-- [GraphRAG](part-2-application/rag-frameworks/graphrag.md)
+- [MCP](part-2-application/agent-protocols/mcp.md)
+- [A2A](part-2-application/agent-protocols/a2a.md)
+
+## Agent Runtimes & Sandboxes
+
+- [E2B](part-2-application/agent-runtimes-sandboxes/e2b.md)
+
+## Browser Automation
+
+- [Browserbase](part-2-application/browser-automation/browserbase.md)
 
 ## Structured Generation
 
@@ -80,6 +101,20 @@
 
 # Part III: Data and Models
 
+- [Part III Overview](part-3-data/overview.md)
+
+## RAG Frameworks
+
+- [Haystack](part-3-data/rag-frameworks/haystack.md)
+- [LlamaIndex](part-3-data/rag-frameworks/llamaindex.md)
+- [GraphRAG](part-3-data/rag-frameworks/graphrag.md)
+
+## Embeddings & Reranking
+
+- [Voyage AI](part-3-data/embeddings-reranking/voyage-ai.md)
+- [Cohere](part-3-data/embeddings-reranking/cohere.md)
+- [Jina AI](part-3-data/embeddings-reranking/jina-ai.md)
+
 ## Vector Databases
 
 - [pgvector](part-3-data/vector-databases/pgvector.md)
@@ -95,7 +130,6 @@
 
 ## Fine-tuning
 
-- [Hugging Face Transformers](part-3-data/fine-tuning/hugging-face-transformers.md)
 - [PEFT](part-3-data/fine-tuning/peft.md)
 - [Unsloth](part-3-data/fine-tuning/unsloth.md)
 - [Axolotl](part-3-data/fine-tuning/axolotl.md)
@@ -107,6 +141,8 @@
 ---
 
 # Part IV: Operations and Quality
+
+- [Part IV Overview](part-4-operations/overview.md)
 
 ## Guardrails
 
@@ -126,7 +162,7 @@
 
 - [LangSmith](part-4-operations/observability/langsmith.md)
 - [Arize Phoenix](part-4-operations/observability/arize-phoenix.md)
-- [Weights and Biases](part-4-operations/observability/weights-and-biases.md)
+- [Weights & Biases](part-4-operations/observability/weights-and-biases.md)
 - [Helicone](part-4-operations/observability/helicone.md)
 - [Langfuse](part-4-operations/observability/langfuse.md)
 

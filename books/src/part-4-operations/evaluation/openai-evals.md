@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Evaluation & Testing |
+| Group | Evaluation |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/openai/evals](https://github.com/openai/evals) |
-| Stars | 17876 |
+| Stars | 18461 |
 | Documentation | [Official Docs](https://developers.openai.com/api/docs/guides/evals) |
 
 ## Overview
@@ -518,3 +518,96 @@ The OpenAI Evals ecosystem has evolved through two major phases. The open-source
 - [4] [OpenAI Graders API Reference](https://platform.openai.com/docs/api-reference/graders)
 - [5] [OpenAI Evals GitHub Repository](https://github.com/openai/evals)
 - [6] [Create Eval API Reference](https://developers.openai.com/api/reference/resources/evals/methods/create)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- OpenAI Evals
+- Evals API
+- eval run
+- string check grader
+- text similarity grader
+- score model grader
+- python grader
+- multi-grader
+- data source config
+- testing criteria
+- JSONL test data
+- BLEU
+- ROUGE
+- METEOR
+- cosine similarity
+- fuzzy_match
+- LLM-as-judge
+- template syntax
+- {{item.*}}
+- {{sample.*}}
+- webhook
+- eval.run.succeeded
+- Weights & Biases
+- sandboxed Python
+- platform.openai.com/evaluations
+
+### Verb-Noun Tasks
+
+- Create an eval with a data source config and testing criteria
+- Upload JSONL test data as a file with purpose evals
+- Run an eval against a specific OpenAI model and prompt template
+- Grade outputs with exact string match
+- Compute BLEU, ROUGE, METEOR, or cosine similarity scores
+- Score open-ended responses with an LLM-as-judge
+- Write a custom Python grader in a sandboxed environment
+- Combine multiple graders with a weighted expression
+- Subscribe to webhook events for eval completion
+- Compare gpt-4.1, gpt-4o, and gpt-4o-mini on the same eval
+- Gate a CI/CD deployment on an eval pass-rate threshold
+- Validate tool-calling outputs with multi-grader
+
+### User Intent Phrases
+
+- How do I create an evaluation suite using OpenAI's Evals API?
+- Test classification accuracy against labeled JSONL data.
+- Score summaries with ROUGE-L through the OpenAI platform.
+- Use an LLM as judge with a structured scoring rubric.
+- Run custom Python grading in OpenAI's sandbox.
+- Compare OpenAI model versions on the same test set.
+- Get a webhook when my eval run completes.
+- Visualize results on platform.openai.com/evaluations.
+- Combine string match and similarity scoring with weights.
+- Embed OpenAI Evals into a CI pipeline with quality gates.
+
+### Problem Statements
+
+- No reference evaluation framework tightly integrated with OpenAI's platform.
+- Need both deterministic and LLM-graded scoring in a single run.
+- Polling for run completion blocks pipelines.
+- Cannot compare OpenAI model snapshots on identical inputs.
+- Custom grading logic requires a safe execution environment.
+- Hard to mix exact-match field checks with text-similarity scoring.
+
+### When to Pick This
+
+- Pick this when you are evaluating OpenAI models and want a managed, dashboard-backed evals service.
+- Pick this over Promptfoo when you want OpenAI's hosted execution, webhooks, and platform dashboard rather than local CLI + YAML.
+- Pick this over DeepEval and Ragas when you do not need multi-provider support and prefer OpenAI's reference grader set (string_check, text_similarity, score_model, python, multi).
+- Pick this when sandboxed Python grading with numpy/scipy/pandas/scikit-learn is required.
+- Pick this when webhook-driven async eval automation fits your deployment pipeline.
+- Pick this when integration with Weights & Biases via the open-source library is part of the workflow.
+
+### Related Terms and Aliases
+
+- openai/evals
+- /v1/evals
+- /v1/evals/{id}/runs
+- evals registry
+- BDD for LLMs
+- LLM benchmark framework
+- score model grading
+- text similarity grading
+- multi-grader composition
+- OpenAI eval dashboard
+- platform.openai.com evaluations
+- sandboxed grader

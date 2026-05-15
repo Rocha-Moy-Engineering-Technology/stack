@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -195,8 +195,8 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/pydantic/pydantic-ai">pydantic/pydantic-ai</a></td></tr>
-<tr><td>Stars</td><td>15015</td></tr>
-<tr><td>Documentation</td><td><a href="https://ai.pydantic.dev/">Official Docs</a></td></tr>
+<tr><td>Stars</td><td>17065</td></tr>
+<tr><td>Documentation</td><td><a href="https://pydantic.dev/docs/ai/overview/">Official Docs</a></td></tr>
 <tr><td>Python Version</td><td>3.10+</td></tr>
 </tbody>
 </table>
@@ -424,6 +424,77 @@ print(result2.data)
 <li>[1] Pydantic AI Documentation - https://ai.pydantic.dev/</li>
 <li>[2] Pydantic AI Installation - https://ai.pydantic.dev/install/</li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>pydantic ai, type-safe agents, structured output, pydantic validation, runcontext, dependency injection, generic agent, result_type, deps_type, @agent.tool, dynamic system prompt, logfire, temporal integration, prefect integration, dbos, durable execution, evals framework, a2a protocol, streamed structured output, automatic retry on validation failure, fastapi-inspired, testmodel, functionmodel</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define an <code>Agent</code> parameterized by <code>deps_type</code> and <code>result_type</code></li>
+<li>Validate LLM responses against a Pydantic model with automatic retry</li>
+<li>Register tools with the <code>@agent.tool</code> decorator and typed <code>RunContext</code></li>
+<li>Inject dependencies (DB clients, API keys) through dataclasses</li>
+<li>Generate dynamic system prompts via <code>@agent.system_prompt</code></li>
+<li>Stream structured output with incremental validation</li>
+<li>Swap LLM providers with a one-line model identifier change</li>
+<li>Plug into Temporal, DBOS, or Prefect for durable long-running runs</li>
+<li>Replace the real model with <code>TestModel</code> in unit tests</li>
+<li>Extract structured data (invoices, resumes) into validated Pydantic models</li>
+<li>Trace agent runs through Pydantic Logfire</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I make LLM output conform to a Pydantic schema?”</li>
+<li>“How do I get type-safe tool calling in Python?”</li>
+<li>“How do I build an agent that retries automatically on validation failure?”</li>
+<li>“How do I inject a database client into my agent’s tools?”</li>
+<li>“How do I unit test an LLM-powered function without calling the real model?”</li>
+<li>“How do I extract structured data from unstructured text?”</li>
+<li>“How do I run a long-running agent that survives crashes using Temporal?”</li>
+<li>“How do I stream a typed structured response from a Pydantic AI agent?”</li>
+<li>“How do I make my LLM app feel like a FastAPI app?”</li>
+<li>“How do I use Logfire to trace LLM calls?”</li>
+<li>“How do I evaluate agent performance with the built-in evals framework?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>LLM output is unvalidated and frequently violates downstream schema contracts</li>
+<li>Tools lack type hints and IDE support, breaking refactors</li>
+<li>Test doubles for LLMs are clunky to swap in for unit tests</li>
+<li>Long-running agents lose progress when the process crashes</li>
+<li>Synchronous <code>run_sync</code> conflicts with already-running event loops in some hosts</li>
+<li>Validation retry loops can drive up token cost when output types are poorly specified</li>
+<li>Need a FastAPI-style developer experience for GenAI applications</li>
+<li>Provider feature parity (structured output, tool calling, streaming) varies and breaks portability</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when type safety and validated structured output are non-negotiable and you want FastAPI-style ergonomics in Python</li>
+<li>Pick this over LangChain when you prefer one tight Pydantic-typed surface to a sprawling ecosystem of loosely typed integrations</li>
+<li>Pick this over LangGraph when single-agent type safety matters more than graph orchestration (and pair with Temporal/Prefect for durability)</li>
+<li>Pick this over CrewAI when you want one typed agent with strict output validation rather than a role-based crew</li>
+<li>Pick this over AutoGen when you do not need multi-agent conversation, just one production-grade typed agent</li>
+<li>Pick this over smolagents when type safety and validation retries are required and a minimal codebase is not the goal</li>
+<li>Pick this over Semantic Kernel when Python-only is acceptable and you want Pydantic models over .NET DI patterns</li>
+<li>Pick this over ADK when you want a provider-neutral typed Python agent without the Google ecosystem orientation</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>FastAPI for LLMs (design ergonomics)</li>
+<li>Pydantic-typed agent</li>
+<li>RunContext</li>
+<li>Dependency injection (DI) for LLM tools</li>
+<li>Logfire (observability)</li>
+<li>Durable execution (Temporal, DBOS, Prefect)</li>
+<li>TestModel / FunctionModel</li>
+<li>Result type / Output type</li>
+<li>A2A (Agent-to-Agent Protocol)</li>
+<li>Self-correcting validation loop</li>
+<li>Streamed structured output</li>
+<li>Evals framework</li>
+</ul>
 
                     </main>
 
@@ -433,7 +504,7 @@ print(result2.data)
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
-                            <a rel="next prefetch" href="../../part-2-application/rag-frameworks/haystack.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="../../part-2-application/agent-protocols/mcp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                             </a>
 
@@ -447,7 +518,7 @@ print(result2.data)
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 
-                    <a rel="next prefetch" href="../../part-2-application/rag-frameworks/haystack.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="../../part-2-application/agent-protocols/mcp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
                     </a>
             </nav>

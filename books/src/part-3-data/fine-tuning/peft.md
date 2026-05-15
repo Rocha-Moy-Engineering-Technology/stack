@@ -9,7 +9,7 @@
 | Type | SDK |
 | Open Source | yes |
 | GitHub | [huggingface/peft](https://github.com/huggingface/peft) |
-| Stars | 20720 |
+| Stars | 21114 |
 | Docs | [huggingface.co/docs/peft](https://huggingface.co/docs/peft/en/index) |
 
 ## Overview
@@ -371,3 +371,71 @@ initialize_lora_eva_weights(model, dataloader)
 - [6] LoRA Developer Guide - https://huggingface.co/docs/peft/en/developer_guides/lora
 - [7] Quantization Guide - https://huggingface.co/docs/peft/en/developer_guides/quantization
 - [8] Installation - https://huggingface.co/docs/peft/en/install
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+PEFT, parameter-efficient fine-tuning, LoRA, DoRA, AdaLoRA, LoHa, LoKr, OFT, BOFT, HRA, MiSS, X-LoRA, Llama-Adapter, Prompt Tuning, Prefix Tuning, P-Tuning, CPT, PiSSA, OLoRA, EVA, CorDA, LoftQ, aLoRA, rsLoRA, adapter swapping, adapter merging, merge_and_unload, mixed-adapter batches, QLoRA, bitsandbytes, GPTQ, AWQ, AQLM, HQQ, torchao, Diffusers LoRA, Arrow routing
+
+### Verb-Noun Tasks
+
+- Wrap a base model with `get_peft_model(base, LoraConfig(...))`
+- Configure LoRA rank, alpha, target_modules, and `"all-linear"` selection
+- Merge a trained adapter into the base model via `merge_and_unload()`
+- Swap multiple adapters at inference with `set_adapter` and `load_adapter`
+- Combine adapters with `add_weighted_adapter` using SVD, TIES, or DARE
+- Set up QLoRA with `BitsAndBytesConfig` and `prepare_model_for_kbit_training`
+- Initialize LoRA with PiSSA, OLoRA, EVA, CorDA, or LoftQ
+- Apply per-layer rank overrides via `rank_pattern` and `alpha_pattern`
+- Train LoRA adapters on Stable Diffusion / FLUX through Diffusers
+- Run mixed-adapter batches at inference with `adapter_names` per sample
+- Save and load adapters as small artifacts on the Hugging Face Hub
+- Use DoRA to separate weight magnitude and direction for low-rank training
+
+### User Intent Phrases
+
+- How do I fine-tune a model by training only a small number of extra parameters?
+- What is the difference between LoRA, DoRA, and AdaLoRA?
+- How do I run QLoRA with 4-bit bitsandbytes quantization?
+- How do I merge a LoRA adapter into the base model for zero-overhead inference?
+- How do I swap between two trained adapters at inference time?
+- How can I serve different LoRA adapters to different samples in the same batch?
+- What initialization method should I use for LoRA — PiSSA, EVA, or LoftQ?
+- How do I train a LoRA adapter for Stable Diffusion or FLUX?
+- How do I save just the adapter weights instead of the full model?
+- What soft prompting method (Prefix Tuning, P-Tuning, Prompt Tuning) should I use for classification?
+
+### Problem Statements
+
+- Full fine-tuning requires too much GPU memory and storage per task
+- Each task-specific full model costs hundreds of MB to GB; managing dozens is impractical
+- LoRA's vanilla initialization is slow to converge on some tasks
+- Soft prompts are not human-readable and hard to debug
+- Quantization backends differ in which PEFT methods they support for merging
+- Composing multiple adapters into a routed mixture requires coordination across ranks and modules
+- DoRA introduces inference overhead unless adapters are merged
+
+### When to Pick This
+
+- Pick this when you want library-level breadth of adapter methods (15+ PEFT methods including DoRA, OFT, LoHa, LoKr, X-LoRA) inside your own training code — Unsloth wins when you need speed/VRAM optimization, Axolotl wins when you want a YAML-driven training pipeline
+- Pick this when you need adapter swapping, merging, or mixed-adapter batches at inference
+- Pick this when you train across Transformers, Diffusers, and custom PyTorch with one library
+- Pick this when you need fine-grained QLoRA configuration with multiple quantization backends (bitsandbytes, GPTQ, AWQ, AQLM, EETQ, HQQ, torchao)
+- Pick this when you want advanced LoRA initialization (PiSSA, OLoRA, EVA, CorDA, LoftQ)
+- Pick this when soft prompting methods (Prompt Tuning, Prefix Tuning, P-Tuning, CPT) are a requirement
+- Pick this when you want first-class Hugging Face Hub adapter publishing and loading
+
+### Related Terms and Aliases
+
+- huggingface/peft
+- Parameter-Efficient Fine-Tuning, adapter tuning
+- Low-Rank Adaptation, weight-decomposed adaptation
+- QLoRA (Quantized LoRA), 4-bit fine-tuning
+- Adapter hub, adapter merging, adapter swapping
+- LoRA-FA, LoRA+ (specialized optimizers)
+- TIES merging, DARE merging, SVD merging
+- AutoPeftModelForCausalLM, PeftModel
+- Soft prompts, virtual tokens, learnable embeddings

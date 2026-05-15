@@ -9,7 +9,7 @@
 | Type | SDK/Infra |
 | Open Source | yes |
 | GitHub | [milvus-io/milvus](https://github.com/milvus-io/milvus) |
-| Stars | 43127 |
+| Stars | 44292 |
 | Docs | [milvus.io/docs](https://milvus.io/docs) |
 
 ## Overview
@@ -444,3 +444,74 @@ results = client.search(
 - [1] What is Milvus - https://milvus.io/docs/overview.md
 - [2] Quickstart - https://milvus.io/docs/quickstart.md
 - [3] Integrations - https://milvus.io/docs/integrations_overview.md
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Milvus, cloud-native vector database, Milvus Lite, Milvus Standalone, Milvus Distributed, Zilliz Cloud, collections, partitions, partition keys, dynamic schema, FLAT, IVF_FLAT, IVF_PQ, HNSW, SCANN, DiskANN, GPU_CAGRA, GPU_IVF, billion-scale, hot/cold tiering, mmap, multi-tenancy, RBAC, hybrid search, BM25, sparse vectors, binary vectors, multi-vector, consistency levels, etcd, Pulsar, Kafka, MinIO, PyMilvus, Attu
+
+### Verb-Noun Tasks
+
+- Create a collection with auto-generated IDs
+- Configure GPU CAGRA or DiskANN for scale
+- Search billion-vector datasets with DiskANN beyond memory
+- Use partition keys for automatic multi-tenant routing
+- Mix dense, sparse, and binary vector types per collection
+- Run hybrid search across multiple vector fields with weighted fusion
+- Run full-text BM25 search with sparse vectors
+- Tier hot/cold storage automatically
+- Enable mmap to load data beyond available RAM
+- Set consistency level (Strong / Bounded / Session / Eventually)
+- Stream changes via CDC to downstream systems
+- Manage collections through Attu GUI
+- Deploy via Milvus Operator on Kubernetes
+
+### User Intent Phrases
+
+- How do I run vector search on billions of vectors?
+- Which vector index works when data exceeds RAM (DiskANN)?
+- How do I use GPU acceleration for vector search?
+- How do I isolate millions of tenants in one collection?
+- How do I add full-text BM25 search alongside vector search?
+- How do I trade data freshness for query throughput?
+- How do I prototype locally with `MilvusClient("file.db")`?
+- How do I scale from a single-machine deployment to Kubernetes?
+- How do I monitor and debug a Milvus cluster?
+
+### Problem Statements
+
+- HNSW indexes do not fit in RAM at billion scale
+- Single-machine vector DBs cannot scale horizontally
+- Mixed-modality and full-text search require separate systems
+- Multi-tenancy at millions of tenants is hard with collection-per-tenant
+- GPU acceleration is missing from most open-source vector DBs
+- Coordinated distributed deployments need a robust metadata + storage stack
+- Standalone deployments cannot scale without re-deployment
+
+### When to Pick This
+
+- Pick this when you need billion-scale vectors with DiskANN, GPU CAGRA, or GPU_IVF acceleration
+- Pick this over Pinecone when self-hosting on Kubernetes and full architectural control matter
+- Pick this over Qdrant when GPU-accelerated indexes and disk-based billion-scale search beat Rust-based filter performance
+- Pick this over Weaviate when raw scale, dynamic schema, and multi-tier (database / collection / partition / partition-key) tenancy matter most
+- Pick this over pgvector when single-node PostgreSQL limits become a bottleneck
+- Pick this when Pulsar/Kafka log-broker semantics and object-storage (S3/MinIO/GCS) decoupling fit your operational model
+- Use Milvus Lite only for local prototyping (~1M vectors); not for production
+
+### Related Terms and Aliases
+
+- Zilliz Cloud (managed Milvus)
+- PyMilvus
+- DiskANN
+- GPU CAGRA / GPU_IVF / GPU_BRUTE_FORCE
+- Partition key (auto-routing)
+- Dynamic schema
+- Hybrid search / Multi-vector search
+- Attu GUI
+- Birdwatcher CLI
+- Milvus Backup
+- Milvus CDC
+- Mmap file management

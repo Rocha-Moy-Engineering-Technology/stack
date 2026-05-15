@@ -9,7 +9,7 @@
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [pgvector/pgvector](https://github.com/pgvector/pgvector) |
-| Stars | 20,187 |
+| Stars | 21284 |
 | Docs | [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector) |
 
 ## Overview
@@ -584,3 +584,71 @@ CREATE INDEX ON items_cat_2 USING hnsw (embedding vector_cosine_ops);
 - [3] pgvector-python client library - https://github.com/pgvector/pgvector-python
 - [4] pgvector HNSW implementation (hnswutils.c) - https://github.com/pgvector/pgvector/blob/master/src/hnswutils.c
 - [5] pgvector GitHub API metadata - https://api.github.com/repos/pgvector/pgvector
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+pgvector, PostgreSQL extension, vector similarity search, vector(n), halfvec, sparsevec, bit, HNSW, IVFFlat, L2 distance, cosine distance, inner product, L1 distance, Hamming distance, Jaccard distance, ACID transactions, JOIN, WAL replication, iterative scans, binary_quantize, hnsw.ef_search, ivfflat.probes, vector_cosine_ops, halfvec_cosine_ops, RDS, Supabase, Azure Database for PostgreSQL, Cloud SQL, Heroku Postgres
+
+### Verb-Noun Tasks
+
+- Install the extension with `CREATE EXTENSION vector`
+- Create a `vector(1536)` column on an existing table
+- Query nearest neighbors with `<->`, `<=>`, `<#>`, `<+>`, `<~>`, `<%>`
+- Build an HNSW index with `vector_cosine_ops`
+- Build an IVFFlat index with chosen `lists`
+- Tune `hnsw.ef_search` and `ivfflat.probes` per session
+- Enable iterative scans for filtered queries (`strict_order`)
+- Use `halfvec` for half-precision storage (up to 4,000 indexed dims)
+- Use `sparsevec` for TF-IDF / BM25-style sparse vectors
+- Convert dense vectors to binary with `binary_quantize`
+- Combine `tsvector` full-text and vector search via RRF
+- Build subvector or partial indexes for filtered RAG
+- Parallelize index builds with `max_parallel_maintenance_workers`
+
+### User Intent Phrases
+
+- How do I add vector search to my existing PostgreSQL database?
+- How do I join embeddings with relational metadata in one query?
+- How do I do hybrid full-text + vector search inside Postgres?
+- Do I get ACID transactions with my embedding inserts?
+- Can I run vector search on Amazon RDS or Supabase?
+- How do I pick between HNSW and IVFFlat for my dataset?
+- How much memory does an HNSW index need?
+- How do I quantize vectors for storage efficiency?
+- How do I scale beyond a single PostgreSQL node?
+
+### Problem Statements
+
+- Adding a separate vector database doubles my infrastructure and synchronization cost
+- I lose ACID transactions when vectors live outside my main database
+- I cannot JOIN vector results with my relational data efficiently
+- Filtered vector search is slow without iterative scans
+- HNSW indexes consume large amounts of RAM
+- Single-node PostgreSQL caps at hundreds of millions of vectors
+- High-dimensional embeddings exceed the indexed limit (2,000 dims for `vector`)
+
+### When to Pick This
+
+- Pick this when you already run PostgreSQL and want vectors next to relational data with ACID, JOINs, and WAL replication
+- Pick this over Pinecone when you want self-hosted, transactional, and no extra infrastructure
+- Pick this over Weaviate / Qdrant / Milvus when single-node Postgres scale is sufficient and operational simplicity wins
+- Pick this when managed PostgreSQL (RDS, Cloud SQL, Azure, Supabase, Heroku) is already in your stack
+- Pick this when six distance metrics, partial indexes, and SQL-native hybrid (RRF) fit your application
+- Skip this when you need billion-scale distributed vector search; reach for Milvus or Qdrant instead
+
+### Related Terms and Aliases
+
+- pgvector extension
+- pgvector-python
+- vector(n) / halfvec / sparsevec / bit
+- HNSW / IVFFlat
+- Iterative index scan
+- Distance operators (`<->`, `<=>`, `<#>`, `<+>`, `<~>`, `<%>`)
+- vector_cosine_ops
+- binary_quantize / Hamming
+- Postgres-native vector search
+- RDS pgvector / Supabase pgvector / Cloud SQL pgvector

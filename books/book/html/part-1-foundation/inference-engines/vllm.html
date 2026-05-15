@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Inference Serving</td></tr>
+<tr><td>Group</td><td>Inference Engines</td></tr>
 <tr><td>Type</td><td>SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/vllm-project/vllm">https://github.com/vllm-project/vllm</a></td></tr>
-<tr><td>Stars</td><td>70904</td></tr>
+<tr><td>Stars</td><td>80008</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.vllm.ai/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -392,6 +392,70 @@ for output in llm.generate(
 <ul>
 <li>[1] vLLM Documentation - <a href="https://docs.vllm.ai/">https://docs.vllm.ai/</a></li>
 <li>[2] vLLM GitHub Repository - <a href="https://github.com/vllm-project/vllm">https://github.com/vllm-project/vllm</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>vLLM, PagedAttention, continuous batching, KV cache, prefix caching, speculative decoding, OpenAI-compatible server, tensor parallelism, pipeline parallelism, expert parallelism, multi-LoRA, AWQ, GPTQ, FP8 quantization, INT4, BitsAndBytes, GGUF, AsyncLLMEngine, SamplingParams, structured outputs, guided decoding, LLM serving, high-throughput inference, GPU inference, MoE, Mixtral, Llama, Qwen, LLaVA</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Serve a Hugging Face model as an OpenAI-compatible API with <code>vllm serve</code></li>
+<li>Run offline batched inference via <code>LLM.generate(prompts, SamplingParams)</code></li>
+<li>Enable PagedAttention for higher concurrent request throughput</li>
+<li>Turn on <code>--enable-prefix-caching</code> to reuse shared system-prompt KV cache</li>
+<li>Distribute a 70B model across GPUs with <code>--tensor-parallel-size</code></li>
+<li>Serve multiple LoRA adapters off one base model</li>
+<li>Quantize a model with AWQ, GPTQ, FP8, or INT4 for less VRAM</li>
+<li>Run vision-language inference with LLaVA</li>
+<li>Generate guided JSON, regex, or CFG-conformant output</li>
+<li>Expose Prometheus metrics for latency, throughput, and GPU utilization</li>
+<li>Deploy vLLM on Kubernetes, Ray Serve, Modal, or BentoML</li>
+<li>Accelerate decoding with a draft model via speculative decoding</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I self-host Llama 3.1 with an OpenAI-compatible API?”</li>
+<li>“I want maximum tokens-per-second on my A100/H100”</li>
+<li>“How do I serve multiple LoRA fine-tunes from one base model?”</li>
+<li>“What’s the fastest open-source inference engine for production?”</li>
+<li>“How do I run 70B+ models split across multiple GPUs?”</li>
+<li>“I need to reduce VRAM with quantization (AWQ/GPTQ/FP8)”</li>
+<li>“How do I cache system prompts to cut latency?”</li>
+<li>“How do I get OpenAI SDK compatibility without paying OpenAI?”</li>
+<li>“I want to run a multi-modal vision-language model locally”</li>
+<li>“How do I batch-process millions of prompts offline?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Naive HuggingFace <code>generate()</code> wastes GPU memory and underutilizes batching</li>
+<li>KV cache fragmentation limits concurrent requests per GPU</li>
+<li>Repeated system prompts repay full prefill cost every request</li>
+<li>Large models exceed single-GPU memory; sharding is non-trivial</li>
+<li>Multi-tenant fine-tuned models require N copies of the base weights</li>
+<li>Closed APIs cost too much at scale or can’t run private/regulated data on-prem</li>
+<li>JSON-mode output from open models is unreliable without constrained decoding</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when throughput-per-GPU is the dominant cost driver</li>
+<li>Pick this over SGLang when broad hardware support (NVIDIA + AMD + Intel + TPU + Gaudi + Spyre + Ascend) matters</li>
+<li>Pick this over Triton Inference Server when the workload is LLM-only and OpenAI-compat is desired</li>
+<li>Pick this when multi-LoRA serving on one base model is required</li>
+<li>Pick this when you need the broadest open-weight model coverage on HuggingFace</li>
+<li>Pick this over Hugging Face Transformers raw generate() for any production-scale workload</li>
+<li>Pick this over hosted APIs when data residency, custom models, or quantization control matter</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>vLLM project, Sky Computing Lab vLLM</li>
+<li>“OpenAI-compatible local server”</li>
+<li>Paged attention, virtual-memory KV cache</li>
+<li>LLMEngine, AsyncLLMEngine</li>
+<li>Multi-LoRA serving, S-LoRA</li>
+<li>Alternative to SGLang, TGI (Text Generation Inference), TensorRT-LLM, MAX</li>
+<li>Continuous batching = iteration-level scheduling = dynamic batching (LLM context)</li>
 </ul>
 
                     </main>

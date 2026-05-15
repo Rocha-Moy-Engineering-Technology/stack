@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Evaluation &amp; Testing</td></tr>
+<tr><td>Group</td><td>Evaluation</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/confident-ai/deepeval">https://github.com/confident-ai/deepeval</a></td></tr>
-<tr><td>Stars</td><td>13756</td></tr>
+<tr><td>Stars</td><td>15392</td></tr>
 <tr><td>Documentation</td><td><a href="https://deepeval.com/docs/getting-started">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -530,6 +530,102 @@ dataset.save_as(file_type="json", directory="./eval-datasets")
 <li>[2] DeepEval GitHub Repository - https://github.com/confident-ai/deepeval</li>
 <li>[3] DeepTeam Red-Teaming Documentation - https://www.trydeepteam.com/docs/red-teaming-introduction</li>
 <li>[4] Confident AI Platform - https://app.confident-ai.com</li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>DeepEval</li>
+<li>Confident AI</li>
+<li>Pytest for LLMs</li>
+<li>LLMTestCase</li>
+<li>ConversationalTestCase</li>
+<li>MLLMTestCase</li>
+<li>Golden</li>
+<li>EvaluationDataset</li>
+<li>G-Eval</li>
+<li>DAG metric</li>
+<li>Answer Relevancy</li>
+<li>Faithfulness</li>
+<li>Contextual Precision</li>
+<li>Contextual Recall</li>
+<li>Hallucination Metric</li>
+<li>Bias</li>
+<li>Toxicity</li>
+<li>PII Leakage</li>
+<li>Tool Correctness</li>
+<li>Task Completion</li>
+<li>Step Efficiency</li>
+<li>DeepTeam</li>
+<li>red teaming</li>
+<li>@observe decorator</li>
+<li>Synthesizer</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Write a Pytest-style assertion on an LLM output</li>
+<li>Define a custom G-Eval criterion in natural language</li>
+<li>Evaluate a RAG pipeline with Answer Relevancy and Faithfulness</li>
+<li>Score agent tool selection with ToolCorrectnessMetric</li>
+<li>Trace components with @observe and score each span</li>
+<li>Generate Goldens from documents with the Synthesizer</li>
+<li>Apply seven evolution techniques to expand a dataset</li>
+<li>Run a red-team scan with DeepTeam vulnerabilities and attacks</li>
+<li>Compare two model versions with regression testing</li>
+<li>Push and pull datasets from Confident AI cloud</li>
+<li>Evaluate multimodal outputs with MLLMTestCase</li>
+<li>Score multi-turn conversations for Knowledge Retention</li>
+<li>Run async evaluations with a_measure</li>
+<li>Integrate evaluation into CI with deepeval test run</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I want unit tests for my LLM outputs that fail like Pytest.</li>
+<li>How do I evaluate RAG retrieval and generation separately?</li>
+<li>Run a red-team scan for prompt injection on my chatbot.</li>
+<li>Score whether my agent called the right tools with the right arguments.</li>
+<li>Generate a synthetic evaluation dataset from my PDFs.</li>
+<li>Add evaluation to CI/CD using Pytest parametrize.</li>
+<li>Detect bias, toxicity, and PII leakage in model outputs.</li>
+<li>Use Claude as the judge model in DeepEval.</li>
+<li>Evaluate individual pipeline components instead of end-to-end only.</li>
+<li>Compare prompt versions side by side with regression dashboards.</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>LLM regressions slip into production without automated tests.</li>
+<li>Subjective “vibe checks” are not repeatable across releases.</li>
+<li>No standard pattern for testing agent tool-calling behavior.</li>
+<li>Red-team coverage is ad hoc and hard to track over time.</li>
+<li>Component-level quality issues are invisible in end-to-end tests.</li>
+<li>Multimodal outputs (image + text) lack scoring frameworks.</li>
+<li>Bootstrapping eval datasets manually is slow and incomplete.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want Pytest-native LLM evaluation with parametrized test cases and CI integration.</li>
+<li>Pick this over Ragas when the broadest metric catalog (50+ metrics, agentic, conversational, multimodal, safety) and red-teaming matter more than RAG-first synthetic data.</li>
+<li>Pick this over Promptfoo when Python and Pytest are your native ecosystem rather than Node.js and YAML.</li>
+<li>Pick this over OpenAI Evals when you need framework-agnostic evaluation across any model and any provider, not just OpenAI.</li>
+<li>Pick this when red-teaming with DeepTeam (40+ vulnerabilities, 10+ attack methods) is part of the pipeline.</li>
+<li>Pick this when component-level tracing via @observe is needed alongside end-to-end scoring.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Pytest for LLM outputs</li>
+<li>LLM unit testing</li>
+<li>Confident AI DeepEval</li>
+<li>G-Eval criteria</li>
+<li>DeepTeam red teaming</li>
+<li>LLM regression testing</li>
+<li>agent evaluation framework</li>
+<li>conversational evaluation</li>
+<li>multimodal LLM evaluation</li>
+<li>LLM-as-judge metrics</li>
+<li>synthetic dataset generator</li>
+<li>LLM CI/CD gating</li>
 </ul>
 
                     </main>

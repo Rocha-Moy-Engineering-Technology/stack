@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Inference Serving |
+| Group | Inference Engines |
 | Type | SDK/Infra |
 | Open Source | Yes |
 | GitHub | [https://github.com/vllm-project/vllm](https://github.com/vllm-project/vllm) |
-| Stars | 70904 |
+| Stars | 80008 |
 | Documentation | [Official Docs](https://docs.vllm.ai/) |
 
 ## Overview
@@ -267,3 +267,69 @@ for output in llm.generate(
 
 - [1] vLLM Documentation - <https://docs.vllm.ai/>
 - [2] vLLM GitHub Repository - <https://github.com/vllm-project/vllm>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+vLLM, PagedAttention, continuous batching, KV cache, prefix caching, speculative decoding, OpenAI-compatible server, tensor parallelism, pipeline parallelism, expert parallelism, multi-LoRA, AWQ, GPTQ, FP8 quantization, INT4, BitsAndBytes, GGUF, AsyncLLMEngine, SamplingParams, structured outputs, guided decoding, LLM serving, high-throughput inference, GPU inference, MoE, Mixtral, Llama, Qwen, LLaVA
+
+### Verb-Noun Tasks
+
+- Serve a Hugging Face model as an OpenAI-compatible API with `vllm serve`
+- Run offline batched inference via `LLM.generate(prompts, SamplingParams)`
+- Enable PagedAttention for higher concurrent request throughput
+- Turn on `--enable-prefix-caching` to reuse shared system-prompt KV cache
+- Distribute a 70B model across GPUs with `--tensor-parallel-size`
+- Serve multiple LoRA adapters off one base model
+- Quantize a model with AWQ, GPTQ, FP8, or INT4 for less VRAM
+- Run vision-language inference with LLaVA
+- Generate guided JSON, regex, or CFG-conformant output
+- Expose Prometheus metrics for latency, throughput, and GPU utilization
+- Deploy vLLM on Kubernetes, Ray Serve, Modal, or BentoML
+- Accelerate decoding with a draft model via speculative decoding
+
+### User Intent Phrases
+
+- "How do I self-host Llama 3.1 with an OpenAI-compatible API?"
+- "I want maximum tokens-per-second on my A100/H100"
+- "How do I serve multiple LoRA fine-tunes from one base model?"
+- "What's the fastest open-source inference engine for production?"
+- "How do I run 70B+ models split across multiple GPUs?"
+- "I need to reduce VRAM with quantization (AWQ/GPTQ/FP8)"
+- "How do I cache system prompts to cut latency?"
+- "How do I get OpenAI SDK compatibility without paying OpenAI?"
+- "I want to run a multi-modal vision-language model locally"
+- "How do I batch-process millions of prompts offline?"
+
+### Problem Statements
+
+- Naive HuggingFace `generate()` wastes GPU memory and underutilizes batching
+- KV cache fragmentation limits concurrent requests per GPU
+- Repeated system prompts repay full prefill cost every request
+- Large models exceed single-GPU memory; sharding is non-trivial
+- Multi-tenant fine-tuned models require N copies of the base weights
+- Closed APIs cost too much at scale or can't run private/regulated data on-prem
+- JSON-mode output from open models is unreliable without constrained decoding
+
+### When to Pick This
+
+- Pick this when throughput-per-GPU is the dominant cost driver
+- Pick this over SGLang when broad hardware support (NVIDIA + AMD + Intel + TPU + Gaudi + Spyre + Ascend) matters
+- Pick this over Triton Inference Server when the workload is LLM-only and OpenAI-compat is desired
+- Pick this when multi-LoRA serving on one base model is required
+- Pick this when you need the broadest open-weight model coverage on HuggingFace
+- Pick this over Hugging Face Transformers raw generate() for any production-scale workload
+- Pick this over hosted APIs when data residency, custom models, or quantization control matter
+
+### Related Terms and Aliases
+
+- vLLM project, Sky Computing Lab vLLM
+- "OpenAI-compatible local server"
+- Paged attention, virtual-memory KV cache
+- LLMEngine, AsyncLLMEngine
+- Multi-LoRA serving, S-LoRA
+- Alternative to SGLang, TGI (Text Generation Inference), TensorRT-LLM, MAX
+- Continuous batching = iteration-level scheduling = dynamic batching (LLM context)

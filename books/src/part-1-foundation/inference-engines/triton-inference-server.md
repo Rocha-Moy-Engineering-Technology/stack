@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Inference Serving |
+| Group | Inference Engines |
 | Type | SDK/Infra |
 | Open Source | Yes |
 | GitHub | [https://github.com/triton-inference-server/server](https://github.com/triton-inference-server/server) |
-| Stars | 10377 |
+| Stars | 10660 |
 | Documentation | [Official Docs](https://docs.nvidia.com/deeplearning/triton-inference-server/) |
 
 ## Overview
@@ -292,3 +292,67 @@ output = result.as_numpy("output")
 
 - [1] Triton Inference Server Documentation - <https://docs.nvidia.com/deeplearning/triton-inference-server/>
 - [2] Triton Inference Server GitHub - <https://github.com/triton-inference-server/server>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Triton Inference Server, NVIDIA Triton, tritonserver, TensorRT, ONNX Runtime, LibTorch, OpenVINO backend, RAPIDS FIL, Python backend, dynamic batching, sequence batching, model ensembles, Business Logic Scripting, BLS, decoupled models, repository agents, model repository, config.pbtxt, KServe V2 protocol, multi-framework serving, GPU inference, multi-model concurrency, tritonclient
+
+### Verb-Noun Tasks
+
+- Lay out a `model_repository/` with versioned subfolders and `config.pbtxt`
+- Serve TensorRT, PyTorch, ONNX, and Python models concurrently on one GPU
+- Configure dynamic batching with preferred batch size and queue delay
+- Stand up an HTTP and gRPC inference endpoint with `tritonserver`
+- Compose preprocessing → inference → postprocessing as a model ensemble
+- Orchestrate multi-model workflows with Business Logic Scripting
+- Manage model versions via `version_policy` and explicit load/unload
+- Stream multiple responses with decoupled models
+- Hook repository agents for auth/decryption during model load
+- Scrape Prometheus metrics for GPU and per-model latency
+- Run Triton as a KServe `ServingRuntime`
+
+### User Intent Phrases
+
+- "How do I serve multiple ML frameworks on the same GPU?"
+- "What's NVIDIA's standard inference server?"
+- "How do I deploy a TensorRT model in production?"
+- "How do I batch many small inference requests automatically?"
+- "I need preprocessing and postprocessing baked into the inference call"
+- "How do I serve multiple model versions for A/B tests?"
+- "How do I run ONNX, PyTorch, and Python models behind one endpoint?"
+- "What inference server has the deepest NVIDIA GPU integration?"
+- "How do I get Prometheus metrics out of my inference server?"
+- "How do I run inference at the edge with an in-process C API?"
+
+### Problem Statements
+
+- Multiple ML frameworks (TF, PyTorch, ONNX, sklearn) all need a uniform serving API
+- Per-model microservices waste GPU memory by holding it idle between requests
+- Manual batching code in front of a model is fragile and underperforms
+- Stateful sequence models lose context when batched naively
+- Preprocessing as a separate service adds network hops and latency
+- Embedded/edge deployments can't afford a network call per inference
+
+### When to Pick This
+
+- Pick this when many models from many frameworks must share GPUs
+- Pick this over vLLM/SGLang when the workload spans CV, NLP, and tabular ML (not just LLMs)
+- Pick this when TensorRT optimization is the performance ceiling
+- Pick this when ensembles or BLS keep pre/post-processing in-process
+- Pick this when embedded/edge deployment via the in-process C/Java API is required
+- Pick this as the runtime backend for KServe on NVIDIA hardware
+- Skip this when only LLMs are served — vLLM/SGLang are more LLM-specific
+
+### Related Terms and Aliases
+
+- TensorRT Inference Server (former name), tritonserver
+- NVIDIA Inference Server, NGC Triton container
+- KServe V2 / Open Inference Protocol (OIP)
+- Triton backend framework, Triton Python backend
+- "Multi-framework model server", "GPU model server"
+- Alternative to TorchServe, TensorFlow Serving, BentoML, MLflow Serving
+- Not to be confused with OpenAI Triton (GPU kernel DSL)

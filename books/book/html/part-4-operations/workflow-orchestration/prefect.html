@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Workflow Orchestration &amp; Automation</td></tr>
+<tr><td>Group</td><td>Workflow Orchestration</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/PrefectHQ/prefect">https://github.com/PrefectHQ/prefect</a></td></tr>
-<tr><td>Stars</td><td>21652</td></tr>
+<tr><td>Stars</td><td>22402</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.prefect.io/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -779,6 +779,104 @@ def configurable_pipeline():
 <li>Prefect Cloud Documentation – <a href="https://docs.prefect.io/v3/manage/cloud">https://docs.prefect.io/v3/manage/cloud</a></li>
 <li>Prefect REST API Reference – <a href="https://docs.prefect.io/v3/api-ref/rest-api">https://docs.prefect.io/v3/api-ref/rest-api</a></li>
 <li>Prefect Community Slack – <a href="https://prefect.io/slack">https://prefect.io/slack</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Prefect</li>
+<li>@flow</li>
+<li>@task</li>
+<li>Python-native orchestration</li>
+<li>flow run</li>
+<li>task run</li>
+<li>states</li>
+<li>deployments</li>
+<li>work pools</li>
+<li>workers</li>
+<li>blocks</li>
+<li>variables</li>
+<li>transactions</li>
+<li>events</li>
+<li>automations</li>
+<li>task mapping</li>
+<li>cache policies</li>
+<li>ThreadPoolTaskRunner</li>
+<li>DaskTaskRunner</li>
+<li>RayTaskRunner</li>
+<li>Prefect Cloud</li>
+<li>self-hosted</li>
+<li>hybrid execution</li>
+<li>push work pools</li>
+<li>subflows</li>
+<li>async/await</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Turn Python functions into orchestrated flows with <code>@flow</code> / <code>@task</code></li>
+<li>Map a task across an iterable for parallel execution</li>
+<li>Configure cache policies (INPUTS, TASK_SOURCE, RUN_ID, FLOW_PARAMETERS)</li>
+<li>Wrap tasks in transactions with <code>on_rollback</code> hooks</li>
+<li>Emit custom events and trigger automations</li>
+<li>Deploy flows to Docker, Kubernetes, or serverless (ECS, GCR)</li>
+<li>Use Dask or Ray runners for distributed execution</li>
+<li>Store credentials and config in Blocks</li>
+<li>Schedule deployments with cron via prefect.yaml</li>
+<li>Pause flows for human approval and resume from paused state</li>
+<li>Call subflows for hierarchical workflow composition</li>
+<li>Run flows on Prefect Cloud or self-hosted server</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I want Python-native workflow orchestration without YAML or DSL.</li>
+<li>How do I add retries and caching to my Python functions?</li>
+<li>I need dynamic task mapping for hyperparameter sweeps.</li>
+<li>How do I run flows on Kubernetes without managing a worker?</li>
+<li>I want event-driven automations that react to flow states.</li>
+<li>How do I roll back side effects when a flow fails?</li>
+<li>I need human-in-the-loop approval gates in my pipeline.</li>
+<li>How do I integrate Dask or Ray with my orchestration layer?</li>
+<li>What’s a modern alternative to Airflow that uses regular Python?</li>
+<li>How do I run flows hybrid — metadata in the cloud, code on-prem?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Airflow DAGs feel boilerplate-heavy compared to plain Python.</li>
+<li>We need dynamic task creation at runtime, not static DAGs.</li>
+<li>Side effects in pipelines need rollback semantics.</li>
+<li>We want full type hints and async/await, not declarative quirks.</li>
+<li>Hybrid execution is needed so code never leaves our infrastructure.</li>
+<li>Caching should be configurable per task, not global.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want the most Pythonic developer experience for workflow orchestration.</li>
+<li>Pick this over Airflow when you need dynamic task creation, async-native flows, and lighter ceremony.</li>
+<li>Pick this over Temporal when Python-only workflows with state persistence are enough and you don’t need cross-language durable execution.</li>
+<li>Pick this over n8n/Activepieces/Node-RED when you want code-first, not visual builders.</li>
+<li>Pick this when transactions with rollback hooks are required for safe pipelines.</li>
+<li>Pick this when push work pools (serverless on ECS/GCR) eliminate the need for persistent workers.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>prefect.io</li>
+<li>Prefect 3.0</li>
+<li>Prefect Cloud</li>
+<li>Prefect Server</li>
+<li>flow.serve()</li>
+<li>flow.deploy()</li>
+<li>prefect.yaml</li>
+<li>work pool</li>
+<li>push pool</li>
+<li>hybrid execution</li>
+<li>@flow decorator</li>
+<li>@task decorator</li>
+<li>emit_event</li>
+<li>transaction()</li>
+<li>Pythonic workflow framework</li>
+<li>DAG-free orchestration</li>
 </ul>
 
                     </main>

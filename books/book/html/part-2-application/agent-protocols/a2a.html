@@ -1,0 +1,485 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>A2A - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-2-application/agent-protocols/a2a.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="a2a"><a class="header" href="#a2a">A2A</a></h1>
+<blockquote>
+<p>Open protocol for agent-to-agent interoperability across frameworks and vendors</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Agent Protocols</td></tr>
+<tr><td>Type</td><td>SDK</td></tr>
+<tr><td>Open Source</td><td>Yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/a2aproject/A2A">a2aproject/A2A</a></td></tr>
+<tr><td>Stars</td><td>23777</td></tr>
+<tr><td>Documentation</td><td><a href="https://a2a-protocol.org/latest/">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>The Agent2Agent (A2A) Protocol is an open standard for communication and collaboration between AI agents. Originally developed by Google and donated to the Linux Foundation, A2A provides a common language for agent interoperability in environments where agents are built using diverse frameworks (LangGraph, CrewAI, ADK, Semantic Kernel, custom in-house stacks) and operated by different vendors or teams. [1]</p>
+<p>A2A is intentionally complementary to MCP rather than competitive: a typical production agent equips itself with tools via MCP and communicates with other agents via A2A. The protocol uses HTTP plus JSON-RPC and is designed so that an agent’s internal logic — its memory, tools, and reasoning loop — stays opaque to the client. [1]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="actors-client-and-server"><a class="header" href="#actors-client-and-server">Actors: Client and Server</a></h3>
+<p>A2A defines two roles in any interaction:</p>
+<ul>
+<li><strong>A2A Client (Client Agent)</strong>: An application, service, or another AI agent that acts on behalf of a user. The client initiates communication.</li>
+<li><strong>A2A Server (Remote Agent)</strong>: An agent or agentic system that exposes an HTTP endpoint implementing A2A. From the client’s perspective the remote agent is a black box; only its A2A surface is visible. [2]</li>
+</ul>
+<p>Any agent can play either role, and many real systems both serve and consume A2A.</p>
+<h3 id="agent-card"><a class="header" href="#agent-card">Agent Card</a></h3>
+<p>The Agent Card is a JSON metadata document that acts as the “business card” of an A2A agent. It declares the agent’s identity, capabilities, endpoint URL, authentication requirements, and the list of skills it offers. Clients fetch this document during discovery to decide whether and how to interact with the agent. [2]</p>
+<h3 id="skills"><a class="header" href="#skills">Skills</a></h3>
+<p>Each agent exposes a list of named skills with descriptions, input/output schemas, and metadata. Skills are the unit of capability advertised in an Agent Card and the unit of invocation in a task. [3]</p>
+<h3 id="task"><a class="header" href="#task">Task</a></h3>
+<p>A Task is a stateful unit of work initiated by a client and processed by a server. Tasks have unique IDs, defined lifecycles, and support long-running multi-turn operations. The “Life of a Task” concept covers task creation, status transitions, intermediate messages, and final artifacts. [2]</p>
+<h3 id="message-and-part"><a class="header" href="#message-and-part">Message and Part</a></h3>
+<p>A Message is a single turn of communication, carrying a role (<code>user</code> or <code>agent</code>) and a unique <code>messageId</code>. Messages contain one or more Parts:</p>
+<ul>
+<li><strong>Text part</strong>: plain text content</li>
+<li><strong>File part</strong>: a file reference (URL or inline bytes)</li>
+<li><strong>Data part</strong>: structured data (JSON) [2]</li>
+</ul>
+<p>Parts give agents a flexible content envelope for mixing prose, structured outputs, and file attachments in either direction.</p>
+<h3 id="artifact"><a class="header" href="#artifact">Artifact</a></h3>
+<p>An Artifact is a tangible output generated by an agent during a task — for example, a generated document, an image, or a structured-data payload. Artifacts are returned as part of task progress and represent the agent’s concrete deliverables, distinct from the chat-style Message stream. [2]</p>
+<h3 id="agent-response-task-or-message"><a class="header" href="#agent-response-task-or-message">Agent Response: Task or Message</a></h3>
+<p>An A2A server can respond to a request with either a Task (when it accepts a stateful unit of work) or a Message (when a simple single-turn response is enough). This dual mode lets the same protocol serve both quick Q&amp;A interactions and long-running collaborations. [2]</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>A typical A2A exchange:</p>
+<ol>
+<li><strong>Discovery</strong>: Client fetches the server’s Agent Card (often at a well-known URL like <code>/.well-known/agent.json</code>) to learn capabilities, endpoint, and auth requirements.</li>
+<li><strong>Request</strong>: Client sends a request over HTTP+JSON-RPC, specifying a skill and message content. Auth is enforced per the Agent Card’s declared scheme.</li>
+<li><strong>Task creation</strong>: Server accepts the request as either a one-shot Message response or a stateful Task.</li>
+<li><strong>Progress</strong>: For tasks, the server streams updates via Server-Sent Events (SSE), pushes notifications to a client webhook, or makes status available for polling depending on the interaction mechanism agreed.</li>
+<li><strong>Artifacts</strong>: When the task completes, the server returns one or more artifacts plus a final status. [2]</li>
+</ol>
+<h3 id="interaction-mechanisms"><a class="header" href="#interaction-mechanisms">Interaction Mechanisms</a></h3>
+<p>A2A supports three patterns for delivering results, chosen per-skill or per-call:</p>
+<ul>
+<li><strong>Request/Response</strong>: Client sends a request and the server responds inline; for long-running tasks, the client polls the server for status.</li>
+<li><strong>Streaming via SSE</strong>: Client initiates a stream and receives incremental status and intermediate messages over an open HTTP connection.</li>
+<li><strong>Push Notifications</strong>: For very long-running or disconnected scenarios, the server sends asynchronous notifications to a client-provided webhook when task updates occur. [2]</li>
+</ul>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<h3 id="cross-framework-interoperability"><a class="header" href="#cross-framework-interoperability">Cross-Framework Interoperability</a></h3>
+<p>A2A is framework-agnostic: an agent built in Google ADK can call an agent built in LangGraph, CrewAI, or a hand-rolled Python service as long as both speak A2A. This decouples agent composition from any single framework’s runtime. [1]</p>
+<h3 id="opaque-remote-agents"><a class="header" href="#opaque-remote-agents">Opaque Remote Agents</a></h3>
+<p>Servers are deliberately black-boxed. A client does not see the remote agent’s internal tools, memory, or model choice — only its declared skills and the messages/artifacts it returns. This separation makes A2A suitable for multi-organization and multi-vendor agent networks. [2]</p>
+<h3 id="enterprise-features"><a class="header" href="#enterprise-features">Enterprise Features</a></h3>
+<p>The protocol includes provisions for authentication (per the Agent Card’s declared scheme — typically OAuth or API key), authorization, observability hooks, and extension points for organization-specific requirements. [4]</p>
+<h3 id="extensions-and-custom-bindings"><a class="header" href="#extensions-and-custom-bindings">Extensions and Custom Bindings</a></h3>
+<p>A2A supports extensions for adding optional capabilities and custom protocol bindings for transports beyond HTTP+JSON-RPC. Governance for extensions and bindings is documented separately to keep the core protocol small. [5]</p>
+<h3 id="streaming-and-multiturn"><a class="header" href="#streaming-and-multiturn">Streaming and Multiturn</a></h3>
+<p>Multi-turn interactions are first-class: a Task can continue across many messages, with both sides exchanging content until the task reaches a terminal state. Streaming over SSE delivers incremental output to the client as the server generates it. [6]</p>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<h3 id="multi-agent-workflows"><a class="header" href="#multi-agent-workflows">Multi-Agent Workflows</a></h3>
+<p>A coordinator agent decomposes a high-level goal into sub-tasks and delegates each to a specialized remote agent over A2A — a research agent, a coding agent, a data-analysis agent — and assembles their artifacts into a final answer.</p>
+<h3 id="vendor-to-vendor-agent-integration"><a class="header" href="#vendor-to-vendor-agent-integration">Vendor-to-Vendor Agent Integration</a></h3>
+<p>An enterprise’s internal procurement agent calls a vendor’s hosted A2A agent to negotiate or request information. Both sides keep their stacks opaque; only Agent Cards, skills, and messages are exposed.</p>
+<h3 id="human-in-the-loop-workflows"><a class="header" href="#human-in-the-loop-workflows">Human-in-the-Loop Workflows</a></h3>
+<p>A long-running task surfaces status to the client; the client pauses for human approval before letting the remote agent proceed to the next phase, using the Task lifecycle to track approval state.</p>
+<h3 id="agent-marketplaces"><a class="header" href="#agent-marketplaces">Agent Marketplaces</a></h3>
+<p>A registry of Agent Cards lets developers discover and integrate third-party agents the way they’d integrate APIs — but with richer capability descriptions and standard interaction patterns.</p>
+<h2 id="sdks"><a class="header" href="#sdks">SDKs</a></h2>
+<p>The Python SDK is the canonical reference implementation, with examples covering Agent Skills + Agent Card, Agent Executor, server startup, client interaction, and streaming/multiturn flows. SDKs for other languages are in progress in the community. [7]</p>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="agent-card-hosting"><a class="header" href="#agent-card-hosting">Agent Card Hosting</a></h3>
+<p>By convention, an A2A server publishes its Agent Card at a well-known URL on its endpoint host. The JSON document declares:</p>
+<ul>
+<li>Agent identity (name, description, version)</li>
+<li>Service endpoint URL</li>
+<li>Supported A2A capabilities (streaming, push notifications, extensions)</li>
+<li>Authentication requirements</li>
+<li>List of skills with input/output schemas</li>
+</ul>
+<h3 id="authentication"><a class="header" href="#authentication">Authentication</a></h3>
+<p>Authentication is declared in the Agent Card and enforced at the HTTP layer. The protocol does not prescribe a single auth method — OAuth, API keys, mTLS, and custom schemes are all permitted via the Agent Card’s <code>authentication</code> field. [4]</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="with-mcp"><a class="header" href="#with-mcp">With MCP</a></h3>
+<p>The two protocols are complementary: agents equip themselves with tools and data sources via MCP, and communicate with other agents over A2A. A typical agent’s outer surface is A2A; its inner surface (to tools and data) is MCP. [1]</p>
+<h3 id="with-agent-frameworks"><a class="header" href="#with-agent-frameworks">With Agent Frameworks</a></h3>
+<p>Agent frameworks (LangGraph, CrewAI, ADK, Semantic Kernel) can wrap A2A as both a transport for outgoing calls (treating remote A2A agents as remote tools) and as a server interface for exposing their own agents to other systems.</p>
+<h3 id="with-api-gateways"><a class="header" href="#with-api-gateways">With API Gateways</a></h3>
+<p>Because A2A is HTTP+JSON-RPC at the transport layer, standard API gateways, observability stacks, and rate-limiting infrastructure work without protocol-specific adapters.</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="minimal-python-server"><a class="header" href="#minimal-python-server">Minimal Python Server</a></h3>
+<pre><code class="language-python">from a2a.server import AgentServer
+from a2a.types import AgentCard, Skill
+
+card = AgentCard(
+    name="echo-agent",
+    description="Echoes the user's message back",
+    endpoint="https://example.com/a2a",
+    skills=[Skill(name="echo", description="Echo input")],
+)
+
+async def echo_executor(task):
+    text = task.message.parts[0].text
+    yield {"role": "agent", "parts": [{"type": "text", "text": text}]}
+
+server = AgentServer(card=card, executor=echo_executor)
+server.run(port=8000)
+</code></pre>
+<h3 id="minimal-python-client"><a class="header" href="#minimal-python-client">Minimal Python Client</a></h3>
+<pre><code class="language-python">from a2a.client import A2AClient
+
+client = A2AClient.from_url("https://example.com/a2a")
+response = await client.send_message(
+    skill="echo",
+    parts=[{"type": "text", "text": "hello"}],
+)
+print(response.message.parts[0].text)
+</code></pre>
+<p>(Shapes are illustrative; consult the Python SDK reference for the exact API.) [7]</p>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<ul>
+<li><strong>Young protocol</strong>: v1.0 is stable but the surrounding ecosystem (gateways, registries, framework integrations) is still maturing.</li>
+<li><strong>Opacity is a feature, not a bug</strong>: clients cannot inspect the remote agent’s internal reasoning. Logging and tracing must be designed end-to-end across both sides.</li>
+<li><strong>Auth heterogeneity</strong>: Each Agent Card can declare a different auth scheme. Clients that consume many remote agents need to handle multiple schemes uniformly.</li>
+<li><strong>Long-running tasks</strong>: Push notifications require the client to host a webhook; in environments where that’s infeasible, fall back to polling or streaming.</li>
+<li><strong>Discovery is not centralized by default</strong>: Each agent publishes its own Agent Card; registries are a layer above the protocol.</li>
+</ul>
+<h2 id="specification"><a class="header" href="#specification">Specification</a></h2>
+<p>The canonical specification lives at <code>a2a-protocol.org/latest/specification/</code>, with a separate “What’s New in v1.0” document for migration notes. The protocol is governed under the Linux Foundation. [8]</p>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] What is A2A Protocol? - <a href="https://a2a-protocol.org/latest/">https://a2a-protocol.org/latest/</a></li>
+<li>[2] Core Concepts - <a href="https://a2a-protocol.org/latest/topics/key-concepts/">https://a2a-protocol.org/latest/topics/key-concepts/</a></li>
+<li>[3] Agent Skills &amp; Agent Card Tutorial - <a href="https://a2a-protocol.org/latest/tutorials/python/3-agent-skills-and-card/">https://a2a-protocol.org/latest/tutorials/python/3-agent-skills-and-card/</a></li>
+<li>[4] Enterprise Features - <a href="https://a2a-protocol.org/latest/topics/enterprise-ready/">https://a2a-protocol.org/latest/topics/enterprise-ready/</a></li>
+<li>[5] Extensions and Bindings - <a href="https://a2a-protocol.org/latest/topics/extensions/">https://a2a-protocol.org/latest/topics/extensions/</a></li>
+<li>[6] Streaming and Asynchronous Operations - <a href="https://a2a-protocol.org/latest/topics/streaming-and-async/">https://a2a-protocol.org/latest/topics/streaming-and-async/</a></li>
+<li>[7] Python SDK Reference - <a href="https://a2a-protocol.org/latest/sdk/python/api/">https://a2a-protocol.org/latest/sdk/python/api/</a></li>
+<li>[8] A2A Specification Overview - <a href="https://a2a-protocol.org/latest/specification/">https://a2a-protocol.org/latest/specification/</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>A2A</li>
+<li>Agent2Agent protocol</li>
+<li>agent-to-agent</li>
+<li>Agent Card</li>
+<li>Skill</li>
+<li>Task lifecycle</li>
+<li>Message and Part</li>
+<li>Artifact</li>
+<li>JSON-RPC</li>
+<li>HTTP+JSON-RPC</li>
+<li>SSE streaming</li>
+<li>push notifications</li>
+<li>agent interoperability</li>
+<li>cross-framework agents</li>
+<li>multi-vendor agents</li>
+<li>agent black box</li>
+<li>well-known agent URL</li>
+<li>Linux Foundation</li>
+<li>Google A2A</li>
+<li>agent marketplace</li>
+<li>agent discovery</li>
+<li>opaque remote agent</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Publish an Agent Card at a well-known URL</li>
+<li>Declare agent skills with input/output schemas</li>
+<li>Send a task to a remote A2A agent over HTTP+JSON-RPC</li>
+<li>Stream task progress via Server-Sent Events</li>
+<li>Push task updates to a client webhook</li>
+<li>Authenticate an A2A call with OAuth or API key</li>
+<li>Discover a remote agent’s capabilities and auth scheme</li>
+<li>Decompose a goal into sub-tasks across specialist remote agents</li>
+<li>Return artifacts (documents, images, structured data) from a task</li>
+<li>Pause a task for human approval and resume</li>
+<li>Wrap a LangGraph/CrewAI/ADK agent as an A2A server</li>
+<li>Call an A2A agent from a Semantic Kernel client</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I let one agent delegate work to another team’s agent?</li>
+<li>What is the standard protocol for agent-to-agent communication?</li>
+<li>How do I make my LangGraph agent callable from a CrewAI agent?</li>
+<li>How can agents from different vendors collaborate?</li>
+<li>How do I expose an agent as a service that other agents can discover?</li>
+<li>What is an Agent Card and how do I publish one?</li>
+<li>How do I stream long-running task progress between agents?</li>
+<li>How can I add push notifications for an asynchronous agent task?</li>
+<li>How do I build a registry or marketplace of A2A agents?</li>
+<li>How do I authenticate cross-org agent calls?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Agents built in different frameworks cannot natively talk to each other</li>
+<li>No standard way to advertise an agent’s capabilities or auth requirements</li>
+<li>Long-running agent tasks require ad-hoc polling or webhook plumbing</li>
+<li>Multi-vendor agent networks need a black-box interaction model</li>
+<li>Each remote agent may declare a different auth scheme</li>
+<li>Discovery is decentralized; registries are a layer above the protocol</li>
+<li>Logging and tracing must be designed end-to-end across opaque peers</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick A2A when your problem is agent-to-agent delegation across frameworks or vendors (not agent-to-tool — that is MCP)</li>
+<li>Pick A2A when remote agents should remain opaque black boxes — only Agent Cards and skills visible</li>
+<li>Pick A2A when you need long-running, multi-turn tasks with streaming or push notifications</li>
+<li>Pick A2A when building an agent marketplace or registry of third-party agents</li>
+<li>Pick A2A alongside MCP: A2A is the agent’s outer surface, MCP is its inner (tool) surface</li>
+<li>Pick MCP instead when the integration is between an agent and a tool/data source within your own stack</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Agent2Agent Protocol</li>
+<li>A2A v1.0</li>
+<li>agent interop protocol</li>
+<li>agent business card</li>
+<li>task/message/artifact protocol</li>
+<li>agent endpoint</li>
+<li>agent skill manifest</li>
+<li>Linux Foundation A2A</li>
+<li>agent peer protocol</li>
+<li>multi-agent orchestration protocol</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-2-application/agent-protocols/mcp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-2-application/agent-runtimes-sandboxes/e2b.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-2-application/agent-protocols/mcp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-2-application/agent-runtimes-sandboxes/e2b.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

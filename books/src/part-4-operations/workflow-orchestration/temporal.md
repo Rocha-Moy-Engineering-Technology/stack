@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Workflow Orchestration & Automation |
+| Group | Workflow Orchestration |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/temporalio/temporal](https://github.com/temporalio/temporal) |
-| Stars | 18451 |
+| Stars | 20256 |
 | Documentation | [Official Docs](https://docs.temporal.io/) |
 
 ## Overview
@@ -586,3 +586,102 @@ The project maintains an active release cadence with 152 total releases as of Fe
 - [Temporal Self-Hosted Deployment Guide](https://docs.temporal.io/self-hosted-guide/deployment)
 - [Temporal Converters and Encryption](https://docs.temporal.io/develop/typescript/converters-and-encryption)
 - [Temporal Cloud](https://temporal.io/cloud)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Temporal
+- durable execution
+- crash-proof workflows
+- workflow
+- activity
+- worker
+- task queue
+- namespace
+- event history
+- signal
+- query
+- update
+- retry policy
+- heartbeat
+- continue-as-new
+- durable timer
+- child workflow
+- saga pattern
+- workflow replay
+- determinism
+- versioning
+- multi-language SDK
+- Go SDK
+- Python SDK
+- TypeScript SDK
+- Temporal Cloud
+- Cadence
+
+### Verb-Noun Tasks
+
+- Define workflows with `@workflow.defn` and activities with `@activity.defn`
+- Execute activities with retry policies and timeouts
+- Send signals to running workflows
+- Query workflow state synchronously
+- Update workflow state with validation
+- Sleep durable timers from seconds to years
+- Continue-As-New to bound event history
+- Implement saga compensation on partial failures
+- Test workflows with time skipping
+- Replay event histories to validate determinism
+- Encrypt payloads with custom Data Converters
+- Spawn child workflows for hierarchical decomposition
+
+### User Intent Phrases
+
+- I need workflows that survive process crashes and resume exactly where they left off.
+- How do I implement a saga with compensating actions?
+- I want durable timers that last days or years.
+- How do I orchestrate microservices reliably without writing retry boilerplate?
+- I need human-in-the-loop approval gates that wait for signals.
+- How do I write reliable order fulfillment or payment workflows?
+- What's a polyglot durable execution platform (Go, Java, Python, TypeScript, .NET, Ruby, PHP)?
+- How do I version workflow code without breaking in-flight executions?
+- I want to replay production workflows for debugging.
+- How do I test long-running workflows quickly with time skipping?
+
+### Problem Statements
+
+- Distributed transactions break when processes crash mid-flight.
+- Retry logic and state recovery boilerplate is duplicated across services.
+- Cron + queues + state machines is fragile compared to a unified abstraction.
+- Long-running business processes (subscriptions, onboarding) span days or months.
+- Microservice choreography is invisible; orchestration is explicit but lacks tooling.
+- Cross-language teams need one workflow engine that supports all their stacks.
+
+### When to Pick This
+
+- Pick this when business processes must be crash-proof and resumable across hours, days, or years.
+- Pick this over Airflow/Prefect when each workflow instance needs durable per-instance state (orders, onboardings, payments), not scheduled batch DAGs.
+- Pick this over n8n/Activepieces/Node-RED when code-first durability and multi-language SDKs matter.
+- Pick this when saga patterns with explicit compensation are required.
+- Pick this when teams use Go, Java, .NET, or Ruby in addition to Python/TypeScript.
+- Avoid this when workflows are short, schedule-driven batch ETL — Airflow or Prefect are simpler.
+
+### Related Terms and Aliases
+
+- Temporal Technologies
+- Uber Cadence (predecessor)
+- temporal.io
+- Workflow Execution
+- Event History
+- Workflow Task / Activity Task
+- workflow.execute_activity
+- workflow.sleep
+- workflow.continue_as_new
+- @workflow.signal / @workflow.query / @workflow.update
+- Frontend / History / Matching / Worker Service
+- saga orchestration
+- durable function
+- workflow-as-code
+- Temporal Web UI
+

@@ -9,7 +9,7 @@
 | Type | API/SDK |
 | Open Source | yes |
 | GitHub | [letta-ai/letta](https://github.com/letta-ai/letta) |
-| Stars | 21392 |
+| Stars | 22716 |
 | Docs | [docs.letta.com](https://docs.letta.com/) |
 
 ## Overview
@@ -456,3 +456,98 @@ Letta evolved from the **MemGPT** research project (2023), which introduced OS-i
 - [12] MCP Tools - https://docs.letta.com/guides/core-concepts/tools/mcp-tools/
 - [13] Server Tools - https://docs.letta.com/guides/core-concepts/tools/server-tools/
 - [14] Built-in Tools - https://docs.letta.com/guides/core-concepts/tools/builtin-tools/
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Letta
+- MemGPT
+- stateful agents
+- self-modifying memory
+- memory blocks
+- archival memory
+- context hierarchy
+- four-tier context
+- sleep-time agents
+- sleep-time compute
+- shared memory blocks
+- agent operating system
+- pgvector storage
+- PostgreSQL backend
+- AgentFile (.af)
+- Agent Development Environment
+- ADE
+- Letta Code
+- archival_memory_search
+- archival_memory_insert
+- memory_rethink
+- memory_replace
+- memory_insert
+- runs and steps
+- BYOK
+- RBAC
+
+### Verb-Noun Tasks
+
+- Create a stateful agent with persistent memory blocks
+- Let an agent self-modify its memory via `memory_rethink` / `memory_replace` / `memory_insert`
+- Insert facts into archival memory with optional tags
+- Search archival memory semantically with `archival_memory_search`
+- Share memory blocks across multiple agents for real-time coordination
+- Enable sleep-time agents for background memory consolidation
+- Export and import full agent state as a `.af` AgentFile
+- Hot-swap LLM providers per-agent (OpenAI, Anthropic, Bedrock, Ollama)
+- Build supervisor/worker patterns via shared task-board blocks
+- Run Letta self-hosted on Docker with pgvector
+- Open files (up to 5MB) inside the agent's context with `open`/`close`/`grep`/`semantic_search`
+- Manage agents through the web-based Agent Development Environment
+
+### User Intent Phrases
+
+- How do I build agents that remember everything across sessions?
+- How can an agent edit its own memory autonomously?
+- I want an agent that learns and self-improves over time
+- How do I share memory between multiple agents?
+- How can background agents consolidate memories asynchronously?
+- What is the modern descendant of MemGPT?
+- How do I package an entire agent (memory, tools, prompts) into one file?
+- How do I build a coding agent that remembers my codebase across sessions?
+- How do I run a stateful agent platform self-hosted?
+- How does Letta differ from a simple vector memory layer?
+
+### Problem Statements
+
+- LLM apps treat each interaction as isolated; agents don't grow
+- Vector-only memory layers cannot represent self-modifying state and reasoning traces
+- Context window limits force ad-hoc retrieval architectures
+- Sleep-time agents are experimental and may be unstable
+- Memory blocks consume context window space; very large blocks degrade performance
+- Concurrent `memory_rethink` on shared blocks is unsafe (last-writer-wins)
+- Docker deployments must explicitly specify embedding models (hosted handles automatically)
+- ADE requires HTTPS except localhost
+
+### When to Pick This
+
+- Pick Letta when agents need to autonomously read, write, and reorganize their own memory (true stateful agent OS, not just a memory layer)
+- Pick Letta when you want a four-tier context hierarchy (blocks, files, archival, external RAG) with sleep-time background consolidation
+- Pick Letta when multi-agent coordination should happen via shared memory blocks rather than message passing
+- Pick Letta when you want to serialize and ship a complete agent (memory + tools + prompts) as a portable `.af` file
+- Pick Mem0 instead when you need a simple memory layer with broad framework integrations and turnkey extraction
+- Pick Zep instead when facts change over time and you need temporal knowledge graphs with fact invalidation
+
+### Related Terms and Aliases
+
+- MemGPT descendant
+- stateful agent platform
+- agent OS
+- self-editing memory
+- LLM virtual memory
+- agent paging
+- memory-first coding agent
+- Letta Code
+- AgentFile standard
+- sleep-time compute
+- arxiv 2504.13171

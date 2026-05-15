@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>API Gateways &amp; Model Routing</td></tr>
+<tr><td>Group</td><td>Model Gateways</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/BerriAI/litellm">BerriAI/litellm</a></td></tr>
-<tr><td>Stars</td><td>36571</td></tr>
+<tr><td>Stars</td><td>46980</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.litellm.ai/docs/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -597,12 +597,110 @@ for chunk in response:
 <li>[7] Observability Callbacks - <a href="https://docs.litellm.ai/docs/observability/callbacks">https://docs.litellm.ai/docs/observability/callbacks</a></li>
 <li>[8] Proxy Configuration - <a href="https://docs.litellm.ai/docs/proxy/configs">https://docs.litellm.ai/docs/proxy/configs</a></li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>litellm</li>
+<li>BerriAI</li>
+<li>llm gateway</li>
+<li>model gateway</li>
+<li>unified llm api</li>
+<li>openai-compatible proxy</li>
+<li>completion()</li>
+<li>provider prefix</li>
+<li>router</li>
+<li>virtual keys</li>
+<li>spend tracking</li>
+<li>fallback routing</li>
+<li>exception mapping</li>
+<li>cost-based routing</li>
+<li>latency-based routing</li>
+<li>usage-based routing</li>
+<li>least-busy routing</li>
+<li>simple-shuffle</li>
+<li>cooldown</li>
+<li>multi-tenant llm</li>
+<li>master key</li>
+<li>proxy server</li>
+<li>credential list</li>
+<li>wildcard model</li>
+<li>langfuse callback</li>
+<li>helicone callback</li>
+<li>drop_params</li>
+<li>100+ providers</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Call OpenAI, Anthropic, Azure, and Vertex AI through one <code>completion()</code> function</li>
+<li>Map provider exceptions to OpenAI exception types</li>
+<li>Configure retry-and-fallback chains across multiple providers</li>
+<li>Issue virtual API keys with per-key budgets and rate limits</li>
+<li>Route traffic across deployments using cost, latency, or usage strategies</li>
+<li>Track per-team and per-user spend in PostgreSQL</li>
+<li>Push request telemetry to Langfuse, Helicone, LangSmith, or Arize</li>
+<li>Deploy a centralized LLM gateway behind an OpenAI-compatible URL</li>
+<li>Define credential lists and reference them across model entries</li>
+<li>Cool down failing deployments automatically</li>
+<li>Override per-token pricing for a custom deployment</li>
+<li>Run the proxy in Docker or Kubernetes with Helm</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I call Anthropic and OpenAI with the same code?</li>
+<li>I want one Python function that works across every LLM provider.</li>
+<li>How do I add automatic failover when OpenAI is down?</li>
+<li>How do I give each team in my company a separate LLM budget?</li>
+<li>How do I issue API keys with spend caps?</li>
+<li>I need to centralize LLM credentials so apps never see raw provider keys.</li>
+<li>How do I track LLM costs per user?</li>
+<li>Can I route the cheapest available model automatically?</li>
+<li>How do I add Langfuse tracing to every LLM call without changing my agent code?</li>
+<li>How do I run an OpenAI-compatible gateway in front of 10 different providers?</li>
+<li>How do I load-balance across multiple Azure OpenAI deployments?</li>
+<li>I want exponential backoff and retries that work the same way across providers.</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Each LLM provider has a different SDK and error model and my code is full of branches.</li>
+<li>A single provider outage takes down my product.</li>
+<li>Engineers are leaking provider API keys into repos because there is no central gateway.</li>
+<li>I cannot tell which team is spending how much on LLM tokens.</li>
+<li>I have multiple Azure deployments and no way to load-balance them.</li>
+<li>I am paying for premium models when a cheaper one would have answered.</li>
+<li>Observability tools require per-provider integration work I keep redoing.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want an open-source, developer-driven gateway with a Python SDK you can embed (vs Portkey’s managed-first model).</li>
+<li>Pick this when you need cost-based, latency-based, and usage-based routing strategies out of the box.</li>
+<li>Pick this when you want virtual keys with PostgreSQL-backed spend tracking you self-host.</li>
+<li>Pick this when most of your stack is Python and a single in-process function is preferable to a network hop.</li>
+<li>Pick this when you need text generation, embeddings, and image generation, but not music or video (vs ccapi).</li>
+<li>Pick this when you want declarative observability callbacks instead of building each integration yourself.</li>
+<li>Pick this when 100+ providers and broad community coverage matter more than enterprise routing primitives.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>llm proxy</li>
+<li>llm router</li>
+<li>multi-provider sdk</li>
+<li>model abstraction layer</li>
+<li>openai shim</li>
+<li>llm cost tracking</li>
+<li>llm spend management</li>
+<li>failover gateway</li>
+<li>llm load balancer</li>
+<li>BerriAI proxy</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../part-1-foundation/gpu-infrastructure/aws-bedrock.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../part-1-foundation/local-model-runtimes/lm-studio.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
@@ -616,7 +714,7 @@ for chunk in response:
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../part-1-foundation/gpu-infrastructure/aws-bedrock.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../part-1-foundation/local-model-runtimes/lm-studio.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 

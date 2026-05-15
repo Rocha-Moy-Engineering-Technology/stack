@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Workflow Orchestration & Automation |
+| Group | Workflow Orchestration |
 | Type | API/SDK/UI |
 | Open Source | Yes |
 | GitHub | [https://github.com/n8n-io/n8n](https://github.com/n8n-io/n8n) |
-| Stars | 175811 |
+| Stars | 187836 |
 | Documentation | [Official Docs](https://docs.n8n.io/) |
 
 ## Overview
@@ -507,3 +507,103 @@ gcloud run deploy n8n \
 - [n8n Integrations Library](https://docs.n8n.io/integrations/)
 - [n8n AI and LangChain Documentation](https://docs.n8n.io/advanced-ai/)
 - [n8n Configuration Reference](https://docs.n8n.io/hosting/configuration/)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- n8n
+- nodemation
+- visual workflow builder
+- low-code
+- fair-code
+- Sustainable Use License
+- nodes
+- triggers
+- actions
+- core nodes
+- cluster nodes
+- Code node
+- JavaScript
+- Python
+- 400+ integrations
+- credentials
+- expressions
+- JMESPath
+- AI Agent node
+- LangChain integration
+- queue mode
+- Redis
+- task runners
+- webhook trigger
+- schedule trigger
+- self-hosted
+- Vue.js editor
+- RBAC
+- SAML/OIDC SSO
+
+### Verb-Noun Tasks
+
+- Drag-and-drop nodes to build automation flows
+- Trigger workflows via webhook, schedule, or manual run
+- Write custom JavaScript or Python in Code nodes
+- Map data between nodes with `{{ }}` expressions and JMESPath
+- Integrate with 400+ services (Slack, GitHub, Sheets, Salesforce, etc.)
+- Build AI agents with LangChain cluster nodes
+- Scale horizontally with Redis-backed queue mode
+- Sync workflows to Git for version control
+- Promote workflows across dev/staging/prod environments
+- Manage secrets via external vaults (Vault, AWS, Azure)
+- Enforce RBAC and enterprise SSO
+- Expose Prometheus metrics for monitoring
+
+### User Intent Phrases
+
+- I want a visual workflow builder that lets me drop into code when I need to.
+- How do I automate Slack notifications when a GitHub issue is opened?
+- I need to bridge no-code and JavaScript/Python in the same flow.
+- How do I run AI agents inside a visual builder?
+- I want to self-host an n8n instance on Kubernetes or Cloud Run.
+- How do I scale n8n horizontally with worker instances?
+- I need a Zapier alternative I can host myself.
+- How do I version-control my workflows in Git?
+- I want LangChain agents integrated into business automation flows.
+- How do I expose webhook endpoints for third-party services?
+
+### Problem Statements
+
+- Pure code orchestrators are overkill for simple business automations.
+- Pure no-code tools hit walls when transformations get complex.
+- Zapier/Make charge per execution and we want flat-rate self-hosting.
+- AI agents are siloed from the rest of business workflows.
+- Manual data entry between SaaS tools wastes hours.
+- Webhook bridges and CRM syncs need quick iteration with debugging.
+
+### When to Pick This
+
+- Pick this when your team is technical but wants visual workflow building with code escape hatches.
+- Pick this over Activepieces when you want a larger ecosystem (400+ integrations) and embedded JS/Python Code nodes with LangChain cluster nodes.
+- Pick this over Node-RED when business automation and SaaS integrations — not IoT protocols — are the primary use case.
+- Pick this over Airflow/Prefect/Temporal when you want a visual+code hybrid, not code-first orchestration.
+- Pick this over fully no-code tools (Zapier, Make) when you need self-hosting and the Code node escape hatch.
+- Pick this when fair-code self-hosting is acceptable (note: Sustainable Use License, not OSI-approved).
+
+### Related Terms and Aliases
+
+- n8n.io
+- n8n-nodes-base
+- N8N_RUNNERS_ENABLED
+- N8N_ENCRYPTION_KEY
+- EXECUTIONS_MODE=queue
+- Bull queue (Redis)
+- workflow automation
+- iPaaS alternative
+- Zapier alternative
+- Make alternative
+- LangChain cluster node
+- AI Agent / Chain / Memory / Tool nodes
+- Execute Workflow node
+- community nodes
+

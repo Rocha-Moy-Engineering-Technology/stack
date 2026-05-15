@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Workflow Orchestration &amp; Automation</td></tr>
+<tr><td>Group</td><td>Workflow Orchestration</td></tr>
 <tr><td>Type</td><td>API/UI</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/activepieces/activepieces">https://github.com/activepieces/activepieces</a></td></tr>
-<tr><td>Stars</td><td>20928</td></tr>
+<tr><td>Stars</td><td>22189</td></tr>
 <tr><td>Documentation</td><td><a href="https://www.activepieces.com/docs/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -464,6 +464,102 @@ npx nx serve-dev activepieces
 <li>[5] <a href="https://www.activepieces.com/docs/embedding/overview">Activepieces Embedding SDK</a></li>
 <li>[6] <a href="https://www.activepieces.com/docs/developers/building-pieces/overview">Activepieces Piece Development</a></li>
 <li>[7] <a href="https://www.activepieces.com/docs/developers/api-reference">Activepieces REST API Reference</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Activepieces</li>
+<li>no-code automation</li>
+<li>open-source</li>
+<li>635+ integrations</li>
+<li>pieces</li>
+<li>flows</li>
+<li>triggers</li>
+<li>actions</li>
+<li>connections</li>
+<li>projects</li>
+<li>flow runs</li>
+<li>visual flow builder</li>
+<li>TypeScript pieces</li>
+<li>npm packages</li>
+<li>Embedding SDK</li>
+<li>white-label</li>
+<li>JWT</li>
+<li>AI pieces</li>
+<li>human-in-the-loop approvals</li>
+<li>MCP server support</li>
+<li>Git Sync</li>
+<li>project releases</li>
+<li>multi-tenancy</li>
+<li>RBAC</li>
+<li>SSO</li>
+<li>audit logging</li>
+<li>PostgreSQL</li>
+<li>Redis</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Build flows with one trigger and many actions</li>
+<li>Install pieces from npm or write custom TypeScript pieces</li>
+<li>Trigger flows via webhook or polling</li>
+<li>Embed the flow builder into a SaaS app via JWT</li>
+<li>Promote flows across environments via Git Sync and project releases</li>
+<li>Pause flows for human approval before continuing</li>
+<li>Call LLMs as standard flow actions (AI pieces)</li>
+<li>Configure multi-tenant projects with RBAC</li>
+<li>Develop custom pieces locally with hot reloading</li>
+<li>Expose REST API for flow management in CI/CD</li>
+<li>Use audit logging for compliance</li>
+<li>Integrate with HashiCorp Vault / AWS Secrets</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I want an open-source no-code automation platform I can self-host.</li>
+<li>How do I embed a flow builder into my SaaS product as a white-label feature?</li>
+<li>I need to write custom integration pieces in TypeScript.</li>
+<li>How do I add LLM calls as standard automation steps?</li>
+<li>I want approval gates in my business workflows.</li>
+<li>How do I version-control flows with Git?</li>
+<li>I need multi-tenant automation with isolated projects.</li>
+<li>What’s an open alternative to Zapier with extensible pieces?</li>
+<li>How do I install community pieces from npm?</li>
+<li>I want MCP server support for AI agents in automations.</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Closed no-code platforms can’t be embedded into our SaaS product.</li>
+<li>Zapier/Make charge per task and don’t allow custom code integrations.</li>
+<li>We need approval workflows for sensitive operations.</li>
+<li>Existing flow tools lack first-class AI/LLM steps.</li>
+<li>Multi-tenant white-labeling requires building from scratch elsewhere.</li>
+<li>Compliance demands audit logs and Git-tracked flow versions.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want a fully open-source no-code automation platform with a permissive license.</li>
+<li>Pick this over n8n when you specifically need a white-label Embedding SDK to embed the flow builder in your SaaS product (paid edition).</li>
+<li>Pick this over Zapier/Make when self-hosting and custom TypeScript pieces are mandatory.</li>
+<li>Pick this over Node-RED when business SaaS automation — not IoT protocols — is the use case.</li>
+<li>Pick this over Airflow/Prefect/Temporal when no-code visual building and 635+ business integrations matter more than code-first orchestration.</li>
+<li>Pick this when human-in-the-loop approval gates and Git Sync project releases align with your release process.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>activepieces.com</li>
+<li>pieces ecosystem</li>
+<li>@activepieces/pieces-framework</li>
+<li>createPiece / createAction / createTrigger</li>
+<li>AP_DB_TYPE / AP_REDIS_TYPE / AP_ENCRYPTION_KEY</li>
+<li>Embedding SDK (JWT)</li>
+<li>project releases</li>
+<li>piece npm package</li>
+<li>workflow automation</li>
+<li>iPaaS</li>
+<li>white-label automation</li>
+<li>MCP-server piece support</li>
 </ul>
 
                     </main>

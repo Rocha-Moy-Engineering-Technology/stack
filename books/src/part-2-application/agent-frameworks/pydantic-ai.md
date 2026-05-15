@@ -9,8 +9,8 @@
 | Type           | SDK                                                          |
 | Open Source    | Yes                                                          |
 | GitHub         | [pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai) |
-| Stars          | 15015                                                        |
-| Documentation  | [Official Docs](https://ai.pydantic.dev/)                    |
+| Stars          | 17065                                                        |
+| Documentation  | [Official Docs](https://pydantic.dev/docs/ai/overview/)                    |
 | Python Version | 3.10+                                                        |
 
 ## Overview
@@ -262,3 +262,76 @@ print(result2.data)
 
 - [1] Pydantic AI Documentation - https://ai.pydantic.dev/
 - [2] Pydantic AI Installation - https://ai.pydantic.dev/install/
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+pydantic ai, type-safe agents, structured output, pydantic validation, runcontext, dependency injection, generic agent, result_type, deps_type, @agent.tool, dynamic system prompt, logfire, temporal integration, prefect integration, dbos, durable execution, evals framework, a2a protocol, streamed structured output, automatic retry on validation failure, fastapi-inspired, testmodel, functionmodel
+
+### Verb-Noun Tasks
+
+- Define an `Agent` parameterized by `deps_type` and `result_type`
+- Validate LLM responses against a Pydantic model with automatic retry
+- Register tools with the `@agent.tool` decorator and typed `RunContext`
+- Inject dependencies (DB clients, API keys) through dataclasses
+- Generate dynamic system prompts via `@agent.system_prompt`
+- Stream structured output with incremental validation
+- Swap LLM providers with a one-line model identifier change
+- Plug into Temporal, DBOS, or Prefect for durable long-running runs
+- Replace the real model with `TestModel` in unit tests
+- Extract structured data (invoices, resumes) into validated Pydantic models
+- Trace agent runs through Pydantic Logfire
+
+### User Intent Phrases
+
+- "How do I make LLM output conform to a Pydantic schema?"
+- "How do I get type-safe tool calling in Python?"
+- "How do I build an agent that retries automatically on validation failure?"
+- "How do I inject a database client into my agent's tools?"
+- "How do I unit test an LLM-powered function without calling the real model?"
+- "How do I extract structured data from unstructured text?"
+- "How do I run a long-running agent that survives crashes using Temporal?"
+- "How do I stream a typed structured response from a Pydantic AI agent?"
+- "How do I make my LLM app feel like a FastAPI app?"
+- "How do I use Logfire to trace LLM calls?"
+- "How do I evaluate agent performance with the built-in evals framework?"
+
+### Problem Statements
+
+- LLM output is unvalidated and frequently violates downstream schema contracts
+- Tools lack type hints and IDE support, breaking refactors
+- Test doubles for LLMs are clunky to swap in for unit tests
+- Long-running agents lose progress when the process crashes
+- Synchronous `run_sync` conflicts with already-running event loops in some hosts
+- Validation retry loops can drive up token cost when output types are poorly specified
+- Need a FastAPI-style developer experience for GenAI applications
+- Provider feature parity (structured output, tool calling, streaming) varies and breaks portability
+
+### When to Pick This
+
+- Pick this when type safety and validated structured output are non-negotiable and you want FastAPI-style ergonomics in Python
+- Pick this over LangChain when you prefer one tight Pydantic-typed surface to a sprawling ecosystem of loosely typed integrations
+- Pick this over LangGraph when single-agent type safety matters more than graph orchestration (and pair with Temporal/Prefect for durability)
+- Pick this over CrewAI when you want one typed agent with strict output validation rather than a role-based crew
+- Pick this over AutoGen when you do not need multi-agent conversation, just one production-grade typed agent
+- Pick this over smolagents when type safety and validation retries are required and a minimal codebase is not the goal
+- Pick this over Semantic Kernel when Python-only is acceptable and you want Pydantic models over .NET DI patterns
+- Pick this over ADK when you want a provider-neutral typed Python agent without the Google ecosystem orientation
+
+### Related Terms and Aliases
+
+- FastAPI for LLMs (design ergonomics)
+- Pydantic-typed agent
+- RunContext
+- Dependency injection (DI) for LLM tools
+- Logfire (observability)
+- Durable execution (Temporal, DBOS, Prefect)
+- TestModel / FunctionModel
+- Result type / Output type
+- A2A (Agent-to-Agent Protocol)
+- Self-correcting validation loop
+- Streamed structured output
+- Evals framework

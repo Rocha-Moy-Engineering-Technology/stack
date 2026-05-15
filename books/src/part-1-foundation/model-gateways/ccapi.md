@@ -447,3 +447,102 @@ response = client.chat.completions.create(
 - [3] CCAPI Pricing - https://ccapi.ai/pricing
 - [4] CCAPI OpenClaw Integration - https://ccapi.ai/openclaw
 - [5] CCAPI Changelog - https://ccapi.ai/changelog
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- ccapi
+- ccapi.ai
+- unified multimodal api
+- openai-compatible gateway
+- smart routing
+- 120ms failover
+- provider-prefixed model
+- multi-channel failover
+- image generation api
+- music generation api
+- video generation api
+- audio tts
+- suno
+- seedance
+- kling
+- veo
+- sora
+- midjourney video
+- grok video
+- deepseek
+- glm
+- minimax
+- qwen
+- kimi
+- openclaw
+- file-to-url api
+- prompt caching
+- pay-per-use
+- subscription tiers
+- thinking parameter
+- extended thinking
+
+### Verb-Noun Tasks
+
+- Swap an OpenAI SDK base URL to route through ccapi
+- Generate a Sora 2, Kling 3.0, Veo 3.1, or Seedance video from a prompt
+- Compose music with Suno via an OpenAI-compatible call
+- Generate images with Midjourney or Seedream through the same endpoint
+- Switch model providers by changing only the `provider/model` identifier
+- Enable extended thinking with `{"thinking": {"type": "enabled"}}`
+- Upload a file and receive a temporary URL for multimodal models
+- Receive a webhook when a long-running operation completes
+- Route OpenClaw agents through ccapi by changing `.env` variables
+- Track per-request cost and balance in the usage dashboard
+- Add a custom OpenAI-compatible provider to extend the catalog
+- Subscribe to a tier to unlock deeper API discounts
+
+### User Intent Phrases
+
+- I want one API key that generates text, images, music, and video.
+- How do I call Sora 2, Veo 3.1, and Kling 3.0 through one endpoint?
+- How do I get Anthropic Claude with up to 60% off?
+- Can I switch from OpenAI to DeepSeek without changing my code?
+- How do I generate AI music with Suno via an HTTP API?
+- How do I add fallback between providers without writing routing code?
+- Where can I find a unified video generation API?
+- How do I migrate OpenClaw to a cheaper LLM by editing only env vars?
+- How do I send a file to a multimodal model that requires a URL?
+- I want extended thinking on Claude through a single base URL.
+- How do I track LLM spend across multiple providers in one dashboard?
+
+### Problem Statements
+
+- I need video generation but I do not want to integrate Sora, Kling, Veo, and Seedance separately.
+- Provider outages stall my product and I have no automatic failover.
+- My agent loop is too expensive on frontier closed models.
+- I need a single billing relationship instead of 8 different vendor invoices.
+- I want to generate music and images alongside text without 3 SDKs.
+- My team needs prompt caching discounts but the underlying providers only offer them piecemeal.
+
+### When to Pick This
+
+- Pick this when you need non-text modalities — image, music, and video generation — through the same gateway (vs LiteLLM and Portkey, which are text/embedding focused).
+- Pick this when access to Sora 2, Kling 3.0, Veo 3.1, Seedance 2.0, Midjourney Video, and Grok Video matters.
+- Pick this when sub-200ms automatic provider failover is required without writing routing code.
+- Pick this when Chinese/open-weight providers (DeepSeek, GLM, MiniMax, Kimi, Qwen) at deep discounts are a primary cost lever.
+- Pick this when you want a managed, closed-source, pay-as-you-go service rather than a self-hosted gateway.
+- Pick this when OpenClaw agents need a drop-in cheaper backend by env-var change only.
+- Pick this when consolidated multimodal billing in USD with a $0.50 signup credit is preferable to per-provider accounts.
+
+### Related Terms and Aliases
+
+- multimodal ai gateway
+- ai aggregator api
+- ai provider switchboard
+- video generation api
+- music api
+- multi-provider llm proxy
+- text-image-audio-video api
+- ai api marketplace
+- openai-compatible aggregator
+- closed-source llm gateway

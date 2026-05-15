@@ -9,7 +9,7 @@
 | Type         | SDK                                                    |
 | Open Source  | Yes (Apache 2.0)                                       |
 | GitHub       | [BoundaryML/baml](https://github.com/BoundaryML/baml) |
-| Stars        | 7,642                                                  |
+| Stars        | 8223                                                  |
 | Docs         | [docs.boundaryml.com](https://docs.boundaryml.com/)   |
 
 ## Overview
@@ -386,3 +386,95 @@ The full project changelog and release notes are maintained on the GitHub reposi
 - [23] BAML Examples. BoundaryML. Available at: [https://docs.boundaryml.com/examples](https://docs.boundaryml.com/examples)
 - [24] AI Agents Need a New Syntax. BoundaryML Blog. Available at: [https://boundaryml.com/blog/ai-agents-need-new-syntax](https://boundaryml.com/blog/ai-agents-need-new-syntax)
 - [25] BAML Changelog. BoundaryML. Available at: [https://github.com/BoundaryML/baml/releases](https://github.com/BoundaryML/baml/releases)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- BAML
+- BoundaryML
+- domain-specific language
+- DSL for LLMs
+- baml_src
+- baml_client
+- schema-aligned parsing
+- SAP algorithm
+- type-safe LLM functions
+- code generation
+- generated client library
+- multi-language (Python/TS/Go/Ruby/Rust/Java/C#/Elixir)
+- Jinja templates
+- VSCode playground
+- TypeBuilder
+- dynamic types
+- Collector token tracking
+- ClientRegistry
+- streaming with partial types
+- @stream.done
+- @check and @assert
+- GEPA optimizer
+- baml generate
+
+### Verb-Noun Tasks
+
+- Define an LLM function signature in a `.baml` DSL file
+- Generate a fully typed `baml_client/` library via `baml generate`
+- Declare typed input/output schemas with `class` and `enum`
+- Configure 25+ LLM providers with `client<llm>` blocks
+- Stream partially-populated typed objects from an LLM
+- Run native tests with `@@assert` and `@@check` validations
+- Track tokens, timing, and raw HTTP via Collector
+- Modify types at runtime with TypeBuilder
+- Build fallback and round-robin client strategies
+- Serve BAML functions as a REST API with `baml serve`
+- Run BAML functions from React/Next.js with auto-generated hooks
+- Optimize prompts automatically with the GEPA algorithm
+
+### User Intent Phrases
+
+- How do I write LLM prompts in a typed language instead of strings?
+- How can one definition generate clients in Python, TypeScript, Go, Rust?
+- I want to test my prompts in the editor like regular code
+- How do I get type-safe LLM functions with compile-time checks?
+- How can I switch LLM providers without changing application code?
+- How do I stream typed objects with partial completion states?
+- How do I add fallback or round-robin between multiple LLM providers?
+- How do I expose my LLM functions as REST endpoints?
+- How do I track token usage and cost per function call?
+- How can I optimize prompts automatically across accuracy and cost?
+
+### Problem Statements
+
+- String-based prompts are brittle and untyped
+- Function-calling APIs vary by provider — abstraction is hard
+- Provider-native function calling tops out around 87.5% accuracy on real workloads
+- JSON Schema descriptions are token-heavy and expensive to send each call
+- Regenerating generated client code adds a build step
+- Provider-specific optimizations may be hidden behind the DSL
+- PDF inputs require base64 (no URL handling yet)
+
+### When to Pick This
+
+- Pick BAML when you want a typed DSL for LLM functions with code-generated clients across many languages
+- Pick BAML when Schema-Aligned Parsing (~92-93% accuracy) matters more than provider-native function calling (~87.5%)
+- Pick BAML when 80%-fewer-tokens schema descriptions improve cost
+- Pick BAML when teams want prompt-as-code with editor playground, native tests, and version control
+- Pick BAML when targeting multiple languages from one schema (Python + TypeScript + Go + Ruby + Rust + Java + C# + Elixir)
+- Pick Instructor instead when you live in Python and want Pydantic-driven validation-and-retry with minimal new tooling
+- Pick Outlines instead when you need token-level constrained decoding guarantees
+- Pick DSPy instead when you want optimizers to tune prompts automatically against a metric
+
+### Related Terms and Aliases
+
+- Basically a Made-up Language
+- BoundaryML
+- LLM DSL
+- generated LLM client
+- schema-aligned parsing
+- typed LLM functions
+- Postel's law for LLMs
+- Boundary Cloud
+- prompt-as-code
+- JSX for LLMs

@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Evaluation & Testing |
+| Group | Evaluation |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [explodinggradients/ragas](https://github.com/explodinggradients/ragas) |
-| Stars | 12679 |
+| Stars | 13913 |
 | Documentation | [Official Docs](https://docs.ragas.io/en/stable/) |
 
 ## Overview
@@ -481,3 +481,101 @@ tone_metric = DiscreteMetric(
 - [8] Customize Models - <https://docs.ragas.io/en/stable/howtos/customizations/customize_models>
 - [9] Metrics API Reference - <https://docs.ragas.io/en/stable/references/metrics/>
 - [10] Release Notes - <https://github.com/explodinggradients/ragas/releases>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Ragas
+- RAG evaluation
+- Context Precision
+- Context Recall
+- Faithfulness
+- Response Relevancy
+- Noise Sensitivity
+- Tool Call Accuracy
+- Agent Goal Accuracy
+- Topic Adherence
+- synthetic test data
+- knowledge graph
+- QuerySynthesizer
+- SingleTurnSample
+- MultiTurnSample
+- EvaluationDataset
+- DiscreteMetric
+- NumericMetric
+- llm_factory
+- evaluate
+- experiment decorator
+- LLM-as-judge
+- BLEU
+- ROUGE
+- LiteLLM
+- Instructor
+- align method
+
+### Verb-Noun Tasks
+
+- Evaluate a RAG pipeline's retrieval precision and recall
+- Score generation faithfulness against retrieved context
+- Detect hallucinations in LLM answers
+- Generate synthetic test data from source documents
+- Build a knowledge graph for diverse query synthesis
+- Run an experiment with the @experiment decorator
+- Persist evaluation results as CSV for regression tracking
+- Configure a custom evaluator LLM with llm_factory
+- Train an LLM-based metric with few-shot alignment
+- Evaluate agent tool selection with Tool Call Accuracy
+- Score multi-turn conversations for Topic Adherence
+- Validate SQL generation with execution-based comparison
+- Evaluate Haystack, LangChain, LlamaIndex, or LangGraph pipelines
+- Run async evaluation with aevaluate
+
+### User Intent Phrases
+
+- How do I evaluate the quality of my retrieval-augmented generation pipeline?
+- I need metrics that distinguish retrieval failures from generation hallucinations.
+- Generate a synthetic eval set from my PDFs.
+- Score whether the chatbot stayed on topic across a conversation.
+- How do I evaluate agent tool calls?
+- Compare two prompts on the same dataset and pick the better one.
+- Use Claude or Gemini as the judge model in my Ragas evaluation.
+- How do I measure context precision and context recall in RAG?
+- Evaluate a LangGraph agent with agent-specific metrics.
+- Build a regression test suite for my LLM application.
+
+### Problem Statements
+
+- Cannot tell whether poor answers come from bad retrieval or bad generation.
+- No systematic way to grade hallucinations against retrieved context.
+- Manual test set creation is too expensive for new RAG systems.
+- Same prompt scores differently each run due to LLM non-determinism.
+- Agent evaluations lack tool-correctness and goal-completion metrics.
+- Evaluation costs balloon with many metrics and large datasets.
+- Default English-centric prompts fail for non-English content.
+
+### When to Pick This
+
+- Pick this when you are specifically evaluating a RAG pipeline and want RAG-native metrics (Faithfulness, Context Precision/Recall) out of the box.
+- Pick this over DeepEval when synthetic test data from a knowledge graph and RAG-first metric design matter more than the broadest metric catalog.
+- Pick this over Promptfoo when you want Python-native evaluate/aevaluate APIs and experiment tracking rather than YAML-driven prompt comparison.
+- Pick this over OpenAI Evals when you need framework-agnostic evaluation across LangChain, LlamaIndex, Haystack, and LangGraph rather than OpenAI-only runs.
+- Pick this when LangSmith or Arize Phoenix observability of the evaluator itself is a requirement.
+- Pick this when you need persona-based, multi-hop synthetic query generation from documents.
+
+### Related Terms and Aliases
+
+- RAG metrics
+- retrieval-augmented generation evaluation
+- faithfulness metric
+- context precision metric
+- LLM-as-a-judge for RAG
+- knowledge-graph testset generation
+- synthetic eval dataset
+- ragas evaluate
+- agent evaluation metrics
+- topic adherence
+- prompt regression testing
+- explodinggradients ragas

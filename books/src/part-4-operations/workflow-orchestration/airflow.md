@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Workflow Orchestration & Automation |
+| Group | Workflow Orchestration |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/apache/airflow](https://github.com/apache/airflow) |
-| Stars | 44357 |
+| Stars | 45414 |
 | Documentation | [Official Docs](https://airflow.apache.org/docs/apache-airflow/stable/) |
 
 ## Overview
@@ -569,3 +569,102 @@ with DAG(
 - [Airflow 2.10.5 Release Notes](https://airflow.apache.org/docs/apache-airflow/2.10.5/release_notes.html)
 - [Apache Airflow Announcements](https://airflow.apache.org/announcements/)
 - [Airflow REST API Reference](https://airflow.apache.org/docs/apache-airflow/stable/stable-rest-api-ref.html)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Apache Airflow
+- DAG
+- directed acyclic graph
+- workflows as code
+- scheduler
+- executor
+- worker
+- triggerer
+- DAG processor
+- TaskFlow API
+- @task decorator
+- XCom
+- operator
+- sensor
+- hook
+- connection
+- variable
+- pool
+- dataset
+- asset
+- Jinja templating
+- CeleryExecutor
+- KubernetesExecutor
+- LocalExecutor
+- Edge Executor
+- batch ETL
+- backfill
+- catchup
+- provider packages
+
+### Verb-Noun Tasks
+
+- Define DAGs as Python files with `@dag` and `@task` decorators
+- Schedule pipelines with cron, presets, or timetable objects
+- Backfill historical date ranges with selective task reruns
+- Pass data between tasks via XCom or TaskFlow return values
+- Branch DAGs conditionally with `@task.branch`
+- Run tasks in Kubernetes pods with KubernetesPodOperator
+- Generate DAGs dynamically from a config table
+- Trigger DAGs on dataset/asset updates rather than time
+- Store credentials in Connections and reference by `conn_id`
+- Defer long-waits to the triggerer with deferrable operators
+- Query DAG state via the REST API v2
+- Mix multiple executors within a single deployment
+
+### User Intent Phrases
+
+- I need a batch ETL orchestrator with rich scheduling.
+- How do I backfill a pipeline for historical dates?
+- I want to generate one DAG per customer from a config table.
+- How do I integrate Airflow with Kubernetes?
+- I need data-aware scheduling triggered by upstream pipelines.
+- How do I pass data between tasks with TaskFlow?
+- I want to write workflows as code, not YAML or visual flows.
+- What is the difference between LocalExecutor, CeleryExecutor, and KubernetesExecutor?
+- How do I trigger a DAG from the REST API?
+- Show me how to chain BashOperator tasks.
+
+### Problem Statements
+
+- Cron + scripts have no dependency tracking, retry, or backfill.
+- We need a mature web UI for inspecting pipeline runs.
+- Different teams run different ETL flavors and want one orchestrator.
+- We need provider integrations for AWS, GCP, Azure, Postgres, Kafka.
+- Pipelines must be version-controlled like code.
+- We need data lineage and selective task reruns.
+
+### When to Pick This
+
+- Pick this for finite, batch-oriented workflows with clear start/end and complex DAG dependencies.
+- Pick this over Prefect when you want the largest existing deployment base and 80+ provider packages.
+- Pick this over Temporal when scheduling, backfill, and time-based ETL — not durable long-running per-instance workflows — are the priority.
+- Pick this over n8n/Activepieces/Node-RED when you want code-first DAGs, not visual builders.
+- Avoid this for streaming, continuously running, or event-driven-only workloads (use Kafka/Flink + Airflow rather than Airflow alone).
+- Pick this when you already operate Kubernetes and want per-task pod isolation via KubernetesExecutor.
+
+### Related Terms and Aliases
+
+- Apache Airflow 3.0
+- Task SDK (airflow.sdk)
+- AIP-72 Task Execution API
+- AIP-69 Edge Executor
+- AIP-74/AIP-75 Assets
+- AIP-78 scheduler-managed backfills
+- airflow.cfg
+- AIRFLOW__* env-var pattern
+- airflow dags trigger
+- airflow.providers.*
+- workflow scheduler
+- DAG runs
+- task instances
+

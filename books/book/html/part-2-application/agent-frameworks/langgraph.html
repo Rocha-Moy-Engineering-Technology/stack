@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -194,7 +194,7 @@
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/langchain-ai/langgraph">https://github.com/langchain-ai/langgraph</a></td></tr>
-<tr><td>Stars</td><td>24935</td></tr>
+<tr><td>Stars</td><td>32049</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.langchain.com/oss/python/langgraph/overview">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -392,6 +392,76 @@ result = app.invoke(None, config)
 <h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
 <ul>
 <li>[1] <a href="https://docs.langchain.com/oss/python/langgraph/overview">LangGraph Documentation</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>langgraph, stategraph, nodes, edges, conditional edges, checkpoint, checkpointer, durable execution, human-in-the-loop, interrupt, resume, thread_id, memorysaver, sqlitesaver, postgressaver, channels, state schema, graph orchestration, supervisor agent, multi-agent graph, long-running agent, agent server, persistence, short-term memory, long-term memory, stateful workflow</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Define an agent as a directed graph of nodes and edges</li>
+<li>Add conditional edges that branch on agent state</li>
+<li>Compile a graph with a PostgreSQL or SQLite checkpointer</li>
+<li>Resume agent execution from the most recent checkpoint after a failure</li>
+<li>Pause an agent for human review with <code>interrupt_before</code></li>
+<li>Persist conversation threads using a <code>thread_id</code></li>
+<li>Compose multiple agent graphs into a supervisor hierarchy</li>
+<li>Stream graph execution events as nodes fire</li>
+<li>Maintain short-term session memory and long-term cross-session memory</li>
+<li>Swap checkpointing backends between in-memory, SQLite, and PostgreSQL</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>“How do I build a stateful agent that survives process restarts?”</li>
+<li>“How do I pause an agent and have a human approve the next step?”</li>
+<li>“What is the difference between LangChain and LangGraph?”</li>
+<li>“How do I add conditional branching to my agent workflow?”</li>
+<li>“How do I checkpoint agent state to a database?”</li>
+<li>“How do I build a supervisor agent that delegates to sub-agents?”</li>
+<li>“How do I resume an agent from where it crashed yesterday?”</li>
+<li>“How do I model an agent loop with retries and conditional routing?”</li>
+<li>“How do I run a long-running research agent that takes hours?”</li>
+<li>“How do I deploy a stateful agent in production?”</li>
+<li>“How do I structure shared state that flows through multiple nodes?”</li>
+<li>“What is a StateGraph and when do I need one?”</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Agents fail mid-execution and have to restart from scratch instead of resuming from the last checkpoint</li>
+<li>Workflows need cycles, branching, and retries that linear chains cannot express</li>
+<li>Need human oversight at specific decision points for regulated or high-stakes actions</li>
+<li>Agent state must persist across sessions, process restarts, and infrastructure disruptions</li>
+<li>State serialization requirements break when nodes hold open connections or non-serializable objects</li>
+<li>Simple linear agents are buried under unnecessary graph abstraction overhead</li>
+<li>Multi-agent supervision is hard to model with plain function calls</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when your agent needs durable execution: checkpoints, recovery, and resumption across process restarts</li>
+<li>Pick this over LangChain when your workflow has cycles, conditional branches, or human approval gates rather than a linear pipe</li>
+<li>Pick this over CrewAI when you want explicit graph topology and fine-grained state control, not role/goal/backstory declarations</li>
+<li>Pick this over AutoGen when you want structured graph orchestration with typed state instead of conversational message passing between agents</li>
+<li>Pick this over Pydantic AI when graph topology matters more than end-to-end Pydantic output typing</li>
+<li>Pick this over smolagents when you need stateful long-running workflows, not minimal code-first single-shot agents</li>
+<li>Pick this over Semantic Kernel when Python/TypeScript and graph semantics fit better than .NET plugin orchestration</li>
+<li>Pick this over ADK when you want vendor-neutral graph orchestration instead of Google ecosystem integration</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>StateGraph</li>
+<li>Checkpoint / Checkpointer</li>
+<li>MemorySaver, SqliteSaver, PostgresSaver</li>
+<li>Conditional edges</li>
+<li>Interrupt / resume</li>
+<li>Human-in-the-loop (HITL)</li>
+<li>Supervisor pattern</li>
+<li>Agent Server</li>
+<li>Durable execution (alternative to Temporal/Prefect for agents)</li>
+<li>Multi-agent orchestration</li>
+<li>Thread (conversation thread)</li>
+<li>LangChain ecosystem extension</li>
 </ul>
 
                     </main>

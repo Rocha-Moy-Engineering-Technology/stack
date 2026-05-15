@@ -9,8 +9,8 @@
 | Type          | SDK                                                          |
 | Open Source   | Yes                                                          |
 | GitHub        | [google/adk-python](https://github.com/google/adk-python)   |
-| Stars         | 17911                                                        |
-| Documentation | [Official Docs](https://google.github.io/adk-docs/)         |
+| Stars         | 19635                                                        |
+| Documentation | [Official Docs](https://adk.dev/)         |
 
 ## Overview
 
@@ -306,3 +306,78 @@ Refer to the [official documentation](https://google.github.io/adk-docs/) and th
 ## Citations
 
 - [1] [ADK Documentation](https://google.github.io/adk-docs/)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+adk, agent development kit, google adk, gemini agents, vertex ai agent engine, llmagent, sequentialagent, parallelagent, loopagent, baseagent, workflow agents, agent-as-tool, sub-agents, hierarchical agents, runner, sessionservice, in-memory session, database session, vertex ai session, callbacks, before_tool_callback, openapi tool, mcptoolset, langchain tool integration, google search tool, code execution tool, bidirectional streaming, audio video streaming, cloud run deployment, adk cli, multi-language sdk
+
+### Verb-Noun Tasks
+
+- Build an `LlmAgent` (alias `Agent`) with Gemini, instructions, and tools
+- Compose `SequentialAgent`, `ParallelAgent`, and `LoopAgent` workflows
+- Wire a hierarchical tree where a router agent delegates to specialist sub-agents
+- Use an entire agent as a tool inside another agent
+- Generate tools from an OpenAPI specification with `OpenAPIToolset`
+- Load tools from any MCP server via `MCPToolset.from_server()`
+- Wrap a LangChain tool for use inside an ADK agent
+- Hook into lifecycle with `before_tool_callback` / `after_model_callback`
+- Stream bidirectional audio and video for real-time multimodal interactions
+- Deploy an agent to Vertex AI Agent Engine, Cloud Run, or Docker via `adk deploy`
+- Run `adk web`, `adk api_server`, or `adk eval` from the CLI
+
+### User Intent Phrases
+
+- "How do I build a Gemini-powered agent?"
+- "How do I deploy an agent on Vertex AI Agent Engine?"
+- "How do I orchestrate sequential, parallel, and loop sub-agents?"
+- "How do I let a router agent delegate to specialist agents?"
+- "How do I use an agent as a tool inside another agent?"
+- "How do I add Google Search and code execution tools to an agent?"
+- "How do I generate tools from an OpenAPI spec?"
+- "How do I stream audio and video bidirectionally with an agent?"
+- "How do I use MCP tools in a Google ADK agent?"
+- "How do I evaluate agent quality with `adk eval`?"
+- "How do I build an agent in TypeScript, Go, or Java with Google's framework?"
+- "How do I persist agent sessions in Vertex AI?"
+
+### Problem Statements
+
+- Need first-class Gemini integration and Vertex AI deployment in one framework
+- Multi-agent hierarchies must combine deterministic workflow agents with LLM-driven routing
+- Many tool sources (function tools, OpenAPI, MCP, LangChain, Google Search) must coexist in one agent
+- Non-Gemini models work but require extra configuration and may miss features
+- Python SDK is most mature; TypeScript/Go/Java lag behind
+- Multi-agent hierarchies with dynamic routing are hard to debug across levels
+- Cross-session and cross-agent-tree state sharing needs external infrastructure
+- Real-time audio/video streaming for multimodal agents is hard to wire by hand
+
+### When to Pick This
+
+- Pick this when you are building agents on Gemini and deploying to Vertex AI Agent Engine, Cloud Run, or the broader Google Cloud stack
+- Pick this over LangChain when you want the richest workflow-agent primitives (Sequential, Parallel, Loop) plus LLM-driven routing in one framework
+- Pick this over LangGraph when hierarchical agent trees and agent-as-tool patterns fit better than explicit StateGraph topology
+- Pick this over CrewAI when you need both deterministic workflow orchestration AND LLM-driven delegation in the same tree
+- Pick this over AutoGen when you want hierarchical tree-based delegation rather than conversational message-passing
+- Pick this over Pydantic AI when multi-agent hierarchies and bidirectional audio/video streaming matter more than Pydantic typing
+- Pick this over smolagents when you need the richest tool ecosystem (Function, MCP, OpenAPI, LangChain, agent-as-tool) and managed deployment
+- Pick this over Semantic Kernel when your stack is anchored to Google/Gemini rather than Microsoft/Azure
+- Pick this when multi-language SDKs (Python, TypeScript, Go, Java) for the same agent framework are required and Google-centric
+
+### Related Terms and Aliases
+
+- Google ADK / google-adk-python
+- LlmAgent (aliased as `Agent`)
+- Workflow agents (SequentialAgent, ParallelAgent, LoopAgent)
+- Agent-as-tool pattern
+- Sub-agents (hierarchical delegation)
+- Runner / InMemoryRunner
+- SessionService (in-memory, database, Vertex AI)
+- MCPToolset
+- OpenAPIToolset
+- Vertex AI Agent Engine
+- `adk` CLI (run, web, api_server, eval, deploy)
+- Bidirectional streaming (audio/video)

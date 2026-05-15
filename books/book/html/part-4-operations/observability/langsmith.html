@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,7 +190,7 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Observability &amp; LLM Ops</td></tr>
+<tr><td>Group</td><td>Observability</td></tr>
 <tr><td>Type</td><td>API/SDK/UI</td></tr>
 <tr><td>Open Source</td><td>No</td></tr>
 <tr><td>GitHub</td><td>N/A</td></tr>
@@ -541,6 +541,100 @@ client.like_prompt("team/production-prompt")
 <li>[4] <a href="https://docs.langchain.com/langsmith/trace-openai">LangSmith Trace with OpenAI</a></li>
 <li>[5] <a href="https://docs.langchain.com/langsmith/manage-prompts-programmatically">LangSmith Prompt Management</a></li>
 <li>[6] <a href="https://docs.langchain.com/langsmith/upload-existing-experiments">LangSmith Upload Experiments API</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>LangSmith</li>
+<li>LangChain observability</li>
+<li>LangGraph tracing</li>
+<li>traces</li>
+<li>runs</li>
+<li>projects</li>
+<li>datasets</li>
+<li>experiments</li>
+<li>evaluators</li>
+<li>llm-as-judge</li>
+<li>prompt hub</li>
+<li>annotation queues</li>
+<li>feedback</li>
+<li>@traceable</li>
+<li>wrap_openai</li>
+<li>studio</li>
+<li>agent builder</li>
+<li>automation rules</li>
+<li>managed cloud</li>
+<li>self-hosted</li>
+<li>HIPAA</li>
+<li>SOC 2</li>
+<li>GDPR</li>
+<li>regression testing</li>
+<li>agent observability</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Trace a LangChain chain or LangGraph agent automatically</li>
+<li>Wrap an OpenAI client for zero-friction tracing</li>
+<li>Decorate any Python function with @traceable</li>
+<li>Run evaluation experiments against a golden dataset</li>
+<li>Compare experiment results across models or prompts</li>
+<li>Manage versioned prompts in the Prompt Hub</li>
+<li>Build agents visually with Agent Builder</li>
+<li>Route production traces to annotation queues</li>
+<li>Configure online LLM-as-judge automation rules</li>
+<li>Aggregate token cost by project and model</li>
+<li>Deploy stateful agents via Agent Server</li>
+<li>Set the LANGSMITH_PROJECT environment variable to organize traces</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>I’m already using LangChain — what’s the easiest way to add observability?</li>
+<li>How do I trace LangGraph agents end-to-end?</li>
+<li>I need a commercial LLM observability platform with SOC 2 and HIPAA.</li>
+<li>How do I run regression tests on my LLM app before deploying changes?</li>
+<li>I want to compare GPT-4o vs Claude side-by-side on the same dataset.</li>
+<li>How do I instrument an OpenAI client to send traces automatically?</li>
+<li>Where can I manage prompt versions collaboratively across my team?</li>
+<li>I want a no-code agent builder backed by tracing.</li>
+<li>How do I trigger LLM-as-judge evaluators on production traffic automatically?</li>
+<li>I need to route flagged traces to human annotators.</li>
+<li>What’s the LangChain team’s official observability product?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>LangChain apps emit complex execution graphs that are hard to debug without tracing.</li>
+<li>Prompt iterations are scattered across notebooks and PRs.</li>
+<li>We cannot tell whether a code change regressed answer quality.</li>
+<li>Production LLM failures have no audit trail.</li>
+<li>Closed-source platforms create vendor lock-in we must weigh against managed convenience.</li>
+<li>Self-hosting observability adds infra burden we want to avoid.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when your stack is LangChain/LangGraph-heavy and you want zero-instrumentation tracing.</li>
+<li>Pick this over Langfuse when you want a fully managed commercial platform with HIPAA/SOC 2 out of the box.</li>
+<li>Pick this over Arize Phoenix when you prefer one closed-source platform combining tracing, evals, prompts, and Studio.</li>
+<li>Pick this over Helicone when you need an evaluation framework with datasets, experiments, and feedback (not only API proxy logging).</li>
+<li>Pick this over Weights &amp; Biases when LLM agent debugging — not ML experiment tracking — is the priority.</li>
+<li>Pick this when you need a no-code Agent Builder or Studio for non-engineers.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>LangChain observability</li>
+<li>LCEL tracing</li>
+<li>Prompt Hub</li>
+<li>LangSmith Studio</li>
+<li>LangSmith Agent Builder</li>
+<li>LangSmith Agent Server</li>
+<li>LANGSMITH_TRACING</li>
+<li>LANGSMITH_API_KEY</li>
+<li>smith.langchain.com</li>
+<li>openevals</li>
+<li>LLM evaluation framework</li>
+<li>automation rules</li>
 </ul>
 
                     </main>

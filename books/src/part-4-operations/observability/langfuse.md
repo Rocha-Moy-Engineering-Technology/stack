@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Observability & LLM Ops |
+| Group | Observability |
 | Type | API/SDK/UI |
 | Open Source | Yes |
 | GitHub | [https://github.com/langfuse/langfuse](https://github.com/langfuse/langfuse) |
-| Stars | 22154 |
+| Stars | 27209 |
 | Documentation | [Official Docs](https://langfuse.com/docs) |
 
 ## Overview
@@ -627,3 +627,99 @@ curl -X POST \
 - [6] Prompt Management - <https://langfuse.com/docs/prompts/get-started>
 - [7] Datasets Overview - <https://langfuse.com/docs/datasets/overview>
 - [8] Self-Hosting Guide - <https://langfuse.com/docs/deployment/self-host>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- llm observability
+- open source observability
+- prompt management
+- tracing
+- spans
+- generations
+- sessions
+- scores
+- datasets
+- experiments
+- llm-as-a-judge
+- evaluation
+- annotation queues
+- cost tracking
+- token usage
+- OpenTelemetry
+- @observe decorator
+- self-hosted
+- MIT license
+- ClickHouse
+- PostgreSQL
+- Langfuse
+- prompt versioning
+- LLM Playground
+- multi-turn conversations
+
+### Verb-Noun Tasks
+
+- Trace a RAG pipeline end-to-end with nested observations
+- Capture token usage and cost for every LLM call
+- Version and deploy prompts via production labels
+- Run LLM-as-a-judge evaluations on production traces
+- Build datasets from real production traces
+- Group multi-turn traces into sessions per user
+- Compare model performance across experiments
+- Self-host an open-source LLM observability stack
+- Instrument OpenAI calls with a drop-in wrapper
+- Send OpenTelemetry traces from any framework to Langfuse
+- Annotate traces manually with human reviewers
+- Track prompt performance across versions
+
+### User Intent Phrases
+
+- How do I debug a RAG pipeline that returns wrong answers?
+- I need open-source observability for my LLM application.
+- How can I version and A/B test prompts without redeploying code?
+- I want to track token cost per user and per session.
+- Show me an alternative to LangSmith that I can self-host.
+- How do I run LLM-as-a-judge evaluations on my traces?
+- I want to build evaluation datasets from production logs.
+- How do I monitor LLM quality continuously in production?
+- I need OpenTelemetry-native LLM tracing.
+- How can I capture inputs and outputs of every LLM call automatically?
+- I want to compare GPT-4o vs GPT-4o-mini using experiments.
+- How do I annotate traces with human feedback?
+
+### Problem Statements
+
+- General-purpose observability tools lack LLM-specific concepts (tokens, prompts, generations).
+- Prompts are buried in code and require redeploys to change.
+- We have no idea which prompt version performs best in production.
+- Evaluating LLM quality at scale requires automated judges.
+- Multi-turn agent workflows are opaque without session grouping.
+- LLM costs are surging and we cannot attribute them per user or feature.
+- SaaS observability vendors require sending sensitive prompts off-premise.
+
+### When to Pick This
+
+- Pick this when you want a fully open-source, self-hostable LLM observability stack under MIT license.
+- Pick this over LangSmith when you need on-prem data residency or want to avoid vendor lock-in.
+- Pick this over Arize Phoenix when you need integrated prompt management and experiments as first-class features (not only tracing).
+- Pick this over Helicone when you need full evaluation, dataset, and annotation workflows beyond gateway-style request logging.
+- Pick this over Weights & Biases when LLM observability — not ML experiment tracking — is the primary need.
+- Pick this when your application already uses OpenTelemetry and you want LLM-aware semantic conventions on top.
+
+### Related Terms and Aliases
+
+- LLM ops platform
+- LLM application monitoring
+- generation observation
+- trace tree
+- prompt hub
+- experiment runner
+- LFM (Langfuse managed)
+- @observe Python decorator
+- LangfuseSpanProcessor
+- OTLP exporter
+- Langfuse Cloud (EU/US)
+

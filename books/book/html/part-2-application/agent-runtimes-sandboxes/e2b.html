@@ -1,0 +1,521 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>E2B - AI/ML Stack Documentation</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../../favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
+        <link rel="stylesheet" href="../../css/variables-8adf115d.css">
+        <link rel="stylesheet" href="../../css/general-2459343d.css">
+        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="../../highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="../../tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="../../ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "../../";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../../toc-90d192a5.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../../toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">AI/ML Stack Documentation</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/Rocha-Moy-Engineering-Technology/stack/edit/main/books/src/part-2-application/agent-runtimes-sandboxes/e2b.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="e2b"><a class="header" href="#e2b">E2B</a></h1>
+<blockquote>
+<p>Isolated sandboxes for AI agents to execute code/process data/run tools safely</p>
+</blockquote>
+<div class="table-wrapper">
+<table>
+<thead>
+<tr><th>Field</th><th>Value</th></tr>
+</thead>
+<tbody>
+<tr><td>Group</td><td>Agent Runtimes &amp; Sandboxes</td></tr>
+<tr><td>Type</td><td>API/SDK/Infra</td></tr>
+<tr><td>Open Source</td><td>Yes</td></tr>
+<tr><td>GitHub</td><td><a href="https://github.com/e2b-dev/E2B">e2b-dev/E2B</a></td></tr>
+<tr><td>Stars</td><td>12186</td></tr>
+<tr><td>Documentation</td><td><a href="https://e2b.dev/docs">Official Docs</a></td></tr>
+</tbody>
+</table>
+</div>
+<h2 id="overview"><a class="header" href="#overview">Overview</a></h2>
+<p>E2B (Environment to Build) provides hosted, isolated Linux sandboxes designed for AI agents and LLM-driven code. The product gives an agent a fresh micro-VM with a file system, processes, internet access, and an interactive Python kernel, all behind a thin SDK. Use cases include code interpreters (the Sandbox surface is essentially “Code Interpreter as a service”), data-analysis agents, coding agents that need to compile and run code, and agentic workflows that produce or transform files. [1]</p>
+<p>The product is open source (<code>e2b-dev/E2B</code>) and offered both as a managed cloud (default) and as self-hosted infrastructure. The execution layer uses Firecracker-style micro-VMs for strong isolation between sandboxes, so an agent running untrusted code cannot affect the host or other tenants. [1]</p>
+<h2 id="core-concepts"><a class="header" href="#core-concepts">Core Concepts</a></h2>
+<h3 id="sandbox"><a class="header" href="#sandbox">Sandbox</a></h3>
+<p>A Sandbox is a running isolated environment with its own filesystem, processes, and network namespace. Each sandbox is created from a template (a pre-built filesystem image), boots in a few hundred milliseconds, and persists for the duration of its session — default 5 minutes of inactivity before automatic shutdown. Lifecycle is explicit: create → run code / interact with filesystem → <code>kill()</code> or auto-expire. [2]</p>
+<h3 id="templates"><a class="header" href="#templates">Templates</a></h3>
+<p>A Template is a snapshot of a base filesystem with pre-installed dependencies. E2B provides several stock templates (the default <code>code-interpreter</code> template ships Python with NumPy, Pandas, Matplotlib, scikit-learn, etc.). Users can build custom templates with the E2B CLI for project-specific environments (e.g., Node.js plus a specific package, or a Rust toolchain with a particular crate version). [3]</p>
+<h3 id="code-interpreter"><a class="header" href="#code-interpreter">Code Interpreter</a></h3>
+<p>The Code Interpreter is a higher-level wrapper around Sandbox that adds a Jupyter-style stateful Python kernel. <code>runCode()</code> returns structured output (text logs, errors, images for matplotlib plots, dataframes for pandas), making it easy for an LLM to consume execution results. [4]</p>
+<h3 id="persistence-and-snapshots"><a class="header" href="#persistence-and-snapshots">Persistence and Snapshots</a></h3>
+<p>A sandbox can be paused (snapshot taken) and later resumed with its full state (memory, filesystem, processes) intact. This is useful for long-running agent sessions that span LLM-call latencies, and for “auto-resume on request” patterns where a sandbox boots only when an incoming request needs it. [5]</p>
+<h3 id="internet-access"><a class="header" href="#internet-access">Internet Access</a></h3>
+<p>By default sandboxes have outbound internet access for fetching packages, calling APIs, downloading data. This can be restricted at the network policy level for higher-security tenants. [6]</p>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p>A typical interaction:</p>
+<ol>
+<li>Agent (running anywhere — local script, hosted service, serverless function) calls <code>Sandbox.create(template)</code> over HTTPS to E2B’s control plane.</li>
+<li>The control plane provisions a Firecracker micro-VM from the requested template; the VM boots in a few hundred ms.</li>
+<li>Agent receives a sandbox handle and uses the SDK to:
+<ul>
+<li>Execute code (<code>runCode</code> for Code Interpreter; <code>commands.run</code> for arbitrary shell)</li>
+<li>Manipulate the filesystem (<code>files.list</code>, <code>files.read</code>, <code>files.write</code>)</li>
+<li>Tunnel inbound traffic (sandbox exposes ports; the SDK creates an HTTPS tunnel for the agent or browser to reach them)</li>
+</ul>
+</li>
+<li>Agent calls <code>sandbox.kill()</code> when done; or the sandbox auto-shuts down after the configured timeout.</li>
+</ol>
+<p>Each sandbox is a fresh isolated environment; sandboxes do not share state by default. Persistence and snapshots are opt-in.</p>
+<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
+<h3 id="python-sdk"><a class="header" href="#python-sdk">Python SDK</a></h3>
+<pre><code class="language-bash">pip install e2b-code-interpreter python-dotenv
+</code></pre>
+<h3 id="javascript--typescript-sdk"><a class="header" href="#javascript--typescript-sdk">JavaScript / TypeScript SDK</a></h3>
+<pre><code class="language-bash">npm install @e2b/code-interpreter dotenv
+</code></pre>
+<p>API key from <code>e2b.dev/dashboard</code>, set via <code>E2B_API_KEY</code> env var. [4]</p>
+<h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
+<h3 id="code-execution"><a class="header" href="#code-execution">Code Execution</a></h3>
+<p><code>runCode("python source")</code> executes a code block in the sandbox’s Python kernel and returns:</p>
+<ul>
+<li><code>logs.stdout</code> / <code>logs.stderr</code> — captured output</li>
+<li><code>error</code> — exception details if the cell raised</li>
+<li><code>results</code> — structured outputs from the last expression (rich types: text, png/jpg for plots, html for dataframes, latex, json)</li>
+<li>Execution is stateful across calls in the same sandbox session — variables defined in one call persist to the next. [4]</li>
+</ul>
+<h3 id="filesystem-access"><a class="header" href="#filesystem-access">Filesystem Access</a></h3>
+<p>The SDK exposes <code>files.list(path)</code>, <code>files.read(path)</code>, <code>files.write(path, content)</code>, and <code>files.download(path)</code>. An agent can drop a CSV into the sandbox, run analysis code on it, and read back the resulting plots or files. [4]</p>
+<h3 id="process-control"><a class="header" href="#process-control">Process Control</a></h3>
+<p><code>commands.run(cmd)</code> runs shell commands; long-running processes return a handle that supports stdout streaming, signal sending, and explicit termination. PTY support is available for interactive shells. [7]</p>
+<h3 id="lifecycle-events-and-webhooks"><a class="header" href="#lifecycle-events-and-webhooks">Lifecycle Events and Webhooks</a></h3>
+<p>E2B exposes a Lifecycle Events API and webhooks so external systems can react to sandbox state transitions (start, pause, resume, kill) — useful for billing, observability, and orchestration. [5]</p>
+<h3 id="snapshots-and-auto-resume"><a class="header" href="#snapshots-and-auto-resume">Snapshots and Auto-Resume</a></h3>
+<p>A paused sandbox preserves memory, filesystem, and process state. Calling <code>connect(sandboxId)</code> resumes the exact prior state. The “auto-resume on request” pattern lets an idle sandbox stay snapshotted until inbound traffic arrives, then transparently resume. [5]</p>
+<h3 id="network-access"><a class="header" href="#network-access">Network Access</a></h3>
+<p>Sandboxes have outbound internet by default. Inbound traffic uses HTTPS tunnels: a sandbox can serve on port 8080, and the SDK returns a public URL that proxies to that port. This is the standard way to run a web app, Jupyter server, or API generated by the agent’s code. [6]</p>
+<h3 id="storage-buckets"><a class="header" href="#storage-buckets">Storage Buckets</a></h3>
+<p>E2B can connect a sandbox to an external storage bucket (GCS, S3) so the agent can read and write large files without round-tripping through the SDK. [6]</p>
+<h3 id="git-integration"><a class="header" href="#git-integration">Git Integration</a></h3>
+<p>Native commands for cloning, committing, and pushing repositories from inside a sandbox — useful for coding agents that produce PRs. [5]</p>
+<h2 id="use-cases"><a class="header" href="#use-cases">Use Cases</a></h2>
+<h3 id="code-interpreter-1"><a class="header" href="#code-interpreter-1">Code Interpreter</a></h3>
+<p>The canonical use case. Pair an LLM (Claude, GPT-5, etc.) with an E2B sandbox; the model writes Python, E2B runs it, the structured results go back into the prompt for the next turn. This is the architecture behind ChatGPT-style “advanced data analysis” features and many open-source equivalents.</p>
+<h3 id="data-analysis-agents"><a class="header" href="#data-analysis-agents">Data Analysis Agents</a></h3>
+<p>Agent receives a CSV/Parquet, uploads it to the sandbox, runs pandas/numpy code, returns plots and summary statistics. The structured <code>results</code> (matplotlib renders to PNG; dataframes to HTML) flow directly into the LLM context.</p>
+<h3 id="coding-agents"><a class="header" href="#coding-agents">Coding Agents</a></h3>
+<p>Agent writes Python/TS/Rust code, runs <code>pytest</code> / <code>npm test</code> / <code>cargo test</code> in the sandbox, observes output, fixes errors. Git integration enables full PR-producing workflows.</p>
+<h3 id="untrusted-code-execution"><a class="header" href="#untrusted-code-execution">Untrusted Code Execution</a></h3>
+<p>When users or LLMs supply code that may be malicious or buggy, run it in an E2B sandbox to contain side effects to the disposable VM.</p>
+<h3 id="agent-frameworks-integration"><a class="header" href="#agent-frameworks-integration">Agent Frameworks Integration</a></h3>
+<p>E2B documents first-class integrations with multiple agent frameworks: OpenAI Agents SDK, Anthropic, Vercel AI SDK, LangChain/LangGraph, plus partner agents like Amp and OpenClaw. [8]</p>
+<h2 id="api-reference-summary"><a class="header" href="#api-reference-summary">API Reference Summary</a></h2>
+<h3 id="sandbox-lifecycle"><a class="header" href="#sandbox-lifecycle">Sandbox lifecycle</a></h3>
+<ul>
+<li><code>Sandbox.create(template?, options?)</code> — create new sandbox (defaults to <code>code-interpreter</code> template)</li>
+<li><code>Sandbox.connect(sandboxId)</code> — reconnect to an existing/paused sandbox</li>
+<li><code>sandbox.pause()</code> / <code>sandbox.kill()</code> — snapshot / destroy</li>
+<li><code>Sandbox.list()</code> — list active sandboxes for the API key</li>
+</ul>
+<h3 id="code-execution-1"><a class="header" href="#code-execution-1">Code execution</a></h3>
+<ul>
+<li><code>sandbox.runCode(source, options?)</code> — execute Python in the stateful kernel</li>
+<li><code>sandbox.commands.run(cmd, options?)</code> — execute arbitrary shell</li>
+</ul>
+<h3 id="filesystem"><a class="header" href="#filesystem">Filesystem</a></h3>
+<ul>
+<li><code>sandbox.files.list(path)</code></li>
+<li><code>sandbox.files.read(path)</code> / <code>sandbox.files.write(path, content)</code></li>
+<li><code>sandbox.files.download(path)</code> / <code>sandbox.files.upload(...)</code></li>
+</ul>
+<h3 id="networking"><a class="header" href="#networking">Networking</a></h3>
+<ul>
+<li><code>sandbox.getHost(port)</code> — get public HTTPS URL forwarded to in-sandbox port</li>
+</ul>
+<h2 id="configuration"><a class="header" href="#configuration">Configuration</a></h2>
+<h3 id="templates-1"><a class="header" href="#templates-1">Templates</a></h3>
+<p>Custom templates are defined with a Dockerfile-like <code>e2b.toml</code> plus a build script. Build with the E2B CLI; the resulting template is referenced by ID at <code>Sandbox.create(templateId)</code>. [3]</p>
+<h3 id="timeouts"><a class="header" href="#timeouts">Timeouts</a></h3>
+<p>Default sandbox timeout is 5 minutes of inactivity. Configurable per-create via <code>timeoutMs</code>; the maximum depends on plan tier.</p>
+<h3 id="environment-variables"><a class="header" href="#environment-variables">Environment Variables</a></h3>
+<p>Per-sandbox env vars are passed at create time or set with <code>sandbox.setEnvVars()</code>. [6]</p>
+<h2 id="integration-patterns"><a class="header" href="#integration-patterns">Integration Patterns</a></h2>
+<h3 id="with-openai-agents-sdk--langgraph--crewai--pydantic-ai"><a class="header" href="#with-openai-agents-sdk--langgraph--crewai--pydantic-ai">With OpenAI Agents SDK / LangGraph / CrewAI / Pydantic AI</a></h3>
+<p>E2B publishes integration recipes for every major agent framework — the typical pattern wraps <code>runCode</code> as a tool the agent can call, with the sandbox lifecycle tied to the agent session. [8]</p>
+<h3 id="with-claude-anthropic"><a class="header" href="#with-claude-anthropic">With Claude (Anthropic)</a></h3>
+<p>Pair Claude tool-use with an E2B sandbox: the model emits a <code>tool_use</code> block with Python source; the runtime forwards it to <code>sandbox.runCode</code>; the structured result is returned as a <code>tool_result</code>.</p>
+<h3 id="with-vercel-ai-sdk"><a class="header" href="#with-vercel-ai-sdk">With Vercel AI SDK</a></h3>
+<p>Standard E2B+Vercel AI pattern: client-side React calls a server-side agent route which spawns an E2B sandbox per session and streams results back via Server-Sent Events.</p>
+<h3 id="self-hosting"><a class="header" href="#self-hosting">Self-Hosting</a></h3>
+<p>E2B is open source; production users with strict data-locality or compliance requirements can self-host the control plane and execution nodes. [1]</p>
+<h2 id="examples"><a class="header" href="#examples">Examples</a></h2>
+<h3 id="minimal-python-quickstart"><a class="header" href="#minimal-python-quickstart">Minimal Python Quickstart</a></h3>
+<pre><code class="language-python">from e2b_code_interpreter import Sandbox
+
+sbx = Sandbox()                                # default template = code-interpreter
+execution = sbx.run_code("print('hello world')")
+print(execution.logs)
+files = sbx.files.list("/")
+print(files)
+</code></pre>
+<h3 id="pandas-analysis-from-an-llm-tool-call"><a class="header" href="#pandas-analysis-from-an-llm-tool-call">Pandas Analysis from an LLM Tool Call</a></h3>
+<pre><code class="language-python">sbx = Sandbox()
+sbx.files.write("/data.csv", csv_bytes)
+
+execution = sbx.run_code("""
+import pandas as pd
+df = pd.read_csv("/data.csv")
+df.describe()
+""")
+
+# execution.results[0].html — rendered DataFrame, feedable to LLM
+# execution.logs.stdout — print() output
+</code></pre>
+<h3 id="long-running-sandbox-via-snapshot"><a class="header" href="#long-running-sandbox-via-snapshot">Long-Running Sandbox via Snapshot</a></h3>
+<pre><code class="language-python">sbx = Sandbox(timeout=3600)
+sid = sbx.sandbox_id
+
+# ... time passes, agent goes idle ...
+sbx.pause()
+
+# later, in a different process:
+sbx2 = Sandbox.connect(sid)
+sbx2.run_code("print('resumed with prior state intact')")
+</code></pre>
+<h2 id="limitations-and-considerations"><a class="header" href="#limitations-and-considerations">Limitations and Considerations</a></h2>
+<ul>
+<li><strong>Per-sandbox cost</strong>: Sandboxes consume metered compute; long-running unsnapshot sessions add up. Use timeouts and snapshots for idle periods.</li>
+<li><strong>Cold start vs warm</strong>: Boot times are sub-second, but if your traffic pattern needs single-digit-ms response times, keep sandboxes warm or pool.</li>
+<li><strong>Memory limits per template</strong>: Templates declare CPU/RAM limits; agents that exceed them get OOM-killed. Custom templates can request larger sizes (plan-gated).</li>
+<li><strong>Network policies in self-hosted setups</strong>: Outbound internet access is on by default; in regulated environments you may need to lock down egress at the host firewall.</li>
+<li><strong>Stateful kernel persistence</strong>: Variables persist across <code>runCode</code> calls within a sandbox session, but not across kill. Use snapshots if cross-session state matters.</li>
+<li><strong>Filesystem is ephemeral by default</strong>: Files written inside the sandbox vanish on kill unless externally persisted (snapshot, storage bucket, or explicit download).</li>
+</ul>
+<h2 id="changelog-highlights"><a class="header" href="#changelog-highlights">Changelog Highlights</a></h2>
+<ul>
+<li><strong>Snapshots &amp; auto-resume</strong>: Pause-and-resume with full state preservation</li>
+<li><strong>Storage bucket integration</strong>: Direct GCS/S3 connection from inside the sandbox</li>
+<li><strong>Git integration</strong>: First-class clone/commit/push from inside sandboxes</li>
+<li><strong>OpenAI Agents SDK integration</strong>: First-class integration alongside existing LangChain/Anthropic/Vercel integrations</li>
+<li><strong>Lifecycle events API and webhooks</strong>: External observability of sandbox state transitions [1][5][8]</li>
+</ul>
+<h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
+<ul>
+<li>[1] E2B Documentation - <a href="https://e2b.dev/docs">https://e2b.dev/docs</a></li>
+<li>[2] Running your first Sandbox - <a href="https://e2b.dev/docs/quickstart">https://e2b.dev/docs/quickstart</a></li>
+<li>[3] Templates - <a href="https://e2b.dev/docs/sandbox-template">https://e2b.dev/docs/sandbox-template</a></li>
+<li>[4] Code Interpreter SDK - <a href="https://e2b.dev/docs/code-interpreting/analyze-data-with-ai">https://e2b.dev/docs/code-interpreting/analyze-data-with-ai</a></li>
+<li>[5] Sandbox Lifecycle - <a href="https://e2b.dev/docs/sandbox">https://e2b.dev/docs/sandbox</a></li>
+<li>[6] Internet Access and Networking - <a href="https://e2b.dev/docs/sandbox/internet-access">https://e2b.dev/docs/sandbox/internet-access</a></li>
+<li>[7] Commands and PTY - <a href="https://e2b.dev/docs/sandbox/pty">https://e2b.dev/docs/sandbox/pty</a></li>
+<li>[8] Agent Integrations - <a href="https://e2b.dev/docs/agents/openai-agents-sdk">https://e2b.dev/docs/agents/openai-agents-sdk</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>E2B</li>
+<li>code interpreter</li>
+<li>sandbox</li>
+<li>micro-VM</li>
+<li>Firecracker</li>
+<li>isolated execution</li>
+<li>code-interpreter template</li>
+<li>stateful Python kernel</li>
+<li>runCode</li>
+<li>commands.run</li>
+<li>filesystem access</li>
+<li>snapshot</li>
+<li>pause and resume</li>
+<li>auto-resume</li>
+<li>HTTPS tunnel</li>
+<li>inbound port forwarding</li>
+<li>storage bucket</li>
+<li>Git integration</li>
+<li>untrusted code execution</li>
+<li>agent runtime</li>
+<li>data analysis agent</li>
+<li>code-writing agent</li>
+<li>structured execution results</li>
+<li>PTY support</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Spin up a Linux micro-VM for an AI agent in milliseconds</li>
+<li>Execute LLM-generated Python in a stateful Jupyter-style kernel</li>
+<li>Run pandas analysis on user-uploaded CSV files</li>
+<li>Capture matplotlib plots as PNGs back into the LLM context</li>
+<li>Read and write files inside an isolated sandbox</li>
+<li>Pause a sandbox and resume it later with full state preserved</li>
+<li>Build a custom sandbox template with the E2B CLI</li>
+<li>Expose a port from inside the sandbox via HTTPS tunnel</li>
+<li>Clone, commit, and push to git from inside the sandbox</li>
+<li>Sandbox untrusted code so it cannot affect the host</li>
+<li>Wrap <code>runCode</code> as a tool for OpenAI Agents SDK, LangChain, or Claude</li>
+<li>Connect a sandbox to an S3 or GCS bucket for large files</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I let an LLM run Python code safely?</li>
+<li>How can I build a ChatGPT-style data analysis feature?</li>
+<li>I need a sandboxed code interpreter for my coding agent</li>
+<li>How do I isolate user-supplied or LLM-generated code?</li>
+<li>Can I run arbitrary shell commands in a managed sandbox?</li>
+<li>How do I persist sandbox state between LLM calls?</li>
+<li>How do I get pandas DataFrames and plots back into the LLM context?</li>
+<li>What is the canonical “code interpreter” architecture?</li>
+<li>How do I let a coding agent run pytest or cargo test in a clean environment?</li>
+<li>How do I deploy a Jupyter-like sandbox per user session?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Running untrusted LLM-generated code on your host is unsafe</li>
+<li>Self-managing Firecracker micro-VMs and templates is operationally heavy</li>
+<li>LLM tool outputs need structured results (logs, plots, dataframes), not raw strings</li>
+<li>Long agent sessions cost compute while idle without snapshots</li>
+<li>Cold-start latency matters for spiky traffic; pools and warm sandboxes add complexity</li>
+<li>Filesystems vanish on kill unless externally persisted</li>
+<li>Per-sandbox metered compute can run away on long unsnapshotted sessions</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick E2B when your agent needs to run code (Python/TS/Rust) and observe structured results — this is the canonical code-writing/data-analysis surface</li>
+<li>Pick E2B over a local Docker container when you need millisecond boot, snapshots, and Firecracker-grade isolation as a managed service</li>
+<li>Pick E2B over a raw VM when you want first-class agent integrations (OpenAI Agents SDK, LangChain/LangGraph, Anthropic, Vercel AI, CrewAI, Pydantic AI)</li>
+<li>Pick Browserbase instead when the action surface is web pages (browser automation), not arbitrary compute</li>
+<li>Pair with MCP by wrapping <code>runCode</code> as an MCP tool so any MCP host can use it</li>
+<li>Self-host E2B when data-locality or compliance rules forbid managed cloud</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Environment to Build</li>
+<li>code interpreter as a service</li>
+<li>sandboxed Python kernel</li>
+<li>agent VM</li>
+<li>Firecracker sandbox</li>
+<li>Jupyter kernel for agents</li>
+<li>managed code execution</li>
+<li>LLM tool execution sandbox</li>
+<li>agent compute surface</li>
+</ul>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part-2-application/agent-protocols/a2a.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="../../part-2-application/browser-automation/browserbase.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part-2-application/agent-protocols/a2a.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="../../part-2-application/browser-automation/browserbase.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr-ef4e11c1.min.js"></script>
+        <script src="../../mark-09e88c2c.min.js"></script>
+        <script src="../../searcher-c2a407aa.js"></script>
+
+        <script src="../../clipboard-1626706a.min.js"></script>
+        <script src="../../highlight-abc7f01d.js"></script>
+        <script src="../../book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>

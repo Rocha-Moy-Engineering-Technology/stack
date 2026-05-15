@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-f9c23d6b.js"></script>
+        <script src="toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -181,60 +181,67 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="aiml-stack-documentation"><a class="header" href="#aiml-stack-documentation">AI/ML Stack Documentation</a></h1>
-<p>This book provides comprehensive documentation for 73 AI/ML tools and platforms organized across 16 functional groups. Each chapter covers the tool’s core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples – all sourced from and citing official documentation.</p>
-<h2 id="catalog-overview"><a class="header" href="#catalog-overview">Catalog Overview</a></h2>
-<p>The AI/ML ecosystem is organized into four parts following the dependency chain from foundational infrastructure to specialized integrations:</p>
-<h3 id="part-i-foundation-and-infrastructure"><a class="header" href="#part-i-foundation-and-infrastructure">Part I: Foundation and Infrastructure</a></h3>
-<p>The base layer that everything else builds upon.</p>
+<p>This book documents 79 AI/ML tools and platforms organized across 22 functional groups and 4 architectural parts. Each chapter covers the tool’s core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples — all sourced from and citing official documentation.</p>
+<h2 id="how-this-book-is-organized"><a class="header" href="#how-this-book-is-organized">How This Book Is Organized</a></h2>
+<p>The catalog follows a dependency-aware structure: foundation infrastructure first, then the application layer built on top of it, then the data/model layer that feeds those applications, and finally the operations layer that runs around all of it. Use the four-part navigation in the sidebar as a mental map of the stack.</p>
+<h3 id="part-i--foundation--infrastructure"><a class="header" href="#part-i--foundation--infrastructure">Part I — Foundation &amp; Infrastructure</a></h3>
+<p>The base layer everything else builds on: model access (hosted APIs and inference engines), the compute that runs models, the gateways that abstract across providers, and the managed AI platforms that bundle it all together. If you can think of it as “where the model runs and how callers reach it,” it’s in Part I.</p>
 <ul>
-<li><strong>LLM Providers</strong> (3 tools) – Hosted large language model APIs: OpenAI, Gemini, Claude</li>
-<li><strong>Inference Engines</strong> (8 tools) – Engines for hosting and serving model inference: Max, vLLM, SGLang, KServe, Triton, BentoML, Ollama, LM Studio</li>
-<li><strong>GPU Infrastructure</strong> (9 tools) – Cloud GPU providers and managed AI platforms: Ray, Groq, Cerebras, Modal, RunPod, Vast.ai, Inferless, Vertex AI, AWS Bedrock</li>
-<li><strong>Model Gateways</strong> (3 tools) – Unified API proxies across LLM providers: LiteLLM, Portkey, ccapi</li>
+<li><strong>LLM Providers</strong> — Hosted large language model APIs (OpenAI, Gemini, Claude)</li>
+<li><strong>Hosted Inference APIs</strong> — Vendor-hosted inference on custom silicon (Groq, Cerebras)</li>
+<li><strong>Inference Engines</strong> — Self-hosted serving frameworks and model libraries (Max, vLLM, SGLang, KServe, Triton, BentoML, Hugging Face Transformers)</li>
+<li><strong>Local Model Runtimes</strong> — Desktop/CLI runners for local development (Ollama, LM Studio)</li>
+<li><strong>Model Gateways</strong> — Unified proxies and routing across LLM providers (LiteLLM, Portkey, ccapi)</li>
+<li><strong>Compute &amp; GPU Infrastructure</strong> — Serverless GPU and distributed compute (Ray, Modal, RunPod, Vast.ai, Inferless)</li>
+<li><strong>Managed AI Platforms</strong> — Cloud end-to-end ML/GenAI platforms (Vertex AI, AWS Bedrock)</li>
 </ul>
-<h3 id="part-ii-application-development"><a class="header" href="#part-ii-application-development">Part II: Application Development</a></h3>
-<p>The application layer built on top of foundation models.</p>
+<h3 id="part-ii--application-development"><a class="header" href="#part-ii--application-development">Part II — Application Development</a></h3>
+<p>The application layer: the frameworks and protocols developers use to build agents, the runtimes that execute agent code safely, and the building blocks (structured generation, memory) that make agentic applications reliable. If you can think of it as “how an LLM-powered product is composed,” it’s in Part II.</p>
 <ul>
-<li><strong>Agent Frameworks</strong> (8 tools) – Libraries for building autonomous AI agents: LangChain, LangGraph, AutoGen, CrewAI, ADK, Semantic Kernel, smolagents, Pydantic AI</li>
-<li><strong>RAG Frameworks</strong> (3 tools) – Retrieval-Augmented Generation frameworks: Haystack, LlamaIndex, GraphRAG</li>
-<li><strong>Structured Generation</strong> (4 tools) – Tools for constraining LLM outputs: DSPy, Outlines, Instructor, BAML</li>
-<li><strong>Memory Systems</strong> (3 tools) – Persistent memory and context management: Mem0, Zep, Letta</li>
+<li><strong>Agent Frameworks</strong> — Libraries for autonomous AI agents (LangChain, LangGraph, AutoGen, CrewAI, ADK, Semantic Kernel, smolagents, Pydantic AI)</li>
+<li><strong>Agent Protocols</strong> — Open standards for tool and agent interoperability (MCP, A2A)</li>
+<li><strong>Agent Runtimes &amp; Sandboxes</strong> — Isolated execution environments (E2B)</li>
+<li><strong>Browser Automation</strong> — Headless browser platforms for web-acting agents (Browserbase)</li>
+<li><strong>Structured Generation</strong> — Constrained output and schema-typed extraction (DSPy, Outlines, Instructor, BAML)</li>
+<li><strong>Memory Systems</strong> — Persistent memory and context for agents (Mem0, Zep, Letta)</li>
 </ul>
-<h3 id="part-iii-data-and-models"><a class="header" href="#part-iii-data-and-models">Part III: Data and Models</a></h3>
-<p>Data infrastructure, model training, and storage.</p>
+<h3 id="part-iii--data--models"><a class="header" href="#part-iii--data--models">Part III — Data &amp; Models</a></h3>
+<p>The data and retrieval layer: how knowledge gets in, how it gets indexed, how it gets searched, and how models get adapted to a domain. If you can think of it as “what feeds the model,” it’s in Part III.</p>
 <ul>
-<li><strong>Vector Databases</strong> (5 tools) – Vector similarity search engines: pgvector, Pinecone, Weaviate, Qdrant, Milvus</li>
-<li><strong>Data Pipelines</strong> (2 tools) – ETL and document ingestion tools: Unstructured, Airbyte</li>
-<li><strong>Fine-tuning</strong> (4 tools) – Parameter-efficient fine-tuning and model training: Hugging Face Transformers, PEFT, Unsloth, Axolotl</li>
-<li><strong>Labeling</strong> (1 tool) – Data annotation and labeling: Label Studio</li>
+<li><strong>RAG Frameworks</strong> — Retrieval-augmented generation orchestration (Haystack, LlamaIndex, GraphRAG)</li>
+<li><strong>Embeddings &amp; Reranking</strong> — Hosted embedding and reranking models (Voyage AI, Cohere, Jina AI)</li>
+<li><strong>Vector Databases</strong> — Vector similarity search engines (pgvector, Pinecone, Weaviate, Qdrant, Milvus)</li>
+<li><strong>Data Pipelines</strong> — ETL and document ingestion (Unstructured, Airbyte)</li>
+<li><strong>Fine-tuning</strong> — Parameter-efficient fine-tuning (PEFT, Unsloth, Axolotl)</li>
+<li><strong>Labeling</strong> — Data annotation tooling (Label Studio)</li>
 </ul>
-<h3 id="part-iv-operations-and-quality"><a class="header" href="#part-iv-operations-and-quality">Part IV: Operations and Quality</a></h3>
-<p>Quality assurance, safety, monitoring, and workflow management.</p>
+<h3 id="part-iv--operations--quality"><a class="header" href="#part-iv--operations--quality">Part IV — Operations &amp; Quality</a></h3>
+<p>The operations layer that surrounds production deployments: input/output safety, evaluation harnesses, observability and tracing, and workflow orchestration. If you can think of it as “what happens before, during, and after a request that isn’t the model itself,” it’s in Part IV.</p>
 <ul>
-<li><strong>Guardrails</strong> (4 tools) – Input/output validation and content moderation: Guardrails AI, NeMo Guardrails, OpenAI Moderation, Lakera</li>
-<li><strong>Evaluation</strong> (4 tools) – Frameworks for evaluating LLM application quality: Ragas, DeepEval, OpenAI Evals, promptfoo</li>
-<li><strong>Observability</strong> (5 tools) – Tracing, monitoring, and prompt management: LangSmith, Arize Phoenix, Weights &amp; Biases, Helicone, Langfuse</li>
-<li><strong>Workflow Orchestration</strong> (6 tools) – Pipeline scheduling and workflow engines: Temporal, Prefect, Airflow, n8n, Activepieces, Node-RED</li>
+<li><strong>Guardrails</strong> — Input/output validation and content moderation (Guardrails AI, NeMo Guardrails, OpenAI Moderation, Lakera)</li>
+<li><strong>Evaluation</strong> — LLM/RAG evaluation frameworks (Ragas, DeepEval, OpenAI Evals, promptfoo)</li>
+<li><strong>Observability</strong> — Tracing, monitoring, prompt management (LangSmith, Arize Phoenix, Weights &amp; Biases, Helicone, Langfuse)</li>
+<li><strong>Workflow Orchestration</strong> — Pipeline scheduling and automation (Temporal, Prefect, Airflow, n8n, Activepieces, Node-RED)</li>
 </ul>
 <h2 id="how-to-use-this-book"><a class="header" href="#how-to-use-this-book">How to Use This Book</a></h2>
 <p>Each chapter follows a consistent structure:</p>
 <ol>
-<li><strong>Overview</strong> – What the tool is and what problem it solves</li>
-<li><strong>Core Concepts</strong> – Fundamental abstractions and mental models</li>
-<li><strong>Installation and Setup</strong> – Getting started quickly</li>
-<li><strong>Architecture</strong> – Internal structure and extension points</li>
-<li><strong>Key Features and Functionality</strong> – Detailed feature documentation with code examples</li>
-<li><strong>Use Cases</strong> – Step-by-step walkthroughs of common scenarios</li>
-<li><strong>API Reference Summary</strong> – Key classes, functions, and endpoints</li>
-<li><strong>Configuration and Customization</strong> – All configuration options</li>
-<li><strong>Integration Patterns</strong> – How the tool connects with other tools in the catalog</li>
-<li><strong>Examples</strong> – Complete runnable examples</li>
-<li><strong>Limitations and Considerations</strong> – Known constraints and scaling notes</li>
-<li><strong>Changelog Highlights</strong> – Major version milestones</li>
-<li><strong>Citations</strong> – Links to official documentation sources</li>
+<li><strong>Overview</strong> — What the tool is and what problem it solves</li>
+<li><strong>Core Concepts</strong> — Fundamental abstractions and mental models</li>
+<li><strong>Installation and Setup</strong> — Getting started quickly</li>
+<li><strong>Architecture</strong> — Internal structure and extension points</li>
+<li><strong>Key Features and Functionality</strong> — Detailed feature documentation with code examples</li>
+<li><strong>Use Cases</strong> — Walkthroughs of common scenarios</li>
+<li><strong>API Reference Summary</strong> — Key classes, functions, and endpoints</li>
+<li><strong>Configuration and Customization</strong> — All configuration options</li>
+<li><strong>Integration Patterns</strong> — How the tool connects with other tools in the catalog</li>
+<li><strong>Examples</strong> — Complete runnable examples</li>
+<li><strong>Limitations and Considerations</strong> — Known constraints and scaling notes</li>
+<li><strong>Changelog Highlights</strong> — Major version milestones</li>
+<li><strong>Citations</strong> — Links to official documentation sources</li>
 </ol>
 <h2 id="source"><a class="header" href="#source">Source</a></h2>
-<p>All content is derived from official documentation sites. Every claim is backed by a citation linking to the original source. The catalog source of truth is <code>stacks.csv</code> in the stack bundle.</p>
+<p>All content is derived from official documentation sites. Every claim is backed by a citation linking to the original source. The catalog’s source of truth is <code>bundles/stack/stacks.csv</code>; the group enum lives in <code>bundles/stack/STACKS_SCHEMA.md</code>.</p>
 
                     </main>
 

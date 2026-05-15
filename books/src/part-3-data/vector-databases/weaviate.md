@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | RAG & Knowledge Retrieval |
+| Group | Vector Databases |
 | Type | SDK/Infra |
 | Open Source | Yes |
 | GitHub | [https://github.com/weaviate/weaviate](https://github.com/weaviate/weaviate) |
-| Stars | 15600 |
+| Stars | 16179 |
 | Documentation | [Official Docs](https://docs.weaviate.io/weaviate/) |
 
 ## Overview
@@ -425,3 +425,71 @@ for (const obj of response.objects) {
 ## Citations
 
 - [1] Weaviate Documentation - <https://docs.weaviate.io/weaviate/>
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+Weaviate, vector database, collections, objects, schema, HNSW, flat index, dynamic index, BM25F, hybrid search, nearText, nearVector, nearImage, generative search, Weaviate Agents, Query Agent, Transformation Agent, Personalization Agent, vectorizer modules, generative modules, multi-tenancy, named vectors, GraphQL, gRPC, sharding, replication, leaderless, product quantization, binary quantization, scalar quantization, RAG, multimodal, CLIP
+
+### Verb-Noun Tasks
+
+- Create a collection with a schema and vectorizer
+- Run a `nearText` semantic search with auto-vectorization
+- Run a hybrid search with `alpha` blending vector and BM25F
+- Boost specific properties (e.g., `title^2`) in BM25F
+- Generate answers via `generate.near_text` with a chosen LLM provider
+- Use the Query Agent for natural-language access to collections
+- Configure PQ / BQ / SQ quantization to reduce memory
+- Set replication consistency to ONE / QUORUM / ALL
+- Search across multiple named vector fields in one collection
+- Deploy via Helm charts with sharding and replication
+- Filter HNSW results with `where` clauses (single-pass filtered search)
+
+### User Intent Phrases
+
+- How do I build a semantic search with schema and properties?
+- How do I combine BM25 keyword search with vector search in one query?
+- How do I do generative search (RAG) inside the vector database?
+- How do I run a natural-language Query Agent over my data?
+- How do I shard and replicate a vector database for HA?
+- How do I configure HNSW parameters (ef, efConstruction, maxConnections)?
+- How do I do multimodal image+text search?
+- How do I isolate tenants with dedicated shards?
+- How do I quantize vectors to fit more in memory?
+
+### Problem Statements
+
+- I need a schema with typed properties, not just vectors with metadata
+- BM25 and vector search live in separate systems and require fusion code
+- Filtered vector search degrades when filters are restrictive (post-filter problem)
+- HNSW indexes blow out memory at scale
+- Multimodal search across text and images is hard to wire up
+- Multi-tenancy requires either per-tenant indexes or weak isolation
+- I want generative answers without writing a separate RAG pipeline
+
+### When to Pick This
+
+- Pick this when schema + properties + cross-references match your data model (graph-like, not just vectors)
+- Pick this over Pinecone when you want open-source self-hosting alongside a managed cloud option
+- Pick this over Qdrant / Milvus / pgvector when integrated generative search and Weaviate Agents (Query / Transformation / Personalization) accelerate building agent-driven apps
+- Pick this when hybrid search with BM25F property weighting and Relative Score Fusion fits your relevance needs
+- Pick this when multimodal vectorizer modules (CLIP, ImageBind, Google/NVIDIA multimodal) are built into your pipeline
+- Skip Weaviate Agents specifically when you need self-hosted-only — they are Cloud-only
+
+### Related Terms and Aliases
+
+- Weaviate Database
+- Weaviate Cloud (WCS)
+- Weaviate Embeddings (managed inference)
+- nearText / nearVector / nearObject / nearImage
+- BM25F
+- Hybrid search (alpha)
+- Named vectors
+- Generative module
+- Vectorizer module
+- HNSW / Flat / Dynamic index
+- Multi-tenancy shards
+- Query Agent

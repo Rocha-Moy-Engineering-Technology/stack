@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>RAG &amp; Knowledge Retrieval</td></tr>
+<tr><td>Group</td><td>Vector Databases</td></tr>
 <tr><td>Type</td><td>SDK/Infra</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/weaviate/weaviate">https://github.com/weaviate/weaviate</a></td></tr>
-<tr><td>Stars</td><td>15600</td></tr>
+<tr><td>Stars</td><td>16179</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.weaviate.io/weaviate/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -518,6 +518,72 @@ for (const obj of response.objects) {
 <h2 id="citations"><a class="header" href="#citations">Citations</a></h2>
 <ul>
 <li>[1] Weaviate Documentation - <a href="https://docs.weaviate.io/weaviate/">https://docs.weaviate.io/weaviate/</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<p>Weaviate, vector database, collections, objects, schema, HNSW, flat index, dynamic index, BM25F, hybrid search, nearText, nearVector, nearImage, generative search, Weaviate Agents, Query Agent, Transformation Agent, Personalization Agent, vectorizer modules, generative modules, multi-tenancy, named vectors, GraphQL, gRPC, sharding, replication, leaderless, product quantization, binary quantization, scalar quantization, RAG, multimodal, CLIP</p>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Create a collection with a schema and vectorizer</li>
+<li>Run a <code>nearText</code> semantic search with auto-vectorization</li>
+<li>Run a hybrid search with <code>alpha</code> blending vector and BM25F</li>
+<li>Boost specific properties (e.g., <code>title^2</code>) in BM25F</li>
+<li>Generate answers via <code>generate.near_text</code> with a chosen LLM provider</li>
+<li>Use the Query Agent for natural-language access to collections</li>
+<li>Configure PQ / BQ / SQ quantization to reduce memory</li>
+<li>Set replication consistency to ONE / QUORUM / ALL</li>
+<li>Search across multiple named vector fields in one collection</li>
+<li>Deploy via Helm charts with sharding and replication</li>
+<li>Filter HNSW results with <code>where</code> clauses (single-pass filtered search)</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I build a semantic search with schema and properties?</li>
+<li>How do I combine BM25 keyword search with vector search in one query?</li>
+<li>How do I do generative search (RAG) inside the vector database?</li>
+<li>How do I run a natural-language Query Agent over my data?</li>
+<li>How do I shard and replicate a vector database for HA?</li>
+<li>How do I configure HNSW parameters (ef, efConstruction, maxConnections)?</li>
+<li>How do I do multimodal image+text search?</li>
+<li>How do I isolate tenants with dedicated shards?</li>
+<li>How do I quantize vectors to fit more in memory?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>I need a schema with typed properties, not just vectors with metadata</li>
+<li>BM25 and vector search live in separate systems and require fusion code</li>
+<li>Filtered vector search degrades when filters are restrictive (post-filter problem)</li>
+<li>HNSW indexes blow out memory at scale</li>
+<li>Multimodal search across text and images is hard to wire up</li>
+<li>Multi-tenancy requires either per-tenant indexes or weak isolation</li>
+<li>I want generative answers without writing a separate RAG pipeline</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when schema + properties + cross-references match your data model (graph-like, not just vectors)</li>
+<li>Pick this over Pinecone when you want open-source self-hosting alongside a managed cloud option</li>
+<li>Pick this over Qdrant / Milvus / pgvector when integrated generative search and Weaviate Agents (Query / Transformation / Personalization) accelerate building agent-driven apps</li>
+<li>Pick this when hybrid search with BM25F property weighting and Relative Score Fusion fits your relevance needs</li>
+<li>Pick this when multimodal vectorizer modules (CLIP, ImageBind, Google/NVIDIA multimodal) are built into your pipeline</li>
+<li>Skip Weaviate Agents specifically when you need self-hosted-only — they are Cloud-only</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Weaviate Database</li>
+<li>Weaviate Cloud (WCS)</li>
+<li>Weaviate Embeddings (managed inference)</li>
+<li>nearText / nearVector / nearObject / nearImage</li>
+<li>BM25F</li>
+<li>Hybrid search (alpha)</li>
+<li>Named vectors</li>
+<li>Generative module</li>
+<li>Vectorizer module</li>
+<li>HNSW / Flat / Dynamic index</li>
+<li>Multi-tenancy shards</li>
+<li>Query Agent</li>
 </ul>
 
                     </main>

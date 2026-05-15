@@ -4,11 +4,11 @@
 
 | Field | Value |
 |-------|-------|
-| Group | Evaluation & Testing |
+| Group | Evaluation |
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [https://github.com/promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) |
-| Stars | 10600 |
+| Stars | 21253 |
 | Documentation | [Official Docs](https://www.promptfoo.dev/docs/intro/) |
 
 ## Overview
@@ -564,3 +564,99 @@ promptfoo is under active development with frequent releases. Key evolutionary m
 - [8] [promptfoo Documentation - Red Teaming](https://www.promptfoo.dev/docs/red-team/)
 - [9] [promptfoo Documentation - CI/CD Integration](https://www.promptfoo.dev/docs/integrations/ci-cd/)
 - [10] [promptfoo GitHub Repository](https://github.com/promptfoo/promptfoo)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- promptfoo
+- prompt comparison
+- side-by-side evaluation
+- YAML configuration
+- Node.js library
+- CLI evaluator
+- deterministic assertions
+- model-graded assertions
+- llm-rubric
+- context-faithfulness
+- semantic similarity
+- regex assertion
+- JSON validation
+- cost threshold
+- latency threshold
+- red teaming
+- penetration testing
+- web viewer
+- 70+ providers
+- Nunjucks templating
+- scenarios
+- defaultTest
+- GitHub Actions
+- assertion sets
+- promptfooconfig.yaml
+
+### Verb-Noun Tasks
+
+- Compare multiple prompts across multiple models
+- Define test cases declaratively in YAML
+- Assert exact match, contains, regex, JSON schema, or refusal
+- Score outputs using LLM-graded rubrics
+- Enforce cost and latency budgets per test
+- Cache LLM responses between evaluation runs
+- Launch the local web viewer for matrix-style comparison
+- Run a red-team scan against a target provider
+- Integrate evaluation into GitHub Actions for PR gating
+- Load test data from CSV, JSON, or Google Sheets
+- Generate synthetic test cases via promptfoo generate dataset
+- Wrap a custom backend with a JavaScript or Python provider
+- Apply weighted assertions and assertion sets
+- Evaluate RAG with context-faithfulness and answer-relevance
+
+### User Intent Phrases
+
+- How do I run side-by-side prompt comparisons across providers?
+- I need a CLI that runs LLM evals with YAML configuration.
+- Add LLM evaluation to my GitHub Actions workflow.
+- How do I red-team a chatbot for prompt injection and PII leakage?
+- Test the same prompt against OpenAI, Anthropic, and Mistral.
+- Enforce a maximum cost per LLM call in tests.
+- Define a custom assertion in Python that runs locally.
+- View results in a browser as a pass/fail matrix.
+- How do I generate test cases automatically from a prompt?
+- Compare gpt-4o-mini vs gpt-4o on the same suite.
+
+### Problem Statements
+
+- No deterministic harness for comparing prompt variants across models.
+- Prompt changes silently regress quality with no automated detection.
+- Eval costs explode without local caching of LLM responses.
+- Switching models requires re-validating an entire test suite.
+- Security testing for prompt injection is manual and inconsistent.
+- Cost and latency budgets are not enforced as part of QA.
+- Team has no shared, reproducible view of LLM test results.
+
+### When to Pick This
+
+- Pick this when you want a CLI-first, YAML-driven, side-by-side prompt comparison harness with a local web viewer.
+- Pick this over Ragas when prompt comparison and CI gating across many providers matter more than RAG-specific metrics.
+- Pick this over DeepEval when Node.js + YAML + CLI is preferred over Python + Pytest.
+- Pick this over OpenAI Evals when provider-agnostic evaluation across 70+ providers and local execution are requirements.
+- Pick this when integrated red-teaming with plugins (jailbreak, prompt-injection, PII, hijacking) is part of the workflow.
+- Pick this when cost and latency thresholds must be first-class assertion types alongside quality.
+
+### Related Terms and Aliases
+
+- prompt eval CLI
+- LLM test harness
+- prompt regression suite
+- prompt A/B testing
+- YAML LLM tests
+- promptfoo redteam
+- llm-rubric grader
+- assertion-based LLM testing
+- LLM CI/CD gate
+- prompt engineering toolkit
+- side-by-side LLM viewer
+- node-based LLM evaluator

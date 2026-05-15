@@ -9,7 +9,7 @@
 | Type | SDK |
 | Open Source | Yes |
 | GitHub | [instructor-ai/instructor](https://github.com/instructor-ai/instructor) |
-| Stars | 12,413 |
+| Stars | 12957 |
 | Docs | [python.useinstructor.com](https://python.useinstructor.com/) |
 
 ## Overview
@@ -529,3 +529,95 @@ Instructor follows semantic versioning. The current version is v1.14.5. The libr
 - [15] [Instructor - Pydantic Models](https://python.useinstructor.com/concepts/models/)
 - [16] [Instructor - Multimodal Capabilities](https://python.useinstructor.com/concepts/multimodal/)
 - [17] [Instructor GitHub Repository](https://github.com/instructor-ai/instructor)
+
+## Discovery Signals
+
+> Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.
+
+### Keywords
+
+- Instructor
+- Pydantic LLM
+- structured outputs
+- response_model
+- automatic retries
+- reask loop
+- validation-and-retry
+- client patching
+- from_provider
+- multi-provider
+- LLM extraction
+- TOOLS mode
+- JSON_SCHEMA mode
+- MD_JSON mode
+- PARALLEL_TOOLS
+- streaming partial
+- create_partial
+- create_iterable
+- Tenacity retries
+- Jinja templating
+- hooks system
+- llm_validator
+- multimodal extraction
+- InstructorRetryException
+
+### Verb-Noun Tasks
+
+- Define an LLM response schema as a Pydantic model
+- Extract typed data from text with a single `client.create()` call
+- Patch any LLM client with `instructor.from_provider("openai/gpt-4o")`
+- Stream partially-populated objects with `create_partial`
+- Yield an iterable of complete objects with `create_iterable`
+- Retry automatically on Pydantic validation failure
+- Add custom field validators or LLM-based semantic validators
+- Switch providers (OpenAI, Anthropic, Google, Ollama) without code changes
+- Extract structured data from images, PDFs, and audio
+- Register hooks on completion, response, error, parse-error events
+- Wrap validation in Tenacity for exponential backoff
+- Pass dynamic prompt context via Jinja templates
+
+### User Intent Phrases
+
+- How do I get a typed Python object out of an LLM call?
+- How can I validate LLM JSON output against a Pydantic schema?
+- I want the LLM to retry automatically when output is invalid
+- How do I extract structured data from unstructured text?
+- How can one library work across OpenAI, Anthropic, Gemini, and Ollama?
+- How do I stream partial structured output as tokens arrive?
+- How do I add semantic validation that the LLM itself runs?
+- How do I extract a list of objects in one call?
+- How do I parse invoice data from a PDF into a typed model?
+- How do I add custom retry strategies with exponential backoff?
+
+### Problem Statements
+
+- LLM JSON output often fails to parse or violates schema constraints
+- Manual prompt-and-parse loops are brittle and provider-specific
+- Provider-native structured outputs don't transfer across vendors
+- Each validation-triggered retry is a full LLM call adding latency and cost
+- Streaming validators can't run on partial objects
+- Deeply nested schemas confuse weaker models
+- Validation guarantees structure, not factual correctness
+
+### When to Pick This
+
+- Pick Instructor when you want validation-and-retry with any LLM provider, no token-level control needed
+- Pick Instructor when you already use Pydantic and want minimal code change to add structured outputs
+- Pick Instructor when you need broad provider support (23+) including hosted APIs without model access
+- Pick Outlines instead when retries are unacceptable — Outlines uses constrained decoding to guarantee validity at the token level but requires local model access
+- Pick BAML instead when you want a typed DSL with code-generated clients across many languages
+- Pick DSPy instead when you want optimizers to tune prompts and few-shot examples automatically against a metric
+- Pick PydanticAI as the recommended agent-runtime complement when you need quality gates, shareable runs, and built-in observability
+
+### Related Terms and Aliases
+
+- Pydantic-validated outputs
+- LLM JSON extraction
+- self-correcting extraction
+- patched OpenAI client
+- structured LLM responses
+- function-calling extraction
+- LLM-as-extractor
+- typed LLM outputs
+- response schema validation
+- Jason Liu library

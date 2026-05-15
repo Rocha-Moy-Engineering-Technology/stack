@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Guardrails &amp; Safety</td></tr>
+<tr><td>Group</td><td>Guardrails</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/guardrails-ai/guardrails">https://github.com/guardrails-ai/guardrails</a></td></tr>
-<tr><td>Stars</td><td>6435</td></tr>
+<tr><td>Stars</td><td>6862</td></tr>
 <tr><td>Documentation</td><td><a href="https://guardrailsai.com/docs">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -599,12 +599,108 @@ guard = Guard().use(
 <li><a href="https://pypi.org/project/guardrails-ai/">guardrails-ai on PyPI</a> – Package distribution with version history and dependency information.</li>
 <li><a href="https://github.com/guardrails-ai/validator-template">Guardrails AI Validator Template</a> – Template repository for creating and submitting custom validators to the Hub.</li>
 </ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>guardrails ai</li>
+<li>validator library</li>
+<li>input output validation</li>
+<li>guards</li>
+<li>pydantic</li>
+<li>on-fail action</li>
+<li>reask</li>
+<li>structured output</li>
+<li>PII detection</li>
+<li>toxic language</li>
+<li>hallucination</li>
+<li>competitor check</li>
+<li>guardrails hub</li>
+<li>re-ask loop</li>
+<li>streaming validation</li>
+<li>OpenAI-compatible server</li>
+<li>Detoxify</li>
+<li>Microsoft Presidio</li>
+<li>LiteLLM integration</li>
+<li>Apache 2.0</li>
+<li>LLM middleware</li>
+<li>jailbreak prevention</li>
+<li>regex validator</li>
+<li>async guard</li>
+<li>FailResult</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Wrap an LLM call with input and output validators</li>
+<li>Block toxic language in LLM responses</li>
+<li>Mask PII in LLM outputs with Presidio</li>
+<li>Enforce a Pydantic schema on LLM output</li>
+<li>Re-ask the LLM when validation fails</li>
+<li>Filter competitor mentions from generated text</li>
+<li>Validate streaming LLM chunks in real time</li>
+<li>Deploy a centralized guardrails server behind Gunicorn</li>
+<li>Proxy OpenAI SDK calls through the Guardrails Server</li>
+<li>Write a custom validator with register_validator</li>
+<li>Install validators from the Guardrails Hub</li>
+<li>Combine multiple validators into a single guard</li>
+<li>Validate generated SQL or JSON before execution</li>
+<li>Log failures with a NOOP on-fail action</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I add output validation to my OpenAI API calls in Python?</li>
+<li>I need to redact emails and phone numbers from LLM responses.</li>
+<li>My LLM keeps mentioning competitors and I want to filter those out.</li>
+<li>How can I get the LLM to retry when its output fails schema validation?</li>
+<li>Is there a drop-in OpenAI-compatible proxy that enforces content rules?</li>
+<li>How do I extract structured data from an LLM with field-level validators?</li>
+<li>Show me how to block toxic content using Detoxify in Python.</li>
+<li>I want a re-ask loop that fixes invalid JSON automatically.</li>
+<li>Can I run guardrails on streaming responses?</li>
+<li>How do I create my own validator and register it with Guardrails?</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>LLMs return free-form text instead of conforming JSON schemas.</li>
+<li>Toxic or unsafe content leaks into user-facing responses.</li>
+<li>PII appears in LLM outputs and violates privacy compliance.</li>
+<li>Generated text mentions competitors against brand policy.</li>
+<li>No deterministic way to retry the model when validation fails.</li>
+<li>Validation logic is duplicated across services with no shared layer.</li>
+<li>Probabilistic ML validators produce false positives at default thresholds.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you want a Python-first validator library with a re-ask loop and a hub of pre-built validators.</li>
+<li>Pick this over NeMo Guardrails when output structure and Pydantic schema enforcement matter more than Colang dialogue flows.</li>
+<li>Pick this over Lakera when you need open-source, self-hosted validation rather than a commercial API.</li>
+<li>Pick this over OpenAI Moderation when you need PII redaction, competitor filtering, and structured-output enforcement beyond harm-category classification.</li>
+<li>Pick this when you want to expose validation as an OpenAI-compatible HTTP server and route existing SDK clients through it.</li>
+<li>Pick this when on-fail actions (FIX, REFRAIN, FILTER, REASK) and per-field validation are central requirements.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>Guardrails</li>
+<li>guardrails-ai</li>
+<li>LLM output validation</li>
+<li>LLM input validation</li>
+<li>Pydantic guardrails</li>
+<li>structured output enforcement</li>
+<li>re-ask pattern</li>
+<li>content safety library</li>
+<li>LLM middleware</li>
+<li>prompt injection defense</li>
+<li>jailbreak detection</li>
+<li>hallucination filter</li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../../part-3-data/labeling/label-studio.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../part-4-operations/overview.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                             </a>
 
@@ -618,7 +714,7 @@ guard = Guard().use(
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../../part-3-data/labeling/label-studio.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../part-4-operations/overview.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
                     </a>
 

@@ -8,7 +8,7 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 62 AI/ML tools across 12 functional groups">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-d9497b87.js";
+            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-f9c23d6b.js"></script>
+        <script src="../../toc-90d192a5.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -190,11 +190,11 @@
 <tr><th>Field</th><th>Value</th></tr>
 </thead>
 <tbody>
-<tr><td>Group</td><td>Evaluation &amp; Testing</td></tr>
+<tr><td>Group</td><td>Evaluation</td></tr>
 <tr><td>Type</td><td>SDK</td></tr>
 <tr><td>Open Source</td><td>Yes</td></tr>
 <tr><td>GitHub</td><td><a href="https://github.com/explodinggradients/ragas">explodinggradients/ragas</a></td></tr>
-<tr><td>Stars</td><td>12679</td></tr>
+<tr><td>Stars</td><td>13913</td></tr>
 <tr><td>Documentation</td><td><a href="https://docs.ragas.io/en/stable/">Official Docs</a></td></tr>
 </tbody>
 </table>
@@ -551,6 +551,104 @@ tone_metric = DiscreteMetric(
 <li>[8] Customize Models - <a href="https://docs.ragas.io/en/stable/howtos/customizations/customize_models">https://docs.ragas.io/en/stable/howtos/customizations/customize_models</a></li>
 <li>[9] Metrics API Reference - <a href="https://docs.ragas.io/en/stable/references/metrics/">https://docs.ragas.io/en/stable/references/metrics/</a></li>
 <li>[10] Release Notes - <a href="https://github.com/explodinggradients/ragas/releases">https://github.com/explodinggradients/ragas/releases</a></li>
+</ul>
+<h2 id="discovery-signals"><a class="header" href="#discovery-signals">Discovery Signals</a></h2>
+<blockquote>
+<p>Keywords, phrases, and user-intent patterns that should surface this chapter in semantic search.</p>
+</blockquote>
+<h3 id="keywords"><a class="header" href="#keywords">Keywords</a></h3>
+<ul>
+<li>Ragas</li>
+<li>RAG evaluation</li>
+<li>Context Precision</li>
+<li>Context Recall</li>
+<li>Faithfulness</li>
+<li>Response Relevancy</li>
+<li>Noise Sensitivity</li>
+<li>Tool Call Accuracy</li>
+<li>Agent Goal Accuracy</li>
+<li>Topic Adherence</li>
+<li>synthetic test data</li>
+<li>knowledge graph</li>
+<li>QuerySynthesizer</li>
+<li>SingleTurnSample</li>
+<li>MultiTurnSample</li>
+<li>EvaluationDataset</li>
+<li>DiscreteMetric</li>
+<li>NumericMetric</li>
+<li>llm_factory</li>
+<li>evaluate</li>
+<li>experiment decorator</li>
+<li>LLM-as-judge</li>
+<li>BLEU</li>
+<li>ROUGE</li>
+<li>LiteLLM</li>
+<li>Instructor</li>
+<li>align method</li>
+</ul>
+<h3 id="verb-noun-tasks"><a class="header" href="#verb-noun-tasks">Verb-Noun Tasks</a></h3>
+<ul>
+<li>Evaluate a RAG pipeline’s retrieval precision and recall</li>
+<li>Score generation faithfulness against retrieved context</li>
+<li>Detect hallucinations in LLM answers</li>
+<li>Generate synthetic test data from source documents</li>
+<li>Build a knowledge graph for diverse query synthesis</li>
+<li>Run an experiment with the @experiment decorator</li>
+<li>Persist evaluation results as CSV for regression tracking</li>
+<li>Configure a custom evaluator LLM with llm_factory</li>
+<li>Train an LLM-based metric with few-shot alignment</li>
+<li>Evaluate agent tool selection with Tool Call Accuracy</li>
+<li>Score multi-turn conversations for Topic Adherence</li>
+<li>Validate SQL generation with execution-based comparison</li>
+<li>Evaluate Haystack, LangChain, LlamaIndex, or LangGraph pipelines</li>
+<li>Run async evaluation with aevaluate</li>
+</ul>
+<h3 id="user-intent-phrases"><a class="header" href="#user-intent-phrases">User Intent Phrases</a></h3>
+<ul>
+<li>How do I evaluate the quality of my retrieval-augmented generation pipeline?</li>
+<li>I need metrics that distinguish retrieval failures from generation hallucinations.</li>
+<li>Generate a synthetic eval set from my PDFs.</li>
+<li>Score whether the chatbot stayed on topic across a conversation.</li>
+<li>How do I evaluate agent tool calls?</li>
+<li>Compare two prompts on the same dataset and pick the better one.</li>
+<li>Use Claude or Gemini as the judge model in my Ragas evaluation.</li>
+<li>How do I measure context precision and context recall in RAG?</li>
+<li>Evaluate a LangGraph agent with agent-specific metrics.</li>
+<li>Build a regression test suite for my LLM application.</li>
+</ul>
+<h3 id="problem-statements"><a class="header" href="#problem-statements">Problem Statements</a></h3>
+<ul>
+<li>Cannot tell whether poor answers come from bad retrieval or bad generation.</li>
+<li>No systematic way to grade hallucinations against retrieved context.</li>
+<li>Manual test set creation is too expensive for new RAG systems.</li>
+<li>Same prompt scores differently each run due to LLM non-determinism.</li>
+<li>Agent evaluations lack tool-correctness and goal-completion metrics.</li>
+<li>Evaluation costs balloon with many metrics and large datasets.</li>
+<li>Default English-centric prompts fail for non-English content.</li>
+</ul>
+<h3 id="when-to-pick-this"><a class="header" href="#when-to-pick-this">When to Pick This</a></h3>
+<ul>
+<li>Pick this when you are specifically evaluating a RAG pipeline and want RAG-native metrics (Faithfulness, Context Precision/Recall) out of the box.</li>
+<li>Pick this over DeepEval when synthetic test data from a knowledge graph and RAG-first metric design matter more than the broadest metric catalog.</li>
+<li>Pick this over Promptfoo when you want Python-native evaluate/aevaluate APIs and experiment tracking rather than YAML-driven prompt comparison.</li>
+<li>Pick this over OpenAI Evals when you need framework-agnostic evaluation across LangChain, LlamaIndex, Haystack, and LangGraph rather than OpenAI-only runs.</li>
+<li>Pick this when LangSmith or Arize Phoenix observability of the evaluator itself is a requirement.</li>
+<li>Pick this when you need persona-based, multi-hop synthetic query generation from documents.</li>
+</ul>
+<h3 id="related-terms-and-aliases"><a class="header" href="#related-terms-and-aliases">Related Terms and Aliases</a></h3>
+<ul>
+<li>RAG metrics</li>
+<li>retrieval-augmented generation evaluation</li>
+<li>faithfulness metric</li>
+<li>context precision metric</li>
+<li>LLM-as-a-judge for RAG</li>
+<li>knowledge-graph testset generation</li>
+<li>synthetic eval dataset</li>
+<li>ragas evaluate</li>
+<li>agent evaluation metrics</li>
+<li>topic adherence</li>
+<li>prompt regression testing</li>
+<li>explodinggradients ragas</li>
 </ul>
 
                     </main>
