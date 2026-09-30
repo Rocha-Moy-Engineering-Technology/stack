@@ -8,15 +8,15 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 23 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="../../favicon-de23e50b.svg">
         <link rel="shortcut icon" href="../../favicon-8114d1fc.png">
         <link rel="stylesheet" href="../../css/variables-8adf115d.css">
-        <link rel="stylesheet" href="../../css/general-2459343d.css">
-        <link rel="stylesheet" href="../../css/chrome-ae938929.css">
+        <link rel="stylesheet" href="../../css/general-e96d0476.css">
+        <link rel="stylesheet" href="../../css/chrome-d279d366.css">
         <link rel="stylesheet" href="../../css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -35,10 +35,10 @@
             const path_to_root = "../../";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "../../searchindex-33f403d4.js";
+            window.path_to_searchindex_js = "../../searchindex-446bfeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="../../toc-90d192a5.js"></script>
+        <script src="../../toc-17f8ebca.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -243,10 +243,6 @@
 <p>For bulk processing, <code>POST https://api.jina.ai/v1/batch/embeddings</code> accepts inline arrays up to 10,000 items or a GCS URI to a JSONL file up to 50,000 lines. Submit returns a <code>batch_id</code>; poll for status (<code>submitted</code>/<code>processing</code>/<code>completed</code>/<code>failed</code>/<code>cancelled</code>); download as JSONL when ready. [1]</p>
 <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
 <p>All Jina APIs are simple HTTP endpoints with bearer-token auth (<code>Authorization: Bearer $JINA_API_KEY</code>) and <code>Content-Type: application/json</code>. Responses are JSON by default; the Reader and Search APIs additionally support <code>text/event-stream</code> for streaming. Endpoints are stateless and horizontally scalable; rate limits are per-API-key. [1]</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<p>Jina is an HTTP API; there is no required client library. Official SDKs exist for Python and TypeScript. Authentication uses an API key obtained at <code>jina.ai/?sui=apikey</code>.</p>
-<pre><code class="language-bash">export JINA_API_KEY=your_key_here
-</code></pre>
 <h2 id="key-features-and-functionality"><a class="header" href="#key-features-and-functionality">Key Features and Functionality</a></h2>
 <h3 id="multimodal-retrieval"><a class="header" href="#multimodal-retrieval">Multimodal Retrieval</a></h3>
 <p><code>jina-embeddings-v4</code> and <code>jina-clip-v2</code> produce vectors that share an embedding space across text, images, and (for v4) PDFs. This enables cross-modal search — e.g., a text query retrieving relevant images.</p>
@@ -490,11 +486,11 @@ curl -X POST https://api.jina.ai/v1/rerank \
 
         <script src="../../elasticlunr-ef4e11c1.min.js"></script>
         <script src="../../mark-09e88c2c.min.js"></script>
-        <script src="../../searcher-c2a407aa.js"></script>
+        <script src="../../searcher-09f2665d.js"></script>
 
         <script src="../../clipboard-1626706a.min.js"></script>
         <script src="../../highlight-abc7f01d.js"></script>
-        <script src="../../book-a0b12cfe.js"></script>
+        <script src="../../book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 

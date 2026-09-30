@@ -9,15 +9,15 @@
 
         <!-- Custom HTML head -->
 
-        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 22 functional groups, organized into 4 architectural parts">
+        <meta name="description" content="Comprehensive documentation book covering 79 AI/ML tools across 23 functional groups, organized into 4 architectural parts">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff">
 
         <link rel="icon" href="favicon-de23e50b.svg">
         <link rel="shortcut icon" href="favicon-8114d1fc.png">
         <link rel="stylesheet" href="css/variables-8adf115d.css">
-        <link rel="stylesheet" href="css/general-2459343d.css">
-        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/general-e96d0476.css">
+        <link rel="stylesheet" href="css/chrome-d279d366.css">
         <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
 
         <!-- Fonts -->
@@ -36,10 +36,10 @@
             const path_to_root = "";
             const default_light_theme = "light";
             const default_dark_theme = "navy";
-            window.path_to_searchindex_js = "searchindex-33f403d4.js";
+            window.path_to_searchindex_js = "searchindex-446bfeb5.js";
         </script>
         <!-- Start loading toc.js asap -->
-        <script src="toc-90d192a5.js"></script>
+        <script src="toc-17f8ebca.js"></script>
     </head>
     <body>
     <div id="mdbook-help-container">
@@ -179,7 +179,7 @@
                 <div id="mdbook-content" class="content">
                     <main>
                         <h1 id="aiml-stack-documentation"><a class="header" href="#aiml-stack-documentation">AI/ML Stack Documentation</a></h1>
-<p>This book documents 79 AI/ML tools and platforms organized across 22 functional groups and 4 architectural parts. Each chapter covers the tool’s core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples — all sourced from and citing official documentation.</p>
+<p>This book documents 79 AI/ML tools and platforms organized across 23 functional groups and 4 architectural parts. Each chapter covers the tool’s core concepts, architecture, features, use cases, API reference, configuration, integration patterns, and examples — all sourced from and citing official documentation.</p>
 <h2 id="how-this-book-is-organized"><a class="header" href="#how-this-book-is-organized">How This Book Is Organized</a></h2>
 <p>The catalog follows a dependency-aware structure: foundation infrastructure first, then the application layer built on top of it, then the data/model layer that feeds those applications, and finally the operations layer that runs around all of it. Use the four-part navigation in the sidebar as a mental map of the stack.</p>
 <h3 id="part-i--foundation--infrastructure"><a class="header" href="#part-i--foundation--infrastructure">Part I — Foundation &amp; Infrastructure</a></h3>
@@ -226,7 +226,6 @@
 <ol>
 <li><strong>Overview</strong> — What the tool is and what problem it solves</li>
 <li><strong>Core Concepts</strong> — Fundamental abstractions and mental models</li>
-<li><strong>Installation and Setup</strong> — Getting started quickly</li>
 <li><strong>Architecture</strong> — Internal structure and extension points</li>
 <li><strong>Key Features and Functionality</strong> — Detailed feature documentation with code examples</li>
 <li><strong>Use Cases</strong> — Walkthroughs of common scenarios</li>
@@ -12523,14 +12522,6 @@ print(response.message.parts[0].text)
 <li>Agent calls <code>sandbox.kill()</code> when done; or the sandbox auto-shuts down after the configured timeout.</li>
 </ol>
 <p>Each sandbox is a fresh isolated environment; sandboxes do not share state by default. Persistence and snapshots are opt-in.</p>
-<h2 id="installation"><a class="header" href="#installation">Installation</a></h2>
-<h3 id="python-sdk-3"><a class="header" href="#python-sdk-3">Python SDK</a></h3>
-<pre><code class="language-bash">pip install e2b-code-interpreter python-dotenv
-</code></pre>
-<h3 id="javascript--typescript-sdk"><a class="header" href="#javascript--typescript-sdk">JavaScript / TypeScript SDK</a></h3>
-<pre><code class="language-bash">npm install @e2b/code-interpreter dotenv
-</code></pre>
-<p>API key from <code>e2b.dev/dashboard</code>, set via <code>E2B_API_KEY</code> env var. [4]</p>
 <h2 id="key-features-and-functionality-26"><a class="header" href="#key-features-and-functionality-26">Key Features and Functionality</a></h2>
 <h3 id="code-execution"><a class="header" href="#code-execution">Code Execution</a></h3>
 <p><code>runCode("python source")</code> executes a code block in the sandbox’s Python kernel and returns:</p>
@@ -12806,20 +12797,6 @@ sbx2.run_code("print('resumed with prior state intact')")
 <li>Agent closes the session or it auto-times out after the configured period. [3]</li>
 </ol>
 <p>The agent code itself can run anywhere — local dev machine, serverless function, agent framework like LangGraph — because the heavy lifting (the browser process) lives in Browserbase’s cloud.</p>
-<h2 id="installation-1"><a class="header" href="#installation-1">Installation</a></h2>
-<h3 id="browserbase-sdk-nodejs"><a class="header" href="#browserbase-sdk-nodejs">Browserbase SDK (Node.js)</a></h3>
-<pre><code class="language-bash">npm install @browserbasehq/sdk playwright-core
-</code></pre>
-<pre><code class="language-js">import Browserbase from "@browserbasehq/sdk";
-const bb = new Browserbase({ apiKey: process.env.BROWSERBASE_API_KEY });
-</code></pre>
-<h3 id="python-sdk-4"><a class="header" href="#python-sdk-4">Python SDK</a></h3>
-<pre><code class="language-bash">pip install browserbase playwright
-</code></pre>
-<p>API key and Project ID come from the dashboard at <code>browserbase.com/sessions</code>. [3]</p>
-<h3 id="stagehand-optional-for-ai-driven-control"><a class="header" href="#stagehand-optional-for-ai-driven-control">Stagehand (optional, for AI-driven control)</a></h3>
-<pre><code class="language-bash">npm install @browserbasehq/stagehand
-</code></pre>
 <h2 id="key-features-and-functionality-27"><a class="header" href="#key-features-and-functionality-27">Key Features and Functionality</a></h2>
 <h3 id="cloud-browsers"><a class="header" href="#cloud-browsers">Cloud Browsers</a></h3>
 <p>Browserbase runs Chromium browsers in its cloud with managed scaling, persistent storage, and snapshotting. Concurrent sessions scale to many hundreds depending on plan tier. [1]</p>
@@ -17218,13 +17195,6 @@ print(result.response)
 <p>The Embeddings API accepts an <code>input_type</code> parameter with values <code>query</code> or <code>document</code>. Using the matching type at embed-time improves retrieval quality compared to embedding both queries and documents identically. [2]</p>
 <h3 id="flexible-dimensions-and-quantization"><a class="header" href="#flexible-dimensions-and-quantization">Flexible Dimensions and Quantization</a></h3>
 <p>The voyage-4 series supports configurable output dimensions (256/512/1024/2048) and quantization options for trading storage and inference cost against quality. Embeddings created at different dimensions/precisions remain compatible within the series. [5]</p>
-<h2 id="installation-2"><a class="header" href="#installation-2">Installation</a></h2>
-<h3 id="python-client-3"><a class="header" href="#python-client-3">Python Client</a></h3>
-<pre><code class="language-bash">pip install voyageai
-</code></pre>
-<p>Set the API key via the <code>VOYAGE_API_KEY</code> environment variable or pass it to the client constructor. [6]</p>
-<h3 id="javascript"><a class="header" href="#javascript">JavaScript</a></h3>
-<p>A TypeScript/JavaScript client is also published; consult the docs for the exact package name and version.</p>
 <h2 id="architecture-46"><a class="header" href="#architecture-46">Architecture</a></h2>
 <p>Voyage’s APIs are standard HTTP endpoints with API-key auth. Requests are stateless; each call carries the texts (or query/document pairs) plus model and parameters. Responses contain the embeddings or relevance scores plus token counts for usage tracking. The service is available directly from Voyage and also through marketplace integrations (AWS, Azure, Snowflake, Databricks). [1]</p>
 <h2 id="key-features-and-functionality-31"><a class="header" href="#key-features-and-functionality-31">Key Features and Functionality</a></h2>
@@ -17461,16 +17431,6 @@ for r in reranked.results:
 <p>For large corpora, the Embed Jobs API runs asynchronous batch embedding jobs against files in cloud storage rather than streaming through the synchronous endpoint. Useful for indexing pipelines that embed millions of documents. [5]</p>
 <h3 id="citations-and-grounding"><a class="header" href="#citations-and-grounding">Citations and Grounding</a></h3>
 <p>In RAG mode, the chat response includes structured citations mapping spans of the assistant message back to the supplied documents. This is what makes Cohere’s grounded responses verifiable for enterprise use cases like compliance Q&amp;A. [4]</p>
-<h2 id="installation-3"><a class="header" href="#installation-3">Installation</a></h2>
-<h3 id="python"><a class="header" href="#python">Python</a></h3>
-<pre><code class="language-bash">pip install cohere
-</code></pre>
-<pre><code class="language-python">import cohere
-co = cohere.ClientV2()   # reads COHERE_API_KEY from env
-</code></pre>
-<h3 id="typescript"><a class="header" href="#typescript">TypeScript</a></h3>
-<pre><code class="language-bash">npm install cohere-ai
-</code></pre>
 <h2 id="use-cases-47"><a class="header" href="#use-cases-47">Use Cases</a></h2>
 <h3 id="enterprise-rag"><a class="header" href="#enterprise-rag">Enterprise RAG</a></h3>
 <p>The canonical Cohere stack: Embed for indexing, Rerank for refinement, Command (with <code>documents</code> parameter) for grounded generation with citations. Each layer is a single API call with sensible defaults.</p>
@@ -17708,10 +17668,6 @@ for r in top:
 <p>For bulk processing, <code>POST https://api.jina.ai/v1/batch/embeddings</code> accepts inline arrays up to 10,000 items or a GCS URI to a JSONL file up to 50,000 lines. Submit returns a <code>batch_id</code>; poll for status (<code>submitted</code>/<code>processing</code>/<code>completed</code>/<code>failed</code>/<code>cancelled</code>); download as JSONL when ready. [1]</p>
 <h2 id="architecture-48"><a class="header" href="#architecture-48">Architecture</a></h2>
 <p>All Jina APIs are simple HTTP endpoints with bearer-token auth (<code>Authorization: Bearer $JINA_API_KEY</code>) and <code>Content-Type: application/json</code>. Responses are JSON by default; the Reader and Search APIs additionally support <code>text/event-stream</code> for streaming. Endpoints are stateless and horizontally scalable; rate limits are per-API-key. [1]</p>
-<h2 id="installation-4"><a class="header" href="#installation-4">Installation</a></h2>
-<p>Jina is an HTTP API; there is no required client library. Official SDKs exist for Python and TypeScript. Authentication uses an API key obtained at <code>jina.ai/?sui=apikey</code>.</p>
-<pre><code class="language-bash">export JINA_API_KEY=your_key_here
-</code></pre>
 <h2 id="key-features-and-functionality-33"><a class="header" href="#key-features-and-functionality-33">Key Features and Functionality</a></h2>
 <h3 id="multimodal-retrieval"><a class="header" href="#multimodal-retrieval">Multimodal Retrieval</a></h3>
 <p><code>jina-embeddings-v4</code> and <code>jina-clip-v2</code> produce vectors that share an embedding space across text, images, and (for v4) PDFs. This enables cross-modal search — e.g., a text query retrieving relevant images.</p>
@@ -30983,7 +30939,7 @@ def parent_flow():
 </li>
 </ul>
 <h2 id="api-reference-summary-50"><a class="header" href="#api-reference-summary-50">API Reference Summary</a></h2>
-<h3 id="python-sdk-5"><a class="header" href="#python-sdk-5">Python SDK</a></h3>
+<h3 id="python-sdk-3"><a class="header" href="#python-sdk-3">Python SDK</a></h3>
 <pre><code class="language-python">from prefect import flow, task, get_client, get_run_logger
 from prefect.variables import Variable
 from prefect.blocks.core import Block
@@ -33445,11 +33401,11 @@ return msg;
 
         <script src="elasticlunr-ef4e11c1.min.js"></script>
         <script src="mark-09e88c2c.min.js"></script>
-        <script src="searcher-c2a407aa.js"></script>
+        <script src="searcher-09f2665d.js"></script>
 
         <script src="clipboard-1626706a.min.js"></script>
         <script src="highlight-abc7f01d.js"></script>
-        <script src="book-a0b12cfe.js"></script>
+        <script src="book-609e4cb8.js"></script>
 
         <!-- Custom JS scripts -->
 
