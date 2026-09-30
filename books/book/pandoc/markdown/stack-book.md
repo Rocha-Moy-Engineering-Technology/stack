@@ -2,7 +2,7 @@
 author:
 - Head of AI Agent
 description: Comprehensive documentation book covering 79 AI/ML tools
-  across 22 functional groups, organized into 4 architectural parts
+  across 23 functional groups, organized into 4 architectural parts
 title: AI/ML Stack Documentation
 ---
 
@@ -94,7 +94,7 @@ title: AI/ML Stack Documentation
 
 # AI/ML Stack Documentation
 
-This book documents 79 AI/ML tools and platforms organized across 22 functional groups and 4 architectural parts. Each chapter covers the tool's core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples — all sourced from and citing official documentation.
+This book documents 79 AI/ML tools and platforms organized across 23 functional groups and 4 architectural parts. Each chapter covers the tool's core concepts, architecture, features, use cases, API reference, configuration, integration patterns, and examples — all sourced from and citing official documentation.
 
 ## How This Book Is Organized
 
@@ -149,17 +149,16 @@ Each chapter follows a consistent structure:
 
 1.  **Overview** — What the tool is and what problem it solves
 2.  **Core Concepts** — Fundamental abstractions and mental models
-3.  **Installation and Setup** — Getting started quickly
-4.  **Architecture** — Internal structure and extension points
-5.  **Key Features and Functionality** — Detailed feature documentation with code examples
-6.  **Use Cases** — Walkthroughs of common scenarios
-7.  **API Reference Summary** — Key classes, functions, and endpoints
-8.  **Configuration and Customization** — All configuration options
-9.  **Integration Patterns** — How the tool connects with other tools in the catalog
-10. **Examples** — Complete runnable examples
-11. **Limitations and Considerations** — Known constraints and scaling notes
-12. **Changelog Highlights** — Major version milestones
-13. **Citations** — Links to official documentation sources
+3.  **Architecture** — Internal structure and extension points
+4.  **Key Features and Functionality** — Detailed feature documentation with code examples
+5.  **Use Cases** — Walkthroughs of common scenarios
+6.  **API Reference Summary** — Key classes, functions, and endpoints
+7.  **Configuration and Customization** — All configuration options
+8.  **Integration Patterns** — How the tool connects with other tools in the catalog
+9.  **Examples** — Complete runnable examples
+10. **Limitations and Considerations** — Known constraints and scaling notes
+11. **Changelog Highlights** — Major version milestones
+12. **Citations** — Links to official documentation sources
 
 ## Source
 
@@ -2218,14 +2217,14 @@ The response includes `time_info` metrics (`queue_time`, `prompt_time`, `complet
 
 ### Endpoints
 
-``` 
+```
 POST https://api.cerebras.ai/v1/chat/completions
 POST https://api.cerebras.ai/v1/completions
 ```
 
 ### Authentication
 
-``` 
+```
 Authorization: Bearer <CEREBRAS_API_KEY>
 ```
 
@@ -4052,7 +4051,7 @@ BLS enables Python-based orchestration of multiple models within a single reques
 
 ### Model Repository Layout
 
-``` 
+```
 model_repository/
   model_a/
     config.pbtxt
@@ -4089,7 +4088,7 @@ Serve TensorRT, PyTorch, ONNX, and Python models simultaneously on the same GPU,
 
 ### Dynamic Batching
 
-``` 
+```
 # config.pbtxt
 dynamic_batching {
   preferred_batch_size: [4, 8]
@@ -4103,7 +4102,7 @@ Automatically combines requests into batches with configurable preferred sizes a
 
 Serve multiple versions of the same model simultaneously. Version policies control which versions are active:
 
-``` 
+```
 # config.pbtxt
 version_policy: { latest { num_versions: 2 } }
 ```
@@ -4221,7 +4220,7 @@ Combine Triton inference with RAPIDS for end-to-end GPU-accelerated ML pipelines
 
 ### Serve an ONNX Model
 
-``` 
+```
 # model_repository/resnet50/config.pbtxt
 name: "resnet50"
 backend: "onnxruntime"
@@ -4785,7 +4784,7 @@ The `generate` method provides fast text generation for LLMs and VLMs with suppo
 
 ### Model Architecture
 
-``` 
+```
 Configuration (config.json)
     └── Model (model weights)
         └── Preprocessor (tokenizer/feature extractor)
@@ -5363,7 +5362,7 @@ print(response["embeddings"])
 
 ### Modelfile Parameters
 
-``` 
+```
 FROM llama3.1
 PARAMETER temperature 0.7
 PARAMETER num_ctx 4096
@@ -6032,7 +6031,7 @@ LiteLLM ships as two components. The **Python SDK** embeds directly into applica
 
 LiteLLM is organized into three layers:
 
-``` 
+```
 SDK Layer              completion(), embedding(), image_generation()
     |                  Provider translation, response normalization
     |
@@ -6656,7 +6655,7 @@ Portkey ships as both an open-source gateway (free, self-hosted) and a managed c
 
 Portkey operates as an edge-deployed proxy between client applications and LLM providers:
 
-``` 
+```
 Application (SDK / REST)
     |
     v
@@ -9038,7 +9037,7 @@ Clusters provision multiple GPU nodes within the same data center:
 
 All API requests require Bearer token authentication:
 
-``` 
+```
 Authorization: Bearer RUNPOD_API_KEY
 Content-Type: application/json
 ```
@@ -10021,7 +10020,7 @@ The platform supports PyTorch, TensorFlow, ONNX, and custom Python functions wit
 
 Inferless follows a serverless architecture pattern for GPU inference with these primary components:
 
-``` 
+```
 Model Source              Inferless Platform              Client
 (HuggingFace,       -->  [ Import & Build Layer    ]
  S3, GCS, GitHub,        [ Custom Runtime Builder   ]
@@ -11345,7 +11344,7 @@ LangChain spans three tiers of abstraction. At the highest level, the LangChain 
 
 LangChain is organized into layered packages with increasing specificity:
 
-``` 
+```
 langchain-core          Base abstractions (Runnables, ChatModels, Messages)
     |
 langchain               Chains, agents, retrieval strategies
@@ -14521,22 +14520,6 @@ A typical interaction:
 
 Each sandbox is a fresh isolated environment; sandboxes do not share state by default. Persistence and snapshots are opt-in.
 
-## Installation
-
-### Python SDK
-
-``` bash
-pip install e2b-code-interpreter python-dotenv
-```
-
-### JavaScript / TypeScript SDK
-
-``` bash
-npm install @e2b/code-interpreter dotenv
-```
-
-API key from `e2b.dev/dashboard`, set via `E2B_API_KEY` env var. \[4\]
-
 ## Key Features and Functionality
 
 ### Code Execution
@@ -14871,33 +14854,6 @@ A typical Browserbase exchange:
 6.  Agent closes the session or it auto-times out after the configured period. \[3\]
 
 The agent code itself can run anywhere — local dev machine, serverless function, agent framework like LangGraph — because the heavy lifting (the browser process) lives in Browserbase's cloud.
-
-## Installation
-
-### Browserbase SDK (Node.js)
-
-``` bash
-npm install @browserbasehq/sdk playwright-core
-```
-
-``` js
-import Browserbase from "@browserbasehq/sdk";
-const bb = new Browserbase({ apiKey: process.env.BROWSERBASE_API_KEY });
-```
-
-### Python SDK
-
-``` bash
-pip install browserbase playwright
-```
-
-API key and Project ID come from the dashboard at `browserbase.com/sessions`. \[3\]
-
-### Stagehand (optional, for AI-driven control)
-
-``` bash
-npm install @browserbasehq/stagehand
-```
 
 ## Key Features and Functionality
 
@@ -15334,7 +15290,7 @@ DSPy follows a Define, Evaluate, Compile, Deploy workflow:
 3.  **Compile** -- Run an optimizer that searches for better prompts, demonstrations, or weights. The optimizer systematically explores the space of possible prompts and demonstrations, guided by the evaluation metric.
 4.  **Deploy** -- Use the compiled program with the tuned configuration in production via FastAPI or MLflow.
 
-``` 
+```
 Signature --> Module --> Program --> Optimizer --> Compiled Program
     ^                                   ^
   Types                              Metric
@@ -16427,7 +16383,7 @@ The main execution pipeline flows through several stages: caching and templating
 
 ### Retry Flow
 
-``` 
+```
 Application -> Instructor -> LLM Provider
                   |
                   v
@@ -17093,7 +17049,7 @@ The BAML DSL provides the following primary constructs.
 
 **Type Declarations.**
 
-``` 
+```
 class Resume {
   name string
   email string
@@ -17110,7 +17066,7 @@ enum Sentiment {
 
 **Function Declarations.**
 
-``` 
+```
 function ExtractResume(resume_text: string) -> Resume {
   client "openai/gpt-4o"
   prompt #"
@@ -17124,7 +17080,7 @@ function ExtractResume(resume_text: string) -> Resume {
 
 **Named Client Declarations.**
 
-``` 
+```
 client<llm> GPT4 {
   provider openai
   options {
@@ -17140,7 +17096,7 @@ client<llm> GPT4 {
 
 **Template Strings.**
 
-``` 
+```
 template_string ExtractionPreamble() #"
   You are an expert data extraction assistant.
   Always return valid structured data matching the requested format.
@@ -17149,7 +17105,7 @@ template_string ExtractionPreamble() #"
 
 **Test Declarations.**
 
-``` 
+```
 test ExtractBasicResume {
   functions [ExtractResume]
   args {
@@ -17161,7 +17117,7 @@ test ExtractBasicResume {
 
 **Field Annotations.**
 
-``` 
+```
 class User {
   name string @description("The user's full name")
   age int @alias("user_age")
@@ -17173,7 +17129,7 @@ class User {
 
 **Retry and Fallback Strategies.**
 
-``` 
+```
 retry_policy MyRetry {
   max_retries 3
   strategy {
@@ -17275,7 +17231,7 @@ const final = await stream.getFinalResponse();
 
 BAML functions can accept image inputs for tasks like document extraction:
 
-``` 
+```
 function ExtractInvoice(invoice_image: image) -> Invoice {
   client "anthropic/claude-sonnet-4-20250514"
   prompt #"
@@ -17544,7 +17500,7 @@ Memory retrieval follows four stages \[7\]:
 
 Mem0's architecture consists of a memory processing engine layered over configurable storage backends:
 
-``` 
+```
 ┌───────────────────────────────────────────┐
 │             Application Layer             │
 │   (Python SDK / JS SDK / REST API)        │
@@ -18008,7 +17964,7 @@ Custom context templates allow developers to control the structure of retrieved 
 
 Zep's architecture centers on a temporal knowledge graph that ingests data from multiple sources and assembles personalized context for agent consumption:
 
-``` 
+```
 ┌─────────────────────────────────────────────┐
 │              Data Sources                    │
 │  ┌──────────┐ ┌──────────┐ ┌─────────────┐  │
@@ -18535,7 +18491,7 @@ AgentFile is an open standard file format for serializing stateful agents into a
 
 Letta's architecture centers on persistent state management for agents:
 
-``` 
+```
 ┌──────────────────────────────────────────┐
 │              Letta Platform              │
 │                                          │
@@ -19077,7 +19033,7 @@ Haystack follows a pipeline-based architecture where components are connected in
 
 The data flow within a pipeline follows the component graph. Each component receives named inputs, processes them, and produces named outputs that are routed to downstream components. The pipeline runtime manages execution ordering, handles optional inputs, and supports both synchronous and asynchronous execution.
 
-``` 
+```
 Query --> Retriever --> Ranker --> PromptBuilder --> Generator --> Answer
               |                                         ^
               v                                         |
@@ -19951,20 +19907,6 @@ The Embeddings API accepts an `input_type` parameter with values `query` or `doc
 
 The voyage-4 series supports configurable output dimensions (256/512/1024/2048) and quantization options for trading storage and inference cost against quality. Embeddings created at different dimensions/precisions remain compatible within the series. \[5\]
 
-## Installation
-
-### Python Client
-
-``` bash
-pip install voyageai
-```
-
-Set the API key via the `VOYAGE_API_KEY` environment variable or pass it to the client constructor. \[6\]
-
-### JavaScript
-
-A TypeScript/JavaScript client is also published; consult the docs for the exact package name and version.
-
 ## Architecture
 
 Voyage's APIs are standard HTTP endpoints with API-key auth. Requests are stateless; each call carries the texts (or query/document pairs) plus model and parameters. Responses contain the embeddings or relevance scores plus token counts for usage tracking. The service is available directly from Voyage and also through marketplace integrations (AWS, Azure, Snowflake, Databricks). \[1\]
@@ -20261,25 +20203,6 @@ For large corpora, the Embed Jobs API runs asynchronous batch embedding jobs aga
 
 In RAG mode, the chat response includes structured citations mapping spans of the assistant message back to the supplied documents. This is what makes Cohere's grounded responses verifiable for enterprise use cases like compliance Q&A. \[4\]
 
-## Installation
-
-### Python
-
-``` bash
-pip install cohere
-```
-
-``` python
-import cohere
-co = cohere.ClientV2()   # reads COHERE_API_KEY from env
-```
-
-### TypeScript
-
-``` bash
-npm install cohere-ai
-```
-
 ## Use Cases
 
 ### Enterprise RAG
@@ -20564,14 +20487,6 @@ For bulk processing, `POST https://api.jina.ai/v1/batch/embeddings` accepts inli
 ## Architecture
 
 All Jina APIs are simple HTTP endpoints with bearer-token auth (`Authorization: Bearer $JINA_API_KEY`) and `Content-Type: application/json`. Responses are JSON by default; the Reader and Search APIs additionally support `text/event-stream` for streaming. Endpoints are stateless and horizontally scalable; rate limits are per-API-key. \[1\]
-
-## Installation
-
-Jina is an HTTP API; there is no required client library. Official SDKs exist for Python and TypeScript. Authentication uses an API key obtained at `jina.ai/?sui=apikey`.
-
-``` bash
-export JINA_API_KEY=your_key_here
-```
 
 ## Key Features and Functionality
 
@@ -21106,7 +21021,7 @@ SET max_parallel_workers = 15;
 
 A notice appears when the HNSW graph no longer fits in `maintenance_work_mem`:
 
-``` 
+```
 NOTICE: hnsw graph no longer fits into maintenance_work_mem after 100000 tuples
 DETAIL: Building will take significantly more time.
 HINT: Increase maintenance_work_mem to speed up builds.
@@ -22444,7 +22359,7 @@ Collections organize data into **segments**, each with independent vector storag
 
 Qdrant uses a client-server architecture with distributed clustering capabilities:
 
-``` 
+```
 ┌─────────────────────────────────────────────────┐
 │                Client SDKs                       │
 │  Python, JS/TS, Rust, Go, Java, .NET            │
@@ -23095,7 +23010,7 @@ Milvus offers four consistency levels to balance between data freshness and quer
 
 Milvus Distributed uses a shared-storage disaggregated architecture with four layers \[1\]:
 
-``` 
+```
 ┌─────────────────────────────────────────────────┐
 │                 Access Layer                     │
 │  ┌───────────┐  ┌───────────┐  ┌───────────┐   │
@@ -23594,7 +23509,7 @@ Filtering can be applied at three stages (post-index, post-download, post-uncomp
 
 ## Architecture
 
-``` 
+```
 ┌─────────────────────────────────────────────────────┐
 │                  Source Connectors (34)               │
 │  S3, Azure, GCS, Local, Dropbox, Google Drive,      │
@@ -24019,7 +23934,7 @@ For supported databases (PostgreSQL, MySQL, MSSQL, MongoDB, Oracle DB, SAP HANA,
 
 Airbyte consists of a platform layer and a connector layer \[5\]:
 
-``` 
+```
 ┌─────────────────────────────────────────────────┐
 │                 Platform Layer                   │
 │  ┌──────────┐ ┌──────────┐ ┌──────────────────┐│
@@ -24430,7 +24345,7 @@ PEFT works with quantized models via multiple backends \[7\]:
 
 ## Architecture
 
-``` 
+```
 ┌─────────────────────────────────────────────────────┐
 │                   PeftConfig                         │
 │  LoraConfig │ PrefixTuningConfig │ PromptTuningConfig│
@@ -24852,7 +24767,7 @@ Unsloth supports fine-tuning Vision-Language Models (VLMs) including Qwen3-VL, G
 
 ## Architecture
 
-``` 
+```
 ┌─────────────────────────────────────────────────────┐
 │              FastLanguageModel API                    │
 │  from_pretrained │ get_peft_model │ for_inference    │
@@ -25306,7 +25221,7 @@ Axolotl wraps the TRL library to support multiple RL methods (beta feature) \[7\
 
 ## Architecture
 
-``` 
+```
 ┌─────────────────────────────────────────────────────┐
 │                    YAML Config                       │
 │  base_model, adapter, datasets, hyperparameters     │
@@ -26617,7 +26532,7 @@ Guardrails operates as a middleware layer between application code and LLM provi
 
 **Guard Layer.** The Guard object orchestrates the validation pipeline. When invoked, it sends the request to the LLM, receives the response, and passes it through the configured validators. If any validator fails and the on-fail action requires re-asking, the Guard constructs a corrective prompt and sends it back to the LLM. This loop continues up to a configurable `num_reasks` limit.
 
-``` text
+```
 Application Code
        |
        v
@@ -26646,7 +26561,7 @@ Application Code
 
 **Guardrails Server.** For production deployments, Guardrails can run as a standalone Flask-based REST API server. The server exposes OpenAI-compatible endpoints, allowing any OpenAI SDK client to route through the Guardrails server for transparent validation. Guards are defined in a Python configuration file and loaded at server startup. The server architecture separates validation from application logic, enabling independent scaling of the validation layer.
 
-``` text
+```
 Client Application
        |
        v
@@ -27246,7 +27161,7 @@ The project is licensed under Apache 2.0 and has accumulated over 5,600 GitHub s
 
 NeMo Guardrails processes every conversation turn through a pipeline of five rail types, each intercepting data at a specific stage:
 
-``` 
+```
 User Input
     |
     v
@@ -27283,7 +27198,7 @@ Bot Response
 
 The standard configuration directory structure:
 
-``` 
+```
 config/
   config.yml        -- Model selection, rail activation, parameters
   config.py         -- Custom initialization code (optional)
@@ -27393,7 +27308,7 @@ response = rails.generate(
 
 **Knowledge Base Retrieval**: Built-in support for RAG workflows with retrieval rails that filter chunks before they reach the LLM:
 
-``` colang
+```
 define extension flow generate bot message
   priority 100
   bot ...
@@ -27793,7 +27708,7 @@ rails:
 
 **Colang 2.0 with LLM-Driven Flow**:
 
-``` colang
+```
 import core
 import llm
 
@@ -29196,7 +29111,7 @@ The project is licensed under Apache 2.0, has over 12,000 GitHub stars, 273 cont
 
 Ragas is organized into four architectural layers:
 
-``` 
+```
 Evaluation Framework      Schemas, metrics, evaluate/aevaluate execution
     |
 Test Data Generation      Knowledge graph, scenario generators, synthesizers
@@ -29216,7 +29131,7 @@ Customization Layer       Model adaptation, language localization, metric traini
 
 ### Metric Class Hierarchy
 
-``` 
+```
 Metric (abstract base)
 ├── MetricWithLLM          Uses LLM for evaluation, has .llm attribute
 ├── SingleTurnMetric       Scores via single_turn_ascore()
@@ -29776,7 +29691,7 @@ Beyond evaluation, DeepEval includes synthetic dataset generation with evolution
 
 DeepEval is organized around a layered evaluation pipeline:
 
-``` 
+```
 Test Cases / Goldens          Atomic units of LLM interaction (input + output)
         |
 Evaluation Dataset             Collection of Goldens managed as a cohesive set
@@ -31398,7 +31313,7 @@ tests:
 
 **Loading tests from CSV for large-scale evaluation**:
 
-``` csv
+```
 question,expected_topic,max_cost
 "What is photosynthesis?",biology,0.005
 "Explain the French Revolution",history,0.008
@@ -32140,7 +32055,7 @@ Phoenix runs as a standalone server with a web UI for visualization and analysis
 
 Phoenix follows a collector-server-UI architecture built on OpenTelemetry:
 
-``` 
+```
 Application Code
     |
     | (OTLP over HTTP/gRPC)
@@ -32930,7 +32845,7 @@ The platform is commercial and cloud-hosted, with self-hosted deployment options
 
 W&B follows a client-server architecture with a thin SDK that streams data to a cloud or self-hosted backend:
 
-``` 
+```
 Application Code
     |
 wandb SDK (Python)          Instruments training loops, logs metrics/artifacts
@@ -33552,7 +33467,7 @@ Helicone distinguishes itself from pure observability platforms by combining gat
 
 Helicone's architecture comprises five core services:
 
-``` 
+```
                     +------------------+
                     |    Client App    |
                     +--------+---------+
@@ -33773,7 +33688,7 @@ The `Helicone-Token-Limit-Exception-Handler` header manages context window overf
 
 All LLM requests are routed through the gateway:
 
-``` 
+```
 POST https://gateway.helicone.ai/{provider-path}
 POST https://ai-gateway.helicone.ai/{openai-path}
 POST https://oai.helicone.ai/{openai-path}
@@ -33785,7 +33700,7 @@ The gateway accepts standard provider request formats. Set `Helicone-Target-Url`
 
 Retrieve logged requests programmatically:
 
-``` 
+```
 POST https://api.helicone.ai/v1/request/query
 ```
 
@@ -33829,7 +33744,7 @@ EU endpoint: `https://eu.api.helicone.ai/v1/request/query`
 
 ### User Query API
 
-``` 
+```
 POST https://api.helicone.ai/v1/user/query
 ```
 
@@ -34421,7 +34336,7 @@ Prompts in Langfuse are versioned, managed artifacts that can be deployed to pro
 
 Langfuse consists of two primary application containers backed by a multi-database storage layer:
 
-``` 
+```
                     ┌─────────────────────┐
                     │    Langfuse Web      │
                     │  (UI + REST API)     │
@@ -35154,7 +35069,7 @@ The Temporal Server consists of four independently scalable services that commun
 
 A typical production deployment scales each service independently based on load characteristics. For example, a deployment might run 5 Frontend instances, 15 History instances, 17 Matching instances, and 3 Worker Service instances.
 
-``` text
+```
 +------------------+       +-------------------+
 |   Client App     |       |   Worker Process  |
 | (starts workflows|       | (executes code)   |
@@ -35833,7 +35748,7 @@ The project is licensed under Apache 2.0, has over 400 contributors, and maintai
 
 Prefect's architecture separates orchestration metadata from code execution.
 
-``` 
+```
 +---------------------------+
 |     Prefect API Server    |
 |  (Cloud or Self-Hosted)   |
@@ -38025,7 +37940,7 @@ For Docker Compose deployments, these variables are set in the `.env` file gener
 
 **Webhook-Driven Automation**: External systems send HTTP POST requests to Activepieces webhook URLs, triggering flows that process the incoming data. This pattern suits event-driven architectures where third-party services need to notify Activepieces of state changes.
 
-``` text
+```
 External Service --> POST webhook URL --> Activepieces Flow --> Actions
 ```
 
@@ -38049,7 +37964,7 @@ External Service --> POST webhook URL --> Activepieces Flow --> Actions
 
 **Git Sync for Environment Promotion**: Flows are developed and tested in a staging project, exported to a Git repository, reviewed via pull requests, and promoted to production through project releases. This pattern provides change control and rollback capabilities.
 
-``` text
+```
 Staging Project --> Git Export --> Pull Request --> Merge --> Production Release
 ```
 
@@ -38311,7 +38226,7 @@ Node-RED's ecosystem includes over 5,000 community-contributed nodes published t
 
 Node-RED's architecture consists of three main layers:
 
-``` 
+```
 Editor (Browser)       Browser-based visual flow editor
     |
 Runtime (Node.js)      Flow execution engine, node lifecycle, message routing
@@ -38554,7 +38469,7 @@ Six log levels are available: `fatal`, `error`, `warn`, `info` (default), `debug
 
 Use Node-RED as a protocol translation layer between IoT devices and cloud services. MQTT nodes subscribe to device topics, function nodes transform payloads, and HTTP request nodes forward data to REST APIs or cloud platforms:
 
-``` 
+```
 [MQTT In] -> [Function: Transform] -> [HTTP Request: POST to API]
 ```
 
@@ -38562,7 +38477,7 @@ Use Node-RED as a protocol translation layer between IoT devices and cloud servi
 
 Create HTTP endpoints that receive webhook payloads, process them through transformation and routing logic, and trigger downstream actions:
 
-``` 
+```
 [HTTP In: POST /webhook] -> [Switch: Route by event type] -> [Function: Process] -> [HTTP Response]
 ```
 
@@ -38570,7 +38485,7 @@ Create HTTP endpoints that receive webhook payloads, process them through transf
 
 Connect to source databases, transform records, and load them into destination systems. Use inject nodes for scheduling and debug nodes for monitoring:
 
-``` 
+```
 [Inject: Cron schedule] -> [MySQL In: Query] -> [Function: Transform] -> [PostgreSQL: Insert]
 ```
 
@@ -38578,7 +38493,7 @@ Connect to source databases, transform records, and load them into destination s
 
 Call LLM APIs from within flows using HTTP request nodes or community AI nodes. Construct prompts in function nodes and parse structured responses:
 
-``` 
+```
 [HTTP In: User query] -> [Function: Build prompt] -> [HTTP Request: LLM API] -> [Function: Parse response] -> [HTTP Response]
 ```
 
