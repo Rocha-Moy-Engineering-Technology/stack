@@ -54,33 +54,6 @@ A typical Browserbase exchange:
 
 The agent code itself can run anywhere — local dev machine, serverless function, agent framework like LangGraph — because the heavy lifting (the browser process) lives in Browserbase's cloud.
 
-## Installation
-
-### Browserbase SDK (Node.js)
-
-```bash
-npm install @browserbasehq/sdk playwright-core
-```
-
-```js
-import Browserbase from "@browserbasehq/sdk";
-const bb = new Browserbase({ apiKey: process.env.BROWSERBASE_API_KEY });
-```
-
-### Python SDK
-
-```bash
-pip install browserbase playwright
-```
-
-API key and Project ID come from the dashboard at `browserbase.com/sessions`. [3]
-
-### Stagehand (optional, for AI-driven control)
-
-```bash
-npm install @browserbasehq/stagehand
-```
-
 ## Key Features and Functionality
 
 ### Cloud Browsers

@@ -56,20 +56,6 @@ The Embeddings API accepts an `input_type` parameter with values `query` or `doc
 
 The voyage-4 series supports configurable output dimensions (256/512/1024/2048) and quantization options for trading storage and inference cost against quality. Embeddings created at different dimensions/precisions remain compatible within the series. [5]
 
-## Installation
-
-### Python Client
-
-```bash
-pip install voyageai
-```
-
-Set the API key via the `VOYAGE_API_KEY` environment variable or pass it to the client constructor. [6]
-
-### JavaScript
-
-A TypeScript/JavaScript client is also published; consult the docs for the exact package name and version.
-
 ## Architecture
 
 Voyage's APIs are standard HTTP endpoints with API-key auth. Requests are stateless; each call carries the texts (or query/document pairs) plus model and parameters. Responses contain the embeddings or relevance scores plus token counts for usage tracking. The service is available directly from Voyage and also through marketplace integrations (AWS, Azure, Snowflake, Databricks). [1]

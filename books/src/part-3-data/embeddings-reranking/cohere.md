@@ -86,25 +86,6 @@ For large corpora, the Embed Jobs API runs asynchronous batch embedding jobs aga
 
 In RAG mode, the chat response includes structured citations mapping spans of the assistant message back to the supplied documents. This is what makes Cohere's grounded responses verifiable for enterprise use cases like compliance Q&A. [4]
 
-## Installation
-
-### Python
-
-```bash
-pip install cohere
-```
-
-```python
-import cohere
-co = cohere.ClientV2()   # reads COHERE_API_KEY from env
-```
-
-### TypeScript
-
-```bash
-npm install cohere-ai
-```
-
 ## Use Cases
 
 ### Enterprise RAG

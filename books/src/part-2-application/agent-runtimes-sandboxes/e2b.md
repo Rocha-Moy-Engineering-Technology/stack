@@ -53,22 +53,6 @@ A typical interaction:
 
 Each sandbox is a fresh isolated environment; sandboxes do not share state by default. Persistence and snapshots are opt-in.
 
-## Installation
-
-### Python SDK
-
-```bash
-pip install e2b-code-interpreter python-dotenv
-```
-
-### JavaScript / TypeScript SDK
-
-```bash
-npm install @e2b/code-interpreter dotenv
-```
-
-API key from `e2b.dev/dashboard`, set via `E2B_API_KEY` env var. [4]
-
 ## Key Features and Functionality
 
 ### Code Execution

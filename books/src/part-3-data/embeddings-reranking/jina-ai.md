@@ -71,14 +71,6 @@ For bulk processing, `POST https://api.jina.ai/v1/batch/embeddings` accepts inli
 
 All Jina APIs are simple HTTP endpoints with bearer-token auth (`Authorization: Bearer $JINA_API_KEY`) and `Content-Type: application/json`. Responses are JSON by default; the Reader and Search APIs additionally support `text/event-stream` for streaming. Endpoints are stateless and horizontally scalable; rate limits are per-API-key. [1]
 
-## Installation
-
-Jina is an HTTP API; there is no required client library. Official SDKs exist for Python and TypeScript. Authentication uses an API key obtained at `jina.ai/?sui=apikey`.
-
-```bash
-export JINA_API_KEY=your_key_here
-```
-
 ## Key Features and Functionality
 
 ### Multimodal Retrieval

@@ -1,6 +1,6 @@
 # AI/ML Stack Documentation
 
-This book documents 79 AI/ML tools and platforms organized across 22 functional groups and 4 architectural parts. Each chapter covers the tool's core concepts, installation, architecture, features, use cases, API reference, configuration, integration patterns, and examples — all sourced from and citing official documentation.
+This book documents 79 AI/ML tools and platforms organized across 23 functional groups and 4 architectural parts. Each chapter covers the tool's core concepts, architecture, features, use cases, API reference, configuration, integration patterns, and examples — all sourced from and citing official documentation.
 
 ## How This Book Is Organized
 
@@ -55,17 +55,16 @@ Each chapter follows a consistent structure:
 
 1. **Overview** — What the tool is and what problem it solves
 2. **Core Concepts** — Fundamental abstractions and mental models
-3. **Installation and Setup** — Getting started quickly
-4. **Architecture** — Internal structure and extension points
-5. **Key Features and Functionality** — Detailed feature documentation with code examples
-6. **Use Cases** — Walkthroughs of common scenarios
-7. **API Reference Summary** — Key classes, functions, and endpoints
-8. **Configuration and Customization** — All configuration options
-9. **Integration Patterns** — How the tool connects with other tools in the catalog
-10. **Examples** — Complete runnable examples
-11. **Limitations and Considerations** — Known constraints and scaling notes
-12. **Changelog Highlights** — Major version milestones
-13. **Citations** — Links to official documentation sources
+3. **Architecture** — Internal structure and extension points
+4. **Key Features and Functionality** — Detailed feature documentation with code examples
+5. **Use Cases** — Walkthroughs of common scenarios
+6. **API Reference Summary** — Key classes, functions, and endpoints
+7. **Configuration and Customization** — All configuration options
+8. **Integration Patterns** — How the tool connects with other tools in the catalog
+9. **Examples** — Complete runnable examples
+10. **Limitations and Considerations** — Known constraints and scaling notes
+11. **Changelog Highlights** — Major version milestones
+12. **Citations** — Links to official documentation sources
 
 ## Source
 
