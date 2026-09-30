@@ -17,7 +17,7 @@ CSV catalog of AI/ML ecosystem tools (SDKs, APIs, infrastructure) used as a refe
 ### group
 
 - Type: string (enum)
-- Constraints: MUST be one of the 22 defined group labels (see Group Labels section)
+- Constraints: MUST be one of the 23 defined group labels (see Group Labels section)
 - Example: `Agent Frameworks`, `Inference Engines`
 
 ### type
